@@ -64,12 +64,9 @@ public class PurityChecker {
 
     private static PurityCheckResult detectExtractOperationPurity(ExtractOperationRefactoring refactoring) {
 
-//        if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty()) {
+        if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty()) {
             if (refactoring.getBodyMapper().allMappingsAreExactMatches())
                 return new PurityCheckResult(true, "All mappings are matched!");
-
-            if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty())
-                return new PurityCheckResult(true, "No non-mapped leaves in the extracted operation");
 
 
             if (refactoring.getReplacements().isEmpty())
@@ -84,29 +81,32 @@ public class PurityChecker {
                     }
                 }
             }
-//        } else{
-//            return new PurityCheckResult(false, "We have non-mapped operations in child version!");
-//        }
 //        Check non-mapped leaves
+        } else{
+            if (checkReturnExpressionExtractMethodMechanics(refactoring.getBodyMapper().getNonMappedLeavesT2(), refactoring.getReplacements()))
+                return new PurityCheckResult(true, "Adding return statement and variable name changed");
+        }
+
 //        if (!checkReturnExpressionExtractMethodMechanics(refactoring.getBodyMapper().getNonMappedLeavesT2(), refactoring.getReplacements())){
 //            return new PurityCheckResult(false, "Violating extract method refactoring mechanics (return expression non-mapped leaves)");
 //        }
 
 
-
-
-        return new PurityCheckResult(true, "It's a pure one although there are some changes!");
+        System.out.println("HERE!");
+        return new PurityCheckResult(true, "Adding return statement with the exact same name as the parent");
     }
 
     private static boolean checkReturnExpressionExtractMethodMechanics(List<AbstractCodeFragment> nonMappedLeavesT2, Set<Replacement> replacements){
 
-        for (Replacement rm: replacements){
-            for (AbstractCodeFragment st: nonMappedLeavesT2){
-                if (st.getString().contains(rm.getAfter())) {
+
+        for (Replacement rm : replacements) {
+            for (AbstractCodeFragment st : nonMappedLeavesT2) {
+                if (st.getString().contains(rm.getAfter()) && st.getString().contains("return")) {
                     return true;
                 }
             }
         }
+
 
         return false;
     }
@@ -127,9 +127,9 @@ public class PurityChecker {
 
     private static boolean checkIfArgumentReplacedWithReturn(Set<Replacement> replacements) {
 
-        if (replacements.size() == 1){
-            Replacement rep = replacements.iterator().next();
-            return rep.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION);
+        for (Replacement rep: replacements) {
+            return rep.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION) ||
+                    rep.getType().equals((Replacement.ReplacementType.VARIABLE_NAME));
         }
         return false;
     }

@@ -13,8 +13,8 @@ import java.util.List;
 public class TestPurity {
 //    @Test
     public static void main(String[] args) throws RefactoringMinerTimedOutException, IOException {
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\7\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\7\\v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\1\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\1\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         PurityChecker.isPure(modelDiff);
