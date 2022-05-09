@@ -107,7 +107,6 @@ public class PurityChecker {
             }
         }
 
-
         return false;
     }
 
