@@ -10,18 +10,17 @@ import gr.uom.java.xmi.diff.UMLModelDiff;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringMinerTimedOutException;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class PurityChecker {
-    public static void isPure(UMLModelDiff modelDiff){
-        try {
-            List<Refactoring> refactorings = modelDiff.getRefactorings();
+    public static Map<Refactoring, PurityCheckResult> isPure(List<Refactoring> refactorings){
+        //            List<Refactoring> refactorings = modelDiff.getRefactorings();
+        Map<Refactoring, PurityCheckResult> purityCheckResults = new LinkedHashMap<>();
 
-            refactorings.forEach(refactoring -> System.out.println(isPure(refactoring)));
-        } catch (RefactoringMinerTimedOutException e) {
-            throw new RuntimeException(e);
+        for (Refactoring refactoring: refactorings){
+            purityCheckResults.put(refactoring, isPure(refactoring));
         }
+        return purityCheckResults;
     }
 
     private static PurityCheckResult isPure(Refactoring refactoring){
@@ -66,34 +65,30 @@ public class PurityChecker {
 
         if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty()) {
             if (refactoring.getBodyMapper().allMappingsAreExactMatches())
-                return new PurityCheckResult(true, "All mappings are matched!");
+                return new PurityCheckResult(true, "All mappings are matched! - no non-mapped leaves");
 
 
             if (refactoring.getReplacements().isEmpty())
-                return new PurityCheckResult(true, "There is no replacement!");
+                return new PurityCheckResult(true, "There is no replacement! - no non-mapped leaves");
 
 
 //        Check each mapping to if it violates the mechanics
             for (AbstractCodeMapping mapping : refactoring.getBodyMapper().getMappings()) {
                 if (!mapping.getReplacements().isEmpty()) {
                     if (!checkExtractMethodRefactoringMechanics(mapping.getReplacements())) {
-                        return new PurityCheckResult(false, "Violating extract method refactoring mechanics");
+                        return new PurityCheckResult(false, "Violating extract method refactoring mechanics - no non-mapped leaves");
                     }
                 }
             }
 //        Check non-mapped leaves
         } else{
             if (checkReturnExpressionExtractMethodMechanics(refactoring.getBodyMapper().getNonMappedLeavesT2(), refactoring.getReplacements()))
-                return new PurityCheckResult(true, "Adding return statement and variable name changed");
+                return new PurityCheckResult(true, "Adding return statement and variable name changed - with non-mapped leaves");
+            else
+                return new PurityCheckResult(false, "Violating extract method refactoring mechanics - with non-mapped leaves");
         }
 
-//        if (!checkReturnExpressionExtractMethodMechanics(refactoring.getBodyMapper().getNonMappedLeavesT2(), refactoring.getReplacements())){
-//            return new PurityCheckResult(false, "Violating extract method refactoring mechanics (return expression non-mapped leaves)");
-//        }
-
-
-        System.out.println("HERE!");
-        return new PurityCheckResult(true, "Adding return statement with the exact same name as the parent");
+        return new PurityCheckResult(true, "Adding return statement or rename variable - END");
     }
 
     private static boolean checkReturnExpressionExtractMethodMechanics(List<AbstractCodeFragment> nonMappedLeavesT2, Set<Replacement> replacements){
@@ -112,35 +107,34 @@ public class PurityChecker {
 
     private static boolean checkExtractMethodRefactoringMechanics(Set<Replacement> replacements) {
 
-        boolean result = false;
 
-        if (checkIfArgumentReplacedWithReturn(replacements))
+        if (checkIfArgumentReplacedWithReturnOrRenames(replacements))
             return true;
 
-        if (checkIfAllReplacementsAreRenames(replacements))
-            return true;
+//        if (checkIfAllReplacementsAreRenames(replacements))
+//            return true;
 
 
         return false;
     }
 
-    private static boolean checkIfArgumentReplacedWithReturn(Set<Replacement> replacements) {
+    private static boolean checkIfArgumentReplacedWithReturnOrRenames(Set<Replacement> replacements) {
 
         for (Replacement rep: replacements) {
             return rep.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION) ||
-                    rep.getType().equals((Replacement.ReplacementType.VARIABLE_NAME));
+                    rep.getType().equals(Replacement.ReplacementType.VARIABLE_NAME);
         }
         return false;
     }
 
-    private static boolean checkIfAllReplacementsAreRenames(Set<Replacement> replacements) {
-
-        for (Replacement replacement: replacements) {
-            if (!replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME))
-                return false;
-        }
-        return true;
-    }
+//    private static boolean checkIfAllReplacementsAreRenames(Set<Replacement> replacements) {
+//
+//        for (Replacement replacement: replacements) {
+//            if (!replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME))
+//                return false;
+//        }
+//        return true;
+//    }
 
 
 }
@@ -159,7 +153,11 @@ class PurityCheckResult
         return isPure;
     }
 
-//    private void calcPurity(){
+    public String getDescription() {
+        return description;
+    }
+
+    //    private void calcPurity(){
 //        if (result < 0.5)
 //            isPure = true;
 //        else
