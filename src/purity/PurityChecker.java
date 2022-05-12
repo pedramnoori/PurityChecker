@@ -14,17 +14,17 @@ import java.util.Map;
 import java.util.Set;
 
 public class PurityChecker {
+
     public static Map<Refactoring, PurityCheckResult> isPure(List<Refactoring> refactorings){
-        //            List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> purityCheckResults = new LinkedHashMap<>();
 
         for (Refactoring refactoring: refactorings){
-            purityCheckResults.put(refactoring, isPure(refactoring));
+            purityCheckResults.put(refactoring, checkPurity(refactoring));
         }
         return purityCheckResults;
     }
 
-    private static PurityCheckResult isPure(Refactoring refactoring){
+    private static PurityCheckResult checkPurity(Refactoring refactoring){
         PurityCheckResult result;
         switch (refactoring.getRefactoringType()){
             case EXTRACT_OPERATION:
@@ -66,7 +66,7 @@ public class PurityChecker {
 
         if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty()) {
             if (refactoring.getBodyMapper().allMappingsAreExactMatches())
-                return new PurityCheckResult(true, "All mappings are matched! - no non-mapped leaves");
+                return new PurityCheckResult(true, "All the mappings are matched! - no non-mapped leaves");
 
 
             if (refactoring.getReplacements().isEmpty())
