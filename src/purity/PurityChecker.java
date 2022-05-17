@@ -98,6 +98,7 @@ public class PurityChecker {
         for (Replacement rm : replacements) {
             for (AbstractCodeFragment st : nonMappedLeavesT2) {
                 if (st.getString().contains(rm.getAfter()) && st.getString().contains("return")) {
+//                    st.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)
                     return true;
                 }
             }
@@ -111,10 +112,6 @@ public class PurityChecker {
 
         if (checkIfArgumentReplacedWithReturnOrRenames(replacements))
             return true;
-
-//        if (checkIfAllReplacementsAreRenames(replacements))
-//            return true;
-
 
         return false;
     }
