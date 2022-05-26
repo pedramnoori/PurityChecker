@@ -4,9 +4,8 @@ import gr.uom.java.xmi.UMLModel;
 import gr.uom.java.xmi.UMLModelASTReader;
 import gr.uom.java.xmi.diff.UMLModelDiff;
 import org.junit.Test;
-import org.refactoringminer.api.Refactoring;
-import org.refactoringminer.api.RefactoringMinerTimedOutException;
-import org.refactoringminer.api.RefactoringType;
+import org.refactoringminer.api.*;
+import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,8 +38,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_2() throws RefactoringMinerTimedOutException, IOException {
 
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/4/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/4/v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\4\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\4\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
@@ -71,8 +70,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_4() throws RefactoringMinerTimedOutException, IOException {
 
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/7/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/7/v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\7\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\7\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
@@ -135,8 +134,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_8() throws RefactoringMinerTimedOutException, IOException {
 
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/11/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/11/v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\11\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\11\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
@@ -195,5 +194,208 @@ public class TestPurity {
                 assertTrue(pcr.get(refactoring).isPure());
         }
     }
+
+    @Test
+    public void extractMethodTest_12() throws RefactoringMinerTimedOutException, IOException {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/apache/giraph.git",
+                "87f3c4d8572ee8f7244af8a92dc3312ce24260e3", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+//                        System.out.println("Refactorings at " + commitId);
+//                        for (Refactoring ref : refactorings) {
+//                            System.out.println(ref.toString());
+//                        }
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+
+                    }
+                }, 20);
+    }
+
+    @Test
+    public void extractMethodTest_13() throws RefactoringMinerTimedOutException, IOException {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/apache/giraph.git",
+                "2117d1dbba8f18b08da70e890c30111edb3aebe3", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+//                        System.out.println("Refactorings at " + commitId);
+//                        for (Refactoring ref : refactorings) {
+//                            System.out.println(ref.toString());
+//                        }
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+
+                    }
+                }, 20);
+    }
+    @Test
+    public void extractMethodTest_14() throws RefactoringMinerTimedOutException, IOException {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/apache/giraph.git",
+                "6fc0550bcd20e979bf5a5db88b05c4ef12559152", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+//                        System.out.println("Refactorings at " + commitId);
+//                        for (Refactoring ref : refactorings) {
+//                            System.out.println(ref.toString());
+//                        }
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+
+                    }
+                }, 100);
+    }
+
+
+    @Test
+    public void extractMethodTest_15() throws RefactoringMinerTimedOutException, IOException {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/apache/giraph.git",
+                "72562004cfa5106472f61efc5d456788bbc256f9", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+//                        System.out.println("Refactorings at " + commitId);
+//                        for (Refactoring ref : refactorings) {
+//                            System.out.println(ref.toString());
+//                        }
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_16() {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/apache/giraph.git",
+                "7d0e006992574973bbd732373af32462393f00b5", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+//                        System.out.println("Refactorings at " + commitId);
+//                        for (Refactoring ref : refactorings) {
+//                            System.out.println(ref.toString());
+//                        }
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+
+                    }
+                }, 100);
+    }
+
+
+    @Test
+    public void extractMethodTest_17() {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/apache/giraph.git",
+                "8fbade6a7801afd6065007473585d9d2a761818a", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+//                        System.out.println("Refactorings at " + commitId);
+//                        for (Refactoring ref : refactorings) {
+//                            System.out.println(ref.toString());
+//                        }
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_18() {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/apache/giraph.git",
+                "add1d4f07c925b8a9044cb3aa5bb4abdeaf49fc7", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+//                        System.out.println("Refactorings at " + commitId);
+//                        for (Refactoring ref : refactorings) {
+//                            System.out.println(ref.toString());
+//                        }
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_19() {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/apache/helix.git",
+                "059ab387b7fe70e71989e6560b57667c8eda7b60", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+//                        System.out.println("Refactorings at " + commitId);
+//                        for (Refactoring ref : refactorings) {
+//                            System.out.println(ref.toString());
+//                        }
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+
+                    }
+                }, 100);
+    }
+
+//
 
 }

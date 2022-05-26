@@ -1,5 +1,6 @@
 package purity;
 
+import gr.uom.java.xmi.LocationInfo;
 import gr.uom.java.xmi.decomposition.AbstractCodeFragment;
 import gr.uom.java.xmi.decomposition.AbstractCodeMapping;
 import gr.uom.java.xmi.decomposition.replacement.Replacement;
@@ -83,6 +84,7 @@ public class PurityChecker {
             }
 //        Check non-mapped leaves
         } else{
+            boolean a = refactoring.getBodyMapper().allMappingsAreExactMatches();
             if (checkReturnExpressionExtractMethodMechanics(refactoring.getBodyMapper().getNonMappedLeavesT2(), refactoring.getReplacements()))
                 return new PurityCheckResult(true, "Adding return statement and variable name changed - with non-mapped leaves");
             else
@@ -97,8 +99,7 @@ public class PurityChecker {
 
         for (Replacement rm : replacements) {
             for (AbstractCodeFragment st : nonMappedLeavesT2) {
-                if (st.getString().contains(rm.getAfter()) && st.getString().contains("return")) {
-//                    st.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)
+                if (st.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
                     return true;
                 }
             }
