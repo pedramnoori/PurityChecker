@@ -66,6 +66,8 @@ public class PurityChecker {
     private static PurityCheckResult detectExtractOperationPurity(ExtractOperationRefactoring refactoring) {
 
         if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty()) {
+
+//            only renames
             if (refactoring.getBodyMapper().allMappingsAreExactMatches())
                 return new PurityCheckResult(true, "All the mappings are matched! - no non-mapped leaves");
 
@@ -84,8 +86,7 @@ public class PurityChecker {
             }
 //        Check non-mapped leaves
         } else{
-            boolean a = refactoring.getBodyMapper().allMappingsAreExactMatches();
-            if (checkReturnExpressionExtractMethodMechanics(refactoring.getBodyMapper().getNonMappedLeavesT2(), refactoring.getReplacements()))
+            if ((refactoring.getBodyMapper().allMappingsAreExactMatches() || allReplacementsAreVariableNameOrType(refactoring.getReplacements())) && checkReturnExpressionExtractMethodMechanics(refactoring.getBodyMapper().getNonMappedLeavesT2(), refactoring.getReplacements()))
                 return new PurityCheckResult(true, "Adding return statement and variable name changed - with non-mapped leaves");
             else
                 return new PurityCheckResult(false, "Violating extract method refactoring mechanics - with non-mapped leaves");
@@ -97,15 +98,26 @@ public class PurityChecker {
     private static boolean checkReturnExpressionExtractMethodMechanics(List<AbstractCodeFragment> nonMappedLeavesT2, Set<Replacement> replacements){
 
 
-        for (Replacement rm : replacements) {
             for (AbstractCodeFragment st : nonMappedLeavesT2) {
                 if (st.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
                     return true;
                 }
             }
-        }
 
         return false;
+    }
+
+    private static boolean allReplacementsAreVariableNameOrType(Set<Replacement> replacements) {
+
+        for (Replacement rep: replacements) {
+            if (rep.getType().equals(Replacement.ReplacementType.VARIABLE_NAME) ||
+                    rep.getType().equals(Replacement.ReplacementType.TYPE)) {
+
+                continue;
+            }
+            return false;
+        }
+        return true;
     }
 
     private static boolean checkExtractMethodRefactoringMechanics(Set<Replacement> replacements) {
@@ -120,10 +132,13 @@ public class PurityChecker {
     private static boolean checkIfArgumentReplacedWithReturnOrRenames(Set<Replacement> replacements) {
 
         for (Replacement rep: replacements) {
-            return rep.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION) ||
-                    rep.getType().equals(Replacement.ReplacementType.VARIABLE_NAME);
+            if (!rep.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION) &&
+                    !rep.getType().equals(Replacement.ReplacementType.VARIABLE_NAME) &&
+                    !rep.getType().equals(Replacement.ReplacementType.TYPE)){
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 
 //    private static boolean checkIfAllReplacementsAreRenames(Set<Replacement> replacements) {

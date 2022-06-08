@@ -373,25 +373,19 @@ public class TestPurity {
 
     @Test
     public void extractMethodTest_19() {
-
+        // no _
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectAtCommit("https://github.com/apache/helix.git",
                 "059ab387b7fe70e71989e6560b57667c8eda7b60", new RefactoringHandler() {
                     @Override
                     public void handle(String commitId, List<Refactoring> refactorings) {
-//                        System.out.println("Refactorings at " + commitId);
-//                        for (Refactoring ref : refactorings) {
-//                            System.out.println(ref.toString());
-//                        }
 
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
-
 
                         for (Refactoring refactoring: refactorings){
                             if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
                                 assertTrue(pcr.get(refactoring).isPure());
                         }
-
                     }
                 }, 100);
     }
@@ -428,6 +422,74 @@ public class TestPurity {
         }
     }
 
-//
+    @Test
+    public void extractMethodTest_22() throws RefactoringMinerTimedOutException, IOException {
 
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/Teino1978-Corp/Teino1978-Corp-helix.git",
+                "433b0011655c0c42228416488bb6b16f4b2f2700", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+                    }
+                }, 100);
+    }
+
+
+    @Test
+    public void extractMethodTest_23() throws RefactoringMinerTimedOutException, IOException {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/apache/helix.git",
+                "579baa5bb061bec9d5b38731f20f51ea29a05f42", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_24() throws RefactoringMinerTimedOutException, IOException {
+        // _
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\19\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\19\\v2")).getUmlModel();
+        UMLModelDiff modelDiff = model1.diff(model2);
+        List<Refactoring> refactorings = modelDiff.getRefactorings();
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+
+        for (Refactoring refactoring: refactorings){
+            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                assertTrue(pcr.get(refactoring).isPure());
+        }
+    }
+
+    @Test
+    public void extractMethodTest_25() throws RefactoringMinerTimedOutException, IOException {
+        // _
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\18\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\18\\v2")).getUmlModel();
+        UMLModelDiff modelDiff = model1.diff(model2);
+        List<Refactoring> refactorings = modelDiff.getRefactorings();
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+
+        for (Refactoring refactoring: refactorings){
+            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                assertTrue(pcr.get(refactoring).isPure());
+        }
+    }
 }
