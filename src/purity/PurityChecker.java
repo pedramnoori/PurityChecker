@@ -6,8 +6,10 @@ import gr.uom.java.xmi.decomposition.AbstractCodeMapping;
 import gr.uom.java.xmi.decomposition.replacement.Replacement;
 import gr.uom.java.xmi.diff.ExtractOperationRefactoring;
 import gr.uom.java.xmi.diff.RenameClassRefactoring;
+import gr.uom.java.xmi.diff.RenameOperationRefactoring;
 import gr.uom.java.xmi.diff.RenameVariableRefactoring;
 import org.refactoringminer.api.Refactoring;
+import org.refactoringminer.api.RefactoringType;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -20,16 +22,16 @@ public class PurityChecker {
         Map<Refactoring, PurityCheckResult> purityCheckResults = new LinkedHashMap<>();
 
         for (Refactoring refactoring: refactorings){
-            purityCheckResults.put(refactoring, checkPurity(refactoring));
+            purityCheckResults.put(refactoring, checkPurity(refactoring, refactorings));
         }
         return purityCheckResults;
     }
 
-    private static PurityCheckResult checkPurity(Refactoring refactoring){
+    private static PurityCheckResult checkPurity(Refactoring refactoring, List<Refactoring> refactorings){
         PurityCheckResult result;
         switch (refactoring.getRefactoringType()){
             case EXTRACT_OPERATION:
-                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring);
+                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings);
                 break;
             case RENAME_CLASS:
                 result = detectRenameClassPurity((RenameClassRefactoring) refactoring);
@@ -63,7 +65,7 @@ public class PurityChecker {
         return new PurityCheckResult(true, "Rename Parameter refactorings are always pure!");
     }
 
-    private static PurityCheckResult detectExtractOperationPurity(ExtractOperationRefactoring refactoring) {
+    private static PurityCheckResult detectExtractOperationPurity(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
 
         if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty()) {
 
@@ -88,11 +90,26 @@ public class PurityChecker {
         } else{
             if ((refactoring.getBodyMapper().allMappingsAreExactMatches() || allReplacementsAreVariableNameOrType(refactoring.getReplacements())) && checkReturnExpressionExtractMethodMechanics(refactoring.getBodyMapper().getNonMappedLeavesT2(), refactoring.getReplacements()))
                 return new PurityCheckResult(true, "Adding return statement and variable name changed - with non-mapped leaves");
+
+            else if (checkForRenameRefactoringOnTop(refactoring, refactorings)) {
+                return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - with non-mapped leaves");
+            }
+
             else
                 return new PurityCheckResult(false, "Violating extract method refactoring mechanics - with non-mapped leaves");
         }
 
         return new PurityCheckResult(true, "Adding return statement or rename variable - END");
+    }
+
+    private static boolean checkForRenameRefactoringOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
+
+        for (Refactoring rf : refactorings) {
+            if (rf.getRefactoringType().equals(RefactoringType.RENAME_METHOD)) {
+                System.out.println(((RenameOperationRefactoring) rf).getRenamedOperation());
+            }
+        }
+        return false;
     }
 
     private static boolean checkReturnExpressionExtractMethodMechanics(List<AbstractCodeFragment> nonMappedLeavesT2, Set<Replacement> replacements){
