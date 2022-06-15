@@ -557,9 +557,6 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 						UMLOperation addedOperation = bestMapper.getOperation2();
 						addedOperations.remove(addedOperation);
 						removedOperationIterator.remove();
-	
-						UMLOperationDiff operationSignatureDiff = new UMLOperationDiff(bestMapper);
-						operationDiffList.add(operationSignatureDiff);
 						if(!removedOperation.getName().equals(addedOperation.getName()) &&
 								!(removedOperation.isConstructor() && addedOperation.isConstructor())) {
 							Set<MethodInvocationReplacement> callReferences = getCallReferences(removedOperation, addedOperation);
@@ -604,9 +601,6 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 						addedOperation = bestMapper.getOperation2();
 						removedOperations.remove(removedOperation);
 						addedOperationIterator.remove();
-	
-						UMLOperationDiff operationSignatureDiff = new UMLOperationDiff(bestMapper);
-						operationDiffList.add(operationSignatureDiff);
 						if(!removedOperation.getName().equals(addedOperation.getName()) &&
 								!(removedOperation.isConstructor() && addedOperation.isConstructor())) {
 							Set<MethodInvocationReplacement> callReferences = getCallReferences(removedOperation, addedOperation);
@@ -628,9 +622,9 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 					UMLOperation addedOperation = addedOperationIterator.next();
 					AbstractCall addedOperationInvocation = addedOperation.isDelegate();
 					if(addedOperationInvocation != null) {
-						for(UMLOperationDiff operationDiff : operationDiffList) {
-							if(removedOperationInvocation.matchesOperation(operationDiff.getRemovedOperation(), removedOperation, modelDiff) &&
-									addedOperationInvocation.matchesOperation(operationDiff.getAddedOperation(), addedOperation, modelDiff) &&
+						for(UMLOperationBodyMapper mapper : operationBodyMapperList) {
+							if(removedOperationInvocation.matchesOperation(mapper.getContainer1(), removedOperation, modelDiff) &&
+									addedOperationInvocation.matchesOperation(mapper.getContainer2(), addedOperation, modelDiff) &&
 									removedOperation.getParameterTypeList().equals(addedOperation.getParameterTypeList())) {
 								addedOperationIterator.remove();
 								removedOperationIterator.remove();
@@ -1333,6 +1327,7 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 
 	private void checkForExtractedOperations() throws RefactoringMinerTimedOutException {
 		List<UMLOperation> operationsToBeRemoved = new ArrayList<UMLOperation>();
+		List<UMLOperationBodyMapper> extractedOperationMappers = new ArrayList<UMLOperationBodyMapper>();
 		for(Iterator<UMLOperation> addedOperationIterator = addedOperations.iterator(); addedOperationIterator.hasNext();) {
 			UMLOperation addedOperation = addedOperationIterator.next();
 			for(UMLOperationBodyMapper mapper : getOperationBodyMapperList()) {
@@ -1340,17 +1335,18 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 				List<ExtractOperationRefactoring> refs = detection.check(addedOperation);
 				for(ExtractOperationRefactoring refactoring : refs) {
 					refactorings.add(refactoring);
-					//move next two lines, after optimizing the mappings with global best match in case of multiple matches.
 					UMLOperationBodyMapper operationBodyMapper = refactoring.getBodyMapper();
-					processMapperRefactorings(operationBodyMapper, refactorings);
+					extractedOperationMappers.add(operationBodyMapper);
 					mapper.addChildMapper(operationBodyMapper);
 					operationsToBeRemoved.add(addedOperation);
 				}
-				checkForInconsistentVariableRenames(mapper);
 			}
 		}
 		for(UMLOperationBodyMapper mapper : getOperationBodyMapperList()) {
 			optimizeDuplicateMappings(mapper);
+		}
+		for(UMLOperationBodyMapper operationBodyMapper : extractedOperationMappers) {
+			processMapperRefactorings(operationBodyMapper, refactorings);
 		}
 		addedOperations.removeAll(operationsToBeRemoved);
 	}
@@ -1358,7 +1354,7 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 	private void optimizeDuplicateMappings(UMLOperationBodyMapper parentMapper) {
 		if(parentMapper.getChildMappers().size() > 1) {
 			Map<AbstractCodeFragment, Set<AbstractCodeMapping>> oneToManyMappings = new HashMap<>();
-			Map<AbstractCodeFragment, Set<UMLOperationBodyMapper>> oneToManyMappers = new HashMap<>();
+			Map<AbstractCodeFragment, List<UMLOperationBodyMapper>> oneToManyMappers = new HashMap<>();
 			for(UMLOperationBodyMapper childMapper : parentMapper.getChildMappers()) {
 				for(AbstractCodeMapping mapping : childMapper.getMappings()) {
 					if(oneToManyMappings.containsKey(mapping.getFragment1())) {
@@ -1367,7 +1363,7 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 					}
 					else {
 						Set<AbstractCodeMapping> mappings = new LinkedHashSet<>();
-						Set<UMLOperationBodyMapper> mappers = new LinkedHashSet<>();
+						List<UMLOperationBodyMapper> mappers = new ArrayList<>();
 						mappings.add(mapping);
 						mappers.add(childMapper);
 						oneToManyMappings.put(mapping.getFragment1(), mappings);
@@ -1381,10 +1377,13 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 					oneToManyMappings.remove(fragment);
 				}
 			}
+			//sort oneToManyMappings keys to put first composite statements, then blocks, then leaf statements
+			TreeSet<AbstractCodeFragment> sortedKeys = new TreeSet<>(new CodeFragmentComparator());
+			sortedKeys.addAll(oneToManyMappings.keySet());
 			Set<UMLOperationBodyMapper> updatedMappers = new LinkedHashSet<>();
-			for(AbstractCodeFragment fragment : oneToManyMappings.keySet()) {
+			for(AbstractCodeFragment fragment : sortedKeys) {
 				Set<AbstractCodeMapping> mappings = oneToManyMappings.get(fragment);
-				Set<UMLOperationBodyMapper> mappers = oneToManyMappers.get(fragment);
+				List<UMLOperationBodyMapper> mappers = oneToManyMappers.get(fragment);
 				Iterator<AbstractCodeMapping> mappingIterator = mappings.iterator();
 				Iterator<UMLOperationBodyMapper> mapperIterator = mappers.iterator();
 				List<Boolean> parentMappingFound = new ArrayList<>();
@@ -1450,45 +1449,11 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 		}
 	}
 
-	private void checkForInconsistentVariableRenames(UMLOperationBodyMapper mapper) {
-		if(mapper.getChildMappers().size() > 1) {
-			Set<Refactoring> refactoringsToBeRemoved = new LinkedHashSet<Refactoring>();
-			for(Refactoring r : refactorings) {
-				if(r instanceof RenameVariableRefactoring) {
-					RenameVariableRefactoring rename = (RenameVariableRefactoring)r;
-					Set<AbstractCodeMapping> references = rename.getVariableReferences();
-					for(AbstractCodeMapping reference : references) {
-						if(reference.getFragment1().getVariableDeclarations().size() > 0 && !reference.isExact()) {
-							Set<AbstractCodeMapping> allMappingsForReference = new LinkedHashSet<AbstractCodeMapping>();
-							for(UMLOperationBodyMapper childMapper : mapper.getChildMappers()) {
-								for(AbstractCodeMapping mapping : childMapper.getMappings()) {
-									if(mapping.getFragment1().equals(reference.getFragment1())) {
-										allMappingsForReference.add(mapping);
-										break;
-									}
-								}
-							}
-							if(allMappingsForReference.size() > 1) {
-								for(AbstractCodeMapping mapping : allMappingsForReference) {
-									if(!mapping.equals(reference) && mapping.isExact()) {
-										refactoringsToBeRemoved.add(rename);
-										break;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			refactorings.removeAll(refactoringsToBeRemoved);
-		}
-	}
-
 	public boolean isEmpty() {
 		return addedOperations.isEmpty() && removedOperations.isEmpty() &&
 			addedAttributes.isEmpty() && removedAttributes.isEmpty() &&
 			addedEnumConstants.isEmpty() && removedEnumConstants.isEmpty() &&
-			operationDiffList.isEmpty() && attributeDiffList.isEmpty() &&
+			attributeDiffList.isEmpty() &&
 			operationBodyMapperList.isEmpty() && enumConstantDiffList.isEmpty() && annotationListDiff.isEmpty() &&
 			!visibilityChanged && !abstractionChanged && !finalChanged && !staticChanged && !superclassChanged;
 	}
@@ -1519,9 +1484,6 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 		Collections.sort(addedAttributes);
 		for(UMLAttribute umlAttribute : addedAttributes) {
 			sb.append("attribute " + umlAttribute + " added").append("\n");
-		}
-		for(UMLOperationDiff operationDiff : operationDiffList) {
-			sb.append(operationDiff);
 		}
 		for(UMLAttributeDiff attributeDiff : attributeDiffList) {
 			sb.append(attributeDiff);
