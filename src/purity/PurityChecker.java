@@ -104,12 +104,35 @@ public class PurityChecker {
 
     private static boolean checkForRenameRefactoringOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
 
-        for (Refactoring rf : refactorings) {
-            if (rf.getRefactoringType().equals(RefactoringType.RENAME_METHOD)) {
-                System.out.println(((RenameOperationRefactoring) rf).getRenamedOperation());
+        int nonMappedLeavesToCheck = refactoring.getBodyMapper().getNonMappedLeavesT2().size();
+
+        if (nonMappedLeavesToCheck != 0) {
+
+            for (Refactoring rf : refactorings) {
+                if (rf.getRefactoringType().equals(RefactoringType.RENAME_METHOD)) {
+                    if (check1(refactoring, (RenameOperationRefactoring) rf)) {
+                        nonMappedLeavesToCheck--;
+                    }
+
+                    if (nonMappedLeavesToCheck == 0) {
+                        return true;
+                    }
+
+                    System.out.println(((RenameOperationRefactoring) rf).getRenamedOperation());
+                }
             }
         }
         return false;
+    }
+
+    private static boolean check1(ExtractOperationRefactoring exRefactoring, RenameOperationRefactoring rnRefactoring) {
+
+        for (AbstractCodeFragment acf: exRefactoring.getBodyMapper().getNonMappedLeavesT1()) {
+
+//            if (rnRefactoring.getOriginalOperation().getName() == acf.getString().)
+
+        }
+        return true;
     }
 
     private static boolean checkReturnExpressionExtractMethodMechanics(List<AbstractCodeFragment> nonMappedLeavesT2, Set<Replacement> replacements){
