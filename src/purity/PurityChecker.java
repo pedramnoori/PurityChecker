@@ -71,18 +71,25 @@ public class PurityChecker {
 
 //            only renames
             if (refactoring.getBodyMapper().allMappingsAreExactMatches())
-                return new PurityCheckResult(true, "All the mappings are matched! - no non-mapped leaves");
+                return new PurityCheckResult(true, "All the mappings are matched! - all mapped");
 
 
             if (refactoring.getReplacements().isEmpty())
-                return new PurityCheckResult(true, "There is no replacement! - no non-mapped leaves");
+                return new PurityCheckResult(true, "There is no replacement! - all mapped");
+
+//            Handling SECOND issue
+
+            if (checkForRenameRefactoringOnTopMapped(refactoring, refactorings)) {
+                return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - all mapped");
+            }
+
 
 
 //        Check each mapping to if it violates the mechanics
             for (AbstractCodeMapping mapping : refactoring.getBodyMapper().getMappings()) {
                 if (!mapping.getReplacements().isEmpty()) {
                     if (!checkExtractMethodRefactoringMechanics(mapping.getReplacements())) {
-                        return new PurityCheckResult(false, "Violating extract method refactoring mechanics - no non-mapped leaves");
+                        return new PurityCheckResult(false, "Violating extract method refactoring mechanics - all mapped");
                     }
                 }
             }
@@ -91,7 +98,8 @@ public class PurityChecker {
             if ((refactoring.getBodyMapper().allMappingsAreExactMatches() || allReplacementsAreVariableNameOrType(refactoring.getReplacements())) && checkReturnExpressionExtractMethodMechanics(refactoring.getBodyMapper().getNonMappedLeavesT2(), refactoring.getReplacements()))
                 return new PurityCheckResult(true, "Adding return statement and variable name changed - with non-mapped leaves");
 
-            else if (checkForRenameRefactoringOnTop(refactoring, refactorings)) {
+//            Handling FIRST issue
+            else if (checkForRenameRefactoringOnTopNonMapped(refactoring, refactorings)) {
                 return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - with non-mapped leaves");
             }
 
@@ -102,7 +110,38 @@ public class PurityChecker {
         return new PurityCheckResult(true, "Adding return statement or rename variable - END");
     }
 
-    private static boolean checkForRenameRefactoringOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
+    private static boolean checkForRenameRefactoringOnTopMapped(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
+
+//        int numberOfMethodInvNameReplacements = 0;
+        int numberOfReplacements = refactoring.getReplacements().size();
+
+//        for (Replacement rep: refactoring.getReplacements()) {
+//            if (rep.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_NAME)) {
+//                numberOfMethodInvNameReplacements++;
+//            }
+//        }
+
+        for (Refactoring rf: refactorings) {
+            if (rf.getRefactoringType().equals(RefactoringType.RENAME_METHOD)) {
+                for (Replacement rep: refactoring.getReplacements()) {
+                    if (rep.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_NAME)) {
+                        if (rep.getBefore().equals(((RenameOperationRefactoring) rf).getOriginalOperation().getName()) && rep.getAfter().equals(((RenameOperationRefactoring) rf).getRenamedOperation().getName())) {
+                            numberOfReplacements--;
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            if (numberOfReplacements == 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    private static boolean checkForRenameRefactoringOnTopNonMapped(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
 
         int nonMappedLeavesToCheck = refactoring.getBodyMapper().getNonMappedLeavesT2().size();
 
@@ -113,12 +152,9 @@ public class PurityChecker {
                     if (check1(refactoring, (RenameOperationRefactoring) rf)) {
                         nonMappedLeavesToCheck--;
                     }
-
                     if (nonMappedLeavesToCheck == 0) {
                         return true;
                     }
-
-                    System.out.println(((RenameOperationRefactoring) rf).getRenamedOperation());
                 }
             }
         }
@@ -129,10 +165,32 @@ public class PurityChecker {
 
         for (AbstractCodeFragment acf: exRefactoring.getBodyMapper().getNonMappedLeavesT1()) {
 
-//            if (rnRefactoring.getOriginalOperation().getName() == acf.getString().)
+            int paren = acf.getString().indexOf("(");
+            if (paren != -1) {
+                String methodName = acf.getString().substring(0, paren);
 
+                if (methodName.equals(rnRefactoring.getOriginalOperation().getName())){
+                    return check2(exRefactoring, rnRefactoring);
+                }
+            }
         }
-        return true;
+        return false;
+    }
+
+    private static boolean check2(ExtractOperationRefactoring exRefactoring, RenameOperationRefactoring rnRefactoring) {
+
+        for (AbstractCodeFragment acf: exRefactoring.getBodyMapper().getNonMappedLeavesT2()) {
+
+            int paren = acf.getString().indexOf("(");
+            if (paren != -1) {
+                String methodName = acf.getString().substring(0, paren);
+
+                if (methodName.equals(rnRefactoring.getRenamedOperation().getName())){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     private static boolean checkReturnExpressionExtractMethodMechanics(List<AbstractCodeFragment> nonMappedLeavesT2, Set<Replacement> replacements){
