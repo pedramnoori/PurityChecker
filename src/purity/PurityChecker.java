@@ -95,7 +95,7 @@ public class PurityChecker {
             }
 //        Check non-mapped leaves
         } else{
-            if ((refactoring.getBodyMapper().allMappingsAreExactMatches() || allReplacementsAreVariableNameOrType(refactoring.getReplacements())) && checkReturnExpressionExtractMethodMechanics(refactoring.getBodyMapper().getNonMappedLeavesT2(), refactoring.getReplacements()))
+            if ((refactoring.getBodyMapper().allMappingsAreExactMatches() || allReplacementsAreVariableNameOrType(refactoring.getReplacements())) && addOneReturnExpression(refactoring.getBodyMapper().getNonMappedLeavesT2(), 0))
                 return new PurityCheckResult(true, "Adding return statement and variable name changed - with non-mapped leaves");
 
 //            Handling FIRST issue
@@ -112,14 +112,9 @@ public class PurityChecker {
 
     private static boolean checkForRenameRefactoringOnTopMapped(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
 
-//        int numberOfMethodInvNameReplacements = 0;
+
         int numberOfReplacements = refactoring.getReplacements().size();
 
-//        for (Replacement rep: refactoring.getReplacements()) {
-//            if (rep.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_NAME)) {
-//                numberOfMethodInvNameReplacements++;
-//            }
-//        }
 
         for (Refactoring rf: refactorings) {
             if (rf.getRefactoringType().equals(RefactoringType.RENAME_METHOD)) {
@@ -153,6 +148,10 @@ public class PurityChecker {
                         nonMappedLeavesToCheck--;
                     }
                     if (nonMappedLeavesToCheck == 0) {
+                        return true;
+                    }
+
+                    if (nonMappedLeavesToCheck == 1 && addOneReturnExpression(refactoring.getBodyMapper().getNonMappedLeavesT2(), 1)) {
                         return true;
                     }
                 }
@@ -193,16 +192,20 @@ public class PurityChecker {
         return false;
     }
 
-    private static boolean checkReturnExpressionExtractMethodMechanics(List<AbstractCodeFragment> nonMappedLeavesT2, Set<Replacement> replacements){
+    private static boolean addOneReturnExpression(List<AbstractCodeFragment> nonMappedLeavesT2, int acceptanceRate){
 
+        int counter = 0;
 
             for (AbstractCodeFragment st : nonMappedLeavesT2) {
-                if (st.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
-                    return true;
+                if (!st.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                    counter++;
                 }
             }
-
-        return false;
+//            if (counter > acceptanceRate) {
+//                return false;
+//            }
+        return counter <= acceptanceRate;
+//        return true;
     }
 
     private static boolean allReplacementsAreVariableNameOrType(Set<Replacement> replacements) {
@@ -238,15 +241,6 @@ public class PurityChecker {
         }
         return true;
     }
-
-//    private static boolean checkIfAllReplacementsAreRenames(Set<Replacement> replacements) {
-//
-//        for (Replacement replacement: replacements) {
-//            if (!replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME))
-//                return false;
-//        }
-//        return true;
-//    }
 
 
 }
