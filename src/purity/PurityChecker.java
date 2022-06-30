@@ -1,9 +1,11 @@
 package purity;
 
 import gr.uom.java.xmi.LocationInfo;
+import gr.uom.java.xmi.UMLParameter;
 import gr.uom.java.xmi.decomposition.AbstractCall;
 import gr.uom.java.xmi.decomposition.AbstractCodeFragment;
 import gr.uom.java.xmi.decomposition.AbstractCodeMapping;
+import gr.uom.java.xmi.decomposition.replacement.MethodInvocationReplacement;
 import gr.uom.java.xmi.decomposition.replacement.Replacement;
 import gr.uom.java.xmi.diff.ExtractOperationRefactoring;
 import gr.uom.java.xmi.diff.RenameClassRefactoring;
@@ -86,6 +88,10 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - all mapped");
             }
 
+            if (checkForParametrizationOnTop(refactoring, refactorings)) {
+                return new PurityCheckResult(true, "Parametrization on top of the extract method - all mapped");
+            }
+
 
 
 //        Check each mapping to if it violates the mechanics
@@ -112,6 +118,50 @@ public class PurityChecker {
 
         return new PurityCheckResult(true, "Adding return statement or rename variable - END");
     }
+
+    private static boolean checkForParametrizationOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
+
+        List<MethodInvocationReplacement> methodInvocationReplacements = getSpecificReplacementType(refactoring.getReplacements(), MethodInvocationReplacement.class);
+        for (Replacement replacement: refactoring.getReplacements()) {
+            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT)) {
+
+                ArrayList<String> temp1 = new ArrayList<>(((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getArguments());
+                ArrayList<String> temp2 = new ArrayList<>(temp1);
+                temp1.removeAll(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getArguments());
+                Map<String, Integer> addedArgumentsMap = new HashMap<>();
+
+                for (int i = 0; i < temp1.size(); i++) {
+                    for (int j = 0; j < temp2.size(); j++) {
+                        if (temp1.get(i).equals(temp2.get(j)))
+                            addedArgumentsMap.put(temp1.get(i), j);
+                    }
+                }
+
+                String methodName = ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName();
+                List<RenameVariableRefactoring> parametrizeVariableRefactoringList = getSpecificTypeRefactoring(refactorings,RenameVariableRefactoring.class);
+                for (RenameVariableRefactoring ref : parametrizeVariableRefactoringList) {
+                    if (!ref.getRefactoringType().equals(RefactoringType.PARAMETERIZE_VARIABLE)) {
+                        parametrizeVariableRefactoringList.remove(ref);
+                    }
+                }
+
+                Map <String, Integer> parameterInitializerMap = new HashMap<>();
+
+                for (RenameVariableRefactoring ref : parametrizeVariableRefactoringList) {
+                    if (ref.getOperationBefore().getName().equals(methodName)) {
+
+                        int ind = ref.getOperationAfter().getParameterNameList().indexOf(ref.getRenamedVariable().getVariableName());
+                        parameterInitializerMap.put(ref.getOriginalVariable().getInitializer().getExpression(), ind);
+                        }
+                    }
+                if (!addedArgumentsMap.equals(parameterInitializerMap)) {
+                    return false;
+                    }
+                }
+            }
+
+        return true;
+        }
 
     private static boolean checkForRenameRefactoringOnTopMapped(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
 
@@ -232,17 +282,6 @@ public class PurityChecker {
         return false;
     }
 
-//    private static <T extends Refactoring> List<T> getSpecificTypeRefactoring(List<Refactoring> refactorings, Class refactoringType) {
-//        List<T> result = new ArrayList<>();
-//        for (Refactoring refactoring : refactorings)
-//        {
-//            if (refactoring instanceof refactoringType)
-//                result.add((refactoringType.getClass()) refactoring);
-//        }
-//        getSpecificTypeRefactoring(refactorings,RenameOperationRefactoring.class);
-//        return result;
-//    }
-
     private static <T extends Refactoring> List<T> getSpecificTypeRefactoring(List<Refactoring> refactorings, Class<T> clazz)
     {
         List<T> result = new ArrayList<>();
@@ -250,6 +289,16 @@ public class PurityChecker {
         {
                 if (refactoring.getClass().equals(clazz))
                     result.add(clazz.cast(refactoring));
+        }
+        return result;
+    }
+
+    private static <T extends Replacement> List<T> getSpecificReplacementType(Set<Replacement> replacements, Class<T> clazz) {
+        List<T> result = new ArrayList<>();
+
+        for (Replacement replacement: replacements) {
+            if (replacement.getClass().equals(clazz))
+                result.add(clazz.cast(replacement));
         }
         return result;
     }
