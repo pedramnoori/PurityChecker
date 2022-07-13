@@ -44,6 +44,7 @@ public class UMLOperationDiff {
 	private Set<Refactoring> refactorings = new LinkedHashSet<>();
 	private UMLAbstractClassDiff classDiff;
 	private UMLAnnotationListDiff annotationListDiff;
+	private UMLTypeParameterListDiff typeParameterListDiff;
 	private List<UMLType> addedExceptionTypes;
 	private List<UMLType> removedExceptionTypes;
 	private Set<Pair<UMLType, UMLType>> commonExceptionTypes;
@@ -84,6 +85,7 @@ public class UMLOperationDiff {
 			qualifiedReturnTypeChanged = true;
 		processThrownExceptionTypes(removedOperation.getThrownExceptionTypes(), addedOperation.getThrownExceptionTypes());
 		this.annotationListDiff = new UMLAnnotationListDiff(removedOperation.getAnnotations(), addedOperation.getAnnotations());
+		this.typeParameterListDiff = new UMLTypeParameterListDiff(removedOperation.getTypeParameters(), addedOperation.getTypeParameters());
 		List<SimpleEntry<UMLParameter, UMLParameter>> matchedParameters = updateAddedRemovedParameters(removedOperation, addedOperation);
 		for(SimpleEntry<UMLParameter, UMLParameter> matchedParameter : matchedParameters) {
 			UMLParameter parameter1 = matchedParameter.getKey();
@@ -94,10 +96,15 @@ public class UMLOperationDiff {
 			}
 		}
 		int matchedParameterCount = matchedParameters.size()/2;
-		List<String> parameterNames1 = removedOperation.getParameterNameList();
-		List<String> parameterNames2 = addedOperation.getParameterNameList();
-		if(removedParameters.isEmpty() && addedParameters.isEmpty() &&
-				matchedParameterCount == parameterNames1.size() && matchedParameterCount == parameterNames2.size() &&
+		List<String> parameterNames1 = new ArrayList<>(removedOperation.getParameterNameList());
+		for(UMLParameter removedParameter : removedParameters) {
+			parameterNames1.remove(removedParameter.getName());
+		}
+		List<String> parameterNames2 = new ArrayList<>(addedOperation.getParameterNameList());
+		for(UMLParameter addedParameter : addedParameters) {
+			parameterNames2.remove(addedParameter.getName());
+		}
+		if(matchedParameterCount == parameterNames1.size() && matchedParameterCount == parameterNames2.size() &&
 				parameterNames1.size() == parameterNames2.size() && parameterNames1.size() > 1 && !parameterNames1.equals(parameterNames2)) {
 			parametersReordered = true;
 		}
@@ -347,6 +354,10 @@ public class UMLOperationDiff {
 		return annotationListDiff;
 	}
 
+	public UMLTypeParameterListDiff getTypeParameterListDiff() {
+		return typeParameterListDiff;
+	}
+
 	public List<UMLType> getAddedExceptionTypes() {
 		return addedExceptionTypes;
 	}
@@ -365,7 +376,7 @@ public class UMLOperationDiff {
 
 	public boolean isEmpty() {
 		return addedParameters.isEmpty() && removedParameters.isEmpty() && parameterDiffList.isEmpty() &&
-		!visibilityChanged && !abstractionChanged && !finalChanged && !staticChanged && !synchronizedChanged && !returnTypeChanged && !operationRenamed && annotationListDiff.isEmpty();
+		!visibilityChanged && !abstractionChanged && !finalChanged && !staticChanged && !synchronizedChanged && !returnTypeChanged && !operationRenamed && annotationListDiff.isEmpty() && typeParameterListDiff.isEmpty();
 	}
 
 	public String toString() {
