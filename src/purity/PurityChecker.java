@@ -138,10 +138,12 @@ public class PurityChecker {
                 }
 
                 String methodName = ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName();
-                List<RenameVariableRefactoring> parametrizeVariableRefactoringList = getSpecificTypeRefactoring(refactorings,RenameVariableRefactoring.class);
-                for (RenameVariableRefactoring ref : parametrizeVariableRefactoringList) {
-                    if (!ref.getRefactoringType().equals(RefactoringType.PARAMETERIZE_VARIABLE)) {
-                        parametrizeVariableRefactoringList.remove(ref);
+                List<RenameVariableRefactoring> renameVariableRefactoringList = getSpecificTypeRefactoring(refactorings,RenameVariableRefactoring.class);
+                List<RenameVariableRefactoring> parametrizeVariableRefactoringList = new ArrayList<>();
+
+                for (RenameVariableRefactoring ref : renameVariableRefactoringList) {
+                    if (ref.getRefactoringType().equals(RefactoringType.PARAMETERIZE_VARIABLE)) {
+                        parametrizeVariableRefactoringList.add(ref);
                     }
                 }
 

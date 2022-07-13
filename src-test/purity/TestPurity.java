@@ -653,4 +653,87 @@ public class TestPurity {
                 assertTrue(pcr.get(refactoring).isPure());
         }
     }
+
+    @Test
+    public void extractMethodTest_36() throws RefactoringMinerTimedOutException, IOException {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/JetBrains/MPS.git",
+                "2bcd05a827ead109a56cb1f79a83dcd332f42888", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_37() throws RefactoringMinerTimedOutException, IOException {
+
+//        IMPURE MOVE METHOD - TODO
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/SonarSource/sonarqube.git",
+                "c55a8c3761e9aae9f375d312c14b1bbb9ee9c0fa", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_38() throws RefactoringMinerTimedOutException, IOException {
+
+//        IMPURE MOVE METHOD - TODO - deleted class
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/liferay/liferay-portal.git",
+                "59fd9e696cec5f2ed44c27422bbc426b11647321", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_39() throws RefactoringMinerTimedOutException, IOException {
+
+//        Pure PUSH DOWN METHOD - TODO
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectAtCommit("https://github.com/Alluxio/alluxio.git",
+                "6d10621465c0e6ae81ad8d240d70a55c72caeea6", new RefactoringHandler() {
+                    @Override
+                    public void handle(String commitId, List<Refactoring> refactorings) {
+
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings);
+
+                        for (Refactoring refactoring: refactorings){
+                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                                assertTrue(pcr.get(refactoring).isPure());
+                        }
+                    }
+                }, 100);
+    }
+
 }
