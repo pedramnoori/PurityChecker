@@ -710,6 +710,53 @@ public class GitHistoryRefactoringMinerImpl implements GitHistoryRefactoringMine
 		return refactoringsAtRevision;
 	}
 
+
+	public void detectModelDiff(String gitURL, String commitId, RefactoringHandler handler, int timeout) {
+		ExecutorService service = Executors.newSingleThreadExecutor();
+		Future<?> f = null;
+		try {
+			Runnable r = () -> ttt(handler, gitURL, commitId);
+			f = service.submit(r);
+			f.get(timeout, TimeUnit.SECONDS);
+		} catch (TimeoutException e) {
+			f.cancel(true);
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			service.shutdown();
+		}
+	}
+	protected void ttt(final RefactoringHandler handler, String gitURL, String currentCommitId) {
+		List<Refactoring> refactoringsAtRevision = Collections.emptyList();
+		UMLModelDiff modelDiff = null;
+		try {
+			Set<String> repositoryDirectoriesBefore = ConcurrentHashMap.newKeySet();
+			Set<String> repositoryDirectoriesCurrent = ConcurrentHashMap.newKeySet();
+			Map<String, String> fileContentsBefore = new ConcurrentHashMap<String, String>();
+			Map<String, String> fileContentsCurrent = new ConcurrentHashMap<String, String>();
+			Map<String, String> renamedFilesHint = new ConcurrentHashMap<String, String>();
+			populateWithGitHubAPI(gitURL, currentCommitId, fileContentsBefore, fileContentsCurrent, renamedFilesHint, repositoryDirectoriesBefore, repositoryDirectoriesCurrent);
+			List<MoveSourceFolderRefactoring> moveSourceFolderRefactorings = processIdenticalFiles(fileContentsBefore, fileContentsCurrent, renamedFilesHint);
+			UMLModel currentUMLModel = createModel(fileContentsCurrent, repositoryDirectoriesCurrent);
+			UMLModel parentUMLModel = createModel(fileContentsBefore, repositoryDirectoriesBefore);
+			//  Diff between currentModel e parentModel
+			modelDiff =  parentUMLModel.diff(currentUMLModel);
+		}
+		catch(RefactoringMinerTimedOutException e) {
+			logger.warn(String.format("Ignored revision %s due to timeout", currentCommitId), e);
+			handler.handleException(currentCommitId, e);
+		}
+		catch (Exception e) {
+			logger.warn(String.format("Ignored revision %s due to error", currentCommitId), e);
+			handler.handleException(currentCommitId, e);
+		}
+		handler.processModelDiff(currentCommitId, modelDiff);
+	}
+
+
+
 	private void populateWithGitHubAPI(String cloneURL, String currentCommitId,
 			Map<String, String> filesBefore, Map<String, String> filesCurrent, Map<String, String> renamedFilesHint,
 			Set<String> repositoryDirectoriesBefore, Set<String> repositoryDirectoriesCurrent) throws IOException, InterruptedException {

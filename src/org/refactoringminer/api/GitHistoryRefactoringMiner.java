@@ -87,6 +87,9 @@ public interface GitHistoryRefactoringMiner {
 	 */
 	void detectAtCommit(String gitURL, String commitId, RefactoringHandler handler, int timeout);
 
+	//TODO :
+	void detectModelDiff(String gitURL, String commitId, RefactoringHandler handler, int timeout);
+
 	/**
 	 * Detect refactorings performed in the specified pull request. All required information is extracted using the GitHub API.
 	 *

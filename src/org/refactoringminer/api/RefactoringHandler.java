@@ -1,5 +1,7 @@
 package org.refactoringminer.api;
 
+import gr.uom.java.xmi.diff.UMLModelDiff;
+
 import java.util.List;
 
 /**
@@ -48,4 +50,8 @@ public abstract class RefactoringHandler {
 	 * @param errorCommitsCount Total number of commits not analyzed due to errors.
 	 */
 	public void onFinish(int refactoringsCount, int commitsCount, int errorCommitsCount) {}
+
+	//TODO:
+	public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) {}
+
 }
