@@ -715,7 +715,13 @@ public class GitHistoryRefactoringMinerImpl implements GitHistoryRefactoringMine
 		ExecutorService service = Executors.newSingleThreadExecutor();
 		Future<?> f = null;
 		try {
-			Runnable r = () -> ttt(handler, gitURL, commitId);
+			Runnable r = () -> {
+				try {
+					ttt(handler, gitURL, commitId);
+				} catch (RefactoringMinerTimedOutException e) {
+					throw new RuntimeException(e);
+				}
+			};
 			f = service.submit(r);
 			f.get(timeout, TimeUnit.SECONDS);
 		} catch (TimeoutException e) {
@@ -728,7 +734,7 @@ public class GitHistoryRefactoringMinerImpl implements GitHistoryRefactoringMine
 			service.shutdown();
 		}
 	}
-	protected void ttt(final RefactoringHandler handler, String gitURL, String currentCommitId) {
+	protected void ttt(final RefactoringHandler handler, String gitURL, String currentCommitId) throws RefactoringMinerTimedOutException {
 		List<Refactoring> refactoringsAtRevision = Collections.emptyList();
 		UMLModelDiff modelDiff = null;
 		try {

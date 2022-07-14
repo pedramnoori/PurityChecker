@@ -24,7 +24,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/1/v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -42,7 +42,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\4\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
        for (Refactoring refactoring: refactorings){
@@ -58,7 +58,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/5/v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -74,7 +74,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\7\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -90,7 +90,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\8\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -106,7 +106,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/9/v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -122,7 +122,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/10/v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -138,7 +138,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\11\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -154,7 +154,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\12\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -170,7 +170,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\13\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -186,7 +186,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\14\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -397,7 +397,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\16\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -413,7 +413,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\17\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -468,7 +468,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\19\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -484,7 +484,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\18\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -500,7 +500,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\20\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -516,7 +516,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\21\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -532,7 +532,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\22\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -548,7 +548,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\23\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -564,7 +564,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\24\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -580,7 +580,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\25\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -596,7 +596,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\26\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -612,7 +612,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\27\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -628,7 +628,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\28\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -645,7 +645,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\29\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -757,26 +757,20 @@ public class TestPurity {
 //                }, 100);
 //    }
 
-//    @Test
-//    public void extractMethodTest_41() throws RefactoringMinerTimedOutException, IOException {
-//
-////        Extract Interface - Inherently pure - TODO
-//
-//        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-//        miner.detectAtCommit("https://github.com/SonarSource/sonarqube.git",
-//                "5ff305abb3068e420d8e54a796591d75acc8b8be", new RefactoringHandler() {
-//                    @Override
-//                    public void handle(String commitId, List<Refactoring> refactorings) {
-//
-//                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
-//
-//                        for (Refactoring refactoring: refactorings){
-//                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-//                                assertTrue(pcr.get(refactoring).isPure());
-//                        }
-//                    }
-//                }, 100);
-//    }
+    @Test
+    public void extractMethodTest_41() throws RefactoringMinerTimedOutException, IOException {
+
+//        Extract Interface - Inherently pure - TODO
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectModelDiff("https://github.com/SonarSource/sonarqube.git",
+                "5ff305abb3068e420d8e54a796591d75acc8b8be", new RefactoringHandler() {
+                    @Override
+                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
+                    }
+                }, 100);
+    }
 
 
     @Test
@@ -788,21 +782,8 @@ public class TestPurity {
         miner.detectModelDiff("https://github.com/eucalyptus/eucalyptus.git",
                 "5a38d0bca0e48853c3f7c00a0f098bada64797df", new RefactoringHandler() {
                     @Override
-                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) {
-                        System.out.println("hi");
-                    }
-                }, 100);
-        miner.detectAtCommit("https://github.com/eucalyptus/eucalyptus.git",
-                "5a38d0bca0e48853c3f7c00a0f098bada64797df", new RefactoringHandler() {
-                    @Override
-                    public void handle(String commitId, List<Refactoring> refactorings) {
-
-                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings,null);
-
-                        for (Refactoring refactoring: refactorings){
-                            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                                assertTrue(pcr.get(refactoring).isPure());
-                        }
+                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
                     }
                 }, 100);
     }
@@ -814,7 +795,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\30\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -830,7 +811,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\31\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
@@ -846,7 +827,7 @@ public class TestPurity {
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\32\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(refactorings, modelDiff);
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 
 
         for (Refactoring refactoring: refactorings){
