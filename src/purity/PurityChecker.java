@@ -1,16 +1,14 @@
 package purity;
 
 import gr.uom.java.xmi.LocationInfo;
-import gr.uom.java.xmi.UMLParameter;
+import gr.uom.java.xmi.UMLOperation;
 import gr.uom.java.xmi.decomposition.AbstractCall;
 import gr.uom.java.xmi.decomposition.AbstractCodeFragment;
 import gr.uom.java.xmi.decomposition.AbstractCodeMapping;
+import gr.uom.java.xmi.decomposition.UMLOperationBodyMapper;
 import gr.uom.java.xmi.decomposition.replacement.MethodInvocationReplacement;
 import gr.uom.java.xmi.decomposition.replacement.Replacement;
-import gr.uom.java.xmi.diff.ExtractOperationRefactoring;
-import gr.uom.java.xmi.diff.RenameClassRefactoring;
-import gr.uom.java.xmi.diff.RenameOperationRefactoring;
-import gr.uom.java.xmi.diff.RenameVariableRefactoring;
+import gr.uom.java.xmi.diff.*;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;
 
@@ -19,23 +17,23 @@ import java.util.stream.Collectors;
 
 public class PurityChecker {
 
-    public static Map<Refactoring, PurityCheckResult> isPure(List<Refactoring> refactorings){
+    public static Map<Refactoring, PurityCheckResult> isPure(List<Refactoring> refactorings, UMLModelDiff modelDiff){
         Map<Refactoring, PurityCheckResult> purityCheckResults = new LinkedHashMap<>();
 
         for (Refactoring refactoring: refactorings){
-            purityCheckResults.put(refactoring, checkPurity(refactoring, refactorings));
+            purityCheckResults.put(refactoring, checkPurity(refactoring, refactorings, modelDiff));
         }
         return purityCheckResults;
     }
 
-    private static PurityCheckResult checkPurity(Refactoring refactoring, List<Refactoring> refactorings){
+    private static PurityCheckResult checkPurity(Refactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff){
         PurityCheckResult result;
         switch (refactoring.getRefactoringType()){
             case EXTRACT_OPERATION:
                 result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings);
                 break;
             case RENAME_CLASS:
-                result = detectRenameClassPurity((RenameClassRefactoring) refactoring);
+                result = detectRenameClassPurity((RenameClassRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case RENAME_VARIABLE:
                 result = detectRenameVariablePurity((RenameVariableRefactoring) refactoring);
@@ -51,9 +49,57 @@ public class PurityChecker {
         return result;
     }
 
-    private static PurityCheckResult detectRenameClassPurity(RenameClassRefactoring refactoring) {
+    private static PurityCheckResult detectRenameClassPurity(RenameClassRefactoring refactoring,  List<Refactoring> refactorings, UMLModelDiff modelDiff) {
 
-        return new PurityCheckResult(true, "Rename Class refactorings are always pure!");
+        System.out.println("Here honey");
+
+        for (UMLClassRenameDiff umlClassRenameDiff :modelDiff.getClassRenameDiffList()) {
+            int numberOfMappedOperations = umlClassRenameDiff.getOperationBodyMapperList().size();
+            int numberOfOperationsOfOriginalClass = umlClassRenameDiff.getOriginalClass().getOperations().size();
+            int numberOfOperationsOfRenamedClass = umlClassRenameDiff.getRenamedClass().getOperations().size();
+
+            if (numberOfMappedOperations == numberOfOperationsOfOriginalClass && numberOfOperationsOfOriginalClass == numberOfOperationsOfRenamedClass)
+                return new PurityCheckResult(true, "All the operations inside the original and renamed classes are mapped!");
+
+            List<UMLOperation> originalClassOperationsMapper = new ArrayList<>();
+            List<UMLOperation> renamedClassOperationsMapper = new ArrayList<>();
+
+
+            for (UMLOperationBodyMapper umlOperationBodyMapper : umlClassRenameDiff.getOperationBodyMapperList()) {
+                originalClassOperationsMapper.add(umlOperationBodyMapper.getOperation1());
+                renamedClassOperationsMapper.add(umlOperationBodyMapper.getOperation2());
+            }
+
+            List<UMLOperation> removedOperationsList = new ArrayList<>(umlClassRenameDiff.getOriginalClass().getOperations());
+
+            List<UMLOperation> addedOperationsList = new ArrayList<>(umlClassRenameDiff.getRenamedClass().getOperations());
+
+            removedOperationsList.removeAll(originalClassOperationsMapper);
+            addedOperationsList.removeAll(renamedClassOperationsMapper);
+
+            System.out.println("Hoy!");
+
+            for (Refactoring refactoring1: refactorings) {
+                if(refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+                    addedOperationsList.remove(((ExtractOperationRefactoring) refactoring1).getExtractedOperation());
+                }
+                if(refactoring1.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+                    removedOperationsList.remove(((InlineOperationRefactoring) refactoring1).getInlinedOperation());
+                }
+            }
+
+            if (removedOperationsList.isEmpty() && addedOperationsList.isEmpty()) {
+                return new PurityCheckResult(true, "Added or removed operations are justified with other refactorings");
+            }
+
+//            TODO
+
+
+
+
+        }
+
+        return new PurityCheckResult(false, "This Rename Class refactoring is impure");
     }
 
     private static PurityCheckResult detectRenameVariablePurity(RenameVariableRefactoring refactoring) {
