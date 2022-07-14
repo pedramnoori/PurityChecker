@@ -10,6 +10,7 @@ import gr.uom.java.xmi.decomposition.replacement.MethodInvocationReplacement;
 import gr.uom.java.xmi.decomposition.replacement.Replacement;
 import gr.uom.java.xmi.diff.*;
 import org.refactoringminer.api.Refactoring;
+import org.refactoringminer.api.RefactoringMinerTimedOutException;
 import org.refactoringminer.api.RefactoringType;
 
 import java.util.*;
@@ -17,8 +18,10 @@ import java.util.stream.Collectors;
 
 public class PurityChecker {
 
-    public static Map<Refactoring, PurityCheckResult> isPure(List<Refactoring> refactorings, UMLModelDiff modelDiff){
+    public static Map<Refactoring, PurityCheckResult> isPure(UMLModelDiff modelDiff) throws RefactoringMinerTimedOutException {
         Map<Refactoring, PurityCheckResult> purityCheckResults = new LinkedHashMap<>();
+        List<Refactoring> refactorings = new ArrayList<>(modelDiff.getRefactorings());
+
 
         for (Refactoring refactoring: refactorings){
             purityCheckResults.put(refactoring, checkPurity(refactoring, refactorings, modelDiff));
