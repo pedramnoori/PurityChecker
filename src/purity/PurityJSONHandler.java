@@ -23,11 +23,11 @@ public class PurityJSONHandler {
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\datatest.json", "C:\\Users\\Pedram\\Desktop\\PurityTestdata.json");
 
-        runPurityonSpecificRefactoringOperation("C:\\Users\\Pedram\\Desktop\\PurityTestdata.json", "Extract Method");
+        runPurityOnSpecificRefactoringOperation("C:\\Users\\Pedram\\Desktop\\PurityTestdata.json", RefactoringType.EXTRACT_OPERATION);
 
     }
 
-    private static void runPurityonSpecificRefactoringOperation(String sourcePath, String refactoringOperation) {
+    private static void runPurityOnSpecificRefactoringOperation(String sourcePath, RefactoringType refactoringType) {
 
         ObjectMapper objectMapper = new ObjectMapper();
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
@@ -37,18 +37,18 @@ public class PurityJSONHandler {
         try {
             JsonNode root = objectMapper.readTree(file);
 
-            for (JsonNode jsonNode: root) {
-                for (JsonNode refactoring: jsonNode.get("refactorings")) {
-                    if (refactoring.get("type").textValue().equals(refactoringOperation) && (refactoring.get("validation").textValue().equals("TP") || refactoring.get("validation").textValue().equals("FN"))) {
-                        if (!refactoring.get("purity").textValue().equals("-")) {
-                            miner.detectModelDiff(jsonNode.get("repository").textValue(),
-                                    jsonNode.get("sha1").textValue(), new RefactoringHandler() {
-                                        @Override
-                                        public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
-                                            Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
+            for (JsonNode jsonNode : root) {
+                miner.detectModelDiff(jsonNode.get("repository").textValue(),
+                        jsonNode.get("sha1").textValue(), new RefactoringHandler() {
+                            @Override
+                            public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                                Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
 
-                                            for (Map.Entry<Refactoring, PurityCheckResult> entry : pcr.entrySet()) {
-                                                if (entry.getKey().getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+                                for (JsonNode refactoring : jsonNode.get("refactorings")) {
+                                    if (refactoring.get("validation").textValue().equals("TP") || refactoring.get("validation").textValue().equals("FN")) {
+                                        for (Map.Entry<Refactoring, PurityCheckResult> entry : pcr.entrySet()) {
+                                            if (entry.getValue() != null) {
+                                                if (entry.getKey().toString().replaceAll("\\s+", "").equals(refactoring.get("description").textValue().replaceAll("\\s+", ""))) {
                                                     ObjectNode objectNode = (ObjectNode) refactoring;
                                                     if (entry.getValue().isPure() && refactoring.get("purity").textValue().equals("1")) {
                                                         objectNode.put("purityValidation", "TP");
@@ -59,24 +59,21 @@ public class PurityJSONHandler {
                                                     } else if (!entry.getValue().isPure() && refactoring.get("purity").textValue().equals("1")) {
                                                         objectNode.put("purityValidation", "FN");
                                                     }
-
+                                                    break;
                                                 }
                                             }
                                         }
-                                    }, 100);
-                        }
-                    }
-                }
-                arrayNode.add(jsonNode);
+                                    }
+                                }
+                                arrayNode.add(jsonNode);
+                            }
+                        }, 100);
             }
-
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\TestRes.json"), arrayNode);
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     private static void addPurityFields(String sourcePath, String destPath) {
