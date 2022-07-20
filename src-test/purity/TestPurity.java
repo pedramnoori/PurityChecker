@@ -870,4 +870,61 @@ public class TestPurity {
                 }, 100);
     }
 
+    @Test
+    public void extractMethodTest_48() throws RefactoringMinerTimedOutException, IOException {
+
+//        Extract Interface - Inherently pure - TODO
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectModelDiff("https://github.com/apache/giraph.git",
+                "add1d4f07c925b8a9044cb3aa5bb4abdeaf49fc7", new RefactoringHandler() {
+                    @Override
+                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
+                        System.out.println("HERE");
+//                        for (Refactoring refactoring: pcr.keySet()) {
+//                            if (refactoring.getRefactoringType().equals(RefactoringType.RENAME_METHOD))
+//                        }
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_49() throws RefactoringMinerTimedOutException, IOException {
+
+//        Extract Interface - Inherently pure - TODO
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectModelDiff("https://github.com/apache/helix.git",
+                "579baa5bb061bec9d5b38731f20f51ea29a05f42", new RefactoringHandler() {
+                    @Override
+                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
+                        System.out.println("HERE");
+//                        for (Refactoring refactoring: pcr.keySet()) {
+//                            if (refactoring.getRefactoringType().equals(RefactoringType.RENAME_METHOD))
+//                        }
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_50() throws RefactoringMinerTimedOutException, IOException {
+
+//        Extract Interface - Inherently pure - TODO
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectModelDiff("https://github.com/apache/mina-sshd.git",
+                "914266e78bbf2efb5ae6f57ee91b706410c94592", new RefactoringHandler() {
+                    @Override
+                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
+                        System.out.println("HERE");
+//                        for (Refactoring refactoring: pcr.keySet()) {
+//                            if (refactoring.getRefactoringType().equals(RefactoringType.RENAME_METHOD))
+//                        }
+                    }
+                }, 100);
+    }
+
 }

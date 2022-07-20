@@ -14,7 +14,7 @@ import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
+import java.util.*;
 
 public class PurityJSONHandler {
 
@@ -23,11 +23,66 @@ public class PurityJSONHandler {
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\datatest.json", "C:\\Users\\Pedram\\Desktop\\PurityTestdata.json");
 
-        runPurityOnSpecificRefactoringOperation("C:\\Users\\Pedram\\Desktop\\PurityTestdata.json", RefactoringType.EXTRACT_OPERATION);
+//        runPurity("C:\\Users\\Pedram\\Desktop\\PurityTestdata.json");
+        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\TestRes.json", RefactoringType.EXTRACT_OPERATION);
 
     }
 
-    private static void runPurityOnSpecificRefactoringOperation(String sourcePath, RefactoringType refactoringType) {
+    private static void calculatePrecisionAndRecallOnSpecificRefactoring(String sourcePath, RefactoringType refactoringType) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        File file = new File(sourcePath);
+
+        int TPCounter = 0;
+        int TNCounter = 0;
+        int FPCounter = 0;
+        int FNCounter = 0;
+        float precision;
+        float recall;
+
+        try {
+            List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
+            System.out.println("HERE!");
+            TPCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurityValidation().equals("TP")).count();
+            TNCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurityValidation().equals("TN")).count();
+            FPCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurityValidation().equals("FP")).count();
+            FNCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurityValidation().equals("FN")).count();
+
+            precision = precisionCalculator(TPCounter, TNCounter, FPCounter, FNCounter);
+            recall = recallCalculator(TPCounter, TNCounter, FPCounter, FNCounter);
+
+            System.out.println("Precision for " + refactoringType.getDisplayName() + " refactoring is: " + precision * 100);
+            System.out.println("Recall for " + refactoringType.getDisplayName() + " refactoring is: " + recall * 100);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static float recallCalculator(int tpCounter, int tnCounter, int fpCounter, int fnCounter) {
+
+        float res = 0;
+        try {
+            res = tpCounter / ((float) tpCounter + (float) fnCounter);
+        }catch (ArithmeticException e) {
+            System.out.println("Division by zero!");
+        }
+        return res;
+
+    }
+
+    private static float precisionCalculator(int tpCounter, int tnCounter, int fpCounter, int fnCounter) {
+
+        float res = 0;
+        try {
+            res = tpCounter / ((float) tpCounter + (float) fpCounter);
+        }catch (ArithmeticException e) {
+            System.out.println("Division by zero!");
+        }
+        return res;
+    }
+
+    private static void runPurity(String sourcePath) {
 
         ObjectMapper objectMapper = new ObjectMapper();
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
@@ -67,6 +122,7 @@ public class PurityJSONHandler {
                                 }
                                 arrayNode.add(jsonNode);
                             }
+
                         }, 100);
             }
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
