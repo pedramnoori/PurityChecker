@@ -22,8 +22,10 @@ public class PurityJSONHandler {
 
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\datatest.json", "C:\\Users\\Pedram\\Desktop\\PurityTestdata.json");
+//        addPurityFields("C:\\Users\\Pedram\\Desktop\\datatest.json", "C:\\Users\\Pedram\\Desktop\\PurityTestdata2.json");
 
 //        runPurity("C:\\Users\\Pedram\\Desktop\\PurityTestdata.json");
+//        runPurity("C:\\Users\\Pedram\\Desktop\\PurityTestdata2.json");
         calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\TestRes.json", RefactoringType.EXTRACT_OPERATION);
 
     }
@@ -43,10 +45,10 @@ public class PurityJSONHandler {
         try {
             List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
             System.out.println("HERE!");
-            TPCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurityValidation().equals("TP")).count();
-            TNCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurityValidation().equals("TN")).count();
-            FPCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurityValidation().equals("FP")).count();
-            FNCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurityValidation().equals("FN")).count();
+            TPCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurity().getPurityValidation().equals("TP")).count();
+            TNCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurity().getPurityValidation().equals("TN")).count();
+            FPCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurity().getPurityValidation().equals("FP")).count();
+            FNCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurity().getPurityValidation().equals("FN")).count();
 
             precision = precisionCalculator(TPCounter, TNCounter, FPCounter, FNCounter);
             recall = recallCalculator(TPCounter, TNCounter, FPCounter, FNCounter);
@@ -104,14 +106,14 @@ public class PurityJSONHandler {
                                         for (Map.Entry<Refactoring, PurityCheckResult> entry : pcr.entrySet()) {
                                             if (entry.getValue() != null) {
                                                 if (entry.getKey().toString().replaceAll("\\s+", "").equals(refactoring.get("description").textValue().replaceAll("\\s+", ""))) {
-                                                    ObjectNode objectNode = (ObjectNode) refactoring;
-                                                    if (entry.getValue().isPure() && refactoring.get("purity").textValue().equals("1")) {
+                                                    ObjectNode objectNode = (ObjectNode) refactoring.get("purity");
+                                                    if (entry.getValue().isPure() && refactoring.get("purity").get("purityValue").textValue().equals("1")) {
                                                         objectNode.put("purityValidation", "TP");
-                                                    } else if (!entry.getValue().isPure() && refactoring.get("purity").textValue().equals("0")) {
+                                                    } else if (!entry.getValue().isPure() && refactoring.get("purity").get("purityValue").textValue().equals("0")) {
                                                         objectNode.put("purityValidation", "TN");
-                                                    } else if (entry.getValue().isPure() && refactoring.get("purity").textValue().equals("0")) {
+                                                    } else if (entry.getValue().isPure() && refactoring.get("purity").get("purityValue").textValue().equals("0")) {
                                                         objectNode.put("purityValidation", "FP");
-                                                    } else if (!entry.getValue().isPure() && refactoring.get("purity").textValue().equals("1")) {
+                                                    } else if (!entry.getValue().isPure() && refactoring.get("purity").get("purityValue").textValue().equals("1")) {
                                                         objectNode.put("purityValidation", "FN");
                                                     }
                                                     break;
@@ -145,9 +147,13 @@ public class PurityJSONHandler {
 
                 for (JsonNode refactoring: jsonNode.get("refactorings")) {
                     ObjectNode objectNode = (ObjectNode) refactoring;
-                    objectNode.put("purity", "-");
-                    objectNode.put("purityValidation", "-");
-                    objectNode.put("purityComment", "");
+                    ObjectNode purity = objectMapper.createObjectNode();
+
+                    purity.put("purityValue", "-");
+                    purity.put("purityValidation", "-");
+                    purity.put("purityComment", "");
+
+                    objectNode.set("purity", purity);
                 }
                 arrayNode.add(jsonNode);
             }

@@ -8,9 +8,16 @@ public class RefactoringJson {
     private String validation;
     private String detectionTools;
     private String validators;
-    private String purity;
-    private String purityValidation;
-    private String purityComment;
+    private Purity purity;
+
+
+    public Purity getPurity() {
+        return purity;
+    }
+
+    public void setPurity(Purity purity) {
+        this.purity = purity;
+    }
 
     public String getType() {
         return type;
@@ -58,29 +65,5 @@ public class RefactoringJson {
 
     public void setValidators(String validators) {
         this.validators = validators;
-    }
-
-    public String getPurity() {
-        return purity;
-    }
-
-    public void setPurity(String purity) {
-        this.purity = purity;
-    }
-
-    public String getPurityValidation() {
-        return purityValidation;
-    }
-
-    public void setPurityValidation(String purityValidation) {
-        this.purityValidation = purityValidation;
-    }
-
-    public String getPurityComment() {
-        return purityComment;
-    }
-
-    public void setPurityComment(String purityComment) {
-        this.purityComment = purityComment;
     }
 }
