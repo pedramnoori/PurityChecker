@@ -280,6 +280,7 @@ public class PurityChecker {
 
 
     private static boolean AlTest(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, float temp) {
+
         List<RenameOperationRefactoring> renameOperationRefactoringList = getSpecificTypeRefactoring(refactorings,RenameOperationRefactoring.class);
         int nonMappedT2 = refactoring.getBodyMapper().getNonMappedLeavesT2().size();
         for(AbstractCodeFragment abstractCodeFragment2 : refactoring.getBodyMapper().getNonMappedLeavesT2()) {
