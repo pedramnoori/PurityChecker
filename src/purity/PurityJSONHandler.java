@@ -69,6 +69,11 @@ public class PurityJSONHandler {
             precision = precisionCalculator(TPCounter, TNCounter, FPCounter, FNCounter);
             recall = recallCalculator(TPCounter, TNCounter, FPCounter, FNCounter);
 
+            System.out.println("Number of true positives for " + refactoringType.getDisplayName() + " refactoring is: " + TPCounter);
+            System.out.println("Number of true negatives for " + refactoringType.getDisplayName() + " refactoring is: " + TNCounter);
+            System.out.println("Number of false positives for " + refactoringType.getDisplayName() + " refactoring is: " + FPCounter);
+            System.out.println("Number of false negatives for " + refactoringType.getDisplayName() + " refactoring is: " + FNCounter);
+
             System.out.println("Precision for " + refactoringType.getDisplayName() + " refactoring is: " + precision * 100);
             System.out.println("Recall for " + refactoringType.getDisplayName() + " refactoring is: " + recall * 100);
             System.out.println("F-score for " + refactoringType.getDisplayName() + " refactoring is: " + (2 * precision * recall) / (float) (precision + recall));
