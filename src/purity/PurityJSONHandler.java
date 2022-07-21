@@ -21,13 +21,30 @@ public class PurityJSONHandler {
     public static void main(String[] args) {
 
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
-//        addPurityFields("C:\\Users\\Pedram\\Desktop\\datatest.json", "C:\\Users\\Pedram\\Desktop\\PurityTestdata.json");
-//        addPurityFields("C:\\Users\\Pedram\\Desktop\\datatest.json", "C:\\Users\\Pedram\\Desktop\\PurityTestdata2.json");
 
-//        runPurity("C:\\Users\\Pedram\\Desktop\\PurityTestdata.json");
-//        runPurity("C:\\Users\\Pedram\\Desktop\\PurityTestdata2.json");
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\TestRes.json", RefactoringType.EXTRACT_OPERATION);
+        getStatistics("C:\\Users\\Pedram\\Desktop\\Puritydata.json");
+//        runPurity("C:\\Users\\Pedram\\Desktop\\PuritydataTest.json");
+        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\PurityResTest.json", RefactoringType.EXTRACT_OPERATION);
 
+    }
+
+    private static void getStatistics(String sourcePath) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        File file = new File(sourcePath);
+
+        try {
+            List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
+
+            int numberOfExtractMethodRefactoringsProcessed = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> !r.getPurity().getPurityValue().equals("-")).filter(r -> r.getType().equals("Extract Method")).count();
+            int numberOfExtractMethodRefactorings = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals("Extract Method")).count();
+
+            System.out.println(numberOfExtractMethodRefactorings);
+            System.out.println(numberOfExtractMethodRefactoringsProcessed);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void calculatePrecisionAndRecallOnSpecificRefactoring(String sourcePath, RefactoringType refactoringType) {
@@ -44,7 +61,6 @@ public class PurityJSONHandler {
 
         try {
             List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
-            System.out.println("HERE!");
             TPCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurity().getPurityValidation().equals("TP")).count();
             TNCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurity().getPurityValidation().equals("TN")).count();
             FPCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals(refactoringType.getDisplayName())).filter(r -> r.getPurity().getPurityValidation().equals("FP")).count();
@@ -55,6 +71,7 @@ public class PurityJSONHandler {
 
             System.out.println("Precision for " + refactoringType.getDisplayName() + " refactoring is: " + precision * 100);
             System.out.println("Recall for " + refactoringType.getDisplayName() + " refactoring is: " + recall * 100);
+            System.out.println("F-score for " + refactoringType.getDisplayName() + " refactoring is: " + (2 * precision * recall) / (float) (precision + recall));
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -105,7 +122,8 @@ public class PurityJSONHandler {
                                     if (refactoring.get("validation").textValue().equals("TP") || refactoring.get("validation").textValue().equals("FN")) {
                                         for (Map.Entry<Refactoring, PurityCheckResult> entry : pcr.entrySet()) {
                                             if (entry.getValue() != null) {
-                                                if (entry.getKey().toString().replaceAll("\\s+", "").equals(refactoring.get("description").textValue().replaceAll("\\s+", ""))) {
+                                                if (entry.getKey().toString().replaceAll("\\s+", "").equals(refactoring.get("description").textValue().replaceAll("\\s+", ""))
+                                                && (refactoring.get("detectionTools").textValue().contains("RefactoringMiner")) || refactoring.get("detectionTools").textValue().contains("RMiner")) {
                                                     ObjectNode objectNode = (ObjectNode) refactoring.get("purity");
                                                     if (entry.getValue().isPure() && refactoring.get("purity").get("purityValue").textValue().equals("1")) {
                                                         objectNode.put("purityValidation", "TP");
@@ -128,7 +146,7 @@ public class PurityJSONHandler {
                         }, 100);
             }
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\TestRes.json"), arrayNode);
+            objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\PurityResTest.json"), arrayNode);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

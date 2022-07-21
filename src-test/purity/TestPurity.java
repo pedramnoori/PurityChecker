@@ -914,8 +914,8 @@ public class TestPurity {
 //        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/apache/mina-sshd.git",
-                "914266e78bbf2efb5ae6f57ee91b706410c94592", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/orientechnologies/orientdb.git",
+                "b40adc25008b6f608ee3eb3422c8884fff987337", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);

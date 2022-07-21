@@ -210,6 +210,9 @@ public class PurityChecker {
                     }
                 }
             }
+        if (methodInvocationReplacements.isEmpty()) {
+            return false;
+        }
 
         return true;
         }
