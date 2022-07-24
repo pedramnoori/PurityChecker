@@ -592,8 +592,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_32() throws RefactoringMinerTimedOutException, IOException {
         // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\26\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\26\\v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/26/v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/26/v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
@@ -624,8 +624,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_34() throws RefactoringMinerTimedOutException, IOException {
         // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\28\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\28\\v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/28/v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/28/v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
@@ -895,8 +895,8 @@ public class TestPurity {
 //        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/apache/helix.git",
-                "579baa5bb061bec9d5b38731f20f51ea29a05f42", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/elastic/elasticsearch.git",
+                "ff9041dc486adf0a8dec41f80bbfbdd49f97016a", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
@@ -914,8 +914,8 @@ public class TestPurity {
 //        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/JetBrains/intellij-community.git",
-                "219d6ddfd1db62c11efb57e0216436874e087834", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/rstudio/rstudio.git",
+                "cb49e436b9d7ee55f2531ebc2ef1863f5c9ba9fe", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);

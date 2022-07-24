@@ -22,11 +22,11 @@ public class PurityJSONHandler {
 
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 
-//        runPurity("C:\\Users\\Pedram\\Desktop\\PuritydataTest.json");
+        runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataTest.json");
 
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\PurityResTest.json", RefactoringType.EXTRACT_OPERATION);
+        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResTest.json", RefactoringType.EXTRACT_OPERATION);
 
-        getStatistics("C:\\Users\\Pedram\\Desktop\\Puritydata.json");
+        getStatistics("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
     }
 
@@ -77,7 +77,7 @@ public class PurityJSONHandler {
             System.out.println("Number of true negatives for " + refactoringType.getDisplayName() + " refactoring is: " + TNCounter);
             System.out.println("Number of false positives for " + refactoringType.getDisplayName() + " refactoring is: " + FPCounter);
             System.out.println("Number of false negatives for " + refactoringType.getDisplayName() + " refactoring is: " + FNCounter);
-
+            System.out.println();
             System.out.println("Precision for " + refactoringType.getDisplayName() + " refactoring is: " + precision * 100);
             System.out.println("Recall for " + refactoringType.getDisplayName() + " refactoring is: " + recall * 100);
             System.out.println("F-score for " + refactoringType.getDisplayName() + " refactoring is: " + fScore);
@@ -144,7 +144,7 @@ public class PurityJSONHandler {
                                         for (Map.Entry<Refactoring, PurityCheckResult> entry : pcr.entrySet()) {
                                             if (entry.getValue() != null) {
                                                 if (entry.getKey().toString().replaceAll("\\s+", "").equals(refactoring.get("description").textValue().replaceAll("\\s+", ""))
-                                                && (refactoring.get("detectionTools").textValue().contains("RefactoringMiner")) || refactoring.get("detectionTools").textValue().contains("RMiner")) {
+                                                && (refactoring.get("detectionTools").textValue().contains("RefactoringMiner") || refactoring.get("detectionTools").textValue().contains("RMiner"))) {
                                                     ObjectNode objectNode = (ObjectNode) refactoring.get("purity");
                                                     if (entry.getValue().isPure() && refactoring.get("purity").get("purityValue").textValue().equals("1")) {
                                                         objectNode.put("purityValidation", "TP");
@@ -167,7 +167,7 @@ public class PurityJSONHandler {
                         }, 100);
             }
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\PurityResTest.json"), arrayNode);
+            objectMapper.writeValue(new File("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResTest.json"), arrayNode);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

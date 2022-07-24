@@ -54,7 +54,6 @@ public class PurityChecker {
 
     private static PurityCheckResult detectRenameClassPurity(RenameClassRefactoring refactoring,  List<Refactoring> refactorings, UMLModelDiff modelDiff) {
 
-        System.out.println("Here honey");
 
         for (UMLClassRenameDiff umlClassRenameDiff :modelDiff.getClassRenameDiffList()) {
             int numberOfMappedOperations = umlClassRenameDiff.getOperationBodyMapperList().size();
@@ -120,8 +119,12 @@ public class PurityChecker {
         if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty()) {
 
 //            only renames
-            if (refactoring.getBodyMapper().allMappingsAreExactMatches())
+//            if (refactoring.getBodyMapper().allMappingsAreExactMatches())
+//                return new PurityCheckResult(true, "All the mappings are matched! - all mapped");
+
+            if (refactoring.getBodyMapper().allMappingsArePurelyMatched()) {
                 return new PurityCheckResult(true, "All the mappings are matched! - all mapped");
+            }
 
 
             if (allReplacementsAreVariableNameOrType(refactoring.getReplacements(), 0))
@@ -157,7 +160,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Adding return statement and variable name changed - with non-mapped leaves");
 
 //            Handling FIRST issue
-            else if ((refactoring.getBodyMapper().allMappingsAreExactMatches() || allReplacementsAreVariableNameOrType(refactoring.getReplacements(), 0)) && AlTest(refactoring, refactorings, 2)) {
+            else if ((refactoring.getBodyMapper().allMappingsAreExactMatches() || allReplacementsAreVariableNameOrType(refactoring.getReplacements(), 0)) && renameOnTop(refactoring, refactorings, 2)) {
                 return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - with non-mapped leaves");
             }
 
@@ -165,7 +168,7 @@ public class PurityChecker {
                 return new PurityCheckResult(false, "Violating extract method refactoring mechanics - with non-mapped leaves");
         }
 
-        return new PurityCheckResult(true, "Adding return statement or rename variable - END");
+        return new PurityCheckResult(false, "Not decided yet!");
     }
 
     private static boolean checkForParametrizationOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
@@ -279,7 +282,7 @@ public class PurityChecker {
     }
 
 
-    private static boolean AlTest(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, float temp) {
+    private static boolean renameOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, float temp) {
 
         List<RenameOperationRefactoring> renameOperationRefactoringList = getSpecificTypeRefactoring(refactorings,RenameOperationRefactoring.class);
         int nonMappedT2 = refactoring.getBodyMapper().getNonMappedLeavesT2().size();
@@ -413,8 +416,7 @@ public class PurityChecker {
         int counter = 0;
 
         for (Replacement rep: replacements) {
-            if (rep.getType().equals(Replacement.ReplacementType.VARIABLE_NAME) ||
-                    rep.getType().equals(Replacement.ReplacementType.TYPE)) {
+            if (rep.getType().equals(Replacement.ReplacementType.TYPE)) {
 
             }else {
                 counter += 1;

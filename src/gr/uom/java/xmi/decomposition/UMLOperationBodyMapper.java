@@ -1,76 +1,21 @@
 package gr.uom.java.xmi.decomposition;
 
-import gr.uom.java.xmi.UMLAnonymousClass;
-import gr.uom.java.xmi.UMLAttribute;
-import gr.uom.java.xmi.UMLInitializer;
-import gr.uom.java.xmi.UMLOperation;
-import gr.uom.java.xmi.UMLParameter;
-import gr.uom.java.xmi.UMLType;
-import gr.uom.java.xmi.VariableDeclarationContainer;
 import gr.uom.java.xmi.LocationInfo.CodeElementType;
+import gr.uom.java.xmi.*;
 import gr.uom.java.xmi.decomposition.AbstractCall.StatementCoverageType;
-import gr.uom.java.xmi.decomposition.replacement.AddVariableReplacement;
-import gr.uom.java.xmi.decomposition.replacement.ClassInstanceCreationWithMethodInvocationReplacement;
-import gr.uom.java.xmi.decomposition.replacement.CompositeReplacement;
-import gr.uom.java.xmi.decomposition.replacement.IntersectionReplacement;
-import gr.uom.java.xmi.decomposition.replacement.MergeVariableReplacement;
-import gr.uom.java.xmi.decomposition.replacement.MethodInvocationReplacement;
-import gr.uom.java.xmi.decomposition.replacement.MethodInvocationWithClassInstanceCreationReplacement;
-import gr.uom.java.xmi.decomposition.replacement.ObjectCreationReplacement;
-import gr.uom.java.xmi.decomposition.replacement.Replacement;
-import gr.uom.java.xmi.decomposition.replacement.SplitVariableReplacement;
-import gr.uom.java.xmi.decomposition.replacement.SwapArgumentReplacement;
+import gr.uom.java.xmi.decomposition.replacement.*;
 import gr.uom.java.xmi.decomposition.replacement.Replacement.ReplacementType;
-import gr.uom.java.xmi.decomposition.replacement.VariableReplacementWithMethodInvocation;
 import gr.uom.java.xmi.decomposition.replacement.VariableReplacementWithMethodInvocation.Direction;
-import gr.uom.java.xmi.diff.UMLAnonymousClassDiff;
-import gr.uom.java.xmi.diff.UMLClassBaseDiff;
-import gr.uom.java.xmi.diff.AddParameterRefactoring;
-import gr.uom.java.xmi.diff.CandidateAttributeRefactoring;
-import gr.uom.java.xmi.diff.CandidateMergeVariableRefactoring;
-import gr.uom.java.xmi.diff.CandidateSplitVariableRefactoring;
-import gr.uom.java.xmi.diff.ExtractOperationRefactoring;
-import gr.uom.java.xmi.diff.ExtractVariableRefactoring;
-import gr.uom.java.xmi.diff.InlineOperationRefactoring;
-import gr.uom.java.xmi.diff.InlineVariableRefactoring;
-import gr.uom.java.xmi.diff.MergeVariableRefactoring;
-import gr.uom.java.xmi.diff.ReferenceBasedRefactoring;
-import gr.uom.java.xmi.diff.RemoveParameterRefactoring;
-import gr.uom.java.xmi.diff.ReplaceAnonymousWithLambdaRefactoring;
-import gr.uom.java.xmi.diff.ReplaceLoopWithPipelineRefactoring;
-import gr.uom.java.xmi.diff.ReplacePipelineWithLoopRefactoring;
-import gr.uom.java.xmi.diff.SplitVariableRefactoring;
-import gr.uom.java.xmi.diff.StringDistance;
-import gr.uom.java.xmi.diff.UMLAbstractClassDiff;
-import gr.uom.java.xmi.diff.UMLClassMoveDiff;
-import gr.uom.java.xmi.diff.UMLModelDiff;
-import gr.uom.java.xmi.diff.UMLOperationDiff;
-import gr.uom.java.xmi.diff.UMLParameterDiff;
-
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-
+import gr.uom.java.xmi.diff.*;
 import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringMinerTimedOutException;
 import org.refactoringminer.api.RefactoringType;
 import org.refactoringminer.util.PrefixSuffixUtils;
+
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper> {
 	private VariableDeclarationContainer container1;
@@ -1866,6 +1811,19 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 			return true;
 		}
 		return false;
+	}
+
+	public boolean allMappingsArePurelyMatched() {
+
+		Set<AbstractCodeMapping> mappings = getMappings();
+
+		for (AbstractCodeMapping mapping: mappings) {
+			if (!mapping.isPurelyExact()) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	private int editDistance() {
