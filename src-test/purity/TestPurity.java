@@ -20,8 +20,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_1() throws RefactoringMinerTimedOutException, IOException {
 
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/1/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/1/v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\1\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\1\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
@@ -592,8 +592,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_32() throws RefactoringMinerTimedOutException, IOException {
         // _
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/26/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/26/v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\26\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\26\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
@@ -624,8 +624,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_34() throws RefactoringMinerTimedOutException, IOException {
         // _
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/28/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/28/v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\28\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\28\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
@@ -914,8 +914,8 @@ public class TestPurity {
 //        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/rstudio/rstudio.git",
-                "cb49e436b9d7ee55f2531ebc2ef1863f5c9ba9fe", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/oblac/jodd.git",
+                "722ef9156896248ef3fbe83adde0f6ff8f46856a", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);

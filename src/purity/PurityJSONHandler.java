@@ -22,11 +22,11 @@ public class PurityJSONHandler {
 
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 
-        runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataTest.json");
+//        runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataTest.json");
 
-        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResTest.json", RefactoringType.EXTRACT_OPERATION);
+        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
 
-        getStatistics("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
+//        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
 
     }
 
@@ -167,7 +167,7 @@ public class PurityJSONHandler {
                         }, 100);
             }
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResTest.json"), arrayNode);
+            objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json"), arrayNode);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

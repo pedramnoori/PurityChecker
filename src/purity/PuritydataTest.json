@@ -4930,9 +4930,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "1",
       "purityValidation" : "-",
-      "purityComment" : "myAdditionalLoggingHandlers has been changed from a Map to a list. That's why we have non-mapped add statement in the child commit. Note that we have change attribute type refactoring regarding this issue."
+      "purityComment" : "myAdditionalLoggingHandlers has been changed from a Map to a list. That's why we have non-mapped add statement in the child commit. Note that we have change attribute type refactoring regarding this change."
     }
   }, {
     "type" : "Rename Method",
