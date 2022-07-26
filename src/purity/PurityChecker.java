@@ -136,9 +136,9 @@ public class PurityChecker {
             }
 
 
-            replacementsToCheck = checkForRenameRefactoringOnTop_Mapped(refactoring, refactorings, replacementsToCheck);
+            replacementsToCheck = checkForRenameMethodRefactoringOnTop_Mapped(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - all mapped");
+                return new PurityCheckResult(true, "Rename Method Refactoring on the top of the extracted method - all mapped");
             }
 
 
@@ -150,6 +150,11 @@ public class PurityChecker {
             replacementsToCheck = checkForRenameVariableOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Rename Variable on top of the extract method - all mapped");
+            }
+
+            replacementsToCheck = checkForRenameAttributeOnTop(refactoring, refactorings, replacementsToCheck);
+            if(replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Rename Attribute on the top of the extracted method - all mapped");
             }
 
 
@@ -171,18 +176,50 @@ public class PurityChecker {
 
             List<AbstractCodeFragment> nonMappedLeavesT2 = new ArrayList<>();
             nonMappedLeavesT2.addAll(refactoring.getBodyMapper().getNonMappedLeavesT2());
-//            Handling FIRST issue
+
             nonMappedLeavesT2 = checkForRenameRefactoringOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
             if (nonMappedLeavesT2.isEmpty()) {
                 return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - with non-mapped leaves");
             }
 
+
+
+            if (nonMappedLeavesT2.size() == 1) {
+                AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
+                if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                    return new PurityCheckResult(true, "Return expression has been added within the Extract Method mechanics - with non-mapped leaves");
+                }
+            }
+
             return new PurityCheckResult(false, "Violating extract method refactoring mechanics - with non-mapped leaves");
         } else {
-            return new PurityCheckResult(false, "Non-mapped inner nodes");
+            return new PurityCheckResult(false, "Contains non-mapped inner nodes");
         }
 
         return new PurityCheckResult(false, "Not decided yet!");
+    }
+
+    private static Set<Replacement> checkForRenameAttributeOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
+
+        Set<Replacement> handledReplacements = new HashSet<>();
+
+        for (Replacement replacement: replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
+                for (Refactoring refactoring1: refactorings) {
+                    if (refactoring1.getRefactoringType().equals(RefactoringType.RENAME_ATTRIBUTE)) {
+                        if (replacement.getBefore().equals(((RenameAttributeRefactoring)refactoring1).getOriginalAttribute().getName()) &&
+                                replacement.getAfter().equals(((RenameAttributeRefactoring)refactoring1).getRenamedAttribute().getName())) {
+                            handledReplacements.add(replacement);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        replacementsToCheck.removeAll(handledReplacements);
+        return replacementsToCheck;
+
     }
 
     private static boolean checkReplacements(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
@@ -289,7 +326,7 @@ public class PurityChecker {
         return replacementsToCheck;
         }
 
-    private static Set<Replacement> checkForRenameRefactoringOnTop_Mapped(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
+    private static Set<Replacement> checkForRenameMethodRefactoringOnTop_Mapped(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
 
         List<RenameOperationRefactoring> renameOperationRefactoringList = getSpecificTypeRefactoring(refactorings,RenameOperationRefactoring.class);
 

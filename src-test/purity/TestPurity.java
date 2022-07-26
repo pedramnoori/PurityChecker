@@ -914,8 +914,43 @@ public class TestPurity {
 //        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/oblac/jodd.git",
-                "722ef9156896248ef3fbe83adde0f6ff8f46856a", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/Athou/commafeed.git",
+                "18a7bd1fd1a83b3b8d1b245e32f78c0b4443b7a7", new RefactoringHandler() {
+                    @Override
+                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
+                        System.out.println("HERE");
+//                        for (Refactoring refactoring: pcr.keySet()) {
+//                            if (refactoring.getRefactoringType().equals(RefactoringType.RENAME_METHOD))
+//                        }
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_51() throws RefactoringMinerTimedOutException, IOException {
+        // Rename Class with Inline Method - added and removed operations are empty
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\33\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\33\\v2")).getUmlModel();
+        UMLModelDiff modelDiff = model1.diff(model2);
+        List<Refactoring> refactorings = modelDiff.getRefactorings();
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+
+
+        for (Refactoring refactoring: refactorings){
+            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                assertTrue(pcr.get(refactoring).isPure());
+        }
+    }
+
+    @Test
+    public void extractMethodTest_52() throws RefactoringMinerTimedOutException, IOException {
+
+//        Extract Interface - Inherently pure - TODO
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectModelDiff("https://github.com/datastax/java-driver.git",
+                "1edac0e92080e7c5e971b2d56c8753bf44ea8a6c", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);

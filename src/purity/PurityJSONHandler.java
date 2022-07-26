@@ -13,7 +13,9 @@ import org.refactoringminer.api.*;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.*;
 
 public class PurityJSONHandler {
@@ -22,7 +24,7 @@ public class PurityJSONHandler {
 
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 
-//        runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataTest.json");
+        runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataTest.json");
 
         calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
 
@@ -81,6 +83,33 @@ public class PurityJSONHandler {
             System.out.println("Precision for " + refactoringType.getDisplayName() + " refactoring is: " + precision * 100);
             System.out.println("Recall for " + refactoringType.getDisplayName() + " refactoring is: " + recall * 100);
             System.out.println("F-score for " + refactoringType.getDisplayName() + " refactoring is: " + fScore);
+
+
+            try
+            {
+                String filename= "Statistics.txt";
+                FileWriter fw = new FileWriter(filename,true);
+
+                fw.write("TIME: " + new Timestamp(System.currentTimeMillis()) + "\n");
+                fw.write("TP: "+ TPCounter + "\n");
+                fw.write("TN: "+ TNCounter + "\n");
+                fw.write("FP: "+ FPCounter + "\n");
+                fw.write("FN: "+ FNCounter + "\n");
+
+                fw.write("Precision: "+ precision * 100 + "\n");
+                fw.write("Recall: "+ recall * 100 + "\n");
+                fw.write("FScore: "+ fScore + "\n");
+
+                fw.write("\n\n");
+
+
+
+                fw.close();
+            }
+            catch(IOException ioe)
+            {
+                System.err.println("IOException: " + ioe.getMessage());
+            }
 
         } catch (IOException e) {
             throw new RuntimeException(e);
