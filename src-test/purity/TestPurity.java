@@ -949,8 +949,8 @@ public class TestPurity {
 //        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/datastax/java-driver.git",
-                "1edac0e92080e7c5e971b2d56c8753bf44ea8a6c", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/spring-projects/spring-boot.git",
+                "1cfc6f64f64353bc5530a8ce8cdacfc3eba3e7b2", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
