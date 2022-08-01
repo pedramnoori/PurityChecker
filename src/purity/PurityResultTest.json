@@ -7171,9 +7171,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "The functionality of the extracted code has been changed due to the added if-else condition. But, if we check the extracted method invocations, the result would be the same. So, what would be the purity state of this refactoring?"
     }
   }, {
     "type" : "Extract Method",
@@ -7195,7 +7195,7 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
