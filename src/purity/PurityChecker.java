@@ -142,9 +142,9 @@ public class PurityChecker {
             }
 
 
-            replacementsToCheck = checkForParametrizationOnTop(refactoring, refactorings, replacementsToCheck);
+            replacementsToCheck = checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Parametrization on top of the extract method - all mapped");
+                return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the extract method - all mapped");
             }
 
             replacementsToCheck = checkForRenameVariableOnTop(refactoring, refactorings, replacementsToCheck);
@@ -286,7 +286,7 @@ public class PurityChecker {
         }
 
         replacementsToCheck = allReplacementsAreType(refactoring.getReplacements(), replacementsToCheck);
-        replacementsToCheck = checkForParametrizationOnTop(refactoring, refactorings, replacementsToCheck);
+        replacementsToCheck = checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
         replacementsToCheck = checkForRenameVariableOnTop(refactoring, refactorings, replacementsToCheck);
         replacementsToCheck = checkForRenameAttributeOnTop(refactoring, refactorings, replacementsToCheck);
         replacementsToCheck = checkForMoveAttributeOnTop(refactoring, refactorings, replacementsToCheck);
@@ -338,48 +338,59 @@ public class PurityChecker {
         return replacementsToCheck;
     }
 
-    private static Set<Replacement> checkForParametrizationOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
+    private static Set<Replacement> checkForParametrizationOrAddParameterOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
 
 //        List<MethodInvocationReplacement> methodInvocationReplacements = getSpecificReplacementType(refactoring.getReplacements(), MethodInvocationReplacement.class);
         for (Replacement replacement: refactoring.getReplacements()) {
-            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT)) {
+            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT) ||
+                    (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) && ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getName().equals(((MethodInvocationReplacement)replacement).getInvokedOperationBefore().getName()))) {
 
                 ArrayList<String> temp1 = new ArrayList<>(((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getArguments());
                 ArrayList<String> temp2 = new ArrayList<>(temp1);
                 temp1.removeAll(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getArguments());
-                Map<String, Integer> addedArgumentsMap = new HashMap<>();
+                ArrayList<Integer> addedArgumentsLocation = new ArrayList<>();
 
                 for (int i = 0; i < temp1.size(); i++) {
                     for (int j = 0; j < temp2.size(); j++) {
                         if (temp1.get(i).equals(temp2.get(j)))
-                            addedArgumentsMap.put(temp1.get(i), j);
+                            addedArgumentsLocation.add(j);
                     }
                 }
 
                 String methodName = ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName();
-                List<RenameVariableRefactoring> renameVariableRefactoringList = getSpecificTypeRefactoring(refactorings,RenameVariableRefactoring.class);
-                List<RenameVariableRefactoring> parametrizeVariableRefactoringList = new ArrayList<>();
+//                List<RenameVariableRefactoring> renameVariableRefactoringList = getSpecificTypeRefactoring(refactorings,RenameVariableRefactoring.class);
+                List<Refactoring> parametrizeVariableAndAddParameterRefactoringList = new ArrayList<>();
 
-                for (RenameVariableRefactoring ref : renameVariableRefactoringList) {
-                    if (ref.getRefactoringType().equals(RefactoringType.PARAMETERIZE_VARIABLE)) {
-                        parametrizeVariableRefactoringList.add(ref);
+                for (Refactoring refactoring1 : refactorings) {
+                    if (refactoring1.getRefactoringType().equals(RefactoringType.PARAMETERIZE_VARIABLE) ||
+                    refactoring1.getRefactoringType().equals(RefactoringType.ADD_PARAMETER)) {
+                        parametrizeVariableAndAddParameterRefactoringList.add(refactoring1);
                     }
                 }
 
-                Map <String, Integer> parameterInitializerMap = new HashMap<>();
+                ArrayList <Integer> parameterizedAndAddedLocation = new ArrayList<>();
 
-                for (RenameVariableRefactoring ref : parametrizeVariableRefactoringList) {
-                    if (ref.getOperationBefore().getName().equals(methodName)) {
-
-                        int ind = ref.getOperationAfter().getParameterNameList().indexOf(ref.getRenamedVariable().getVariableName());
-                        parameterInitializerMap.put(ref.getOriginalVariable().getInitializer().getExpression(), ind);
+                for (Refactoring ref : parametrizeVariableAndAddParameterRefactoringList) {
+                    if (ref.getRefactoringType().equals(RefactoringType.PARAMETERIZE_VARIABLE)) {
+                        if (((RenameVariableRefactoring)ref).getOperationBefore().getName().equals(methodName)) {
+                            int ind = ((RenameVariableRefactoring)ref).getOperationAfter().getParameterNameList().indexOf(((RenameVariableRefactoring)ref).getRenamedVariable().getVariableName());
+                            parameterizedAndAddedLocation.add(ind);
+                        }
+                    }else {
+                        if (((AddParameterRefactoring) ref).getOperationBefore().getName().equals(methodName)) {
+                            int ind = ((AddParameterRefactoring) ref).getOperationAfter().getParameterNameList().indexOf(((AddParameterRefactoring) ref).getParameter().getName());
+                            parameterizedAndAddedLocation.add(ind);
                         }
                     }
-                if (addedArgumentsMap.equals(parameterInitializerMap)) {
+                }
+                Collections.sort(addedArgumentsLocation);
+                Collections.sort(parameterizedAndAddedLocation);
+                if (addedArgumentsLocation.equals(parameterizedAndAddedLocation)) {
                     replacementsToCheck.remove(replacement);
                     }
+
                 }
-            }
+        }
 
         return replacementsToCheck;
         }
