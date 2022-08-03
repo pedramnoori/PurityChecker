@@ -28,7 +28,7 @@ public class PurityJSONHandler {
 
         calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
 
-//        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
+        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
 
     }
 

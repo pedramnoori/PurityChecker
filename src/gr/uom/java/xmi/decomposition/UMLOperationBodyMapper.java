@@ -1924,6 +1924,18 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 		return true;
 	}
 
+	public Set<Replacement> omitReplacementsRegardingExactMappings(Set<Replacement> replacementsToCheck) {
+
+		Set<AbstractCodeMapping> mappings = getMappings();
+
+		for (AbstractCodeMapping mapping: mappings) {
+			if (mapping.isPurelyExact()) {
+				replacementsToCheck.removeAll(mapping.getReplacements());
+			}
+		}
+		return replacementsToCheck;
+	}
+
 	private int editDistance() {
 		int count = 0;
 		for(AbstractCodeMapping mapping : getMappings()) {

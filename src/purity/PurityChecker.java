@@ -121,14 +121,17 @@ public class PurityChecker {
             if (refactoring.getReplacements().isEmpty())
                 return new PurityCheckResult(true, "There is no replacement! - all mapped");
 
+            Set<Replacement> replacementsToCheck = new HashSet<>();
 
 //            This method also checks for the exact matches when we have Type Replacement
             if (refactoring.getBodyMapper().allMappingsArePurelyMatched()) {
                 return new PurityCheckResult(true, "All the mappings are matched! - all mapped");
             }
+            else {
+                replacementsToCheck.addAll(refactoring.getReplacements());
+                replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(replacementsToCheck);
+            }
 
-            Set<Replacement> replacementsToCheck = new HashSet<>();
-            replacementsToCheck.addAll(refactoring.getReplacements());
 
             replacementsToCheck = allReplacementsAreType(refactoring.getReplacements(), replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
@@ -326,13 +329,13 @@ public class PurityChecker {
         }
 
 //        For handling: https://github.com/crashub/crash/commit/2801269c7e47bd6e243612654a74cee809d20959. When we have extracted some part of an expression.
-        for (Replacement replacement: replacementsToCheck) {
-            if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
-                if (refactoring.getExtractedOperation().getParameterNameList().contains(replacement.getAfter())) {
-                    handledReplacements.add(replacement);
-                }
-            }
-        }
+//        for (Replacement replacement: replacementsToCheck) {
+//            if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
+//                if (refactoring.getExtractedOperation().getParameterNameList().contains(replacement.getAfter())) {
+//                    handledReplacements.add(replacement);
+//                }
+//            }
+//        }
 
         replacementsToCheck.removeAll(handledReplacements);
         return replacementsToCheck;

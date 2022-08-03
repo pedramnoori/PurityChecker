@@ -2210,7 +2210,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   } ],
@@ -4853,7 +4853,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   } ],
@@ -5996,7 +5996,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : "The string value of FQUERY_NAME is the same as the FQueryFilterBuilder.NAME ultimately"
     }
   }, {
@@ -7171,9 +7171,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
-      "purityComment" : "The functionality of the extracted code has been changed due to the added if-else condition. But, if we check the extracted method invocations, the result would be the same. So, what would be the purity state of this refactoring?"
+      "purityComment" : ""
     }
   }, {
     "type" : "Extract Method",
@@ -7195,7 +7195,7 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : ""
     }

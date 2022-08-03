@@ -950,7 +950,42 @@ public class TestPurity {
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectModelDiff("https://github.com/spring-projects/spring-boot.git",
-                "20d39f7af2165c67d5221f556f58820c992d2cc6", new RefactoringHandler() {
+                "b47634176fa48ad925f79886c6aaca225cb9af64", new RefactoringHandler() {
+                    @Override
+                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
+                        System.out.println("HERE");
+//                        for (Refactoring refactoring: pcr.keySet()) {
+//                            if (refactoring.getRefactoringType().equals(RefactoringType.RENAME_METHOD))
+//                        }
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_53() throws RefactoringMinerTimedOutException, IOException {
+        // Rename Class with Inline Method - added and removed operations are empty
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\34\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\34\\v2")).getUmlModel();
+        UMLModelDiff modelDiff = model1.diff(model2);
+        List<Refactoring> refactorings = modelDiff.getRefactorings();
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+
+
+        for (Refactoring refactoring: refactorings){
+            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                assertTrue(pcr.get(refactoring).isPure());
+        }
+    }
+
+    @Test
+    public void extractMethodTest_54() throws RefactoringMinerTimedOutException, IOException {
+
+//        Extract Interface - Inherently pure - TODO
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectModelDiff("https://github.com/GoClipse/goclipse.git",
+                "851ab757698304e9d8d4ae24ab75be619ddae31a", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
