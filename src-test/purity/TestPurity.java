@@ -2,6 +2,8 @@ package purity;
 
 import gr.uom.java.xmi.UMLModel;
 import gr.uom.java.xmi.UMLModelASTReader;
+import gr.uom.java.xmi.diff.ExtractOperationRefactoring;
+import gr.uom.java.xmi.diff.RenameOperationRefactoring;
 import gr.uom.java.xmi.diff.UMLModelDiff;
 import org.junit.Test;
 import org.refactoringminer.api.*;
@@ -9,8 +11,10 @@ import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -965,8 +969,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_53() throws RefactoringMinerTimedOutException, IOException {
         // Rename Class with Inline Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\34\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\34\\v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\36\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\36\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
@@ -984,15 +988,26 @@ public class TestPurity {
 //        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/GoClipse/goclipse.git",
-                "851ab757698304e9d8d4ae24ab75be619ddae31a", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/robovm/robovm.git",
+                "bf5ee44b3b576e01ab09cae9f50300417b01dc07", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
                         System.out.println("HERE");
-//                        for (Refactoring refactoring: pcr.keySet()) {
-//                            if (refactoring.getRefactoringType().equals(RefactoringType.RENAME_METHOD))
-//                        }
+
+
+                        for (Map.Entry<Refactoring, PurityCheckResult> refactoring: pcr.entrySet()) {
+                            if (refactoring.getKey().getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+                                if (((ExtractOperationRefactoring) refactoring.getKey()).getExtractedOperation().getName().equals("get")) {
+                                    System.out.println("Hala  Here");
+
+                                }
+//                                if (((RenameOperationRefactoring) refactoring).getOriginalOperation().getName().equals("LossyCompressionQualityKey")) {
+//                                    System.out.println("Hala Here");
+//                                }
+                                System.out.println("asdsadsad");
+                            }
+                        }
                     }
                 }, 100);
     }

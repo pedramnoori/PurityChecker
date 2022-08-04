@@ -303,6 +303,25 @@ public abstract class UMLAbstractClass {
 		return false;
 	}
 
+	public UMLOperation containsOperationWithTheSameSignatureIgnoringChangedTypesPurity(UMLOperation operation) {
+		for(UMLOperation originalOperation : operations) {
+			if(originalOperation.equalSignatureIgnoringChangedTypes(operation)) {
+				if(!originalOperation.isConstructor() && !originalOperation.equalSignature(operation)) {
+					List<String> signature = originalOperation.getSignatureIdentifiers();
+					Integer instances = operationIdentifierSignatureMap.get(signature);
+					if(instances != null && instances > 1) {
+						return null;
+					}
+				}
+				boolean originalOperationEmptyBody = originalOperation.getBody() == null || originalOperation.hasEmptyBody();
+				boolean operationEmptyBody = operation.getBody() == null || operation.hasEmptyBody();
+				if(originalOperationEmptyBody == operationEmptyBody)
+					return originalOperation;
+			}
+		}
+		return null;
+	}
+
 	public boolean containsOperationWithTheSameName(UMLOperation operation) {
 		for(UMLOperation originalOperation : operations) {
 			if(originalOperation.getName().equals(operation.getName()))

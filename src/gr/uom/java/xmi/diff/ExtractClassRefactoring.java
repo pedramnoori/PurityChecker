@@ -1,9 +1,6 @@
 package gr.uom.java.xmi.diff;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.refactoringminer.api.Refactoring;
@@ -20,13 +17,17 @@ public class ExtractClassRefactoring implements Refactoring {
 	private Set<UMLAttribute> extractedAttributes;
 	private UMLAttribute attributeOfExtractedClassTypeInOriginalClass;
 
+	private Map<UMLOperation, UMLOperation> mappedOperations;
+
+
 	public ExtractClassRefactoring(UMLClass extractedClass, UMLClassBaseDiff classDiff,
-			Set<UMLOperation> extractedOperations, Set<UMLAttribute> extractedAttributes, UMLAttribute attributeOfExtractedClassType) {
+								   Set<UMLOperation> extractedOperations, Set<UMLAttribute> extractedAttributes, UMLAttribute attributeOfExtractedClassType, Map<UMLOperation, UMLOperation> mappedOperations) {
 		this.extractedClass = extractedClass;
 		this.classDiff = classDiff;
 		this.extractedOperations = extractedOperations;
 		this.extractedAttributes = extractedAttributes;
 		this.attributeOfExtractedClassTypeInOriginalClass = attributeOfExtractedClassType;
+		this.mappedOperations = mappedOperations;
 	}
 
 	public String toString() {
@@ -42,6 +43,10 @@ public class ExtractClassRefactoring implements Refactoring {
 		if(extractedClass.isSubTypeOf(classDiff.getOriginalClass()) || extractedClass.isSubTypeOf(classDiff.getNextClass()))
 			return RefactoringType.EXTRACT_SUBCLASS;
 		return RefactoringType.EXTRACT_CLASS;
+	}
+
+	public Map<UMLOperation, UMLOperation> getMappedOperations() {
+		return mappedOperations;
 	}
 
 	public String getName() {
