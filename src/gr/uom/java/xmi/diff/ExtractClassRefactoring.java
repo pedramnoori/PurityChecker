@@ -1,6 +1,10 @@
 package gr.uom.java.xmi.diff;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.refactoringminer.api.Refactoring;
@@ -13,15 +17,15 @@ import gr.uom.java.xmi.UMLOperation;
 public class ExtractClassRefactoring implements Refactoring {
 	private UMLClass extractedClass;
 	private UMLClassBaseDiff classDiff;
-	private Set<UMLOperation> extractedOperations;
-	private Set<UMLAttribute> extractedAttributes;
+	private Map<UMLOperation, UMLOperation> extractedOperations;
+	private Map<UMLAttribute, UMLAttribute> extractedAttributes;
 	private UMLAttribute attributeOfExtractedClassTypeInOriginalClass;
 
 	private Map<UMLOperation, UMLOperation> mappedOperations;
 
 
 	public ExtractClassRefactoring(UMLClass extractedClass, UMLClassBaseDiff classDiff,
-								   Set<UMLOperation> extractedOperations, Set<UMLAttribute> extractedAttributes, UMLAttribute attributeOfExtractedClassType, Map<UMLOperation, UMLOperation> mappedOperations) {
+			Map<UMLOperation, UMLOperation> extractedOperations, Map<UMLAttribute, UMLAttribute> extractedAttributes, UMLAttribute attributeOfExtractedClassType) {
 		this.extractedClass = extractedClass;
 		this.classDiff = classDiff;
 		this.extractedOperations = extractedOperations;
@@ -61,11 +65,11 @@ public class ExtractClassRefactoring implements Refactoring {
 		return classDiff.getOriginalClass();
 	}
 
-	public Set<UMLOperation> getExtractedOperations() {
+	public Map<UMLOperation, UMLOperation> getExtractedOperations() {
 		return extractedOperations;
 	}
 
-	public Set<UMLAttribute> getExtractedAttributes() {
+	public Map<UMLAttribute, UMLAttribute> getExtractedAttributes() {
 		return extractedAttributes;
 	}
 
@@ -92,6 +96,16 @@ public class ExtractClassRefactoring implements Refactoring {
 		ranges.add(classDiff.getOriginalClass().codeRange()
 				.setDescription("original type declaration")
 				.setCodeElement(classDiff.getOriginalClass().getName()));
+		for(UMLOperation extractedOperation : extractedOperations.keySet()) {
+			ranges.add(extractedOperation.codeRange()
+					.setDescription("original method declaration")
+					.setCodeElement(extractedOperation.toString()));
+		}
+		for(UMLAttribute extractedAttribute : extractedAttributes.keySet()) {
+			ranges.add(extractedAttribute.codeRange()
+					.setDescription("original attribute declaration")
+					.setCodeElement(extractedAttribute.toString()));
+		}
 		return ranges;
 	}
 
@@ -104,12 +118,12 @@ public class ExtractClassRefactoring implements Refactoring {
 		ranges.add(extractedClass.codeRange()
 				.setDescription("extracted type declaration")
 				.setCodeElement(extractedClass.getName()));
-		for(UMLOperation extractedOperation : extractedOperations) {
+		for(UMLOperation extractedOperation : extractedOperations.values()) {
 			ranges.add(extractedOperation.codeRange()
 					.setDescription("extracted method declaration")
 					.setCodeElement(extractedOperation.toString()));
 		}
-		for(UMLAttribute extractedAttribute : extractedAttributes) {
+		for(UMLAttribute extractedAttribute : extractedAttributes.values()) {
 			ranges.add(extractedAttribute.codeRange()
 					.setDescription("extracted attribute declaration")
 					.setCodeElement(extractedAttribute.toString()));

@@ -102,6 +102,10 @@ public abstract class UMLAbstractClassDiff {
 		return attributeDiffList;
 	}
 
+	public List<UMLEnumConstantDiff> getEnumConstantDiffList() {
+		return enumConstantDiffList;
+	}
+
 	public void reportAddedAnonymousClass(UMLAnonymousClass umlClass) {
 		this.addedAnonymousClasses.add(umlClass);
 	}
@@ -937,5 +941,23 @@ public abstract class UMLAbstractClassDiff {
 		int numberOfInvocationsMissingFromAddedOperationWithoutThoseFoundInOtherRemovedOperations = numberOfInvocationsMissingFromAddedOperation - numberOfInvocationsCalledByAddedOperationFoundInOtherRemovedOperations;
 		return numberOfInvocationsCalledByAddedOperationFoundInOtherRemovedOperations > numberOfInvocationsMissingFromAddedOperationWithoutThoseFoundInOtherRemovedOperations ||
 				numberOfInvocationsCalledByAddedOperationFoundInOtherRemovedOperations > addedOperationInvocationsWithIntersectionsAndGetterInvocationsSubtracted.size();
+	}
+
+	public boolean matchesCandidateAttributeRename(UMLOperation addedOperation) {
+		String setPrefix = "set";
+		String getPrefix = "get";
+		for(Replacement r : renameMap.keySet()) {
+			if(addedOperation.isGetter()) {
+				if(addedOperation.getName().equals(r.getAfter()) || addedOperation.getName().toLowerCase().equals(getPrefix + r.getAfter().toLowerCase())) {
+					return true;
+				}
+			}
+			else if(addedOperation.isSetter()) {
+				if(addedOperation.getName().toLowerCase().equals(setPrefix + r.getAfter().toLowerCase()) || addedOperation.getParameterNameList().get(0).equals(r.getAfter())) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }
