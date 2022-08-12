@@ -21,17 +21,13 @@ public class ExtractClassRefactoring implements Refactoring {
 	private Map<UMLAttribute, UMLAttribute> extractedAttributes;
 	private UMLAttribute attributeOfExtractedClassTypeInOriginalClass;
 
-	private Map<UMLOperation, UMLOperation> mappedOperations;
-
-
 	public ExtractClassRefactoring(UMLClass extractedClass, UMLClassBaseDiff classDiff,
-			Map<UMLOperation, UMLOperation> extractedOperations, Map<UMLAttribute, UMLAttribute> extractedAttributes, UMLAttribute attributeOfExtractedClassType) {
+								   Map<UMLOperation, UMLOperation> extractedOperations, Map<UMLAttribute, UMLAttribute> extractedAttributes, UMLAttribute attributeOfExtractedClassType) {
 		this.extractedClass = extractedClass;
 		this.classDiff = classDiff;
 		this.extractedOperations = extractedOperations;
 		this.extractedAttributes = extractedAttributes;
 		this.attributeOfExtractedClassTypeInOriginalClass = attributeOfExtractedClassType;
-		this.mappedOperations = mappedOperations;
 	}
 
 	public String toString() {
@@ -47,10 +43,6 @@ public class ExtractClassRefactoring implements Refactoring {
 		if(extractedClass.isSubTypeOf(classDiff.getOriginalClass()) || extractedClass.isSubTypeOf(classDiff.getNextClass()))
 			return RefactoringType.EXTRACT_SUBCLASS;
 		return RefactoringType.EXTRACT_CLASS;
-	}
-
-	public Map<UMLOperation, UMLOperation> getMappedOperations() {
-		return mappedOperations;
 	}
 
 	public String getName() {

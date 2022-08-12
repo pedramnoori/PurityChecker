@@ -250,7 +250,7 @@ public class PurityChecker {
 
                 String extractedClassName = ((ExtractClassRefactoring) refactoring).getExtractedClass().getNonQualifiedName();
 
-                for (Map.Entry<UMLOperation, UMLOperation> operation: ((ExtractClassRefactoring) refactoring).getMappedOperations().entrySet()) {
+                for (Map.Entry<UMLOperation, UMLOperation> operation: ((ExtractClassRefactoring) refactoring).getExtractedOperations().entrySet()) {
                     patterns.put(operation.getKey().getName(), operation.getValue().getName());
                     patterns.put(operation.getKey().getName(), extractedClassName + "." + operation.getValue().getName());
                     // TODO: 8/3/2022 Think about more possible patterns
