@@ -689,6 +689,9 @@ public abstract class UMLAbstractClass {
 		if((commonOperations.size() + unmatchedCalledOperations.size() > Math.floor(totalOperations/2.0) && (commonAttributes.size() > 2 || totalAttributes == 0))) {
 			return new MatchResult(commonOperations.size() + unmatchedCalledOperations.size(), commonAttributes.size(), totalOperations, totalAttributes, true);
 		}
+		if(unmatchedOperations.size() == 0 && commonOperations.size() > Math.floor(totalOperations/3.0*2.0)) {
+			return new MatchResult(commonOperations.size(), commonAttributes.size(), totalOperations, totalAttributes, true);
+		}
 		return new MatchResult(commonOperations.size(), commonAttributes.size(), totalOperations, totalAttributes, false);
 	}
 
@@ -726,6 +729,33 @@ public abstract class UMLAbstractClass {
 		}
 		else {
 			return new MatchResult(commonOperations.size(), commonAttributes.size(), totalOperations, totalAttributes, false);
+		}
+	}
+
+	public MatchResult hasCommonOperationWithTheSameSignature(UMLAbstractClass umlClass) {
+		List<UMLOperation> commonOperations = new ArrayList<UMLOperation>();
+		int totalOperations = 0;
+		for(UMLOperation operation : operations) {
+			if(!operation.isConstructor() && !operation.overridesObject()) {
+				totalOperations++;
+				if(umlClass.containsOperationWithTheSameSignature(operation)) {
+					commonOperations.add(operation);
+				}
+			}
+		}
+		for(UMLOperation operation : umlClass.operations) {
+			if(!operation.isConstructor() && !operation.overridesObject()) {
+				totalOperations++;
+				if(this.containsOperationWithTheSameSignature(operation)) {
+					commonOperations.add(operation);
+				}
+			}
+		}
+		if(commonOperations.size() > 2) {
+			return new MatchResult(commonOperations.size(), 0, totalOperations, 0, true);
+		}
+		else {
+			return new MatchResult(commonOperations.size(), 0, totalOperations, 0, false);
 		}
 	}
 
