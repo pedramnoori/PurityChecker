@@ -130,6 +130,7 @@ public class PurityChecker {
             else {
                 replacementsToCheck.addAll(refactoring.getReplacements());
                 replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(replacementsToCheck);
+                replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(replacementsToCheck);
             }
 
 
@@ -206,10 +207,48 @@ public class PurityChecker {
 
             return new PurityCheckResult(false, "Violating extract method refactoring mechanics - with non-mapped leaves");
         } else {
+
+            if (!checkReplacements(refactoring, refactorings)) {
+                return new PurityCheckResult(false, "replacements are not justified - non-mapped inner nodes");
+            }
+
+            if (!checkNonMappedLeaves(refactoring, refactorings)) {
+                return new PurityCheckResult(false, "non-mapped leaves are not justified - non-mapped inner nodes");
+            }
+
+            List<AbstractCodeFragment> nonMappedInnerNodesT2 = new ArrayList<>();
+            nonMappedInnerNodesT2.addAll(refactoring.getBodyMapper().getNonMappedInnerNodesT2());
+
+            if (nonMappedInnerNodesT2.size() == 1) {
+                AbstractCodeFragment nonMappedLeave = nonMappedInnerNodesT2.get(0);
+                if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
+                    return new PurityCheckResult(true, "Just an empty block - with non-mapped leaves");
+                }
+            }
+
             return new PurityCheckResult(false, "Contains non-mapped inner nodes");
         }
 
         return new PurityCheckResult(false, "Not decided yet!");
+    }
+
+    private static boolean checkNonMappedLeaves(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
+
+        List<AbstractCodeFragment> nonMappedLeavesT2 = new ArrayList<>();
+        nonMappedLeavesT2.addAll(refactoring.getBodyMapper().getNonMappedLeavesT2());
+
+        nonMappedLeavesT2 = checkForRenameRefactoringOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
+        if (nonMappedLeavesT2.isEmpty()) {
+            return true;
+        }
+
+        if (nonMappedLeavesT2.size() == 1) {
+            AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
+            if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static Set<Replacement> checkForExtractClassOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
@@ -342,6 +381,8 @@ public class PurityChecker {
         else {
             replacementsToCheck.addAll(refactoring.getReplacements());
             replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(replacementsToCheck);
+            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(replacementsToCheck);
+
         }
 
 
@@ -355,6 +396,8 @@ public class PurityChecker {
         replacementsToCheck = checkForRenameVariableOnTop(refactoring, refactorings, replacementsToCheck);
         replacementsToCheck = checkForRenameAttributeOnTop(refactoring, refactorings, replacementsToCheck);
         replacementsToCheck = checkForMoveAttributeOnTop(refactoring, refactorings, replacementsToCheck);
+        replacementsToCheck = checkForExtractClassOnTop(refactoring, refactorings, replacementsToCheck);
+
 
 
         if(replacementsToCheck.isEmpty()) {
@@ -379,7 +422,7 @@ public class PurityChecker {
         for (Replacement replacement: replacementsToCheck) {
             if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
                 for (Refactoring refactoring1: refactorings) {
-                    if (refactoring1.getRefactoringType().equals(RefactoringType.RENAME_VARIABLE)) {
+                    if (refactoring1.getRefactoringType().equals(RefactoringType.RENAME_VARIABLE) || refactoring1.getRefactoringType().equals(RefactoringType.RENAME_PARAMETER)) {
                         if (replacement.getBefore().equals(((RenameVariableRefactoring)refactoring1).getOriginalVariable().getVariableName()) &&
                                 replacement.getAfter().equals(((RenameVariableRefactoring)refactoring1).getRenamedVariable().getVariableName())) {
                             handledReplacements.add(replacement);

@@ -1972,6 +1972,21 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 		return replacementsToCheck;
 	}
 
+
+	public Set<Replacement> omitReplacementsAccordingToArgumentization(Set<Replacement> replacementsToCheck) {
+
+		Set<AbstractCodeMapping> mappings = getMappings();
+
+		for (AbstractCodeMapping mapping: mappings) {
+			System.out.println("This This");
+
+			String test = mapping.getFragment2().getArgumentizedString();
+		}
+
+
+		return replacementsToCheck;
+	}
+
 	private int editDistance() {
 		int count = 0;
 		for(AbstractCodeMapping mapping : getMappings()) {
