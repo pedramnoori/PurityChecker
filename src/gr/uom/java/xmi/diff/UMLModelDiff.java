@@ -417,7 +417,7 @@ public class UMLModelDiff {
 		return null;
 	}
 
-	public UMLOperation findOperationInAddedClasses(AbstractCall operationInvocation, UMLOperation callerOperation) {
+	public UMLOperation findOperationInAddedClasses(AbstractCall operationInvocation, VariableDeclarationContainer callerOperation) {
 		for(UMLClass umlClass : addedClasses) {
 			String expression = operationInvocation.getExpression();
 			if(expression != null && umlClass.getNonQualifiedName().equalsIgnoreCase(expression)) {
@@ -1453,7 +1453,7 @@ public class UMLModelDiff {
 			}
 		}
 		int threshold = 1;
-		if(attributeOfExtractedClassType != null)
+		if(attributeOfExtractedClassType != null || classDiff.getNextClass().isInnerClass(umlClass))
 			threshold = 0;
 		if(commonOperations.size() > threshold || commonAttributes.size() > threshold) {
 			return new ExtractClassRefactoring(umlClass, classDiff, commonOperations, commonAttributes, attributeOfExtractedClassType);
@@ -2648,7 +2648,7 @@ public class UMLModelDiff {
 								parameterToArgumentMap1.put(addedOperationInvocation.getExpression() + ".", "");
 								parameterToArgumentMap2.put("this.", "");
 							}
-							UMLOperationBodyMapper operationBodyMapper = new UMLOperationBodyMapper(mapper, addedOperation, parameterToArgumentMap1, parameterToArgumentMap2, getUMLClassDiff(addedOperation.getClassName()), false);
+							UMLOperationBodyMapper operationBodyMapper = new UMLOperationBodyMapper(mapper, addedOperation, parameterToArgumentMap1, parameterToArgumentMap2, getUMLClassDiff(addedOperation.getClassName()), addedOperationInvocation, false);
 							if(!anotherAddedMethodExistsWithBetterMatchingInvocationExpression(addedOperationInvocation, addedOperation, addedOperations) &&
 									!conflictingExpression(addedOperationInvocation, addedOperation, mapper.getContainer2().variableDeclarationMap()) &&
 									extractAndMoveMatchCondition(operationBodyMapper, mapper)) {
