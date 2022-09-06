@@ -15,8 +15,14 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 	private int index;
 	private String codeFragmentAfterReplacingParametersWithArguments;
 
+	private String codeFragmentAfterArgumentizationAfterFindingRefactorings;
+
 	public String getArgumentizedString() {
 		return codeFragmentAfterReplacingParametersWithArguments != null ? codeFragmentAfterReplacingParametersWithArguments : getString();
+	}
+
+	public String getArgumentizedAfterRefactorings() {
+		return codeFragmentAfterArgumentizationAfterFindingRefactorings != null? codeFragmentAfterArgumentizationAfterFindingRefactorings : getString();
 	}
 
     public int getDepth() {
@@ -104,6 +110,46 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 			}
 		}
 		this.codeFragmentAfterReplacingParametersWithArguments = afterReplacements;
+	}
+
+	public void argumentizationAfterRefactorings(Map<String, String> parameterToArgumentMap) {
+		String afterReplacements = getString();
+		for(String parameter : parameterToArgumentMap.keySet()) {
+			String argument = parameterToArgumentMap.get(parameter);
+			if(!parameter.equals(argument)) {
+				StringBuffer sb = new StringBuffer();
+				Pattern p = Pattern.compile(Pattern.quote(parameter));
+				Matcher m = p.matcher(afterReplacements);
+				while(m.find()) {
+					//check if the matched string is an argument
+					//previous character should be "(" or "," or " " or there is no previous character
+					int start = m.start();
+					boolean isArgument = false;
+					boolean isInsideStringLiteral = false;
+					char nextChar = afterReplacements.charAt(start + parameter.length());
+					if(start >= 1) {
+						String previousChar = afterReplacements.substring(start-1, start);
+						if(previousChar.equals("(") || previousChar.equals(",") || previousChar.equals(" ") || previousChar.equals("=")) {
+							isArgument = true;
+						}
+						String beforeMatch = afterReplacements.substring(0, start);
+						String afterMatch = afterReplacements.substring(start+parameter.length(), afterReplacements.length());
+						if(quoteBefore(beforeMatch) && quoteAfter(afterMatch)) {
+							isInsideStringLiteral = true;
+						}
+					}
+					else if(start == 0 && (!Character.isLetterOrDigit(nextChar) || parameter.endsWith(".")) && !afterReplacements.startsWith("return ")) {
+						isArgument = true;
+					}
+					if(isArgument && !isInsideStringLiteral) {
+						m.appendReplacement(sb, Matcher.quoteReplacement(argument));
+					}
+				}
+				m.appendTail(sb);
+				afterReplacements = sb.toString();
+			}
+		}
+		this.codeFragmentAfterArgumentizationAfterFindingRefactorings = afterReplacements;
 	}
 
 	private static boolean quoteBefore(String beforeMatch) {

@@ -115,6 +115,10 @@ public class PurityChecker {
 
     private static PurityCheckResult detectExtractOperationPurity(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
 
+        System.out.println("TEST");
+
+        ArrayList<ExtractClassRefactoring> extractClassRefactorings = (ArrayList<ExtractClassRefactoring>) getSpecificTypeRefactoring(refactorings, ExtractClassRefactoring.class);
+
         if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty() && refactoring.getBodyMapper().getNonMappedInnerNodesT2().isEmpty()) {
 
 
@@ -124,13 +128,13 @@ public class PurityChecker {
             Set<Replacement> replacementsToCheck = new HashSet<>();
 
 //            This method also checks for the exact matches when we have Type Replacement
-            if (refactoring.getBodyMapper().allMappingsArePurelyMatched()) {
+            if (refactoring.getBodyMapper().allMappingsArePurelyMatched(refactoring.getParameterToArgumentMap())) {
                 return new PurityCheckResult(true, "All the mappings are matched! - all mapped");
             }
             else {
                 replacementsToCheck.addAll(refactoring.getReplacements());
-                replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(replacementsToCheck);
-                replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(replacementsToCheck);
+                replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+                replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
             }
 
 
@@ -375,13 +379,13 @@ public class PurityChecker {
         Set<Replacement> replacementsToCheck = new HashSet<>();
 
 //            This method also checks for the exact matches when we have Type Replacement
-        if (refactoring.getBodyMapper().allMappingsArePurelyMatched()) {
+        if (refactoring.getBodyMapper().allMappingsArePurelyMatched(refactoring.getParameterToArgumentMap())) {
             return true;
         }
         else {
             replacementsToCheck.addAll(refactoring.getReplacements());
-            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(replacementsToCheck);
-            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(replacementsToCheck);
+            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
 
         }
 

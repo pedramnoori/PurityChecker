@@ -12,6 +12,7 @@ import org.refactoringminer.util.PrefixSuffixUtils;
 
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public abstract class AbstractCodeMapping {
@@ -71,9 +72,10 @@ public abstract class AbstractCodeMapping {
 				fragment1.getString().equals(fragment2.getString()) || isExactAfterAbstraction() || containsIdenticalOrCompositeReplacement()) && !fragment1.isKeyword();
 	}
 
-	public boolean isPurelyExact() {
+	public boolean isPurelyExact(Map<String, String> parameterToArgumentMap) {
+		fragment2.argumentizationAfterRefactorings(parameterToArgumentMap);
 		return (fragment1.getArgumentizedString().equals(fragment2.getArgumentizedString()) || argumentizedStringExactAfterTypeReplacement() ||
-				fragment1.getString().equals(fragment2.getString()) || isExactAfterAbstraction());
+				fragment1.getString().equals(fragment2.getString()) || isExactAfterAbstraction() || fragment1.getString().equals(fragment2.getArgumentizedAfterRefactorings()));
 	}
 
 	private boolean argumentizedStringExactAfterTypeReplacement() {

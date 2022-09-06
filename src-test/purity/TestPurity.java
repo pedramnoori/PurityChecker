@@ -995,19 +995,20 @@ public class TestPurity {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
                         System.out.println("HERE");
 
-
-                        for (Map.Entry<Refactoring, PurityCheckResult> refactoring: pcr.entrySet()) {
-                            if (refactoring.getKey().getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
-                                if (((ExtractOperationRefactoring) refactoring.getKey()).getExtractedOperation().getName().equals("get")) {
+                        int setCounter = 0;
+                        for (Map.Entry<Refactoring, PurityCheckResult> entry: pcr.entrySet()) {
+                            if (entry.getKey().getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+                                if (((ExtractOperationRefactoring) entry.getKey()).getExtractedOperation().getName().equals("set")) {
                                     System.out.println("Hala  Here");
-
+                                    if (!entry.getValue().isPure()) {
+                                        System.out.println("problem");
+                                    }
+                                    setCounter++;
                                 }
-//                                if (((RenameOperationRefactoring) refactoring).getOriginalOperation().getName().equals("LossyCompressionQualityKey")) {
-//                                    System.out.println("Hala Here");
-//                                }
-                                System.out.println("asdsadsad");
                             }
                         }
+
+                        System.out.println(setCounter);
                     }
                 }, 100);
     }

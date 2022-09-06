@@ -1972,12 +1972,12 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 		return false;
 	}
 
-	public boolean allMappingsArePurelyMatched() {
+	public boolean allMappingsArePurelyMatched(Map<String, String> parameterToArgumentMap) {
 
 		Set<AbstractCodeMapping> mappings = getMappings();
 
 		for (AbstractCodeMapping mapping: mappings) {
-			if (!mapping.isPurelyExact()) {
+			if (!mapping.isPurelyExact(parameterToArgumentMap)) {
 				return false;
 			}
 		}
@@ -1985,12 +1985,12 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 		return true;
 	}
 
-	public Set<Replacement> omitReplacementsRegardingExactMappings(Set<Replacement> replacementsToCheck) {
+	public Set<Replacement> omitReplacementsRegardingExactMappings(Map<String, String> parameterToArgumentMap, Set<Replacement> replacementsToCheck) {
 
 		Set<AbstractCodeMapping> mappings = getMappings();
 
 		for (AbstractCodeMapping mapping: mappings) {
-			if (mapping.isPurelyExact()) {
+			if (mapping.isPurelyExact(parameterToArgumentMap)) {
 				replacementsToCheck.removeAll(mapping.getReplacements());
 			}
 		}
@@ -1998,16 +1998,20 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 	}
 
 
-	public Set<Replacement> omitReplacementsAccordingToArgumentization(Set<Replacement> replacementsToCheck) {
+	public Set<Replacement> omitReplacementsAccordingToArgumentization(Map<String, String> parameterToArgumentMap, Set<Replacement> replacementsToCheck) {
 
-		Set<AbstractCodeMapping> mappings = getMappings();
+		Set<Replacement> replacementsToRemove = new HashSet<>();
 
-		for (AbstractCodeMapping mapping: mappings) {
-			System.out.println("This This");
-
-			String test = mapping.getFragment2().getArgumentizedString();
+		for (Replacement replacement: replacementsToCheck) {
+			for (Map.Entry<String, String> parameterToArgument: parameterToArgumentMap.entrySet()) {
+				if (replacement.getBefore().equals(parameterToArgument.getValue()) &&
+				replacement.getAfter().equals(parameterToArgument.getKey())) {
+					replacementsToRemove.add(replacement);
+				}
+			}
 		}
 
+		replacementsToCheck.removeAll(replacementsToRemove);
 
 		return replacementsToCheck;
 	}
