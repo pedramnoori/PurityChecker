@@ -969,8 +969,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_53() throws RefactoringMinerTimedOutException, IOException {
         // Rename Class with Inline Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\36\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\36\\v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\37\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\37\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
@@ -998,7 +998,7 @@ public class TestPurity {
                         int setCounter = 0;
                         for (Map.Entry<Refactoring, PurityCheckResult> entry: pcr.entrySet()) {
                             if (entry.getKey().getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
-                                if (((ExtractOperationRefactoring) entry.getKey()).getExtractedOperation().getName().equals("set")) {
+                                if (((ExtractOperationRefactoring) entry.getKey()).getExtractedOperation().getName().equals("has")) {
                                     System.out.println("Hala  Here");
                                     if (!entry.getValue().isPure()) {
                                         System.out.println("problem");
@@ -1009,6 +1009,25 @@ public class TestPurity {
                         }
 
                         System.out.println(setCounter);
+                    }
+                }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_55() throws RefactoringMinerTimedOutException, IOException {
+
+//        Extract Interface - Inherently pure - TODO
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectModelDiff("https://github.com/eclipse/jetty.project.git",
+                "1f3be625e62f44d929c01f6574678eea05754474", new RefactoringHandler() {
+                    @Override
+                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
+                        System.out.println("HERE");
+//                        for (Refactoring refactoring: pcr.keySet()) {
+//                            if (refactoring.getRefactoringType().equals(RefactoringType.RENAME_METHOD))
+//                        }
                     }
                 }, 100);
     }
