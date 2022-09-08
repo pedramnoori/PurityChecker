@@ -135,6 +135,11 @@ public class PurityChecker {
                 replacementsToCheck.addAll(refactoring.getReplacements());
                 replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(refactoring.getParameterToArgumentMap(), replacementsToCheck);
                 replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+                replacementsToCheck = omitReplacementsRegardingInvocationArguments(refactoring, replacementsToCheck);
+            }
+
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "All replacements have been justified - all mapped");
             }
 
 
@@ -213,11 +218,11 @@ public class PurityChecker {
         } else {
 
             if (!checkReplacements(refactoring, refactorings)) {
-                return new PurityCheckResult(false, "replacements are not justified - non-mapped inner nodes");
+                return new PurityCheckResult(false, "Replacements are not justified - non-mapped inner nodes");
             }
 
             if (!checkNonMappedLeaves(refactoring, refactorings)) {
-                return new PurityCheckResult(false, "non-mapped leaves are not justified - non-mapped inner nodes");
+                return new PurityCheckResult(false, "Non-mapped leaves are not justified - non-mapped inner nodes");
             }
 
             List<AbstractCodeFragment> nonMappedInnerNodesT2 = new ArrayList<>();
@@ -234,6 +239,27 @@ public class PurityChecker {
         }
 
         return new PurityCheckResult(false, "Not decided yet!");
+    }
+
+    private static Set<Replacement> omitReplacementsRegardingInvocationArguments(ExtractOperationRefactoring refactoring, Set<Replacement> replacementsToCheck) {
+
+//        List<AbstractCall> extractedOperationInvocations = refactoring.getExtractedOperationInvocations();
+        //
+//        for (AbstractCall extractedOperationInvocation : extractedOperationInvocations) {
+//
+//        }
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        List<String> extractedOperationInvocationArguments = new ArrayList<>(refactoring.getParameterToArgumentMap().values());
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (extractedOperationInvocationArguments.contains(replacement.getAfter()) && replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
+                replacementsToRemove.add(replacement);
+            }
+        }
+        replacementsToCheck.removeAll(replacementsToRemove);
+
+        return replacementsToCheck;
     }
 
     private static boolean checkNonMappedLeaves(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {

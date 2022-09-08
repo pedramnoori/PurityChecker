@@ -1019,8 +1019,8 @@ public class TestPurity {
 //        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/eclipse/jetty.project.git",
-                "1f3be625e62f44d929c01f6574678eea05754474", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/rstudio/rstudio.git",
+                "9a581e07cb6381d70f3fd9bb2055e810e2a682a9", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
@@ -1030,6 +1030,22 @@ public class TestPurity {
 //                        }
                     }
                 }, 100);
+    }
+
+    @Test
+    public void extractMethodTest_56() throws RefactoringMinerTimedOutException, IOException {
+        // Rename Class with Inline Method - added and removed operations are empty
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\38\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\38\\v2")).getUmlModel();
+        UMLModelDiff modelDiff = model1.diff(model2);
+        List<Refactoring> refactorings = modelDiff.getRefactorings();
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+
+
+        for (Refactoring refactoring: refactorings){
+            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                assertTrue(pcr.get(refactoring).isPure());
+        }
     }
 
 }
