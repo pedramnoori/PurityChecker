@@ -63,6 +63,7 @@ public class PurityJSONHandler {
         float precision;
         float recall;
         float fScore;
+        float specificity;
 
         try {
             List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
@@ -73,6 +74,7 @@ public class PurityJSONHandler {
 
             precision = precisionCalculator(TPCounter, TNCounter, FPCounter, FNCounter);
             recall = recallCalculator(TPCounter, TNCounter, FPCounter, FNCounter);
+            specificity = specificityCalculator(TPCounter, TNCounter, FPCounter, FNCounter);
             fScore = fScoreCalculator(precision, recall);
 
             System.out.println("Number of true positives for " + refactoringType.getDisplayName() + " refactoring is: " + TPCounter);
@@ -82,6 +84,7 @@ public class PurityJSONHandler {
             System.out.println();
             System.out.println("Precision for " + refactoringType.getDisplayName() + " refactoring is: " + precision * 100);
             System.out.println("Recall for " + refactoringType.getDisplayName() + " refactoring is: " + recall * 100);
+            System.out.println("Specificity for " + refactoringType.getDisplayName() + " refactoring is: " + specificity * 100);
             System.out.println("F-score for " + refactoringType.getDisplayName() + " refactoring is: " + fScore);
 
 
@@ -98,6 +101,7 @@ public class PurityJSONHandler {
 
                 fw.write("Precision: "+ precision * 100 + "\n");
                 fw.write("Recall: "+ recall * 100 + "\n");
+                fw.write("Specificity: "+ specificity * 100 + "\n");
                 fw.write("FScore: "+ fScore + "\n");
 
                 fw.write("\n\n");
@@ -114,6 +118,19 @@ public class PurityJSONHandler {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static float specificityCalculator(int tpCounter, int tnCounter, int fpCounter, int fnCounter) {
+
+        float res = 0;
+        try {
+            res = tnCounter / ((float) tnCounter + (float) fpCounter);
+        }catch (ArithmeticException e) {
+            System.out.println("Division by zero!");
+        }
+        return res;
+
+
     }
 
     private static float fScoreCalculator(float precision, float recall) {

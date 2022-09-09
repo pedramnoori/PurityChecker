@@ -58,3 +58,34 @@ Recall: 69.51219
 FScore: 0.80281687
 
 
+TIME: 2022-09-08 21:28:07.958
+TP: 225
+TN: 55
+FP: 2
+FN: 87
+Precision: 99.11894
+Recall: 72.11539
+FScore: 0.8348794
+
+
+TIME: 2022-09-08 21:54:14.606
+TP: 225
+TN: 55
+FP: 2
+FN: 87
+Precision: 99.11894
+Recall: 72.11539
+FScore: 0.8348794
+
+
+TIME: 2022-09-08 22:08:38.951
+TP: 225
+TN: 55
+FP: 2
+FN: 87
+Precision: 99.11894
+Recall: 72.11539
+Specificity: 96.49123
+FScore: 0.8348794
+
+
