@@ -24,11 +24,31 @@ public class PurityJSONHandler {
 
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 
-        runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataTest.json");
+        numberOfRefactorings("C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
+//        runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataTest.json");
+//
+//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
+//
+//        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
 
-        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
+    }
+
+    private static void numberOfRefactorings(String sourcePath) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        File file = new File(sourcePath);
+
+        try {
+            List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
+
+            int extractMethodNumber = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals("Extract Method")).filter(r -> r.getValidation().equals("TP")).count();
+
+            System.out.println(extractMethodNumber);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

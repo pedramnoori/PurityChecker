@@ -112,7 +112,7 @@ public class PurityChecker {
 
     private static PurityCheckResult detectExtractOperationPurity(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
 
-//        System.out.println("TEST");
+        System.out.println("TEST");
 
 //        ArrayList<ExtractClassRefactoring> extractClassRefactorings = (ArrayList<ExtractClassRefactoring>) getSpecificTypeRefactoring(refactorings, ExtractClassRefactoring.class);
 
