@@ -183,6 +183,11 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Extract Class on top of the extracted method - all mapped");
             }
 
+            checkForExtractMethodOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Extract Method on top of the extracted method - all mapped");
+            }
+
 
             if (replacementsToCheck.size() == 1) {
                 for (Replacement replacement: replacementsToCheck) {
@@ -243,6 +248,22 @@ public class PurityChecker {
         }
 
         return new PurityCheckResult(false, "Not decided yet!");
+    }
+
+    private static void checkForExtractMethodOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION)) {
+                String invokedOperationAfterName = ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName();
+                for (Refactoring refactoring1 : refactorings) {
+                    if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+//                        TODO
+                    }
+                }
+            }
+        }
     }
 
     private static void checkForIfCondition(ExtractOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedInnerNodesT2) {
