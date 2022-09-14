@@ -28,6 +28,7 @@ import gr.uom.java.xmi.decomposition.UMLOperationBodyMapper;
 import gr.uom.java.xmi.diff.ExtractOperationRefactoring;
 import gr.uom.java.xmi.diff.InlineOperationRefactoring;
 import gr.uom.java.xmi.diff.MoveSourceFolderRefactoring;
+import gr.uom.java.xmi.diff.UMLAbstractClassDiff;
 import gr.uom.java.xmi.diff.UMLClassDiff;
 import gr.uom.java.xmi.diff.UMLModelDiff;
 
@@ -36,7 +37,7 @@ public class TestStatementMappings {
 	private GitService gitService = new GitServiceImpl();
 
 	@Test
-	public void testMappings() throws Exception {
+	public void testNestedExtractMethodStatementMappings() throws Exception {
 		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 		Repository repo = gitService.cloneIfNotExists(
 		    REPOS + "/infinispan",
@@ -70,7 +71,7 @@ public class TestStatementMappings {
 	}
 
 	@Test
-	public void testMappingsReverseParentChildCommit() throws Exception {
+	public void testNestedInlineMethodStatementMappings() throws Exception {
 		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 		Repository repo = gitService.cloneIfNotExists(
 			    REPOS + "/TestCases",
@@ -104,7 +105,7 @@ public class TestStatementMappings {
 	}
 
 	@Test
-	public void testMultiMappingInDuplicatedCode() throws Exception {
+	public void testDuplicatedExtractMethodStatementMappingsWithLambdaParameters() throws Exception {
 		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 		Repository repo = gitService.cloneIfNotExists(
 			    REPOS + "/TestCases",
@@ -231,7 +232,7 @@ public class TestStatementMappings {
 	}
 
 	@Test
-	public void testMappings3() throws Exception {
+	public void testNonIsomorphicControlStructureStatementMappings() throws Exception {
 		Repository repository = gitService.cloneIfNotExists(
 		    REPOS + "/flink",
 		    "https://github.com/apache/flink.git");
@@ -280,7 +281,7 @@ public class TestStatementMappings {
 	}
 
 	@Test
-	public void testMappings2() throws Exception {
+	public void testExtractMethodStatementMappings() throws Exception {
 		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 		Repository repo = gitService.cloneIfNotExists(
 		    REPOS + "/k-9",
@@ -305,7 +306,7 @@ public class TestStatementMappings {
 	}
 
 	@Test
-	public void testMappings4() throws Exception {
+	public void testNestedExtractMethodStatementMappings2() throws Exception {
 		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 		Repository repo = gitService.cloneIfNotExists(
 		    REPOS + "/j2objc",
@@ -339,7 +340,7 @@ public class TestStatementMappings {
 	}
 
 	@Test
-	public void testMappings5() throws Exception {
+	public void testDuplicatedExtractMethodStatementMappings() throws Exception {
 		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 		Repository repo = gitService.cloneIfNotExists(
 		    REPOS + "/java-algorithms-implementation",
@@ -350,10 +351,24 @@ public class TestStatementMappings {
 			@Override
 			public void handle(String commitId, List<Refactoring> refactorings) {
 				List<UMLOperationBodyMapper> parentMappers = new ArrayList<>();
+				List<UMLOperationBodyMapper> additionalMappers = new ArrayList<>();
 				for (Refactoring ref : refactorings) {
 					if(ref instanceof ExtractOperationRefactoring) {
 						ExtractOperationRefactoring ex = (ExtractOperationRefactoring)ref;
 						UMLOperationBodyMapper bodyMapper = ex.getBodyMapper();
+						UMLAbstractClassDiff classDiff = bodyMapper.getClassDiff();
+						if(classDiff != null) {
+							for(UMLOperationBodyMapper mapper : classDiff.getOperationBodyMapperList()) {
+								if(!additionalMappers.contains(mapper)) {
+									if(mapper.getContainer1().getName().equals("testJavaMap") && mapper.getContainer2().getName().equals("testJavaMap")) {
+										additionalMappers.add(mapper);
+									}
+									else if(mapper.getContainer1().getName().equals("testJavaCollection") && mapper.getContainer2().getName().equals("testJavaCollection")) {
+										additionalMappers.add(mapper);
+									}
+								}
+							}
+						}
 						if(!bodyMapper.isNested()) {
 							if(!parentMappers.contains(bodyMapper.getParentMapper())) {
 								parentMappers.add(bodyMapper.getParentMapper());
@@ -365,6 +380,9 @@ public class TestStatementMappings {
 				for(UMLOperationBodyMapper parentMapper : parentMappers) {
 					mapperInfo(parentMapper, actual);
 				}
+				for(UMLOperationBodyMapper mapper : additionalMappers) {
+					mapperInfo(mapper, actual);
+				}
 			}
 		});
 		
@@ -373,7 +391,7 @@ public class TestStatementMappings {
 	}
 
 	@Test
-	public void testMappings6() throws Exception {
+	public void testDuplicatedExtractMethodStatementMappingsWithZeroIdenticalStatements() throws Exception {
 		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 		Repository repo = gitService.cloneIfNotExists(
 		    REPOS + "/deeplearning4j",
@@ -405,6 +423,40 @@ public class TestStatementMappings {
 		});
 		
 		List<String> expected = IOUtils.readLines(new FileReader(System.getProperty("user.dir") + "/src-test/Data/deeplearning4j-91cdfa1ffd937a4cb01cdc0052874ef7831955e2.txt"));
+		Assert.assertTrue(expected.size() == actual.size() && expected.containsAll(actual) && actual.containsAll(expected));
+	}
+
+	@Test
+	public void testDuplicatedAndNestedExtractMethodStatementMappings() throws Exception {
+		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+		Repository repo = gitService.cloneIfNotExists(
+		    REPOS + "/spring-boot",
+		    "https://spring-projects/spring-boot.git");
+
+		final List<String> actual = new ArrayList<>();
+		miner.detectAtCommit(repo, "becced5f0b7bac8200df7a5706b568687b517b90", new RefactoringHandler() {
+			@Override
+			public void handle(String commitId, List<Refactoring> refactorings) {
+				List<UMLOperationBodyMapper> parentMappers = new ArrayList<>();
+				for (Refactoring ref : refactorings) {
+					if(ref instanceof ExtractOperationRefactoring) {
+						ExtractOperationRefactoring ex = (ExtractOperationRefactoring)ref;
+						UMLOperationBodyMapper bodyMapper = ex.getBodyMapper();
+						if(!bodyMapper.isNested()) {
+							if(!parentMappers.contains(bodyMapper.getParentMapper())) {
+								parentMappers.add(bodyMapper.getParentMapper());
+							}
+						}
+						mapperInfo(bodyMapper, actual);
+					}
+				}
+				for(UMLOperationBodyMapper parentMapper : parentMappers) {
+					mapperInfo(parentMapper, actual);
+				}
+			}
+		});
+		
+		List<String> expected = IOUtils.readLines(new FileReader(System.getProperty("user.dir") + "/src-test/Data/spring-boot-becced5f0b7bac8200df7a5706b568687b517b90.txt"));
 		Assert.assertTrue(expected.size() == actual.size() && expected.containsAll(actual) && actual.containsAll(expected));
 	}
 
