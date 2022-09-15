@@ -680,7 +680,7 @@ public class TestPurity {
 //    @Test
 //    public void extractMethodTest_37() throws RefactoringMinerTimedOutException, IOException {
 //
-////        IMPURE MOVE METHOD - TODO
+////        IMPURE MOVE METHOD
 //
 //        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 //        miner.detectAtCommit("https://github.com/SonarSource/sonarqube.git",
@@ -701,7 +701,7 @@ public class TestPurity {
 //    @Test
 //    public void extractMethodTest_38() throws RefactoringMinerTimedOutException, IOException {
 //
-////        IMPURE MOVE METHOD - TODO - deleted class
+////        IMPURE MOVE METHOD
 //
 //        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 //        miner.detectAtCommit("https://github.com/liferay/liferay-portal.git",
@@ -722,7 +722,7 @@ public class TestPurity {
 //    @Test
 //    public void extractMethodTest_39() throws RefactoringMinerTimedOutException, IOException {
 //
-////        Pure PUSH DOWN METHOD - TODO
+////        Pure PUSH DOWN METHOD
 //
 //        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 //        miner.detectAtCommit("https://github.com/Alluxio/alluxio.git",
@@ -743,7 +743,7 @@ public class TestPurity {
 //    @Test
 //    public void extractMethodTest_40() throws RefactoringMinerTimedOutException, IOException {
 //
-////        Extract Superclass - Inherently pure - TODO
+////        Extract Superclass - Inherently pure
 //
 //        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 //        miner.detectAtCommit("https://github.com/Alluxio/alluxio.git",
@@ -764,7 +764,7 @@ public class TestPurity {
     @Test
     public void extractMethodTest_41() throws RefactoringMinerTimedOutException, IOException {
 
-//        Extract Interface - Inherently pure - TODO
+//        Extract Interface - Inherently pure
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectModelDiff("https://github.com/SonarSource/sonarqube.git",
@@ -843,7 +843,7 @@ public class TestPurity {
     @Test
     public void extractMethodTest_46() throws RefactoringMinerTimedOutException, IOException {
 
-//        Extract Interface - Inherently pure - TODO
+//        Extract Interface - Inherently pure
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectModelDiff("https://github.com/realm/realm-java.git",
@@ -858,7 +858,7 @@ public class TestPurity {
     @Test
     public void extractMethodTest_47() throws RefactoringMinerTimedOutException, IOException {
 
-//        Extract Interface - Inherently pure - TODO
+
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectModelDiff("https://github.com/JetBrains/intellij-community.git",
@@ -877,7 +877,6 @@ public class TestPurity {
     @Test
     public void extractMethodTest_48() throws RefactoringMinerTimedOutException, IOException {
 
-//        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectModelDiff("https://github.com/apache/giraph.git",
@@ -896,7 +895,6 @@ public class TestPurity {
     @Test
     public void extractMethodTest_49() throws RefactoringMinerTimedOutException, IOException {
 
-//        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectModelDiff("https://github.com/elastic/elasticsearch.git",
@@ -915,7 +913,6 @@ public class TestPurity {
     @Test
     public void extractMethodTest_50() throws RefactoringMinerTimedOutException, IOException {
 
-//        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectModelDiff("https://github.com/Athou/commafeed.git",
@@ -950,7 +947,6 @@ public class TestPurity {
     @Test
     public void extractMethodTest_52() throws RefactoringMinerTimedOutException, IOException {
 
-//        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectModelDiff("https://github.com/spring-projects/spring-boot.git",
@@ -985,7 +981,6 @@ public class TestPurity {
     @Test
     public void extractMethodTest_54() throws RefactoringMinerTimedOutException, IOException {
 
-//        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectModelDiff("https://github.com/robovm/robovm.git",
@@ -1016,11 +1011,10 @@ public class TestPurity {
     @Test
     public void extractMethodTest_55() throws RefactoringMinerTimedOutException, IOException {
 
-//        Extract Interface - Inherently pure - TODO
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/jberkel/sms-backup-plus.git",
-                "c265bde2ace252bc1e1c65c6af93520e5994edd2", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/wordpress-mobile/WordPress-Android.git",
+                "f8d5cf01f123a1d0a65857aa2db0571fe9cd1911", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
@@ -1037,6 +1031,22 @@ public class TestPurity {
         // Rename Class with Inline Method - added and removed operations are empty
         UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\38\\v1")).getUmlModel();
         UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\38\\v2")).getUmlModel();
+        UMLModelDiff modelDiff = model1.diff(model2);
+        List<Refactoring> refactorings = modelDiff.getRefactorings();
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+
+
+        for (Refactoring refactoring: refactorings){
+            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+                assertTrue(pcr.get(refactoring).isPure());
+        }
+    }
+
+    @Test
+    public void extractMethodTest_57() throws RefactoringMinerTimedOutException, IOException {
+        // Rename Class with Inline Method - added and removed operations are empty
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\39\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\39\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);

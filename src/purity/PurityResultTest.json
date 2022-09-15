@@ -7160,7 +7160,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : "One parameter has been added to the method call -mockStatementBatch-, which itself has been extracted during this commit. So, like parametrize variable, extract method can cause this behavior."
     }
   }, {
@@ -21263,7 +21263,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : "If we accept that inclusiveContains(other SourceRange) and contains(other SourceRange) are the same(renamed), we can say that it's pure. But, we don't have this infomation from RMiner"
     }
   }, {
@@ -25343,7 +25343,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25355,7 +25355,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25367,7 +25367,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25379,7 +25379,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25391,7 +25391,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25403,7 +25403,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25415,7 +25415,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25427,7 +25427,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25439,7 +25439,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25451,7 +25451,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25463,7 +25463,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25487,7 +25487,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25499,7 +25499,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25511,7 +25511,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25523,7 +25523,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25535,7 +25535,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25547,7 +25547,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25559,7 +25559,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25571,7 +25571,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25583,7 +25583,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25595,7 +25595,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25607,7 +25607,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25619,7 +25619,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25631,7 +25631,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25643,7 +25643,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25655,7 +25655,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : "The new condition doesn't change the behavior and logic of the code"
     }
   }, {
@@ -25667,7 +25667,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : "The new condition doesn't change the behavior and logic of the code"
     }
   }, {
@@ -25679,7 +25679,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25691,7 +25691,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25703,7 +25703,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : "The new condition doesn't change the behavior and logic of the code"
     }
   }, {
@@ -25715,7 +25715,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25727,7 +25727,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25739,7 +25739,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25751,7 +25751,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25763,7 +25763,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : "The new condition doesn't change the behavior and logic of the code"
     }
   }, {
@@ -25775,7 +25775,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25787,7 +25787,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25799,7 +25799,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25811,7 +25811,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25823,7 +25823,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25835,7 +25835,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25847,7 +25847,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25859,7 +25859,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25871,7 +25871,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25883,7 +25883,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25895,7 +25895,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25907,7 +25907,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25919,7 +25919,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25931,7 +25931,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25943,7 +25943,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25955,7 +25955,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25967,7 +25967,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25979,7 +25979,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -25991,7 +25991,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26003,7 +26003,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26015,7 +26015,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26027,7 +26027,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26039,7 +26039,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26051,7 +26051,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26063,7 +26063,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26075,7 +26075,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26087,7 +26087,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26099,7 +26099,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26111,7 +26111,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26123,7 +26123,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26135,7 +26135,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26147,7 +26147,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -26159,7 +26159,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -33804,7 +33804,7 @@
     "purity" : {
       "purityValue" : "-",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "Not detected by RM, which I agree btw"
     }
   }, {
     "type" : "Merge Variable",
@@ -36589,4 +36589,2671 @@
     }
   } ],
   "refDiffExecutionTime" : 250
+}, {
+  "id" : 1118568,
+  "repository" : "https://github.com/AsyncHttpClient/async-http-client.git",
+  "sha1" : "f01d8610b9ceebc1de59d42f569b8af3efbe0a0f",
+  "url" : "https://github.com/AsyncHttpClient/async-http-client/commit/f01d8610b9ceebc1de59d42f569b8af3efbe0a0f",
+  "author" : "Stephane Landelle",
+  "time" : "6/17/15 6:11 PM",
+  "refactorings" : [ {
+    "type" : "Extract Method",
+    "description" : "Extract Method package signatureBaseString(method String, uri Uri, oauthTimestamp long, nonce String, formParams List<Param>, queryParams List<Param>) : StringBuilder extracted from public calculateSignature(method String, uri Uri, oauthTimestamp long, nonce String, formParams List<Param>, queryParams List<Param>) : String in class org.asynchttpclient.oauth.OAuthSignatureCalculator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "All mapped"
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method protected generateNonce() : String from class org.asynchttpclient.oauth.OAuthSignatureCalculator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : 548
+}, {
+  "id" : 1118645,
+  "repository" : "https://github.com/square/okhttp.git",
+  "sha1" : "c753d2e41ba667f9b5a31451a16ecbaecdc65d80",
+  "url" : "https://github.com/square/okhttp/commit/c753d2e41ba667f9b5a31451a16ecbaecdc65d80",
+  "author" : "Jake Wharton",
+  "time" : "6/17/15 7:40 PM",
+  "refactorings" : [ {
+    "type" : "Move And Rename Class",
+    "description" : "Move And Rename Class com.squareup.okhttp.internal.spdy.SpdyConnection moved and renamed to com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move And Rename Class",
+    "description" : "Move And Rename Class com.squareup.okhttp.internal.spdy.SpdyStream.SpdyDataSource moved and renamed to com.squareup.okhttp.internal.framed.FramedStream.FramedDataSource",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move And Rename Class",
+    "description" : "Move And Rename Class com.squareup.okhttp.internal.spdy.SpdyStream.SpdyTimeout moved and renamed to com.squareup.okhttp.internal.framed.FramedStream.StreamTimeout",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move And Rename Class",
+    "description" : "Move And Rename Class com.squareup.okhttp.internal.spdy.SpdyStream.SpdyDataSink moved and renamed to com.squareup.okhttp.internal.framed.FramedStream.FramedDataSink",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move And Rename Class",
+    "description" : "Move And Rename Class com.squareup.okhttp.internal.spdy.SpdyStream moved and renamed to com.squareup.okhttp.internal.framed.FramedStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move And Rename Class",
+    "description" : "Move And Rename Class com.squareup.okhttp.internal.spdy.SpdyServer moved and renamed to com.squareup.okhttp.internal.framed.FramedServer",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Class",
+    "description" : "Rename Class com.squareup.okhttp.internal.http.SpdyTransport renamed to com.squareup.okhttp.internal.http.FramedTransport",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Class",
+    "description" : "Rename Class com.squareup.okhttp.mockwebserver.MockWebServer.SpdySocketHandler renamed to com.squareup.okhttp.mockwebserver.MockWebServer.FramedSocketHandler",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method package isSpdy() : boolean renamed to package isFramed() : boolean in class com.squareup.okhttp.Connection",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.hpackjson.Story moved to com.squareup.okhttp.internal.framed.hpackjson.Story",
+    "comment" : "<div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><div><div><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since RefDiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div></div><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.FrameReader moved to com.squareup.okhttp.internal.framed.FrameReader",
+    "comment" : "<div><div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p><p>&nbsp;</p></div></div>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.HpackDecodeTestBase moved to com.squareup.okhttp.internal.framed.HpackDecodeTestBase",
+    "comment" : "<div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><div><div><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since RefDiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div></div><p style='color: gray;'>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Spdy3ConnectionTest moved to com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "<div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><div><div><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since RefDiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div></div><p style='color: gray;'>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Http2ConnectionTest moved to com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "<div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><div><div><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since RefDiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div></div><p style='color: gray;'>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.HuffmanTest moved to com.squareup.okhttp.internal.framed.HuffmanTest",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><div><div><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since RefDiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.hpackjson.HpackJsonUtil moved to com.squareup.okhttp.internal.framed.hpackjson.HpackJsonUtil",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><div><div><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.HpackDecodeInteropTest moved to com.squareup.okhttp.internal.framed.HpackDecodeInteropTest",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><div><div><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Spdy3Test moved to com.squareup.okhttp.internal.framed.Spdy3Test",
+    "comment" : "<div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><div><div><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since RefDiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div></div>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Http2 moved to com.squareup.okhttp.internal.framed.Http2",
+    "comment" : "<div><div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div><p style='color: gray;'>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.PushObserver moved to com.squareup.okhttp.internal.framed.PushObserver",
+    "comment" : "<div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><div><div><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since RefDiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div></div><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.SettingsTest moved to com.squareup.okhttp.internal.framed.SettingsTest",
+    "comment" : "<div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><div><div><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since RefDiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div></div></div><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Spdy3 moved to com.squareup.okhttp.internal.framed.Spdy3",
+    "comment" : "<div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p></div><p style='color: gray;'>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Variant moved to com.squareup.okhttp.internal.framed.Variant",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Settings moved to com.squareup.okhttp.internal.framed.Settings",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span>.</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Ping moved to com.squareup.okhttp.internal.framed.Ping",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.ErrorCode moved to com.squareup.okhttp.internal.framed.ErrorCode",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span>.</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Huffman moved to com.squareup.okhttp.internal.framed.Huffman",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span>.</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.HpackTest moved to com.squareup.okhttp.internal.framed.HpackTest",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.FrameWriter moved to com.squareup.okhttp.internal.framed.FrameWriter",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.MockSpdyPeer moved to com.squareup.okhttp.internal.framed.MockSpdyPeer",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Header moved to com.squareup.okhttp.internal.framed.Header",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.HpackRoundTripTest moved to com.squareup.okhttp.internal.framed.HpackRoundTripTest",
+    "comment" : "<div><p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'.</span></span></span></p></div>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Http2FrameLoggerTest moved to com.squareup.okhttp.internal.framed.Http2FrameLoggerTest",
+    "comment" : "<p>I<small></small>t is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.HeadersMode moved to com.squareup.okhttp.internal.framed.HeadersMode",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.hpackjson.Case moved to com.squareup.okhttp.internal.framed.hpackjson.Case",
+    "comment" : "<p>I<small></small>t is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.BaseTestHandler moved to com.squareup.okhttp.internal.framed.BaseTestHandler",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Http2Test moved to com.squareup.okhttp.internal.framed.Http2Test",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.NameValueBlockReader moved to com.squareup.okhttp.internal.framed.NameValueBlockReader",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.Hpack moved to com.squareup.okhttp.internal.framed.Hpack",
+    "comment" : "<p>It is a 'rename package' refactorin: <span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>spdy-&gt;framed.</span></span></span></p><p><span class='blob-code-inner'><span class='pl-smi'><span class='x x-first x-last'>Since Refdiff cannot detect package level refactorings we can consider it as 'move class'</span></span></span></p><p>&nbsp;</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin, Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Move Class",
+    "description" : "Move Class com.squareup.okhttp.internal.spdy.IncomingStreamHandler moved to com.squareup.okhttp.internal.framed.IncomingStreamHandler",
+    "comment" : "new---",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
+    "validators" : "Matin",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Package",
+    "description" : "Rename Package com.squareup.okhttp.internal.spdy to com.squareup.okhttp.internal.framed",
+    "comment" : "<p>Package com.squareup.okhttp.internal.spdy no longer exists in child commit after refactoring</p>",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Matin, Davood, Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable spdyConnection : SpdyConnection to framedConnection : FramedConnection in method public processConnection() : void from class com.squareup.okhttp.mockwebserver.MockWebServer.serveConnection.execute.new NamedRunnable",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable spdySocketHandler : SpdySocketHandler to framedSocketHandler : FramedSocketHandler in method public processConnection() : void from class com.squareup.okhttp.mockwebserver.MockWebServer.serveConnection.execute.new NamedRunnable",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable spdyHeaders : List<Header> to streamHeaders : List<Header> in method private readRequest(stream FramedStream) : RecordedRequest from class com.squareup.okhttp.mockwebserver.MockWebServer.FramedSocketHandler",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable spdyConnection : SpdyConnection to framedConnection : FramedConnection in method private run() : void from class com.squareup.okhttp.internal.framed.FramedServer",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable spdyStream : SpdyStream to framedStream : FramedStream in method public goAway(lastGoodStreamId int, errorCode ErrorCode, debugData ByteString) : void from class com.squareup.okhttp.internal.framed.FramedConnection.Reader",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter spdyConnection : SpdyConnection to framedConnection : FramedConnection in method public FramedTransport(httpEngine HttpEngine, framedConnection FramedConnection) from class com.squareup.okhttp.internal.http.FramedTransport",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute openSpdyConnections : Set<SpdyConnection> to openFramedConnections : Set<FramedConnection> in class com.squareup.okhttp.mockwebserver.MockWebServer",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute spdyConnection : SpdyConnection to framedConnection : FramedConnection in class com.squareup.okhttp.Connection",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute spdyProtocols : List<Protocol> to framedProtocols : List<Protocol> in class com.squareup.okhttp.internal.framed.FramedServer",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute spdyConnection : SpdyConnection to framedConnection : FramedConnection in class com.squareup.okhttp.internal.http.FramedTransport",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type spdyConnection : SpdyConnection to framedConnection : FramedConnection in method public FramedTransport(httpEngine HttpEngine, framedConnection FramedConnection) from class com.squareup.okhttp.internal.http.FramedTransport",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type spdySocketHandler : SpdySocketHandler to framedSocketHandler : FramedSocketHandler in method public processConnection() : void from class com.squareup.okhttp.mockwebserver.MockWebServer.serveConnection.execute.new NamedRunnable",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type spdyConnection : SpdyConnection to framedConnection : FramedConnection in method public processConnection() : void from class com.squareup.okhttp.mockwebserver.MockWebServer.serveConnection.execute.new NamedRunnable",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type openSpdyConnections : Set<SpdyConnection> to openFramedConnections : Set<FramedConnection> in class com.squareup.okhttp.mockwebserver.MockWebServer",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type spdyConnection : SpdyConnection to framedConnection : FramedConnection in class com.squareup.okhttp.Connection",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type spdyStream : SpdyStream to framedStream : FramedStream in method public goAway(lastGoodStreamId int, errorCode ErrorCode, debugData ByteString) : void from class com.squareup.okhttp.internal.framed.FramedConnection.Reader",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type spdyConnection : SpdyConnection to framedConnection : FramedConnection in method private run() : void from class com.squareup.okhttp.internal.framed.FramedServer",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type spdyConnection : SpdyConnection to framedConnection : FramedConnection in class com.squareup.okhttp.internal.http.FramedTransport",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type s : Iterator<SpdyConnection> to s : Iterator<FramedConnection> in method protected execute() : void from class com.squareup.okhttp.mockwebserver.MockWebServer.start.execute.new NamedRunnable",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clientPingsServerHttp2() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public peerHttp2ServerLowersInitialWindowSize() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public peerHttp2ServerLowersInitialWindowSize() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public peerHttp2ServerZerosCompressionTable() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public peerHttp2ClientDisablesPush() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public peerIncreasesMaxFrameSize() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public receiveGoAwayHttp2() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream1 : SpdyStream to stream1 : FramedStream in method public receiveGoAwayHttp2() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream2 : SpdyStream to stream2 : FramedStream in method public receiveGoAwayHttp2() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public readSendsWindowUpdateHttp2() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public readSendsWindowUpdateHttp2() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public serverSendsEmptyDataClientDoesntSendWindowUpdateHttp2() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type client : SpdyStream to client : FramedStream in method public serverSendsEmptyDataClientDoesntSendWindowUpdateHttp2() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clientSendsEmptyDataServerDoesntSendWindowUpdateHttp2() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type client : SpdyStream to client : FramedStream in method public clientSendsEmptyDataServerDoesntSendWindowUpdateHttp2() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public maxFrameSizeHonored() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public maxFrameSizeHonored() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public pushPromiseStream() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type client : SpdyStream to client : FramedStream in method public pushPromiseStream() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public doublePushPromise() : void from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method private sendHttp2SettingsAndCheckForAck(client boolean, settings Settings) : FramedConnection from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clientCreatesStreamAndServerReplies() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public clientCreatesStreamAndServerReplies() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public headersOnlyStreamIsClosedAfterReplyHeaders() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public headersOnlyStreamIsClosedAfterReplyHeaders() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clientPingsServer() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public serverSendsSettingsToClient() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public multipleSettingsFramesAreMerged() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clearSettingsBeforeMerge() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clientClosesClientOutputStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public clientClosesClientOutputStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public serverClosesClientOutputStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public serverClosesClientOutputStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clientClosesClientInputStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public clientClosesClientInputStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public serverClosesClientInputStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public serverClosesClientInputStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public remoteDoubleSynReply() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public remoteDoubleSynReply() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public remoteSendsDataAfterInFinished() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public remoteSendsDataAfterInFinished() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clientDoesNotLimitFlowControl() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public clientDoesNotLimitFlowControl() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public remoteSendsRefusedStreamBeforeReplyHeaders() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public remoteSendsRefusedStreamBeforeReplyHeaders() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public receiveGoAway() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream1 : SpdyStream to stream1 : FramedStream in method public receiveGoAway() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream2 : SpdyStream to stream2 : FramedStream in method public receiveGoAway() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public sendGoAway() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public noPingsAfterShutdown() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public close() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public close() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public closeCancelsPings() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public getResponseHeadersTimesOut() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public getResponseHeadersTimesOut() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public readTimesOut() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public readTimesOut() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public writeTimesOutAwaitingStreamWindow() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public writeTimesOutAwaitingStreamWindow() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public writeTimesOutAwaitingConnectionWindow() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public writeTimesOutAwaitingConnectionWindow() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public outgoingWritesAreBatched() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public outgoingWritesAreBatched() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public headers() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public headers() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public headersBeforeReply() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public headersBeforeReply() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public readSendsWindowUpdate() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public readSendsWindowUpdate() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public serverSendsEmptyDataClientDoesntSendWindowUpdate() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type client : SpdyStream to client : FramedStream in method public serverSendsEmptyDataClientDoesntSendWindowUpdate() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clientSendsEmptyDataServerDoesntSendWindowUpdate() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type client : SpdyStream to client : FramedStream in method public clientSendsEmptyDataServerDoesntSendWindowUpdate() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public testTruncatedDataFrame() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public testTruncatedDataFrame() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public blockedStreamDoesntStarveNewStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream1 : SpdyStream to stream1 : FramedStream in method public blockedStreamDoesntStarveNewStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream2 : SpdyStream to stream2 : FramedStream in method public blockedStreamDoesntStarveNewStream() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method private headerBlockHasTrailingCompressedBytes(frame String, length int) : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method private headerBlockHasTrailingCompressedBytes(frame String, length int) : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type dataStream : SpdyStream to dataStream : FramedStream in method public data(inFinished boolean, streamId int, source BufferedSource, length int) : void from class com.squareup.okhttp.internal.framed.FramedConnection.Reader",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public headers(outFinished boolean, inFinished boolean, streamId int, associatedStreamId int, headerBlock List<Header>, headersMode HeadersMode) : void from class com.squareup.okhttp.internal.framed.FramedConnection.Reader",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type newStream : SpdyStream to newStream : FramedStream in method public headers(outFinished boolean, inFinished boolean, streamId int, associatedStreamId int, headerBlock List<Header>, headersMode HeadersMode) : void from class com.squareup.okhttp.internal.framed.FramedConnection.Reader",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type rstStream : SpdyStream to rstStream : FramedStream in method public rstStream(streamId int, errorCode ErrorCode) : void from class com.squareup.okhttp.internal.framed.FramedConnection.Reader",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type streamsToNotify : SpdyStream[] to streamsToNotify : FramedStream[] in method public settings(clearPrevious boolean, newSettings Settings) : void from class com.squareup.okhttp.internal.framed.FramedConnection.Reader",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type streamsCopy : SpdyStream[] to streamsCopy : FramedStream[] in method public goAway(lastGoodStreamId int, errorCode ErrorCode, debugData ByteString) : void from class com.squareup.okhttp.internal.framed.FramedConnection.Reader",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public windowUpdate(streamId int, windowSizeIncrement long) : void from class com.squareup.okhttp.internal.framed.FramedConnection.Reader",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type server : SpdyServer to server : FramedServer in method public main(args String...) : void from class com.squareup.okhttp.internal.framed.FramedServer",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type pushedStream : SpdyStream to pushedStream : FramedStream in method private pushPromises(stream FramedStream, promises List<PushPromise>) : void from class com.squareup.okhttp.mockwebserver.MockWebServer.FramedSocketHandler",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type stream : SpdyStream to stream : FramedStream in class com.squareup.okhttp.internal.http.FramedTransport",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type streams : Map<Integer,SpdyStream> to streams : Map<Integer,FramedStream> in class com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method package removeStream(streamId int) : FramedStream from class com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method private newStream(associatedStreamId int, requestHeaders List<Header>, out boolean, in boolean) : FramedStream from class com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type streamsToClose : SpdyStream[] to streamsToClose : FramedStream[] in method private close(connectionCode ErrorCode, streamCode ErrorCode) : void from class com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type connection : SpdyConnection to connection : FramedConnection in class com.squareup.okhttp.internal.framed.FramedStream",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type source : SpdyDataSource to source : FramedDataSource in class com.squareup.okhttp.internal.framed.FramedStream",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type sink : SpdyDataSink to sink : FramedDataSink in class com.squareup.okhttp.internal.framed.FramedStream",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type readTimeout : SpdyTimeout to readTimeout : StreamTimeout in class com.squareup.okhttp.internal.framed.FramedStream",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type writeTimeout : SpdyTimeout to writeTimeout : StreamTimeout in class com.squareup.okhttp.internal.framed.FramedStream",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method public receive(stream FramedStream) : void from class com.squareup.okhttp.mockwebserver.MockWebServer.FramedSocketHandler",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method private readRequest(stream FramedStream) : RecordedRequest from class com.squareup.okhttp.mockwebserver.MockWebServer.FramedSocketHandler",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method private writeResponse(stream FramedStream, response MockResponse) : void from class com.squareup.okhttp.mockwebserver.MockWebServer.FramedSocketHandler",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method private pushPromises(stream FramedStream, promises List<PushPromise>) : void from class com.squareup.okhttp.mockwebserver.MockWebServer.FramedSocketHandler",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public settings(clearPrevious boolean, newSettings Settings) : void from class com.squareup.okhttp.internal.framed.FramedConnection.Reader",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method private close(connectionCode ErrorCode, streamCode ErrorCode) : void from class com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method public receive(stream FramedStream) : void from class com.squareup.okhttp.internal.framed.IncomingStreamHandler",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method public receive(stream FramedStream) : void from class com.squareup.okhttp.internal.framed.FramedServer",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method private send404(stream FramedStream, path String) : void from class com.squareup.okhttp.internal.framed.FramedServer",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method private serveDirectory(stream FramedStream, files File[]) : void from class com.squareup.okhttp.internal.framed.FramedServer",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method private serveFile(stream FramedStream, file File) : void from class com.squareup.okhttp.internal.framed.FramedServer",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type connection : SpdyConnection to connection : FramedConnection in method package FramedStream(id int, connection FramedConnection, outFinished boolean, inFinished boolean, requestHeaders List<Header>) from class com.squareup.okhttp.internal.framed.FramedStream",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyConnection to FramedConnection in method private sendHttp2SettingsAndCheckForAck(client boolean, settings Settings) : FramedConnection from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyConnection to FramedConnection in method private connection(peer MockSpdyPeer, variant Variant) : FramedConnection from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyConnection to FramedConnection in method private connection(peer MockSpdyPeer, variant Variant) : FramedConnection from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyConnection to FramedConnection in method public build() : FramedConnection from class com.squareup.okhttp.internal.framed.FramedConnection.Builder",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyStream to FramedStream in method package getStream(id int) : FramedStream from class com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyStream to FramedStream in method package removeStream(streamId int) : FramedStream from class com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyStream to FramedStream in method public pushStream(associatedStreamId int, requestHeaders List<Header>, out boolean) : FramedStream from class com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyStream to FramedStream in method public newStream(requestHeaders List<Header>, out boolean, in boolean) : FramedStream from class com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyStream to FramedStream in method private newStream(associatedStreamId int, requestHeaders List<Header>, out boolean, in boolean) : FramedStream from class com.squareup.okhttp.internal.framed.FramedConnection",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyConnection to FramedConnection in method public getConnection() : FramedConnection from class com.squareup.okhttp.internal.framed.FramedStream",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clientCreatesStreamAndServerRepliesWithFin() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type connection : SpdyConnection to connection : FramedConnection in method public clientClosesClientInputStreamIfOutputStreamIsClosed() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type stream : SpdyStream to stream : FramedStream in method public clientClosesClientInputStreamIfOutputStreamIsClosed() : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyConnection.Builder to FramedConnection.Builder in method private connectionBuilder(peer MockSpdyPeer, variant Variant) : FramedConnection.Builder from class com.squareup.okhttp.internal.framed.Http2ConnectionTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type SpdyConnection.Builder to FramedConnection.Builder in method private connectionBuilder(peer MockSpdyPeer, variant Variant) : FramedConnection.Builder from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method public receive(stream FramedStream) : void from class com.squareup.okhttp.internal.framed.IncomingStreamHandler.REFUSE_INCOMING_STREAMS.new IncomingStreamHandler",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method public receive(stream FramedStream) : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest.serverCreatesStreamAndClientReplies.handler.new IncomingStreamHandler",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method public receive(stream FramedStream) : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest.remoteDoubleSynStream.handler.new IncomingStreamHandler",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type stream : SpdyStream to stream : FramedStream in method public receive(stream FramedStream) : void from class com.squareup.okhttp.internal.framed.Spdy3ConnectionTest.replyWithNoData.handler.new IncomingStreamHandler",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : 0
+}, {
+  "id" : 1118798,
+  "repository" : "https://github.com/spring-projects/spring-integration.git",
+  "sha1" : "247232bdde24b81814a82100743f77d881aaf06b",
+  "url" : "https://github.com/spring-projects/spring-integration/commit/247232bdde24b81814a82100743f77d881aaf06b",
+  "author" : "Gunnar Hillert",
+  "time" : "6/17/15 9:57 PM",
+  "refactorings" : [ {
+    "type" : "Extract Method",
+    "description" : "Extract Method private handleInputStreamMessage(sourceFileInputStream InputStream, originalFile File, tempFile File, resultFile File) : File extracted from private handleFileMessage(sourceFile File, tempFile File, resultFile File) : File in class org.springframework.integration.file.FileWritingMessageHandler",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "this. has been added, which doesn't make the refactoring impure"
+    }
+  }, {
+    "type" : "Parameterize Variable",
+    "description" : "Parameterize Variable bis : BufferedInputStream to sourceFileInputStream : InputStream in method private handleInputStreamMessage(sourceFileInputStream InputStream, originalFile File, tempFile File, resultFile File) : File from class org.springframework.integration.file.FileWritingMessageHandler",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type bis : BufferedInputStream to sourceFileInputStream : InputStream in method private handleInputStreamMessage(sourceFileInputStream InputStream, originalFile File, tempFile File, resultFile File) : File from class org.springframework.integration.file.FileWritingMessageHandler",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method private handleFileMessage(sourceFile File, tempFile File, resultFile File) : File renamed to private handleInputStreamMessage(sourceFileInputStream InputStream, originalFile File, tempFile File, resultFile File) : File in class org.springframework.integration.file.FileWritingMessageHandler",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier final in parameter sourceFileInputStream : InputStream in method private handleInputStreamMessage(sourceFileInputStream InputStream, originalFile File, tempFile File, resultFile File) : File from class org.springframework.integration.file.FileWritingMessageHandler",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : 2664
+}, {
+  "id" : 1118835,
+  "repository" : "https://github.com/grails/grails-core.git",
+  "sha1" : "480537e0f8aaf50a7648bf445b33230aa32a9b44",
+  "url" : "https://github.com/grails/grails-core/commit/480537e0f8aaf50a7648bf445b33230aa32a9b44",
+  "author" : "graemerocher",
+  "time" : "6/18/15 5:02 AM",
+  "refactorings" : [ {
+    "type" : "Extract Method",
+    "description" : "Extract Method public weaveTestMixins(classNode ClassNode, values ListExpression, applicationClassNode ClassNode) : void extracted from public weaveTestMixins(classNode ClassNode, values ListExpression) : void in class org.grails.compiler.injection.test.TestMixinTransformation",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "The replacement is about a method invocation to an extracted method. I consider this as a pure change"
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method public weaveMixinsIntoClass(classNode ClassNode, values ListExpression, applicationClassNode ClassNode) : void extracted from public weaveMixinsIntoClass(classNode ClassNode, values ListExpression) : void in class org.grails.compiler.injection.test.TestMixinTransformation",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Add parameter on the top of the extracted method"
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter applicationClassNode : ClassNode in method protected weaveMixinIntoClass(classNode ClassNode, mixinClassNode ClassNode, junit3MethodHandler Junit3TestFixtureMethodHandler, applicationClassNode ClassNode) : void from class org.grails.compiler.injection.test.TestMixinTransformation",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : 1177
+}, {
+  "id" : 1119037,
+  "repository" : "https://github.com/apache/pig.git",
+  "sha1" : "7a1659c12d76b510809dea1dea1f5100bcf4cd60",
+  "url" : "https://github.com/apache/pig/commit/7a1659c12d76b510809dea1dea1f5100bcf4cd60",
+  "author" : "Xuefu Zhang",
+  "time" : "6/18/15 1:08 AM",
+  "refactorings" : [ {
+    "type" : "Extract Method",
+    "description" : "Extract Method private initialize() : void extracted from public launchPig(physicalPlan PhysicalPlan, grpName String, pigContext PigContext) : PigStats in class org.apache.pig.backend.hadoop.executionengine.spark.SparkLauncher",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "One line has beed added which changes the behavior of the extracted code (new method)"
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method private startSparkJob() : void renamed to private addFilesToSparkJob() : void in class org.apache.pig.backend.hadoop.executionengine.spark.SparkLauncher",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter pigContext : PigContext in method private saveUdfImportList(pigContext PigContext) : void from class org.apache.pig.backend.hadoop.executionengine.spark.SparkLauncher",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : 2060
+}, {
+  "id" : 1119082,
+  "repository" : "https://github.com/wordpress-mobile/WordPress-Android.git",
+  "sha1" : "ab298886b59f4ad0235cd6d5764854189eb59eb6",
+  "url" : "https://github.com/wordpress-mobile/WordPress-Android/commit/ab298886b59f4ad0235cd6d5764854189eb59eb6",
+  "author" : "Danilo Ercoli",
+  "time" : "6/18/15 8:36 AM",
+  "refactorings" : [ {
+    "type" : "Extract Method",
+    "description" : "Extract Method public openPostInReaderOrInAppWebview(ctx Context, remoteBlogID String, remoteItemID String, itemType String, itemURL String) : void extracted from public openPostInReaderOrInAppWebview(ctx Context, post PostModel) : void in class org.wordpress.android.ui.stats.StatsUtils",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "null check has been added and the behavior and functionality is the same as the parent version, so it's pure"
+    }
+  }, {
+    "type" : "Rename Class",
+    "description" : "Rename Class org.wordpress.android.ui.stats.StatsSinglePostDetailsActivity renamed to org.wordpress.android.ui.stats.StatsSingleItemDetailsActivity",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Variable",
+    "description" : "Parameterize Variable url : String to itemURL : String in method public openPostInReaderOrInAppWebview(ctx Context, remoteBlogID String, remoteItemID String, itemType String, itemURL String) : void from class org.wordpress.android.ui.stats.StatsUtils",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Variable",
+    "description" : "Parameterize Variable postType : String to itemType : String in method public openPostInReaderOrInAppWebview(ctx Context, remoteBlogID String, remoteItemID String, itemType String, itemURL String) : void from class org.wordpress.android.ui.stats.StatsUtils",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Replace Variable With Attribute",
+    "description" : "Replace Variable With Attribute blogId : String to mRemoteBlogID : String in method private refreshStats() : void from class org.wordpress.android.ui.stats.StatsSingleItemDetailsActivity",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Replace Variable With Attribute",
+    "description" : "Replace Variable With Attribute remotePostID : String to mRemoteItemID : String in method private refreshStats() : void from class org.wordpress.android.ui.stats.StatsSingleItemDetailsActivity",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Split Attribute",
+    "description" : "Split Attribute mRemotePostItem : PostModel to [mRemoteBlogID : String, mRemoteItemID : String, mRemoteItemType : String, mItemURL : String, mItemTitle : String] in class org.wordpress.android.ui.stats.StatsSingleItemDetailsActivity",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type blogID : long to blogID : String in method public openPostInReaderOrInAppWebview(ctx Context, post PostModel) : void from class org.wordpress.android.ui.stats.StatsUtils",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type itemID : long to itemID : String in method public openPostInReaderOrInAppWebview(ctx Context, post PostModel) : void from class org.wordpress.android.ui.stats.StatsUtils",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : 1502
+}, {
+  "id" : 1119086,
+  "repository" : "https://github.com/wordpress-mobile/WordPress-Android.git",
+  "sha1" : "f8d5cf01f123a1d0a65857aa2db0571fe9cd1911",
+  "url" : "https://github.com/wordpress-mobile/WordPress-Android/commit/f8d5cf01f123a1d0a65857aa2db0571fe9cd1911",
+  "author" : "Oguz Kocer",
+  "time" : "6/18/15 7:25 AM",
+  "refactorings" : [ {
+    "type" : "Extract Method",
+    "description" : "Extract Method private getIconImageURL(size int, iconUrl String, blogUrl String) : String extracted from public getIconImageURL(size int) : String in class org.wordpress.android.models.Blog",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "All mapped"
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier public to private in method private isPhotonURL(url String) : boolean from class org.wordpress.android.models.Blog",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier public to private in method private isBlavatarURL(url String) : boolean from class org.wordpress.android.models.Blog",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier static in method private isPhotonURL(url String) : boolean from class org.wordpress.android.models.Blog",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier static in method private isBlavatarURL(url String) : boolean from class org.wordpress.android.models.Blog",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : 1995
 } ]

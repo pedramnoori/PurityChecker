@@ -229,13 +229,17 @@ public class PurityChecker {
                 return new PurityCheckResult(false, "Replacements are not justified - non-mapped inner nodes");
             }
 
-            if (!checkNonMappedLeaves(refactoring, refactorings)) {
+            List<AbstractCodeFragment> nonMappedLeavesT2List = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT2());
+
+            removeNonMappedLeavesRegardingNullCheck(refactoring ,refactorings, nonMappedLeavesT2List); // Added for ignoring the null check in extract methods: https://github.com/wordpress-mobile/WordPress-Android/commit/ab298886b59f4ad0235cd6d5764854189eb59eb6
+
+            if (!checkNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT2List)) {
                 return new PurityCheckResult(false, "Non-mapped leaves are not justified - non-mapped inner nodes");
             }
 
             List<AbstractCodeFragment> nonMappedInnerNodesT2 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedInnerNodesT2());
 
-            checkForIfCondition(refactoring, nonMappedInnerNodesT2);
+            checkForIfCondition(refactoring, nonMappedInnerNodesT2); //TODO -> I don't why I have added this. Need to check with the help of the oracle.
 
             if (nonMappedInnerNodesT2.size() == 1) {
                 AbstractCodeFragment nonMappedLeave = nonMappedInnerNodesT2.get(0);
@@ -250,20 +254,58 @@ public class PurityChecker {
         return new PurityCheckResult(false, "Not decided yet!");
     }
 
+    private static void removeNonMappedLeavesRegardingNullCheck(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT2List) {
+
+        List<AbstractCodeFragment> nonMappedLeavesT2ToRemove = new ArrayList<>();
+
+        for (AbstractCodeFragment nonMappedLeavesT2 : nonMappedLeavesT2List) {
+            if (nonMappedLeavesT2.getParent().getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
+                if (nonMappedLeavesT2.getParent().getParent() != null) {
+                if (nonMappedLeavesT2.getParent().getParent().getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.IF_STATEMENT)) {
+                    AbstractExpression ifStatementConditionExpression = nonMappedLeavesT2.getParent().getParent().getExpressions().get(0);
+                    if (nullCheckIf(ifStatementConditionExpression) && variableCheck(refactoring, ifStatementConditionExpression)) {
+                        nonMappedLeavesT2ToRemove.add(nonMappedLeavesT2);
+                    }
+                }
+            }
+        }
+        }
+    nonMappedLeavesT2List.removeAll(nonMappedLeavesT2ToRemove);
+    }
+
+    private static boolean variableCheck(ExtractOperationRefactoring refactoring, AbstractExpression ifStatementConditionExpression) {
+
+        return refactoring.getExtractedOperation().getParameterNameList().containsAll(ifStatementConditionExpression.getVariables());
+
+
+    }
+
+    private static boolean nullCheckIf(AbstractExpression ifStatementConditionExpression) {
+
+        return ifStatementConditionExpression.getVariables().size() == ifStatementConditionExpression.getNullLiterals().size();
+
+    }
+
     private static void checkForExtractMethodOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
 
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
         for (Replacement replacement : replacementsToCheck) {
-            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION)) {
+            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) ||
+                    replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT)) {
                 String invokedOperationAfterName = ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName();
                 for (Refactoring refactoring1 : refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
-//                        TODO
+                        if (((ExtractOperationRefactoring) refactoring1).getExtractedOperation().getName().equals(invokedOperationAfterName)) {
+                            replacementsToRemove.add(replacement);
+                            break;
+                        }
                     }
                 }
             }
         }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
     }
 
     private static void checkForIfCondition(ExtractOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedInnerNodesT2) {
@@ -370,13 +412,11 @@ public class PurityChecker {
 
     }
 
-    private static boolean checkNonMappedLeaves(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
+    private static boolean checkNonMappedLeaves(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT2) {
 
-        if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty()) {
+        if (nonMappedLeavesT2.isEmpty()) {
             return true;
         }
-
-        List<AbstractCodeFragment> nonMappedLeavesT2 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT2());
 
         checkForRenameRefactoringOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
         if (nonMappedLeavesT2.isEmpty()) {
@@ -538,6 +578,8 @@ public class PurityChecker {
         checkForRenameAttributeOnTop(refactoring, refactorings, replacementsToCheck);
         checkForMoveAttributeOnTop(refactoring, refactorings, replacementsToCheck);
         checkForExtractClassOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForExtractMethodOnTop(refactoring, refactorings, replacementsToCheck);
+
 
 
         if(replacementsToCheck.isEmpty()) {
