@@ -41,12 +41,48 @@ public class PurityChecker {
             case RENAME_PARAMETER:
                 result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
                 break;
+            case MOVE_OPERATION:
+                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+                break;
             default:
                 result = null;
 
         }
 
         return result;
+    }
+
+    private static PurityCheckResult detectMoveMethodPurity(MoveOperationRefactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff) {
+
+        System.out.println("MOVE METHOD");
+
+        if (refactoring.getOriginalOperation().getParameterNameList().size() != refactoring.getMovedOperation().getParameterNameList().size()) {
+
+            return new PurityCheckResult(false, "Number of parameters is different. Strong clue of impurity in case of Move Method refactorings!");
+        }
+
+        if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty() && refactoring.getBodyMapper().getNonMappedInnerNodesT2().isEmpty()) {
+
+            if (refactoring.getReplacements().isEmpty())
+                return new PurityCheckResult(true, "There is no replacement! - all mapped");
+
+            HashSet<Replacement> replacementsToCheck = new HashSet<>(refactoring.getReplacements());
+
+
+            allReplacementsAreType(refactoring.getReplacements(), replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "All replacements are variable type! - all mapped");
+            }
+
+        } else if (refactoring.getBodyMapper().getNonMappedInnerNodesT2().isEmpty()){
+
+        } else {
+
+        }
+
+
+
+        return new PurityCheckResult(false, "Not decided yet!");
     }
 
     private static PurityCheckResult detectRenameClassPurity(RenameClassRefactoring refactoring,  List<Refactoring> refactorings, UMLModelDiff modelDiff) {
@@ -109,6 +145,8 @@ public class PurityChecker {
 
         return new PurityCheckResult(true, "Rename Parameter refactorings are always pure!");
     }
+
+
 
     private static PurityCheckResult detectExtractOperationPurity(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
 
