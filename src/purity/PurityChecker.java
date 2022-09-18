@@ -297,8 +297,10 @@ public class PurityChecker {
                 for (Refactoring refactoring1 : refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
                         if (((ExtractOperationRefactoring) refactoring1).getExtractedOperation().getName().equals(invokedOperationAfterName)) {
-                            replacementsToRemove.add(replacement);
-                            break;
+                            if (((ExtractOperationRefactoring) refactoring1).getExtractedOperation().getParameterNameList().size() == ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getArguments().size()) {
+                                replacementsToRemove.add(replacement);
+                                break;
+                            }
                         }
                     }
                 }
