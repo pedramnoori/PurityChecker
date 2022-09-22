@@ -3271,9 +3271,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "One setter has been added and used, which changes the behavior of the moved operation"
     }
   }, {
     "type" : "Change Attribute Type",
@@ -4189,7 +4189,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -4201,7 +4201,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -4213,7 +4213,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -4225,7 +4225,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -4237,7 +4237,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -4249,9 +4249,9 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "Types has been changed, which do not change the behavior"
     }
   }, {
     "type" : "Move Attribute",
@@ -4465,9 +4465,9 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "All replacements are variable types"
     }
   }, {
     "type" : "Rename Variable",
@@ -4762,9 +4762,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "transitive parameter has been added and put to the dependencyNotation variable"
     }
   }, {
     "type" : "Add Parameter",
@@ -5380,9 +5380,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "one method call has been added"
     }
   }, {
     "type" : "Change Attribute Type",
@@ -5437,8 +5437,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -5602,7 +5602,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -5614,7 +5614,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -5650,9 +5650,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Changes caused my move class refactoring"
     }
   }, {
     "type" : "Move Method",
@@ -7750,9 +7750,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Change has been caused because of the nested move method refactoring. In this case, within this commit, the -error- method has been moved from -PredicateTokeniser- class to -PredicatedHandlersParser- class. So, the change is a pure change!"
     }
   }, {
     "type" : "Move Method",
@@ -7798,9 +7798,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Logic has been changed"
     }
   }, {
     "type" : "Move Method",
@@ -7942,9 +7942,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Logic has been changed completely"
     }
   }, {
     "type" : "Move Method",
@@ -7954,9 +7954,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Logic has been changed completely"
     }
   }, {
     "type" : "Extract Method",
@@ -38927,7 +38927,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : "this. has been added, which doesn't make the refactoring impure"
     }
   }, {
@@ -39256,4 +39256,1177 @@
     }
   } ],
   "refDiffExecutionTime" : 1995
+}, {
+  "id" : 1119109,
+  "repository" : "https://github.com/infinispan/infinispan.git",
+  "sha1" : "ce4f6292d6350a2c6b82d995352fdf6d07042c9c",
+  "url" : "https://github.com/infinispan/infinispan/commit/ce4f6292d6350a2c6b82d995352fdf6d07042c9c",
+  "author" : "Pedro Ruivo",
+  "time" : "6/18/15 3:08 AM",
+  "refactorings" : [ {
+    "type" : "Extract Method",
+    "description" : "Extract Method private replayRemoteTransactionIfNeeded(ctx RemoteTxInvocationContext, topologyId int) : void extracted from public visitCommitCommand(ctx TxInvocationContext, command CommitCommand) : Object in class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method public throwRollbackExceptionIfAny() : void extracted from public commit() : void in class org.infinispan.transaction.tm.DummyTransaction",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method protected assertNoTransactions(cacheName String) : void extracted from protected assertNoTransactions() : void in class org.infinispan.test.MultipleCacheManagersTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "The log message has been changed. Also, the regular for implementation has been changed to forEach. Also. String literall has been added. All the changes are not behavioral."
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method protected eventually(message String, ec Condition, timeout long, pollInterval long, unit TimeUnit) : void extracted from protected eventually(ec Condition, timeout long, pollInterval long, unit TimeUnit) : void in class org.infinispan.test.AbstractInfinispanTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Assert message has been added. This will not change the behavior of the program in my opinion"
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method protected eventually(message String, ec Condition, timeoutMillis long, loops int) : void extracted from protected eventually(ec Condition, timeoutMillis long, loops int) : void in class org.infinispan.test.AbstractInfinispanTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Extract method on the top of the extracted method"
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method private verifyRemoteTransaction(ctx RemoteTxInvocationContext, command AbstractTransactionBoundaryCommand) : void extracted from private invokeNextInterceptorAndVerifyTransaction(ctx TxInvocationContext, command AbstractTransactionBoundaryCommand) : Object in class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "if condition has been changed"
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method protected lockAndWrap(ctx InvocationContext, key Object, ice InternalCacheEntry, command FlagAffectedCommand) : void inlined to private localGet(ctx InvocationContext, key Object, isWrite boolean, command FlagAffectedCommand, isGetCacheEntry boolean) : Object in class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method protected lockAndWrap(ctx InvocationContext, key Object, ice InternalCacheEntry, command FlagAffectedCommand) : void inlined to private remoteGet(ctx InvocationContext, key Object, isWrite boolean, command FlagAffectedCommand) : InternalCacheEntry in class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method private sendCommitCommand(ctx TxInvocationContext, command CommitCommand) : void inlined to public visitCommitCommand(ctx TxInvocationContext, command CommitCommand) : Object in class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method private createRollbackRpcOptions() : RpcOptions extracted from public visitRollbackCommand(ctx TxInvocationContext, command RollbackCommand) : Object in class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "I don't believe this is even an extract method"
+    }
+  }, {
+    "type" : "Move Attribute",
+    "description" : "Move Attribute private configuration : Configuration from class org.infinispan.tx.TransactionXaAdapterTmIntegrationTest to class org.infinispan.partitionhandling.impl.PartitionHandlingManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public removeRecoveryInformationFromCluster(where Collection<Address>, xid Xid, sync boolean, gtx GlobalTransaction) : void renamed to public removeRecoveryInformation(where Collection<Address>, xid Xid, sync boolean, gtx GlobalTransaction, fromCluster boolean) : void in class org.infinispan.tx.recovery.PostCommitRecoveryStateTest.RecoveryManagerDelegate",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public removeRecoveryInformationFromCluster(lockOwners Collection<Address>, xid Xid, sync boolean, gtx GlobalTransaction) : void renamed to public removeRecoveryInformation(lockOwners Collection<Address>, xid Xid, sync boolean, gtx GlobalTransaction, fromCluster boolean) : void in class org.infinispan.transaction.xa.recovery.RecoveryManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method protected assertNotLocked(cache Cache, key Object) : void renamed to protected assertEventuallyNotLocked(cache Cache, key Object) : void in class org.infinispan.test.AbstractCacheTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method protected createPrepareRpcOptions() : RpcOptions extracted from protected prepareOnAffectedNodes(ctx TxInvocationContext<?>, command PrepareCommand, recipients Collection<Address>, ignored boolean) : void in class org.infinispan.interceptors.distribution.VersionedDistributionInterceptor & moved to class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : "<p>Extract and Move to the other class. Moved to class <span class='blob-code-inner'><span class='pl-smi'>org.infinispan.interceptors.distribution</span>.<a class='link-gray-dark' title='core/src/main/java/org/infinispan/interceptors/distribution/TxDistributionInterceptor.java' href='https://github.com/infinispan/infinispan/commit/ce4f6292d6350a2c6b82d995352fdf6d07042c9c#diff-1f89fae5cdc8e35ed85504c05f20d66e'>TxDistributionInterceptor.java<br /></a></span>The method was locally extracted in TxDistributionInterceptor<br />Extract Method protected createPrepareRpcOptions() : RpcOptions extracted from protected prepareOnAffectedNodes(ctx TxInvocationContext&lt;?&gt;, command PrepareCommand, recipients Collection&lt;Address&gt;, sync boolean) : void in class org.infinispan.interceptors.distribution.TxDistributionInterceptor</p>",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff",
+    "validators" : "Matin, Laleh, Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method private extractJGroupsTransport(transport Transport) : JGroupsTransport extracted from private channel(cache Cache<Object,Object>) : Channel in class org.infinispan.partitionhandling.BasePartitionHandlingTest",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "RefDiff",
+    "validators" : "Matin, Davood",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable globalTransaction : GlobalTransaction in method private verifyRemoteTransaction(ctx RemoteTxInvocationContext, command AbstractTransactionBoundaryCommand) : void from class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Variable",
+    "description" : "Parameterize Variable k : Object to key : Object in method protected remoteGetBeforeWrite(ctx InvocationContext, command WriteCommand, key Object) : void from class org.infinispan.interceptors.distribution.NonTxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Variable",
+    "description" : "Parameterize Variable k : Object to key : Object in method protected remoteGetBeforeWrite(ctx InvocationContext, command WriteCommand, key Object) : void from class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter recipientGenerator : RecipientGenerator to key : Object in method private handleTxWriteCommand(ctx InvocationContext, command WriteCommand, key Object, skipRemoteGet boolean) : Object from class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable cache : Cache<Object,Object> in method private channel(i int) : Channel from class org.infinispan.partitionhandling.BasePartitionHandlingTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable lockManager : LockManager in method protected checkLocked(cache Cache, key Object) : boolean from class org.infinispan.test.AbstractCacheTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute txCoordinator : TransactionCoordinator to partitionHandlingManager : PartitionHandlingManager in class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Merge Variable",
+    "description" : "Merge Variable [localTxCount : int, remoteTxCount : int] to transactionTable : TransactionTable in method public isSatisfied() : boolean from class org.infinispan.test.MultipleCacheManagersTest.assertNoTransactions.eventually.new Condition",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public removeRecoveryInformationFromCluster(where Collection<Address>, xid Xid, sync boolean, gtx GlobalTransaction) : void renamed to public removeRecoveryInformation(where Collection<Address>, xid Xid, sync boolean, gtx GlobalTransaction, fromCluster boolean) : void in class org.infinispan.transaction.xa.recovery.RecoveryManager",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff, RD-2x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter keygen : RecipientGenerator to key : Object in method protected abstract remoteGetBeforeWrite(ctx InvocationContext, command WriteCommand, key Object) : void from class org.infinispan.interceptors.distribution.BaseDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type recipientGenerator : RecipientGenerator to key : Object in method private handleTxWriteCommand(ctx InvocationContext, command WriteCommand, key Object, skipRemoteGet boolean) : Object from class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type cache : Cache<Object,Object> to cache : Cache<?,?> in method private channel(cache Cache<?,?>) : Channel from class org.infinispan.partitionhandling.BasePartitionHandlingTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type keygen : RecipientGenerator to key : Object in method protected abstract remoteGetBeforeWrite(ctx InvocationContext, command WriteCommand, key Object) : void from class org.infinispan.interceptors.distribution.BaseDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type List<Cache> to List<Cache<K,V>> in method private cachesInThisPartition() : List<Cache<K,V>> from class org.infinispan.partitionhandling.BasePartitionHandlingTest.Partition",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type Cache<?,?> to Cache<K,V> in method private getCache(index int, name String) : Cache<K,V> from class org.infinispan.test.MultipleCacheManagersTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type txCoordinator : TransactionCoordinator to partitionHandlingManager : PartitionHandlingManager in class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type it : Iterator<Address> to it : Iterator<Map.Entry<Address,List<InboundTransferTask>>> in method private restartBrokenTransfers(cacheTopology CacheTopology, addedSegments Set<Integer>) : void from class org.infinispan.statetransfer.StateConsumerImpl",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type advancedCache : AdvancedCache to advancedCache : AdvancedCache<String,String> in class org.infinispan.api.ForceWriteLockTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type cache1 : Cache to cache1 : Cache<String,String> in method public testWithNoTx() : void from class org.infinispan.replication.AsyncReplTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type cache2 : Cache to cache2 : Cache<String,String> in method public testWithNoTx() : void from class org.infinispan.replication.AsyncReplTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type cache1 : Cache to cache1 : Cache<String,String> in method public testWithTx() : void from class org.infinispan.replication.AsyncReplTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type cache2 : Cache to cache2 : Cache<String,String> in method public testWithTx() : void from class org.infinispan.replication.AsyncReplTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type cache1 : Cache to cache1 : Cache<String,String> in method public simpleTest() : void from class org.infinispan.replication.AsyncReplTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter txCoordinator : TransactionCoordinator to partitionHandlingManager : PartitionHandlingManager in method public init(txTable TransactionTable, configuration Configuration, rpcManager RpcManager, recoveryManager RecoveryManager, commandsFactory CommandsFactory, cache Cache, partitionHandlingManager PartitionHandlingManager) : void in class org.infinispan.interceptors.TxInterceptor",
+    "comment" : "<p>There are not replacements of the two variables in the body of the method.</p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable k : Object to key : Object in method protected remoteGetBeforeWrite(ctx InvocationContext, command WriteCommand, key Object) : void in class org.infinispan.interceptors.distribution.NonTxDistributionInterceptor",
+    "comment" : "<p>k is the current element in a for loop and becomes parameter key</p>",
+    "validation" : "TP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter ctx : TxInvocationContext to context : LocalTxInvocationContext in method protected checkTxCommandResponses(responseMap Map<Address,Response>, command TransactionBoundaryCommand, context LocalTxInvocationContext, recipients Collection<Address>) : void in class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : "<p>checkTxCommandResponses(responseMap Map&lt;Address,Response&gt;, command TransactionBoundaryCommand, context LocalTxInvocationContext, recipients Collection&lt;Address&gt;) : void exists with the same parameters in the parent commit</p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method protected createPrepareRpcOptions() : RpcOptions extracted from protected prepareOnAffectedNodes(ctx TxInvocationContext<?>, command PrepareCommand, recipients Collection<Address>, sync boolean) : void in class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RD-2x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "I don't believe this is even an extract method"
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type txCoordinator : TransactionCoordinator to partitionHandlingManager : PartitionHandlingManager in method public init(txTable TransactionTable, configuration Configuration, rpcManager RpcManager, recoveryManager RecoveryManager, commandsFactory CommandsFactory, cache Cache, partitionHandlingManager PartitionHandlingManager) : void in class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type ctx : TxInvocationContext to context : LocalTxInvocationContext in method protected checkTxCommandResponses(responseMap Map<Address,Response>, command TransactionBoundaryCommand, context LocalTxInvocationContext, recipients Collection<Address>) : void in class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type caches : List<Cache> to caches : List<Cache<K,V>> in method private cachesInThisPartition() : List<Cache<K,V>> from class org.infinispan.partitionhandling.BasePartitionHandlingTest.Partition",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type c : Cache to c : Cache<Object,Object> in method public assertKeyAvailableForWrite(k Object, newValue Object) : void from class org.infinispan.partitionhandling.BasePartitionHandlingTest.Partition",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type c : Cache to c : Cache<Object,?> in method protected assertKeyNotAvailableForRead(key Object) : void from class org.infinispan.partitionhandling.BasePartitionHandlingTest.Partition",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type c : Cache to c : Cache<Object,Object> in method public assertKeyNotAvailableForWrite(key Object) : void from class org.infinispan.partitionhandling.BasePartitionHandlingTest.Partition",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type c : Cache to c : Cache<K,V> in method private cachesInThisPartition() : List<Cache<K,V>> from class org.infinispan.partitionhandling.BasePartitionHandlingTest.Partition",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type cache : Cache<?,?> to cache : Cache<K,V> in method protected getLockOwner(key Object, cacheName String) : Cache<K,V> from class org.infinispan.test.MultipleCacheManagersTest",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable rpcOptions : RpcOptions in method public forwardCommandIfNeeded(command TopologyAffectedCommand, affectedKeys Set<Object>, origin Address) : Map<Address,Response> from class org.infinispan.statetransfer.StateTransferManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable availabilityMode : AvailabilityMode in method public handleStatusRequest(viewId int) : ManagerStatusResponse from class org.infinispan.topology.LocalTopologyManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method private channel(cache Cache<Object,Object>) : Channel renamed to private extractJGroupsTransport(transport Transport) : JGroupsTransport in class org.infinispan.partitionhandling.BasePartitionHandlingTest",
+    "comment" : "null",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method private invokeNextInterceptorAndVerifyTransaction(ctx TxInvocationContext, command AbstractTransactionBoundaryCommand) : Object renamed to private verifyRemoteTransaction(ctx RemoteTxInvocationContext, command AbstractTransactionBoundaryCommand) : void in class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public visitEntryRetrievalCommand(ctx InvocationContext, command EntryRetrievalCommand) : EntryIterable renamed to private replayRemoteTransactionIfNeeded(ctx RemoteTxInvocationContext, topologyId int) : void in class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method private sendCommitCommand(ctx TxInvocationContext, command CommitCommand) : void renamed to protected checkTxCommandResponses(responseMap Map<Address,Response>, command TransactionBoundaryCommand, context LocalTxInvocationContext, recipients Collection<Address>) : void in class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : "null",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation @Deprecated in method public getLastStableTopology() : CacheTopology from class org.infinispan.partitionhandling.impl.PartitionHandlingManager",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation @SuppressWarnings(\"unused\") in method public setDependencies(txTable TransactionTable, rpcManager RpcManager, timeService TimeService) : void from class org.infinispan.interceptors.locking.AbstractTxLockingInterceptor",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter partitionHandlingManager : PartitionHandlingManager in method public setDependencies(txTable TransactionTable, rpcManager RpcManager, timeService TimeService, partitionHandlingManager PartitionHandlingManager, commandsFactory CommandsFactory) : void from class org.infinispan.interceptors.locking.AbstractTxLockingInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter commandsFactory : CommandsFactory in method public setDependencies(txTable TransactionTable, rpcManager RpcManager, timeService TimeService, partitionHandlingManager PartitionHandlingManager, commandsFactory CommandsFactory) : void from class org.infinispan.interceptors.locking.AbstractTxLockingInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter commandsFactory : CommandsFactory in method public init(distributionManager DistributionManager, localTopologyManager LocalTopologyManager, stateTransferManager StateTransferManager, cache Cache, notifier CacheNotifier, commandsFactory CommandsFactory, configuration Configuration, rpcManager RpcManager, lockManager LockManager) : void from class org.infinispan.partitionhandling.impl.PartitionHandlingManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter configuration : Configuration in method public init(distributionManager DistributionManager, localTopologyManager LocalTopologyManager, stateTransferManager StateTransferManager, cache Cache, notifier CacheNotifier, commandsFactory CommandsFactory, configuration Configuration, rpcManager RpcManager, lockManager LockManager) : void from class org.infinispan.partitionhandling.impl.PartitionHandlingManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter rpcManager : RpcManager in method public init(distributionManager DistributionManager, localTopologyManager LocalTopologyManager, stateTransferManager StateTransferManager, cache Cache, notifier CacheNotifier, commandsFactory CommandsFactory, configuration Configuration, rpcManager RpcManager, lockManager LockManager) : void from class org.infinispan.partitionhandling.impl.PartitionHandlingManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter lockManager : LockManager in method public init(distributionManager DistributionManager, localTopologyManager LocalTopologyManager, stateTransferManager StateTransferManager, cache Cache, notifier CacheNotifier, commandsFactory CommandsFactory, configuration Configuration, rpcManager RpcManager, lockManager LockManager) : void from class org.infinispan.partitionhandling.impl.PartitionHandlingManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter partitionHandlingManager : PartitionHandlingManager in method public AbstractEnlistmentAdapter(cacheTransaction CacheTransaction, commandsFactory CommandsFactory, rpcManager RpcManager, txTable TransactionTable, clusteringLogic ClusteringDependentLogic, configuration Configuration, txCoordinator TransactionCoordinator, partitionHandlingManager PartitionHandlingManager) from class org.infinispan.transaction.impl.AbstractEnlistmentAdapter",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter partitionHandlingManager : PartitionHandlingManager in method public AbstractEnlistmentAdapter(commandsFactory CommandsFactory, rpcManager RpcManager, txTable TransactionTable, clusteringLogic ClusteringDependentLogic, configuration Configuration, txCoordinator TransactionCoordinator, partitionHandlingManager PartitionHandlingManager) from class org.infinispan.transaction.impl.AbstractEnlistmentAdapter",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter partitionHandlingManager : PartitionHandlingManager in method public initialize(rpcManager RpcManager, configuration Configuration, icf InvocationContextFactory, invoker InterceptorChain, notifier CacheNotifier, gtf TransactionFactory, txCoordinator TransactionCoordinator, transactionSynchronizationRegistry TransactionSynchronizationRegistry, commandsFactory CommandsFactory, clusteringDependentLogic ClusteringDependentLogic, cache Cache, timeService TimeService, cacheManagerNotifier CacheManagerNotifier, partitionHandlingManager PartitionHandlingManager) : void from class org.infinispan.transaction.impl.TransactionTable",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter partitionHandlingManager : PartitionHandlingManager in method public SynchronizationAdapter(localTransaction LocalTransaction, txCoordinator TransactionCoordinator, commandsFactory CommandsFactory, rpcManager RpcManager, transactionTable TransactionTable, clusteringLogic ClusteringDependentLogic, configuration Configuration, partitionHandlingManager PartitionHandlingManager) from class org.infinispan.transaction.synchronization.SynchronizationAdapter",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter partitionHandlingManager : PartitionHandlingManager in method public TransactionXaAdapter(localTransaction LocalXaTransaction, txTable TransactionTable, rm RecoveryManager, txCoordinator TransactionCoordinator, commandsFactory CommandsFactory, rpcManager RpcManager, clusteringDependentLogic ClusteringDependentLogic, configuration Configuration, cacheName String, partitionHandlingManager PartitionHandlingManager) from class org.infinispan.transaction.xa.TransactionXaAdapter",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter partitionHandlingManager : PartitionHandlingManager in method public TransactionXaAdapter(txTable TransactionTable, rm RecoveryManager, txCoordinator TransactionCoordinator, commandsFactory CommandsFactory, rpcManager RpcManager, clusteringDependentLogic ClusteringDependentLogic, configuration Configuration, cacheName String, partitionHandlingManager PartitionHandlingManager) from class org.infinispan.transaction.xa.TransactionXaAdapter",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter fromCluster : boolean in method public removeRecoveryInformation(lockOwners Collection<Address>, xid Xid, sync boolean, gtx GlobalTransaction, fromCluster boolean) : void from class org.infinispan.transaction.xa.recovery.RecoveryManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter fromCluster : boolean in method public removeRecoveryInformation(where Collection<Address>, xid Xid, sync boolean, gtx GlobalTransaction, fromCluster boolean) : void from class org.infinispan.tx.recovery.PostCommitRecoveryStateTest.RecoveryManagerDelegate",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter fromCluster : boolean in method public removeRecoveryInformation(where Collection<Address>, xid Xid, sync boolean, gtx GlobalTransaction, fromCluster boolean) : void from class org.infinispan.transaction.xa.recovery.RecoveryManager",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter sync : boolean in method protected prepareOnAffectedNodes(ctx TxInvocationContext<?>, command PrepareCommand, recipients Collection<Address>, sync boolean) : void from class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter ignored : boolean in method protected prepareOnAffectedNodes(ctx TxInvocationContext<?>, command PrepareCommand, recipients Collection<Address>, ignored boolean) : void from class org.infinispan.interceptors.distribution.VersionedDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter sync : boolean in method protected prepareOnAffectedNodes(ctx TxInvocationContext<?>, command PrepareCommand, recipients Collection<Address>, sync boolean) : void from class org.infinispan.interceptors.totalorder.TotalOrderDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter sync : boolean in method protected prepareOnAffectedNodes(ctx TxInvocationContext<?>, command PrepareCommand, recipients Collection<Address>, sync boolean) : void from class org.infinispan.interceptors.totalorder.TotalOrderVersionedDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter componentRegistry : ComponentRegistry in method public init(stateTransferManager StateTransferManager, transport Transport, componentRegistry ComponentRegistry) : void from class org.infinispan.statetransfer.StateTransferInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter ctx : InvocationContext in method private isLocalOnly(ctx InvocationContext, command VisitableCommand) : boolean from class org.infinispan.statetransfer.StateTransferInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter sync : boolean in method public forwardCommandIfNeeded(command TopologyAffectedCommand, affectedKeys Set<Object>, origin Address, sync boolean) : Map<Address,Response> from class org.infinispan.statetransfer.StateTransferManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter sync : boolean in method public forwardCommandIfNeeded(command TopologyAffectedCommand, affectedKeys Set<Object>, origin Address, sync boolean) : Map<Address,Response> from class org.infinispan.statetransfer.StateTransferManager",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation @Inject in method public inject(partitionHandlingManager PartitionHandlingManager) : void from class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : "<p>inject(partitionHandlingManager PartitionHandlingManager) is a new method</p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier package to public in method public init(distributionManager DistributionManager, localTopologyManager LocalTopologyManager, stateTransferManager StateTransferManager, cache Cache, notifier CacheNotifier, commandsFactory CommandsFactory, configuration Configuration, rpcManager RpcManager, lockManager LockManager) : void from class org.infinispan.partitionhandling.impl.PartitionHandlingManagerImpl",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier protected to private in attribute private rpcManager : RpcManager from class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier protected to private in attribute private partitionHandlingManager : PartitionHandlingManager from class org.infinispan.interceptors.TxInterceptor",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Encapsulate Attribute",
+    "description" : "Encapsulate Attribute protected actual : Transport from class org.infinispan.remoting.transport.AbstractDelegatingTransport",
+    "comment" : "<p>public Transport getDelegate()<br />called in method private static JGroupsTransport extractJGroupsTransport(Transport transport)<br />core/src/test/java/org/infinispan/partitionhandling/BasePartitionHandlingTest.java</p>",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier package to public in method public start() : void from class org.infinispan.partitionhandling.impl.PartitionHandlingManagerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Variable Modifier",
+    "description" : "Add Variable Modifier final in variable origin : Address in method private verifyRemoteTransaction(ctx RemoteTxInvocationContext, command AbstractTransactionBoundaryCommand) : void from class org.infinispan.interceptors.TxInterceptor",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Variable Modifier",
+    "description" : "Add Variable Modifier final in variable cacheTopology : CacheTopology in method public forwardCommandIfNeeded(command TopologyAffectedCommand, affectedKeys Set<Object>, origin Address) : Map<Address,Response> from class org.infinispan.statetransfer.StateTransferManagerImpl",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter partitionHandlingManager : PartitionHandlingManager in method public init(txTable TransactionTable, configuration Configuration, rpcManager RpcManager, recoveryManager RecoveryManager, commandsFactory CommandsFactory, cache Cache, partitionHandlingManager PartitionHandlingManager) : void from class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter txCoordinator : TransactionCoordinator in method public init(txTable TransactionTable, configuration Configuration, txCoordinator TransactionCoordinator, rpcManager RpcManager, recoveryManager RecoveryManager, commandsFactory CommandsFactory, cache Cache) : void from class org.infinispan.interceptors.TxInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Remove Class Modifier",
+    "description" : "Remove Class Modifier static in class org.infinispan.test.AbstractCacheTest.CleanupPhase",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable recipientGenerator : RecipientGenerator in method protected handleNonTxWriteCommand(ctx InvocationContext, command DataWriteCommand) : Object from class org.infinispan.interceptors.distribution.BaseDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable skrg : SingleKeyRecipientGenerator in method public visitPutKeyValueCommand(ctx InvocationContext, command PutKeyValueCommand) : Object from class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable entry : Map.Entry<Address,List<InboundTransferTask>> in method private restartBrokenTransfers(cacheTopology CacheTopology, addedSegments Set<Integer>) : void from class org.infinispan.statetransfer.StateConsumerImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method private createCommitRpcOptions() : RpcOptions extracted from public visitCommitCommand(ctx TxInvocationContext, command CommitCommand) : Object in class org.infinispan.interceptors.distribution.TxDistributionInterceptor",
+    "comment" : "<p>private void sendCommitCommand(TxInvocationContext ctx, CommitCommand command) is inlined to<br />visitCommitCommand(TxInvocationContext ctx, CommitCommand command)<br />and then statement<br />boolean syncCommitPhase = cacheConfiguration.transaction().syncCommitPhase();<br />is extracted to private RpcOptions createCommitRpcOptions() as part of statement<br />return createRpcOptionsFor2ndPhase(cacheConfiguration.transaction().syncCommitPhase());</p>",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "The behavior is totally different"
+    }
+  } ],
+  "refDiffExecutionTime" : 7011
 } ]

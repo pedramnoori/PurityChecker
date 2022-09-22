@@ -11,10 +11,7 @@ import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -1011,10 +1008,9 @@ public class TestPurity {
     @Test
     public void extractMethodTest_55() throws RefactoringMinerTimedOutException, IOException {
 
-
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/liferay/liferay-portal.git",
-                "59fd9e696cec5f2ed44c27422bbc426b11647321", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/undertow-io/undertow.git",
+                "d5b2bb8cd1393f1c5a5bb623e3d8906cd57e53c4", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);

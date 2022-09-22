@@ -3304,9 +3304,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "One setter has been added and used, which changes the behavior of the moved operation"
     }
   }, {
     "type" : "Change Attribute Type",
@@ -4222,7 +4222,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -4234,7 +4234,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -4246,7 +4246,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -4258,7 +4258,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -4270,7 +4270,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -4282,9 +4282,9 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "Types has been changed, which do not change the behavior"
     }
   }, {
     "type" : "Move Attribute",
@@ -4498,9 +4498,9 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "All replacements are variable types"
     }
   }, {
     "type" : "Rename Variable",
@@ -4795,9 +4795,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "transitive parameter has been added and put to the dependencyNotation variable"
     }
   }, {
     "type" : "Add Parameter",
@@ -5413,9 +5413,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "one method call has been added"
     }
   }, {
     "type" : "Change Attribute Type",
@@ -5470,7 +5470,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -5635,7 +5635,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -5647,7 +5647,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -5683,9 +5683,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "Changes caused my move class refactoring"
     }
   }, {
     "type" : "Move Method",
@@ -7783,9 +7783,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "Change has been caused because of the nested move method refactoring. In this case, within this commit, the -error- method has been moved from -PredicateTokeniser- class to -PredicatedHandlersParser- class. So, the change is a pure change!"
     }
   }, {
     "type" : "Move Method",
@@ -7831,9 +7831,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "Logic has been changed"
     }
   }, {
     "type" : "Move Method",
@@ -7975,9 +7975,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "Logic has been changed completely"
     }
   }, {
     "type" : "Move Method",
@@ -7987,9 +7987,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "Logic has been changed completely"
     }
   }, {
     "type" : "Extract Method",

@@ -1987,7 +1987,7 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 		return true;
 	}
 
-	public Set<Replacement> omitReplacementsRegardingExactMappings(Map<String, String> parameterToArgumentMap, Set<Replacement> replacementsToCheck) {
+	public HashSet<Replacement> omitReplacementsRegardingExactMappings(Map<String, String> parameterToArgumentMap, HashSet<Replacement> replacementsToCheck) {
 
 		Set<AbstractCodeMapping> mappings = getMappings();
 
@@ -2000,7 +2000,7 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 	}
 
 
-	public Set<Replacement> omitReplacementsAccordingToArgumentization(Map<String, String> parameterToArgumentMap, Set<Replacement> replacementsToCheck) {
+	public HashSet<Replacement> omitReplacementsAccordingToArgumentization(Map<String, String> parameterToArgumentMap, HashSet<Replacement> replacementsToCheck) {
 
 		Set<Replacement> replacementsToRemove = new HashSet<>();
 

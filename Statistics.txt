@@ -111,3 +111,25 @@ Specificity: 96.55172
 FScore: 0.9677419
 
 
+TIME: 2022-09-21 23:58:16.623
+TP: 304
+TN: 60
+FP: 2
+FN: 19
+Precision: 99.346405
+Recall: 94.117645
+Specificity: 96.77419
+FScore: 0.96661365
+
+
+TIME: 2022-09-21 23:58:16.673
+TP: 3
+TN: 6
+FP: 0
+FN: 1
+Precision: 100.0
+Recall: 75.0
+Specificity: 100.0
+FScore: 0.85714287
+
+
