@@ -5,9 +5,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.api.RefactoringMinerTimedOutException;
 
-import gr.uom.java.xmi.UMLAnonymousClass;
 import gr.uom.java.xmi.UMLAttribute;
 import gr.uom.java.xmi.UMLClass;
 import gr.uom.java.xmi.UMLOperation;
@@ -51,6 +51,12 @@ public class UMLClassDiff extends UMLClassBaseDiff {
 	    			refactorings.addAll(attributeDiff.getRefactorings());
 	    			this.attributeDiffList.add(attributeDiff);
     			}
+    			else {
+    				Pair<UMLAttribute, UMLAttribute> pair = Pair.of(attribute, matchingAttribute);
+    				if(!commonAtrributes.contains(pair)) {
+    					commonAtrributes.add(pair);
+    				}
+    			}
     		}
     	}
     	for(UMLAttribute attribute : nextClass.getAttributes()) {
@@ -63,6 +69,12 @@ public class UMLClassDiff extends UMLClassBaseDiff {
     			if(!attributeDiff.isEmpty()) {
 	    			refactorings.addAll(attributeDiff.getRefactorings());
 					this.attributeDiffList.add(attributeDiff);
+    			}
+    			else {
+    				Pair<UMLAttribute, UMLAttribute> pair = Pair.of(matchingAttribute, attribute);
+    				if(!commonAtrributes.contains(pair)) {
+    					commonAtrributes.add(pair);
+    				}
     			}
     		}
     	}
