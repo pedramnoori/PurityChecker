@@ -126,6 +126,11 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Move method on the top of the moved method - all mapped");
             }
 
+            checkForThisPatternReplacement(replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Contains this pattern - all mapped");
+            }
+
         } else if (refactoring.getBodyMapper().getNonMappedInnerNodesT2().isEmpty()){
 
         } else {
@@ -135,6 +140,32 @@ public class PurityChecker {
 
 
         return new PurityCheckResult(false, "Not decided yet!");
+    }
+
+    private static void checkForThisPatternReplacement(HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
+                if (findLongestPrefixSuffix(replacement.getBefore(), replacement.getAfter()).equals("this") ||
+                        findLongestPrefixSuffix(replacement.getAfter(), replacement.getBefore()).equals("this")) {
+                    replacementsToRemove.add(replacement);
+                }
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
+    }
+
+
+    private static String findLongestPrefixSuffix(String s1, String s2) {
+
+        for( int i = Math.min(s1.length(), s2.length()); ; i--) {
+            if(s2.endsWith(s1.substring(0, i))) {
+                return s1.substring(0, i);
+            }
+        }
     }
 
     private static void checkForMoveMethodRefactoringOnTop(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
@@ -180,6 +211,8 @@ public class PurityChecker {
                 }
             }
         }
+
+
 
         replacementsToCheck.removeAll(replacementsToRemove);
 
@@ -403,6 +436,11 @@ public class PurityChecker {
             checkForMoveMethodRefactoringOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Move method on the top of the moved method - all mapped");
+            }
+
+            checkForThisPatternReplacement(replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Contains this pattern - all mapped");
             }
 
 
@@ -834,6 +872,7 @@ public class PurityChecker {
         checkForMoveAttributeOnTop(refactorings, replacementsToCheck);
         checkForExtractClassOnTop(refactorings, replacementsToCheck);
         checkForExtractMethodOnTop(refactorings, replacementsToCheck);
+        checkForThisPatternReplacement(replacementsToCheck);
 
 
 

@@ -5651,7 +5651,7 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
+      "purityValidation" : "TP",
       "purityComment" : "Changes caused my move class refactoring"
     }
   }, {
@@ -7678,9 +7678,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Condition has been changed"
     }
   }, {
     "type" : "Move Class",
@@ -7702,9 +7702,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Condition has been changed"
     }
   }, {
     "type" : "Move Method",
@@ -7714,8 +7714,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -7726,9 +7726,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Lots of code have been added to the child commit"
     }
   }, {
     "type" : "Move Method",
@@ -7738,8 +7738,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "0",
+      "purityValidation" : "TN",
       "purityComment" : ""
     }
   }, {
@@ -7762,9 +7762,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "One condition has been added"
     }
   }, {
     "type" : "Move Method",
@@ -7774,9 +7774,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "One condition has been added"
     }
   }, {
     "type" : "Move Method",
@@ -7786,8 +7786,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "0",
+      "purityValidation" : "TN",
       "purityComment" : ""
     }
   }, {
@@ -7810,8 +7810,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -7858,9 +7858,9 @@
     "detectionTools" : "RefDiff",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "Include lots of changes"
     }
   }, {
     "type" : "Move Method",
@@ -7870,9 +7870,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Lots of changes"
     }
   }, {
     "type" : "Move And Inline Method",
@@ -7906,9 +7906,9 @@
     "detectionTools" : "RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
-      "purityComment" : ""
+      "purityComment" : "Lots of changes"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -7930,9 +7930,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Lots of changes happened"
     }
   }, {
     "type" : "Move Method",
@@ -8038,9 +8038,9 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Lots of changes"
     }
   }, {
     "type" : "Rename Parameter",
@@ -9036,7 +9036,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : ""
+      "purityComment" : "the notifyHalt method is not the one that has been moved to this class."
     }
   }, {
     "type" : "Push Down Attribute",
@@ -9058,9 +9058,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "-this- has been added"
     }
   }, {
     "type" : "Move Method",
@@ -9070,9 +9070,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "-this- has been added"
     }
   }, {
     "type" : "Rename Method",
@@ -9526,9 +9526,9 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "-this- has been added"
     }
   }, {
     "type" : "Inline Variable",
@@ -11083,7 +11083,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -11119,7 +11119,7 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : ""
     }
@@ -12352,8 +12352,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -12364,8 +12364,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -12376,8 +12376,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -12388,8 +12388,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14083,8 +14083,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14203,8 +14203,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14239,9 +14239,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Extract class on top"
     }
   }, {
     "type" : "Move Method",
@@ -14251,8 +14251,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14311,8 +14311,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14407,9 +14407,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "One line has been added to the child version"
     }
   }, {
     "type" : "Move Method",
@@ -14419,8 +14419,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14455,8 +14455,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14479,8 +14479,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14491,8 +14491,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14527,8 +14527,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14539,8 +14539,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14551,8 +14551,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14575,8 +14575,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14635,8 +14635,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14647,8 +14647,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14671,8 +14671,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14755,8 +14755,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14803,8 +14803,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14827,8 +14827,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -14875,9 +14875,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "One line has been added to the child version"
     }
   }, {
     "type" : "Rename Class",
@@ -20227,8 +20227,8 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
       "purityComment" : ""
     }
   }, {
@@ -39086,7 +39086,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
+      "purityValidation" : "FN",
       "purityComment" : "null check has been added and the behavior and functionality is the same as the parent version, so it's pure"
     }
   }, {
@@ -40429,4 +40429,133 @@
     }
   } ],
   "refDiffExecutionTime" : 7011
+}, {
+  "id" : 1156578,
+  "repository" : "https://github.com/infinispan/infinispan.git",
+  "sha1" : "043030723632627b0908dca6b24dae91d3dfd938",
+  "url" : "https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938",
+  "author" : "gustavonalle",
+  "time" : "8/3/15 1:16 PM",
+  "refactorings" : [ {
+    "type" : "Extract Method",
+    "description" : "Extract Method private rehashAwareIteration(complete AtomicBoolean, consumer Consumer<R>, supplier IteratorSupplier<R>, iteratorParallelDistribute boolean) : void extracted from package remoteIterator() : Iterator<R> in class org.infinispan.stream.impl.DistributedCacheStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method private ignoreRehashIteration(consumer Consumer<R>, supplier IteratorSupplier<R>, iteratorParallelDistribute boolean) : void extracted from package remoteIterator() : Iterator<R> in class org.infinispan.stream.impl.DistributedCacheStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "if statement staylocal has been added. Also, contains one nonMappedLeave which is not reported by RM"
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method protected supplierForSegments(ch ConsistentHash, targetSegments Set<Integer>, excludedKeys Set<Object>, primaryOwnerOnly boolean) : Supplier<Stream<CacheEntry>> extracted from protected supplierForSegments(ch ConsistentHash, targetSegments Set<Integer>, excludedKeys Set<Object>) : Supplier<Stream<CacheEntry>> in class org.infinispan.stream.impl.AbstractCacheStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method private segmentsToProcess(supplier IteratorSupplier<R>, results KeyTrackingConsumer<Object,R>, segmentsToProcess Set<Integer>, id UUID) : Set<Integer> extracted from package remoteIterator() : Iterator<R> in class org.infinispan.stream.impl.DistributedCacheStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method private performLocalRehashAwareOperation(results KeyTrackingConsumer<Object,R>, segmentsToProcess Set<Integer>, ch ConsistentHash, segments Set<Integer>, op KeyTrackingTerminalOperation<Object,R,Object>, ownedSegmentsSupplier Supplier<Set<Integer>>, id UUID) : void extracted from package remoteIterator() : Iterator<R> in class org.infinispan.stream.impl.DistributedCacheStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter primaryOnly : boolean in method protected supplierForSegments(ch ConsistentHash, targetSegments Set<Integer>, excludedKeys Set<Object>, primaryOnly boolean) : Supplier<Stream<CacheEntry>> from class org.infinispan.stream.impl.tx.TxDistributedCacheStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter primaryOnly : boolean in method protected supplierForSegments(ch ConsistentHash, targetSegments Set<Integer>, excludedKeys Set<Object>, primaryOnly boolean) : Supplier<Stream<CacheEntry>> from class org.infinispan.stream.impl.tx.TxDistributedDoubleCacheStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter primaryOnly : boolean in method protected supplierForSegments(ch ConsistentHash, targetSegments Set<Integer>, excludedKeys Set<Object>, primaryOnly boolean) : Supplier<Stream<CacheEntry>> from class org.infinispan.stream.impl.tx.TxDistributedIntCacheStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter primaryOnly : boolean in method protected supplierForSegments(ch ConsistentHash, targetSegments Set<Integer>, excludedKeys Set<Object>, primaryOnly boolean) : Supplier<Stream<CacheEntry>> from class org.infinispan.stream.impl.tx.TxDistributedLongCacheStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  }, {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable strId : String in method private segmentsToProcess(supplier IteratorSupplier<R>, results KeyTrackingConsumer<Object,R>, segmentsToProcess Set<Integer>, id UUID) : Set<Integer> from class org.infinispan.stream.impl.DistributedCacheStream",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : 5287
 } ]

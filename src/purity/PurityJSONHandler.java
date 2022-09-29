@@ -24,12 +24,12 @@ public class PurityJSONHandler {
 
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 
-//        numberOfRefactorings("C:\\Users\\Pedram\\Desktop\\Puritydata.json");
+        numberOfRefactorings("C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 
-        runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataTest.json");
+//        runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataTest.json");
 //
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.MOVE_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.MOVE_OPERATION);
 
 //
 //        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
@@ -44,7 +44,7 @@ public class PurityJSONHandler {
         try {
             List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
 
-            int extractMethodNumber = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals("Extract Method")).filter(r -> r.getValidation().equals("TP")).count();
+            int extractMethodNumber = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals("Move Method")).filter(r -> r.getValidation().equals("TP")).count();
 
             System.out.println(extractMethodNumber);
 
