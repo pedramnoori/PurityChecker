@@ -13,6 +13,7 @@ import org.refactoringminer.api.RefactoringType;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
 public class PurityChecker {
 
     public static Map<Refactoring, PurityCheckResult> isPure(UMLModelDiff modelDiff) throws RefactoringMinerTimedOutException {
@@ -329,6 +330,7 @@ public class PurityChecker {
                 replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
                 omitReplacementsRegardingInvocationArguments(refactoring, replacementsToCheck);
                 checkForParameterArgumentPair(refactoring, replacementsToCheck);
+                omitPrintRelatedReplacements(refactoring, replacementsToCheck);
             }
 
             if (replacementsToCheck.isEmpty()) {
@@ -427,7 +429,10 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - with non-mapped leaves");
             }
 
-
+            checkForPrint_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
+            if (nonMappedLeavesT2.isEmpty()) {
+                return new PurityCheckResult(true, "Extra print lines - with non-mapped leaves");
+            }
 
             if (nonMappedLeavesT2.size() == 1) {
                 AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
@@ -446,7 +451,7 @@ public class PurityChecker {
 
             List<AbstractCodeFragment> nonMappedLeavesT2List = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT2());
 
-            removeNonMappedLeavesRegardingNullCheck(refactoring ,refactorings, nonMappedLeavesT2List); // Added for ignoring the null check in extract methods: https://github.com/wordpress-mobile/WordPress-Android/commit/ab298886b59f4ad0235cd6d5764854189eb59eb6
+//            removeNonMappedLeavesRegardingNullCheck(refactoring ,refactorings, nonMappedLeavesT2List); // Added for ignoring the null check in extract methods: https://github.com/wordpress-mobile/WordPress-Android/commit/ab298886b59f4ad0235cd6d5764854189eb59eb6
 
             if (!checkNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT2List)) {
                 return new PurityCheckResult(false, "Non-mapped leaves are not justified - non-mapped inner nodes");
@@ -467,6 +472,38 @@ public class PurityChecker {
         }
 
         return new PurityCheckResult(false, "Not decided yet!");
+    }
+
+    private static void checkForPrint_NonMapped(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT2) {
+
+        List<AbstractCodeFragment> nonMappedLeavesT2ToRemove = new ArrayList<>();
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT2) {
+            if (isPrint(abstractCodeFragment.getString())) {
+                nonMappedLeavesT2ToRemove.add(abstractCodeFragment);
+            }
+        }
+
+        nonMappedLeavesT2.removeAll(nonMappedLeavesT2ToRemove);
+    }
+
+    private static void omitPrintRelatedReplacements(ExtractOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (AbstractCodeMapping mapping : refactoring.getBodyMapper().getMappings()) {
+            if (isPrint(mapping.getFragment1().getString()) && isPrint(mapping.getFragment2().getString())) {
+                replacementsToRemove.addAll(mapping.getReplacements());
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
+    }
+
+    private static boolean isPrint(String fragmentString) {
+        return fragmentString.contains("System.out.println") || fragmentString.contains("System.err.println") ||
+                fragmentString.contains("System.out.print") || fragmentString.contains("System.err.print") ||
+                fragmentString.contains("System.out.printf") || fragmentString.contains("System.err.printf");
     }
 
     private static void removeNonMappedLeavesRegardingNullCheck(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT2List) {
@@ -780,6 +817,7 @@ public class PurityChecker {
             replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
             omitReplacementsRegardingInvocationArguments(refactoring, replacementsToCheck);
             checkForParameterArgumentPair(refactoring, replacementsToCheck);
+            omitPrintRelatedReplacements(refactoring, replacementsToCheck);
         }
 
 
