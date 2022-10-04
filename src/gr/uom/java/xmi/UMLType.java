@@ -24,6 +24,7 @@ import gr.uom.java.xmi.diff.StringDistance;
 public abstract class UMLType implements Serializable, LocationInfoProvider {
 	private LocationInfo locationInfo;
 	private int arrayDimension;
+	private boolean parameterized;
 	private List<UMLType> typeArguments = new ArrayList<UMLType>();
 	protected List<UMLAnnotation> annotations = new ArrayList<UMLAnnotation>();
 
@@ -54,7 +55,9 @@ public abstract class UMLType implements Serializable, LocationInfoProvider {
 	protected String typeArgumentsToString() {
 		StringBuilder sb = new StringBuilder();
 		if(typeArguments.isEmpty()) {
-			sb.append("");
+			if(parameterized) {
+				sb.append("<>");
+			}
 		}
 		else {
 			sb.append("<");
@@ -131,7 +134,7 @@ public abstract class UMLType implements Serializable, LocationInfoProvider {
 	}
 
 	public boolean isParameterized() {
-		return typeArguments.size() > 0;
+		return typeArguments.size() > 0 || parameterized;
 	}
 
 	public abstract boolean equals(Object o);
@@ -175,6 +178,7 @@ public abstract class UMLType implements Serializable, LocationInfoProvider {
 
 	public static LeafType extractTypeObject(String qualifiedName) {
 		int arrayDimension = 0;
+		boolean parameterized = false;
 		List<UMLType> typeArgumentDecomposition = new ArrayList<UMLType>();
 		if(qualifiedName.endsWith("[]")) {
 			while(qualifiedName.endsWith("[]")) {
@@ -185,6 +189,7 @@ public abstract class UMLType implements Serializable, LocationInfoProvider {
 		if(qualifiedName.contains("<") && qualifiedName.contains(">") &&
 				!closingTagBeforeOpeningTag(qualifiedName.substring(qualifiedName.indexOf("<")+1, qualifiedName.lastIndexOf(">")))) {
 			String typeArguments = qualifiedName.substring(qualifiedName.indexOf("<")+1, qualifiedName.lastIndexOf(">"));
+			parameterized = true;
 			StringBuilder sb = new StringBuilder();
 			for(int i=0; i<typeArguments.length(); i++) {
 				char charAt = typeArguments.charAt(i);
@@ -209,6 +214,7 @@ public abstract class UMLType implements Serializable, LocationInfoProvider {
 		UMLType typeObject = new LeafType(qualifiedName);
 		typeObject.arrayDimension = arrayDimension;
 		typeObject.typeArguments = typeArgumentDecomposition;
+		typeObject.parameterized = parameterized;
 		return (LeafType)typeObject;
 	}
 
@@ -297,6 +303,7 @@ public abstract class UMLType implements Serializable, LocationInfoProvider {
 		else if(type instanceof ParameterizedType) {
 			ParameterizedType parameterized = (ParameterizedType)type;
 			UMLType container = extractTypeObject(cu, filePath, parameterized.getType());
+			container.parameterized = true;
 			List<Type> typeArguments = parameterized.typeArguments();
 			for(Type argument : typeArguments) {
 				container.typeArguments.add(extractTypeObject(cu, filePath, argument));
