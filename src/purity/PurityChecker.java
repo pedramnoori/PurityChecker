@@ -2,6 +2,7 @@ package purity;
 
 import gr.uom.java.xmi.LocationInfo;
 import gr.uom.java.xmi.UMLOperation;
+import gr.uom.java.xmi.UMLType;
 import gr.uom.java.xmi.decomposition.*;
 import gr.uom.java.xmi.decomposition.replacement.MethodInvocationReplacement;
 import gr.uom.java.xmi.decomposition.replacement.Replacement;
@@ -364,6 +365,7 @@ public class PurityChecker {
                 omitReplacementsRegardingInvocationArguments(refactoring, replacementsToCheck);
                 checkForParameterArgumentPair(refactoring, replacementsToCheck);
                 omitPrintRelatedReplacements(refactoring, replacementsToCheck);
+                omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck);
             }
 
             if (replacementsToCheck.isEmpty()) {
@@ -472,6 +474,11 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Extra print lines - with non-mapped leaves");
             }
 
+            checkForStatementsBeingMappedInOtherRefactorings(refactoring, refactorings, nonMappedLeavesT2);
+            if (nonMappedLeavesT2.isEmpty()) {
+                return new PurityCheckResult(true, "Mapped statements in other refactorings - with non-mapped leaves");
+            }
+
             if (nonMappedLeavesT2.size() == 1) {
                 AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
                 if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
@@ -510,6 +517,26 @@ public class PurityChecker {
         }
 
         return new PurityCheckResult(false, "Not decided yet!");
+    }
+
+    private static void checkForStatementsBeingMappedInOtherRefactorings(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT2) {
+
+        List<AbstractCodeFragment> nonMappedLeavesT2ToRemove = new ArrayList<>();
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT2) {
+            for (Refactoring refactoring1 : refactorings) {
+                if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+                    for (AbstractCodeMapping mapping : ((ExtractOperationRefactoring) (refactoring1)).getBodyMapper().getMappings()) {
+                        if (mapping.getFragment2().equals(abstractCodeFragment)) {
+                            nonMappedLeavesT2ToRemove.add(mapping.getFragment2());
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        nonMappedLeavesT2.removeAll(nonMappedLeavesT2ToRemove);
     }
 
     private static void checkForPrint_NonMapped(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT2) {
@@ -715,6 +742,13 @@ public class PurityChecker {
             return true;
         }
 
+        checkForPrint_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
+        checkForStatementsBeingMappedInOtherRefactorings(refactoring, refactorings, nonMappedLeavesT2);
+
+        if (nonMappedLeavesT2.isEmpty()) {
+            return true;
+        }
+
         if (nonMappedLeavesT2.size() == 1) {
             AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
             if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
@@ -856,6 +890,7 @@ public class PurityChecker {
             omitReplacementsRegardingInvocationArguments(refactoring, replacementsToCheck);
             checkForParameterArgumentPair(refactoring, replacementsToCheck);
             omitPrintRelatedReplacements(refactoring, replacementsToCheck);
+            omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck);
         }
 
 
@@ -886,6 +921,43 @@ public class PurityChecker {
                     return true;
                 }
             }
+        }
+
+        return false;
+    }
+
+    private static void omitBooleanVariableDeclarationReplacement(ExtractOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.BOOLEAN_LITERAL)) {
+                for (AbstractCodeMapping mapping : refactoring.getBodyMapper().getMappings()) {
+                    for (Replacement mappingReplacement : mapping.getReplacements()) {
+                        if (mappingReplacement.equals(replacement)) {
+                            if (checkForBooleanLiteralChangeInDeclaration(mapping)) {
+                                replacementsToRemove.add(mappingReplacement);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
+    }
+
+    private static boolean checkForBooleanLiteralChangeInDeclaration(AbstractCodeMapping mapping) {
+
+        if (mapping.getFragment1().getVariableDeclarations().isEmpty() || mapping.getFragment2().getVariableDeclarations().isEmpty()) {
+            return false;
+        }
+
+        if (mapping.getFragment1().getVariableDeclarations().size() == 1) {
+            VariableDeclaration declaration = mapping.getFragment1().getVariableDeclarations().get(0);
+            return declaration.getType().getClassType().equals("boolean");
         }
 
         return false;
