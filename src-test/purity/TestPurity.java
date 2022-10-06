@@ -1007,7 +1007,7 @@ public class TestPurity {
 
     @Test
     public void extractMethodTest_55() throws RefactoringMinerTimedOutException, IOException {
-
+//  The test commit TODO second runTests Extract method is pure and I reported it as impure so far
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         miner.detectModelDiff("https://github.com/phishman3579/java-algorithms-implementation.git",
                 "ab98bcacf6e5bf1c3a06f6bcca68f178f880ffc9", new RefactoringHandler() {
@@ -1052,6 +1052,23 @@ public class TestPurity {
             if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
                 assertTrue(pcr.get(refactoring).isPure());
         }
+    }
+
+    @Test
+    public void extractMethodTest_58() throws RefactoringMinerTimedOutException, IOException {
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        miner.detectModelDiff("https://github.com/infinispan/infinispan.git",
+                "03573a655bcbb77f7a76d8e22d851cc22796b4f8", new RefactoringHandler() {
+                    @Override
+                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
+                        System.out.println("HERE");
+//                        for (Refactoring refactoring: pcr.keySet()) {
+//                            if (refactoring.getRefactoringType().equals(RefactoringType.RENAME_METHOD))
+//                        }
+                    }
+                }, 100);
     }
 
 }

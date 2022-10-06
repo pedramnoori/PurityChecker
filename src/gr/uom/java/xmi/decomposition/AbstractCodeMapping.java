@@ -78,6 +78,50 @@ public abstract class AbstractCodeMapping {
 				fragment1.getString().equals(fragment2.getString()) || isExactAfterAbstraction() || fragment1.getString().equals(fragment2.getArgumentizedAfterRefactorings()));
 	}
 
+	public boolean checkForSupplierPattern(Replacement replacement, Map<String, String> parameterToArgumentMap) {
+		fragment2.argumentizationAfterRefactorings(parameterToArgumentMap);
+		fragment1.argumentizationAfterRefactorings(parameterToArgumentMap);
+
+		String s1 = fragment1.getArgumentizedAfterRefactorings();
+		String s2 = fragment2.getArgumentizedAfterRefactorings();
+
+		s1 = s1.replaceAll(";", "");
+		s2 = s2.replaceAll(";", "");
+
+		s1 = s1.replaceAll("\n", "");
+		s2 = s2.replaceAll("\n", "");
+
+		int equalSign1 = s1.indexOf("=");
+		int equalSign2 = s2.indexOf("=");
+
+		if (equalSign1 != -1 && equalSign2 != -1) {
+
+			String s1WithoutDeclaration = s1.substring(equalSign1 + 1);
+			String s2WithoutDeclaration = s2.substring(equalSign2 + 1);
+
+			int find = s2WithoutDeclaration.indexOf(s1WithoutDeclaration);
+
+			if (find != -1) {
+				s1WithoutDeclaration = s1WithoutDeclaration.replaceAll("\\)", "\\\\)");
+				s1WithoutDeclaration = s1WithoutDeclaration.replaceAll("\\(", "\\\\(");
+
+				List<String> finded = List.of(s2WithoutDeclaration.split(s1WithoutDeclaration));
+
+				for (String s3 : finded) {
+					if (s3.contains("->")) {
+						for (String s4 : finded) {
+							if (s4.contains(".get")){
+								return true;
+							}
+						}
+					}
+				}
+			}
+
+		}
+		return false;
+	}
+
 	private boolean argumentizedStringExactAfterTypeReplacement() {
 		String s1 = fragment1.getArgumentizedString();
 		String s2 = fragment2.getArgumentizedString();

@@ -6,7 +6,6 @@ import gr.uom.java.xmi.decomposition.AbstractCall.StatementCoverageType;
 import gr.uom.java.xmi.decomposition.replacement.*;
 import gr.uom.java.xmi.decomposition.replacement.Replacement.ReplacementType;
 import gr.uom.java.xmi.decomposition.replacement.VariableReplacementWithMethodInvocation.Direction;
-import gr.uom.java.xmi.diff.*;
 import gr.uom.java.xmi.diff.UMLAnonymousClassDiff;
 import gr.uom.java.xmi.diff.UMLClassBaseDiff;
 import gr.uom.java.xmi.diff.AddParameterRefactoring;
@@ -57,10 +56,6 @@ import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringMinerTimedOutException;
 import org.refactoringminer.api.RefactoringType;
 import org.refactoringminer.util.PrefixSuffixUtils;
-
-import java.util.*;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper> {
 	private VariableDeclarationContainer container1;
@@ -2058,6 +2053,29 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 				if (replacement.getBefore().equals(parameterToArgument.getValue()) &&
 				replacement.getAfter().equals(parameterToArgument.getKey())) {
 					replacementsToRemove.add(replacement);
+				}
+			}
+		}
+
+		replacementsToCheck.removeAll(replacementsToRemove);
+
+		return replacementsToCheck;
+	}
+
+
+	public HashSet<Replacement> omitReplacementsAccordingSupplierGetPattern(Map<String, String> parameterToArgumentMap, HashSet<Replacement> replacementsToCheck) {
+
+		Set<Replacement> replacementsToRemove = new HashSet<>();
+
+		Set<AbstractCodeMapping> mappings = getMappings();
+		for (AbstractCodeMapping mapping : mappings) {
+			for (Replacement replacement : mapping.getReplacements()) {
+				for (Replacement replacement1 : replacementsToCheck) {
+					if (replacement.equals(replacement1)) {
+						if (mapping.checkForSupplierPattern(replacement, parameterToArgumentMap)) {
+							replacementsToRemove.add(replacement);
+						}
+					}
 				}
 			}
 		}
