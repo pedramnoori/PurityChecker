@@ -587,7 +587,7 @@ public class PurityChecker {
                 if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
                     for (AbstractCodeMapping mapping : ((ExtractOperationRefactoring) (refactoring1)).getBodyMapper().getMappings()) {
                         if (mapping.getFragment2().equals(abstractCodeFragment)) {
-                            if (mapping.getOperation2().getName().equals(sourceOperation)) {
+                            if (mapping.getOperation1().getName().equals(sourceOperation)) {
                                 nonMappedLeavesT2ToRemove.add(mapping.getFragment2());
                                 break;
                             }
