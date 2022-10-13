@@ -6,6 +6,16 @@ public class Purity {
     private String purityValidation;
     private String purityComment;
 
+    public int getMappingState() {
+        return mappingState;
+    }
+
+    public void setMappingState(int mappingState) {
+        this.mappingState = mappingState;
+    }
+
+    private int mappingState;
+
     public String getPurityValue() {
         return purityValue;
     }

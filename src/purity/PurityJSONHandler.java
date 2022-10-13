@@ -23,14 +23,15 @@ public class PurityJSONHandler {
     public static void main(String[] args) {
 
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
+//        addExtraPurityFields("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataTest.json");
+
 
 //        numberOfRefactorings("C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 
-        addExtraPurityFields("C:\\Users\\Pedram\\Desktop\\PuritydataTest.json");
 
-        runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataTest.json");
+//        runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataTest.json");
 //
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
+        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.MOVE_OPERATION);
 
 //
@@ -222,12 +223,20 @@ public class PurityJSONHandler {
                                                     ObjectNode objectNode = (ObjectNode) refactoring.get("purity");
                                                     if (entry.getValue().isPure() && refactoring.get("purity").get("purityValue").textValue().equals("1")) {
                                                         objectNode.put("purityValidation", "TP");
+                                                        objectNode.put("purityComment", entry.getValue().getPurityComment());
+                                                        objectNode.put("mappingState", entry.getValue().getMappingState());
                                                     } else if (!entry.getValue().isPure() && refactoring.get("purity").get("purityValue").textValue().equals("0")) {
                                                         objectNode.put("purityValidation", "TN");
+                                                        objectNode.put("purityComment", entry.getValue().getPurityComment());
+                                                        objectNode.put("mappingState", entry.getValue().getMappingState());
                                                     } else if (entry.getValue().isPure() && refactoring.get("purity").get("purityValue").textValue().equals("0")) {
                                                         objectNode.put("purityValidation", "FP");
+                                                        objectNode.put("purityComment", entry.getValue().getPurityComment());
+                                                        objectNode.put("mappingState", entry.getValue().getMappingState());
                                                     } else if (!entry.getValue().isPure() && refactoring.get("purity").get("purityValue").textValue().equals("1")) {
                                                         objectNode.put("purityValidation", "FN");
+                                                        objectNode.put("purityComment", entry.getValue().getPurityComment());
+                                                        objectNode.put("mappingState", entry.getValue().getMappingState());
                                                     }
                                                     break;
                                                 }
@@ -241,7 +250,7 @@ public class PurityJSONHandler {
                         }, 100);
             }
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json"), arrayNode);
+            objectMapper.writeValue(new File("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResultTest.json"), arrayNode);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -259,27 +268,23 @@ public class PurityJSONHandler {
             for (JsonNode jsonNode: root) {
 
                 for (JsonNode refactoring: jsonNode.get("refactorings")) {
-                    ObjectNode objectNode = (ObjectNode) refactoring;
-                    ObjectNode purity = objectMapper.createObjectNode();
+                    ObjectNode purity = (ObjectNode) refactoring.get("purity");
 
-                    purity.put("purityValue", "-");
-                    purity.put("purityValidation", "-");
-                    purity.put("purityComment", "");
+                    purity.put("mappingState", "");
 
-                    objectNode.set("purity", purity);
                 }
                 arrayNode.add(jsonNode);
             }
 
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File(destPath), arrayNode);
+            objectMapper.writeValue(new File(sourcePath), arrayNode);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    }
+
 
     private static void addPurityFields(String sourcePath, String destPath) {
 

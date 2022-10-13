@@ -188,3 +188,14 @@ Specificity: 98.630135
 FScore: 0.9586524
 
 
+For Extract Method: TIME: 2022-10-13 02:48:43.379
+TP: 313
+TN: 72
+FP: 1
+FN: 26
+Precision: 99.681526
+Recall: 92.33038
+Specificity: 98.630135
+FScore: 0.9586524
+
+
