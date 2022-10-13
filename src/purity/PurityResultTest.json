@@ -9527,7 +9527,7 @@
     "validators" : "Ameya",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
+      "purityValidation" : "TP",
       "purityComment" : "-this- has been added"
     }
   }, {
@@ -40468,9 +40468,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "The value of the -segmenst- variable can be different"
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "The value of the -segmenst- variable can be different, But in this case, it's pure becuase the value is true."
     }
   }, {
     "type" : "Extract Method",
@@ -41653,8 +41653,8 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "TN",
+      "purityValue" : "1",
+      "purityValidation" : "FN",
       "purityComment" : "Functionality has been changed. Different values for serverIDX variable would result in different outputs!"
     }
   }, {
@@ -42982,9 +42982,9 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "condition has been changed, although according to the current invocation, the output would be the same"
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "condition has been changed, although according to the current invocation, the output would be the same. So, it's pure"
     }
   }, {
     "type" : "Extract Method",
@@ -42996,7 +42996,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "panel can have different heights, so it's impure."
+      "purityComment" : "panel can have different heights, but it doesn't matter. In the first version, the height has been set to 5px. In the secoond one, it's 4px. So, it's impure"
     }
   }, {
     "type" : "Rename Variable",

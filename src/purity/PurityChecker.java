@@ -347,188 +347,282 @@ public class PurityChecker {
 
         if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty() && refactoring.getBodyMapper().getNonMappedInnerNodesT2().isEmpty()) {
 
+            int mappingState = 1;
+            String purityComment = "";
 
-            if (refactoring.getReplacements().isEmpty())
-                return new PurityCheckResult(true, "There is no replacement! - all mapped");
+            if (refactoring.getReplacements().isEmpty()) {
+                purityComment = "Identical statements";
+                return new PurityCheckResult(true, "There is no replacement! - all mapped", purityComment, mappingState);
+            }
 
             HashSet<Replacement> replacementsToCheck;
 
 //            This method also checks for the exact matches when we have Type Replacement
             if (refactoring.getBodyMapper().allMappingsArePurelyMatched(refactoring.getParameterToArgumentMap())) {
-                return new PurityCheckResult(true, "All the mappings are matched! - all mapped");
+                purityComment = "Changes are within the Extract Method refactoring mechanics";
+                return new PurityCheckResult(true, "All the mappings are matched! - all mapped", purityComment, mappingState);
             }
-            else {
-                replacementsToCheck = new HashSet<>(refactoring.getReplacements());
-                replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(refactoring.getParameterToArgumentMap(), replacementsToCheck);
-                replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
-                omitReplacementsRegardingInvocationArguments(refactoring, replacementsToCheck);
-                checkForParameterArgumentPair(refactoring, replacementsToCheck);
-                omitPrintAndLogMessagesRelatedReplacements(refactoring, replacementsToCheck);
-                omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck); // For the runTests commit
-                omitEqualStringLiteralsReplacement(replacementsToCheck);
-            }
+
+            replacementsToCheck = new HashSet<>(refactoring.getReplacements());
+            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+            omitReplacementsRegardingInvocationArguments(refactoring, replacementsToCheck);
+            checkForParameterArgumentPair(refactoring, replacementsToCheck);
 
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "All replacements have been justified - all mapped");
+                purityComment = "Changes are within the Extract Method refactoring mechanics";
+                return new PurityCheckResult(true, "All replacements have been justified - all mapped", purityComment, mappingState);
             }
 
+            if (replacementsToCheck.size() == 1) {
+                for (Replacement replacement: replacementsToCheck) {
+                    if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
+                        purityComment = "Changes are within the Extract Method refactoring mechanics";
+                        return new PurityCheckResult(true, "Argument replaced with return expression - all mapped", purityComment, mappingState);
+                    }
+                }
+            }
 
+            omitPrintAndLogMessagesRelatedReplacements(refactoring, replacementsToCheck);
+            omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck); // For the runTests commit
+            omitEqualStringLiteralsReplacement(replacementsToCheck);
             allReplacementsAreType(refactoring.getReplacements(), replacementsToCheck);
+            // for https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938 commit - performLocalRehashAwareOperation
+            refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "All replacements are variable type! - all mapped");
+                purityComment = "Tolerable changes in the body";
+                return new PurityCheckResult(true, "All replacements have been justified - all mapped", purityComment, mappingState);
+
             }
 
+            purityComment = "Overlapped refactoring - can be identical by undoing the overlapped refactoring";
 
             checkForRenameMethodRefactoringOnTop_Mapped(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Method Refactoring on the top of the extracted method - all mapped");
+                return new PurityCheckResult(true, "Rename Method Refactoring on the top of the extracted method - all mapped", purityComment, mappingState);
             }
 
 
             checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the extract method - all mapped");
+                return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the extract method - all mapped", purityComment, mappingState);
             }
 
             checkForRemoveParameterOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Remove Parameter refactoring on top the extracted method - all mapped");
+                return new PurityCheckResult(true, "Remove Parameter refactoring on top the extracted method - all mapped", purityComment, mappingState);
             }
 
             checkForRenameVariableOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Variable on top of the extract method - all mapped");
+                return new PurityCheckResult(true, "Rename Variable on top of the extract method - all mapped", purityComment, mappingState);
             }
 
             checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
             if(replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Attribute on the top of the extracted method - all mapped");
+                return new PurityCheckResult(true, "Rename Attribute on the top of the extracted method - all mapped", purityComment, mappingState);
             }
 
             checkForMoveAttributeOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Move Attribute on top of the extracted method - all mapped");
+                return new PurityCheckResult(true, "Move Attribute on top of the extracted method - all mapped", purityComment, mappingState);
             }
 
             checkForExtractClassOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Extract Class on top of the extracted method - all mapped");
+                return new PurityCheckResult(true, "Extract Class on top of the extracted method - all mapped", purityComment, mappingState);
             }
 
             checkForExtractMethodOnTop(refactorings, replacementsToCheck, refactoring);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Extract Method on top of the extracted method - all mapped");
+                return new PurityCheckResult(true, "Extract Method on top of the extracted method - all mapped", purityComment, mappingState);
             }
 
             checkForMoveClassRefactoringOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Move class on the top of the moved method - all mapped");
+                return new PurityCheckResult(true, "Move class on the top of the moved method - all mapped", purityComment, mappingState);
             }
 
             checkForRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Move class on the top of the moved method - all mapped");
+                return new PurityCheckResult(true, "Move class on the top of the moved method - all mapped", purityComment, mappingState);
             }
 
             checkForMoveAndRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Move class on the top of the moved method - all mapped");
+                return new PurityCheckResult(true, "Move class on the top of the moved method - all mapped", purityComment, mappingState);
             }
 
             checkForMoveMethodRefactoringOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Move method on the top of the moved method - all mapped");
+                return new PurityCheckResult(true, "Move method on the top of the moved method - all mapped", purityComment, mappingState);
             }
 
             checkForThisPatternReplacement(replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Contains this pattern - all mapped");
+                return new PurityCheckResult(true, "Contains this pattern - all mapped", purityComment, mappingState);
             }
-
-            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
-//            for https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938 commit - performLocalRehashAwareOperation
-            if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Contains supplier-get pattern - all mapped");
-            }
-
 
             if (replacementsToCheck.size() == 1) {
                 for (Replacement replacement: replacementsToCheck) {
                     if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
-                        return new PurityCheckResult(true, "Argument replaced with return expression - all mapped");
+                        return new PurityCheckResult(true, "Argument replaced with return expression - all mapped", purityComment, mappingState);
                     }
                 }
             }
 
+
+            purityComment = "Severe changes";
+
+            return new PurityCheckResult(false, "Replacements cannot be justified", purityComment, mappingState);
+
 //        Check non-mapped leaves
         } else if (refactoring.getBodyMapper().getNonMappedInnerNodesT2().isEmpty()){
 
+            int mappingState = 2;
+            String purityComment = "";
 
             if (!checkReplacements(refactoring, refactorings)) {
-                return new PurityCheckResult(false, "replacements are not justified - non-mapped leaves");
+                purityComment = "Severe changes";
+                return new PurityCheckResult(false, "replacements are not justified - non-mapped leaves", purityComment, mappingState);
             }
 
             List<AbstractCodeFragment> nonMappedLeavesT2 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT2());
 
+            if (nonMappedLeavesT2.size() == 1) {
+                AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
+                if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                    if (nonMappedLeave.getTernaryOperatorExpressions().isEmpty()) {
+                        purityComment = "Changes are within the Extract Method refactoring mechanics";
+                        return new PurityCheckResult(true, "Return expression has been added within the Extract Method mechanics - with non-mapped leaves", purityComment, mappingState);
+                    }
+                }
+            }
+
+            purityComment = "Overlapped refactoring - can be identical by undoing the overlapped refactoring";
+
             checkForRenameRefactoringOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
             if (nonMappedLeavesT2.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - with non-mapped leaves");
+                return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - with non-mapped leaves", purityComment, mappingState);
             }
+
+//            TODO - MoveAndRenameMethod refactoring on top of the extract method can cause a non-mapped leaf.
+            purityComment = "Severe changes";
 
             checkForPrint_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
             if (nonMappedLeavesT2.isEmpty()) {
-                return new PurityCheckResult(true, "Extra print lines - with non-mapped leaves");
+                return new PurityCheckResult(true, "Extra print lines - with non-mapped leaves", purityComment, mappingState);
             }
 
             checkForStatementsBeingMappedInOtherRefactorings(refactoring, refactorings, nonMappedLeavesT2);
             if (nonMappedLeavesT2.isEmpty()) {
-                return new PurityCheckResult(true, "Mapped statements in other refactorings - with non-mapped leaves");
+                return new PurityCheckResult(true, "Mapped statements in other refactorings - with non-mapped leaves", purityComment, mappingState);
             }
 
             checkVariableDeclarationUsage(refactoring, refactorings, nonMappedLeavesT2);
             if (nonMappedLeavesT2.isEmpty()) {
-                return new PurityCheckResult(true, "The new variable declared has not been used within the program logic - with non-mapped leaves");
+                return new PurityCheckResult(true, "The new variable declared has not been used within the program logic - with non-mapped leaves", purityComment, mappingState);
             }
 
 
             if (nonMappedLeavesT2.size() == 1) {
                 AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
                 if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
-                    if (((StatementObject) nonMappedLeave).getTernaryOperatorExpressions().isEmpty())
-                        return new PurityCheckResult(true, "Return expression has been added within the Extract Method mechanics - with non-mapped leaves");
+                    if (nonMappedLeave.getTernaryOperatorExpressions().isEmpty())
+                        return new PurityCheckResult(true, "Return expression has been added within the Extract Method mechanics - with non-mapped leaves", purityComment, mappingState);
                 }
             }
 
-            return new PurityCheckResult(false, "Violating extract method refactoring mechanics - with non-mapped leaves");
+            return new PurityCheckResult(false, "Violating extract method refactoring mechanics - with non-mapped leaves", purityComment, mappingState);
         } else {
 
+            int mappingState = 3;
+            String purityComment = "";
+
             if (!checkReplacements(refactoring, refactorings)) {
-                return new PurityCheckResult(false, "Replacements are not justified - non-mapped inner nodes");
+                purityComment = "Severe changes";
+                return new PurityCheckResult(false, "Replacements are not justified - non-mapped inner nodes", purityComment, mappingState);
             }
 
             List<AbstractCodeFragment> nonMappedLeavesT2List = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT2());
 
-//            removeNonMappedLeavesRegardingNullCheck(refactoring ,refactorings, nonMappedLeavesT2List); // Added for ignoring the null check in extract methods: https://github.com/wordpress-mobile/WordPress-Android/commit/ab298886b59f4ad0235cd6d5764854189eb59eb6
-
             if (!checkNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT2List)) {
-                return new PurityCheckResult(false, "Non-mapped leaves are not justified - non-mapped inner nodes");
+                purityComment = "Severe changes";
+                return new PurityCheckResult(false, "Non-mapped leaves are not justified - non-mapped inner nodes", purityComment, mappingState);
             }
 
             List<AbstractCodeFragment> nonMappedInnerNodesT2 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedInnerNodesT2());
 
-            checkForIfCondition(refactoring, nonMappedInnerNodesT2); //TODO -> I don't why I have added this. Need to check with the help of the oracle.
+            if (nonMappedInnerNodesT2.size() == 1) {
+                AbstractCodeFragment nonMappedLeave = nonMappedInnerNodesT2.get(0);
+                if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
+                    purityComment = "Identical statements";
+                    return new PurityCheckResult(true, "Just an empty block - with non-mapped leaves", purityComment, mappingState);
+                }
+            }
+
+            purityComment = "Severe changes";
+
+            checkForNodesBeingMappedInOtherRefactorings(refactoring, refactorings, nonMappedInnerNodesT2);
+
+            if (nonMappedInnerNodesT2.isEmpty()) {
+                return new PurityCheckResult(true, "Nodes being mapped with other nodes in other refactorings - with non-mapped leaves", purityComment, mappingState);
+            }
+
+//            checkForIfTrueCondition(refactoring, nonMappedInnerNodesT2);
+
+            checkForIfCondition(refactoring, nonMappedInnerNodesT2); //For the big commit - https://github.com/robovm/robovm/commit/bf5ee44b3b576e01ab09cae9f50300417b01dc07 - and the cryptoOperation extract method
 
             if (nonMappedInnerNodesT2.size() == 1) {
                 AbstractCodeFragment nonMappedLeave = nonMappedInnerNodesT2.get(0);
                 if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
-                    return new PurityCheckResult(true, "Just an empty block - with non-mapped leaves");
+                    return new PurityCheckResult(true, "Just an empty block - with non-mapped leaves", purityComment, mappingState);
                 }
             }
 
-            return new PurityCheckResult(false, "Contains non-mapped inner nodes");
+            purityComment = "Severe changes";
+            return new PurityCheckResult(false, "Contains non-mapped inner nodes", purityComment, mappingState);
+        }
+    }
+
+    private static void checkForIfTrueCondition(ExtractOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedInnerNodesT2) {
+
+        List<AbstractCodeFragment> nonMappedNodesT2ToRemove = new ArrayList<>();
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT2) {
+            if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.IF_STATEMENT)) {
+                AbstractExpression expression = ((CompositeStatementObject) (abstractCodeFragment)).getExpressions().get(0);
+                if (expression.getMethodInvocationMap().isEmpty()) {
+                    String evaluatedString = abstractCodeFragment.getArgumentizedString();
+                }
+            }
+        }
+    }
+
+    private static void checkForNodesBeingMappedInOtherRefactorings(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedInnerNodesT2) {
+
+        List<AbstractCodeFragment> nonMappedNodesT2ToRemove = new ArrayList<>();
+
+        String sourceOperation = refactoring.getSourceOperationBeforeExtraction().getName();
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT2) {
+            for (Refactoring refactoring1 : refactorings) {
+                if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+                    for (AbstractCodeMapping mapping : ((ExtractOperationRefactoring) (refactoring1)).getBodyMapper().getMappings()) {
+                        if (mapping.getFragment2().equals(abstractCodeFragment)) {
+                            if (mapping.getOperation1().getName().equals(sourceOperation)) {
+                                nonMappedNodesT2ToRemove.add(mapping.getFragment2());
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        return new PurityCheckResult(false, "Not decided yet!");
+        nonMappedInnerNodesT2.removeAll(nonMappedNodesT2ToRemove);
+
     }
 
     private static void omitEqualStringLiteralsReplacement(HashSet<Replacement> replacementsToCheck) {
@@ -997,13 +1091,13 @@ public class PurityChecker {
         if(replacementsToCheck.isEmpty())
             return true;
 
-        replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+        refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
 //            for https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938 commit - performLocalRehashAwareOperation
         if (replacementsToCheck.isEmpty()) {
             return true;
         }
 
-        replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+        refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
 
 
 
@@ -1024,7 +1118,7 @@ public class PurityChecker {
     }
 
     private static void omitBooleanVariableDeclarationReplacement(ExtractOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) {
-        // For the runTests commit
+        // For the runTests commit, boolean result = false need to map with boolean result = true
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
 
@@ -1326,12 +1420,35 @@ public class PurityChecker {
 class PurityCheckResult
 {
     private boolean isPure;
-    float result;
+
+    String purityComment;
     String description;
+
+    /*
+    1: All statements have been mapped
+    2: There is at least one non-mapped leaf
+    3: There is at least one non-mapped node
+ */
+    int mappingState;
+
+
+
+    PurityCheckResult(boolean isPure, String description, String purityComment){
+        this.isPure = isPure;
+        this.description = description;
+        this.purityComment = purityComment;
+    }
 
     PurityCheckResult(boolean isPure, String description){
         this.isPure = isPure;
         this.description = description;
+    }
+
+    PurityCheckResult(boolean isPure, String description, String purityComment, int mappingState){
+        this.isPure = isPure;
+        this.description = description;
+        this.purityComment = purityComment;
+        this.mappingState = mappingState;
     }
 
     public boolean isPure() {
@@ -1341,6 +1458,10 @@ class PurityCheckResult
     public String getDescription() {
         return description;
     }
+
+    public String getPurityComment() { return purityComment; }
+
+    public int getMappingState() { return mappingState; }
 
     //    private void calcPurity(){
 //        if (result < 0.5)

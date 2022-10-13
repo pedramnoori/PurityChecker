@@ -24,7 +24,9 @@ public class PurityJSONHandler {
 
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
 
-        numberOfRefactorings("C:\\Users\\Pedram\\Desktop\\Puritydata.json");
+//        numberOfRefactorings("C:\\Users\\Pedram\\Desktop\\Puritydata.json");
+
+        addExtraPurityFields("C:\\Users\\Pedram\\Desktop\\PuritydataTest.json");
 
         runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataTest.json");
 //
@@ -35,6 +37,8 @@ public class PurityJSONHandler {
 //        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
 
     }
+
+
 
     private static void numberOfRefactorings(String sourcePath) {
 
@@ -114,6 +118,8 @@ public class PurityJSONHandler {
             {
                 String filename= "Statistics.txt";
                 FileWriter fw = new FileWriter(filename,true);
+
+                fw.write("For "+ refactoringType.getDisplayName() + ": ");
 
                 fw.write("TIME: " + new Timestamp(System.currentTimeMillis()) + "\n");
                 fw.write("TP: "+ TPCounter + "\n");
@@ -239,6 +245,40 @@ public class PurityJSONHandler {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static void addExtraPurityFields(String sourcePath) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        ArrayNode arrayNode = objectMapper.createArrayNode();
+
+        try {
+            File file = new File(sourcePath);
+            JsonNode root = objectMapper.readTree(file);
+
+            for (JsonNode jsonNode: root) {
+
+                for (JsonNode refactoring: jsonNode.get("refactorings")) {
+                    ObjectNode objectNode = (ObjectNode) refactoring;
+                    ObjectNode purity = objectMapper.createObjectNode();
+
+                    purity.put("purityValue", "-");
+                    purity.put("purityValidation", "-");
+                    purity.put("purityComment", "");
+
+                    objectNode.set("purity", purity);
+                }
+                arrayNode.add(jsonNode);
+            }
+
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+            objectMapper.writeValue(new File(destPath), arrayNode);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     }
 
     private static void addPurityFields(String sourcePath, String destPath) {

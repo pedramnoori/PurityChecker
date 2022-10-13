@@ -2063,7 +2063,7 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 	}
 
 
-	public HashSet<Replacement> omitReplacementsAccordingSupplierGetPattern(Map<String, String> parameterToArgumentMap, HashSet<Replacement> replacementsToCheck) {
+	public void omitReplacementsAccordingSupplierGetPattern(Map<String, String> parameterToArgumentMap, HashSet<Replacement> replacementsToCheck) {
 
 		Set<Replacement> replacementsToRemove = new HashSet<>();
 
@@ -2081,8 +2081,6 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 		}
 
 		replacementsToCheck.removeAll(replacementsToRemove);
-
-		return replacementsToCheck;
 	}
 
 	private int editDistance() {
