@@ -16,6 +16,7 @@ import gr.uom.java.xmi.diff.ExtractOperationRefactoring;
 import gr.uom.java.xmi.diff.ExtractVariableRefactoring;
 import gr.uom.java.xmi.diff.InlineOperationRefactoring;
 import gr.uom.java.xmi.diff.InlineVariableRefactoring;
+import gr.uom.java.xmi.diff.InvertConditionRefactoring;
 import gr.uom.java.xmi.diff.MergeVariableRefactoring;
 import gr.uom.java.xmi.diff.ReferenceBasedRefactoring;
 import gr.uom.java.xmi.diff.RemoveParameterRefactoring;
@@ -2343,6 +2344,9 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 									//special handling when there is only an infix operator or invert conditional replacement, but no children mapped
 									score = 1;
 								}
+								else if(containsInvertCondition(statement1, statement2)) {
+									score = 1;
+								}
 								else if(replacementInfo.getReplacements(ReplacementType.COMPOSITE).size() > 0) {
 									score = 1;
 								}
@@ -2452,6 +2456,9 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 							if(score == 0 && replacements != null) {
 								if(replacements.size() == 1 && (replacements.iterator().next().getType().equals(ReplacementType.INFIX_OPERATOR) || replacements.iterator().next().getType().equals(ReplacementType.INVERT_CONDITIONAL))) {
 									//special handling when there is only an infix operator or invert conditional replacement, but no children mapped
+									score = 1;
+								}
+								else if(containsInvertCondition(statement1, statement2)) {
 									score = 1;
 								}
 								else if(replacementInfo.getReplacements(ReplacementType.COMPOSITE).size() > 0) {
@@ -4307,7 +4314,7 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 		}
 		replacementInfo.removeReplacements(replacementsToBeRemoved);
 		replacementInfo.addReplacements(replacementsToBeAdded);
-		boolean isEqualWithReplacement = s1.equals(s2) || (s1 + ";\n").equals(s2) || (s2 + ";\n").equals(s1) || replacementInfo.argumentizedString1.equals(replacementInfo.argumentizedString2) ||
+		boolean isEqualWithReplacement = s1.equals(s2) || (s1 + ";\n").equals(s2) || (s2 + ";\n").equals(s1) || replacementInfo.argumentizedString1.equals(replacementInfo.argumentizedString2) || equalAfterParenthesisElimination(s1, s2) ||
 				differOnlyInCastExpressionOrPrefixOperatorOrInfixOperand(s1, s2, methodInvocationMap1, methodInvocationMap2, statement1.getInfixExpressions(), statement2.getInfixExpressions(), variableDeclarations1, variableDeclarations2, replacementInfo) ||
 				differOnlyInFinalModifier(s1, s2) || differOnlyInThis(s1, s2) || matchAsLambdaExpressionArgument(s1, s2, parameterToArgumentMap, replacementInfo, statement1) ||
 				oneIsVariableDeclarationTheOtherIsVariableAssignment(s1, s2, variableDeclarations1, variableDeclarations2, replacementInfo) || identicalVariableDeclarationsWithDifferentNames(s1, s2, variableDeclarations1, variableDeclarations2, replacementInfo) ||
@@ -7462,11 +7469,19 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 							intersection.add(c2);
 							break;
 						}
+						else if(c1.equals("!" + c2)) {
+							intersection.add(c2);
+							break;
+						}
 						else if(c2.equals("(" + c1)) {
 							intersection.add(c1);
 							break;
 						}
 						else if(c2.equals(c1 + ")")) {
+							intersection.add(c1);
+							break;
+						}
+						else if(c2.equals("!" + c1)) {
 							intersection.add(c1);
 							break;
 						}
@@ -7589,22 +7604,38 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 						}
 					}
 				}
-				boolean invertConditionalFound = false;
+				int invertedConditionals = 0;
 				for(String subCondition1 : subConditionsAsList1) {
 					for(String subCondition2 : subConditionsAsList2) {
 						if(subCondition1.equals("!" + subCondition2)) {
 							Replacement r = new Replacement(subCondition1, subCondition2, ReplacementType.INVERT_CONDITIONAL);
 							info.addReplacement(r);
-							invertConditionalFound = true;
+							invertedConditionals++;
+							break;
 						}
 						if(subCondition2.equals("!" + subCondition1)) {
 							Replacement r = new Replacement(subCondition1, subCondition2, ReplacementType.INVERT_CONDITIONAL);
 							info.addReplacement(r);
-							invertConditionalFound = true;
+							invertedConditionals++;
+							break;
 						}
 					}
 				}
-				if(invertConditionalFound || matches > 0) {
+				if(invertedConditionals > 0 || matches > 0) {
+					List<Replacement> operatorReplacements = info.getReplacements(ReplacementType.INFIX_OPERATOR);
+					boolean booleanOperatorReversed = false;
+					for(Replacement r : operatorReplacements) {
+						if(r.getBefore().equals("&&") && r.getAfter().equals("||")) {
+							booleanOperatorReversed = true;
+						}
+						else if(r.getBefore().equals("||") && r.getAfter().equals("&&")) {
+							booleanOperatorReversed = true;
+						}
+					}
+					if(matches == invertedConditionals && booleanOperatorReversed) {
+						InvertConditionRefactoring invert = new InvertConditionRefactoring(statement1, statement2, container1, container2);
+						refactorings.add(invert);
+					}
 					return true;
 				}
 			}
@@ -7708,6 +7739,14 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 			conditional = s.substring(indexOfEquals+1, s.length()-2);
 		}
 		return conditional;
+	}
+
+	private boolean equalAfterParenthesisElimination(String s1, String s2) {
+		String updatedS1 = s1.replace("(", "");
+		updatedS1 = updatedS1.replace(")", "");
+		String updatedS2 = s2.replace("(", "");
+		updatedS2 = updatedS2.replace(")", "");
+		return updatedS1.equals(updatedS2);
 	}
 
 	private void replaceVariablesWithArguments(Set<String> variables, Map<String, String> parameterToArgumentMap) {
@@ -8747,6 +8786,18 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 		if(parent1 != null && parent2 != null) {
 			if(parent1.equals(container1.getBody().getCompositeStatement()) || parent2.equals(container2.getBody().getCompositeStatement())) {
 				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean containsInvertCondition(CompositeStatementObject comp1, CompositeStatementObject comp2) {
+		for(Refactoring refactoring : this.refactorings) {
+			if(refactoring instanceof InvertConditionRefactoring) {
+				InvertConditionRefactoring ref = (InvertConditionRefactoring)refactoring;
+				if(ref.getOriginalConditional().equals(comp1) && ref.getInvertedConditional().equals(comp2)) {
+					return true;
+				}
 			}
 		}
 		return false;
