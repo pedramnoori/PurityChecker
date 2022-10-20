@@ -23,7 +23,7 @@ public class PurityJSONHandler {
     public static void main(String[] args) {
 
 //        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
-//        addExtraPurityFields("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataTest.json");
+        addExtraPurityFields("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
 //        numberOfRefactorings("C:\\Users\\Pedram\\Desktop\\Puritydata.json");
@@ -31,14 +31,31 @@ public class PurityJSONHandler {
 
 //        runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataTest.json");
 //
-        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.MOVE_OPERATION);
-
+//        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
 //        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
 
     }
 
+    private static void testMethod(String sourcePath) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        File file = new File(sourcePath);
+
+        try {
+            List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
+
+            int numberOfExtractMethodRefactoringsProcessed = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals("Extract Method")).filter(r -> r.getPurity().getPurityValidation().equals("TP")).filter(r -> r.getPurity().getPurityComment().equals("Changes are within the Extract Method refactoring mechanics")).count();
+            int numberOfExtractMethodRefactorings = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals("Extract Method")).count();
+
+            System.out.println(numberOfExtractMethodRefactorings);
+            System.out.println(numberOfExtractMethodRefactoringsProcessed);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
     private static void numberOfRefactorings(String sourcePath) {
@@ -270,7 +287,10 @@ public class PurityJSONHandler {
                 for (JsonNode refactoring: jsonNode.get("refactorings")) {
                     ObjectNode purity = (ObjectNode) refactoring.get("purity");
 
-                    purity.put("mappingState", "");
+                    purity.put("purityComment", "");
+
+//                    purity.put("mappingState", "");
+//                    purity.put("validationComment", purity.findValue("purityComment").textValue());
 
                 }
                 arrayNode.add(jsonNode);
