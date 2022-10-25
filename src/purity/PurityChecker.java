@@ -374,10 +374,12 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "All replacements have been justified - all mapped", purityComment, mappingState);
             }
 
+            purityComment += "Changes are within the Extract Method refactoring mechanics" + "\n";
+
             if (replacementsToCheck.size() == 1) {
                 for (Replacement replacement: replacementsToCheck) {
                     if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
-                        purityComment = "Changes are within the Extract Method refactoring mechanics";
+//                        purityComment = "Changes are within the Extract Method refactoring mechanics";
                         return new PurityCheckResult(true, "Argument replaced with return expression - all mapped", purityComment, mappingState);
                     }
                 }
@@ -391,12 +393,12 @@ public class PurityChecker {
             refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
 
             if (replacementsToCheck.isEmpty()) {
-                purityComment = "Tolerable changes in the body";
+                purityComment += "Tolerable changes in the body" + "\n";
                 return new PurityCheckResult(true, "All replacements have been justified - all mapped", purityComment, mappingState);
 
             }
 
-            purityComment = "Overlapped refactoring - can be identical by undoing the overlapped refactoring";
+            purityComment += "Overlapped refactoring - can be identical by undoing the overlapped refactoring" + "\n";
 
             checkForRenameMethodRefactoringOnTop_Mapped(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {

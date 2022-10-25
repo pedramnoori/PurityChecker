@@ -5,6 +5,19 @@ public class Purity {
     private String purityValue;
     private String purityValidation;
     private String purityComment;
+    private String validationComment;
+    private int mappingState;
+
+
+
+    public String getValidationComment() {
+        return validationComment;
+    }
+
+    public void setValidationComment(String validationComment) {
+        this.validationComment = validationComment;
+    }
+
 
     public int getMappingState() {
         return mappingState;
@@ -14,7 +27,6 @@ public class Purity {
         this.mappingState = mappingState;
     }
 
-    private int mappingState;
 
     public String getPurityValue() {
         return purityValue;
