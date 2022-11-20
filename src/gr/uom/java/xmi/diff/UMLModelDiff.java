@@ -72,6 +72,7 @@ public class UMLModelDiff {
 	private List<UMLClassMergeDiff> classMergeDiffList;
 	private List<UMLClassSplitDiff> classSplitDiffList;
 	private List<Refactoring> refactorings;
+	private Set<Refactoring> moveRenameClassRefactorings;
 	private Set<String> deletedFolderPaths;
 	private Set<Pair<VariableDeclarationContainer, VariableDeclarationContainer>> processedOperationPairs = new HashSet<Pair<VariableDeclarationContainer, VariableDeclarationContainer>>();
 	private Set<Pair<UMLClass, UMLClass>> processedClassPairs = new HashSet<Pair<UMLClass, UMLClass>>();
@@ -1923,18 +1924,7 @@ public class UMLModelDiff {
 	}
 
 	public List<Refactoring> getRefactorings() throws RefactoringMinerTimedOutException {
-		Set<Refactoring> refactorings = new LinkedHashSet<Refactoring>();
-		refactorings.addAll(getMoveClassRefactorings());
-		List<RenamePackageRefactoring> renamePackageRefactorings = new ArrayList<RenamePackageRefactoring>();
-		for(Refactoring r : refactorings) {
-			if(r instanceof RenamePackageRefactoring) {
-				renamePackageRefactorings.add((RenamePackageRefactoring)r);
-			}
-		}
-		refactorings.addAll(getRenameClassRefactorings(renamePackageRefactorings));
-		refactorings.addAll(getMergeClassRefactorings(renamePackageRefactorings));
-		refactorings.addAll(getSplitClassRefactorings(renamePackageRefactorings));
-		postProcessRenamedPackages(renamePackageRefactorings, refactorings);
+		Set<Refactoring> refactorings = getMoveRenameClassRefactorings();
 		refactorings.addAll(identifyConvertAnonymousClassToTypeRefactorings());
 		Map<Replacement, Set<CandidateAttributeRefactoring>> renameMap = new LinkedHashMap<Replacement, Set<CandidateAttributeRefactoring>>();
 		Map<MergeVariableReplacement, Set<CandidateMergeVariableRefactoring>> mergeMap = new LinkedHashMap<MergeVariableReplacement, Set<CandidateMergeVariableRefactoring>>();
@@ -2167,6 +2157,26 @@ public class UMLModelDiff {
 			detectImportDeclarationChanges(classDiff, packageRefactorings);
 		}
 		return filterOutDuplicateRefactorings(refactorings);
+	}
+
+	public Set<Refactoring> getMoveRenameClassRefactorings() throws RefactoringMinerTimedOutException {
+		if(moveRenameClassRefactorings != null) {
+			return this.moveRenameClassRefactorings;
+		}
+		Set<Refactoring> refactorings = new LinkedHashSet<Refactoring>();
+		refactorings.addAll(getMoveClassRefactorings());
+		List<RenamePackageRefactoring> renamePackageRefactorings = new ArrayList<RenamePackageRefactoring>();
+		for(Refactoring r : refactorings) {
+			if(r instanceof RenamePackageRefactoring) {
+				renamePackageRefactorings.add((RenamePackageRefactoring)r);
+			}
+		}
+		refactorings.addAll(getRenameClassRefactorings(renamePackageRefactorings));
+		refactorings.addAll(getMergeClassRefactorings(renamePackageRefactorings));
+		refactorings.addAll(getSplitClassRefactorings(renamePackageRefactorings));
+		postProcessRenamedPackages(renamePackageRefactorings, refactorings);
+		this.moveRenameClassRefactorings = refactorings;
+		return refactorings;
 	}
 
 	private Map<RenamePattern, Integer> typeRenamePatternMap(Set<Refactoring> refactorings) {
@@ -3365,6 +3375,17 @@ public class UMLModelDiff {
 	}
 
 	private boolean movedAndRenamedMethodSignature(UMLOperation removedOperation, UMLOperation addedOperation, UMLOperationBodyMapper mapper, boolean multipleMappers) {
+		UMLClassBaseDiff addedOperationClassDiff = getUMLClassDiff(addedOperation.getClassName());
+		if(addedOperationClassDiff != null) {
+			for(Refactoring r : addedOperationClassDiff.getRefactoringsBeforePostProcessing()) {
+				if(r instanceof ExtractOperationRefactoring) {
+					ExtractOperationRefactoring extractRefactoring = (ExtractOperationRefactoring)r;
+					if(extractRefactoring.getExtractedOperation().equals(addedOperation)) {
+						return false;
+					}
+				}
+			}
+		}
 		UMLClassBaseDiff removedOperationClassDiff = getUMLClassDiff(removedOperation.getClassName());
 		if(removedOperationClassDiff != null && removedOperationClassDiff.containsOperationWithTheSameSignatureInNextClass(removedOperation)) {
 			return false;
@@ -3393,7 +3414,7 @@ public class UMLModelDiff {
 		if(exactLeafMappings == 0 && normalizedEditDistance > 0.24) {
 			return false;
 		}
-		if(exactLeafMappings == 1 && normalizedEditDistance > 0.5 && (mapper.nonMappedElementsT1() > 0 || mapper.nonMappedElementsT2() > 0)) {
+		if(exactLeafMappings == 1 && normalizedEditDistance > 0.51 && (mapper.nonMappedElementsT1() > 0 || mapper.nonMappedElementsT2() > 0)) {
 			return false;
 		}
 		if(mapper.mappingsWithoutBlocks() == 1) {

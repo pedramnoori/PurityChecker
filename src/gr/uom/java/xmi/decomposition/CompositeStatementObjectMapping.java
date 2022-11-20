@@ -2,6 +2,7 @@ package gr.uom.java.xmi.decomposition;
 
 import java.util.List;
 
+import gr.uom.java.xmi.LocationInfo.CodeElementType;
 import gr.uom.java.xmi.VariableDeclarationContainer;
 import gr.uom.java.xmi.diff.StringDistance;
 
@@ -21,7 +22,8 @@ public class CompositeStatementObjectMapping extends AbstractCodeMapping impleme
 
 	@Override
 	public int compareTo(CompositeStatementObjectMapping o) {
-		if(this.compositeChildMatchingScore >= 2.0*o.compositeChildMatchingScore) {
+		if(this.compositeChildMatchingScore >= 2.0*o.compositeChildMatchingScore ||
+				o.compositeChildMatchingScore >= 2.0*this.compositeChildMatchingScore) {
 			return -Double.compare(this.compositeChildMatchingScore, o.compositeChildMatchingScore);
 		}
 		double distance1;
@@ -74,6 +76,14 @@ public class CompositeStatementObjectMapping extends AbstractCodeMapping impleme
 				return -Double.compare(this.compositeChildMatchingScore, o.compositeChildMatchingScore);
 			}
 			else {
+				int identicalDirectlyNestedChildren1 = this.numberOfIdenticalDirectlyNestedChildren();
+				int identicalDirectlyNestedChildren2 = o.numberOfIdenticalDirectlyNestedChildren();
+				if(identicalDirectlyNestedChildren1 > identicalDirectlyNestedChildren2) {
+					return -1;
+				}
+				else if(identicalDirectlyNestedChildren1 < identicalDirectlyNestedChildren2) {
+					return 1;
+				}
 				int depthDiff1 = Math.abs(this.getFragment1().getDepth() - this.getFragment2().getDepth());
 				int depthDiff2 = Math.abs(o.getFragment1().getDepth() - o.getFragment2().getDepth());
 
@@ -81,6 +91,33 @@ public class CompositeStatementObjectMapping extends AbstractCodeMapping impleme
 					return Integer.valueOf(depthDiff1).compareTo(Integer.valueOf(depthDiff2));
 				}
 				else {
+					if(this.getFragment1().getLocationInfo().getCodeElementType().equals(CodeElementType.CATCH_CLAUSE) &&
+							this.getFragment2().getLocationInfo().getCodeElementType().equals(CodeElementType.CATCH_CLAUSE) &&
+							o.getFragment1().getLocationInfo().getCodeElementType().equals(CodeElementType.CATCH_CLAUSE) &&
+							o.getFragment2().getLocationInfo().getCodeElementType().equals(CodeElementType.CATCH_CLAUSE)) {
+						List<VariableDeclaration> thisVariableDeclarations1 = this.getFragment1().getVariableDeclarations();
+						List<VariableDeclaration> thisVariableDeclarations2 = this.getFragment2().getVariableDeclarations();
+						boolean equalType1 = false;
+						if(thisVariableDeclarations1.size() == 1 && thisVariableDeclarations2.size() == 1 &&
+								thisVariableDeclarations1.get(0).getType() != null && thisVariableDeclarations2.get(0).getType() != null &&
+								thisVariableDeclarations1.get(0).getType().equals(thisVariableDeclarations2.get(0).getType())) {
+							equalType1 = true;
+						}
+						List<VariableDeclaration> otherVariableDeclarations1 = o.getFragment1().getVariableDeclarations();
+						List<VariableDeclaration> otherVariableDeclarations2 = o.getFragment2().getVariableDeclarations();
+						boolean equalType2 = false;
+						if(otherVariableDeclarations1.size() == 1 && otherVariableDeclarations2.size() == 1 &&
+								otherVariableDeclarations1.get(0).getType() != null && otherVariableDeclarations2.get(0).getType() != null &&
+								otherVariableDeclarations1.get(0).getType().equals(otherVariableDeclarations2.get(0).getType())) {
+							equalType2 = true;
+						}
+						if(equalType1 && !equalType2) {
+							return -1;
+						}
+						if(!equalType1 && equalType2) {
+							return 1;
+						}
+					}
 					int indexDiff1 = Math.abs(this.getFragment1().getIndex() - this.getFragment2().getIndex());
 					int indexDiff2 = Math.abs(o.getFragment1().getIndex() - o.getFragment2().getIndex());
 					if(indexDiff1 != indexDiff2) {
@@ -111,6 +148,26 @@ public class CompositeStatementObjectMapping extends AbstractCodeMapping impleme
 			}
 			comp1 = nestedComp1;
 			comp2 = nestedComp2;
+		}
+		return count;
+	}
+
+	private int numberOfIdenticalDirectlyNestedChildren() {
+		int count = 0;
+		CompositeStatementObject comp1 = (CompositeStatementObject)getFragment1();
+		CompositeStatementObject comp2 = (CompositeStatementObject)getFragment2();
+		if(comp1.getLocationInfo().getCodeElementType().equals(CodeElementType.BLOCK) && comp2.getLocationInfo().getCodeElementType().equals(CodeElementType.BLOCK)) {
+			List<AbstractStatement> statements1 = comp1.getStatements();
+			List<AbstractStatement> statements2 = comp2.getStatements();
+			for(AbstractStatement statement1 : statements1) {
+				String s1 = statement1.getString();
+				for(AbstractStatement statement2 : statements2) {
+					String s2 = statement2.getString();
+					if(s1.equals(s2)) {
+						count++;
+					}
+				}
+			}
 		}
 		return count;
 	}

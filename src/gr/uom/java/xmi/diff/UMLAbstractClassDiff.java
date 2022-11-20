@@ -241,7 +241,7 @@ public abstract class UMLAbstractClassDiff {
 		return false;
 	}
 
-	protected boolean isPartOfMethodExtracted(VariableDeclarationContainer removedOperation, VariableDeclarationContainer addedOperation) {
+	public boolean isPartOfMethodExtracted(VariableDeclarationContainer removedOperation, VariableDeclarationContainer addedOperation) {
 		List<AbstractCall> removedOperationInvocations = removedOperation.getAllOperationInvocations();
 		List<AbstractCall> addedOperationInvocations = addedOperation.getAllOperationInvocations();
 		Set<AbstractCall> intersection = new LinkedHashSet<AbstractCall>(removedOperationInvocations);
@@ -389,7 +389,7 @@ public abstract class UMLAbstractClassDiff {
 			UMLAttribute a1 = findAttributeInOriginalClass(split.getBefore());
 			Set<CandidateSplitVariableRefactoring> set = splitMap.get(split);
 			for(CandidateSplitVariableRefactoring candidate : set) {
-				if(splitVariables.size() > 1 && splitVariables.size() == split.getSplitVariables().size() && a1 != null) {
+				if(splitVariables.size() > 1 && splitVariables.size() == split.getSplitVariables().size() && a1 != null && findAttributeInNextClass(split.getBefore()) == null) {
 					SplitAttributeRefactoring ref = new SplitAttributeRefactoring(a1, splitAttributes, getOriginalClassName(), getNextClassName(), set);
 					if(!refactorings.contains(ref)) {
 						refactorings.add(ref);
@@ -679,7 +679,7 @@ public abstract class UMLAbstractClassDiff {
 								}
 							}
 							UMLAttribute a1 = findAttributeInOriginalClass(originalAttributeName);
-							if(splitVariables.size() > 1 && splitVariables.size() == split.getSplitVariables().size() && a1 != null) {
+							if(splitVariables.size() > 1 && splitVariables.size() == split.getSplitVariables().size() && a1 != null && findAttributeInNextClass(originalAttributeName) == null) {
 								SplitAttributeRefactoring ref = new SplitAttributeRefactoring(a1, splitAttributes, getOriginalClassName(), getNextClassName(), new LinkedHashSet<CandidateSplitVariableRefactoring>());
 								if(!refactorings.contains(ref)) {
 									newRefactorings.add(ref);
@@ -917,7 +917,7 @@ public abstract class UMLAbstractClassDiff {
 		return Collections.emptySet();
 	}
 
-	protected boolean isPartOfMethodInlined(VariableDeclarationContainer removedOperation, VariableDeclarationContainer addedOperation) {
+	public boolean isPartOfMethodInlined(VariableDeclarationContainer removedOperation, VariableDeclarationContainer addedOperation) {
 		List<AbstractCall> removedOperationInvocations = removedOperation.getAllOperationInvocations();
 		List<AbstractCall> addedOperationInvocations = addedOperation.getAllOperationInvocations();
 		Set<AbstractCall> intersection = new LinkedHashSet<AbstractCall>(removedOperationInvocations);

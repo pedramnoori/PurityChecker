@@ -114,6 +114,12 @@ public class StringBasedHeuristics {
 			int beginIndexS2 = s2.indexOf(commonPrefix) + commonPrefix.length();
 			int endIndexS2 = s2.lastIndexOf(commonSuffix);
 			String diff2 = beginIndexS2 > endIndexS2 ? "" :	s2.substring(beginIndexS2, endIndexS2);
+			if(diff1.isEmpty() && diff2.equals("this.")) {
+				return true;
+			}
+			else if(diff2.isEmpty() && diff1.equals("this.")) {
+				return true;
+			}
 			if(cast(diff1, diff2)) {
 				for(Replacement r : info.getReplacements()) {
 					if(r.getType().equals(ReplacementType.VARIABLE_REPLACED_WITH_ARRAY_ACCESS) && s2.startsWith(r.getAfter() + "=")) {
@@ -181,6 +187,18 @@ public class StringBasedHeuristics {
 								return true;
 							}
 						}
+					}
+				}
+				if(variableDeclarations1.isEmpty() && variableDeclarations2.size() == 1 && s1.startsWith("for(") && s2.startsWith("for(")) {
+					String updatedS1 = "for(" + variableDeclarations2.get(0).getType().toString() + " " + commonSuffix;
+					if(updatedS1.equals(s2)) {
+						return true;
+					}
+				}
+				if(variableDeclarations1.size() == 1 && variableDeclarations2.isEmpty() && s1.startsWith("for(") && s2.startsWith("for(")) {
+					String updatedS2 = "for(" + variableDeclarations1.get(0).getType().toString() + " " + commonSuffix;
+					if(updatedS2.equals(s1)) {
+						return true;
 					}
 				}
 			}
@@ -269,7 +287,26 @@ public class StringBasedHeuristics {
 	}
 
 	protected static boolean differOnlyInThis(String s1, String s2) {;
-		return differOnlyInPrefix(s1, s2, "", "this.");
+		if(differOnlyInPrefix(s1, s2, "", "this.")) {
+			return true;
+		}
+		String commonPrefix = PrefixSuffixUtils.longestCommonPrefix(s1, s2);
+		String commonSuffix = PrefixSuffixUtils.longestCommonSuffix(s1, s2);
+		if(!commonPrefix.isEmpty() && !commonSuffix.isEmpty()) {
+			int beginIndexS1 = s1.indexOf(commonPrefix) + commonPrefix.length();
+			int endIndexS1 = s1.lastIndexOf(commonSuffix);
+			String diff1 = beginIndexS1 > endIndexS1 ? "" :	s1.substring(beginIndexS1, endIndexS1);
+			int beginIndexS2 = s2.indexOf(commonPrefix) + commonPrefix.length();
+			int endIndexS2 = s2.lastIndexOf(commonSuffix);
+			String diff2 = beginIndexS2 > endIndexS2 ? "" :	s2.substring(beginIndexS2, endIndexS2);
+			if(diff1.isEmpty() && diff2.equals("this.")) {
+				return true;
+			}
+			else if(diff2.isEmpty() && diff1.equals("this.")) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private static boolean differOnlyInPrefix(String s1, String s2, String prefixWithout, String prefixWith) {
@@ -314,6 +351,31 @@ public class StringBasedHeuristics {
 					Replacement replacement = new Replacement(declaration1.getVariableName(), declaration2.getVariableName(), ReplacementType.VARIABLE_NAME);
 					replacementInfo.addReplacement(replacement);
 					return true;
+				}
+				if(s1.startsWith("catch(") && s2.startsWith("catch(") && !declaration1.equalType(declaration2)) {
+					boolean containsAnotherUnmatchedCatch1 = false;
+					for(AbstractCodeFragment statement1 : replacementInfo.getStatements1()) {
+						if(statement1.getString().startsWith("catch(")) {
+							containsAnotherUnmatchedCatch1 = true;
+							break;
+						}
+					}
+					boolean containsAnotherUnmatchedCatch2 = false;
+					for(AbstractCodeFragment statement2 : replacementInfo.getStatements2()) {
+						if(statement2.getString().startsWith("catch(")) {
+							containsAnotherUnmatchedCatch2 = true;
+							break;
+						}
+					}
+					if(!containsAnotherUnmatchedCatch1 && !containsAnotherUnmatchedCatch2) {
+						if(!declaration1.getVariableName().equals(declaration2.getVariableName())) {
+							Replacement replacement = new Replacement(declaration1.getVariableName(), declaration2.getVariableName(), ReplacementType.VARIABLE_NAME);
+							replacementInfo.addReplacement(replacement);
+						}
+						Replacement replacement = new Replacement(declaration1.getType().toString(), declaration2.getType().toString(), ReplacementType.TYPE);
+						replacementInfo.addReplacement(replacement);
+						return true;
+					}
 				}
 			}
 		}
@@ -911,22 +973,27 @@ public class StringBasedHeuristics {
 			else if((invocation2 = statement2.assignmentInvocationCoveringEntireStatement()) != null) {
 				arguments2 = invocation2.getArguments();
 			}
-			if(arguments1 != null && arguments2 != null && arguments1.size() == arguments2.size()) {
+			if(arguments1 != null && arguments2 != null) {
 				Set<Replacement> concatReplacements = new LinkedHashSet<>();
 				int equalArguments = 0;
 				int concatenatedArguments = 0;
 				int replacedArguments = 0;
-				for(int i=0; i<arguments1.size(); i++) {
+				int minSize = Math.min(arguments1.size(), arguments2.size());
+				for(int i=0; i<minSize; i++) {
 					String arg1 = arguments1.get(i);
 					String arg2 = arguments2.get(i);
 					if(arg1.equals(arg2)) {
 						equalArguments++;
 					}
 					else if(!arg1.contains("+") && arg2.contains("+") && !arg2.contains("++")) {
+						boolean tokenMatchesArgument = false;
 						Set<String> tokens2 = new LinkedHashSet<String>(Arrays.asList(SPLIT_CONCAT_STRING_PATTERN.split(arg2)));
 						StringBuilder sb = new StringBuilder();
 						sb.append("\"");
 						for(String token : tokens2) {
+							if(arguments1.contains(token) && arguments1.size() == arguments2.size() && tokens2.size() <= 2) {
+								tokenMatchesArgument = true;
+							}
 							if(token.startsWith("\"") && token.endsWith("\"") && token.length() > 1) {
 								sb.append(token.substring(1, token.length()-1));
 							}
@@ -938,16 +1005,28 @@ public class StringBasedHeuristics {
 							}
 						}
 						sb.append("\"");
-						if(sb.toString().equals(arg1)) {
+						String concatenatedString = sb.toString();
+						if(concatenatedString.equals(arg1)) {
 							concatReplacements.add(new Replacement(arg1, arg2, ReplacementType.CONCATENATION));
+							concatenatedArguments++;
+						}
+						else if(StringDistance.editDistance(concatenatedString, arg1) < tokens2.size()) {
+							concatReplacements.add(new Replacement(arg1, arg2, ReplacementType.CONCATENATION));
+							concatenatedArguments++;
+						}
+						if(tokenMatchesArgument) {
 							concatenatedArguments++;
 						}
 					}
 					else if(!arg2.contains("+") && arg1.contains("+") && !arg1.contains("++")) {
+						boolean tokenMatchesArgument = false;
 						Set<String> tokens1 = new LinkedHashSet<String>(Arrays.asList(SPLIT_CONCAT_STRING_PATTERN.split(arg1)));
 						StringBuilder sb = new StringBuilder();
 						sb.append("\"");
 						for(String token : tokens1) {
+							if(arguments2.contains(token) && arguments1.size() == arguments2.size() && tokens1.size() <= 2) {
+								tokenMatchesArgument = true;
+							}
 							if(token.startsWith("\"") && token.endsWith("\"") && token.length() > 1) {
 								sb.append(token.substring(1, token.length()-1));
 							}
@@ -959,8 +1038,16 @@ public class StringBasedHeuristics {
 							}
 						}
 						sb.append("\"");
-						if(sb.toString().equals(arg2)) {
+						String concatenatedString = sb.toString();
+						if(concatenatedString.equals(arg2)) {
 							concatReplacements.add(new Replacement(arg1, arg2, ReplacementType.CONCATENATION));
+							concatenatedArguments++;
+						}
+						else if(StringDistance.editDistance(concatenatedString, arg2) < tokens1.size()) {
+							concatReplacements.add(new Replacement(arg1, arg2, ReplacementType.CONCATENATION));
+							concatenatedArguments++;
+						}
+						if(tokenMatchesArgument) {
 							concatenatedArguments++;
 						}
 					}
@@ -973,7 +1060,7 @@ public class StringBasedHeuristics {
 						}
 					}
 				}
-				if(equalArguments + replacedArguments + concatenatedArguments == arguments1.size() && concatenatedArguments > 0) {
+				if(equalArguments + replacedArguments + concatenatedArguments == minSize && concatenatedArguments > 0) {
 					info.getReplacements().addAll(concatReplacements);
 					return true;
 				}
