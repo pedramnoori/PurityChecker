@@ -1058,8 +1058,8 @@ public class TestPurity {
     public void extractMethodTest_58() throws RefactoringMinerTimedOutException, IOException {
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/apache/drill.git",
-                "00aa01fb90f3210d1e3027d7f759fb1085b814bd", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/killbill/killbill.git",
+                "4b5b74b6467a28fb9b7712f8091e4aa61c2d64b6", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
@@ -1074,8 +1074,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_59() throws RefactoringMinerTimedOutException, IOException {
         // Rename Class with Inline Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/32/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/32/v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/33/v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/33/v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);

@@ -621,7 +621,7 @@ public class PurityChecker {
 
 //            checkForIfTrueCondition(refactoring, nonMappedInnerNodesT2);
 
-            checkForIfCondition(refactoring, nonMappedInnerNodesT2); //For the big commit - https://github.com/robovm/robovm/commit/bf5ee44b3b576e01ab09cae9f50300417b01dc07 - and the cryptoOperation extract method
+//            checkForIfCondition(refactoring, nonMappedInnerNodesT2); //For the big commit - https://github.com/robovm/robovm/commit/bf5ee44b3b576e01ab09cae9f50300417b01dc07 - and the cryptoOperation extract method
 
             if (nonMappedInnerNodesT2.size() == 1) {
                 AbstractCodeFragment nonMappedLeave = nonMappedInnerNodesT2.get(0);
@@ -682,7 +682,8 @@ public class PurityChecker {
         for (AbstractCodeMapping mapping : refactoring.getBodyMapper().getMappings()) {
             if (mapping.getFragment2().getString().contains(variableDeclaration.getVariableName())) {
                 existFlag = true;
-                if (variableDeclaration.getInitializer() == null)
+                if (variableDeclaration.getInitializer() == null || variableDeclaration.getInitializer().getExpression().equals("null")
+                || variableDeclaration.getInitializer().getExpression().equals("0"))
                     checkFlag = checkMappingReplacements(refactoring, mapping, variableDeclaration);
                 if (!checkFlag) {
                     break;
@@ -1264,6 +1265,8 @@ public class PurityChecker {
         if(replacementsToCheck.isEmpty())
             return true;
 
+        checkForRenameMethodRefactoringOnTop_Mapped(refactoring, refactorings, replacementsToCheck);
+
         checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
         if(replacementsToCheck.isEmpty())
             return true;
@@ -1446,7 +1449,8 @@ public class PurityChecker {
         Set<Replacement> handledReplacements = new HashSet<>();
 
         for (Replacement replacement: replacementsToCheck) {
-            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION)) {
+            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) ||
+                    replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_NAME))  {
                 if (isRenameWithName(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName(), ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName(), renameOperationRefactoringList)) {
                     handledReplacements.add(replacement);
                 }
