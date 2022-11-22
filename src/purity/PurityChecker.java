@@ -516,16 +516,23 @@ public class PurityChecker {
                 return new PurityCheckResult(false, "replacements are not justified - non-mapped leaves", purityComment, mappingState);
             }
 
+            int size4 = nonMappedLeavesT2.size();
+            int returnStatementCounter0 = 0;
 
-            if (nonMappedLeavesT2.size() == 1) {
-                AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
-                if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
-                    if (nonMappedLeave.getTernaryOperatorExpressions().isEmpty()) {
-                        purityComment += "Changes are within the Extract Method refactoring mechanics";
-                        return new PurityCheckResult(true, "Return expression has been added within the Extract Method mechanics - with non-mapped leaves", purityComment, mappingState);
-                    }
-                }
+            if (size4 == returnStatementCounter0) {
+                return new PurityCheckResult(true, "Return expression has been added within the Extract Method mechanics - with non-mapped leaves", purityComment, mappingState);
             }
+
+
+//            if (nonMappedLeavesT2.size() == 1) {
+//                AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
+//                if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+//                    if (nonMappedLeave.getTernaryOperatorExpressions().isEmpty()) {
+//                        purityComment += "Changes are within the Extract Method refactoring mechanics";
+//                        return new PurityCheckResult(true, "Return expression has been added within the Extract Method mechanics - with non-mapped leaves", purityComment, mappingState);
+//                    }
+//                }
+//            }
 
             purityComment = "Overlapped refactoring - can be identical by undoing the overlapped refactoring";
 
@@ -557,14 +564,27 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "The new variable declared has not been used within the program logic - with non-mapped leaves", purityComment, mappingState);
             }
 
+            int size3 = nonMappedLeavesT2.size();
+            int returnStatementCounter = 0;
 
-            if (nonMappedLeavesT2.size() == 1) {
-                AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
-                if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
-                    if (nonMappedLeave.getTernaryOperatorExpressions().isEmpty())
-                        return new PurityCheckResult(true, "Return expression has been added within the Extract Method mechanics - with non-mapped leaves", purityComment, mappingState);
+            for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT2) {
+                if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                    returnStatementCounter++;
                 }
             }
+
+            if (size3 == returnStatementCounter) {
+                return new PurityCheckResult(true, "Return expression has been added within the Extract Method mechanics - with non-mapped leaves", purityComment, mappingState);
+            }
+
+
+//            if (nonMappedLeavesT2.size() == 1) {
+//                AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
+//                if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+//                    if (nonMappedLeave.getTernaryOperatorExpressions().isEmpty())
+//                        return new PurityCheckResult(true, "Return expression has been added within the Extract Method mechanics - with non-mapped leaves", purityComment, mappingState);
+//                }
+//            }
 
             return new PurityCheckResult(false, "Violating extract method refactoring mechanics - with non-mapped leaves", purityComment, mappingState);
         } else {
@@ -619,16 +639,33 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Nodes being mapped with other nodes in other refactorings - with non-mapped leaves", purityComment, mappingState);
             }
 
-//            checkForIfTrueCondition(refactoring, nonMappedInnerNodesT2);
+            checkForIfTrueCondition(refactoring, nonMappedInnerNodesT2);
+
+            if (nonMappedInnerNodesT2.isEmpty()) {
+                return new PurityCheckResult(true, "Non-changing if statement has been added - with non-mapped leaves", purityComment, mappingState);
+            }
 
 //            checkForIfCondition(refactoring, nonMappedInnerNodesT2); //For the big commit - https://github.com/robovm/robovm/commit/bf5ee44b3b576e01ab09cae9f50300417b01dc07 - and the cryptoOperation extract method
 
-            if (nonMappedInnerNodesT2.size() == 1) {
-                AbstractCodeFragment nonMappedLeave = nonMappedInnerNodesT2.get(0);
-                if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
-                    return new PurityCheckResult(true, "Just an empty block - with non-mapped leaves", purityComment, mappingState);
+            int size = nonMappedInnerNodesT2.size();
+            int blockStatementCounter = 0;
+
+            for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT2) {
+                if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
+                    blockStatementCounter++;
                 }
             }
+
+            if (size == blockStatementCounter) {
+                return new PurityCheckResult(true, "Just an empty block - with non-mapped leaves", purityComment, mappingState);
+            }
+
+//            if (nonMappedInnerNodesT2.size() == 1) {
+//                AbstractCodeFragment nonMappedLeave = nonMappedInnerNodesT2.get(0);
+//                if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
+//
+//                }
+//            }
 
             purityComment = "Severe changes";
             return new PurityCheckResult(false, "Contains non-mapped inner nodes", purityComment, mappingState);
@@ -764,13 +801,15 @@ public class PurityChecker {
         List<AbstractCodeFragment> nonMappedNodesT2ToRemove = new ArrayList<>();
 
         for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT2) {
+            abstractCodeFragment.argumentizationAfterRefactorings(refactoring.getParameterToArgumentMap());
             if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.IF_STATEMENT)) {
-                AbstractExpression expression = ((CompositeStatementObject) (abstractCodeFragment)).getExpressions().get(0);
-                if (expression.getMethodInvocationMap().isEmpty()) {
-                    String evaluatedString = abstractCodeFragment.getArgumentizedString();
+                if (abstractCodeFragment.getArgumentizedAfterRefactorings().equals("if(true)")) {
+                    nonMappedNodesT2ToRemove.add(abstractCodeFragment);
                 }
             }
         }
+        nonMappedInnerNodesT2.removeAll(nonMappedNodesT2ToRemove);
+
     }
 
     private static void checkForNodesBeingMappedInOtherRefactorings(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedInnerNodesT2) {
@@ -1070,9 +1109,8 @@ public class PurityChecker {
         checkForRenameRefactoringOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
         checkForExtractVariableOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
 
-        int size = nonMappedLeavesT2.size();
         checkForInevitableVariableDeclaration(refactoring, nonMappedLeavesT2); // This method can also change the state of the refactoring's replacements
-        int size2 = nonMappedLeavesT2.size();
+
 
 
         if (nonMappedLeavesT2.isEmpty()) {
@@ -1086,13 +1124,26 @@ public class PurityChecker {
             return true;
         }
 
-        if (nonMappedLeavesT2.size() == 1) {
-            AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
-            if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
-                if (((StatementObject) nonMappedLeave).getTernaryOperatorExpressions().isEmpty())
-                    return true;
+        int size = nonMappedLeavesT2.size();
+        int returnStatementCounter = 0;
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT2) {
+            if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                returnStatementCounter++;
             }
         }
+
+        if (size == returnStatementCounter) {
+            return true;
+        }
+
+//        if (nonMappedLeavesT2.size() == 1) {
+//            AbstractCodeFragment nonMappedLeave = nonMappedLeavesT2.get(0);
+//            if (nonMappedLeave.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+//                if (((StatementObject) nonMappedLeave).getTernaryOperatorExpressions().isEmpty())
+//                    return true;
+//            }
+//        }
         return false;
     }
 
