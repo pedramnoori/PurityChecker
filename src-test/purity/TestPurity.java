@@ -1009,8 +1009,8 @@ public class TestPurity {
     public void extractMethodTest_55() throws RefactoringMinerTimedOutException, IOException {
 //  The test commit TODO second runTests Extract method is pure and I reported it as impure so far
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/phishman3579/java-algorithms-implementation.git",
-                "ab98bcacf6e5bf1c3a06f6bcca68f178f880ffc9", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/orfjackal/retrolambda.git",
+                "46b0d84de9c309bca48a99e572e6611693ed5236", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
@@ -1041,8 +1041,8 @@ public class TestPurity {
     @Test
     public void extractMethodTest_57() throws RefactoringMinerTimedOutException, IOException {
         // Rename Class with Inline Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\40\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\40\\v2")).getUmlModel();
+        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\42\\v1")).getUmlModel();
+        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\42\\v2")).getUmlModel();
         UMLModelDiff modelDiff = model1.diff(model2);
         List<Refactoring> refactorings = modelDiff.getRefactorings();
         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
@@ -1058,8 +1058,8 @@ public class TestPurity {
     public void extractMethodTest_58() throws RefactoringMinerTimedOutException, IOException {
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/katzer/cordova-plugin-local-notifications.git",
-                "51f498a96b2fa1822e392027982c20e950535fd1", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/Netflix/feign.git",
+                "b2b4085348de32f10903970dded99fdf0376a43c", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
