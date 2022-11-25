@@ -397,7 +397,7 @@ public class PurityChecker {
                 }
             }
 
-            //omitThisPatternReplacements(refactoring, replacementsToCheck);
+            omitThisPatternReplacements(refactoring, replacementsToCheck);
             omitPrintAndLogMessagesRelatedReplacements(refactoring, replacementsToCheck);
             omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck); // For the runTests commit
             omitEqualStringLiteralsReplacement(replacementsToCheck);
@@ -682,8 +682,12 @@ public class PurityChecker {
                     int findSimilar1 = replacement.getAfter().indexOf(replacement.getBefore());
                     int findSimilar2 = replacement.getBefore().indexOf(replacement.getAfter());
                     if (findSimilar1 != -1) {
+                        try {
                         if (replacement.getAfter().substring(0, findSimilar1 - 1).equals("this")) {
                             replacementsToRemove.add(replacement);
+                        }
+                        }catch (StringIndexOutOfBoundsException ignored) {
+                            System.out.println("ignored");
                         }
                     } else if (findSimilar2 != -1) {
                         try {
@@ -691,8 +695,8 @@ public class PurityChecker {
                             if (temp.equals("this")) {
                                 replacementsToRemove.add(replacement);
                             }
-                        } catch (Exception ignored) {
-                            System.out.println(ignored.getMessage());
+                        } catch (StringIndexOutOfBoundsException ignored) {
+                            System.out.println("ignored");
                         }
                     }
             }
@@ -1395,7 +1399,7 @@ public class PurityChecker {
             }
 
 //            omitReplacementsRegardingInvocationArguments(refactoring, replacementsToCheck);
-//            omitThisPatternReplacements(refactoring, replacementsToCheck);
+            omitThisPatternReplacements(refactoring, replacementsToCheck);
             checkForParameterArgumentPair(refactoring, replacementsToCheck);
             omitPrintAndLogMessagesRelatedReplacements(refactoring, replacementsToCheck);
             omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck); // For the runTests commit
