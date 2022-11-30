@@ -484,13 +484,26 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Extract variable on the top of the extract method - all mapped", purityComment, mappingState);
             }
 
-            if (replacementsToCheck.size() == 1) {
-                for (Replacement replacement: replacementsToCheck) {
-                    if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
-                        return new PurityCheckResult(true, "Argument replaced with return expression - all mapped", purityComment, mappingState);
-                    }
+            int size1 = replacementsToCheck.size();
+            int numberOfArgumentReplacedWithReturnReplacements = 0;
+
+            for (Replacement replacement : replacementsToCheck) {
+                if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
+                    numberOfArgumentReplacedWithReturnReplacements++;
                 }
             }
+
+            if (numberOfArgumentReplacedWithReturnReplacements == size1) {
+                return new PurityCheckResult(true, "Argument replaced with return expression - all mapped", purityComment, mappingState);
+            }
+
+//            if (replacementsToCheck.size() == 1) {
+//                for (Replacement replacement: replacementsToCheck) {
+//                    if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
+//
+//                    }
+//                }
+//            }
 
 
             purityComment = "Severe changes";
@@ -861,10 +874,10 @@ public class PurityChecker {
 
         for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT2) {
             for (Refactoring refactoring1 : refactorings) {
-                if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+                if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION) && !refactoring1.equals(refactoring)) {
                     for (AbstractCodeMapping mapping : ((ExtractOperationRefactoring) (refactoring1)).getBodyMapper().getMappings()) {
                         if (mapping.getFragment2().equals(abstractCodeFragment)) {
-                            if (mapping.getOperation1().getName().equals(sourceOperation)) {
+                            if (mapping.getOperation1().getName().equals(sourceOperation) && mapping.getReplacements().isEmpty()) {
                                 nonMappedNodesT2ToRemove.add(mapping.getFragment2());
                                 break;
                             }
