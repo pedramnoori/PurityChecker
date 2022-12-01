@@ -405,6 +405,8 @@ public class PurityChecker {
             // for https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938 commit - performLocalRehashAwareOperation
             refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
 
+            omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
+
             if (replacementsToCheck.isEmpty()) {
                 purityComment += "Tolerable changes in the body" + "\n";
                 return new PurityCheckResult(true, "All replacements have been justified - all mapped", purityComment, mappingState);
@@ -684,6 +686,63 @@ public class PurityChecker {
             purityComment = "Severe changes";
             return new PurityCheckResult(false, "Contains non-mapped inner nodes", purityComment, mappingState);
         }
+    }
+
+    private static void omitReplacementRegardingInvertCondition(ExtractOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+        Map<String, String> patterns = new HashMap<>();
+
+        patterns.put(">", "<=");
+        patterns.put("<", ">=");
+        patterns.put(">=", "<");
+        patterns.put("<=", ">");
+        patterns.put("=", "!=");
+        patterns.put("!=", "=");
+
+
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.INFIX_OPERATOR)) {
+                if (invertingCheck(replacement, patterns)) {
+                    AbstractCodeMapping mapping = findCorrespondingMappingForAReplacement(refactoring, replacement);
+//                    I don't check for the non-emptiness of the non-mapped leaves because there would be some cases that the return statements mapped with other unrelated return statements.
+                    if (((CompositeStatementObject) (mapping.getFragment2())).getAllStatements().size() == 2) {
+                        for (AbstractStatement allStatement : ((CompositeStatementObject) (mapping.getFragment2())).getAllStatements()) {
+                            if (allStatement.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                                replacementsToRemove.add(replacement);
+                                break;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    replacementsToCheck.removeAll(replacementsToRemove);
+    }
+
+    private static AbstractCodeMapping findCorrespondingMappingForAReplacement(ExtractOperationRefactoring refactoring, Replacement replacement) {
+
+        for (AbstractCodeMapping mapping : refactoring.getBodyMapper().getMappings()) {
+            for (Replacement mappingReplacement : mapping.getReplacements()) {
+                if (replacement.equals(mappingReplacement)) {
+                    return mapping;
+                }
+            }
+        }
+        return null;
+    }
+
+
+    private static boolean invertingCheck(Replacement replacement, Map<String, String> patterns) {
+
+        for (Map.Entry<String, String> entry: patterns.entrySet()) {
+            if (replacement.getBefore().equals(entry.getKey()) && replacement.getAfter().equals(entry.getValue())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static void omitThisPatternReplacements(ExtractOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) throws StringIndexOutOfBoundsException {
@@ -1417,6 +1476,9 @@ public class PurityChecker {
             omitPrintAndLogMessagesRelatedReplacements(refactoring, replacementsToCheck);
             omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck); // For the runTests commit
             omitEqualStringLiteralsReplacement(replacementsToCheck);
+
+            omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
+
         }
 
 
