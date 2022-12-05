@@ -50,28 +50,8 @@ public class LeafMapping extends AbstractCodeMapping implements Comparable<LeafM
 			}
 		}
 		else {
-			double distance1;
-			double distance2;
-			if(this.getFragment1().getString().equals(this.getFragment2().getString())) {
-				distance1 = 0;
-			}
-			else {
-				String s1 = removeGenericTypeAfterDot(this.getFragment1().getString().toLowerCase());
-				String s2 = removeGenericTypeAfterDot(this.getFragment2().getString().toLowerCase());
-				int distance = StringDistance.editDistance(s1, s2);
-				distance1 = (double)distance/(double)Math.max(s1.length(), s2.length());
-			}
-			
-			if(o.getFragment1().getString().equals(o.getFragment2().getString())) {
-				distance2 = 0;
-			}
-			else {
-				String s1 = removeGenericTypeAfterDot(o.getFragment1().getString().toLowerCase());
-				String s2 = removeGenericTypeAfterDot(o.getFragment2().getString().toLowerCase());
-				int distance = StringDistance.editDistance(s1, s2);
-				distance2 = (double)distance/(double)Math.max(s1.length(), s2.length());
-			}
-			
+			double distance1 = this.editDistance();
+			double distance2 = o.editDistance();
 			if(distance1 != distance2) {
 				if(this.isIdenticalWithExtractedVariable() && !o.isIdenticalWithExtractedVariable()) {
 					return -1;
@@ -194,6 +174,15 @@ public class LeafMapping extends AbstractCodeMapping implements Comparable<LeafM
 					else if(headZeros2 > headZeros1) {
 						return 1;
 					}
+					if(levelParentEditDistance1.size() == 2 && levelParentEditDistance1.get(1).equals(0.0) &&
+							levelParentEditDistance2.size() == 2 && levelParentEditDistance2.get(1).equals(0.0) &&
+							!levelParentEditDistance1.get(0).equals(levelParentEditDistance2.get(0))) {
+						double difference = Math.abs(levelParentEditDistance1.get(0) - levelParentEditDistance2.get(0));
+						double min = Math.min(levelParentEditDistance1.get(0), levelParentEditDistance2.get(0));
+						if(difference > min) {
+							return Double.compare(levelParentEditDistance1.get(0), levelParentEditDistance2.get(0));
+						}
+					}
 				}
 				if((levelParentEditDistance1.size() != levelParentEditDistance2.size() ||
 						(levelParentEditDistance1.contains(0.0) && !levelParentEditDistance2.contains(0.0)) ||
@@ -257,6 +246,20 @@ public class LeafMapping extends AbstractCodeMapping implements Comparable<LeafM
 				}
 			}
 		}
+	}
+
+	public double editDistance() {
+		double distance1;
+		if(this.getFragment1().getString().equals(this.getFragment2().getString())) {
+			distance1 = 0;
+		}
+		else {
+			String s1 = removeGenericTypeAfterDot(this.getFragment1().getString().toLowerCase());
+			String s2 = removeGenericTypeAfterDot(this.getFragment2().getString().toLowerCase());
+			int distance = StringDistance.editDistance(s1, s2);
+			distance1 = (double)distance/(double)Math.max(s1.length(), s2.length());
+		}
+		return distance1;
 	}
 
 	private boolean referencesMapping(LeafMapping o) {
