@@ -320,3 +320,58 @@ Specificity: 94.22222
 FScore: 0.89327145
 
 
+For Extract Method: TIME: 2022-12-07 17:21:28.891
+TP: 386
+TN: 166
+FP: 14
+FN: 80
+Precision: 96.5
+Recall: 82.83262
+Specificity: 92.22222
+FScore: 0.89145494
+
+
+For Extract Method: TIME: 2022-12-07 19:37:30.544
+TP: 386
+TN: 166
+FP: 14
+FN: 80
+Precision: 96.5
+Recall: 82.83262
+Specificity: 92.22222
+FScore: 0.89145494
+
+
+For Extract Method: TIME: 2022-12-07 20:01:48.26
+TP: 386
+TN: 166
+FP: 14
+FN: 80
+Precision: 96.5
+Recall: 82.83262
+Specificity: 92.22222
+FScore: 0.89145494
+
+
+For Extract Method: TIME: 2022-12-07 20:22:52.147
+TP: 386
+TN: 166
+FP: 14
+FN: 80
+Precision: 96.5
+Recall: 82.83262
+Specificity: 92.22222
+FScore: 0.89145494
+
+
+For Extract Method: TIME: 2022-12-07 21:07:55.5
+TP: 387
+TN: 213
+FP: 14
+FN: 80
+Precision: 96.50873
+Recall: 82.86938
+Specificity: 93.8326
+FScore: 0.89170516
+
+
