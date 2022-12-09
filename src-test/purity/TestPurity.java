@@ -1058,8 +1058,8 @@ public class TestPurity {
     public void extractMethodTest_58() throws RefactoringMinerTimedOutException, IOException {
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/facebook/buck.git",
-                "db024f5ec3e9611ddf8103bdc4c3817c704f7b27", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/Alluxio/alluxio.git",
+                "9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
