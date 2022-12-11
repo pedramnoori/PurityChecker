@@ -1477,6 +1477,14 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 				}
 			}
 			if(nested && operationBodyMapper.getParentMapper() != null && operationBodyMapper.getParentMapper().getChildMappers().isEmpty()) {
+				for(AbstractCodeMapping mapping : operationBodyMapper.getMappings()) {
+					if(mapping.getFragment1().getString().equals(mapping.getFragment2().getString())) {
+						if(mapping.getFragment1().getString().equals("return null;\n")) {
+							AbstractCodeFragment fragment = mapping.getFragment1();
+							expandAnonymousAndLambdas(fragment, leaves1, innerNodes1, addedLeaves1, addedInnerNodes1, operationBodyMapper.anonymousClassList1(), codeFragmentOperationMap1, container1, false);
+						}
+					}
+				}
 				for(AbstractCodeMapping mapping : operationBodyMapper.getParentMapper().getMappings()) {
 					if(mapping.getFragment1().getString().equals(mapping.getFragment2().getString())) {
 						if((mapping.getFragment1().getString().equals("return true;\n") || mapping.getFragment1().getString().equals("return false;\n")) && addedOperation.getReturnParameter().getType().toString().equals("boolean")) {
@@ -2706,7 +2714,8 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 						}
 					}
 					if(!mappingSet.isEmpty()) {
-						CompositeStatementObjectMapping minStatementMapping = mappingSet.first();
+						CompositeStatementObjectMapping oneTryBlockNestedUnderTheOther = oneTryBlockNestedUnderTheOther(mappingSet);
+						CompositeStatementObjectMapping minStatementMapping = oneTryBlockNestedUnderTheOther != null ? oneTryBlockNestedUnderTheOther : mappingSet.first();
 						addMapping(minStatementMapping);
 						innerNodes2.remove(minStatementMapping.getFragment2());
 						innerNodeIterator1.remove();
@@ -2853,7 +2862,8 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 						}
 					}
 					if(!mappingSet.isEmpty()) {
-						CompositeStatementObjectMapping minStatementMapping = mappingSet.first();
+						CompositeStatementObjectMapping oneTryBlockNestedUnderTheOther = oneTryBlockNestedUnderTheOther(mappingSet);
+						CompositeStatementObjectMapping minStatementMapping = oneTryBlockNestedUnderTheOther != null ? oneTryBlockNestedUnderTheOther : mappingSet.first();
 						addMapping(minStatementMapping);
 						innerNodes1.remove(minStatementMapping.getFragment1());
 						innerNodeIterator2.remove();
@@ -2861,6 +2871,35 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 				}
 			}
 		}
+	}
+
+	private CompositeStatementObjectMapping oneTryBlockNestedUnderTheOther(TreeSet<CompositeStatementObjectMapping> mappingSet) {
+		if(mappingSet.size() > 1) {
+			int tryMappingCount = 0;
+			Map<CompositeStatementObjectMapping, Boolean> identicalCatchFinallyBlocksMap = new LinkedHashMap<>();
+			for(CompositeStatementObjectMapping mapping : mappingSet) {
+				if(mapping.getFragment1() instanceof TryStatementObject && mapping.getFragment2() instanceof TryStatementObject) {
+					boolean identicalCatchFinallyBlocks = ((TryStatementObject)mapping.getFragment1()).identicalCatchFinallyBlocks((TryStatementObject)mapping.getFragment2());
+					identicalCatchFinallyBlocksMap.put(mapping, identicalCatchFinallyBlocks);
+					tryMappingCount++;
+				}
+			}
+			if(tryMappingCount == mappingSet.size()) {
+				CompositeStatementObjectMapping minStatementMapping = mappingSet.first();
+				for(CompositeStatementObjectMapping mapping : mappingSet) {
+					if(!mapping.equals(minStatementMapping) &&
+							(
+							(mapping.getFragment1().getLocationInfo().subsumes(minStatementMapping.getFragment1().getLocationInfo()) && mapping.getFragment2().equals(minStatementMapping.getFragment2())) ||
+							(mapping.getFragment2().getLocationInfo().subsumes(minStatementMapping.getFragment2().getLocationInfo()) && mapping.getFragment1().equals(minStatementMapping.getFragment1()))
+							)) {
+						if(identicalCatchFinallyBlocksMap.get(mapping) == true && identicalCatchFinallyBlocksMap.get(minStatementMapping) == false) {
+							return mapping;
+						}
+					}
+				}
+			}
+		}
+		return null;
 	}
 
 	private boolean allLeavesWithinBodyMapped(CompositeStatementObject statement1, CompositeStatementObject statement2) {
@@ -3253,13 +3292,35 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 						boolean identicalDepthAndIndexForKeywordStatement = identicalDepthAndIndex && (leaf1.isKeyword() || leaf1.getString().startsWith("throw "));
 						if(mappingSet.size() > 1 && (parentMapper != null || (!identicalDepthAndIndex && !leaf1.isKeyword() && !leaf1.isLogCall()) || identicalDepthAndIndexForKeywordStatement) && mappings.size() > 1) {
 							TreeMap<Integer, LeafMapping> lineDistanceMap = new TreeMap<>();
+							TreeMap<Double, LeafMapping> levelParentEditDistanceSum = new TreeMap<>();
 							for(LeafMapping mapping : mappingSet) {
 								int lineDistance = lineDistanceFromExistingMappings2(mapping);
+								levelParentEditDistanceSum.put(mapping.levelParentEditDistanceSum(), mapping);
 								if(!lineDistanceMap.containsKey(lineDistance)) {
 									lineDistanceMap.put(lineDistance, mapping);
 								}
 							}
-							LeafMapping minLineDistanceStatementMapping = lineDistanceMap.firstEntry().getValue();
+							LeafMapping minLineDistanceStatementMapping = null;
+							if(!levelParentEditDistanceSum.firstEntry().getValue().equals(lineDistanceMap.firstEntry().getValue())) {
+								int lineDistance1 = 0, lineDistance2 = 0;
+								for(Map.Entry<Integer,LeafMapping> entry : lineDistanceMap.entrySet()) {
+									if(entry.getValue().equals(levelParentEditDistanceSum.firstEntry().getValue())) {
+										lineDistance1 = entry.getKey();
+									}
+									if(entry.getValue().equals(lineDistanceMap.firstEntry().getValue())) {
+										lineDistance2 = entry.getKey();
+									}
+								}
+								if(Math.abs(lineDistance1 - lineDistance2) <= 1 && levelParentEditDistanceSum.firstEntry().getKey() == 0) {
+									minLineDistanceStatementMapping = levelParentEditDistanceSum.firstEntry().getValue();
+								}
+								else {
+									minLineDistanceStatementMapping = lineDistanceMap.firstEntry().getValue();
+								}
+							}
+							else {
+								minLineDistanceStatementMapping = lineDistanceMap.firstEntry().getValue();
+							}
 							addMapping(minLineDistanceStatementMapping);
 							processAnonymousClassDeclarationsInIdenticalStatements(minLineDistanceStatementMapping);
 							leaves2.remove(minLineDistanceStatementMapping.getFragment2());
@@ -3461,13 +3522,35 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 						boolean identicalDepthAndIndexForKeywordStatement = identicalDepthAndIndex && (leaf2.isKeyword() || leaf2.getString().startsWith("throw "));
 						if(mappingSet.size() > 1 && (parentMapper != null || (!identicalDepthAndIndex && !leaf2.isKeyword() && !leaf2.isLogCall()) || identicalDepthAndIndexForKeywordStatement) && mappings.size() > 0) {
 							TreeMap<Integer, LeafMapping> lineDistanceMap = new TreeMap<>();
+							TreeMap<Double, LeafMapping> levelParentEditDistanceSum = new TreeMap<>();
 							for(LeafMapping mapping : mappingSet) {
 								int lineDistance = lineDistanceFromExistingMappings1(mapping).getMiddle();
+								levelParentEditDistanceSum.put(mapping.levelParentEditDistanceSum(), mapping);
 								if(!lineDistanceMap.containsKey(lineDistance)) {
 									lineDistanceMap.put(lineDistance, mapping);
 								}
 							}
-							LeafMapping minLineDistanceStatementMapping = lineDistanceMap.firstEntry().getValue();
+							LeafMapping minLineDistanceStatementMapping = null;
+							if(!levelParentEditDistanceSum.firstEntry().getValue().equals(lineDistanceMap.firstEntry().getValue())) {
+								int lineDistance1 = 0, lineDistance2 = 0;
+								for(Map.Entry<Integer,LeafMapping> entry : lineDistanceMap.entrySet()) {
+									if(entry.getValue().equals(levelParentEditDistanceSum.firstEntry().getValue())) {
+										lineDistance1 = entry.getKey();
+									}
+									if(entry.getValue().equals(lineDistanceMap.firstEntry().getValue())) {
+										lineDistance2 = entry.getKey();
+									}
+								}
+								if(Math.abs(lineDistance1 - lineDistance2) <= 1 && levelParentEditDistanceSum.firstEntry().getKey() == 0) {
+									minLineDistanceStatementMapping = levelParentEditDistanceSum.firstEntry().getValue();
+								}
+								else {
+									minLineDistanceStatementMapping = lineDistanceMap.firstEntry().getValue();
+								}
+							}
+							else {
+								minLineDistanceStatementMapping = lineDistanceMap.firstEntry().getValue();
+							}
 							addMapping(minLineDistanceStatementMapping);
 							processAnonymousClassDeclarationsInIdenticalStatements(minLineDistanceStatementMapping);
 							leaves1.remove(minLineDistanceStatementMapping.getFragment1());
