@@ -366,6 +366,12 @@ public class PurityChecker {
 
             replacementsToCheck = new HashSet<>(refactoring.getReplacements());
             replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+
+            if (replacementsToCheck.isEmpty()) {
+                purityComment = "Changes are within the Extract Method refactoring mechanics";
+                return new PurityCheckResult(true, "All replacements have been justified - all mapped", purityComment, mappingState);
+            }
 
             for (Refactoring refactoring1 : refactorings) {
                 if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
@@ -381,6 +387,11 @@ public class PurityChecker {
             replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
 //            omitReplacementsRegardingInvocationArguments(refactoring, replacementsToCheck);
             checkForParameterArgumentPair(refactoring, replacementsToCheck);
+
+            adjustTheParameterArgumentFieldSourceOperationAfterExtraction(refactoring);
+
+            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+
 
             if (replacementsToCheck.isEmpty()) {
                 purityComment = "Changes are within the Extract Method refactoring mechanics";
@@ -692,6 +703,21 @@ public class PurityChecker {
 
             purityComment = "Severe changes";
             return new PurityCheckResult(false, "Contains non-mapped inner nodes", purityComment, mappingState);
+        }
+    }
+
+    private static void adjustTheParameterArgumentFieldSourceOperationAfterExtraction(ExtractOperationRefactoring refactoring) {
+
+        Map<String, String> mp = Map.copyOf(refactoring.getParameterToArgumentMap());
+
+        for (Map.Entry<String, String> entry :mp.entrySet()) {
+
+            if (entry.getValue().equals(entry.getKey())) {
+
+                if (refactoring.getSourceOperationAfterExtraction().getVariableDeclaration(entry.getKey()) != null && refactoring.getSourceOperationAfterExtraction().getVariableDeclaration(entry.getKey()).getInitializer() != null) {
+                    refactoring.getParameterToArgumentMap().put(entry.getKey(), refactoring.getSourceOperationAfterExtraction().getVariableDeclaration(entry.getKey()).getInitializer().getExpression());
+                }
+            }
         }
     }
 
