@@ -1634,21 +1634,17 @@ public class PurityChecker {
             return true;
         }
 
-        refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+        int size1 = replacementsToCheck.size();
+        int numberOfArgumentReplacedWithReturnReplacements = 0;
 
-
-
-
-        if(replacementsToCheck.isEmpty()) {
-            return true;
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
+                numberOfArgumentReplacedWithReturnReplacements++;
+            }
         }
 
-        if (replacementsToCheck.size() == 1) {
-            for (Replacement replacement: replacementsToCheck) {
-                if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
-                    return true;
-                }
-            }
+        if (numberOfArgumentReplacedWithReturnReplacements == size1) {
+            return true;
         }
 
         return false;
