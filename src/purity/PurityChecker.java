@@ -1208,7 +1208,8 @@ public class PurityChecker {
 
         for (Replacement replacement : replacementsToCheck) {
             if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) ||
-                    replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT)) {
+                    replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT) ||
+                    replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_NAME)) {
                 String invokedOperationAfterName = ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName();
                 for (Refactoring refactoring1 : refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
