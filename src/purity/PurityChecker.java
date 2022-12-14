@@ -464,6 +464,11 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Move Attribute on top of the extracted method - all mapped", purityComment, mappingState);
             }
 
+            checkForMergeVariableOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Merge Variable on top of the extracted method - all mapped", purityComment, mappingState);
+            }
+
             checkForExtractClassOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Extract Class on top of the extracted method - all mapped", purityComment, mappingState);
@@ -704,6 +709,35 @@ public class PurityChecker {
             purityComment = "Severe changes";
             return new PurityCheckResult(false, "Contains non-mapped inner nodes", purityComment, mappingState);
         }
+    }
+
+    private static void checkForMergeVariableOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.MERGE_VARIABLES)) {
+                for (AbstractCodeMapping mapping : refactoring.getBodyMapper().getMappings()) {
+                    for (Replacement mappingReplacement : mapping.getReplacements()) {
+                        if (mappingReplacement.equals(replacement)) {
+                            if (!mapping.getFragment2().getTypes().isEmpty()) {
+                                for (Refactoring refactoring1 : refactorings) {
+                                    if (refactoring1.getRefactoringType().equals(RefactoringType.MERGE_PARAMETER)) {
+                                        if (mapping.getFragment2().getTypes().contains(((MergeVariableRefactoring) (refactoring1)).getOperationAfter().getName()) ||
+                                                mapping.getFragment2().getTypes().contains(((MergeVariableRefactoring) (refactoring1)).getOperationBefore().getName())) {
+                                            replacementsToRemove.add(replacement);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
+
     }
 
     private static void adjustTheParameterArgumentFieldSourceOperationAfterExtraction(ExtractOperationRefactoring refactoring) {
@@ -1637,6 +1671,10 @@ public class PurityChecker {
             return true;
 
         checkForMoveAttributeOnTop(refactorings, replacementsToCheck);
+        if(replacementsToCheck.isEmpty())
+            return true;
+
+        checkForMergeVariableOnTop(refactoring, refactorings, replacementsToCheck);
         if(replacementsToCheck.isEmpty())
             return true;
 
