@@ -3729,6 +3729,20 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 							break;
 						}
 					}
+					if(parentMapping == null) {
+						for(AbstractCodeMapping mapping : parentMapper.getMappings()) {
+							if(mapping instanceof LeafMapping) {
+								if(mapping.getFragment2().getLocationInfo().subsumes(operationInvocation.getLocationInfo())) {
+									statementContainingOperationInvocation = mapping.getFragment2();
+								}
+							}
+							if(statementContainingOperationInvocation != null && mapping.getFragment2().equals(statementContainingOperationInvocation)) {
+								startMapping = mapping;
+								endMapping = mapping;
+								break;
+							}
+						}
+					}
 				}
 			}
 			// exact matching with variable renames
@@ -3801,7 +3815,7 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 						}
 						else {
 							if(isScopedMatch(startMapping, endMapping, parentMapping) && mappingSet.size() > 1) {
-								TreeSet<LeafMapping> scopedMappingSet = new TreeSet<LeafMapping>();
+								TreeSet<LeafMapping> scopedMappingSet = new TreeSet<LeafMapping>(new ScopedLeafMappingComparator(parentMapping));
 								for(LeafMapping mapping : mappingSet) {
 									if(isWithinScope(startMapping, endMapping, parentMapping, mapping)) {
 										scopedMappingSet.add(mapping);
@@ -3954,7 +3968,7 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 
 	private boolean isScopedMatch(AbstractCodeMapping startMapping, AbstractCodeMapping endMapping, AbstractCodeMapping parentMapping) {
 		if(parentMapper != null && (callsToExtractedMethod > 1 || nested)) {
-			return (startMapping != null && endMapping != null && mappings.size() > 1) || parentMapping != null;
+			return (startMapping != null && endMapping != null && (mappings.size() > 1 || startMapping.equals(endMapping))) || parentMapping != null;
 		}
 		return false;
 	}
@@ -3962,6 +3976,10 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 	private boolean isWithinScope(AbstractCodeMapping startMapping, AbstractCodeMapping endMapping, AbstractCodeMapping parentMapping, AbstractCodeMapping mappingToCheck) {
 		if(parentMapper != null && (callsToExtractedMethod > 1 || nested)) {
 			if(startMapping != null && endMapping != null) {
+				if(startMapping.equals(endMapping)) {
+					return mappingToCheck.getFragment1().getLocationInfo().getStartLine() >= startMapping.getFragment1().getLocationInfo().getStartLine() &&
+							mappingToCheck.getFragment1().getLocationInfo().getStartLine() <= endMapping.getFragment1().getLocationInfo().getStartLine();
+				}
 				if(mappingToCheck.getFragment2().getLocationInfo().getStartLine() >= startMapping.getFragment2().getLocationInfo().getStartLine() &&
 						mappingToCheck.getFragment2().getLocationInfo().getStartLine() <= endMapping.getFragment2().getLocationInfo().getStartLine()) {
 					return mappingToCheck.getFragment1().getLocationInfo().getStartLine() >= startMapping.getFragment1().getLocationInfo().getStartLine() &&
@@ -6531,6 +6549,30 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 				}
 			}
 		}
+		if(variableDeclarations1.size() > 0  && variableDeclarations2.size() > 0 && variableDeclarations1.toString().equals(variableDeclarations2.toString()) &&
+				invocationCoveringTheEntireStatement1 != null && invocationCoveringTheEntireStatement2 != null && parentMapper == null) {
+			int variableDeclarationsInOtherStatements1 = 0;
+			for(AbstractCodeFragment fragment1 : replacementInfo.getStatements1()) {
+				for(VariableDeclaration variableDeclaration : fragment1.getVariableDeclarations()) {
+					if(variableDeclarations1.get(0).getScope().overlaps(variableDeclaration.getScope())) {
+						variableDeclarationsInOtherStatements1++;
+					}
+				}
+			}
+			int variableDeclarationsInOtherStatements2 = 0;
+			for(AbstractCodeFragment fragment2 : replacementInfo.getStatements2()) {
+				for(VariableDeclaration variableDeclaration : fragment2.getVariableDeclarations()) {
+					if(variableDeclarations2.get(0).getScope().overlaps(variableDeclaration.getScope())) {
+						variableDeclarationsInOtherStatements2++;
+					}
+				}
+			}
+			if(variableDeclarationsInOtherStatements1 == 0 && variableDeclarationsInOtherStatements2 == 0) {
+				Replacement replacement = new MethodInvocationReplacement(invocationCoveringTheEntireStatement1.actualString(), invocationCoveringTheEntireStatement2.actualString(), invocationCoveringTheEntireStatement1, invocationCoveringTheEntireStatement2, ReplacementType.METHOD_INVOCATION);
+				replacementInfo.addReplacement(replacement);
+				return replacementInfo.getReplacements();
+			}
+		}
 		return null;
 	}
 
@@ -8443,6 +8485,16 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 			if(invocation != null && invocation.matchesOperation(container2, callSiteOperation, modelDiff)) {
 				counter++;
 			}
+			else {
+				for(List<AbstractCall> calls : leaf2.getMethodInvocationMap().values()) {
+					for(AbstractCall call : calls) {
+						if(!call.equals(invocation) && call.matchesOperation(container2, callSiteOperation, modelDiff)) {
+							counter++;
+							break;
+						}
+					}
+				}
+			}
 		}
 		return counter;
 	}
@@ -8611,6 +8663,13 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 				if(invocation != null && invocation.equals(operationInvocation)) {
 					return true;
 				}
+				else if(fragment instanceof StatementObject) {
+					for(List<AbstractCall> calls : fragment.getMethodInvocationMap().values()) {
+						if(calls.contains(operationInvocation)) {
+							return true;
+						}
+					}
+				}
 				else if(fragment instanceof CompositeStatementObject) {
 					List<AbstractCodeFragment> leaves = ((CompositeStatementObject)fragment).getLeaves();
 					for(AbstractCodeFragment leaf : leaves) {
@@ -8621,6 +8680,13 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 							}
 							if(leafInvocation != null && leafInvocation.equals(operationInvocation)) {
 								return true;
+							}
+							else if(leaf instanceof StatementObject) {
+								for(List<AbstractCall> calls : leaf.getMethodInvocationMap().values()) {
+									if(calls.contains(operationInvocation)) {
+										return true;
+									}
+								}
 							}
 						}
 					}
