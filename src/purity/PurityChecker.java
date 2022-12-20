@@ -1283,6 +1283,8 @@ public class PurityChecker {
 
     private static void checkForRemoveParameterOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
 
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
 
         for (Replacement replacement: replacementsToCheck) {
             if (replacement.getType().equals(Replacement.ReplacementType.CLASS_INSTANCE_CREATION) ||
@@ -1326,11 +1328,13 @@ public class PurityChecker {
                     Collections.sort(removedArgumentsLocationInReplacement);
                     Collections.sort(removedArgumentLocationInRefactoring);
                     if (removedArgumentsLocationInReplacement.equals(removedArgumentLocationInRefactoring) && !removedArgumentsLocationInReplacement.isEmpty()) {
-                        replacementsToCheck.remove(replacement);
+                        replacementsToRemove.add(replacement);
                     }
 
             }
         }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
 
     }
 
@@ -1623,6 +1627,8 @@ public class PurityChecker {
             }
 
 //            omitReplacementsRegardingInvocationArguments(refactoring, replacementsToCheck);
+            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+
             omitThisPatternReplacements(refactoring, replacementsToCheck);
             checkForParameterArgumentPair(refactoring, replacementsToCheck);
             omitPrintAndLogMessagesRelatedReplacements(refactoring, replacementsToCheck);
