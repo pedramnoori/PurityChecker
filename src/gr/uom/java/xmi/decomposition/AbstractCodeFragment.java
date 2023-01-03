@@ -59,6 +59,7 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 	public abstract List<String> getArrayAccesses();
 	public abstract List<String> getPrefixExpressions();
 	public abstract List<String> getPostfixExpressions();
+	public abstract List<String> getThisExpressions();
 	public abstract List<String> getArguments();
 	public abstract List<String> getParenthesizedExpressions();
 	public abstract List<TernaryOperatorExpression> getTernaryOperatorExpressions();
@@ -442,6 +443,12 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 				String s = variables.get(0) + "=" + expression + ";\n";
 				if(statement.equals(s) && variables.get(0).startsWith("this.")) {
 					return true;
+				}
+				String beforeAssignment = statement.substring(0, statement.indexOf("="));
+				if(variables.size() >= 2) {
+					if(beforeAssignment.equals(variables.get(0) + "." + variables.get(1))) {
+						return true;
+					}
 				}
 			}
 		}

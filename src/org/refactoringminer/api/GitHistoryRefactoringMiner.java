@@ -1,6 +1,11 @@
 package org.refactoringminer.api;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.util.Set;
+
 import org.eclipse.jgit.lib.Repository;
+import org.refactoringminer.astDiff.actions.ASTDiff;
 
 /**
  * Detect refactorings in the git history.
@@ -102,16 +107,62 @@ public interface GitHistoryRefactoringMiner {
 	void detectAtPullRequest(String gitURL, int pullRequest, RefactoringHandler handler, int timeout) throws Exception;
 
 	/**
-	 * Detect refactorings performed in the specified commit. 
+	 * Detect refactorings performed between two directories (or files) representing two versions of Java programs. 
 	 * 
-	 * @param repository A git repository (from JGit library).
-	 * @param commitId The SHA key that identifies the commit.
+	 * @param previousPath The directory (or file) corresponding to the previous version.
+	 * @param nextPath The directory (or file) corresponding to the next version.
 	 * @param handler A handler object that is responsible to process the detected refactorings. 
 	 */
-	Churn churnAtCommit(Repository repository, String commitId, RefactoringHandler handler);
+	void detectAtDirectories(Path previousPath, Path nextPath, RefactoringHandler handler);
+
+	/**
+	 * Detect refactorings performed between two directories (or files) representing two versions of Java programs. 
+	 * 
+	 * @param previousFile The directory (or file) corresponding to the previous version.
+	 * @param nextFile The directory (or file) corresponding to the next version.
+	 * @param handler A handler object that is responsible to process the detected refactorings. 
+	 */
+	void detectAtDirectories(File previousFile, File nextFile, RefactoringHandler handler);
 
 	/**
 	 * @return An ID that represents the current configuration for the Refactoring Miner algorithm in use.
 	 */
 	String getConfigId();
+
+	/**
+	 * Generate the AST diff for the specified commit. 
+	 * 
+	 * @param repository A git repository (from JGit library).
+	 * @param commitId The SHA key that identifies the commit.
+	 * @return A set of ASTDiff objects. Each ASTDiff corresponds to a pair of Java compilation units.
+	 */
+	Set<ASTDiff> diffAtCommit(Repository repository, String commitId);
+
+	/**
+	 * Generate the AST diff for the specified commit. All required information is extracted using the GitHub API.
+	 *
+	 * @param gitURL The git URL of the repository.
+	 * @param commitId The SHA key that identifies the commit.
+	 * @param timeout A timeout, in seconds. When timeout is reached, the operation stops and returns no AST diffs.
+	 * @return A set of ASTDiff objects. Each ASTDiff corresponds to a pair of Java compilation units.
+	 */
+	Set<ASTDiff> diffAtCommit(String gitURL, String commitId, int timeout);
+
+	/**
+	 * Generate the AST diff between two directories (or files) representing two versions of Java programs. 
+	 * 
+	 * @param previousPath The directory (or file) corresponding to the previous version.
+	 * @param nextPath The directory (or file) corresponding to the next version.
+	 * @return A set of ASTDiff objects. Each ASTDiff corresponds to a pair of Java compilation units.
+	 */
+	Set<ASTDiff> diffAtDirectories(Path previousPath, Path nextPath);
+
+	/**
+	 * Generate the AST diff between two directories (or files) representing two versions of Java programs. 
+	 * 
+	 * @param previousFile The directory (or file) corresponding to the previous version.
+	 * @param nextFile The directory (or file) corresponding to the next version.
+	 * @return A set of ASTDiff objects. Each ASTDiff corresponds to a pair of Java compilation units.
+	 */
+	Set<ASTDiff> diffAtDirectories(File previousFile, File nextFile);
 }
