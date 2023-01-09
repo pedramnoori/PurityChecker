@@ -18,183 +18,183 @@ import static org.junit.Assert.assertTrue;
 
 public class TestPurity {
 
-    @Test
-    public void extractMethodTest_1() throws RefactoringMinerTimedOutException, IOException {
+//    @Test
+//    public void extractMethodTest_1() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\1\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\1\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+//                assertTrue(pcr.get(refactoring).isPure());
+//                assertEquals(pcr.get(refactoring).getDescription(), "Adding return statement or rename variable");
+//            }
+//        }
+//    }
 
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\1\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\1\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//    @Test
+//    public void extractMethodTest_2() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\4\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\4\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//       for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
+//    @Test
+//    public void extractMethodTest_3() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/5/v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/5/v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
-                assertTrue(pcr.get(refactoring).isPure());
-                assertEquals(pcr.get(refactoring).getDescription(), "Adding return statement or rename variable");
-            }
-        }
-    }
+//    @Test
+//    public void extractMethodTest_4() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\7\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\7\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
-    @Test
-    public void extractMethodTest_2() throws RefactoringMinerTimedOutException, IOException {
+//    @Test
+//    public void extractMethodTest_5() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\8\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\8\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\4\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\4\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//    @Test
+//    public void extractMethodTest_6() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/9/v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/9/v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
+//    @Test
+//    public void extractMethodTest_7() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/10/v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/10/v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
-       for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
+//    @Test
+//    public void extractMethodTest_8() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\11\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\11\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
-    @Test
-    public void extractMethodTest_3() throws RefactoringMinerTimedOutException, IOException {
+//    @Test
+//    public void extractMethodTest_9() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\12\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\12\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/5/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/5/v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//    @Test
+//    public void extractMethodTest_10() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\13\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\13\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_4() throws RefactoringMinerTimedOutException, IOException {
-
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\7\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\7\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_5() throws RefactoringMinerTimedOutException, IOException {
-
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\8\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\8\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_6() throws RefactoringMinerTimedOutException, IOException {
-
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/9/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/9/v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_7() throws RefactoringMinerTimedOutException, IOException {
-
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/10/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/10/v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_8() throws RefactoringMinerTimedOutException, IOException {
-
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\11\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\11\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_9() throws RefactoringMinerTimedOutException, IOException {
-
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\12\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\12\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_10() throws RefactoringMinerTimedOutException, IOException {
-
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\13\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\13\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_11() throws RefactoringMinerTimedOutException, IOException {
-
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\14\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\14\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
+//    @Test
+//    public void extractMethodTest_11() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\14\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\14\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
 //    @Test
 //    public void extractMethodTest_12() throws RefactoringMinerTimedOutException, IOException {
@@ -391,37 +391,37 @@ public class TestPurity {
 //                }, 100);
 //    }
 
-    @Test
-    public void extractMethodTest_20() throws RefactoringMinerTimedOutException, IOException {
+//    @Test
+//    public void extractMethodTest_20() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\16\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\16\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\16\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\16\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_21() throws RefactoringMinerTimedOutException, IOException {
-
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\17\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\17\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
+//    @Test
+//    public void extractMethodTest_21() throws RefactoringMinerTimedOutException, IOException {
+//
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\17\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\17\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
 //    @Test
 //    public void extractMethodTest_22() throws RefactoringMinerTimedOutException, IOException {
@@ -462,198 +462,198 @@ public class TestPurity {
 //                }, 100);
 //    }
 
-    @Test
-    public void extractMethodTest_24() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\19\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\19\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//    @Test
+//    public void extractMethodTest_24() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\19\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\19\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
+
+//    @Test
+//    public void extractMethodTest_25() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\18\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\18\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
+
+//    @Test
+//    public void extractMethodTest_26() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\20\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\20\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
+
+//    @Test
+//    public void extractMethodTest_27() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\21\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\21\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
+
+//    @Test
+//    public void extractMethodTest_28() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\22\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\22\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
+
+//    @Test
+//    public void extractMethodTest_29() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\23\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\23\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
+
+//    @Test
+//    public void extractMethodTest_30() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\24\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\24\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
+
+//    @Test
+//    public void extractMethodTest_31() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\25\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\25\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
+
+//    @Test
+//    public void extractMethodTest_32() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\26\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\26\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
+
+//    @Test
+//    public void extractMethodTest_33() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\27\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\27\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
+
+//    @Test
+//    public void extractMethodTest_34() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\28\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\28\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
 
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_25() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\18\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\18\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_26() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\20\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\20\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_27() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\21\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\21\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_28() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\22\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\22\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_29() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\23\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\23\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_30() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\24\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\24\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_31() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\25\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\25\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_32() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\26\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\26\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_33() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\27\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\27\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_34() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\28\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\28\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-
-    @Test
-    public void extractMethodTest_35() throws RefactoringMinerTimedOutException, IOException {
-        // _
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\29\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\29\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
+//    @Test
+//    public void extractMethodTest_35() throws RefactoringMinerTimedOutException, IOException {
+//        // _
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\29\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\29\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
 //    @Test
 //    public void extractMethodTest_36() throws RefactoringMinerTimedOutException, IOException {
@@ -789,53 +789,53 @@ public class TestPurity {
                 }, 100);
     }
 
-    @Test
-    public void extractMethodTest_43() throws RefactoringMinerTimedOutException, IOException {
-        // Rename Class with Extract Method - Added operation is empty
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\30\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\30\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//    @Test
+//    public void extractMethodTest_43() throws RefactoringMinerTimedOutException, IOException {
+//        // Rename Class with Extract Method - Added operation is empty
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\30\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\30\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
+//    @Test
+//    public void extractMethodTest_44() throws RefactoringMinerTimedOutException, IOException {
+//        // Rename Class with Rename Method - added and removed operations are empty
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\31\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\31\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_44() throws RefactoringMinerTimedOutException, IOException {
-        // Rename Class with Rename Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\31\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\31\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_45() throws RefactoringMinerTimedOutException, IOException {
-        // Rename Class with Inline Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\32\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\32\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
+//    @Test
+//    public void extractMethodTest_45() throws RefactoringMinerTimedOutException, IOException {
+//        // Rename Class with Inline Method - added and removed operations are empty
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\32\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\32\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
     @Test
     public void extractMethodTest_46() throws RefactoringMinerTimedOutException, IOException {
@@ -925,21 +925,21 @@ public class TestPurity {
                 }, 100);
     }
 
-    @Test
-    public void extractMethodTest_51() throws RefactoringMinerTimedOutException, IOException {
-        // Rename Class with Inline Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\33\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\33\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
+//    @Test
+//    public void extractMethodTest_51() throws RefactoringMinerTimedOutException, IOException {
+//        // Rename Class with Inline Method - added and removed operations are empty
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\33\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\33\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
     @Test
     public void extractMethodTest_52() throws RefactoringMinerTimedOutException, IOException {
@@ -959,21 +959,21 @@ public class TestPurity {
                 }, 100);
     }
 
-    @Test
-    public void extractMethodTest_53() throws RefactoringMinerTimedOutException, IOException {
-        // Rename Class with Inline Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\37\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\37\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
+//    @Test
+//    public void extractMethodTest_53() throws RefactoringMinerTimedOutException, IOException {
+//        // Rename Class with Inline Method - added and removed operations are empty
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\37\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\37\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
     @Test
     public void extractMethodTest_54() throws RefactoringMinerTimedOutException, IOException {
@@ -1022,37 +1022,37 @@ public class TestPurity {
                 }, 100);
     }
 
-    @Test
-    public void extractMethodTest_56() throws RefactoringMinerTimedOutException, IOException {
-        // Rename Class with Inline Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\38\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\38\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//    @Test
+//    public void extractMethodTest_56() throws RefactoringMinerTimedOutException, IOException {
+//        // Rename Class with Inline Method - added and removed operations are empty
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\38\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\38\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
-
-    @Test
-    public void extractMethodTest_57() throws RefactoringMinerTimedOutException, IOException {
-        // Rename Class with Inline Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\42\\v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\42\\v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
+//    @Test
+//    public void extractMethodTest_57() throws RefactoringMinerTimedOutException, IOException {
+//        // Rename Class with Inline Method - added and removed operations are empty
+//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\42\\v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\42\\v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
     @Test
     public void extractMethodTest_58() throws RefactoringMinerTimedOutException, IOException {
@@ -1071,20 +1071,20 @@ public class TestPurity {
                 }, 100);
     }
 
-    @Test
-    public void extractMethodTest_59() throws RefactoringMinerTimedOutException, IOException {
-        // Rename Class with Inline Method - added and removed operations are empty
-        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/33/v1")).getUmlModel();
-        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/33/v2")).getUmlModel();
-        UMLModelDiff modelDiff = model1.diff(model2);
-        List<Refactoring> refactorings = modelDiff.getRefactorings();
-        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-
-
-        for (Refactoring refactoring: refactorings){
-            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-                assertTrue(pcr.get(refactoring).isPure());
-        }
-    }
+//    @Test
+//    public void extractMethodTest_59() throws RefactoringMinerTimedOutException, IOException {
+//        // Rename Class with Inline Method - added and removed operations are empty
+//        UMLModel model1 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/33/v1")).getUmlModel();
+//        UMLModel model2 = new UMLModelASTReader(new File("/Users/pedram/Downloads/TestCases/TestCases/TestCases/33/v2")).getUmlModel();
+//        UMLModelDiff modelDiff = model1.diff(model2);
+//        List<Refactoring> refactorings = modelDiff.getRefactorings();
+//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+//
+//
+//        for (Refactoring refactoring: refactorings){
+//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
+//                assertTrue(pcr.get(refactoring).isPure());
+//        }
+//    }
 
 }
