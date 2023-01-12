@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -138,6 +137,32 @@ public class LeafMapping extends AbstractCodeMapping implements Comparable<LeafM
 							return 1;
 						}
 					}
+					if(thisReplacementTypes.equals(otherReplacementTypes) && thisReplacementTypes.size() == 1 && thisReplacementTypes.iterator().next().equals(ReplacementType.TYPE)) {
+						int thisCompositeTypeReplacements = 0;
+						for(Replacement r : this.getReplacements()) {
+							if(r.getBefore().contains(".") && r.getBefore().endsWith("." + r.getAfter())) {
+								thisCompositeTypeReplacements++;
+							}
+							else if(r.getAfter().contains(".") && r.getAfter().endsWith("." + r.getBefore())) {
+								thisCompositeTypeReplacements++;
+							}
+						}
+						int otherCompositeTypeReplacements = 0;
+						for(Replacement r : o.getReplacements()) {
+							if(r.getBefore().contains(".") && r.getBefore().endsWith("." + r.getAfter())) {
+								otherCompositeTypeReplacements++;
+							}
+							else if(r.getAfter().contains(".") && r.getAfter().endsWith("." + r.getBefore())) {
+								otherCompositeTypeReplacements++;
+							}
+						}
+						if(thisCompositeTypeReplacements == this.getReplacements().size() && otherCompositeTypeReplacements != o.getReplacements().size()) {
+							return -1;
+						}
+						else if(thisCompositeTypeReplacements != this.getReplacements().size() && otherCompositeTypeReplacements == o.getReplacements().size()) {
+							return 1;
+						}
+					}
 				}
 				return Double.compare(distance1, distance2);
 			}
@@ -237,7 +262,8 @@ public class LeafMapping extends AbstractCodeMapping implements Comparable<LeafM
 								return 1;
 							}
 						}
-						if(levelParentEditDistance1.size() == 2 && levelParentEditDistance1.get(1).equals(0.0) &&
+						if(this.equalContainer() && o.equalContainer() &&
+								levelParentEditDistance1.size() == 2 && levelParentEditDistance1.get(1).equals(0.0) &&
 								levelParentEditDistance2.size() == 2 && levelParentEditDistance2.get(1).equals(0.0) &&
 								!levelParentEditDistance1.get(0).equals(levelParentEditDistance2.get(0))) {
 							int parentIndexDiff1 = this.parentIndexDiff();
@@ -280,18 +306,15 @@ public class LeafMapping extends AbstractCodeMapping implements Comparable<LeafM
 				this.getFragment1().equals(o.getFragment1()) &&
 				o.getFragment2().getLocationInfo().getEndOffset() < this.getFragment2().getLocationInfo().getStartOffset()) {
 			List<VariableDeclaration> variableDeclarations2 = o.getFragment2().getVariableDeclarations();
-			Map<String, List<ObjectCreation>> creationMap2 = this.getFragment2().getCreationMap();
+			List<AbstractCall> creations2 = this.getFragment2().getCreations();
 			for(VariableDeclaration declaration2 : variableDeclarations2) {
-				for(String key : creationMap2.keySet()) {
-					List<ObjectCreation> creations = creationMap2.get(key);
-					for(ObjectCreation creation : creations) {
-						if(creation.getAnonymousClassDeclaration() != null) {
-							return false;
-						}
-						List<String> arguments = creation.getArguments();
-						if(arguments.size() == 1 && arguments.contains(declaration2.getVariableName())) {
-							return true;
-						}
+				for(AbstractCall creation : creations2) {
+					if(((ObjectCreation)creation).getAnonymousClassDeclaration() != null) {
+						return false;
+					}
+					List<String> arguments = creation.arguments();
+					if(arguments.size() == 1 && arguments.contains(declaration2.getVariableName())) {
+						return true;
 					}
 				}
 			}
@@ -392,19 +415,19 @@ public class LeafMapping extends AbstractCodeMapping implements Comparable<LeafM
 		else if(parent1 != null && parent2 == null) {
 			return Collections.emptySet();
 		}
-		List<String> variables1 = parent1.getVariables();
-		List<String> variables2 = parent2.getVariables();
+		List<LeafExpression> variables1 = parent1.getVariables();
+		List<LeafExpression> variables2 = parent2.getVariables();
 		if(variables1.size() == 1 && variables2.size() == 1) {
 			Set<String> tokens1 = new LinkedHashSet<>();
-			for(String variable : variables1) {
-				String[] array = LeafType.CAMEL_CASE_SPLIT_PATTERN.split(variable);
+			for(LeafExpression variable : variables1) {
+				String[] array = LeafType.CAMEL_CASE_SPLIT_PATTERN.split(variable.getString());
 				for(String s : array) {
 					tokens1.add(s.toLowerCase());
 				}
 			}
 			Set<String> tokens2 = new LinkedHashSet<>();
-			for(String variable : variables2) {
-				String[] array = LeafType.CAMEL_CASE_SPLIT_PATTERN.split(variable);
+			for(LeafExpression variable : variables2) {
+				String[] array = LeafType.CAMEL_CASE_SPLIT_PATTERN.split(variable.getString());
 				for(String s : array) {
 					tokens2.add(s.toLowerCase());
 				}
