@@ -102,7 +102,10 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the inlined method - all mapped", purityComment, mappingState);
             }
 
-
+            checkForInlineMethodOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Inline Method on top of the inlined method - all mapped", purityComment, mappingState);
+            }
 
             purityComment = "Severe changes";
             return new PurityCheckResult(false, "Replacements cannot be justified", purityComment, mappingState);
@@ -111,10 +114,21 @@ public class PurityChecker {
             int mappingState = 2;
             String purityComment = "";
 
+            List<AbstractCodeFragment> nonMappedLeavesT1 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT1());
+
             if (!checkReplacementsInlineMethod(refactoring, refactorings)) {
                 purityComment = "Severe changes";
                 return new PurityCheckResult(false, "replacements are not justified - non-mapped leaves", purityComment, mappingState);
             }
+
+            checkForStatementsBeingMappedInTargetOperation(refactoring, refactorings, nonMappedLeavesT1, modelDiff);
+            checkForNestedInlineMethod(refactoring, refactorings, nonMappedLeavesT1);
+
+            if (nonMappedLeavesT1.isEmpty()) {
+                purityComment += "Severe changes";
+                return new PurityCheckResult(true, "Nested Inline Method or statements being mapped in other refactorings - non-mapped leaves", purityComment, mappingState);
+            }
+
 
 
             return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
@@ -129,6 +143,72 @@ public class PurityChecker {
 
             return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
         }
+    }
+
+    private static void checkForNestedInlineMethod(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT1) {
+
+        List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+
+            for (Map.Entry<String, List<AbstractCall>> stringListEntry : abstractCodeFragment.getMethodInvocationMap().entrySet()) {
+
+                for (Refactoring refactoring1 : refactorings) {
+                    if (refactoring1.getRefactoringType().equals(RefactoringType.INLINE_OPERATION) && !refactoring1.equals(refactoring)) {
+                        if (stringListEntry.getValue().get(0).getName().equals(((InlineOperationRefactoring) (refactoring1)).getInlinedOperation().getName())) {
+                            if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getName().equals(refactoring.getTargetOperationAfterInline().getName())) {
+                                nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        nonMappedLeavesT1.removeAll(nonMappedLeavesT1ToRemove);
+    }
+
+    private static void checkForStatementsBeingMappedInTargetOperation(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT1, UMLModelDiff modelDiff) {
+
+        UMLClassBaseDiff umlClassDiff = modelDiff.getUMLClassDiff(refactoring.getTargetOperationAfterInline().getClassName());
+        List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
+
+
+        for (UMLOperationBodyMapper umlOperationBodyMapper : umlClassDiff.getOperationBodyMapperList()) {
+            if (umlOperationBodyMapper.getOperation2().getName().equals(refactoring.getTargetOperationAfterInline().getName())) {
+                for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+                    for (AbstractCodeMapping mapping : umlOperationBodyMapper.getMappings()) {
+                        if (mapping.getFragment2().getString().equals(abstractCodeFragment.getString())) {
+                            nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
+                        }
+                    }
+                }
+            }
+        }
+        nonMappedLeavesT1.removeAll(nonMappedLeavesT1ToRemove);
+    }
+
+    private static void checkForInlineMethodOnTop(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if ((replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT)) ||
+                    ((replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) && ((MethodInvocationReplacement) (replacement)).getInvokedOperationAfter().getName().equals(((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().getName())))) {
+                String invokedOperationAfterName = ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName();
+                for (Refactoring refactoring1 : refactorings) {
+                    if (refactoring1.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+                        if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getName().equals(invokedOperationAfterName)) {
+                            if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getParameterNameList().size() == ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getArguments().size()) {
+                                replacementsToRemove.add(replacement);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
     }
 
     private static boolean checkReplacementsInlineMethod(InlineOperationRefactoring refactoring, List<Refactoring> refactorings) {
@@ -148,6 +228,8 @@ public class PurityChecker {
 
         checkForRemoveParameterOnTop(refactoring, refactorings, replacementsToCheck);
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForInlineMethodOnTop(refactoring, refactorings, replacementsToCheck);
+
 
         if (replacementsToCheck.isEmpty()) {
             return true;
