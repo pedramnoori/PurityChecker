@@ -151,11 +151,10 @@ public class PurityChecker {
 
         for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
 
-            for (Map.Entry<String, List<AbstractCall>> stringListEntry : abstractCodeFragment.getMethodInvocationMap().entrySet()) {
-
+            for (AbstractCall methodInvocation : abstractCodeFragment.getMethodInvocations()) {
                 for (Refactoring refactoring1 : refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.INLINE_OPERATION) && !refactoring1.equals(refactoring)) {
-                        if (stringListEntry.getValue().get(0).getName().equals(((InlineOperationRefactoring) (refactoring1)).getInlinedOperation().getName())) {
+                        if (methodInvocation.getName().equals(((InlineOperationRefactoring) (refactoring1)).getInlinedOperation().getName())) {
                             if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getName().equals(refactoring.getTargetOperationAfterInline().getName())) {
                                 nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
                             }
@@ -163,6 +162,18 @@ public class PurityChecker {
                     }
                 }
             }
+            //TODO: Double check code above
+//            for (Map.Entry<String, List<AbstractCall>> stringListEntry : abstractCodeFragment.getMethodInvocationMap().entrySet()) {
+//                for (Refactoring refactoring1 : refactorings) {
+//                    if (refactoring1.getRefactoringType().equals(RefactoringType.INLINE_OPERATION) && !refactoring1.equals(refactoring)) {
+//                        if (stringListEntry.getValue().get(0).getName().equals(((InlineOperationRefactoring) (refactoring1)).getInlinedOperation().getName())) {
+//                            if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getName().equals(refactoring.getTargetOperationAfterInline().getName())) {
+//                                nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
+//                            }
+//                        }
+//                    }
+//                }
+//            }
         }
         nonMappedLeavesT1.removeAll(nonMappedLeavesT1ToRemove);
     }
@@ -198,7 +209,7 @@ public class PurityChecker {
                 for (Refactoring refactoring1 : refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
                         if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getName().equals(invokedOperationAfterName)) {
-                            if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getParameterNameList().size() == ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getArguments().size()) {
+                            if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getParameterNameList().size() == ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().arguments().size()) {
                                 replacementsToRemove.add(replacement);
                                 break;
                             }
@@ -262,7 +273,7 @@ public class PurityChecker {
             }
 
 //            TODO - So far, it only accepts ExtractOperation object as it's first argument.
-//            checkForRemoveParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForRemoveParameterOnTop(refactoring, refactorings, replacementsToCheck);
 //            if (replacementsToCheck.isEmpty()) {
 //                return new PurityCheckResult(true, "Remove Parameter refactoring on top the moved method - all mapped");
 //            }
@@ -957,17 +968,18 @@ public class PurityChecker {
                     AbstractCall invokedOperationBefore = null;
                     AbstractCall invokedOperationAfter = null;
 
-                    for (Map.Entry<String, List<AbstractCall>> entry : mapping.getFragment1().getMethodInvocationMap().entrySet()) {
-                        if (entry.getValue().get(0).getName().equals(subExpressionMethodInvocation)) {
-                            before = entry.getKey();
-                            invokedOperationBefore = entry.getValue().get(0);
+
+                    for (AbstractCall entry: mapping.getFragment1().getMethodInvocations()) {
+                        if (entry.getName().equals(subExpressionMethodInvocation)) {
+                            before = entry.actualString();
+                            invokedOperationBefore = entry;
                         }
                     }
 
-                    for (Map.Entry<String, List<AbstractCall>> entry : mapping.getFragment2().getMethodInvocationMap().entrySet()) {
-                        if (entry.getValue().get(0).getName().equals(subExpressionMethodInvocation)) {
-                            after = entry.getKey();
-                            invokedOperationAfter = entry.getValue().get(0);
+                    for (AbstractCall entry: mapping.getFragment2().getMethodInvocations()) {
+                        if (entry.getName().equals(subExpressionMethodInvocation)) {
+                            after = entry.actualString();
+                            invokedOperationAfter = entry;
                         }
                     }
 
@@ -1001,16 +1013,16 @@ public class PurityChecker {
             return null;
         }
 
-        if (((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().getArguments().size() != ((MethodInvocationReplacement) (replacement)).getInvokedOperationAfter().getArguments().size()) {
+        if (((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().arguments().size() != ((MethodInvocationReplacement) (replacement)).getInvokedOperationAfter().arguments().size()) {
             return null;
         }
 
-        for (int i = 0; i < ((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().getArguments().size(); i++) {
-            if (!((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().getArguments().get(i).equals(((MethodInvocationReplacement) (replacement)).getInvokedOperationAfter().getArguments().get(i))) {
-                if (isMethodInvocation(((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().getArguments().get(i), ((MethodInvocationReplacement) (replacement)).getInvokedOperationAfter().getArguments().get(i))) {
+        for (int i = 0; i < ((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().arguments().size(); i++) {
+            if (!((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().arguments().get(i).equals(((MethodInvocationReplacement) (replacement)).getInvokedOperationAfter().arguments().get(i))) {
+                if (isMethodInvocation(((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().arguments().get(i), ((MethodInvocationReplacement) (replacement)).getInvokedOperationAfter().arguments().get(i))) {
 
-                    int parIndex = ((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().getArguments().get(i).indexOf("(");
-                    String subExpressionMethodInvocation = ((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().getArguments().get(i).substring(0, parIndex);
+                    int parIndex = ((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().arguments().get(i).indexOf("(");
+                    String subExpressionMethodInvocation = ((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().arguments().get(i).substring(0, parIndex);
                     return subExpressionMethodInvocation;
 
                 }
@@ -1450,7 +1462,7 @@ public class PurityChecker {
                 for (Refactoring refactoring1 : refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
                         if (((ExtractOperationRefactoring) refactoring1).getExtractedOperation().getName().equals(invokedOperationAfterName)) {
-                            if (((ExtractOperationRefactoring) refactoring1).getExtractedOperation().getParameterNameList().size() == ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getArguments().size()) {
+                            if (((ExtractOperationRefactoring) refactoring1).getExtractedOperation().getParameterNameList().size() == ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().arguments().size()) {
                                 replacementsToRemove.add(replacement);
                                 break;
                             }
@@ -1463,25 +1475,25 @@ public class PurityChecker {
         replacementsToCheck.removeAll(replacementsToRemove);
     }
 
-    private static void checkForIfCondition(ExtractOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedInnerNodesT2) {
-
-        List<AbstractCodeFragment> nonMappedInnerNodesToRemove = new ArrayList<>();
-        List<String> conditionVariables = new ArrayList<>();
-
-        for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT2) {
-            if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.IF_STATEMENT)) {
-                for (AbstractExpression expression : ((CompositeStatementObject) abstractCodeFragment).getExpressions()) {
-                    conditionVariables.addAll(expression.getVariables());
-                }
-                if (refactoring.getExtractedOperation().getParameterNameList().containsAll(conditionVariables)) {
-                    nonMappedInnerNodesToRemove.add(abstractCodeFragment);
-                }
-            }
-        }
-
-        nonMappedInnerNodesT2.removeAll(nonMappedInnerNodesToRemove);
-
-    }
+//    private static void checkForIfCondition(ExtractOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedInnerNodesT2) {
+//
+//        List<AbstractCodeFragment> nonMappedInnerNodesToRemove = new ArrayList<>();
+//        List<String> conditionVariables = new ArrayList<>();
+//
+//        for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT2) {
+//            if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.IF_STATEMENT)) {
+//                for (AbstractExpression expression : ((CompositeStatementObject) abstractCodeFragment).getExpressions()) {
+//                    conditionVariables.addAll(expression.getVariables());
+//                }
+//                if (refactoring.getExtractedOperation().getParameterNameList().containsAll(conditionVariables)) {
+//                    nonMappedInnerNodesToRemove.add(abstractCodeFragment);
+//                }
+//            }
+//        }
+//
+//        nonMappedInnerNodesT2.removeAll(nonMappedInnerNodesToRemove);
+//
+//    }
 
     private static void checkForRemoveParameterOnTop(Refactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
 
@@ -1506,9 +1518,9 @@ public class PurityChecker {
             if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT) ||
                     (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) && ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getName().equals(((MethodInvocationReplacement)replacement).getInvokedOperationBefore().getName()))) {
 
-                    ArrayList<String> temp1 = new ArrayList<>(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getArguments());
+                    ArrayList<String> temp1 = new ArrayList<>(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments());
                     ArrayList<String> temp2 = new ArrayList<>(temp1);
-                    temp1.removeAll(((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getArguments());
+                    temp1.removeAll(((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments());
                     ArrayList<Integer> removedArgumentsLocationInReplacement = new ArrayList<>();
 
                     for (int i = 0; i < temp1.size(); i++) {
@@ -1555,17 +1567,17 @@ public class PurityChecker {
         for (AbstractCodeMapping mapping : bodyMapper.getMappings()) {
             for (Replacement mappingReplacement : mapping.getReplacements()) {
                 if (mappingReplacement.equals(replacement)) {
-                    Optional<Map.Entry<String, List<ObjectCreation>>> actualValue1 = mapping.getFragment1().getCreationMap().entrySet()
+                    Optional<AbstractCall> actualValue1 = mapping.getFragment1().getCreations()
                             .stream()
                             .findFirst();
 
                     if (actualValue1.isPresent()) {
-                        ArrayList<String> temp1 = new ArrayList<>(actualValue1.get().getValue().get(0).getArguments());
+                        ArrayList<String> temp1 = new ArrayList<>(actualValue1.get().arguments());
                         ArrayList<String> temp2 = new ArrayList<>(temp1);
-                        Optional<Map.Entry<String, List<ObjectCreation>>> actualValue2 = mapping.getFragment2().getCreationMap().entrySet()
+                        Optional<AbstractCall> actualValue2 = mapping.getFragment2().getCreations()
                                 .stream()
                                 .findFirst();
-                        actualValue2.ifPresent(stringListEntry -> temp1.removeAll(stringListEntry.getValue().get(0).getArguments()));
+                        actualValue2.ifPresent(stringListEntry -> temp1.removeAll(stringListEntry.arguments()));
 
                         ArrayList<Integer> removedArgumentsLocationInReplacement = new ArrayList<>();
 
@@ -1576,7 +1588,7 @@ public class PurityChecker {
                             }
                         }
 
-                        String methodName = actualValue1.get().getValue().get(0).getType().getClassType();
+                        String methodName = actualValue1.get().getName();
                         List<Refactoring> removeParameterRefactoringList = new ArrayList<>();
 
                         for (Refactoring refactoring1 : refactorings) {
@@ -1622,11 +1634,11 @@ public class PurityChecker {
 
         for (Replacement replacement : replacementsToCheck) {
             if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT)) {
-                List<String> invokedAfterArguments = ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getArguments();
+                List<String> invokedAfterArguments = ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments();
                 List<String> extractedOperationArguments = refactoring.getExtractedOperation().getParameterNameList();
 
                 if (invokedAfterArguments.containsAll(extractedOperationArguments) && extractedOperationArguments.containsAll(invokedAfterArguments) &&
-                ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getArguments().size() == ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getArguments().size()) {
+                ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().size() == ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments().size()) {
                     replacementsToRemove.add(replacement);
                 }
             }
@@ -2035,9 +2047,9 @@ public class PurityChecker {
             if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT) ||
                     (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) && ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getName().equals(((MethodInvocationReplacement)replacement).getInvokedOperationBefore().getName()))) {
 
-                    ArrayList<String> temp1 = new ArrayList<>(((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getArguments());
+                    ArrayList<String> temp1 = new ArrayList<>(((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments());
                     ArrayList<String> temp2 = new ArrayList<>(temp1);
-                    temp1.removeAll(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getArguments());
+                    temp1.removeAll(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments());
                     ArrayList<Integer> addedArgumentsLocation = new ArrayList<>();
 
                     for (int i = 0; i < temp1.size(); i++) {
@@ -2093,17 +2105,17 @@ public class PurityChecker {
         for (AbstractCodeMapping mapping : bodyMapper.getMappings()) {
             for (Replacement mappingReplacement : mapping.getReplacements()) {
                 if (mappingReplacement.equals(replacement)) {
-                    Optional<Map.Entry<String, List<ObjectCreation>>> actualValue1 = mapping.getFragment2().getCreationMap().entrySet()
+                    Optional<AbstractCall> actualValue1 = mapping.getFragment2().getCreations()
                             .stream()
                             .findFirst();
 
                     if (actualValue1.isPresent()) {
-                        ArrayList<String> temp1 = new ArrayList<>(actualValue1.get().getValue().get(0).getArguments());
+                        ArrayList<String> temp1 = new ArrayList<>(actualValue1.get().arguments());
                         ArrayList<String> temp2 = new ArrayList<>(temp1);
-                        Optional<Map.Entry<String, List<ObjectCreation>>> actualValue2 = mapping.getFragment1().getCreationMap().entrySet()
+                        Optional<AbstractCall> actualValue2 = mapping.getFragment1().getCreations()
                                 .stream()
                                 .findFirst();
-                        actualValue2.ifPresent(stringListEntry -> temp1.removeAll(stringListEntry.getValue().get(0).getArguments()));
+                        actualValue2.ifPresent(stringListEntry -> temp1.removeAll(stringListEntry.arguments()));
 
                         ArrayList<Integer> addedArgumentsLocationInReplacement = new ArrayList<>();
 
@@ -2114,7 +2126,7 @@ public class PurityChecker {
                             }
                         }
 
-                        String methodName = actualValue1.get().getValue().get(0).getType().getClassType();
+                        String methodName = actualValue1.get().getName();
                         List<Refactoring> addParameterRefactoringList = new ArrayList<>();
 
                         for (Refactoring refactoring1 : refactorings) {
@@ -2184,12 +2196,12 @@ public class PurityChecker {
         }
         int nonMappedT2 = refactoring.getBodyMapper().getNonMappedLeavesT2().size();
         for(AbstractCodeFragment abstractCodeFragment2 : refactoring.getBodyMapper().getNonMappedLeavesT2()) {
-            Map<String, List<AbstractCall>> methodInvocationMap2 = abstractCodeFragment2.getMethodInvocationMap();
-            List<String> methodCalls2 = methodInvocationMap2.values().stream().map(l -> l.get(0).getName()).collect(Collectors.toList());
+            List<AbstractCall> methodInvocationMap2 = abstractCodeFragment2.getMethodInvocations();
+            List<String> methodCalls2 = methodInvocationMap2.stream().map(l -> l.getName()).collect(Collectors.toList());
             if (!methodCalls2.isEmpty())
                 for (AbstractCodeFragment abstractCodeFragment : refactoring.getBodyMapper().getNonMappedLeavesT1()) {
-                    Map<String, List<AbstractCall>> methodInvocationMap = abstractCodeFragment.getMethodInvocationMap();
-                    List<String> methodCalls = methodInvocationMap.values().stream().map(l -> l.get(0).getName()).collect(Collectors.toList());
+                    List<AbstractCall> methodInvocationMap = abstractCodeFragment.getMethodInvocations();
+                    List<String> methodCalls = methodInvocationMap.stream().map(l -> l.getName()).collect(Collectors.toList());
                     boolean check = checkRenameMethodCallsPossibility(methodCalls, methodCalls2, renameOperationRefactoringList);
                     if (check) {
                         nonMappedLeavesT2.remove(abstractCodeFragment2);
