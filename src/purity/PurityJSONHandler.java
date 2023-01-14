@@ -26,12 +26,12 @@ public class PurityJSONHandler {
 //        addExtraPurityFields("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
-//        numberOfRefactorings("C:\\Users\\Pedram\\Desktop\\Puritydata.json");
+        numberOfRefactorings("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
-        runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
+//        runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 //
-        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.MOVE_OPERATION);
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
@@ -66,7 +66,7 @@ public class PurityJSONHandler {
         try {
             List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
 
-            int extractMethodNumber = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals("Move Method")).filter(r -> r.getValidation().equals("TP")).count();
+            int extractMethodNumber = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).filter(r -> r.getType().equals("Inline Method")).filter(r -> r.getValidation().equals("TP")).count();
 
             System.out.println(extractMethodNumber);
 

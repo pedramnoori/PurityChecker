@@ -611,6 +611,8 @@ public class PurityChecker {
             allReplacementsAreType(refactoring.getReplacements(), replacementsToCheck);
             // for https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938 commit - performLocalRehashAwareOperation
             refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+            omitReturnRelatedReplacements(refactoring, replacementsToCheck);
+
 
             omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
@@ -703,6 +705,11 @@ public class PurityChecker {
             checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Extract variable on the top of the extract method - all mapped", purityComment, mappingState);
+            }
+
+            checkForMergeConditionalOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Merge Conditional on the top of the extract method - all mapped", purityComment, mappingState);
             }
 
             int size1 = replacementsToCheck.size();
@@ -905,6 +912,21 @@ public class PurityChecker {
             purityComment = "Severe changes";
             return new PurityCheckResult(false, "Contains non-mapped inner nodes", purityComment, mappingState);
         }
+    }
+
+    private static void omitReturnRelatedReplacements(ExtractOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            AbstractCodeMapping mapping = findTheMapping(replacement, refactoring);
+            if (mapping.getFragment1().getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT) &&
+                    mapping.getFragment2().getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                replacementsToRemove.add(replacement);
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
     }
 
     private static void checkForMergeVariableOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
@@ -1860,6 +1882,8 @@ public class PurityChecker {
             omitEqualStringLiteralsReplacement(replacementsToCheck);
 
             omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
+            omitReturnRelatedReplacements(refactoring, replacementsToCheck);
+
 
         }
 
@@ -1923,6 +1947,10 @@ public class PurityChecker {
         if(replacementsToCheck.isEmpty())
             return true;
 
+        checkForMergeConditionalOnTop(refactoring, refactorings, replacementsToCheck);
+        if(replacementsToCheck.isEmpty())
+            return true;
+
         refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
 //            for https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938 commit - performLocalRehashAwareOperation
         if (replacementsToCheck.isEmpty()) {
@@ -1943,6 +1971,29 @@ public class PurityChecker {
         }
 
         return false;
+    }
+
+    private static void checkForMergeConditionalOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Refactoring refactoring1 : refactorings) {
+
+            if (refactoring1.getRefactoringType().equals(RefactoringType.MERGE_CONDITIONAL)) {
+
+                for (Replacement replacement : replacementsToCheck) {
+
+                    if (replacement.getType().equals(Replacement.ReplacementType.COMPOSITE)
+                            || replacement.getType().equals(Replacement.ReplacementType.CONDITIONAL)) {
+                        if (replacement.getAfter().equals(((MergeConditionalRefactoring) (refactoring1)).getNewConditional().getString()) ||
+                                replacement.getAfter().equals(((MergeConditionalRefactoring) (refactoring1)).getNewConditional().getArgumentizedString())) {
+                            replacementsToRemove.add(replacement);
+                        }
+                    }
+                }
+            }
+        }
+        replacementsToCheck.removeAll(replacementsToRemove);
     }
 
     private static void omitBooleanVariableDeclarationReplacement(Refactoring refactoring, HashSet<Replacement> replacementsToCheck) {
