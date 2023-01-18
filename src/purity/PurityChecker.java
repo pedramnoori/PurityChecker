@@ -154,6 +154,14 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Inline Variable on top of the Inline Method - non-mapped leaves", purityComment, mappingState);
             }
 
+            checkForRenameRefactoringOnTopOfInline_NonMapped(refactoring, refactorings, nonMappedLeavesT1);
+
+            if (nonMappedLeavesT1.isEmpty()) {
+                purityComment += "Severe changes";
+                return new PurityCheckResult(true, "Rename Method on top of the Inline Method - non-mapped leaves", purityComment, mappingState);
+            }
+
+
 
             return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
         } else {
@@ -165,8 +173,60 @@ public class PurityChecker {
                 return new PurityCheckResult(false, "replacements are not justified - non-mapped leaves", purityComment, mappingState);
             }
 
+            List<AbstractCodeFragment> nonMappedLeavesT1List = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT1());
+
+
+            if (!checkForNonMappedLeavesT1(refactoring, refactorings, nonMappedLeavesT1List, modelDiff)) {
+                purityComment = "Severe changes";
+                return new PurityCheckResult(false, "non-mapped are not justified - non-mapped leaves", purityComment, mappingState);
+            }
+
+            List<AbstractCodeFragment> nonMappedInnerNodesT1 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedInnerNodesT1());
+
+            int numberOfWrongNonMappedBlocks = 0;
+            for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT1) {
+                if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
+                    numberOfWrongNonMappedBlocks++;
+                }else {
+                    break;
+                }
+            }
+
+            if (numberOfWrongNonMappedBlocks == nonMappedInnerNodesT1.size()) {
+                purityComment = "Identical statements";
+                return new PurityCheckResult(true, "Just an empty block - with non-mapped leaves", purityComment, mappingState);
+            }
+
+
             return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
         }
+    }
+
+    private static boolean checkForNonMappedLeavesT1(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT1List, UMLModelDiff modelDiff) {
+
+        checkForInevitableVariableDeclarationInline(refactoring, nonMappedLeavesT1List, refactorings); // This method can also change the state of the refactoring's replacements
+        checkForStatementsBeingMappedInTargetOperation(refactoring, refactorings, nonMappedLeavesT1List, modelDiff);
+        checkForNestedInlineMethod(refactoring, refactorings, nonMappedLeavesT1List);
+        checkForInlineVariableNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT1List);
+
+        if (nonMappedLeavesT1List.isEmpty()) {
+            return true;
+        }
+
+        int size = nonMappedLeavesT1List.size();
+        int returnStatementCounter = 0;
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1List) {
+            if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                returnStatementCounter++;
+            }
+        }
+
+        if (size == returnStatementCounter) {
+            return true;
+        }
+
+        return false;
     }
 
     private static void checkForInlineVariableNonMappedLeaves(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT1) {
@@ -2346,6 +2406,30 @@ public class PurityChecker {
 
         replacementsToCheck.removeAll(handledReplacements);
 
+    }
+
+    private static void checkForRenameRefactoringOnTopOfInline_NonMapped(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT1) {
+
+        List<RenameOperationRefactoring> renameOperationRefactoringList = getSpecificTypeRefactoring(refactorings, RenameOperationRefactoring.class);
+
+        if (renameOperationRefactoringList.isEmpty()) {
+            return;
+        }
+
+        for(AbstractCodeFragment abstractCodeFragment2 : refactoring.getBodyMapper().getNonMappedLeavesT1()) {
+            List<AbstractCall> methodInvocationMap2 = abstractCodeFragment2.getMethodInvocations();
+            List<String> methodCalls2 = methodInvocationMap2.stream().map(l -> l.getName()).collect(Collectors.toList());
+            if (!methodCalls2.isEmpty())
+                for (AbstractCodeFragment abstractCodeFragment : refactoring.getBodyMapper().getNonMappedLeavesT2()) {
+                    List<AbstractCall> methodInvocationMap = abstractCodeFragment.getMethodInvocations();
+                    List<String> methodCalls = methodInvocationMap.stream().map(l -> l.getName()).collect(Collectors.toList());
+                    boolean check = checkRenameMethodCallsPossibility(methodCalls2, methodCalls, renameOperationRefactoringList);
+                    if (check) {
+                        nonMappedLeavesT1.remove(abstractCodeFragment2);
+                        break;
+                    }
+                }
+        }
     }
 
 

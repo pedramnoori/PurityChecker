@@ -1009,8 +1009,8 @@ public class TestPurity {
     public void extractMethodTest_55() throws RefactoringMinerTimedOutException, IOException {
 //  The test commit TODO second runTests Extract method is pure and I reported it as impure so far
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/CyanogenMod/android_frameworks_base.git",
-                "f166866cd68efa963534c5bc7fc9ca38e4aa2838", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/gwtproject/gwt.git",
+                "22fb2c9c6974bd1fe0f6ff684f52e6cfbed1a387", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
