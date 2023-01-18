@@ -108,6 +108,9 @@ public class PurityChecker {
             }
 
             checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Inline Method on top of the inlined method - all mapped", purityComment, mappingState);
+            }
 
             purityComment = "Severe changes";
             return new PurityCheckResult(false, "Replacements cannot be justified", purityComment, mappingState);
@@ -118,20 +121,38 @@ public class PurityChecker {
 
             List<AbstractCodeFragment> nonMappedLeavesT1 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT1());
 
+            int size = nonMappedLeavesT1.size();
+            checkForInevitableVariableDeclarationInline(refactoring, nonMappedLeavesT1, refactorings); // This method can also change the state of the refactoring's replacements
+            int size2 = nonMappedLeavesT1.size();
+
+            if (size != size2) {
+                purityComment += "Severe changes + \n";
+            }
+
             if (!checkReplacementsInlineMethod(refactoring, refactorings)) {
                 purityComment = "Severe changes";
                 return new PurityCheckResult(false, "replacements are not justified - non-mapped leaves", purityComment, mappingState);
             }
 
+            if (nonMappedLeavesT1.isEmpty()) {
+                return new PurityCheckResult(true, "Variable declaration hasn't been inlined, but it doesn't change the logic - non-mapped leaves", purityComment, mappingState);
+            }
+
             checkForStatementsBeingMappedInTargetOperation(refactoring, refactorings, nonMappedLeavesT1, modelDiff);
             checkForNestedInlineMethod(refactoring, refactorings, nonMappedLeavesT1);
-            checkForInlineVariableNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT1);
 
             if (nonMappedLeavesT1.isEmpty()) {
                 purityComment += "Severe changes";
                 return new PurityCheckResult(true, "Nested Inline Method or statements being mapped in other refactorings - non-mapped leaves", purityComment, mappingState);
             }
 
+            checkForInlineVariableNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT1);
+
+
+            if (nonMappedLeavesT1.isEmpty()) {
+                purityComment += "Severe changes";
+                return new PurityCheckResult(true, "Inline Variable on top of the Inline Method - non-mapped leaves", purityComment, mappingState);
+            }
 
 
             return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
@@ -146,6 +167,25 @@ public class PurityChecker {
 
             return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
         }
+    }
+
+    private static void checkForInlineVariableNonMappedLeaves(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT1) {
+
+        List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
+
+        for (Refactoring refactoring1 : refactorings) {
+            if (refactoring1.getRefactoringType().equals(RefactoringType.INLINE_VARIABLE)) {
+                VariableDeclaration variableDeclaration = ((InlineVariableRefactoring) (refactoring1)).getVariableDeclaration();
+                for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+                    if (abstractCodeFragment.getVariableDeclarations().contains(variableDeclaration)) {
+                        nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
+                    }
+                }
+            }
+        }
+
+        nonMappedLeavesT1.removeAll(nonMappedLeavesT1ToRemove);
+
     }
 
     private static void checkForInlineVariableOnTop(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
@@ -1204,7 +1244,7 @@ public class PurityChecker {
 
     private static void checkForInevitableVariableDeclaration(ExtractOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedLeavesT2, List<Refactoring> refactorings) {
 
-        List<AbstractCodeFragment> nonMappedNodesT2ToRemove = new ArrayList<>();
+        List<AbstractCodeFragment> nonMappedLeavesT2ToRemove = new ArrayList<>();
 
 
         for (AbstractCodeFragment nonMappedLeaf : nonMappedLeavesT2) {
@@ -1212,7 +1252,7 @@ public class PurityChecker {
                 List<VariableDeclaration> variableDeclarations = nonMappedLeaf.getVariableDeclarations();
                 for (VariableDeclaration variableDeclaration : variableDeclarations) {
                     if (checkUsageOfTheNewVariableDeclaration(variableDeclaration, refactoring, refactorings)) {
-                        nonMappedNodesT2ToRemove.add(nonMappedLeaf);
+                        nonMappedLeavesT2ToRemove.add(nonMappedLeaf);
                         for (Replacement replacement : refactoring.getBodyMapper().getReplacements()) {
                             if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME) &&
                             replacement.getAfter().equals(variableDeclaration.getVariableName())) {
@@ -1226,20 +1266,57 @@ public class PurityChecker {
         }
 
 
-        nonMappedLeavesT2.removeAll(nonMappedNodesT2ToRemove);
+        nonMappedLeavesT2.removeAll(nonMappedLeavesT2ToRemove);
     }
 
-    private static boolean checkUsageOfTheNewVariableDeclaration(VariableDeclaration variableDeclaration, ExtractOperationRefactoring refactoring, List<Refactoring> refactorings) {
+    private static void checkForInevitableVariableDeclarationInline(InlineOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedLeavesT1, List<Refactoring> refactorings) {
+
+        List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
+
+
+        for (AbstractCodeFragment nonMappedLeaf : nonMappedLeavesT1) {
+            if (!nonMappedLeaf.getVariableDeclarations().isEmpty()) {
+                List<VariableDeclaration> variableDeclarations = nonMappedLeaf.getVariableDeclarations();
+                for (VariableDeclaration variableDeclaration : variableDeclarations) {
+                    if (checkUsageOfTheNewVariableDeclaration(variableDeclaration, refactoring, refactorings)) {
+                        nonMappedLeavesT1ToRemove.add(nonMappedLeaf);
+                        for (Replacement replacement : refactoring.getBodyMapper().getReplacements()) {
+                            if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME) &&
+                                    replacement.getAfter().equals(variableDeclaration.getVariableName())) {
+                                refactoring.getReplacements().remove(replacement);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        nonMappedLeavesT1.removeAll(nonMappedLeavesT1ToRemove);
+    }
+
+
+    private static boolean checkUsageOfTheNewVariableDeclaration(VariableDeclaration variableDeclaration, Refactoring refactoring, List<Refactoring> refactorings) {
+
+        UMLOperationBodyMapper bodyMapper = null;
+        if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+            bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+            bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();;
+        }else {
+            return false;
+        }
 
         boolean existFlag = false;
         boolean checkFlag = false;
 
-        for (AbstractCodeMapping mapping : refactoring.getBodyMapper().getMappings()) {
+        for (AbstractCodeMapping mapping : bodyMapper.getMappings()) {
             if (mapping.getFragment2().getString().contains(variableDeclaration.getVariableName())) {
                 existFlag = true;
                 if (variableDeclaration.getInitializer() == null || variableDeclaration.getInitializer().getExpression().equals("null")
                 || variableDeclaration.getInitializer().getExpression().equals("0"))
-                    checkFlag = checkMappingReplacements(refactoring, mapping, variableDeclaration, refactorings);
+                    checkFlag = checkMappingReplacements(mapping, variableDeclaration, refactorings);
                 if (!checkFlag) {
                     break;
                 }
@@ -1252,7 +1329,7 @@ public class PurityChecker {
         return checkFlag;
     }
 
-    private static boolean checkMappingReplacements(ExtractOperationRefactoring refactoring, AbstractCodeMapping mapping, VariableDeclaration variableDeclaration, List<Refactoring> refactorings) {
+    private static boolean checkMappingReplacements(AbstractCodeMapping mapping, VariableDeclaration variableDeclaration, List<Refactoring> refactorings) {
 
         if (mapping.getReplacements().isEmpty()) {
             return true;
