@@ -74,6 +74,19 @@ public class PurityChecker {
             HashSet<Replacement> replacementsToCheck;
             replacementsToCheck = new HashSet<>(refactoring.getReplacements());
 
+            if (refactoring.getBodyMapper().allMappingsArePurelyMatched(refactoring.getParameterToArgumentMap())) {
+                purityComment = "Changes are within the Extract Method refactoring mechanics";
+                return new PurityCheckResult(true, "All the mappings are matched! - all mapped", purityComment, mappingState);
+            }
+
+            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsRegardingExactMappings(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+            replacementsToCheck = refactoring.getBodyMapper().omitReplacementsAccordingToArgumentization(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+
+            if (refactoring.getBodyMapper().allMappingsArePurelyMatched(refactoring.getParameterToArgumentMap())) {
+                purityComment = "Changes are within the Extract Method refactoring mechanics";
+                return new PurityCheckResult(true, "All the mappings are matched! - all mapped", purityComment, mappingState);
+            }
+
             omitThisPatternReplacements(replacementsToCheck);
             omitPrintAndLogMessagesRelatedReplacements(refactoring, replacementsToCheck);
             omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck);

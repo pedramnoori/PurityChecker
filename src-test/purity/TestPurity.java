@@ -980,8 +980,8 @@ public class TestPurity {
 
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/robovm/robovm.git",
-                "bf5ee44b3b576e01ab09cae9f50300417b01dc07", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/gwtproject/gwt.git",
+                "22fb2c9c6974bd1fe0f6ff684f52e6cfbed1a387", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);

@@ -89,8 +89,11 @@ public abstract class AbstractCodeMapping {
 
 	public boolean isPurelyExact(Map<String, String> parameterToArgumentMap) {
 		fragment2.argumentizationAfterRefactorings(parameterToArgumentMap);
+		fragment1.argumentizationAfterRefactorings(parameterToArgumentMap);
+//		fragment1.replaceParametersWithArguments(parameterToArgumentMap);
 		return (fragment1.getArgumentizedString().equals(fragment2.getArgumentizedString()) || argumentizedStringExactAfterTypeReplacement() ||
-				fragment1.getString().equals(fragment2.getString()) || isExactAfterAbstraction() || fragment1.getString().equals(fragment2.getArgumentizedAfterRefactorings()));
+				fragment1.getString().equals(fragment2.getString()) || isExactAfterAbstraction() || fragment1.getString().equals(fragment2.getArgumentizedAfterRefactorings()) ||
+				fragment1.getArgumentizedAfterRefactorings().equals(fragment2.getArgumentizedAfterRefactorings()));
 	}
 
 	public boolean checkForSupplierPattern(Replacement replacement, Map<String, String> parameterToArgumentMap) {

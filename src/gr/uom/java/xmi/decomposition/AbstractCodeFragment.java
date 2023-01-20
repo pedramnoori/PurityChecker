@@ -237,7 +237,7 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 					char nextChar = afterReplacements.charAt(start + parameter.length());
 					if(start >= 1) {
 						String previousChar = afterReplacements.substring(start-1, start);
-						if(previousChar.equals("(") || previousChar.equals(",") || previousChar.equals(" ") || previousChar.equals("=")) {
+						if(previousChar.equals("(") || previousChar.equals(",") || previousChar.equals(" ") || previousChar.equals("=") || previousChar.equals(")")) {
 							isArgument = true;
 						}
 						String beforeMatch = afterReplacements.substring(0, start);
