@@ -105,7 +105,7 @@ public class PurityChecker {
 
 
 
-            checkForRemoveParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForRemoveParameterOnTopInline(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Remove Parameter refactoring on top the inlined method - all mapped", purityComment, mappingState);
             }
@@ -1700,6 +1700,82 @@ public class PurityChecker {
 //        nonMappedInnerNodesT2.removeAll(nonMappedInnerNodesToRemove);
 //
 //    }
+
+    private static void checkForRemoveParameterOnTopInline(Refactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
+
+        UMLOperationBodyMapper bodyMapper = null;
+        if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+            bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+            bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();;
+        }else {
+            return;
+        }
+
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+
+        for (Replacement replacement: replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.CLASS_INSTANCE_CREATION) ||
+                    replacement.getType().equals(Replacement.ReplacementType.CLASS_INSTANCE_CREATION_ARGUMENT)) {
+                checkForRemoveParameterOnTopConstructorVersion(bodyMapper, replacement, refactorings, replacementsToCheck);
+            }
+            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT) ||
+                    (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) && ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getName().equals(((MethodInvocationReplacement)replacement).getInvokedOperationBefore().getName()))) {
+
+                ArrayList<String> temp1 = new ArrayList<>(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments());
+                ArrayList<String> temp2 = new ArrayList<>(temp1);
+//                temp1.removeAll(((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments());
+
+                for (String argument : ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments()) {
+                    for (String s : temp1) {
+                        if (argument.equals(s)) {
+                            temp1.remove(s);
+                            break;
+                        }
+                    }
+                }
+                ArrayList<Integer> removedArgumentsLocationInReplacement = new ArrayList<>();
+
+                for (int i = 0; i < temp1.size(); i++) {
+                    for (int j = 0; j < temp2.size(); j++) {
+                        if (temp1.get(i).equals(temp2.get(j)))
+                            removedArgumentsLocationInReplacement.add(j);
+                    }
+                }
+
+                String methodName = ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName();
+                List<Refactoring> removeParameterRefactoringList = new ArrayList<>();
+
+                for (Refactoring refactoring1 : refactorings) {
+                    if (refactoring1.getRefactoringType().equals(RefactoringType.REMOVE_PARAMETER)) {
+                        removeParameterRefactoringList.add(refactoring1);
+                    }
+                }
+
+                ArrayList<Integer> removedArgumentLocationInRefactoring = new ArrayList<>();
+
+                for (Refactoring ref : removeParameterRefactoringList) {
+                    if (ref.getRefactoringType().equals(RefactoringType.REMOVE_PARAMETER)) {
+                        if (((RemoveParameterRefactoring) ref).getOperationBefore().getName().equals(methodName)) {
+                            int ind = ((RemoveParameterRefactoring) ref).getOperationBefore().getParameterNameList().indexOf(((RemoveParameterRefactoring) ref).getParameter().getName());
+                            removedArgumentLocationInRefactoring.add(ind);
+                        }
+                    }
+                }
+                Collections.sort(removedArgumentsLocationInReplacement);
+                Collections.sort(removedArgumentLocationInRefactoring);
+                if (removedArgumentsLocationInReplacement.equals(removedArgumentLocationInRefactoring) && !removedArgumentsLocationInReplacement.isEmpty()) {
+                    replacementsToRemove.add(replacement);
+                }
+
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
+
+    }
 
     private static void checkForRemoveParameterOnTop(Refactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
 
