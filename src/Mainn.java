@@ -6,9 +6,8 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import gr.uom.java.xmi.decomposition.AbstractCodeFragment.*;
-
-//import static gr.uom.java.xmi.decomposition.AbstractCodeFragment.quoteAfter;
-//import static gr.uom.java.xmi.decomposition.AbstractCodeFragment.quoteBefore;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Mainn {
@@ -20,6 +19,7 @@ public class Mainn {
         myMap.put("certs","local");
         String s = replaceParametersWithArguments(inp, myMap);
         System.out.println(s);
+
     }
 
     private static boolean quoteBefore(String beforeMatch) {
