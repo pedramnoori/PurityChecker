@@ -781,6 +781,35 @@ public class GitHistoryRefactoringMinerImpl implements GitHistoryRefactoringMine
 			service.shutdown();
 		}
 	}
+
+	public UMLModelDiff detectModelDiff(File previousFile,File nextFile) {
+		Set<ASTDiff> diffSet = new LinkedHashSet<>();
+		UMLModelDiff modelDiff = null;
+		if(previousFile.exists() && nextFile.exists()) {
+			String id = previousFile.getName() + " -> " + nextFile.getName();
+			try {
+				if (previousFile.isDirectory() && nextFile.isDirectory()) {
+					Set<String> repositoryDirectoriesBefore = new LinkedHashSet<String>();
+					Set<String> repositoryDirectoriesCurrent = new LinkedHashSet<String>();
+					Map<String, String> fileContentsBefore = new LinkedHashMap<String, String>();
+					Map<String, String> fileContentsCurrent = new LinkedHashMap<String, String>();
+					populateFileContents(nextFile, getJavaFilePaths(nextFile), fileContentsCurrent, repositoryDirectoriesCurrent);
+					populateFileContents(previousFile, getJavaFilePaths(previousFile), fileContentsBefore, repositoryDirectoriesBefore);
+					List<MoveSourceFolderRefactoring> moveSourceFolderRefactorings = processIdenticalFiles(fileContentsBefore, fileContentsCurrent, Collections.emptyMap());
+					UMLModel parentUMLModel = createModelForASTDiff(fileContentsBefore, repositoryDirectoriesBefore);
+					UMLModel currentUMLModel = createModelForASTDiff(fileContentsCurrent, repositoryDirectoriesCurrent);
+					modelDiff = parentUMLModel.diff(currentUMLModel);
+				}
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			} catch (RefactoringMinerTimedOutException e) {
+				throw new RuntimeException(e);
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
+		}
+		return modelDiff;
+	}
 	protected void ttt(final RefactoringHandler handler, String gitURL, String currentCommitId) throws RefactoringMinerTimedOutException {
 		List<Refactoring> refactoringsAtRevision = Collections.emptyList();
 		UMLModelDiff modelDiff = null;

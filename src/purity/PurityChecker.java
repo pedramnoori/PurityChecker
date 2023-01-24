@@ -181,6 +181,8 @@ public class PurityChecker {
             int mappingState = 3;
             String purityComment = "";
 
+            List<AbstractCodeFragment> nonMappedInnerNodesT1 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedInnerNodesT1());
+
             if (!checkReplacementsInlineMethod(refactoring, refactorings)) {
                 purityComment = "Severe changes";
                 return new PurityCheckResult(false, "replacements are not justified - non-mapped leaves", purityComment, mappingState);
@@ -188,13 +190,12 @@ public class PurityChecker {
 
             List<AbstractCodeFragment> nonMappedLeavesT1List = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT1());
 
+            checkForIfCondition(refactoring, nonMappedInnerNodesT1, nonMappedLeavesT1List);
 
             if (!checkForNonMappedLeavesT1(refactoring, refactorings, nonMappedLeavesT1List, modelDiff)) {
                 purityComment = "Severe changes";
                 return new PurityCheckResult(false, "non-mapped are not justified - non-mapped leaves", purityComment, mappingState);
             }
-
-            List<AbstractCodeFragment> nonMappedInnerNodesT1 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedInnerNodesT1());
 
             int numberOfWrongNonMappedBlocks = 0;
             for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT1) {
@@ -213,6 +214,35 @@ public class PurityChecker {
 
             return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
         }
+    }
+
+    private static void checkForIfCondition(InlineOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedInnerNodesT1, List<AbstractCodeFragment> nonMappedLeavesT1List) {
+
+        List<AbstractCodeFragment> nonMappedInnerNodesT1ToRemove = new ArrayList<>();
+        List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
+
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT1) {
+            abstractCodeFragment.argumentizationAfterRefactorings(refactoring.getParameterToArgumentMap());
+            if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.IF_STATEMENT)) {
+                if (abstractCodeFragment.getArgumentizedAfterRefactorings().equals("if(false)")) {
+                    nonMappedInnerNodesT1ToRemove.add(abstractCodeFragment);
+                    List<AbstractStatement> statements = ((CompositeStatementObject) (abstractCodeFragment)).getStatements();
+                    if (statements.size() == 2 || statements.size() == 1) { //it's an if-else condition
+                        nonMappedLeavesT1ToRemove.addAll(((CompositeStatementObject)(statements.get(0))).getStatements());
+                    }
+                } else if (abstractCodeFragment.getArgumentizedAfterRefactorings().equals("if(true)")) {
+                    nonMappedInnerNodesT1ToRemove.add(abstractCodeFragment);
+                    List<AbstractStatement> statements = ((CompositeStatementObject) (abstractCodeFragment)).getStatements();
+                    if (statements.size() == 2) {
+                        nonMappedLeavesT1ToRemove.addAll(((CompositeStatementObject)(statements.get(1))).getStatements());
+                    }
+                }
+            }
+        }
+        nonMappedInnerNodesT1.removeAll(nonMappedInnerNodesT1ToRemove);
+        nonMappedLeavesT1List.removeAll(nonMappedLeavesT1ToRemove);
+
     }
 
     private static boolean checkForNonMappedLeavesT1(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT1List, UMLModelDiff modelDiff) {
