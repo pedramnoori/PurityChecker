@@ -41,7 +41,8 @@ dependencies {
     implementation group: 'org.graalvm.js', name: 'js', version: '22.2.0.1'
     implementation group: 'org.graalvm.js', name: 'js-scriptengine', version: '22.2.0.1'
     implementation 'org.eclipse.jgit:org.eclipse.jgit:5.13.0.202109080827-r'
-    implementation 'org.slf4j:slf4j-log4j12:1.7.36'
+    implementation 'org.slf4j:slf4j-api:2.0.6'
+    implementation 'org.slf4j:slf4j-simple:2.0.6'
     implementation 'junit:junit:4.13.2'
     //
     //implementation platform('fr.jmini.ecentral:eclipse-platform-dependencies:4.24')
