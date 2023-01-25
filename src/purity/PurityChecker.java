@@ -142,6 +142,11 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Inline Method on top of the inlined method - all mapped", purityComment, mappingState);
             }
 
+            checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
+            if(replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Rename Attribute on the top of the moved method - all mapped");
+            }
+
             int size1 = replacementsToCheck.size();
             int numberOfArgumentReplacedWithReturnReplacements = 0;
 
