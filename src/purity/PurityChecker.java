@@ -1,6 +1,7 @@
 package purity;
 
 import gr.uom.java.xmi.LocationInfo;
+import gr.uom.java.xmi.UMLAttribute;
 import gr.uom.java.xmi.UMLOperation;
 import gr.uom.java.xmi.decomposition.*;
 import gr.uom.java.xmi.decomposition.replacement.MethodInvocationReplacement;
@@ -95,6 +96,8 @@ public class PurityChecker {
 
             omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
+            checkForTernaryThenReplacement(refactoring, replacementsToCheck);
+
             if (replacementsToCheck.isEmpty()) {
                 purityComment += "Tolerable changes in the body" + "\n";
                 return new PurityCheckResult(true, "All replacements have been justified - all mapped", purityComment, mappingState);
@@ -104,6 +107,10 @@ public class PurityChecker {
             purityComment += "Overlapped refactoring - can be identical by undoing the overlapped refactoring" + "\n";
 
 
+            checkForRenameMethodRefactoringOnTop_Mapped(refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Rename Method Refactoring on the top of the Inline Method - all mapped", purityComment, mappingState);
+            }
 
             checkForRemoveParameterOnTopInline(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
@@ -118,6 +125,16 @@ public class PurityChecker {
             checkForInlineMethodOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Inline Method on top of the inlined method - all mapped", purityComment, mappingState);
+            }
+
+            checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Extract Variable on top of the inlined method - all mapped", purityComment, mappingState);
+            }
+
+            checkForRenameVariableOnTop(refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Rename Variable on top of the extract method - all mapped", purityComment, mappingState);
             }
 
             checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
@@ -159,6 +176,13 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Nested Inline Method or statements being mapped in other refactorings - non-mapped leaves", purityComment, mappingState);
             }
 
+            checkForRemoveAttributeOnTop(refactoring, modelDiff, nonMappedLeavesT1);
+
+            if (nonMappedLeavesT1.isEmpty()) {
+                purityComment += "Severe changes";
+                return new PurityCheckResult(true, "Remove Attribute change on top of the Inline Method - non-mapped leaves", purityComment, mappingState);
+            }
+
             checkForInlineVariableNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT1);
 
 
@@ -172,6 +196,12 @@ public class PurityChecker {
             if (nonMappedLeavesT1.isEmpty()) {
                 purityComment += "Severe changes";
                 return new PurityCheckResult(true, "Rename Method on top of the Inline Method - non-mapped leaves", purityComment, mappingState);
+            }
+
+            checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT1);
+            if (nonMappedLeavesT1.isEmpty()) {
+                purityComment += "Severe changes";
+                return new PurityCheckResult(true, "Extract Variable on the top of the Inline Method - with non-mapped leaves", purityComment, mappingState);
             }
 
 
@@ -197,6 +227,13 @@ public class PurityChecker {
                 return new PurityCheckResult(false, "non-mapped are not justified - non-mapped leaves", purityComment, mappingState);
             }
 
+            checkForRemoveAttributeOnTop(refactoring, modelDiff, nonMappedInnerNodesT1);
+
+            if (nonMappedInnerNodesT1.isEmpty()) {
+                purityComment = "Severe changes";
+                return new PurityCheckResult(true, "Remove Attribute change on top of the Inline Method - non-mapped leaves", purityComment, mappingState);
+            }
+
             int numberOfWrongNonMappedBlocks = 0;
             for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT1) {
                 if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
@@ -216,6 +253,52 @@ public class PurityChecker {
         }
     }
 
+    private static void checkForRemoveAttributeOnTop(InlineOperationRefactoring refactoring, UMLModelDiff modelDiff, List<AbstractCodeFragment> nonMappedLeavesT1) {
+
+        String className = refactoring.getInlinedOperation().getClassName();
+        if (!modelDiff.getUMLClassDiff(className).getRemovedAttributes().isEmpty()) {
+
+            List<UMLAttribute> removedAttributes = modelDiff.getUMLClassDiff(className).getRemovedAttributes();
+            List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
+
+            for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+                for (UMLAttribute removedAttribute : removedAttributes) {
+                    if (abstractCodeFragment.getArgumentizedString().contains(removedAttribute.getName())) {
+                        nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
+                    }
+                }
+            }
+            nonMappedLeavesT1.removeAll(nonMappedLeavesT1ToRemove);
+        }
+    }
+
+
+    private static void checkForTernaryThenReplacement(InlineOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.EXPRESSION_REPLACED_WITH_TERNARY_THEN)) {
+                AbstractCodeMapping mapping = findTheMapping(replacement, refactoring);
+                if (!mapping.getFragment1().getTernaryOperatorExpressions().isEmpty()) {
+                    for (TernaryOperatorExpression ternaryOperatorExpression : mapping.getFragment1().getTernaryOperatorExpressions()) {
+                        AbstractExpression condition = ternaryOperatorExpression.getCondition();
+                        if (mapping.getFragment2().getParent().getParent() != null) {
+                            if (mapping.getFragment2().getParent().getParent().getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.IF_STATEMENT)) {
+                                if (mapping.getFragment2().getParent().getParent().getExpressions().size() == 1) {
+                                    if (mapping.getFragment2().getParent().getParent().getExpressions().get(0).getExpression().equals(condition.getExpression()))
+                                        replacementsToRemove.add(replacement);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        replacementsToCheck.removeAll(replacementsToRemove);
+
+    }
+
     private static void checkForIfCondition(InlineOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedInnerNodesT1, List<AbstractCodeFragment> nonMappedLeavesT1List) {
 
         List<AbstractCodeFragment> nonMappedInnerNodesT1ToRemove = new ArrayList<>();
@@ -223,8 +306,9 @@ public class PurityChecker {
 
 
         for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT1) {
-            abstractCodeFragment.argumentizationAfterRefactorings(refactoring.getParameterToArgumentMap());
             if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.IF_STATEMENT)) {
+                abstractCodeFragment.argumentizationAfterRefactorings(refactoring.getParameterToArgumentMap());
+                abstractCodeFragment.replaceParametersWithArguments(refactoring.getParameterToArgumentMap());
                 if (abstractCodeFragment.getArgumentizedAfterRefactorings().equals("if(false)")) {
                     nonMappedInnerNodesT1ToRemove.add(abstractCodeFragment);
                     List<AbstractStatement> statements = ((CompositeStatementObject) (abstractCodeFragment)).getStatements();
@@ -247,10 +331,17 @@ public class PurityChecker {
 
     private static boolean checkForNonMappedLeavesT1(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT1List, UMLModelDiff modelDiff) {
 
+        if (nonMappedLeavesT1List.isEmpty()) {
+            return true;
+        }
+
         checkForInevitableVariableDeclarationInline(refactoring, nonMappedLeavesT1List, refactorings); // This method can also change the state of the refactoring's replacements
         checkForStatementsBeingMappedInTargetOperation(refactoring, refactorings, nonMappedLeavesT1List, modelDiff);
         checkForNestedInlineMethod(refactoring, refactorings, nonMappedLeavesT1List);
         checkForInlineVariableNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT1List);
+        checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT1List);
+        checkForRemoveAttributeOnTop(refactoring, modelDiff, nonMappedLeavesT1List);
+
 
         if (nonMappedLeavesT1List.isEmpty()) {
             return true;
@@ -401,13 +492,22 @@ public class PurityChecker {
         omitEqualStringLiteralsReplacement(replacementsToCheck);
         allReplacementsAreType(refactoring.getReplacements(), replacementsToCheck);
         omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
+        checkForTernaryThenReplacement(refactoring, replacementsToCheck);
+
+        if (replacementsToCheck.isEmpty()) {
+            return true;
+        }
+
 
         checkForRemoveParameterOnTop(refactoring, refactorings, replacementsToCheck);
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
         checkForInlineMethodOnTop(refactoring, refactorings, replacementsToCheck);
         checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForRenameVariableOnTop(refactorings, replacementsToCheck);
 
-        System.out.println("TT");
+
+
 
         if (replacementsToCheck.isEmpty()) {
             return true;
@@ -791,7 +891,7 @@ public class PurityChecker {
 
             purityComment += "Overlapped refactoring - can be identical by undoing the overlapped refactoring" + "\n";
 
-            checkForRenameMethodRefactoringOnTop_Mapped(refactoring, refactorings, replacementsToCheck);
+            checkForRenameMethodRefactoringOnTop_Mapped(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Rename Method Refactoring on the top of the extracted method - all mapped", purityComment, mappingState);
             }
@@ -950,9 +1050,9 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - with non-mapped leaves", purityComment, mappingState);
             }
 
-            checkForExtractVariableOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
+            checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT2);
             if (nonMappedLeavesT2.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Refactoring on the top of the extracted method - with non-mapped leaves", purityComment, mappingState);
+                return new PurityCheckResult(true, "Extract Variable on the top of the extracted method - with non-mapped leaves", purityComment, mappingState);
             }
 
 //            TODO - MoveAndRenameMethod refactoring on top of the extract method can cause a non-mapped leaf.
@@ -1457,26 +1557,35 @@ public class PurityChecker {
         return false;
     }
 
-    private static void checkForExtractVariableOnTop_NonMapped(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT2) {
+    private static void checkForExtractVariableOnTop_NonMapped(List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeaves) {
 
-        List<AbstractCodeFragment> nonMappedNodesT2ToRemove = new ArrayList<>();
+        List<AbstractCodeFragment> nonMappedLeavesToRemove = new ArrayList<>();
 
-        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT2) {
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeaves) {
             for (Refactoring refactoring1 : refactorings) {
                 if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_VARIABLE)) {
                     if (abstractCodeFragment.getVariableDeclarations().size() == 1) {
                         if (abstractCodeFragment.getVariableDeclarations().get(0).equals(((ExtractVariableRefactoring) (refactoring1)).getVariableDeclaration())) {
-                            nonMappedNodesT2ToRemove.add(abstractCodeFragment);
+                            nonMappedLeavesToRemove.add(abstractCodeFragment);
                         }
                     }
                 }
             }
         }
 
-        nonMappedLeavesT2.removeAll(nonMappedNodesT2ToRemove);
+        nonMappedLeaves.removeAll(nonMappedLeavesToRemove);
     }
 
-    private static void checkForExtractVariableOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+    private static void checkForExtractVariableOnTop(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+
+        Map<String, String> parameterToArgumentMap = null;
+        if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+            parameterToArgumentMap = ((ExtractOperationRefactoring) (refactoring)).getParameterToArgumentMap();
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+            parameterToArgumentMap = ((InlineOperationRefactoring) (refactoring)).getParameterToArgumentMap();;
+        }else {
+            return;
+        }
 
         Set<Replacement> replacementsToRemove = new HashSet<>();
         Map<String, String> patterns = new HashMap<>();
@@ -1484,7 +1593,7 @@ public class PurityChecker {
         for (Refactoring refactoring1 : refactorings) {
             if (refactoring1.getRefactoringType().equals(RefactoringType.EXTRACT_VARIABLE)) {
                 if (((ExtractVariableRefactoring) refactoring1).getVariableDeclaration().getInitializer() != null) {
-                    ((ExtractVariableRefactoring) refactoring1).getVariableDeclaration().getInitializer().replaceParametersWithArguments(refactoring.getParameterToArgumentMap());
+                    ((ExtractVariableRefactoring) refactoring1).getVariableDeclaration().getInitializer().replaceParametersWithArguments(parameterToArgumentMap);
                     patterns.put(((ExtractVariableRefactoring) refactoring1).getVariableDeclaration().getInitializer().getArgumentizedString(), ((ExtractVariableRefactoring) refactoring1).getVariableDeclaration().getVariableName());
                     patterns.put(((ExtractVariableRefactoring) refactoring1).getVariableDeclaration().getInitializer().getString(), ((ExtractVariableRefactoring) refactoring1).getVariableDeclaration().getVariableName());
                 }
@@ -1982,7 +2091,7 @@ public class PurityChecker {
         }
 
         checkForRenameRefactoringOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
-        checkForExtractVariableOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2);
+        checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT2);
 
         checkForInevitableVariableDeclaration(refactoring, nonMappedLeavesT2, refactorings); // This method can also change the state of the refactoring's replacements
 
@@ -2208,7 +2317,7 @@ public class PurityChecker {
         if(replacementsToCheck.isEmpty())
             return true;
 
-        checkForRenameMethodRefactoringOnTop_Mapped(refactoring, refactorings, replacementsToCheck);
+        checkForRenameMethodRefactoringOnTop_Mapped(refactorings, replacementsToCheck);
 
         checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
         if(replacementsToCheck.isEmpty())
@@ -2341,7 +2450,7 @@ public class PurityChecker {
             if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
                 for (Refactoring refactoring1: refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.RENAME_VARIABLE) || refactoring1.getRefactoringType().equals(RefactoringType.RENAME_PARAMETER) ||
-                            refactoring1.getRefactoringType().equals(RefactoringType.PARAMETERIZE_ATTRIBUTE)) {
+                            refactoring1.getRefactoringType().equals(RefactoringType.PARAMETERIZE_ATTRIBUTE) || refactoring1.getRefactoringType().equals(RefactoringType.REPLACE_ATTRIBUTE_WITH_VARIABLE)) {
                         if (replacement.getBefore().equals(((RenameVariableRefactoring)refactoring1).getOriginalVariable().getVariableName()) &&
                                 replacement.getAfter().equals(((RenameVariableRefactoring)refactoring1).getRenamedVariable().getVariableName())) {
                             handledReplacements.add(replacement);
@@ -2507,7 +2616,7 @@ public class PurityChecker {
         }
     }
 
-    private static void checkForRenameMethodRefactoringOnTop_Mapped(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
+    private static void checkForRenameMethodRefactoringOnTop_Mapped(List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
 
         // TODO: 8/3/2022 handle "Variable Replaced With Method Invocation case" replacement also
         List<RenameOperationRefactoring> renameOperationRefactoringList = getSpecificTypeRefactoring(refactorings,RenameOperationRefactoring.class);

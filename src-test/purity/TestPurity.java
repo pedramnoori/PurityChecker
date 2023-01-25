@@ -10,6 +10,8 @@ import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
@@ -932,7 +934,7 @@ public class TestPurity {
 //        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\33\\v2")).getUmlModel();
 //        UMLModelDiff modelDiff = model1.diff(model2);
 //        List<Refactoring> refactorings = modelDiff.getRefactorings();
-//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
+////        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
 //
 //
 //        for (Refactoring refactoring: refactorings){
@@ -940,48 +942,28 @@ public class TestPurity {
 //                assertTrue(pcr.get(refactoring).isPure());
 //        }
 //    }
+
+
 
     @Test
-    public void extractMethodTest_52() throws RefactoringMinerTimedOutException, IOException {
-
-
-        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/pouryafard75/TestCases.git",
-                "01e3ae2ac0c052f155426003685a0cb3031e3743", new RefactoringHandler() {
-                    @Override
-                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
-                        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
-                        System.out.println("HERE");
-//                        for (Refactoring refactoring: pcr.keySet()) {
-//                            if (refactoring.getRefactoringType().equals(RefactoringType.RENAME_METHOD))
-//                        }
-                    }
-                }, 100);
-    }
-
-//    @Test
-//    public void extractMethodTest_53() throws RefactoringMinerTimedOutException, IOException {
-//        // Rename Class with Inline Method - added and removed operations are empty
-//        UMLModel model1 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\37\\v1")).getUmlModel();
-//        UMLModel model2 = new UMLModelASTReader(new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\37\\v2")).getUmlModel();
-//        UMLModelDiff modelDiff = model1.diff(model2);
+    public void extractMethodTest_53() throws RefactoringMinerTimedOutException, IOException {
+        // Rename Class with Inline Method - added and removed operations are empty
+        GitHistoryRefactoringMinerImpl miner = new GitHistoryRefactoringMinerImpl();
+        UMLModelDiff umlModelDiff = miner.detectModelDiff(
+                new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\32\\v1"),
+                new File("C:\\Users\\Pedram\\Desktop\\TestCases\\TestCases\\TestCases\\32\\v2"));
 //        List<Refactoring> refactorings = modelDiff.getRefactorings();
-//        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(modelDiff);
-//
-//
-//        for (Refactoring refactoring: refactorings){
-//            if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION))
-//                assertTrue(pcr.get(refactoring).isPure());
-//        }
-//    }
+        Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
+        System.out.println("HERE");
+    }
 
     @Test
     public void extractMethodTest_54() throws RefactoringMinerTimedOutException, IOException {
 
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/libgdx/libgdx.git",
-                "2bd1557bc293cb8c2348374771aad832befbe26f", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/bitcoinj/bitcoinj.git",
+                "7744a00629514b9539acac05596d64af878fe747", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
