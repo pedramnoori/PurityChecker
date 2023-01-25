@@ -142,6 +142,19 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Inline Method on top of the inlined method - all mapped", purityComment, mappingState);
             }
 
+            int size1 = replacementsToCheck.size();
+            int numberOfArgumentReplacedWithReturnReplacements = 0;
+
+            for (Replacement replacement : replacementsToCheck) {
+                if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
+                    numberOfArgumentReplacedWithReturnReplacements++;
+                }
+            }
+
+            if (numberOfArgumentReplacedWithReturnReplacements == size1) {
+                return new PurityCheckResult(true, "Argument replaced with return expression - all mapped", purityComment, mappingState);
+            }
+
             purityComment = "Severe changes";
             return new PurityCheckResult(false, "Replacements cannot be justified", purityComment, mappingState);
 
