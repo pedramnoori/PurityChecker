@@ -122,6 +122,13 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the inlined method - all mapped", purityComment, mappingState);
             }
 
+            checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the extract method - all mapped", purityComment, mappingState);
+            }
+
             checkForInlineMethodOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Inline Method on top of the inlined method - all mapped", purityComment, mappingState);
@@ -139,7 +146,7 @@ public class PurityChecker {
 
             checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Inline Method on top of the inlined method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Inline Variable on top of the inlined method - all mapped", purityComment, mappingState);
             }
 
             checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
@@ -1258,14 +1265,15 @@ public class PurityChecker {
         }
     }
 
-    private static void checkForAddParameterInSubExpressionOnTop(ExtractOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+    private static void checkForAddParameterInSubExpressionOnTop(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
 
         Set<Replacement> replacementsToAdd = new HashSet<>();
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
 
         for (Replacement replacement : replacementsToCheck) {
-            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT)) {
+            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT) ||
+                    replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION)) {
                 String subExpressionMethodInvocation = candidateForAddParameter(replacement);
                 if (subExpressionMethodInvocation != null) {
                     AbstractCodeMapping mapping = findTheMapping(replacement, refactoring);
@@ -1287,6 +1295,23 @@ public class PurityChecker {
                         if (entry.getName().equals(subExpressionMethodInvocation)) {
                             after = entry.actualString();
                             invokedOperationAfter = entry;
+                        }
+                    }
+
+                    if (before == null || after == null || invokedOperationBefore == null || invokedOperationAfter == null) {
+
+                        for (AbstractCall entry: mapping.getFragment1().getCreations()) {
+                            if (entry.getName().equals(subExpressionMethodInvocation)) {
+                                before = entry.actualString();
+                                invokedOperationBefore = entry;
+                            }
+                        }
+
+                        for (AbstractCall entry: mapping.getFragment2().getCreations()) {
+                            if (entry.getName().equals(subExpressionMethodInvocation)) {
+                                after = entry.actualString();
+                                invokedOperationAfter = entry;
+                            }
                         }
                     }
 
@@ -1340,7 +1365,14 @@ public class PurityChecker {
 
                     int parIndex = ((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().arguments().get(i).indexOf("(");
                     String subExpressionMethodInvocation = ((MethodInvocationReplacement) (replacement)).getInvokedOperationBefore().arguments().get(i).substring(0, parIndex);
-                    return subExpressionMethodInvocation;
+                    if (subExpressionMethodInvocation.split(" ").length == 2) {
+                        String[] nameSplitted = subExpressionMethodInvocation.split(" ");
+                        if (nameSplitted[0].toLowerCase().equals("new")) {
+                            return nameSplitted[1];
+                        }
+                    }else {
+                        return subExpressionMethodInvocation;
+                    }
 
                 }
             }
