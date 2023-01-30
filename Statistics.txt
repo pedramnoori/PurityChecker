@@ -518,3 +518,14 @@ Specificity: 96.0739
 FScore: 0.90594596
 
 
+For Inline Method: TIME: 2023-01-30 16:39:13.057
+TP: 59
+TN: 40
+FP: 0
+FN: 6
+Precision: 100.0
+Recall: 90.76923
+Specificity: 100.0
+FScore: 0.9516129
+
+
