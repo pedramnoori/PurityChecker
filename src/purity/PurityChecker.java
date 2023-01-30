@@ -6,6 +6,7 @@ import gr.uom.java.xmi.UMLOperation;
 import gr.uom.java.xmi.decomposition.*;
 import gr.uom.java.xmi.decomposition.replacement.MethodInvocationReplacement;
 import gr.uom.java.xmi.decomposition.replacement.Replacement;
+import gr.uom.java.xmi.decomposition.replacement.VariableReplacementWithMethodInvocation;
 import gr.uom.java.xmi.diff.*;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringMinerTimedOutException;
@@ -97,6 +98,8 @@ public class PurityChecker {
             omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
             checkForTernaryThenReplacement(refactoring, replacementsToCheck);
+            
+            checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
 
             if (replacementsToCheck.isEmpty()) {
                 purityComment += "Tolerable changes in the body" + "\n";
@@ -278,6 +281,22 @@ public class PurityChecker {
         }
     }
 
+    private static void checkForVariableReplacedWithMethodInvocationSpecialCases(InlineOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_REPLACED_WITH_METHOD_INVOCATION)) {
+                if (((VariableReplacementWithMethodInvocation) replacement).getDirection().name().equals("VARIABLE_TO_INVOCATION")) {
+                    if (replacement.getAfter().contains(replacement.getBefore())) {
+                        replacementsToRemove.add(replacement);
+                    }
+                }
+            }
+        }
+        replacementsToCheck.removeAll(replacementsToRemove);
+    }
+
     private static void checkForRemoveAttributeOnTop(InlineOperationRefactoring refactoring, UMLModelDiff modelDiff, List<AbstractCodeFragment> nonMappedLeavesT1) {
 
         String className = refactoring.getInlinedOperation().getClassName();
@@ -303,7 +322,8 @@ public class PurityChecker {
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
         for (Replacement replacement : replacementsToCheck) {
-            if (replacement.getType().equals(Replacement.ReplacementType.EXPRESSION_REPLACED_WITH_TERNARY_THEN)) {
+            if (replacement.getType().equals(Replacement.ReplacementType.EXPRESSION_REPLACED_WITH_TERNARY_THEN) ||
+                    replacement.getType().equals(Replacement.ReplacementType.CONDITIONAL)) {
                 AbstractCodeMapping mapping = findTheMapping(replacement, refactoring);
                 if (!mapping.getFragment1().getTernaryOperatorExpressions().isEmpty()) {
                     for (TernaryOperatorExpression ternaryOperatorExpression : mapping.getFragment1().getTernaryOperatorExpressions()) {
@@ -530,6 +550,7 @@ public class PurityChecker {
         checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForRenameVariableOnTop(refactorings, replacementsToCheck);
+        checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
 
 
 
@@ -2285,6 +2306,13 @@ public class PurityChecker {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.RENAME_ATTRIBUTE)) {
                         if (replacement.getBefore().equals(((RenameAttributeRefactoring)refactoring1).getOriginalAttribute().getName()) &&
                                 replacement.getAfter().equals(((RenameAttributeRefactoring)refactoring1).getRenamedAttribute().getName())) {
+                            handledReplacements.add(replacement);
+                            break;
+                        }
+
+//                        This second check is kind of a relax check to cover the cases contain "this." pattern. It can happen in cases of Rename Attribute.
+                        if (replacement.getBefore().contains(((RenameAttributeRefactoring)refactoring1).getOriginalAttribute().getName()) &&
+                                replacement.getAfter().contains(((RenameAttributeRefactoring)refactoring1).getRenamedAttribute().getName())) {
                             handledReplacements.add(replacement);
                             break;
                         }
