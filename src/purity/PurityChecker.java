@@ -154,7 +154,12 @@ public class PurityChecker {
 
             checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
             if(replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Attribute on the top of the moved method - all mapped");
+                return new PurityCheckResult(true, "Rename Attribute on the top of the moved method - all mapped", purityComment, mappingState);
+            }
+
+            checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
+            if(replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "One of the overlapping cases - all mapped", purityComment, mappingState);
             }
 
             int size1 = replacementsToCheck.size();
@@ -279,6 +284,35 @@ public class PurityChecker {
 
             return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
         }
+    }
+
+    private static void checkTheReplacementsAlreadyHandled(Refactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacements = null;
+        if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+            replacements = ((ExtractOperationRefactoring) (refactoring)).getReplacements();
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+            replacements = ((InlineOperationRefactoring) (refactoring)).getReplacements();
+        }else {
+            return;
+        }
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+        Set<Replacement> handledReplacements = new HashSet<>();
+
+        handledReplacements.addAll(replacements);
+        handledReplacements.removeAll(replacementsToCheck);
+
+
+        for (Replacement replacement : handledReplacements) {
+            for (Replacement refactoringReplacement : replacementsToCheck) {
+                if (replacement.getBefore().equals(refactoringReplacement.getBefore())) {
+                    replacementsToRemove.add(refactoringReplacement);
+                }
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
     }
 
     private static void checkForVariableReplacedWithMethodInvocationSpecialCases(InlineOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) {
@@ -486,11 +520,13 @@ public class PurityChecker {
 
 
         for (UMLOperationBodyMapper umlOperationBodyMapper : umlClassDiff.getOperationBodyMapperList()) {
-            if (umlOperationBodyMapper.getOperation2().getName().equals(refactoring.getTargetOperationAfterInline().getName())) {
-                for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
-                    for (AbstractCodeMapping mapping : umlOperationBodyMapper.getMappings()) {
-                        if (mapping.getFragment2().getString().equals(abstractCodeFragment.getString())) {
-                            nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
+            if (umlOperationBodyMapper != null) {
+                if (umlOperationBodyMapper.getOperation2().getName().equals(refactoring.getTargetOperationAfterInline().getName())) {
+                    for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+                        for (AbstractCodeMapping mapping : umlOperationBodyMapper.getMappings()) {
+                            if (mapping.getFragment2().getString().equals(abstractCodeFragment.getString())) {
+                                nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
+                            }
                         }
                     }
                 }
@@ -551,11 +587,22 @@ public class PurityChecker {
         checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForRenameVariableOnTop(refactorings, replacementsToCheck);
         checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
-
-
-
+        checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
 
         if (replacementsToCheck.isEmpty()) {
+            return true;
+        }
+
+        int size1 = replacementsToCheck.size();
+        int numberOfArgumentReplacedWithReturnReplacements = 0;
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
+                numberOfArgumentReplacedWithReturnReplacements++;
+            }
+        }
+
+        if (numberOfArgumentReplacedWithReturnReplacements == size1) {
             return true;
         }
 
@@ -1023,6 +1070,11 @@ public class PurityChecker {
             checkForMergeConditionalOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Merge Conditional on the top of the extract method - all mapped", purityComment, mappingState);
+            }
+
+            checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
+            if(replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "One of the overlapping cases - all mapped", purityComment, mappingState);
             }
 
             int size1 = replacementsToCheck.size();
@@ -2429,6 +2481,9 @@ public class PurityChecker {
             return true;
 
         refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
+
+        checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
+
 //            for https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938 commit - performLocalRehashAwareOperation
         if (replacementsToCheck.isEmpty()) {
             return true;

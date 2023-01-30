@@ -29,7 +29,7 @@ public class PurityJSONHandler {
 //        numberOfRefactorings("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
-//        runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
+        runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 //
         calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityResultTest.json", RefactoringType.EXTRACT_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.MOVE_OPERATION);
