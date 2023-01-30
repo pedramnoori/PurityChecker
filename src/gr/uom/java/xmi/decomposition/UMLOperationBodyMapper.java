@@ -2099,20 +2099,7 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 	}
 
 	public Set<Refactoring> getRefactorings() {
-		VariableReplacementAnalysis analysis = new VariableReplacementAnalysis(this, refactorings, classDiff, matchedVariables);
-		refactorings.addAll(analysis.getVariableRenames());
-		refactorings.addAll(analysis.getVariableMerges());
-		refactorings.addAll(analysis.getVariableSplits());
-		matchedVariables.addAll(analysis.getMatchedVariables());
-		candidateAttributeRenames.addAll(analysis.getCandidateAttributeRenames());
-		candidateAttributeMerges.addAll(analysis.getCandidateAttributeMerges());
-		candidateAttributeSplits.addAll(analysis.getCandidateAttributeSplits());
-
-		removedVariables = analysis.getRemovedVariables();
-		removedVariables.addAll(analysis.getRemovedVariablesStoringTheReturnOfInlinedMethod());
-		addedVariables = analysis.getAddedVariables();
-		addedVariables.addAll(analysis.getAddedVariablesStoringTheReturnOfExtractedMethod());
-		movedVariables = analysis.getMovedVariables();
+		computeRefactoringsWithinBody();
 
 		if(parentMapper == null && getOperation1() != null && getOperation2() != null) {
 			this.operationSignatureDiff = new UMLOperationDiff(this);
@@ -2159,6 +2146,23 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 			this.refactorings.addAll(temp);
 		}
 		return refactorings;
+	}
+
+	public void computeRefactoringsWithinBody() {
+		VariableReplacementAnalysis analysis = new VariableReplacementAnalysis(this, refactorings, classDiff, matchedVariables);
+		refactorings.addAll(analysis.getVariableRenames());
+		refactorings.addAll(analysis.getVariableMerges());
+		refactorings.addAll(analysis.getVariableSplits());
+		matchedVariables.addAll(analysis.getMatchedVariables());
+		candidateAttributeRenames.addAll(analysis.getCandidateAttributeRenames());
+		candidateAttributeMerges.addAll(analysis.getCandidateAttributeMerges());
+		candidateAttributeSplits.addAll(analysis.getCandidateAttributeSplits());
+
+		removedVariables = analysis.getRemovedVariables();
+		removedVariables.addAll(analysis.getRemovedVariablesStoringTheReturnOfInlinedMethod());
+		addedVariables = analysis.getAddedVariables();
+		addedVariables.addAll(analysis.getAddedVariablesStoringTheReturnOfExtractedMethod());
+		movedVariables = analysis.getMovedVariables();
 	}
 
 	public Set<Refactoring> getRefactoringsAfterPostProcessing() {
@@ -5904,6 +5908,13 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 				}
 				findReplacements(nullLiterals1, ternaryExpressions2, replacementInfo, ReplacementType.NULL_LITERAL_REPLACED_WITH_CONDITIONAL_EXPRESSION);
 			}
+			if(methodInvocations1.size() > methodInvocations2.size() && !containsMethodSignatureOfAnonymousClass(statement1.getString())) {
+				Set<String> ternaryExpressions2 = new LinkedHashSet<String>();
+				for(TernaryOperatorExpression ternary : statement2.getTernaryOperatorExpressions()) {
+					ternaryExpressions2.add(ternary.getExpression());	
+				}
+				findReplacements(methodInvocations1, ternaryExpressions2, replacementInfo, ReplacementType.METHOD_INVOCATION_REPLACED_WITH_CONDITIONAL_EXPRESSION);
+			}
 			Set<String> ternaryExpressions2 = new LinkedHashSet<String>();
 			Set<String> tmpVariables1 = new LinkedHashSet<String>();
 			for(TernaryOperatorExpression ternary : statement2.getTernaryOperatorExpressions()) {
@@ -5928,6 +5939,13 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 					ternaryExpressions1.add(ternary.getExpression());	
 				}
 				findReplacements(ternaryExpressions1, nullLiterals2, replacementInfo, ReplacementType.NULL_LITERAL_REPLACED_WITH_CONDITIONAL_EXPRESSION);
+			}
+			if(methodInvocations2.size() > methodInvocations1.size() && !containsMethodSignatureOfAnonymousClass(statement2.getString())) {
+				Set<String> ternaryExpressions1 = new LinkedHashSet<String>();
+				for(TernaryOperatorExpression ternary : statement1.getTernaryOperatorExpressions()) {
+					ternaryExpressions1.add(ternary.getExpression());	
+				}
+				findReplacements(ternaryExpressions1, methodInvocations2, replacementInfo, ReplacementType.METHOD_INVOCATION_REPLACED_WITH_CONDITIONAL_EXPRESSION);
 			}
 			Set<String> ternaryExpressions1 = new LinkedHashSet<String>();
 			Set<String> tmpVariables2 = new LinkedHashSet<String>();

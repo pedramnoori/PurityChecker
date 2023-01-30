@@ -45,7 +45,7 @@ public class testAllCases {
                 expected,actual);
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name= "{index}: File: {2}, Repo: {0}, Commit: {1}")
     public static Iterable<Object[]> initData() throws Exception {
         List<Object[]> allCases = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
@@ -56,11 +56,21 @@ public class testAllCases {
         	String repoFolder = info.getRepo().substring(info.getRepo().lastIndexOf("/"), info.getRepo().indexOf(".git"));
         	Repository repo = gitService.cloneIfNotExists(REPOS + repoFolder, info.getRepo());
         	Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, info.getCommit());
+            List<String> expectedFilesList = new ArrayList<>(List.of(Objects.requireNonNull(new File(getFinalFolderPath(getTestDir(), info.getRepo(), info.getCommit())).list())));
             for (ASTDiff astDiff : astDiffs) {
                 String finalFilePath = getFinalFilePath(astDiff, getTestDir(), info.getRepo(), info.getCommit());
                 String calculated = astDiff.getMultiMappings().exportString();
                 String expected = FileUtils.readFileToString(new File(finalFilePath), "utf-8");
                 allCases.add(new Object[]{info.getRepo(),info.getCommit(),astDiff.getSrcPath(),expected,calculated});
+                expectedFilesList.remove(getFileNameFromSrcDiff(astDiff.getSrcPath()));
+            }
+            for (String expectedButNotGeneratedFile : expectedFilesList) {
+                String expectedDiffName = getSrcASTDiffFromFile(expectedButNotGeneratedFile);
+                allCases.add(new Object[]
+                        {
+                        info.getRepo(),info.getCommit(),expectedDiffName,"{JSON}","NOT GENERATED"
+                        }
+                );
             }
         }
         return allCases;
