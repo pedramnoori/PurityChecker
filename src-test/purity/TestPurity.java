@@ -962,8 +962,8 @@ public class TestPurity {
 
 
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/katzer/cordova-plugin-local-notifications.git",
-                "51f498a96b2fa1822e392027982c20e950535fd1", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/rstudio/rstudio.git",
+                "9a581e07cb6381d70f3fd9bb2055e810e2a682a9", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);

@@ -529,3 +529,36 @@ Specificity: 100.0
 FScore: 0.9516129
 
 
+For Extract Method: TIME: 2023-01-30 16:46:00.725
+TP: 421
+TN: 417
+FP: 17
+FN: 68
+Precision: 96.11872
+Recall: 86.09407
+Specificity: 96.08295
+FScore: 0.90830636
+
+
+For Extract Method: TIME: 2023-01-31 21:28:03.141
+TP: 427
+TN: 434
+FP: 14
+FN: 50
+Precision: 96.82539
+Recall: 89.51782
+Specificity: 96.875
+FScore: 0.9302832
+
+
+For Inline Method: TIME: 2023-01-31 21:30:16.735
+TP: 59
+TN: 40
+FP: 0
+FN: 6
+Precision: 100.0
+Recall: 90.76923
+Specificity: 100.0
+FScore: 0.9516129
+
+

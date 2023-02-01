@@ -4,6 +4,7 @@ import gr.uom.java.xmi.LocationInfo;
 import gr.uom.java.xmi.UMLAttribute;
 import gr.uom.java.xmi.UMLOperation;
 import gr.uom.java.xmi.decomposition.*;
+import gr.uom.java.xmi.decomposition.replacement.IntersectionReplacement;
 import gr.uom.java.xmi.decomposition.replacement.MethodInvocationReplacement;
 import gr.uom.java.xmi.decomposition.replacement.Replacement;
 import gr.uom.java.xmi.decomposition.replacement.VariableReplacementWithMethodInvocation;
@@ -100,6 +101,7 @@ public class PurityChecker {
             checkForTernaryThenReplacement(refactoring, replacementsToCheck);
             
             checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
+            omitAnonymousClassDeclarationReplacements(replacementsToCheck);
 
             if (replacementsToCheck.isEmpty()) {
                 purityComment += "Tolerable changes in the body" + "\n";
@@ -574,6 +576,8 @@ public class PurityChecker {
         allReplacementsAreType(refactoring.getReplacements(), replacementsToCheck);
         omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
         checkForTernaryThenReplacement(refactoring, replacementsToCheck);
+        omitAnonymousClassDeclarationReplacements(replacementsToCheck);
+
 
         if (replacementsToCheck.isEmpty()) {
             return true;
@@ -976,6 +980,8 @@ public class PurityChecker {
 
             omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
+            omitAnonymousClassDeclarationReplacements(replacementsToCheck);
+
             if (replacementsToCheck.isEmpty()) {
                 purityComment += "Tolerable changes in the body" + "\n";
                 return new PurityCheckResult(true, "All replacements have been justified - all mapped", purityComment, mappingState);
@@ -1277,6 +1283,19 @@ public class PurityChecker {
             purityComment = "Severe changes";
             return new PurityCheckResult(false, "Contains non-mapped inner nodes", purityComment, mappingState);
         }
+    }
+
+    private static void omitAnonymousClassDeclarationReplacements(HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.ANONYMOUS_CLASS_DECLARATION)) {
+                replacementsToRemove.add(replacement);
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
     }
 
     private static void omitReturnRelatedReplacements(ExtractOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) {
@@ -2412,6 +2431,8 @@ public class PurityChecker {
 
             omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
             omitReturnRelatedReplacements(refactoring, replacementsToCheck);
+            omitAnonymousClassDeclarationReplacements(replacementsToCheck);
+
 
 
         }
