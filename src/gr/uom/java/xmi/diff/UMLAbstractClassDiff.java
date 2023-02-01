@@ -58,6 +58,7 @@ public abstract class UMLAbstractClassDiff {
 	private Map<SplitVariableReplacement, Set<CandidateSplitVariableRefactoring>> splitMap = new LinkedHashMap<SplitVariableReplacement, Set<CandidateSplitVariableRefactoring>>();
 	protected List<Refactoring> refactorings;
 	protected UMLModelDiff modelDiff;
+	private static final List<String> collectionAPINames = List.of("get", "add", "contains", "put", "putAll", "addAll", "equals");
 	
 	public UMLAbstractClassDiff(UMLAbstractClass originalClass, UMLAbstractClass nextClass, UMLModelDiff modelDiff) {
 		this.addedOperations = new ArrayList<UMLOperation>();
@@ -196,7 +197,23 @@ public abstract class UMLAbstractClassDiff {
 							if(!insertedOperation.equals(addedOperation)) {
 								Set<AbstractCall> intersection = new LinkedHashSet<AbstractCall>(movedInvocations);
 								intersection.retainAll(insertedOperation.getAllOperationInvocations());
-								if(movedInvocations.equals(intersection)) {
+								for(Iterator<AbstractCall> operationInvocationIterator = intersection.iterator(); operationInvocationIterator.hasNext();) {
+									AbstractCall invocation = operationInvocationIterator.next();
+									boolean lambdaGet = invocation.getName().equals("get") && invocation.arguments().size() == 0;
+									boolean collectionGet = invocation.getName().startsWith("get") && invocation.arguments().size() == 1;
+									if(!lambdaGet && (collectionAPINames.contains(invocation.getName()) || collectionGet)) {
+										operationInvocationIterator.remove();
+									}
+								}
+								List<AbstractCall> unmatchedCalls = new ArrayList<AbstractCall>(movedInvocations);
+								unmatchedCalls.removeAll(insertedOperation.getAllOperationInvocations());
+								if(movedInvocations.containsAll(intersection) && intersection.size() > 1 && intersection.size() >= unmatchedCalls.size()) {
+									for(CompositeStatementObject composite : operationBodyMapper.getNonMappedInnerNodesT1()) {
+										unmatchedCalls.removeAll(composite.getMethodInvocations());
+									}
+									for(AbstractCodeFragment fragment : operationBodyMapper.getNonMappedLeavesT1()) {
+										unmatchedCalls.removeAll(fragment.getMethodInvocations());
+									}
 									boolean callsInsertedOperation = false;
 									for(AbstractCodeFragment fragment : operationBodyMapper.getNonMappedLeavesT2()) {
 										for(AbstractCall call : fragment.getMethodInvocations()) {
@@ -222,7 +239,7 @@ public abstract class UMLAbstractClassDiff {
 											}
 										}
 									}
-									if(!callsInsertedOperation) {
+									if(unmatchedCalls.isEmpty() && !callsInsertedOperation) {
 										CandidateSplitMethodRefactoring newCandidate = new CandidateSplitMethodRefactoring();
 										newCandidate.addSplitMethod(addedOperation);
 										newCandidate.addSplitMethod(insertedOperation);
@@ -249,7 +266,7 @@ public abstract class UMLAbstractClassDiff {
 		return false;
 	}
 
-	protected boolean isPartOfMethodMovedFromDeletedMethod(VariableDeclarationContainer removedOperation, VariableDeclarationContainer addedOperation) {
+	protected boolean isPartOfMethodMovedFromDeletedMethod(VariableDeclarationContainer removedOperation, VariableDeclarationContainer addedOperation, UMLOperationBodyMapper operationBodyMapper) {
 		if(removedOperations.size() != addedOperations.size()) {
 			for(UMLOperationBodyMapper mapper : operationBodyMapperList) {
 				List<AbstractCall> invocationsCalledInOperation1 = mapper.getContainer1().getAllOperationInvocations();
@@ -285,36 +302,79 @@ public abstract class UMLAbstractClassDiff {
 							if(!deletedOperation.equals(removedOperation)) {
 								Set<AbstractCall> intersection = new LinkedHashSet<AbstractCall>(movedInvocations);
 								intersection.retainAll(deletedOperation.getAllOperationInvocations());
-								if(intersection.equals(movedInvocations)) {
-									boolean addedOperationHasAdditionalParameters = false;
-									if(identicalOperationInvocations) {
-										//check if addedOperation has additional parameters
-										List<UMLType> addedOperationParameterTypes = addedOperation.getParameterTypeList();
-										List<UMLType> removedOperationParameterTypes = removedOperation.getParameterTypeList();
-										List<UMLType> deletedOperationParameterTypes = deletedOperation.getParameterTypeList();
-										if(addedOperationParameterTypes.containsAll(removedOperationParameterTypes) &&
-												addedOperationParameterTypes.containsAll(deletedOperationParameterTypes) &&
-												addedOperationParameterTypes.size() > removedOperationParameterTypes.size() &&
-												addedOperationParameterTypes.size() > deletedOperationParameterTypes.size()) {
-											addedOperationHasAdditionalParameters = true;
-										}
+								for(Iterator<AbstractCall> operationInvocationIterator = intersection.iterator(); operationInvocationIterator.hasNext();) {
+									AbstractCall invocation = operationInvocationIterator.next();
+									boolean lambdaGet = invocation.getName().equals("get") && invocation.arguments().size() == 0;
+									boolean collectionGet = invocation.getName().startsWith("get") && invocation.arguments().size() == 1;
+									if(!lambdaGet && (collectionAPINames.contains(invocation.getName()) || collectionGet)) {
+										operationInvocationIterator.remove();
 									}
-									if(!identicalOperationInvocations || addedOperationHasAdditionalParameters) {
-										CandidateMergeMethodRefactoring newCandidate = new CandidateMergeMethodRefactoring();
-										newCandidate.addMergedMethod(removedOperation);
-										newCandidate.addMergedMethod(deletedOperation);
-										newCandidate.setNewMethodAfterMerge(addedOperation);
-										boolean alreadyInCandidates = false;
-										for(CandidateMergeMethodRefactoring oldCandidate : candidateMethodMerges) {
-											if(newCandidate.equals(oldCandidate)) {
-												alreadyInCandidates = true;
+								}
+								List<AbstractCall> unmatchedCalls = new ArrayList<AbstractCall>(movedInvocations);
+								unmatchedCalls.removeAll(deletedOperation.getAllOperationInvocations());
+								if(movedInvocations.containsAll(intersection) && intersection.size() > 1 && intersection.size() >= unmatchedCalls.size()) {
+									for(CompositeStatementObject composite : operationBodyMapper.getNonMappedInnerNodesT2()) {
+										unmatchedCalls.removeAll(composite.getMethodInvocations());
+									}
+									for(AbstractCodeFragment fragment : operationBodyMapper.getNonMappedLeavesT2()) {
+										unmatchedCalls.removeAll(fragment.getMethodInvocations());
+									}
+									boolean callsDeletedOperation = false;
+									for(AbstractCodeFragment fragment : operationBodyMapper.getNonMappedLeavesT1()) {
+										for(AbstractCall call : fragment.getMethodInvocations()) {
+											if(call.matchesOperation(deletedOperation, operationBodyMapper.getContainer1(), modelDiff)) {
+												callsDeletedOperation = true;
 												break;
 											}
 										}
-										if(!alreadyInCandidates) {
-											candidateMethodMerges.add(newCandidate);
+										if(callsDeletedOperation) {
+											break;
 										}
-										return true;
+									}
+									if(!callsDeletedOperation) {
+										for(CompositeStatementObject composite : operationBodyMapper.getNonMappedInnerNodesT1()) {
+											for(AbstractCall call : composite.getMethodInvocations()) {
+												if(call.matchesOperation(deletedOperation, operationBodyMapper.getContainer1(), modelDiff)) {
+													callsDeletedOperation = true;
+													break;
+												}
+											}
+											if(callsDeletedOperation) {
+												break;
+											}
+										}
+									}
+									if(unmatchedCalls.isEmpty() && !callsDeletedOperation) {
+										boolean addedOperationHasAdditionalParameters = false;
+										if(identicalOperationInvocations) {
+											//check if addedOperation has additional parameters
+											List<UMLType> addedOperationParameterTypes = addedOperation.getParameterTypeList();
+											List<UMLType> removedOperationParameterTypes = removedOperation.getParameterTypeList();
+											List<UMLType> deletedOperationParameterTypes = deletedOperation.getParameterTypeList();
+											if(addedOperationParameterTypes.containsAll(removedOperationParameterTypes) &&
+													addedOperationParameterTypes.containsAll(deletedOperationParameterTypes) &&
+													addedOperationParameterTypes.size() > removedOperationParameterTypes.size() &&
+													addedOperationParameterTypes.size() > deletedOperationParameterTypes.size()) {
+												addedOperationHasAdditionalParameters = true;
+											}
+										}
+										if(!identicalOperationInvocations || addedOperationHasAdditionalParameters) {
+											CandidateMergeMethodRefactoring newCandidate = new CandidateMergeMethodRefactoring();
+											newCandidate.addMergedMethod(removedOperation);
+											newCandidate.addMergedMethod(deletedOperation);
+											newCandidate.setNewMethodAfterMerge(addedOperation);
+											boolean alreadyInCandidates = false;
+											for(CandidateMergeMethodRefactoring oldCandidate : candidateMethodMerges) {
+												if(newCandidate.equals(oldCandidate)) {
+													alreadyInCandidates = true;
+													break;
+												}
+											}
+											if(!alreadyInCandidates) {
+												candidateMethodMerges.add(newCandidate);
+											}
+											return true;
+										}
 									}
 								}
 							}
