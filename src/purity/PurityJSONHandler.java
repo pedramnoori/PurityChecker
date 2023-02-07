@@ -3,6 +3,8 @@ package purity;
 //import org.json.simple.*;
 //import org.json.simple.parser.*;
 
+import com.fasterxml.jackson.core.util.DefaultIndenter;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -29,14 +31,56 @@ public class PurityJSONHandler {
 //        numberOfRefactorings("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
-//        runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\Puritydata.json");
+        String outputPath = runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 //
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.INLINE_OPERATION);
-//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json", RefactoringType.MOVE_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.INLINE_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.EXTRACT_OPERATION);
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
 //        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
+        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json", "Move Method");
 
+    }
+
+    private static void extractRefactoringFromOracle(String sourcePath, String refactoringType) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        File file = new File(sourcePath);
+        ArrayNode arrayNode = objectMapper.createArrayNode();
+
+
+        try {
+            JsonNode root = objectMapper.readTree(file);
+            for (JsonNode jsonNode : root) {
+                for (JsonNode refactoring : jsonNode.get("refactorings")) {
+                    if (refactoring.get("type").textValue().equals(refactoringType) &&
+                            (refactoring.get("validation").textValue().equals("TP") ||
+                                    refactoring.get("validation").textValue().equals("CTP"))) {
+                        arrayNode.add(jsonNode);
+                        break;
+                    }
+                }
+            }
+
+//
+//            List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
+//
+//            for (RepositoryJson repositoryJson : repositoryJsonList) {
+//                for (RefactoringJson refactoring : repositoryJson.getRefactorings()) {
+//                    if (refactoring.getType().equals(refactoringType)) {
+//                        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+//                        String jsonStr = objectMapper.writeValueAsString(repositoryJson);
+//                        arrayNode.add(jsonStr.replaceAll("\\s+", ""));
+////                        System.out.println(jsonStr);
+//                        break;
+//                    }
+//                }
+//            }
+
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+            objectMapper.writeValue(new File("/Users/pedram/Desktop/RefactoringMiner/src/purity/" + refactoringType +".json"), arrayNode);
+            } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void testMethod(String sourcePath) {
@@ -214,7 +258,7 @@ public class PurityJSONHandler {
         return res;
     }
 
-    private static void runPurity(String sourcePath) {
+    private static String runPurity(String sourcePath) {
 
         ObjectMapper objectMapper = new ObjectMapper();
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
@@ -232,7 +276,7 @@ public class PurityJSONHandler {
                                 Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);
 
                                 for (JsonNode refactoring : jsonNode.get("refactorings")) {
-                                    if (refactoring.get("validation").textValue().equals("TP") || refactoring.get("validation").textValue().equals("FN")) {
+                                    if (refactoring.get("validation").textValue().equals("TP") || refactoring.get("validation").textValue().equals("FN") || refactoring.get("validation").textValue().equals("CTP")) {
                                         for (Map.Entry<Refactoring, PurityCheckResult> entry : pcr.entrySet()) {
                                             if (entry.getValue() != null) {
                                                 if (entry.getKey().toString().replaceAll("\\s+", "").equals(refactoring.get("description").textValue().replaceAll("\\s+", ""))
@@ -267,7 +311,9 @@ public class PurityJSONHandler {
                         }, 100);
             }
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json"), arrayNode);
+            String outputPath = "/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json";
+            objectMapper.writeValue(new File(outputPath), arrayNode);
+            return outputPath;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

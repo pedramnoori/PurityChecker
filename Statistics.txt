@@ -562,3 +562,47 @@ Specificity: 100.0
 FScore: 0.9516129
 
 
+For Inline Method: TIME: 2023-02-04 19:42:31.555
+TP: 0
+TN: 0
+FP: 0
+FN: 0
+Precision: NaN
+Recall: NaN
+Specificity: NaN
+FScore: NaN
+
+
+For Extract Method: TIME: 2023-02-04 19:42:31.674
+TP: 0
+TN: 0
+FP: 0
+FN: 0
+Precision: NaN
+Recall: NaN
+Specificity: NaN
+FScore: NaN
+
+
+For Inline Method: TIME: 2023-02-04 19:43:24.92
+TP: 60
+TN: 39
+FP: 1
+FN: 5
+Precision: 98.36066
+Recall: 92.30769
+Specificity: 97.5
+FScore: 0.952381
+
+
+For Extract Method: TIME: 2023-02-04 19:43:25.069
+TP: 426
+TN: 433
+FP: 15
+FN: 51
+Precision: 96.59864
+Recall: 89.30818
+Specificity: 96.65179
+FScore: 0.9281046
+
+
