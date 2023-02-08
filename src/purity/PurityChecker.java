@@ -310,7 +310,11 @@ public class PurityChecker {
             return;
         }
 
-        if (bodyMapper.getRemovedVariables().isEmpty()) {
+        if (bodyMapper.getRemovedVariables() != null) {
+            if (bodyMapper.getRemovedVariables().isEmpty()) {
+                return;
+            }
+        } else {
             return;
         }
 
