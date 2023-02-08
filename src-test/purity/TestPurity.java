@@ -991,8 +991,8 @@ public class TestPurity {
     public void extractMethodTest_55() throws RefactoringMinerTimedOutException, IOException {
 //  The test commit TODO second runTests Extract method is pure and I reported it as impure so far
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/apache/cassandra.git",
-                "f797bfa4da53315b49f8d97b784047f33ba1bf5f", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/apache/drill.git",
+                "c1b847acdc8cb90a1498b236b3bb5c81ca75c044", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);

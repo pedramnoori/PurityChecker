@@ -28616,7 +28616,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28630,7 +28630,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28644,7 +28644,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28658,7 +28658,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Laleh, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28672,7 +28672,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28686,7 +28686,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28700,7 +28700,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28714,7 +28714,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28728,7 +28728,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28742,7 +28742,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28756,7 +28756,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28770,7 +28770,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28784,7 +28784,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28798,7 +28798,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28812,7 +28812,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28826,7 +28826,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28840,7 +28840,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28854,7 +28854,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28868,7 +28868,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28882,7 +28882,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28910,7 +28910,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28924,7 +28924,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28938,7 +28938,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28952,7 +28952,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28966,7 +28966,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28980,7 +28980,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28994,7 +28994,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -29008,7 +29008,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -29022,7 +29022,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -29036,7 +29036,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -29176,7 +29176,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -29190,7 +29190,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -29442,11 +29442,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "-assertFalse- has been changed to -Assert.assertFalse- which is a pure change obviously"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -29596,7 +29596,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -29974,11 +29974,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The test methods are totally different. Test logic has been changed a lot"
     }
   }, {
     "type" : "Move Method",
@@ -32955,11 +32955,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "There is an Extract Method refactoring on top of the moved method. The string construction part has been extracted to -constructInstanceInfo()- method. So, this move method refactoring is pure"
     }
   }, {
     "type" : "Move Method",
@@ -32969,7 +32969,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -32983,7 +32983,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -32997,7 +32997,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -33011,7 +33011,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -33025,7 +33025,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
