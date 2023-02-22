@@ -6600,6 +6600,14 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 			replacementInfo.addReplacement(replacement);
 			return replacementInfo.getReplacements();
 		}
+		//method invocation has been renamed (one name contains the other), both expressions are null, and one contains all the arguments of the other
+		if(invocationCoveringTheEntireStatement1 != null && invocationCoveringTheEntireStatement2 != null &&
+				invocationCoveringTheEntireStatement1.renamedWithNoExpressionAndArgumentIntersection(invocationCoveringTheEntireStatement2, replacementInfo.getReplacements(), parameterToArgumentMap)) {
+			Replacement replacement = new MethodInvocationReplacement(invocationCoveringTheEntireStatement1.actualString(),
+					invocationCoveringTheEntireStatement2.actualString(), invocationCoveringTheEntireStatement1, invocationCoveringTheEntireStatement2, ReplacementType.METHOD_INVOCATION_NAME_AND_ARGUMENT);
+			replacementInfo.addReplacement(replacement);
+			return replacementInfo.getReplacements();
+		}
 		//method invocation has been renamed and arguments changed, but the expressions are identical
 		if(invocationCoveringTheEntireStatement1 != null && invocationCoveringTheEntireStatement2 != null &&
 				invocationCoveringTheEntireStatement1.renamedWithIdenticalExpressionAndDifferentArguments(invocationCoveringTheEntireStatement2, replacementInfo.getReplacements(), parameterToArgumentMap, UMLClassBaseDiff.MAX_OPERATION_NAME_DISTANCE, lambdaMappers)) {
@@ -9457,7 +9465,20 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 		return false;
 	}
 
-	private boolean parentMapperContainsExactMapping(AbstractStatement statement) {
+	public boolean parentMapperContainsMapping(AbstractCodeFragment statement) {
+		if(parentMapper != null) {
+			for(AbstractCodeMapping mapping : parentMapper.mappings) {
+				AbstractCodeFragment fragment1 = mapping.getFragment1();
+				AbstractCodeFragment fragment2 = mapping.getFragment2();
+				if(fragment1.equals(statement) || fragment2.equals(statement)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	private boolean parentMapperContainsExactMapping(AbstractCodeFragment statement) {
 		if(parentMapper != null) {
 			for(AbstractCodeMapping mapping : parentMapper.mappings) {
 				AbstractCodeFragment fragment1 = mapping.getFragment1();
@@ -9718,9 +9739,7 @@ public class UMLOperationBodyMapper implements Comparable<UMLOperationBodyMapper
 		}
 		else if(childMappers.size() > 0) {
 			for(UMLOperationBodyMapper childMapper : childMappers) {
-				if(!childMapper.operationInvocation.getName().equals(this.container2.getName()) &&
-						!childMapper.operationInvocation.getName().equals(this.container1.getName()) &&
-						childMapper.containsExtractedOrInlinedOperationInvocation(mapping)) {
+				if(childMapper.containsExtractedOrInlinedOperationInvocation(mapping)) {
 					return true;
 				}
 			}

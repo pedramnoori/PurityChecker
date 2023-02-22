@@ -1292,6 +1292,13 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 			}
 		}
 		if(mismatchesConsistentMethodInvocationRename(bestMapper, consistentMethodInvocationRenames.keySet()) && !exactMappings(bestMapper)) {
+			for(int i=1; i<mapperList.size(); i++) {
+				UMLOperationBodyMapper mapper = mapperList.get(i);
+				boolean inconsistent = mismatchesConsistentMethodInvocationRename(mapper, consistentMethodInvocationRenames.keySet()) && !exactMappings(mapper);
+				if(!inconsistent) {
+					return mapper;
+				}
+			}
 			return null;
 		}
 		if(identicalBodyWithOperation2OfTheBestMapper || identicalBodyWithOperation1OfTheBestMapper) {
@@ -1752,12 +1759,34 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 			List<UMLOperation> sortedAddedOperations = detection.getAddedOperationsSortedByCalls();
 			for(UMLOperation addedOperation : sortedAddedOperations) {
 				List<ExtractOperationRefactoring> refs = detection.check(addedOperation);
+				List<ExtractOperationRefactoring> discarded = new ArrayList<>();
+				if(refs.size() > 1) {
+					for(ExtractOperationRefactoring refactoring : refs) {
+						Set<AbstractCodeMapping> mappings = refactoring.getBodyMapper().getMappings();
+						if(mappings.size() == 1) {
+							AbstractCodeMapping mapping = mappings.iterator().next();
+							if(!mapping.getFragment1().getString().equals(mapping.getFragment2().getString())) {
+								AbstractCall call1 = mapping.getFragment1().invocationCoveringEntireFragment();
+								AbstractCall call2 = mapping.getFragment2().invocationCoveringEntireFragment();
+								if(call1 != null && call2 != null && call1.getName().equals(refactoring.getExtractedOperation().getName()) &&
+										call2.getName().equals(refactoring.getExtractedOperation().getName())) {
+									discarded.add(refactoring);
+								}
+							}
+						}
+					}
+				}
+				if(discarded.equals(refs)) {
+					discarded.clear();
+				}
 				for(ExtractOperationRefactoring refactoring : refs) {
-					refactorings.add(refactoring);
-					UMLOperationBodyMapper operationBodyMapper = refactoring.getBodyMapper();
-					extractedOperationMappers.add(operationBodyMapper);
-					mapper.addChildMapper(operationBodyMapper);
-					operationsToBeRemoved.add(addedOperation);
+					if(!discarded.contains(refactoring)) {
+						refactorings.add(refactoring);
+						UMLOperationBodyMapper operationBodyMapper = refactoring.getBodyMapper();
+						extractedOperationMappers.add(operationBodyMapper);
+						mapper.addChildMapper(operationBodyMapper);
+						operationsToBeRemoved.add(addedOperation);
+					}
 				}
 			}
 		}
@@ -1925,7 +1954,7 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 				editDistances.add(mapping.editDistance());
 			}
 			Set<Integer> indicesToBeRemoved = new LinkedHashSet<>();
-			if(callsExtractedInlinedMethod.contains(true) && callsExtractedInlinedMethod.contains(false)) {
+			if(callsExtractedInlinedMethod.contains(true) && callsExtractedInlinedMethod.contains(false) && !sameMethodInvocationReplacement(mappings)) {
 				for(int i=0; i<callsExtractedInlinedMethod.size(); i++) {
 					if(callsExtractedInlinedMethod.get(i) == true) {
 						indicesToBeRemoved.add(i);
@@ -2057,6 +2086,29 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 			}
 		}
 		refactorings.removeAll(refactoringsToBeRemoved);
+	}
+
+	private boolean sameMethodInvocationReplacement(List<AbstractCodeMapping> mappings) {
+		AbstractCall callBefore = null;
+		AbstractCall callAfter = null;
+		int matchingCalls = 0;
+		for(AbstractCodeMapping mapping : mappings) {
+			for(Replacement r : mapping.getReplacements()) {
+				if(r instanceof MethodInvocationReplacement) {
+					MethodInvocationReplacement replacement = (MethodInvocationReplacement)r;
+					if(callBefore == null && callAfter == null) {
+						callBefore = replacement.getInvokedOperationBefore();
+						callAfter = replacement.getInvokedOperationAfter();
+					}
+					else if(callBefore != null && callAfter != null) {
+						if(callBefore.equals(replacement.getInvokedOperationBefore()) && callAfter.equals(replacement.getInvokedOperationAfter())) {
+							matchingCalls++;
+						}
+					}
+				}
+			}
+		}
+		return matchingCalls > 0 && matchingCalls == mappings.size() - 1;
 	}
 
 	private boolean atLeastOneMappingCallsExtractedOrInlinedMethodWithVariableDeclarationOrThrow(List<AbstractCodeMapping> mappings, List<UMLOperationBodyMapper> mappers) {
