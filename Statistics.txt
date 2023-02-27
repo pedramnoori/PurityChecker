@@ -606,3 +606,14 @@ Specificity: 96.65179
 FScore: 0.9281046
 
 
+For Move Method: TIME: 2023-02-22 12:31:17.534
+TP: 156
+TN: 25
+FP: 0
+FN: 4
+Precision: 100.0
+Recall: 97.5
+Specificity: 100.0
+FScore: 0.98734176
+
+

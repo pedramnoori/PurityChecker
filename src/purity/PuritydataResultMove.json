@@ -14,9 +14,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "One setter has been added and used, which changes the behavior of the moved operation"
     }
   }, {
@@ -233,9 +233,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -247,9 +247,9 @@
     "validators" : "Laleh",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -261,9 +261,9 @@
     "validators" : "Laleh",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -275,9 +275,9 @@
     "validators" : "Laleh",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -289,9 +289,9 @@
     "validators" : "Laleh",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -303,9 +303,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
+      "mappingState" : 1,
       "validationComment" : "Types has been changed, which do not change the behavior"
     }
   }, {
@@ -555,9 +555,9 @@
     "validators" : "Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
+      "mappingState" : 1,
       "validationComment" : "All replacements are variable types"
     }
   }, {
@@ -900,9 +900,9 @@
     "validators" : "Laleh",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "transitive parameter has been added and put to the dependencyNotation variable"
     }
   }, {
@@ -937,9 +937,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "one method call has been added"
     }
   }, {
@@ -1002,9 +1002,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1193,9 +1193,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1207,9 +1207,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1249,9 +1249,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Changes caused my move class refactoring"
     }
   }, {
@@ -1664,9 +1664,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "The condition has been changed - ARROW has been added"
     }
   }, {
@@ -1692,9 +1692,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "The condition has been changed"
     }
   }, {
@@ -1706,9 +1706,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Move Method refactoring on top of the moved method"
     }
   }, {
@@ -1720,9 +1720,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "There are lots of changes. One new case (-) has been added to the moved function"
     }
   }, {
@@ -1734,9 +1734,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "two cases have been removed"
     }
   }, {
@@ -1748,9 +1748,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Change has been caused because of the nested move method refactoring. In this case, within this commit, the -error- method has been moved from -PredicateTokeniser- class to -PredicatedHandlersParser- class. So, the change is a pure change!"
     }
   }, {
@@ -1762,9 +1762,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "one condition has been added - if (operator.equals(ARROW))"
     }
   }, {
@@ -1776,9 +1776,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "one condition has been added - if (operator.equals(ARROW))"
     }
   }, {
@@ -1790,9 +1790,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "two cases have been removed"
     }
   }, {
@@ -1818,9 +1818,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1888,9 +1888,9 @@
     "validators" : "Davood",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "Logic has been changed - one condition has been added"
     }
   }, {
@@ -1958,9 +1958,9 @@
     "validators" : "Matin, Laleh",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "Logic has been changed a lot"
     }
   }, {
@@ -1972,9 +1972,9 @@
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "Logic has been changed completely"
     }
   }, {
@@ -1986,9 +1986,9 @@
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "Logic has been changed completely"
     }
   }, {
@@ -2084,9 +2084,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "Logic has been changed - one condition has been added"
     }
   }, {
@@ -2947,9 +2947,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "The object which has been passed has been changed - before it was -halt- with the type of -tomicBoolean-, and the new version is -SynchronizedBypassPropagationList-"
     }
   }, {
@@ -2961,9 +2961,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "The object which has been passed has been changed - before it was -halt- with the type of -tomicBoolean-, and the new version is -SynchronizedBypassPropagationList-"
     }
   }, {
@@ -4804,9 +4804,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4846,9 +4846,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5471,9 +5471,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5485,9 +5485,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5499,9 +5499,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5513,9 +5513,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -6642,9 +6642,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -6782,9 +6782,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -6824,9 +6824,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Add Parameter on top of the moved method"
     }
   }, {
@@ -6838,9 +6838,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -6880,9 +6880,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -6894,9 +6894,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -6908,9 +6908,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -6950,9 +6950,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "One statement has been added to the moved method - listener.initStorage();-"
     }
   }, {
@@ -7020,9 +7020,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "One statement has been added to the moved method - listener.ensureEdgeIndex(edgeIndex);-"
     }
   }, {
@@ -7034,9 +7034,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7048,9 +7048,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7076,9 +7076,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7104,9 +7104,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7118,9 +7118,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7132,9 +7132,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "Move and Rename Method on top of the moved method"
     }
   }, {
@@ -7146,9 +7146,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7160,9 +7160,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7174,9 +7174,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7188,9 +7188,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7216,9 +7216,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7230,9 +7230,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7258,9 +7258,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7286,9 +7286,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7300,9 +7300,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7328,9 +7328,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7370,9 +7370,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7384,9 +7384,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7412,9 +7412,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7426,9 +7426,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7468,9 +7468,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7482,9 +7482,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7510,9 +7510,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7524,9 +7524,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7538,9 +7538,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7566,9 +7566,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "One statement has been added to the moved method - -listener.ensureNodeIndex(nodeIndex);-"
     }
   }, {
@@ -13796,9 +13796,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -13810,9 +13810,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -13861,9 +13861,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -14304,9 +14304,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -19171,9 +19171,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23086,9 +23086,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23100,9 +23100,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23263,9 +23263,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23328,9 +23328,9 @@
     "validators" : "Laleh, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23342,9 +23342,9 @@
     "validators" : "Laleh, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23356,9 +23356,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23370,9 +23370,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23384,9 +23384,9 @@
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23398,9 +23398,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23412,9 +23412,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23426,9 +23426,9 @@
     "validators" : "Laleh, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23440,9 +23440,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23454,9 +23454,9 @@
     "validators" : "Laleh, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23468,9 +23468,9 @@
     "validators" : "Laleh, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23482,9 +23482,9 @@
     "validators" : "Laleh, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23496,9 +23496,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23510,9 +23510,9 @@
     "validators" : "Laleh, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23524,9 +23524,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23538,9 +23538,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23701,9 +23701,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23715,9 +23715,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23729,9 +23729,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23743,9 +23743,9 @@
     "validators" : "Laleh",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23757,9 +23757,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23771,9 +23771,9 @@
     "validators" : "Laleh, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "Remove Variable change on top of the moved method"
     }
   }, {
@@ -23785,9 +23785,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "Remove Variable change on top of the moved method"
     }
   }, {
@@ -24214,9 +24214,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -24284,9 +24284,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -24298,9 +24298,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -24312,9 +24312,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -24326,9 +24326,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -24559,9 +24559,9 @@
     "validators" : "Matin, Laleh, Davood, Nikos",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "-modifierItems- is a linkedList and -items- is an arrayList. Also, there is no connection between those."
     }
   }, {
@@ -25086,9 +25086,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25100,9 +25100,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25114,9 +25114,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25128,9 +25128,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25142,9 +25142,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25156,9 +25156,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25170,9 +25170,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25184,9 +25184,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25198,9 +25198,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "the if condition has been changed. Also, there is one nonMappedLeavesT2, which is unjustifiable"
     }
   }, {
@@ -25212,9 +25212,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25226,9 +25226,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25240,9 +25240,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25254,9 +25254,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25268,9 +25268,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25282,9 +25282,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25296,9 +25296,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25310,9 +25310,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25324,9 +25324,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25338,9 +25338,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25352,9 +25352,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : ""
     }
   }, {
@@ -25529,9 +25529,9 @@
     "validators" : "Laleh, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25720,9 +25720,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   } ],
@@ -25911,9 +25911,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "the change between -transactionIdStore- to -neoStoreModule.neoStore()- is not justifiable"
     }
   }, {
@@ -28272,9 +28272,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28617,9 +28617,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28631,9 +28631,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28645,9 +28645,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28659,9 +28659,9 @@
     "validators" : "Matin, Laleh, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28673,9 +28673,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28687,9 +28687,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28701,9 +28701,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28715,9 +28715,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28729,9 +28729,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28743,9 +28743,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28757,9 +28757,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28771,9 +28771,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28785,9 +28785,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28799,9 +28799,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28813,9 +28813,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28827,9 +28827,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28841,9 +28841,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28855,9 +28855,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28869,9 +28869,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28883,9 +28883,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28911,9 +28911,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28925,9 +28925,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28939,9 +28939,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28953,9 +28953,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28967,9 +28967,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28981,9 +28981,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -28995,9 +28995,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29009,9 +29009,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29023,9 +29023,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29037,9 +29037,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29177,9 +29177,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29191,9 +29191,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29443,9 +29443,9 @@
     "validators" : "Matin, Davood, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "-assertFalse- has been changed to -Assert.assertFalse- which is a pure change obviously"
     }
   }, {
@@ -29597,9 +29597,9 @@
     "validators" : "Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29863,9 +29863,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29877,9 +29877,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29891,9 +29891,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29905,9 +29905,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29919,9 +29919,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29933,9 +29933,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29947,9 +29947,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29961,9 +29961,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -29975,9 +29975,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "The test methods are totally different. Test logic has been changed a lot"
     }
   }, {
@@ -29989,9 +29989,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -30003,9 +30003,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -30017,9 +30017,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -32956,9 +32956,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "There is an Extract Method refactoring on top of the moved method. The string construction part has been extracted to -constructInstanceInfo()- method. So, this move method refactoring is pure"
     }
   }, {
@@ -32970,9 +32970,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -32984,9 +32984,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -32998,9 +32998,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -33012,9 +33012,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -33026,9 +33026,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -45354,11 +45354,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the initial value of -retryCount- variable has been changed from 5 to 3. It was a field in the parent version and modified to int value in the child version"
+      "validationComment" : ""
     }
   }, {
     "type" : "Extract And Move Method",
@@ -46273,7 +46273,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -46287,7 +46287,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -46301,7 +46301,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -46315,7 +46315,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -47094,11 +47094,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Pull up method on top of the moved method"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -47136,7 +47136,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -47206,7 +47206,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -47248,11 +47248,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Pull up method on top of the moved method"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -48284,11 +48284,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Abstract method without body has been moved"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -48298,11 +48298,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Abstract method without body has been moved"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move And Rename Method",
@@ -48363,7 +48363,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -48391,11 +48391,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "There are around 10 non-mapped statements, which are unjustifiable"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -48405,11 +48405,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the if condition has been changed, and reported as a non-mapped node, which makes sense."
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -48419,7 +48419,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -48624,7 +48624,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -48708,7 +48708,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -48722,7 +48722,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -48736,7 +48736,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -48750,7 +48750,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -48764,7 +48764,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -48778,7 +48778,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -48792,7 +48792,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -48806,11 +48806,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "It's a suspicious case although it seems more of a like an impure case."
+      "validationComment" : ""
     }
   }, {
     "type" : "Extract Method",
@@ -49599,7 +49599,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -49888,11 +49888,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "The change from -searches -> indexRangeService- is not justifiable given the fact that even the type of the two variables are different"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -49902,11 +49902,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "The change from -searches -> indexRangeService- is not justifiable given the fact that even the type of the two variables are different"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -49916,11 +49916,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "throw has been added to the child version. Also, two statements have been removed from the parent version."
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -49930,7 +49930,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -50163,7 +50163,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -50214,11 +50214,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "The change between -options -> optionElements- is not justifiable although it seems pure."
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -50228,7 +50228,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -50242,7 +50242,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -51077,11 +51077,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -51091,11 +51091,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -51105,11 +51105,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -51119,11 +51119,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Attribute",
@@ -51282,7 +51282,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -51310,7 +51310,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -51324,7 +51324,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -51543,11 +51543,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Couple of unjustifiable added statements in child version"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -51557,7 +51557,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -52364,11 +52364,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Extract Variable on top of the Move Method refactoring"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -53661,11 +53661,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Move and Rename Method on top of the moved method"
+      "validationComment" : ""
     }
   }, {
     "type" : "Extract Method",
@@ -53796,11 +53796,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Hard case. Attribute -INDICATOR_SIZE- has been removed and one similar variable has been added to the moved method. Since the variable initializer is different from the attribute, it's kind of impossible to catch this pure change."
+      "validationComment" : ""
     }
   }, {
     "type" : "Rename Method",
@@ -53987,11 +53987,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "A statement has been added to the child version - Could change the state of the graphPath parameter"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -54001,11 +54001,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "A statement has been added to the child version - Could change the state of the graphPath parameter"
+      "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
@@ -54015,11 +54015,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "A statement has been added to the child version - Could change the state of the graphPath parameter"
+      "validationComment" : ""
     }
   }, {
     "type" : "Extract Variable",
@@ -54248,7 +54248,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -54299,7 +54299,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -54313,7 +54313,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -54327,7 +54327,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -54341,7 +54341,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -54355,7 +54355,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -54397,11 +54397,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Although in one of the constructor's of the class, the -homeDir- field is the same as before, but in the another one, it can be different from the parent version, which is -user.home-. So, it can change the functionality and it's impure."
+      "validationComment" : ""
     }
   }, {
     "type" : "Extract And Move Method",
@@ -54588,7 +54588,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -87631,29 +87631,6 @@
     }
   } ],
   "refDiffExecutionTime" : 2532
-}, {
-  "id" : 1155159,
-  "repository" : "https://github.com/bitfireAT/davdroid.git",
-  "sha1" : "5b7947034a656c463ca477e198f7728cccc9e4c1",
-  "url" : "https://github.com/bitfireAT/davdroid/commit/5b7947034a656c463ca477e198f7728cccc9e4c1",
-  "author" : "Ricki Hirner",
-  "time" : "8/1/15 8:25 AM",
-  "refactorings" : [ {
-    "type" : "Move Method",
-    "description" : "Move Method package recurrenceSetsToAndroidString(dates List<? extends DateListProperty>) : String from class at.bitfire.davdroid.resource.LocalCalendar to public recurrenceSetsToAndroidString(dates List<? extends DateListProperty>, allDay boolean) : String from class at.bitfire.davdroid.DateUtils",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ],
-  "refDiffExecutionTime" : 0
 }, {
   "id" : 1155451,
   "repository" : "https://github.com/droolsjbpm/jbpm.git",

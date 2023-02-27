@@ -31,14 +31,14 @@ public class PurityJSONHandler {
 //        numberOfRefactorings("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
-        String outputPath = runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
+        String outputPath = runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/Move Method.json");
 //
-//        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.INLINE_OPERATION);
+        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResultMove.json", RefactoringType.MOVE_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.EXTRACT_OPERATION);
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
 //        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
-        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json", "Move Method");
+//        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json", "Move Method");
 
     }
 
@@ -311,7 +311,7 @@ public class PurityJSONHandler {
                         }, 100);
             }
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String outputPath = "/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json";
+            String outputPath = "/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResultMove.json";
             objectMapper.writeValue(new File(outputPath), arrayNode);
             return outputPath;
         } catch (IOException e) {

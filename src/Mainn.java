@@ -13,12 +13,22 @@ import java.util.Map;
 public class Mainn {
 
     public static void main(String[] args) {
+//    IMPORTANT. THE BUG IN REFACTORING MINER. NEEDS TO BE DISCUSSED WITH POURYA AND NIKOS
+//        String inp = "System.out.println(certs(abbas));";
+//        Map<String,String> myMap = new HashMap<>();
+//        myMap.put("certs","local");
+//        String s = replaceParametersWithArguments(inp, myMap);
+//        System.out.println(s);
 
-        String inp = "System.out.println(certs(abbas));";
-        Map<String,String> myMap = new HashMap<>();
-        myMap.put("certs","local");
-        String s = replaceParametersWithArguments(inp, myMap);
-        System.out.println(s);
+
+
+String l1 = "cleanupWriterSocket(pw)";
+String l2 = "serverCnxn.cleanupWriterSocket(pw)";
+
+        System.out.println(l2.indexOf(l1));
+        System.out.println(l2.substring(0, 10));
+
+
 
     }
 
