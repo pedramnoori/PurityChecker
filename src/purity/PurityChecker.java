@@ -714,6 +714,12 @@ Mapping state for Move Method refactoring purity:
                 purityComment += "Tolerable changes in the body" + "\n";
             }
 
+            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
+
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Move Method specific changes - all mapped", "Changes are within the Move Method refactoring mechanics", mappingState);
+            }
+
             purityComment += "Overlapped refactoring - can be identical by undoing the overlapped refactoring" + "\n";
 
             checkForRemoveParameterOnTop(refactoring, refactorings, replacementsToCheck);
@@ -839,6 +845,48 @@ Mapping state for Move Method refactoring purity:
             return new PurityCheckResult(false, "Contains non-mapped leaves or nodes", "Severe Changes", 5);
         }
 
+    }
+
+    private static void omitMoveMethodRelatedReplacements(MoveOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION)) {
+                if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName().equals(
+                        ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName()
+                )) {
+                    if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().equals(
+                            ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments()
+                    )) {
+                        String before = replacement.getBefore();
+                        String after = replacement.getAfter();
+
+                        int foundInAfter = after.indexOf(before);
+                        int foundInBefore = before.indexOf(after);
+
+                        String classBefore = refactoring.getOriginalOperation().getNonQualifiedClassName();
+                        String classAfter = refactoring.getMovedOperation().getNonQualifiedClassName();
+
+
+                        if (foundInBefore != -1) {
+                            String instanceOrVariable = before.substring(0, foundInBefore - 1);
+                            if (instanceOrVariable.equals(classAfter)) {
+                                replacementsToRemove.add(replacement);
+                            }
+
+                        }else if (foundInAfter != -1) {
+                            String instanceOrVariable = after.substring(0, foundInAfter - 1);
+                            if (instanceOrVariable.equals(classBefore)) {
+                                replacementsToRemove.add(replacement);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
     }
 
     private static void checkForPullUpMethodOnTop(MoveOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck, UMLModelDiff modelDiff) {
@@ -992,6 +1040,8 @@ Mapping state for Move Method refactoring purity:
         omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
+        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
+
 
 //        int sizeToCheckAfter = replacementsToCheck.size();
 
