@@ -49,7 +49,7 @@ public class PurityChecker {
                 result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             default:
                 result = null;
@@ -102,6 +102,8 @@ public class PurityChecker {
             
             checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
             omitAnonymousClassDeclarationReplacements(replacementsToCheck);
+            omitStringRelatedReplacements(replacementsToCheck);
+
 
             if (replacementsToCheck.isEmpty()) {
                 purityComment += "Tolerable changes in the body" + "\n";
@@ -136,7 +138,7 @@ public class PurityChecker {
 
             checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the extract method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the inlined method - all mapped", purityComment, mappingState);
             }
 
             checkForInlineMethodOnTop(refactoring, refactorings, replacementsToCheck);
@@ -151,7 +153,12 @@ public class PurityChecker {
 
             checkForRenameVariableOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Variable on top of the extract method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Rename Variable on top of the inlined method - all mapped", purityComment, mappingState);
+            }
+
+            checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Encapsulate refactoring on top of the inlined method - all mapped", purityComment, mappingState);
             }
 
             checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
@@ -623,6 +630,8 @@ public class PurityChecker {
         omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
         checkForTernaryThenReplacement(refactoring, replacementsToCheck);
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
+        omitStringRelatedReplacements(replacementsToCheck);
+
 
 
         if (replacementsToCheck.isEmpty()) {
@@ -639,6 +648,8 @@ public class PurityChecker {
         checkForRemoveVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
         checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
+        checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
+
 
         if (replacementsToCheck.isEmpty()) {
             return true;
@@ -706,6 +717,8 @@ Mapping state for Move Method refactoring purity:
 
             omitAnonymousClassDeclarationReplacements(replacementsToCheck);
 
+            omitStringRelatedReplacements(replacementsToCheck);
+
             int sizeToCheckAfter = replacementsToCheck.size();
 
             if (replacementsToCheck.isEmpty()) {
@@ -749,10 +762,10 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Extract Class on top of the moved method - all mapped", purityComment, mappingState);
             }
 
-            checkForRemoveVariableOnTop(refactoring, refactorings, replacementsToCheck);
-            if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "One or more variables have been removed from the body of the moved method - all mapped", purityComment, mappingState);
-            }
+//            checkForRemoveVariableOnTop(refactoring, refactorings, replacementsToCheck);
+//            if (replacementsToCheck.isEmpty()) {
+//                return new PurityCheckResult(true, "One or more variables have been removed from the body of the moved method - all mapped", purityComment, mappingState);
+//            }
 
             checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
@@ -804,6 +817,11 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Pull Up Method on top of the moved method - all mapped", purityComment, mappingState);
             }
 
+            checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Encapsulate refactoring on top of the moved method - all mapped", purityComment, mappingState);
+            }
+
             checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
 
             checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
@@ -843,10 +861,103 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Extract Variable on top of the moved method - with non-mapped leaves or nodes", "Severe Changes", 5);
             }
 
+            checkForExtraBreakStatementsWithinSwitch(nonMappedLeavesT1, nonMappedLeavesT2);
+
+            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+                return new PurityCheckResult(true, "Extra break statements within a switch statement - with non-mapped leaves or nodes", "Severe Changes", 5);
+            }
+
+            int size1 = nonMappedLeavesT1.size();
+            int size2 = nonMappedLeavesT2.size();
+            int returnStatementCounter1 = 0;
+            int returnStatementCounter2 = 0;
+
+
+            for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+                if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                    returnStatementCounter1++;
+                }
+            }
+
+            for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT2) {
+                if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                    returnStatementCounter2++;
+                }
+            }
+
+            if (size1 == returnStatementCounter1 && size2 == returnStatementCounter2 && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+                return new PurityCheckResult(true, "Return expression has been added within the Move Method mechanics - with non-mapped leaves", "Severe Changes", 5);
+            }
+
 
             return new PurityCheckResult(false, "Contains non-mapped leaves or nodes", "Severe Changes", 5);
         }
 
+    }
+
+    private static void checkForEncapsulateAttributeOnTop(List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_REPLACED_WITH_METHOD_INVOCATION)) {
+                for (Refactoring refactoring1 : refactorings) {
+                    if (refactoring1.getRefactoringType().equals(RefactoringType.ENCAPSULATE_ATTRIBUTE)) {
+                        if (replacement.getBefore().equals(((EncapsulateAttributeRefactoring) refactoring1).getAttributeBefore().getName())) {
+                            if (((EncapsulateAttributeRefactoring) refactoring1).getAddedGetter() != null) {
+                                if (((EncapsulateAttributeRefactoring) refactoring1).getAddedGetter().getName().equals(((VariableReplacementWithMethodInvocation) replacement).getInvokedOperation().getName())) {
+                                    replacementsToRemove.add(replacement);
+                                }
+                            } else if (((EncapsulateAttributeRefactoring) refactoring1).getAddedSetter() != null) {
+                                if (((EncapsulateAttributeRefactoring) refactoring1).getAddedSetter().getName().equals(((VariableReplacementWithMethodInvocation) replacement).getInvokedOperation().getName())) {
+                                    replacementsToRemove.add(replacement);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
+    }
+
+    private static void checkForExtraBreakStatementsWithinSwitch(List<AbstractCodeFragment> nonMappedLeavesT1, List<AbstractCodeFragment> nonMappedLeavesT2) {
+
+        List<AbstractCodeFragment> nonMappedLeavesT2ToRemove = new ArrayList<>();
+        List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+            if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BREAK_STATEMENT)) {
+                if (abstractCodeFragment.getParent().getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.SWITCH_STATEMENT)) {
+                    nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
+                }
+            }
+        }
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT2) {
+            if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BREAK_STATEMENT)) {
+                if (abstractCodeFragment.getParent().getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.SWITCH_CASE)) {
+                    nonMappedLeavesT2ToRemove.add(abstractCodeFragment);
+                }
+            }
+        }
+        nonMappedLeavesT1.removeAll(nonMappedLeavesT1ToRemove);
+        nonMappedLeavesT2.removeAll(nonMappedLeavesT2ToRemove);
+
+
+    }
+
+    private static void omitStringRelatedReplacements(HashSet<Replacement> replacementsToCheck) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getBefore().replaceAll("\"", "").replaceAll("'", "").equals(replacement.getAfter().replaceAll("\"", "").replaceAll("'", ""))) {
+                replacementsToRemove.add(replacement);
+            }
+        }
+        replacementsToCheck.removeAll(replacementsToRemove);
     }
 
     private static void omitMoveMethodRelatedReplacements(MoveOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
@@ -1043,6 +1154,8 @@ Mapping state for Move Method refactoring purity:
 
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
         omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
+        omitStringRelatedReplacements(replacementsToCheck);
+
 
 
 //        int sizeToCheckAfter = replacementsToCheck.size();
@@ -1065,6 +1178,8 @@ Mapping state for Move Method refactoring purity:
         checkForThisPatternReplacement(replacementsToCheck);
         checkForRenameMethodRefactoringOnTop_Mapped(refactorings, replacementsToCheck);
         checkForRemoveVariableOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
+
 
 
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
@@ -1362,6 +1477,8 @@ Mapping state for Move Method refactoring purity:
             omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
             omitAnonymousClassDeclarationReplacements(replacementsToCheck);
+            omitStringRelatedReplacements(replacementsToCheck);
+
 
             if (replacementsToCheck.isEmpty()) {
                 purityComment += "Tolerable changes in the body" + "\n";
@@ -1407,6 +1524,11 @@ Mapping state for Move Method refactoring purity:
             checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
             if(replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Rename Attribute on the top of the extracted method - all mapped", purityComment, mappingState);
+            }
+
+            checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Encapsulate refactoring on top of the extracted method - all mapped", purityComment, mappingState);
             }
 
             checkForMoveAttributeOnTop(refactorings, replacementsToCheck);
@@ -2500,7 +2622,8 @@ Mapping state for Move Method refactoring purity:
                 checkForRemoveParameterOnTopConstructorVersion(bodyMapper, replacement, refactorings, replacementsToCheck);
             }
             if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT) ||
-                    (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) && ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getName().equals(((MethodInvocationReplacement)replacement).getInvokedOperationBefore().getName()))) {
+                    (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) && ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getName().equals(((MethodInvocationReplacement)replacement).getInvokedOperationBefore().getName())) ||
+                    (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_NAME_AND_ARGUMENT) && ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getName().equals(((MethodInvocationReplacement)replacement).getInvokedOperationBefore().getName()))) {
 
                     ArrayList<String> temp1 = new ArrayList<>(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments());
                     ArrayList<String> temp2 = new ArrayList<>(temp1);
@@ -2860,6 +2983,8 @@ Mapping state for Move Method refactoring purity:
             omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
             omitReturnRelatedReplacements(refactoring, replacementsToCheck);
             omitAnonymousClassDeclarationReplacements(replacementsToCheck);
+            omitStringRelatedReplacements(replacementsToCheck);
+
 
 
 
@@ -2903,6 +3028,10 @@ Mapping state for Move Method refactoring purity:
             return true;
 
         checkForMoveAttributeOnTop(refactorings, replacementsToCheck);
+        if(replacementsToCheck.isEmpty())
+            return true;
+
+        checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
         if(replacementsToCheck.isEmpty())
             return true;
 
