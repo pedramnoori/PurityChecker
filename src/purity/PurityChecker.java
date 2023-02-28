@@ -844,7 +844,6 @@ Mapping state for Move Method refactoring purity:
             List<CompositeStatementObject> nonMappedNodesT1 = refactoring.getBodyMapper().getNonMappedInnerNodesT1();
 
             checkForRenameRefactoringOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2, nonMappedLeavesT1);
-
             if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
                 return new PurityCheckResult(true, "Rename Method on top of the moved method - with non-mapped leaves or nodes", "Severe Changes", 5);
             }
@@ -855,16 +854,18 @@ Mapping state for Move Method refactoring purity:
             }
 
             checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT2);
-//            checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT1);
-
             if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
                 return new PurityCheckResult(true, "Extract Variable on top of the moved method - with non-mapped leaves or nodes", "Severe Changes", 5);
             }
 
             checkForExtraBreakStatementsWithinSwitch(nonMappedLeavesT1, nonMappedLeavesT2);
-
             if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
                 return new PurityCheckResult(true, "Extra break statements within a switch statement - with non-mapped leaves or nodes", "Severe Changes", 5);
+            }
+
+            checkForLocalizeParameterOnTop(refactoring, refactorings, nonMappedLeavesT2);
+            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+                return new PurityCheckResult(true, "Localize Parameter on top of the moved method - with non-mapped leaves or nodes", "Severe Changes", 5);
             }
 
             int size1 = nonMappedLeavesT1.size();
@@ -892,6 +893,29 @@ Mapping state for Move Method refactoring purity:
 
             return new PurityCheckResult(false, "Contains non-mapped leaves or nodes", "Severe Changes", 5);
         }
+
+    }
+
+    private static void checkForLocalizeParameterOnTop(MoveOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT2) {
+
+        List<AbstractCodeFragment> nonMappedLeavesT2ToRemove = new ArrayList<>();
+
+        for (Refactoring refactoring1 : refactorings) {
+            if (refactoring1.getRefactoringType().equals(RefactoringType.LOCALIZE_PARAMETER)) {
+                if (refactoring.getOriginalOperation().equals(((RenameVariableRefactoring) (refactoring1)).getOperationBefore()) &&
+                        refactoring.getMovedOperation().equals(((RenameVariableRefactoring) (refactoring1)).getOperationAfter())) {
+                    for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT2) {
+                        for (VariableDeclaration variableDeclaration : abstractCodeFragment.getVariableDeclarations()) {
+                            if (variableDeclaration.equals(((RenameVariableRefactoring) (refactoring1)).getRenamedVariable())) {
+                                nonMappedLeavesT2ToRemove.add(abstractCodeFragment);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        nonMappedLeavesT2.removeAll(nonMappedLeavesT2ToRemove);
 
     }
 
@@ -3167,7 +3191,8 @@ Mapping state for Move Method refactoring purity:
             if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
                 for (Refactoring refactoring1: refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.RENAME_VARIABLE) || refactoring1.getRefactoringType().equals(RefactoringType.RENAME_PARAMETER) ||
-                            refactoring1.getRefactoringType().equals(RefactoringType.PARAMETERIZE_ATTRIBUTE) || refactoring1.getRefactoringType().equals(RefactoringType.REPLACE_ATTRIBUTE_WITH_VARIABLE)) {
+                            refactoring1.getRefactoringType().equals(RefactoringType.PARAMETERIZE_ATTRIBUTE) || refactoring1.getRefactoringType().equals(RefactoringType.REPLACE_ATTRIBUTE_WITH_VARIABLE) ||
+                            refactoring1.getRefactoringType().equals(RefactoringType.LOCALIZE_PARAMETER)) {
                         if (replacement.getBefore().equals(((RenameVariableRefactoring)refactoring1).getOriginalVariable().getVariableName()) &&
                                 replacement.getAfter().equals(((RenameVariableRefactoring)refactoring1).getRenamedVariable().getVariableName())) {
                             handledReplacements.add(replacement);
