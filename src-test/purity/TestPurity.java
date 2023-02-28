@@ -990,8 +990,8 @@ public class TestPurity {
     public void extractMethodTest_55() throws RefactoringMinerTimedOutException, IOException {
 //  The test commit TODO second runTests Extract method is pure and I reported it as impure so far
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        miner.detectModelDiff("https://github.com/JetBrains/intellij-community.git",
-                "10f769a60c7c7b73982e978959d381df487bbe2d", new RefactoringHandler() {
+        miner.detectModelDiff("https://github.com/jline/jline2.git",
+                "1eb3b624b288a4b1a054420d3efb05b8f1d28517", new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         Map<Refactoring, PurityCheckResult> pcr = PurityChecker.isPure(umlModelDiff);

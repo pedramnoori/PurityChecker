@@ -696,7 +696,7 @@ Mapping state for Move Method refactoring purity:
             omitPrintAndLogMessagesRelatedReplacements(refactoring, replacementsToCheck);
             omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck); // For the runTests commit
             omitEqualStringLiteralsReplacement(replacementsToCheck);
-            omitPrimitiveTypeReplacements(refactoring.getReplacements(), replacementsToCheck);
+//            omitPrimitiveTypeReplacements(refactoring.getReplacements(), replacementsToCheck);
             omitReturnRelatedReplacements(refactoring, replacementsToCheck);
 
 //            PurityUtils.makeAll(modelDiff, refactoring.getOriginalOperation().getClassName(), null);
