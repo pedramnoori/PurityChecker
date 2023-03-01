@@ -34,7 +34,7 @@ public class PurityChecker {
         PurityCheckResult result = null;
         switch (refactoring.getRefactoringType()){
             case EXTRACT_OPERATION:
-                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings);
+//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings);
                 break;
             case RENAME_CLASS:
 //                result = detectRenameClassPurity((RenameClassRefactoring) refactoring, refactorings, modelDiff);
@@ -49,7 +49,7 @@ public class PurityChecker {
                 result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             default:
                 result = null;
@@ -707,7 +707,7 @@ Mapping state for Move Method refactoring purity:
             omitPrintAndLogMessagesRelatedReplacements(refactoring, replacementsToCheck);
             omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck); // For the runTests commit
             omitEqualStringLiteralsReplacement(replacementsToCheck);
-//            omitPrimitiveTypeReplacements(refactoring.getReplacements(), replacementsToCheck);
+            omitPrimitiveTypeReplacements(refactoring.getReplacements(), replacementsToCheck);
             omitReturnRelatedReplacements(refactoring, replacementsToCheck);
 
 //            PurityUtils.makeAll(modelDiff, refactoring.getOriginalOperation().getClassName(), null);

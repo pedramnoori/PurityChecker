@@ -303,8 +303,8 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Tolerable changes in the body",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
       "mappingState" : 1,
       "validationComment" : "Types has been changed, which do not change the behavior"
     }
@@ -555,8 +555,8 @@
     "validators" : "Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Tolerable changes in the body",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
       "mappingState" : 1,
       "validationComment" : "All replacements are variable types"
     }
@@ -3493,9 +3493,9 @@
     "validators" : "Ameya",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "Interface method with empty body"
     }
   }, {
@@ -6825,7 +6825,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Tolerable changes in the body",
       "mappingState" : 1,
       "validationComment" : "Add Parameter on top of the moved method"
     }
@@ -45354,11 +45354,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "the initial value of -retryCount- variable has been changed from 5 to 3. It was a field in the parent version and modified to int value in the child version"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -46273,10 +46273,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -46287,10 +46287,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -46301,10 +46301,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -46315,10 +46315,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -47094,11 +47094,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Pull up method on top of the moved method"
     }
   }, {
     "type" : "Move Method",
@@ -47136,10 +47136,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -47206,10 +47206,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -47248,11 +47248,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Pull up method on top of the moved method"
     }
   }, {
     "type" : "Move Method",
@@ -48284,11 +48284,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract method without body has been moved"
     }
   }, {
     "type" : "Move Method",
@@ -48298,11 +48298,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract method without body has been moved"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -48363,10 +48363,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -48391,11 +48391,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "There are around 10 non-mapped statements, which are unjustifiable"
     }
   }, {
     "type" : "Move Method",
@@ -48405,11 +48405,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "the if condition has been changed, and reported as a non-mapped node, which makes sense."
     }
   }, {
     "type" : "Move Method",
@@ -48419,10 +48419,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -48624,10 +48624,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -48708,10 +48708,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -48722,10 +48722,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -48736,10 +48736,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -48750,10 +48750,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -48764,10 +48764,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -48778,10 +48778,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -48792,10 +48792,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -48806,11 +48806,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "It's a suspicious case although it seems more of a like an impure case."
     }
   }, {
     "type" : "Extract Method",
@@ -49599,10 +49599,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -49888,11 +49888,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "The change from -searches -> indexRangeService- is not justifiable given the fact that even the type of the two variables are different"
     }
   }, {
     "type" : "Move Method",
@@ -49902,11 +49902,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "The change from -searches -> indexRangeService- is not justifiable given the fact that even the type of the two variables are different"
     }
   }, {
     "type" : "Move Method",
@@ -49916,11 +49916,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "throw has been added to the child version. Also, two statements have been removed from the parent version."
     }
   }, {
     "type" : "Move Method",
@@ -49930,10 +49930,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -50163,10 +50163,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -50214,11 +50214,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "The change between -options -> optionElements- is not justifiable although it seems pure."
     }
   }, {
     "type" : "Move Method",
@@ -50228,10 +50228,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -50242,10 +50242,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -51077,11 +51077,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
     }
   }, {
     "type" : "Move Method",
@@ -51091,11 +51091,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
     }
   }, {
     "type" : "Move Method",
@@ -51105,11 +51105,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
     }
   }, {
     "type" : "Move Method",
@@ -51119,11 +51119,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
     }
   }, {
     "type" : "Move Attribute",
@@ -51282,10 +51282,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -51310,10 +51310,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -51324,10 +51324,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -51543,11 +51543,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Couple of unjustifiable added statements in child version"
     }
   }, {
     "type" : "Move Method",
@@ -51557,10 +51557,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -52364,11 +52364,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Extract Variable on top of the Move Method refactoring"
     }
   }, {
     "type" : "Move Method",
@@ -53661,11 +53661,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Move and Rename Method on top of the moved method"
     }
   }, {
     "type" : "Extract Method",
@@ -53796,11 +53796,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Hard case. Attribute -INDICATOR_SIZE- has been removed and one similar variable has been added to the moved method. Since the variable initializer is different from the attribute, it's kind of impossible to catch this pure change."
     }
   }, {
     "type" : "Rename Method",
@@ -53987,11 +53987,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "A statement has been added to the child version - Could change the state of the graphPath parameter"
     }
   }, {
     "type" : "Move Method",
@@ -54001,11 +54001,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "A statement has been added to the child version - Could change the state of the graphPath parameter"
     }
   }, {
     "type" : "Move Method",
@@ -54015,11 +54015,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "A statement has been added to the child version - Could change the state of the graphPath parameter"
     }
   }, {
     "type" : "Extract Variable",
@@ -54248,10 +54248,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -54299,10 +54299,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -54313,10 +54313,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -54327,10 +54327,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -54341,10 +54341,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -54355,10 +54355,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -54397,11 +54397,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "Although in one of the constructor's of the class, the -homeDir- field is the same as before, but in the another one, it can be different from the parent version, which is -user.home-. So, it can change the functionality and it's impure."
     }
   }, {
     "type" : "Extract And Move Method",
@@ -54588,10 +54588,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -55726,11 +55726,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics",
+      "mappingState" : 1,
+      "validationComment" : "Since the function has been moved, the -getJunit4JarPath()- call needs the name of it's class. So, this is a pure change within the Move Method mechanics"
     }
   }, {
     "type" : "Extract Method",
@@ -55791,10 +55791,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -55982,10 +55982,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -56010,10 +56010,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -56024,11 +56024,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Add Parameter on top of the moved method"
     }
   }, {
     "type" : "Move Method",
@@ -56038,11 +56038,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Add Parameter on top of the moved method"
     }
   }, {
     "type" : "Move Method",
@@ -56052,11 +56052,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "The replacement between -this -> t- is justifiable. The -this- refers to RuleContext class and -t- refers to Tree class. I inspected manually and these two refer to same root. But catching this information from RMiner is impossible."
     }
   }, {
     "type" : "Move Method",
@@ -56066,10 +56066,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -56080,10 +56080,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -56094,10 +56094,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -56122,11 +56122,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "The replacement between -this -> t- is justifiable. The -this- refers to RuleContext class and -t- refers to Tree class. I inspected manually and these two refer to same root. But catching this information from RMiner is impossible. "
     }
   }, {
     "type" : "Move Method",
@@ -56136,11 +56136,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "The replacement between -this -> t- is justifiable. The -this- refers to RuleContext class and -t- refers to Tree class. I inspected manually and these two refer to same root. But catching this information from RMiner is impossible. "
     }
   }, {
     "type" : "Add Parameter",
@@ -56677,10 +56677,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -57279,11 +57279,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "try-catch has been added"
     }
   }, {
     "type" : "Move Method",
@@ -59379,11 +59379,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract Method"
     }
   }, {
     "type" : "Move Method",
@@ -59393,11 +59393,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract Method"
     }
   }, {
     "type" : "Move Method",
@@ -59407,11 +59407,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract Method"
     }
   }, {
     "type" : "Move Method",
@@ -59421,11 +59421,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract Method"
     }
   }, {
     "type" : "Move And Rename Class",
@@ -59449,11 +59449,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract Method"
     }
   }, {
     "type" : "Move Method",
@@ -59463,11 +59463,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract Method"
     }
   }, {
     "type" : "Move Method",
@@ -59477,11 +59477,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract Method"
     }
   }, {
     "type" : "Move Method",
@@ -59491,11 +59491,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract Method"
     }
   }, {
     "type" : "Extract Method",
@@ -59603,11 +59603,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Nikos, Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract Method"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -60765,11 +60765,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "functionality has been changed"
     }
   }, {
     "type" : "Move Method",
@@ -62771,10 +62771,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -62836,11 +62836,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "There are lots of leaves and nodes added to the child version"
     }
   }, {
     "type" : "Move Method",
@@ -62850,10 +62850,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -63489,10 +63489,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -63503,11 +63503,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Extract Class on top of the moved method - type change (not primitive type BTW) - functionality remained as before"
     }
   }, {
     "type" : "Move Attribute",
@@ -64058,10 +64058,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin, Davood, Nikos, Ameya",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -64072,11 +64072,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "The replacement between -getGauge -> newLongGauge- method invocations is not justifiable. The latter has been added in the child version within this commit."
     }
   }, {
     "type" : "Move Method",
@@ -64086,11 +64086,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "Changes are not justifiable. -logPerformanceMonitorHint();- has been added to the child version"
     }
   }, {
     "type" : "Move Attribute",
@@ -64408,11 +64408,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Lots of changes within the Move Method refactoring, which are not justifiable."
     }
   }, {
     "type" : "Rename Parameter",
@@ -67553,11 +67553,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "the behavior of the test case has been changed. Try-finally has been added and number literal has been changed."
     }
   } ],
   "refDiffExecutionTime" : 4060
@@ -67576,11 +67576,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "Add Parameter and Rename Parameter on top of the moved method"
     }
   }, {
     "type" : "Extract Method",
@@ -68024,11 +68024,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Lots of changes within the Move Method refactoring, which are not justifiable."
     }
   }, {
     "type" : "Rename Parameter",
@@ -68621,11 +68621,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Rename Variable on top of the moved method"
     }
   }, {
     "type" : "Add Parameter",
@@ -70548,10 +70548,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -71355,10 +71355,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -71420,11 +71420,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "The replacement between -mData.getDataSetByIndex(dataSet) -> set- is not justifiable and it's more likely to have some non-pure changes on top. Also, the method invocation has been changed from -getClosestIndexAbove- to -getClosestStackIndex-, which is definitely an impure change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -71583,10 +71583,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -71998,10 +71998,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72012,10 +72012,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72026,10 +72026,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72040,10 +72040,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72054,10 +72054,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72068,10 +72068,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72082,10 +72082,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72096,10 +72096,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72110,10 +72110,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72124,10 +72124,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72138,10 +72138,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72152,10 +72152,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72166,10 +72166,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72180,10 +72180,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72194,11 +72194,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
+      "mappingState" : 1,
+      "validationComment" : "String related replacement"
     }
   }, {
     "type" : "Move Method",
@@ -72208,11 +72208,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "-Double.class- is the same as -java.lang.Class.forName(java.lang.Double)- but it's impossbile for PurityChecker to justify this change"
     }
   }, {
     "type" : "Move Method",
@@ -72222,10 +72222,10 @@
     "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72637,10 +72637,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -72702,11 +72702,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Add Parameter on top of the moved method"
     }
   }, {
     "type" : "Move Method",
@@ -72716,10 +72716,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -76505,11 +76505,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Remove Parameter on top of the moved method"
     }
   }, {
     "type" : "Move Class",
@@ -76589,10 +76589,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -76631,11 +76631,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "Getter pattern"
     }
   }, {
     "type" : "Move Attribute",
@@ -76729,10 +76729,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -76743,10 +76743,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -78208,10 +78208,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -78483,10 +78483,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -78870,10 +78870,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -79579,10 +79579,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Matin, Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -81772,10 +81772,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh, Davood, Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -81786,10 +81786,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -81800,10 +81800,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -83284,10 +83284,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -83298,10 +83298,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -83312,10 +83312,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -84194,10 +84194,10 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -84208,10 +84208,10 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   } ],
@@ -84525,10 +84525,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -84539,10 +84539,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -85388,10 +85388,10 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -85402,10 +85402,10 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -85430,10 +85430,10 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -85444,11 +85444,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "prefixID variable has been changed"
     }
   }, {
     "type" : "Pull Up Method",
@@ -86783,11 +86783,11 @@
     "detectionTools" : "RefactoringMiner, RD-1x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Extra break statements have been removed from the parent version. It's a pure change and this refactoring is pure"
     }
   }, {
     "type" : "Move Method",
@@ -86797,11 +86797,11 @@
     "detectionTools" : "RefactoringMiner, RD-1x",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "lots of non-mapped statements, which are definitely changed the behavior of the function"
     }
   }, {
     "type" : "Inline Method",
@@ -87660,10 +87660,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -90105,11 +90105,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
   }, {
     "type" : "Move Method",
@@ -90119,11 +90119,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
   }, {
     "type" : "Move Method",
@@ -90133,11 +90133,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
   }, {
     "type" : "Move Method",
@@ -90147,11 +90147,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
   }, {
     "type" : "Move Method",
@@ -90161,11 +90161,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
   }, {
     "type" : "Move Method",
@@ -90175,11 +90175,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
   } ],
   "refDiffExecutionTime" : 0
@@ -90198,10 +90198,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -90296,11 +90296,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "Encapsulate Attribute on top of the moved method. But the replacement between ->= -> >- is not justifiable"
     }
   }, {
     "type" : "Move Method",
@@ -90310,11 +90310,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "The variable declaration has been removed, but it doesn't change the state of the function as far as I understand. So, it's a pure refactoring"
     }
   }, {
     "type" : "Inline Method",
@@ -91187,11 +91187,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Localize Parameter on top of the moved method"
     }
   }, {
     "type" : "Rename Parameter",
@@ -91574,11 +91574,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Nikos",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
+      "validationComment" : "Abstract Method"
     }
   }, {
     "type" : "Remove Class Modifier",
@@ -91611,10 +91611,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -91625,11 +91625,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "the argument inside the -get- method has been changed"
     }
   } ],
   "refDiffExecutionTime" : 435
@@ -91732,10 +91732,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : ""
     }
   }, {
@@ -91746,10 +91746,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : ""
     }
   }, {
@@ -91760,10 +91760,10 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : ""
     }
   }, {
