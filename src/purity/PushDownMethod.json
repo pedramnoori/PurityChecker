@@ -992,7 +992,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -1048,7 +1048,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -1062,7 +1062,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -1813,11 +1813,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : "Matin",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Add Parameter and Rename Variable on top, which PurityChecker is able to catch this change - also, -PrintFormat- has been omitted since the actual method has been imported (the import has been changed)"
     }
   }, {
     "type" : "Push Down Method",
@@ -1827,11 +1827,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "This pattern has been added"
     }
   }, {
     "type" : "Move Attribute",
@@ -3894,11 +3894,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Add parameter (constructor version) on top of the pushed down method"
     }
   }, {
     "type" : "Rename Parameter",
@@ -4449,7 +4449,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4850,7 +4850,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4878,7 +4878,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4920,7 +4920,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4948,7 +4948,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4962,7 +4962,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4976,7 +4976,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4990,7 +4990,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -5004,7 +5004,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -5027,7 +5027,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -5097,7 +5097,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -5125,7 +5125,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -5139,7 +5139,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
