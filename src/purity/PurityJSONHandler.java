@@ -33,12 +33,12 @@ public class PurityJSONHandler {
 
         String outputPath = runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\MoveMethod.json");
 //
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultMove.json", RefactoringType.MOVE_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultMove.json", RefactoringType.MOVE_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.EXTRACT_OPERATION);
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
 //        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
-//        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json", "Move Method");
+        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json", "Push Down Method");
 
     }
 
@@ -61,20 +61,6 @@ public class PurityJSONHandler {
                 }
             }
 
-//
-//            List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
-//
-//            for (RepositoryJson repositoryJson : repositoryJsonList) {
-//                for (RefactoringJson refactoring : repositoryJson.getRefactorings()) {
-//                    if (refactoring.getType().equals(refactoringType)) {
-//                        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-//                        String jsonStr = objectMapper.writeValueAsString(repositoryJson);
-//                        arrayNode.add(jsonStr.replaceAll("\\s+", ""));
-////                        System.out.println(jsonStr);
-//                        break;
-//                    }
-//                }
-//            }
 
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             objectMapper.writeValue(new File("/Users/pedram/Desktop/RefactoringMiner/src/purity/" + refactoringType +".json"), arrayNode);
