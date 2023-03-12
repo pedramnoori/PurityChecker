@@ -55,6 +55,7 @@ public class PurityJSONHandler {
                     if (refactoring.get("type").textValue().equals(refactoringType) &&
                             (refactoring.get("validation").textValue().equals("TP") ||
                                     refactoring.get("validation").textValue().equals("CTP"))) {
+                        System.out.println("HERE");
                         arrayNode.add(jsonNode);
                         break;
                     }
@@ -63,7 +64,7 @@ public class PurityJSONHandler {
 
 
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity" + refactoringType +".json"), arrayNode);
+            objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\" + refactoringType +".json"), arrayNode);
             } catch (IOException e) {
             throw new RuntimeException(e);
         }

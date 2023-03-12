@@ -52,6 +52,9 @@ public class PurityChecker {
             case PUSH_DOWN_OPERATION:
                 result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
+            case PULL_UP_OPERATION:
+                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
+                break;
             case INLINE_OPERATION:
 //                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
@@ -61,6 +64,14 @@ public class PurityChecker {
         }
 
         return result;
+    }
+
+    private static PurityCheckResult detectPullUpMethodPurity(PullUpOperationRefactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff) {
+
+        System.out.println("Pull Up Method");
+
+
+        return null;
     }
 
     private static PurityCheckResult detectPushDownMethodPurity(PushDownOperationRefactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff) {
