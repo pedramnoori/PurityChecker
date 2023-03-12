@@ -42,9 +42,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -56,9 +56,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -70,9 +70,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -84,9 +84,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -98,9 +98,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -112,9 +112,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -126,9 +126,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -140,9 +140,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -154,9 +154,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -168,9 +168,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -280,9 +280,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -294,9 +294,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -308,9 +308,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -322,9 +322,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -779,9 +779,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -928,9 +928,9 @@
     "validators" : "Ameya",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "Abstract Method pushed down, so it's pure"
     }
   } ],
@@ -993,9 +993,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1049,9 +1049,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1063,9 +1063,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1814,9 +1814,9 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "Add Parameter and Rename Variable on top, which PurityChecker is able to catch this change - also, -PrintFormat- has been omitted since the actual method has been imported (the import has been changed)"
     }
   }, {
@@ -1828,9 +1828,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
+      "mappingState" : 1,
       "validationComment" : "This pattern has been added"
     }
   }, {
@@ -3895,9 +3895,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "Add parameter (constructor version) on top of the pushed down method"
     }
   }, {
@@ -4450,9 +4450,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4851,9 +4851,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4879,9 +4879,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4921,9 +4921,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4949,9 +4949,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4963,9 +4963,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4977,9 +4977,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4991,9 +4991,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5005,9 +5005,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   } ],
@@ -5028,9 +5028,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5098,9 +5098,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5126,9 +5126,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5140,9 +5140,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7123,9 +7123,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7137,9 +7137,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "Push Down and Rename Attribute on top of the Push Down Method - _entities -> _collectionResponse"
     }
   }, {
@@ -7151,9 +7151,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "Push Down and Rename Attribute on top of the Push Down Method - _paging -> _collectionResponsePaging"
     }
   }, {
@@ -7608,9 +7608,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "the if condition has been changed - One if element has been omitted"
     }
   }, {
@@ -7622,9 +7622,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "the if condition has been changed - there is no connection between -slot- and -localId--"
     }
   }, {
@@ -7790,9 +7790,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "setting the localId attribute has been removed within the push down method refactoring - It can be pure if I consider this change as a pure change since the localId attribute has been removed"
     }
   }, {
@@ -8639,9 +8639,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "There are lots of pure changes overlapped with the refactoring. First, queryData attribute has been renamed to queryWhere. Then, the getQueryContext() method invocation has been removed for some reason. Finally, there is an argumentization, which is impossible to catch the purity of the change in static analysis."
     }
   }, {
@@ -8653,9 +8653,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "There are lots of pure changes overlapped with the refactoring. First, queryData attribute has been renamed to queryWhere. Then, the getQueryContext() method invocation has been removed for some reason. Finally, there is an argumentization, which is impossible to catch the purity of the change in static analysis."
     }
   }, {
