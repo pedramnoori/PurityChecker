@@ -14,13 +14,13 @@ public class PurityCheckResult {
     int mappingState;
 
 
-    PurityCheckResult(boolean isPure, String description, String purityComment) {
+    public PurityCheckResult(boolean isPure, String description, String purityComment) {
         this.isPure = isPure;
         this.description = description;
         this.purityComment = purityComment;
     }
 
-    PurityCheckResult(boolean isPure, String description) {
+    public PurityCheckResult(boolean isPure, String description) {
         this.isPure = isPure;
         this.description = description;
     }

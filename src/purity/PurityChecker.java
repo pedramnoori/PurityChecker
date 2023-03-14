@@ -25,24 +25,25 @@ public class PurityChecker {
         List<Refactoring> refactorings = new ArrayList<>(modelDiff.getRefactorings());
 
 
-        for (Refactoring refactoring: refactorings){
+        for (Refactoring refactoring : refactorings) {
             purityCheckResults.put(refactoring, checkPurity(refactoring, refactorings, modelDiff));
         }
         return purityCheckResults;
     }
+
     public static void isPure(UMLModelDiff modelDiff, Map<Refactoring, PurityCheckResult> purityCheckResults) throws RefactoringMinerTimedOutException {
         List<Refactoring> refactorings = new ArrayList<>(modelDiff.getRefactorings());
 
 
-        for (Refactoring refactoring: refactorings){
+        for (Refactoring refactoring : refactorings) {
             purityCheckResults.put(refactoring, checkPurity(refactoring, refactorings, modelDiff));
         }
 //        return purityCheckResults;
     }
 
-    private static PurityCheckResult checkPurity(Refactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff){
+    private static PurityCheckResult checkPurity(Refactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff) {
         PurityCheckResult result = null;
-        switch (refactoring.getRefactoringType()){
+        switch (refactoring.getRefactoringType()) {
             case EXTRACT_OPERATION:
                 result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings);
                 break;
@@ -56,16 +57,16 @@ public class PurityChecker {
 //                result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
                 break;
             case MOVE_OPERATION:
-                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PUSH_DOWN_OPERATION:
-                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PULL_UP_OPERATION:
                 result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             default:
                 result = null;
@@ -101,8 +102,8 @@ public class PurityChecker {
             omitPrintAndLogMessagesRelatedReplacements(refactoring, replacementsToCheck);
             omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck); // For the runTests commit
             omitEqualStringLiteralsReplacement(replacementsToCheck);
-            omitPrimitiveTypeReplacements(refactoring.getReplacements(), replacementsToCheck);
-//            omitReturnRelatedReplacements(refactoring, replacementsToCheck);
+//            omitPrimitiveTypeReplacements(refactoring.getReplacements(), replacementsToCheck);
+            omitReturnRelatedReplacements(refactoring, replacementsToCheck);
 
 //            PurityUtils.makeAll(modelDiff, refactoring.getOriginalOperation().getClassName(), null);
 
@@ -138,53 +139,53 @@ public class PurityChecker {
 
             checkForRenameVariableOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Variable on top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Rename Variable on top of the pull up method - all mapped", purityComment, mappingState);
             }
 
             checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Attribute on the top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Rename Attribute on the top of the pull up method - all mapped", purityComment, mappingState);
             }
 
             checkForMoveAttributeOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Move Attribute on top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Move Attribute on top of the pull up method - all mapped", purityComment, mappingState);
             }
 
             checkForExtractClassOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Extract Class on top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Extract Class on top of the pull up method - all mapped", purityComment, mappingState);
             }
 
 
             checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Extract variable on the top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Extract variable on the top of the pull up method - all mapped", purityComment, mappingState);
             }
 
-            checkForExtractMethodOnTop(refactorings, replacementsToCheck, refactoring);
+            checkForExtractMethodOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Extract Method on top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Extract Method on top of the pull up method - all mapped", purityComment, mappingState);
             }
 
             checkForMoveClassRefactoringOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Move class on the top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Move class on the top of the pull up method - all mapped", purityComment, mappingState);
             }
 
             checkForRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Move class on the top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Rename class on the top of the pull up method - all mapped", purityComment, mappingState);
             }
 
             checkForMoveAndRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Move class on the top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Move (and Rename) class on the top of the pull up method - all mapped", purityComment, mappingState);
             }
 
             checkForMoveMethodRefactoringOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Move method on the top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Move method on the top of the pull up method - all mapped", purityComment, mappingState);
             }
 
             checkForThisPatternReplacement(replacementsToCheck);
@@ -194,12 +195,12 @@ public class PurityChecker {
 
             checkForRenameMethodRefactoringOnTop_Mapped(refactorings, replacementsToCheck); // This method also handles the MoveAndRename Method on top
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Rename Method on top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Rename Method on top of the pull up method - all mapped", purityComment, mappingState);
             }
 
             checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the push down method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the pull up method - all mapped", purityComment, mappingState);
             }
 
             checkForPullUpMethodOnTop(refactoring, refactorings, replacementsToCheck, modelDiff);
@@ -309,7 +310,6 @@ public class PurityChecker {
         omitStringRelatedReplacements(replacementsToCheck);
 
 
-
         if (replacementsToCheck.isEmpty()) {
             return true;
         }
@@ -320,7 +320,7 @@ public class PurityChecker {
         checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
         checkForMoveAttributeOnTop(refactorings, replacementsToCheck);
         checkForExtractClassOnTop(refactorings, replacementsToCheck);
-        checkForExtractMethodOnTop(refactorings, replacementsToCheck, refactoring);
+        checkForExtractMethodOnTop(refactorings, replacementsToCheck);
         checkForMoveClassRefactoringOnTop(refactorings, replacementsToCheck);
         checkForRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
         checkForMoveAndRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
@@ -329,7 +329,6 @@ public class PurityChecker {
         checkForRenameMethodRefactoringOnTop_Mapped(refactorings, replacementsToCheck);
         checkForRemoveVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
-
 
 
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
@@ -431,7 +430,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Extract variable on the top of the push down method - all mapped", purityComment, mappingState);
             }
 
-            checkForExtractMethodOnTop(refactorings, replacementsToCheck, refactoring);
+            checkForExtractMethodOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Extract Method on top of the push down method - all mapped", purityComment, mappingState);
             }
@@ -579,7 +578,6 @@ public class PurityChecker {
         omitStringRelatedReplacements(replacementsToCheck);
 
 
-
         if (replacementsToCheck.isEmpty()) {
             return true;
         }
@@ -590,7 +588,7 @@ public class PurityChecker {
         checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
         checkForMoveAttributeOnTop(refactorings, replacementsToCheck);
         checkForExtractClassOnTop(refactorings, replacementsToCheck);
-        checkForExtractMethodOnTop(refactorings, replacementsToCheck, refactoring);
+        checkForExtractMethodOnTop(refactorings, replacementsToCheck);
         checkForMoveClassRefactoringOnTop(refactorings, replacementsToCheck);
         checkForRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
         checkForMoveAndRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
@@ -599,7 +597,6 @@ public class PurityChecker {
         checkForRenameMethodRefactoringOnTop_Mapped(refactorings, replacementsToCheck);
         checkForRemoveVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
-
 
 
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
@@ -654,7 +651,7 @@ public class PurityChecker {
             omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
             checkForTernaryThenReplacement(refactoring, replacementsToCheck);
-            
+
             checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
             omitAnonymousClassDeclarationReplacements(replacementsToCheck);
             omitStringRelatedReplacements(replacementsToCheck);
@@ -722,7 +719,7 @@ public class PurityChecker {
             }
 
             checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
-            if(replacementsToCheck.isEmpty()) {
+            if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Rename Attribute on the top of the inlined method - all mapped", purityComment, mappingState);
             }
 
@@ -732,7 +729,7 @@ public class PurityChecker {
             }
 
             checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
-            if(replacementsToCheck.isEmpty()) {
+            if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "One of the overlapping cases - all mapped", purityComment, mappingState);
             }
 
@@ -812,7 +809,6 @@ public class PurityChecker {
             }
 
 
-
             return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
         } else {
             int mappingState = 3;
@@ -845,7 +841,7 @@ public class PurityChecker {
             for (AbstractCodeFragment abstractCodeFragment : nonMappedInnerNodesT1) {
                 if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
                     numberOfWrongNonMappedBlocks++;
-                }else {
+                } else {
                     break;
                 }
             }
@@ -867,7 +863,7 @@ public class PurityChecker {
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
-        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         } else {
             return;
@@ -902,7 +898,7 @@ public class PurityChecker {
             replacements = ((ExtractOperationRefactoring) (refactoring)).getReplacements();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
             replacements = ((InlineOperationRefactoring) (refactoring)).getReplacements();
-        }else {
+        } else {
             return;
         }
 
@@ -1002,13 +998,13 @@ public class PurityChecker {
                     nonMappedInnerNodesT1ToRemove.add(abstractCodeFragment);
                     List<AbstractStatement> statements = ((CompositeStatementObject) (abstractCodeFragment)).getStatements();
                     if (statements.size() == 2 || statements.size() == 1) { //it's an if-else condition
-                        nonMappedLeavesT1ToRemove.addAll(((CompositeStatementObject)(statements.get(0))).getStatements());
+                        nonMappedLeavesT1ToRemove.addAll(((CompositeStatementObject) (statements.get(0))).getStatements());
                     }
                 } else if (abstractCodeFragment.getArgumentizedAfterRefactorings().equals("if(true)")) {
                     nonMappedInnerNodesT1ToRemove.add(abstractCodeFragment);
                     List<AbstractStatement> statements = ((CompositeStatementObject) (abstractCodeFragment)).getStatements();
                     if (statements.size() == 2) {
-                        nonMappedLeavesT1ToRemove.addAll(((CompositeStatementObject)(statements.get(1))).getStatements());
+                        nonMappedLeavesT1ToRemove.addAll(((CompositeStatementObject) (statements.get(1))).getStatements());
                     }
                 }
             }
@@ -1156,7 +1152,7 @@ public class PurityChecker {
                 for (Refactoring refactoring1 : refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
                         if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getName().equals(invokedOperationAfterName)) {
-                            if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getParameterNameList().size() == ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().arguments().size()) {
+                            if (((InlineOperationRefactoring) refactoring1).getTargetOperationAfterInline().getParameterNameList().size() == ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().size()) {
                                 replacementsToRemove.add(replacement);
                                 break;
                             }
@@ -1186,7 +1182,6 @@ public class PurityChecker {
         checkForTernaryThenReplacement(refactoring, replacementsToCheck);
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
         omitStringRelatedReplacements(replacementsToCheck);
-
 
 
         if (replacementsToCheck.isEmpty()) {
@@ -1246,7 +1241,7 @@ Mapping state for Move Method refactoring purity:
 //        }
 
         if (refactoring.getBodyMapper().getNonMappedLeavesT2().isEmpty() && refactoring.getBodyMapper().getNonMappedInnerNodesT2().isEmpty() &&
-        refactoring.getBodyMapper().getNonMappedLeavesT1().isEmpty() && refactoring.getBodyMapper().getNonMappedInnerNodesT1().isEmpty()) {
+                refactoring.getBodyMapper().getNonMappedLeavesT1().isEmpty() && refactoring.getBodyMapper().getNonMappedInnerNodesT1().isEmpty()) {
 
             int mappingState = 1;
             String purityComment = "";
@@ -1303,7 +1298,7 @@ Mapping state for Move Method refactoring purity:
             }
 
             checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
-            if(replacementsToCheck.isEmpty()) {
+            if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Rename Attribute on the top of the moved method - all mapped", purityComment, mappingState);
             }
 
@@ -1327,7 +1322,7 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Extract variable on the top of the moved method - all mapped", purityComment, mappingState);
             }
 
-            checkForExtractMethodOnTop(refactorings, replacementsToCheck, refactoring);
+            checkForExtractMethodOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Extract Method on top of the moved method - all mapped", purityComment, mappingState);
             }
@@ -1459,7 +1454,7 @@ Mapping state for Move Method refactoring purity:
         if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
             originalOperation = ((MoveOperationRefactoring) (refactoring)).getOriginalOperation();
             movedOperation = ((MoveOperationRefactoring) (refactoring)).getMovedOperation();
-        }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             originalOperation = ((PushDownOperationRefactoring) (refactoring)).getOriginalOperation();
             movedOperation = ((PushDownOperationRefactoring) (refactoring)).getMovedOperation();
         }
@@ -1574,10 +1569,10 @@ Mapping state for Move Method refactoring purity:
                         if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
                             classBefore = ((MoveOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
                             classAfter = ((MoveOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
-                        }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
+                        } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
                             classBefore = ((PushDownOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
                             classAfter = ((PushDownOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
-                        }else if (refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
+                        } else if (refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
                             classBefore = ((PullUpOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
                             classAfter = ((PullUpOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
                         }
@@ -1588,7 +1583,7 @@ Mapping state for Move Method refactoring purity:
                                 replacementsToRemove.add(replacement);
                             }
 
-                        }else if (foundInAfter != -1) {
+                        } else if (foundInAfter != -1) {
                             String instanceOrVariable = after.substring(0, foundInAfter - 1);
                             if (instanceOrVariable.equals(classBefore)) {
                                 replacementsToRemove.add(replacement);
@@ -1611,34 +1606,34 @@ Mapping state for Move Method refactoring purity:
                 if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName().equals(
                         ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName()
                 )) {
-                if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().equals(
-                        ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments()
+                    if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().equals(
+                            ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments()
                     )) { //Taking into account that two lists will be equal in Java when the order of insertion was the same along with the values themselves
 
                         String before = replacement.getBefore();
                         String after = replacement.getAfter();
                         String methodInvocationName = ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName();
 
-                    for (Refactoring refactoring1 : refactorings) {
-                        if (refactoring1.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
-                           if (((PullUpOperationRefactoring) refactoring1).getOriginalOperation().getName().equals(methodInvocationName)) {
-                               int foundInAfter = after.indexOf(before);
-                               int foundInBefore = before.indexOf(after);
+                        for (Refactoring refactoring1 : refactorings) {
+                            if (refactoring1.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
+                                if (((PullUpOperationRefactoring) refactoring1).getOriginalOperation().getName().equals(methodInvocationName)) {
+                                    int foundInAfter = after.indexOf(before);
+                                    int foundInBefore = before.indexOf(after);
 
-                               if (foundInBefore != -1) {
-                                   String instanceOrVariable = before.substring(0, foundInBefore - 1);
-                                   if (specificCheckForPullUpMethodOnTopFoundInBefore(refactoring, ((PullUpOperationRefactoring) refactoring1), instanceOrVariable, (MethodInvocationReplacement) replacement, modelDiff)) {
-                                       replacementsToRemove.add(replacement);
-                                   }
-                               } else if (foundInAfter != -1) {
-                                   String instanceOrVariable = after.substring(0, foundInAfter - 1);
-                                   if (specificCheckForPullUpMethodOnTopFoundInAfter(refactoring, ((PullUpOperationRefactoring) refactoring1), instanceOrVariable, (MethodInvocationReplacement) replacement, modelDiff)) {
-                                       replacementsToRemove.add(replacement);
-                                   }
-                               }
-                           }
+                                    if (foundInBefore != -1) {
+                                        String instanceOrVariable = before.substring(0, foundInBefore - 1);
+                                        if (specificCheckForPullUpMethodOnTopFoundInBefore(refactoring, ((PullUpOperationRefactoring) refactoring1), instanceOrVariable, (MethodInvocationReplacement) replacement, modelDiff)) {
+                                            replacementsToRemove.add(replacement);
+                                        }
+                                    } else if (foundInAfter != -1) {
+                                        String instanceOrVariable = after.substring(0, foundInAfter - 1);
+                                        if (specificCheckForPullUpMethodOnTopFoundInAfter(refactoring, ((PullUpOperationRefactoring) refactoring1), instanceOrVariable, (MethodInvocationReplacement) replacement, modelDiff)) {
+                                            replacementsToRemove.add(replacement);
+                                        }
+                                    }
+                                }
+                            }
                         }
-                    }
                     }
                 }
             }
@@ -1652,20 +1647,9 @@ Mapping state for Move Method refactoring purity:
             return true;
         }
 
-//        Search in the class or method for the attribute or variable
-        for (UMLClass umlClass : modelDiff.getParentModel().getClassList()) {
-            if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
-                if (umlClass.getNonQualifiedName().equals(((PushDownOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName())) {
-                    for (UMLAttribute attribute : umlClass.getAttributes()) {
-                        if (attribute.getName().equals(instanceOrVariable)) {
-                            if (attribute.getType().getClassType().equals(pullUpOperationRefactoring.getOriginalOperation().getNonQualifiedClassName())) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
-                if (umlClass.getNonQualifiedName().equals(((MoveOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName())) {
+        if (refactoring instanceof MoveOperationRefactoring generalMoveOperation) {
+            for (UMLClass umlClass : modelDiff.getParentModel().getClassList()) {
+                if (umlClass.getNonQualifiedName().equals(generalMoveOperation.getOriginalOperation().getNonQualifiedClassName())) {
                     for (UMLAttribute attribute : umlClass.getAttributes()) {
                         if (attribute.getName().equals(instanceOrVariable)) {
                             if (attribute.getType().getClassType().equals(pullUpOperationRefactoring.getOriginalOperation().getNonQualifiedClassName())) {
@@ -1675,8 +1659,9 @@ Mapping state for Move Method refactoring purity:
                     }
                 }
             }
-        }
 
+//        Search in the class or method for the attribute or variable
+        }
         return false;
     }
 
@@ -1685,20 +1670,9 @@ Mapping state for Move Method refactoring purity:
             return true;
         }
 
-//        Search in the class or method for the attribute or variable
-        for (UMLClass umlClass : modelDiff.getChildModel().getClassList()) {
-            if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
-                if (umlClass.getNonQualifiedName().equals(((PushDownOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName())) {
-                    for (UMLAttribute attribute : umlClass.getAttributes()) {
-                        if (attribute.getName().equals(instanceOrVariable)) {
-                            if (attribute.getType().getClassType().equals(pullUpOperationRefactoring.getMovedOperation().getNonQualifiedClassName())) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-            } else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
-                if (umlClass.getNonQualifiedName().equals(((MoveOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName())) {
+        if (refactoring instanceof MoveOperationRefactoring generalMoveOperation) {
+            for (UMLClass umlClass : modelDiff.getChildModel().getClassList()) {
+                if (umlClass.getNonQualifiedName().equals(generalMoveOperation.getMovedOperation().getNonQualifiedClassName())) {
                     for (UMLAttribute attribute : umlClass.getAttributes()) {
                         if (attribute.getName().equals(instanceOrVariable)) {
                             if (attribute.getType().getClassType().equals(pullUpOperationRefactoring.getMovedOperation().getNonQualifiedClassName())) {
@@ -1708,8 +1682,9 @@ Mapping state for Move Method refactoring purity:
                     }
                 }
             }
-        }
 
+//        Search in the class or method for the attribute or variable
+        }
         return false;
     }
 
@@ -1809,7 +1784,7 @@ Mapping state for Move Method refactoring purity:
         checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
         checkForMoveAttributeOnTop(refactorings, replacementsToCheck);
         checkForExtractClassOnTop(refactorings, replacementsToCheck);
-        checkForExtractMethodOnTop(refactorings, replacementsToCheck, refactoring);
+        checkForExtractMethodOnTop(refactorings, replacementsToCheck);
         checkForMoveClassRefactoringOnTop(refactorings, replacementsToCheck);
         checkForRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
         checkForMoveAndRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
@@ -2188,7 +2163,7 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Extract Class on top of the extracted method - all mapped", purityComment, mappingState);
             }
 
-            checkForExtractMethodOnTop(refactorings, replacementsToCheck, refactoring);
+            checkForExtractMethodOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Extract Method on top of the extracted method - all mapped", purityComment, mappingState);
             }
@@ -2591,6 +2566,8 @@ Mapping state for Move Method refactoring purity:
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
+        }else if (refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
+            bodyMapper = ((PullUpOperationRefactoring) (refactoring)).getBodyMapper();
         } else {
             return null;
         }
@@ -2650,7 +2627,7 @@ Mapping state for Move Method refactoring purity:
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
             bodyMapper = ((PullUpOperationRefactoring) (refactoring)).getBodyMapper();
         } else {
             return;
@@ -2894,7 +2871,8 @@ Mapping state for Move Method refactoring purity:
         } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
             parameterToArgumentMap = ((InlineOperationRefactoring) (refactoring)).getParameterToArgumentMap();;
         }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION) ||
-                refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
+                refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION) ||
+                refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
 
             Set<Replacement> replacementsToRemove = new HashSet<>();
 
@@ -3131,7 +3109,7 @@ Mapping state for Move Method refactoring purity:
 
     }
 
-    private static void checkForExtractMethodOnTop(List<Refactoring> refactorings, Set<Replacement> replacementsToCheck, Refactoring refactoring) {
+    private static void checkForExtractMethodOnTop(List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
 
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
@@ -3703,7 +3681,7 @@ Mapping state for Move Method refactoring purity:
         checkForExtractClassOnTop(refactorings, replacementsToCheck);
         if(replacementsToCheck.isEmpty())
             return true;
-        checkForExtractMethodOnTop(refactorings, replacementsToCheck, refactoring);
+        checkForExtractMethodOnTop(refactorings, replacementsToCheck);
         if(replacementsToCheck.isEmpty())
             return true;
 
@@ -3863,6 +3841,8 @@ Mapping state for Move Method refactoring purity:
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
+        }else if (refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
+            bodyMapper = ((PullUpOperationRefactoring) (refactoring)).getBodyMapper();
         }else {
             return;
         }
