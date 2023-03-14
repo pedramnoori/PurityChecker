@@ -1946,7 +1946,9 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 			//check if mappings are the same references
 			Set<AbstractCodeMapping> mappingsAsSet = new LinkedHashSet<>();
 			mappingsAsSet.addAll(mappings);
-			if(mappingsAsSet.size() == 1) {
+			Set<UMLOperationBodyMapper> mappersAsSet = new LinkedHashSet<>();
+			mappersAsSet.addAll(mappers);
+			if(mappingsAsSet.size() == 1 || (mappersAsSet.size() == 1 && !(fragment instanceof CompositeStatementObject))) {
 				continue;
 			}
 			while(mappingIterator.hasNext()) {
@@ -2020,6 +2022,7 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 				}
 			}
 			else if(parentMappingFound.contains(true)) {
+				boolean anonymousClassDeclarationMatch = false;
 				for(int i=0; i<parentMappingFound.size(); i++) {
 					if(parentMappingFound.get(i) == false) {
 						//check if composite mapping in index i has more identical statements
@@ -2034,12 +2037,17 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 								!mappings.get(i).getFragment1().getString().startsWith("return ") && !mappings.get(i).getFragment2().getString().startsWith("return ")) {
 							skip = true;
 						}
+						if(parentIsContainerBody.get(i) == true && mappings.get(i).getFragment1().getAnonymousClassDeclarations().size() > 0 && mappings.get(i).getFragment2().getAnonymousClassDeclarations().size() > 0) {
+							skip = true;
+							anonymousClassDeclarationMatch = true;
+						}
 						if(!skip) {
 							indicesToBeRemoved.add(i);
 						}
 					}
 				}
-				determineIndicesToBeRemoved(nestedMapper, identical, replacementTypeCount, replacementCoversEntireStatement, indicesToBeRemoved, editDistances);
+				if(!anonymousClassDeclarationMatch)
+					determineIndicesToBeRemoved(nestedMapper, identical, replacementTypeCount, replacementCoversEntireStatement, indicesToBeRemoved, editDistances);
 			}
 			else if(parentIsContainerBody.contains(true)) {
 				for(int i=0; i<parentIsContainerBody.size(); i++) {
