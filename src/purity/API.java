@@ -17,9 +17,9 @@ public class API {
         the purity object for each Extract Method, Inline Method, Move Method, and Push Down Method cases.
 */
 
-//    public static void main(String[] args) {
-//        isPureAPI("https://github.com/droolsjbpm/drools/commit/c8e09e2056c54ead97bce4386a25b222154223b1");
-//    }
+    public static void main(String[] args) {
+        isPureAPI("https://github.com/dreamhead/moco/commit/55ffa2f3353c5dc77fe6b790e5e045b76a07a772");
+    }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
         String commitUrl = URLHelper.getRepo(url);
@@ -35,6 +35,8 @@ public class API {
                         PurityChecker.isPure(umlModelDiff,pcr);
                     }
                 }, 100);
+
+        System.out.println("Test");
         return pcr;
     }
 }

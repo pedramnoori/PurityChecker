@@ -615,11 +615,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Abstract Method in the interface"
     }
   }, {
     "type" : "Pull Up Method",
@@ -629,11 +629,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Abstract Method in the interface"
     }
   }, {
     "type" : "Add Method Annotation",

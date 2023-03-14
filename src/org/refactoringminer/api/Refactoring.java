@@ -3,9 +3,12 @@ package org.refactoringminer.api;
 import java.io.Serializable;
 import java.util.Set;
 
+import gr.uom.java.xmi.diff.UMLModelDiff;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import com.fasterxml.jackson.core.io.JsonStringEncoder;
+import purity.PurityCheckResult;
+import purity.PurityChecker;
 
 public interface Refactoring extends Serializable, CodeRangeProvider {
 
@@ -14,7 +17,10 @@ public interface Refactoring extends Serializable, CodeRangeProvider {
 	public String getName();
 
 	public String toString();
-	
+
+	default PurityCheckResult detectPurity(UMLModelDiff umlModelDiff) {
+		return null;
+	}
 	/**
 	 * @return a Set of ImmutablePair where left is the file path of a program element, and right is the qualified name of the class containing the program element
 	 */
