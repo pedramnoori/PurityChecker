@@ -18,7 +18,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/dreamhead/moco/commit/55ffa2f3353c5dc77fe6b790e5e045b76a07a772");
+        isPureAPI("https://github.com/spring-projects/spring-framework/commit/e083683f4fe9206609201bb39a60bbd8ee0c8a0f");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
