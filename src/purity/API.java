@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/tomahawk-player/tomahawk-android/commit/56c273ee11296288cb15320c3de781b94a1e8eb4");
+        isPureAPI("https://github.com/Graylog2/graylog2-server/commit/2ef067fc70055fc4d55c75937303414ddcf07e0e");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
