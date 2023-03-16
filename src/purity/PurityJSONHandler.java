@@ -33,12 +33,12 @@ public class PurityJSONHandler {
 
 //        String outputPath = runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PushDownMethod.json");
 //
-//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultPushDown.json", RefactoringType.PUSH_DOWN_OPERATION);
+        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultPushDown.json", RefactoringType.PUSH_DOWN_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.EXTRACT_OPERATION);
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
 //        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
-        extractRefactoringFromOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\Puritydata.json", "Pull Up Method");
+//        extractRefactoringFromOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\Puritydata.json", "Pull Up Method");
 
     }
 

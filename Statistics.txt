@@ -648,3 +648,47 @@ Specificity: 100.0
 FScore: 0.9189189
 
 
+For Pull Up Method: TIME: 2023-03-16 16:23:56.359
+TP: 243
+TN: 25
+FP: 0
+FN: 14
+Precision: 100.0
+Recall: 94.55253
+Specificity: 100.0
+FScore: 0.972
+
+
+For Pull Up Method: TIME: 2023-03-16 16:39:25.592
+TP: 243
+TN: 26
+FP: 0
+FN: 13
+Precision: 100.0
+Recall: 94.921875
+Specificity: 100.0
+FScore: 0.9739479
+
+
+For Pull Up Method: TIME: 2023-03-16 16:52:16.645
+TP: 0
+TN: 0
+FP: 0
+FN: 0
+Precision: NaN
+Recall: NaN
+Specificity: NaN
+FScore: NaN
+
+
+For Push Down Method: TIME: 2023-03-16 16:53:32.901
+TP: 34
+TN: 3
+FP: 0
+FN: 6
+Precision: 100.0
+Recall: 85.0
+Specificity: 100.0
+FScore: 0.9189189
+
+

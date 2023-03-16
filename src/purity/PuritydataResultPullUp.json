@@ -616,9 +616,9 @@
     "validators" : "Ameya",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "Abstract Method in the interface"
     }
   }, {
@@ -630,9 +630,9 @@
     "validators" : "Ameya",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "Abstract Method in the interface"
     }
   }, {
@@ -1017,9 +1017,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1031,9 +1031,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   } ],
@@ -1684,9 +1684,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "Abstract Method in the interface"
     }
   }, {
@@ -1805,9 +1805,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1819,9 +1819,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1940,9 +1940,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2243,9 +2243,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2257,9 +2257,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2271,9 +2271,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2285,9 +2285,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2299,9 +2299,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2378,9 +2378,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2392,9 +2392,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2406,9 +2406,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2420,9 +2420,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   } ],
@@ -2471,9 +2471,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2485,9 +2485,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2499,9 +2499,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2662,9 +2662,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "It's pure but there is no variable-related refactoring to justify the change. FN impossible to avoid"
     }
   }, {
@@ -2825,9 +2825,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Rename Variable on top of the Pull Up Method"
     }
   }, {
@@ -2839,9 +2839,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Rename Variable on top of the Pull Up Method"
     }
   }, {
@@ -2867,9 +2867,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2881,9 +2881,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2895,9 +2895,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2909,9 +2909,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2923,9 +2923,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2937,9 +2937,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2951,9 +2951,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2965,9 +2965,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -2979,9 +2979,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -3049,9 +3049,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Rename Variable on top of the Pull Up Method"
     }
   }, {
@@ -4122,9 +4122,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Rename Class on top of the Pull Up Method"
     }
   }, {
@@ -4136,9 +4136,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Rename Class on top of the Pull Up Method"
     }
   }, {
@@ -4220,9 +4220,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4234,9 +4234,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4425,9 +4425,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4439,9 +4439,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4453,9 +4453,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4467,9 +4467,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4481,9 +4481,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4495,9 +4495,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4509,9 +4509,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4523,9 +4523,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4537,9 +4537,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4551,9 +4551,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4565,9 +4565,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4579,9 +4579,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4593,9 +4593,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "An abstract class has been extracted"
     }
   }, {
@@ -4915,9 +4915,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5246,9 +5246,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "A super class has been extracted and the methods moved there"
     }
   }, {
@@ -5260,9 +5260,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "A super class has been extracted and the methods moved there"
     }
   }, {
@@ -5274,9 +5274,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "A super class has been extracted and the methods moved there"
     }
   }, {
@@ -5675,9 +5675,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5703,9 +5703,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -5731,9 +5731,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "Lots of changes involved"
     }
   }, {
@@ -5852,9 +5852,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -5866,9 +5866,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -5880,9 +5880,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -5894,9 +5894,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -5908,9 +5908,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -5922,9 +5922,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -5936,9 +5936,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -5950,9 +5950,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -5964,9 +5964,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -5978,9 +5978,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -5992,9 +5992,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6006,9 +6006,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6020,9 +6020,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6034,9 +6034,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6048,9 +6048,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6062,9 +6062,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6076,9 +6076,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6090,9 +6090,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6104,9 +6104,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6118,9 +6118,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6132,9 +6132,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6146,9 +6146,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6160,9 +6160,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6174,9 +6174,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6188,9 +6188,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6202,9 +6202,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6216,9 +6216,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6230,9 +6230,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6244,9 +6244,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6258,9 +6258,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6272,9 +6272,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6286,9 +6286,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6300,9 +6300,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6314,9 +6314,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6328,9 +6328,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6342,9 +6342,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6356,9 +6356,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6370,9 +6370,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6384,9 +6384,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6398,9 +6398,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6412,9 +6412,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6426,9 +6426,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6440,9 +6440,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6454,9 +6454,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6468,9 +6468,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6482,9 +6482,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6496,9 +6496,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6510,9 +6510,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6524,9 +6524,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6538,9 +6538,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6552,9 +6552,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6566,9 +6566,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6580,9 +6580,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6594,9 +6594,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6608,9 +6608,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6622,9 +6622,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6636,9 +6636,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6650,9 +6650,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6664,9 +6664,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6678,9 +6678,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6692,9 +6692,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6706,9 +6706,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6720,9 +6720,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6734,9 +6734,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6748,9 +6748,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6762,9 +6762,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6776,9 +6776,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6790,9 +6790,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6804,9 +6804,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6818,9 +6818,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6832,9 +6832,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6846,9 +6846,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6860,9 +6860,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6874,9 +6874,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6888,9 +6888,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6902,9 +6902,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6916,9 +6916,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6930,9 +6930,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6944,9 +6944,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6958,9 +6958,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6972,9 +6972,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -6986,9 +6986,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7000,9 +7000,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7014,9 +7014,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7028,9 +7028,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7042,9 +7042,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7056,9 +7056,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7070,9 +7070,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7084,9 +7084,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7098,9 +7098,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7112,9 +7112,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7126,9 +7126,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7140,9 +7140,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7154,9 +7154,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7168,9 +7168,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7182,9 +7182,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7196,9 +7196,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7210,9 +7210,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7224,9 +7224,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : "The method has been pulled up to the extracted super class"
     }
   }, {
@@ -7415,9 +7415,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7429,9 +7429,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7443,9 +7443,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7457,9 +7457,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
@@ -7471,9 +7471,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7485,9 +7485,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7499,9 +7499,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7513,9 +7513,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7527,9 +7527,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7541,9 +7541,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
@@ -7555,9 +7555,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7569,9 +7569,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7583,9 +7583,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "Extract Class on top of the pull up method"
     }
   }, {
@@ -7597,9 +7597,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7611,9 +7611,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7625,9 +7625,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7639,9 +7639,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7681,9 +7681,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7816,9 +7816,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Replace Attribute on top"
     }
   }, {
@@ -7830,9 +7830,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Replace Attribute on top"
     }
   }, {
@@ -8231,9 +8231,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
@@ -8245,9 +8245,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
@@ -8259,9 +8259,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
@@ -9192,9 +9192,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -9206,9 +9206,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -9220,9 +9220,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -9234,9 +9234,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -9621,9 +9621,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "The only changed part is the addition to the if condition, which does change the behavior of the program. Although in this case, the flow would be the same."
     }
   }, {
@@ -9910,9 +9910,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -9924,9 +9924,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -11851,9 +11851,9 @@
     "validators" : "Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -11893,9 +11893,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -11907,9 +11907,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12280,9 +12280,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12294,9 +12294,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12308,9 +12308,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12322,9 +12322,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12336,9 +12336,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12350,9 +12350,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12420,9 +12420,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12434,9 +12434,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   } ],
@@ -12751,9 +12751,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12765,9 +12765,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Add Parameter and Extract Super Class on top"
     }
   }, {
@@ -12779,9 +12779,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12793,9 +12793,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12807,9 +12807,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "The MethodInvocationReplacement is not justifiable. The string has been changed. The first replacement is justifiable with argumentization"
     }
   }, {
@@ -12905,9 +12905,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "return boolean condition has been changed"
     }
   }, {
@@ -12947,9 +12947,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "The MethodInvocationReplacement is not justifiable. The string has been changed. The first replacement is justifiable with argumentization"
     }
   }, {
@@ -15882,9 +15882,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -16115,9 +16115,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -16311,9 +16311,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -16325,9 +16325,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable. Functionality has been changed"
     }
   }, {
@@ -16339,9 +16339,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -16353,9 +16353,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -17356,9 +17356,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18107,9 +18107,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18121,9 +18121,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18135,9 +18135,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "The change seems a pure modification."
     }
   }, {
@@ -18149,9 +18149,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed two times, which seems a pure change."
     }
   }, {
@@ -18163,9 +18163,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed, which seems a pure change."
     }
   }, {
@@ -18177,9 +18177,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed, which seems a pure change."
     }
   }, {
@@ -18191,9 +18191,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18205,9 +18205,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18219,9 +18219,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18233,9 +18233,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18247,9 +18247,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18261,9 +18261,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18275,9 +18275,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed, which seems a pure change."
     }
   }, {
@@ -18289,9 +18289,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18303,9 +18303,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed two times, which seems a pure change."
     }
   }, {
@@ -18317,9 +18317,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed, which seems a pure change."
     }
   }, {
@@ -18331,9 +18331,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Extract Class on top of the pull up method"
     }
   }, {
@@ -18345,9 +18345,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18359,9 +18359,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed, which seems a pure change."
     }
   }, {
@@ -18508,9 +18508,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18522,9 +18522,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -18536,9 +18536,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
   }, {
@@ -18550,9 +18550,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
   }, {
@@ -18564,9 +18564,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
   }, {
@@ -18928,9 +18928,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
   }, {
@@ -19413,9 +19413,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -19427,9 +19427,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -19441,9 +19441,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
   }, {
@@ -19455,9 +19455,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
   }, {
@@ -19469,9 +19469,9 @@
     "validators" : "Matin, Nikos",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
   }, {
@@ -19847,9 +19847,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
   }, {
@@ -20304,9 +20304,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -20318,9 +20318,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -20564,757 +20564,6 @@
   } ],
   "refDiffExecutionTime" : 15903
 }, {
-  "id" : 1143365,
-  "repository" : "https://github.com/jersey/jersey.git",
-  "sha1" : "d57b1401f874f96a53f1ec1c0f8a6089ae66a4ce",
-  "url" : "https://github.com/jersey/jersey/commit/d57b1401f874f96a53f1ec1c0f8a6089ae66a4ce",
-  "author" : "Jakub Podlesak",
-  "time" : "7/16/15 4:51 AM",
-  "refactorings" : [ {
-    "type" : "Extract Method",
-    "description" : "Extract Method public _testParamValidatedResourceNoParam(target WebTarget) : void extracted from public testParamValidatedResourceNoParam() : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Superclass",
-    "description" : "Extract Superclass org.glassfish.jersey.ext.cdi1x.internal.GenericHk2LocatorManager from class org.glassfish.jersey.ext.cdi1x.servlet.internal.ServletHk2LocatorManager",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method public _testParamValidatedResourceParamProvided(target WebTarget) : void extracted from public testParamValidatedResourceParamProvided() : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method public _testPropertyValidatedResourceParamProvided(target WebTarget) : void extracted from public testPropertyValidatedResourceParamProvided() : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method public _testOldFashionedResourceNoParam(target WebTarget) : void extracted from public testOldFashionedResourceNoParam() : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method public _testPropertyValidatedResourceNoParam(target WebTarget) : void extracted from public testPropertyValidatedResourceNoParam() : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method public _testFieldValidatedResourceNoParam(target WebTarget) : void extracted from public testFieldValidatedResourceNoParam() : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method public _testOldFashionedResourceParamProvided(target WebTarget) : void extracted from public testOldFashionedResourceParamProvided() : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method public _testFieldValidatedResourceParamProvided(target WebTarget) : void extracted from public testFieldValidatedResourceParamProvided() : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method private listTypes(logMsgBuilder StringBuilder, types Collection<Type>) : StringBuilder renamed to private listElements(logMsgBuilder StringBuilder, elements Collection<? extends Object>) : StringBuilder in class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Class",
-    "description" : "Rename Class org.glassfish.jersey.tests.cdi.bv.CdiTest renamed to org.glassfish.jersey.tests.cdi.bv.RawCdiTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Class",
-    "description" : "Rename Class org.glassfish.jersey.tests.cdi.bv.Hk2Test renamed to org.glassfish.jersey.tests.cdi.bv.RawHk2Test",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Class",
-    "description" : "Rename Class org.glassfish.jersey.ext.cdi1x.internal.DefaultHk2LocatorManager renamed to org.glassfish.jersey.ext.cdi1x.internal.SingleHk2LocatorManager",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Class",
-    "description" : "Rename Class org.glassfish.jersey.tests.cdi.resources.MyApplication renamed to org.glassfish.jersey.tests.cdi.resources.MainApplication",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter types : Collection<Type> to elements : Collection<? extends Object> in method private listElements(logMsgBuilder StringBuilder, elements Collection<? extends Object>) : StringBuilder from class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable isJaxRsProvider : boolean to isJaxRsResource : boolean in method public bind(clazz Class<?>, providerContracts Set<Class<?>>) : boolean from class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable extScopesFound : boolean to extScopeBound : boolean in method private initialize(componentProviders Iterable<ComponentProvider>) : ServerRuntime from class org.glassfish.jersey.server.ApplicationHandler",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter extensionBean : Bean to bean : Bean in method package getBeanReference(clazz Class<T>, bean Bean, beanManager BeanManager) : T from class org.glassfish.jersey.ext.cdi1x.internal.CdiUtil",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Attribute",
-    "description" : "Rename Attribute jaxRsProvidersCache : Cache<Class<?>,Boolean> to jaxRsResourceCache : Cache<Class<?>,Boolean> in class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method public getEffectiveLocator() : ServiceLocator from class org.glassfish.jersey.ext.cdi1x.servlet.internal.ServletHk2LocatorManager to public getEffectiveLocator() : ServiceLocator from class org.glassfish.jersey.ext.cdi1x.internal.GenericHk2LocatorManager",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "404"
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method public registerLocator(locator ServiceLocator) : void from class org.glassfish.jersey.ext.cdi1x.servlet.internal.ServletHk2LocatorManager to public registerLocator(locator ServiceLocator) : void from class org.glassfish.jersey.ext.cdi1x.internal.GenericHk2LocatorManager",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "404"
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method public notify(target Hk2InjectedTarget) : void from class org.glassfish.jersey.ext.cdi1x.servlet.internal.ServletHk2LocatorManager to public notify(target Hk2InjectedTarget) : void from class org.glassfish.jersey.ext.cdi1x.internal.GenericHk2LocatorManager",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "404"
-    }
-  }, {
-    "type" : "Pull Up Attribute",
-    "description" : "Pull Up Attribute private multipleLocators : boolean from class org.glassfish.jersey.ext.cdi1x.servlet.internal.ServletHk2LocatorManager to private multipleLocators : boolean from class org.glassfish.jersey.ext.cdi1x.internal.GenericHk2LocatorManager",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Attribute",
-    "description" : "Pull Up Attribute private locator : ServiceLocator from class org.glassfish.jersey.ext.cdi1x.servlet.internal.ServletHk2LocatorManager to private locator : ServiceLocator from class org.glassfish.jersey.ext.cdi1x.internal.GenericHk2LocatorManager",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type types : Collection<Type> to elements : Collection<? extends Object> in method private listElements(logMsgBuilder StringBuilder, elements Collection<? extends Object>) : StringBuilder from class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter targetClassLoader : ClassLoader to componentClass : Class<?> in method public Hk2InjectedCdiTarget(componentClass Class<?>, delegate InjectionTarget) in class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.Hk2InjectedCdiTarget",
-    "comment" : "<p><span class='blob-code-inner blob-code-marker' data-code-marker=' '><span class='x x-first'>componentClass contains targetClassLoader: componentClass</span><span class='pl-k x'>.</span><span class='x x-last'>getClassLoader()</span></span></p>",
-    "validation" : "CTP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type t : Type to t : Object in method private listElements(logMsgBuilder StringBuilder, elements Collection<? extends Object>) : StringBuilder from class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Class",
-    "description" : "Rename Class org.glassfish.jersey.tests.cdi.bv.CdiTest renamed to org.glassfish.jersey.tests.cdi.bv.NonJaxRsValidatedBean",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "RMiner-1x",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public testParamValidatedResourceNoParam() : void renamed to public _testParamValidatedResourceNoParam(target WebTarget) : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public testParamValidatedResourceParamProvided() : void renamed to public _testParamValidatedResourceParamProvided(target WebTarget) : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public testFieldValidatedResourceNoParam() : void renamed to public _testFieldValidatedResourceNoParam(target WebTarget) : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public testFieldValidatedResourceParamProvided() : void renamed to public _testFieldValidatedResourceParamProvided(target WebTarget) : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public testPropertyValidatedResourceNoParam() : void renamed to public _testPropertyValidatedResourceNoParam(target WebTarget) : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public testPropertyValidatedResourceParamProvided() : void renamed to public _testPropertyValidatedResourceParamProvided(target WebTarget) : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public testOldFashionedResourceNoParam() : void renamed to public _testOldFashionedResourceNoParam(target WebTarget) : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public testOldFashionedResourceParamProvided() : void renamed to public _testOldFashionedResourceParamProvided(target WebTarget) : void in class org.glassfish.jersey.tests.cdi.bv.BaseValidationTest",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation @ValidateOnExecution(type = ExecutableType.NONE) in method public getQ(q String) : String from class org.glassfish.jersey.tests.cdi.bv.CdiOldFashionedResource",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Annotation",
-    "description" : "Add Class Annotation @Vetoed in class org.glassfish.jersey.tests.cdi.bv.Hk2Application",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Annotation",
-    "description" : "Add Class Annotation @Vetoed in class org.glassfish.jersey.tests.cdi.bv.Hk2FieldInjectedResource",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Annotation",
-    "description" : "Add Class Annotation @Vetoed in class org.glassfish.jersey.tests.cdi.bv.Hk2OldFashionedResource",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Annotation",
-    "description" : "Add Class Annotation @Vetoed in class org.glassfish.jersey.tests.cdi.bv.Hk2ParamInjectedResource",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Annotation",
-    "description" : "Add Class Annotation @Vetoed in class org.glassfish.jersey.tests.cdi.bv.Hk2PropertyInjectedResource",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Annotation",
-    "description" : "Add Class Annotation @Vetoed in class org.glassfish.jersey.tests.cdi.bv.Hk2ValidationInterceptor",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Annotation",
-    "description" : "Add Class Annotation @Vetoed in class org.glassfish.jersey.tests.cdi.bv.ValidationResultUtil",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Modify Class Annotation",
-    "description" : "Modify Class Annotation @ApplicationPath(\"/*\") to @ApplicationPath(\"main\") in class org.glassfish.jersey.tests.cdi.resources.MainApplication",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter serviceLocator : ServiceLocator in method public open(serviceLocator ServiceLocator) : ExternalRequestContext<Map<String,Object>> from class org.glassfish.jersey.weld.se.WeldRequestScope",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter serviceLocator : ServiceLocator in method public resume(ctx ExternalRequestContext<Map<String,Object>>, serviceLocator ServiceLocator) : void from class org.glassfish.jersey.weld.se.WeldRequestScope",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter serviceLocator : ServiceLocator in method public suspend(ctx ExternalRequestContext<Map<String,Object>>, serviceLocator ServiceLocator) : void from class org.glassfish.jersey.weld.se.WeldRequestScope",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Annotation",
-    "description" : "Add Parameter Annotation @WithAnnotations({Context.class,ApplicationPath.class,HeaderParam.class,QueryParam.class,FormParam.class,MatrixParam.class,BeanParam.class,PathParam.class}) in parameter processAnnotatedType : ProcessAnnotatedType in method private processAnnotatedType(processAnnotatedType ProcessAnnotatedType) : void from class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Annotation",
-    "description" : "Remove Method Annotation @Override in method public getEffectiveLocator() : ServiceLocator from class org.glassfish.jersey.ext.cdi1x.servlet.internal.ServletHk2LocatorManager",
-    "comment" : "<p>deleted method</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter componentClass : Class<?> in method public Hk2InjectedCdiTarget(componentClass Class<?>, delegate InjectionTarget) from class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.Hk2InjectedCdiTarget",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Parameter",
-    "description" : "Remove Parameter targetClassLoader : ClassLoader in method public Hk2InjectedCdiTarget(delegate InjectionTarget, targetClassLoader ClassLoader) from class org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.Hk2InjectedCdiTarget",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter serviceLocator : ServiceLocator in method public open(serviceLocator ServiceLocator) : ExternalRequestContext<Object> from class org.glassfish.jersey.server.ServerRuntime.NOOP_EXTERNAL_REQ_SCOPE.new ExternalRequestScope<Object>",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ],
-  "refDiffExecutionTime" : 5816
-}, {
   "id" : 1146483,
   "repository" : "https://github.com/JetBrains/intellij-community.git",
   "sha1" : "33b0ac3a029845f9c20f7f5967c03b31b24f3b4b",
@@ -21330,9 +20579,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21367,9 +20616,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "direct attribute access has been changed to getter. It's a pure change"
     }
   }, {
@@ -21381,9 +20630,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "direct attribute access has been changed to getter. It's a pure change"
     }
   }, {
@@ -21558,9 +20807,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable. Note that the replacement is justifiable, which is double -> Double"
     }
   }, {
@@ -21572,9 +20821,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21586,9 +20835,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
@@ -21600,9 +20849,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21614,9 +20863,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21628,9 +20877,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "The addition of the variable declaration does not change the program behavior. The statement just got splitted"
     }
   }, {
@@ -21642,9 +20891,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21656,9 +20905,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21670,9 +20919,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21684,9 +20933,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "the replacement is -runInternalArnoldi(3) -> runInternalIteration()-, which is unjustifiable."
     }
   }, {
@@ -21698,9 +20947,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21712,9 +20961,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21726,9 +20975,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "the replacements and non-mapped leaves are not justifiable"
     }
   }, {
@@ -21740,9 +20989,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21754,9 +21003,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21768,9 +21017,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
@@ -21782,9 +21031,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21796,9 +21045,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -21810,9 +21059,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : "The addition of the variable declaration does not change the program behavior. The statement just got splitted"
     }
   }, {
@@ -21824,9 +21073,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -22337,9 +21586,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
+      "mappingState" : 1,
       "validationComment" : "this. has been omitted, which is a pure change in case of a pull up method"
     }
   }, {
@@ -22365,9 +21614,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Rename Variable on top of the pull up method"
     }
   }, {
@@ -22649,9 +21898,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
       "validationComment" : "Rename Parameter on top of the Pull Up method"
     }
   }, {
@@ -23218,9 +22467,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23232,9 +22481,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23246,9 +22495,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23260,9 +22509,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23274,9 +22523,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23288,9 +22537,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -23302,9 +22551,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25285,9 +24534,9 @@
     "validators" : "Ameya",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25434,9 +24683,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -25448,9 +24697,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves and replacements are not justifiable"
     }
   }, {
@@ -25532,9 +24781,9 @@
     "validators" : "Matin, Davood",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
       "validationComment" : "put has been changed to putAll. And Rename Parameter on top."
     }
   }, {
@@ -25546,9 +24795,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
       "validationComment" : "non-mapped leaves and replacements are not justifiable"
     }
   }, {
