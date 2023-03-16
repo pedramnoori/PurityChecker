@@ -45,7 +45,7 @@ public class PurityChecker {
         PurityCheckResult result = null;
         switch (refactoring.getRefactoringType()) {
             case EXTRACT_OPERATION:
-//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings);
+                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings);
                 break;
             case RENAME_CLASS:
 //                result = detectRenameClassPurity((RenameClassRefactoring) refactoring, refactorings, modelDiff);
@@ -57,16 +57,16 @@ public class PurityChecker {
 //                result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
                 break;
             case MOVE_OPERATION:
-//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PUSH_DOWN_OPERATION:
-//                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PULL_UP_OPERATION:
                 result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             default:
                 result = null;
@@ -237,6 +237,17 @@ public class PurityChecker {
             List<CompositeStatementObject> nonMappedNodesT2 = refactoring.getBodyMapper().getNonMappedInnerNodesT2();
             List<CompositeStatementObject> nonMappedNodesT1 = refactoring.getBodyMapper().getNonMappedInnerNodesT1();
 
+
+            checkForBlockNonMapped(nonMappedNodesT2, nonMappedNodesT1);
+            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+                return new PurityCheckResult(true, "Just added or removed blocks - or non-important missed mapping", "Severe Changes", 5);
+            }
+
+            checkIfTheNonMappedStatementsAlreadyBeingMapped(refactoring, nonMappedLeavesT2, nonMappedLeavesT1, nonMappedNodesT2, nonMappedNodesT1);
+            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+                return new PurityCheckResult(true, "no non-mapped leaves", "Severe Changes", 5);
+            }
+
             checkForRenameRefactoringOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2, nonMappedLeavesT1);
             if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
                 return new PurityCheckResult(true, "Rename Method on top of the pull up method - with non-mapped leaves or nodes", "Severe Changes", 5);
@@ -289,6 +300,92 @@ public class PurityChecker {
 
 
         }
+    }
+
+    private static void checkForBlockNonMapped(List<CompositeStatementObject> nonMappedNodesT2, List<CompositeStatementObject> nonMappedNodesT1) {
+
+        List<CompositeStatementObject> nonMappedNodesT2ToRemove = new ArrayList<>();
+        List<CompositeStatementObject> nonMappedNodesT1ToRemove = new ArrayList<>();
+
+        for (CompositeStatementObject compositeStatementObject : nonMappedNodesT2) {
+            if (compositeStatementObject.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
+                nonMappedNodesT2ToRemove.add(compositeStatementObject);
+            }
+        }
+
+        for (CompositeStatementObject compositeStatementObject : nonMappedNodesT1) {
+            if (compositeStatementObject.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
+                nonMappedNodesT1ToRemove.add(compositeStatementObject);
+            }
+        }
+
+        nonMappedNodesT2.removeAll(nonMappedNodesT2ToRemove);
+        nonMappedNodesT1.removeAll(nonMappedNodesT1ToRemove);
+    }
+
+    private static void checkIfTheNonMappedStatementsAlreadyBeingMapped(Refactoring refactoring, List<AbstractCodeFragment> nonMappedLeavesT2, List<AbstractCodeFragment> nonMappedLeavesT1, List<CompositeStatementObject> nonMappedNodesT2, List<CompositeStatementObject> nonMappedNodesT1) {
+
+        UMLOperationBodyMapper bodyMapper = null;
+        if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+            bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+            bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+            bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
+            bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
+        }else if (refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
+            bodyMapper = ((PullUpOperationRefactoring) (refactoring)).getBodyMapper();
+        }else {
+            return;
+        }
+
+        List<AbstractCodeFragment> nonMappedLeavesT2ToRemove = new ArrayList<>();
+        List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
+        List<CompositeStatementObject> nonMappedNodesT2ToRemove = new ArrayList<>();
+        List<CompositeStatementObject> nonMappedNodesT1ToRemove = new ArrayList<>();
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT2) {
+            for (AbstractCodeMapping mapping : bodyMapper.getMappings()) {
+                if (abstractCodeFragment.equals(mapping.getFragment2())) {
+                    nonMappedLeavesT2ToRemove.add(abstractCodeFragment);
+                }
+            }
+        }
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+            for (AbstractCodeMapping mapping : bodyMapper.getMappings()) {
+                if (abstractCodeFragment.equals(mapping.getFragment1())) {
+                    nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
+                }
+            }
+        }
+
+        for (CompositeStatementObject compositeStatementObject : nonMappedNodesT2) {
+            for (AbstractCodeMapping mapping : bodyMapper.getMappings()) {
+                if (mapping instanceof CompositeStatementObjectMapping) {
+                    if (compositeStatementObject.equals(mapping.getFragment2())) {
+                        nonMappedNodesT2ToRemove.add(compositeStatementObject);
+                    }
+                }
+            }
+        }
+
+        for (CompositeStatementObject compositeStatementObject : nonMappedNodesT1) {
+            for (AbstractCodeMapping mapping : bodyMapper.getMappings()) {
+                if (mapping instanceof CompositeStatementObjectMapping) {
+                    if (compositeStatementObject.equals(mapping.getFragment1())) {
+                        nonMappedNodesT1ToRemove.add(compositeStatementObject);
+                    }
+                }
+            }
+        }
+
+        nonMappedLeavesT2.removeAll(nonMappedLeavesT2ToRemove);
+        nonMappedLeavesT1.removeAll(nonMappedLeavesT1ToRemove);
+        nonMappedNodesT2.removeAll(nonMappedNodesT2ToRemove);
+        nonMappedNodesT1.removeAll(nonMappedNodesT1ToRemove);
+
     }
 
     private static void checkForReplaceAttributeOnTop(List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {

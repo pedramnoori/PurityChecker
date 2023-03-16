@@ -21557,11 +21557,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves are not justifiable. Note that the replacement is justifiable, which is double -> Double"
     }
   }, {
     "type" : "Pull Up Method",
@@ -21571,7 +21571,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21585,11 +21585,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Pull Up Method",
@@ -21599,7 +21599,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21613,7 +21613,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21627,11 +21627,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The addition of the variable declaration does not change the program behavior. The statement just got splitted"
     }
   }, {
     "type" : "Pull Up Method",
@@ -21641,7 +21641,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21655,7 +21655,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21669,7 +21669,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21683,11 +21683,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement is -runInternalArnoldi(3) -> runInternalIteration()-, which is unjustifiable."
     }
   }, {
     "type" : "Pull Up Method",
@@ -21697,7 +21697,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21711,7 +21711,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21725,11 +21725,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacements and non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Pull Up Method",
@@ -21739,7 +21739,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21753,7 +21753,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21767,11 +21767,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Pull Up Method",
@@ -21781,7 +21781,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21795,7 +21795,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21809,11 +21809,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The addition of the variable declaration does not change the program behavior. The statement just got splitted"
     }
   }, {
     "type" : "Pull Up Method",
@@ -21823,7 +21823,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -22336,11 +22336,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "this. has been omitted, which is a pure change in case of a pull up method"
     }
   }, {
     "type" : "Pull Up Attribute",
@@ -22364,11 +22364,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename Variable on top of the pull up method"
     }
   }, {
     "type" : "Rename Parameter",
@@ -22648,11 +22648,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename Parameter on top of the Pull Up method"
     }
   }, {
     "type" : "Rename Parameter",

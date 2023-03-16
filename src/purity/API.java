@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/Graylog2/graylog2-server/commit/2ef067fc70055fc4d55c75937303414ddcf07e0e");
+        isPureAPI("https://github.com/droolsjbpm/jbpm/commit/3815f293ba9338f423315d93a373608c95002b15");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
