@@ -1,16 +1,18 @@
 package org.refactoringminer.astDiff.matchers;
 
+import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import com.github.gumtreediff.utils.Pair;
 import gr.uom.java.xmi.*;
 import gr.uom.java.xmi.LocationInfo.CodeElementType;
 import gr.uom.java.xmi.decomposition.*;
+import gr.uom.java.xmi.decomposition.replacement.CompositeReplacement;
+import gr.uom.java.xmi.decomposition.replacement.Replacement;
 import gr.uom.java.xmi.diff.*;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringMinerTimedOutException;
-import org.refactoringminer.api.RefactoringType;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 
@@ -29,6 +31,7 @@ public class ProjectASTDiffer
 	private final boolean CHECK_COMMENTS = false;
 	private final UMLModelDiff modelDiff;
 	private List<AbstractCodeMapping> lastStepMappings;
+	private ExtendedMultiMappingStore optimizationMappingStore;
 	private List<Refactoring> modelDiffRefactorings;
 	private final Set<ASTDiff> diffSet = new LinkedHashSet<>();
 
@@ -53,6 +56,7 @@ public class ProjectASTDiffer
 		makeASTDiff(modelDiff.getInnerClassMoveDiffList(),true);
 		long diff_execution_finished =  System.currentTimeMillis();
 		logger.info("Diff execution: " + (diff_execution_finished - diff_execution_started)/ 1000 + " seconds");
+
 		computeAllEditScripts();
 	}
 
@@ -70,7 +74,6 @@ public class ProjectASTDiffer
 			ASTDiff append = findAppend(classDiff);
 			boolean decision = (append != null) || mergeFlag;
 			ASTDiff classASTDiff = process(classDiff, findTreeContexts(classDiff), decision);
-
 			if (append != null)
 				append.getMultiMappings().mergeMappings(classASTDiff.getMultiMappings());
 			else {
@@ -100,6 +103,7 @@ public class ProjectASTDiffer
 		Tree dstTree = dstTreeContext.getRoot();
 		ExtendedMultiMappingStore mappingStore = new ExtendedMultiMappingStore(srcTree,dstTree);
 		this.lastStepMappings = new ArrayList<>();
+		this.optimizationMappingStore = new ExtendedMultiMappingStore(srcTree,dstTree);
 		if (!mergeFlag) {
 			mappingStore.addMapping(srcTree, dstTree);
 			processPackageDeclaration(srcTree,dstTree,classDiff,mappingStore);
@@ -149,15 +153,26 @@ public class ProjectASTDiffer
 	}
 
 	private void processLastStepMappings(Tree srcTree, Tree dstTree, ExtendedMultiMappingStore mappingStore) {
-		ExtendedMultiMappingStore optimizationMappings = new ExtendedMultiMappingStore(srcTree,dstTree);
+		ExtendedMultiMappingStore lastStepMappingStore = new ExtendedMultiMappingStore(srcTree,dstTree);
 		for (AbstractCodeMapping lastStepMapping : lastStepMappings) {
 			if (lastStepMapping.getFragment1().getLocationInfo().getFilePath().equals(lastStepMapping.getFragment2().getLocationInfo().getFilePath())) {
 				Tree srcExp = TreeUtilFunctions.findByLocationInfo(srcTree, lastStepMapping.getFragment1().getLocationInfo());
 				Tree dstExp = TreeUtilFunctions.findByLocationInfo(dstTree, lastStepMapping.getFragment2().getLocationInfo());
-				new LeafMatcher(false).match(srcExp, dstExp, lastStepMapping, optimizationMappings);
+				new LeafMatcher(false).match(srcExp, dstExp, lastStepMapping, lastStepMappingStore);
 			}
 		}
-		mappingStore.replaceWithOptimizedMappings(optimizationMappings);
+		mappingStore.replaceWithOptimizedMappings(lastStepMappingStore);
+		prepareOptimization(mappingStore);
+		mappingStore.replaceWithOptimizedMappings(optimizationMappingStore);
+	}
+
+	private void prepareOptimization(ExtendedMultiMappingStore mappingStore) {
+		for (Mapping mapping : optimizationMappingStore) {
+			Set<Tree> dsts = mappingStore.getDsts(mapping.first);
+			if (dsts == null) continue;
+			if (dsts.contains(mapping.second))
+				optimizationMappingStore.removeMapping(mapping.first,mapping.second);
+		}
 	}
 
 	private void processEnumConstants(Tree srcTree, Tree dstTree, Set<org.apache.commons.lang3.tuple.Pair<UMLEnumConstant, UMLEnumConstant>> commonEnumConstants, ExtendedMultiMappingStore mappingStore) {
@@ -317,7 +332,48 @@ public class ProjectASTDiffer
 				lastStepMappings.add(abstractCodeMapping);
 			}
 			else
+			{
 				new LeafMatcher(false).match(srcStatementNode,dstStatementNode,abstractCodeMapping,mappingStore);
+				additionallyMatchedStatements(srcTree, dstTree, srcStatementNode, dstStatementNode, abstractCodeMapping, mappingStore);
+			}
+			optimizeVariableDeclarations(abstractCodeMapping);
+		}
+	}
+
+	private void optimizeVariableDeclarations(AbstractCodeMapping abstractCodeMapping) {
+		List<VariableDeclaration> variableDeclarations1 = abstractCodeMapping.getFragment1().getVariableDeclarations();
+		List<VariableDeclaration> variableDeclarations2 = abstractCodeMapping.getFragment2().getVariableDeclarations();
+		if (variableDeclarations1.size() == 1 && variableDeclarations2.size() == 0){
+			if (abstractCodeMapping.getFragment2().toString().contains(variableDeclarations1.get(0).getInitializer().toString()))
+				lastStepMappings.add(new LeafMapping(variableDeclarations1.get(0).getInitializer(), abstractCodeMapping.getFragment2(),null,null));
+		}
+		if (variableDeclarations1.size() == 0 && variableDeclarations2.size() == 1){
+			if (abstractCodeMapping.getFragment1().toString().contains(variableDeclarations2.get(0).getInitializer().toString()))
+				lastStepMappings.add(new LeafMapping(abstractCodeMapping.getFragment1(),variableDeclarations2.get(0).getInitializer(),null,null));
+		}
+	}
+
+	private static void additionallyMatchedStatements(Tree srcTree, Tree dstTree, Tree srcStatementNode, Tree dstStatementNode, AbstractCodeMapping abstractCodeMapping, ExtendedMultiMappingStore mappingStore) {
+		if (abstractCodeMapping != null) {
+			for (Replacement replacement : abstractCodeMapping.getReplacements()) {
+				if (replacement instanceof CompositeReplacement) {
+					CompositeReplacement compositeReplacement = (CompositeReplacement) replacement;
+					if (compositeReplacement.getAdditionallyMatchedStatements1().size() > 0) {
+						for (AbstractCodeFragment abstractCodeFragment : compositeReplacement.getAdditionallyMatchedStatements1()) {
+							Tree srcAdditionalTree = TreeUtilFunctions.findByLocationInfo(srcTree, abstractCodeFragment.getLocationInfo());
+							new LeafMatcher(false).match(srcAdditionalTree, dstStatementNode, null, mappingStore);
+						}
+					} else if (compositeReplacement.getAdditionallyMatchedStatements2().size() > 0) {
+						for (AbstractCodeFragment abstractCodeFragment : compositeReplacement.getAdditionallyMatchedStatements2()) {
+							Tree dstAdditionalTree = TreeUtilFunctions.findByLocationInfo(dstTree, abstractCodeFragment.getLocationInfo());
+							new LeafMatcher(false).match(srcStatementNode, dstAdditionalTree, null, mappingStore);
+						}
+					} else {
+
+					}
+
+				}
+			}
 		}
 	}
 
@@ -611,8 +667,10 @@ public class ProjectASTDiffer
 				VariableDeclaration renamedVariable = renameVariableRefactoring.getRenamedVariable();
 				Tree srcInput = TreeUtilFunctions.findByLocationInfo(srcTree,originalVariable.getLocationInfo());
 				Tree dstInput = TreeUtilFunctions.findByLocationInfo(dstTree, renamedVariable.getLocationInfo());
+				Tree srcType, dstType, srcName, dstName;
+
 				if (srcInput == null || dstInput == null) continue;
-				boolean eligibility = true;
+				boolean eligible = true;
 				switch (renameVariableRefactoring.getRefactoringType()) {
 					case REPLACE_VARIABLE_WITH_ATTRIBUTE:
 						srcInput = TreeUtilFunctions.getParentUntilType(srcInput,Constants.VARIABLE_DECLARATION_STATEMENT);
@@ -620,18 +678,77 @@ public class ProjectASTDiffer
 						//TODO: need more cases to generalize the logic
 						break;
 					case RENAME_PARAMETER:
-						eligibility = !renameVariableRefactoring.isInsideExtractedOrInlinedMethod();
+						eligible = !renameVariableRefactoring.isInsideExtractedOrInlinedMethod();
+						break;
+					case RENAME_VARIABLE:
+						Set<AbstractCodeMapping> references = renameVariableRefactoring.getReferences();
+						for (AbstractCodeMapping abstractCodeMapping : references) {
+							if (abstractCodeMapping instanceof LeafMapping)
+								findVariablesAndMatch(srcTree,dstTree,abstractCodeMapping,renameVariableRefactoring.getOriginalVariable().getVariableName(),renameVariableRefactoring.getRenamedVariable().getVariableName(),mappingStore);
+						}
+						eligible = false;
+						break;
+					case PARAMETERIZE_VARIABLE:
+						eligible = !renameVariableRefactoring.isInsideExtractedOrInlinedMethod();
+						if (!eligible)
+							break;
+						srcType = TreeUtilFunctions.findByLocationInfo(srcTree, originalVariable.getType().getLocationInfo());
+						dstType = TreeUtilFunctions.findByLocationInfo(dstTree, renamedVariable.getType().getLocationInfo());
+						new LeafMatcher(false).match(srcType,dstType,null,mappingStore);
+						if (srcInput.getChildren().size() > 0) {
+							srcName = srcInput.getChild(0);
+							if (srcName.getType().name.equals(Constants.SIMPLE_NAME)) {
+								for (Tree dstChild : dstInput.getChildren()) {
+									if (dstChild.getType().name.equals(Constants.SIMPLE_NAME)) {
+										mappingStore.addMapping(srcName,dstChild);
+										break;
+									}
+								}
+							}
+						}
+						eligible = false;
+						break;
+					case LOCALIZE_PARAMETER:
+						eligible = !renameVariableRefactoring.isInsideExtractedOrInlinedMethod();
+						if (!eligible)
+							break;
+						srcType = TreeUtilFunctions.findByLocationInfo(srcTree, originalVariable.getType().getLocationInfo());
+						dstType = TreeUtilFunctions.findByLocationInfo(dstTree, renamedVariable.getType().getLocationInfo());
+						new LeafMatcher(false).match(srcType,dstType,null,mappingStore);
+						if (dstInput.getChildren().size() > 0) {
+							dstName = dstInput.getChild(0);
+							if (dstName.getType().name.equals(Constants.SIMPLE_NAME)) {
+								for (Tree srcChild : srcInput.getChildren()) {
+									if (srcChild.getType().name.equals(Constants.SIMPLE_NAME)) {
+										mappingStore.addMapping(srcChild,dstName);
+										break;
+									}
+								}
+							}
+						}
+						eligible = false;
 						break;
 					default:
-						eligibility = false;
+						eligible = false;
 				}
-				if (eligibility) new LeafMatcher(false).match(
+				if (eligible) new LeafMatcher(false).match(
 						srcInput,
 						dstInput,
 						null,
 						mappingStore);
 			}
 		}
+	}
+
+	private void findVariablesAndMatch(Tree srcTree, Tree dstTree, AbstractCodeMapping abstractCodeMapping, String originalVariableName, String renamedVariableName, ExtendedMultiMappingStore mappingStore) {
+		Tree srcStatement = TreeUtilFunctions.findByLocationInfo(srcTree, abstractCodeMapping.getFragment1().getLocationInfo());
+		Tree dstStatement = TreeUtilFunctions.findByLocationInfo(dstTree, abstractCodeMapping.getFragment2().getLocationInfo());
+		Tree srcName = TreeUtilFunctions.findVariable(srcStatement ,originalVariableName);
+		Tree dstName = TreeUtilFunctions.findVariable(dstStatement ,renamedVariableName);
+		if (srcName != null & dstName != null) {
+			optimizationMappingStore.addMapping(srcName,dstName);
+		}
+
 	}
 
 	private void processClassImplementedInterfaces(Tree srcTree, Tree dstTree, UMLClassBaseDiff classDiff, ExtendedMultiMappingStore mappingStore) {

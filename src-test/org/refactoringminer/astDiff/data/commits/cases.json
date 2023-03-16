@@ -107,9 +107,6 @@
   "repo" : "https://github.com/gwtproject/gwt.git",
   "commit" : "e0dda9f61b7c409944c4734edf75b108e0288f59"
 }, {
-  "repo" : "https://github.com/google/auto.git",
-  "commit" : "8fc60d81fe0e46e7e5c96e71d4a93fcadc6bde4f"
-}, {
   "repo" : "https://github.com/apache/camel.git",
   "commit" : "cb0935e3af05b333b5c85a4fb3b1846836218f11"
 }, {
@@ -196,4 +193,10 @@
 }, {
   "repo" : "https://github.com/BroadleafCommerce/BroadleafCommerce.git",
   "commit" : "9687048f76519fc89b4151cbe2841bbba61a401d"
+}, {
+  "repo" : "https://github.com/spring-projects/spring-boot.git",
+  "commit" : "20d39f7af2165c67d5221f556f58820c992d2cc6"
+}, {
+  "repo" : "https://github.com/languagetool-org/languagetool.git",
+  "commit" : "01cddc5afb590b4d36cb784637a8ea8aa31d3561"
 } ]
