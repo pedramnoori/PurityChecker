@@ -9,6 +9,7 @@ import org.refactoringminer.astDiff.utils.URLHelper;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class API {
@@ -18,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/spring-projects/spring-framework/commit/e083683f4fe9206609201bb39a60bbd8ee0c8a0f");
+        isPureAPI("https://github.com/tomahawk-player/tomahawk-android/commit/56c273ee11296288cb15320c3de781b94a1e8eb4");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
@@ -32,6 +33,7 @@ public class API {
                 commitSh1, new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+//                        List<Refactoring> refactorings = umlModelDiff.getRefactorings();
                         PurityChecker.isPure(umlModelDiff,pcr);
                     }
                 }, 100);

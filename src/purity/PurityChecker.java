@@ -103,7 +103,7 @@ public class PurityChecker {
             omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck); // For the runTests commit
             omitEqualStringLiteralsReplacement(replacementsToCheck);
 //            omitPrimitiveTypeReplacements(refactoring.getReplacements(), replacementsToCheck);
-            omitReturnRelatedReplacements(refactoring, replacementsToCheck);
+//            omitReturnRelatedReplacements(refactoring, replacementsToCheck);
 
 //            PurityUtils.makeAll(modelDiff, refactoring.getOriginalOperation().getClassName(), null);
 
