@@ -1034,7 +1034,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "change happened inside the ternary operation. PurityChecker cannot evaluate the expression based on the argument passed"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -1044,11 +1044,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "change happened inside the ternary operation. PurityChecker cannot evaluate the expression based on the argument passed"
     }
   }, {
     "type" : "Add Parameter",
@@ -8108,11 +8108,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename Variable and Move Method on top"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -8122,7 +8122,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",

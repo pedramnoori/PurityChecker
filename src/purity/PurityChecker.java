@@ -127,7 +127,7 @@ public class PurityChecker {
                 purityComment += "Tolerable changes in the body" + "\n";
             }
 
-            omitMoveMethodRelatedReplacements(refactoring, replacementsToCheck);
+            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
 
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Pull Up Method specific changes - all mapped", "Changes are within the Push Down Method refactoring mechanics", mappingState);
@@ -430,7 +430,7 @@ public class PurityChecker {
         omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
-        omitMoveMethodRelatedReplacements(refactoring, replacementsToCheck);
+        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
         omitStringRelatedReplacements(replacementsToCheck);
 
 
@@ -516,7 +516,7 @@ public class PurityChecker {
                 purityComment += "Tolerable changes in the body" + "\n";
             }
 
-            omitMoveMethodRelatedReplacements(refactoring, replacementsToCheck);
+            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
 
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Push Down Method specific changes - all mapped", "Changes are within the Push Down Method refactoring mechanics", mappingState);
@@ -704,7 +704,7 @@ public class PurityChecker {
         omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
-        omitMoveMethodRelatedReplacements(refactoring, replacementsToCheck);
+        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
         omitStringRelatedReplacements(replacementsToCheck);
 
 
@@ -1410,7 +1410,7 @@ Mapping state for Move Method refactoring purity:
                 purityComment += "Tolerable changes in the body" + "\n";
             }
 
-            omitMoveMethodRelatedReplacements(refactoring, replacementsToCheck);
+            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
 
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Move Method specific changes - all mapped", "Changes are within the Move Method refactoring mechanics", mappingState);
@@ -1685,7 +1685,7 @@ Mapping state for Move Method refactoring purity:
         replacementsToCheck.removeAll(replacementsToRemove);
     }
 
-    private static void omitMoveMethodRelatedReplacements(Refactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+    private static void omitMoveMethodRelatedReplacements(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
 
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
@@ -1720,11 +1720,29 @@ Mapping state for Move Method refactoring purity:
                             String instanceOrVariable = before.substring(0, foundInBefore - 1);
                             if (instanceOrVariable.equals(classAfter)) {
                                 replacementsToRemove.add(replacement);
+                                break;
+                            }
+                            if (searchInVariableDeclarations(((MoveOperationRefactoring) refactoring).getOriginalOperation(), instanceOrVariable, classAfter)) {
+                                replacementsToRemove.add(replacement);
+                                break;
+                            }
+                            //Search in different method related refactorings to see if the class has been changed or not, specially, in an anonymous way.
+                            if (relaxSearch(((MoveOperationRefactoring) refactoring).getOriginalOperation(), refactorings, instanceOrVariable, classAfter, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName())) {
+                                replacementsToRemove.add(replacement);
                             }
 
                         } else if (foundInAfter != -1) {
                             String instanceOrVariable = after.substring(0, foundInAfter - 1);
                             if (instanceOrVariable.equals(classBefore)) {
+                                replacementsToRemove.add(replacement);
+                                break;
+                            }
+                            if (searchInVariableDeclarations(((MoveOperationRefactoring) refactoring).getMovedOperation(), instanceOrVariable, classBefore)) {
+                                replacementsToRemove.add(replacement);
+                                break;
+                            }
+                            //Search in different method related refactorings to see if the class has been changed or not, specially, in an anonymous way.
+                            if (relaxSearch(((MoveOperationRefactoring) refactoring).getMovedOperation(), refactorings, instanceOrVariable, classBefore, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName())) {
                                 replacementsToRemove.add(replacement);
                             }
                         }
@@ -1734,6 +1752,44 @@ Mapping state for Move Method refactoring purity:
         }
 
         replacementsToCheck.removeAll(replacementsToRemove);
+    }
+
+    private static boolean relaxSearch(UMLOperation movedOperation, List<Refactoring> refactorings, String instanceOrVariable, String className, String method) {
+
+        for (Refactoring refactoring : refactorings) {
+            if (isMethodRelatedRefactoring(refactoring)) {
+                if (refactoring instanceof AddMethodAnnotationRefactoring) {
+                    if (((AddMethodAnnotationRefactoring) refactoring).getOperationAfter().getName().equals(method)) {
+                        String s = ((AddMethodAnnotationRefactoring) refactoring).getOperationAfter().getNonQualifiedClassName();
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private static boolean isMethodRelatedRefactoring(Refactoring refactoring) {
+
+        if (refactoring instanceof AddMethodAnnotationRefactoring ||
+            refactoring instanceof AddMethodModifierRefactoring ||
+            refactoring instanceof ChangeOperationAccessModifierRefactoring) {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean searchInVariableDeclarations(UMLOperation operation, String instanceOrVariable, String className) {
+
+        for (VariableDeclaration variableDeclaration : operation.getAllVariableDeclarations()) {
+            if (variableDeclaration.getVariableName().equals(instanceOrVariable)) {
+                if (variableDeclaration.getType().getClassType().equals(className)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     private static void checkForPullUpMethodOnTop(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck, UMLModelDiff modelDiff) {
@@ -1910,7 +1966,7 @@ Mapping state for Move Method refactoring purity:
         omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
-        omitMoveMethodRelatedReplacements(refactoring, replacementsToCheck);
+        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
         omitStringRelatedReplacements(replacementsToCheck);
 
 
@@ -4286,6 +4342,9 @@ Mapping state for Move Method refactoring purity:
         mc1Temp.removeAll(methodCalls2);
         mc2Temp.removeAll(methodCalls1);
         int _renameCounter = mc2Temp.size();
+        if (_renameCounter == 0)
+            return false;
+
         for (String call1 : mc1Temp) {
             boolean _met = false;
             for (String call2 : mc2Temp) {
