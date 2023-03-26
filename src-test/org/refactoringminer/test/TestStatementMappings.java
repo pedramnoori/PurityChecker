@@ -84,16 +84,20 @@ public class TestStatementMappings {
 			@Override
 			public void handle(String commitId, List<Refactoring> refactorings) {
 				List<UMLOperationBodyMapper> parentMappers = new ArrayList<>();
+				List<UMLOperationBodyMapper> mappers = new ArrayList<>();
 				for (Refactoring ref : refactorings) {
 					if(ref instanceof InlineOperationRefactoring) {
 						InlineOperationRefactoring ex = (InlineOperationRefactoring)ref;
 						UMLOperationBodyMapper bodyMapper = ex.getBodyMapper();
-						if(!bodyMapper.isNested()) {
-							if(!parentMappers.contains(bodyMapper.getParentMapper())) {
-								parentMappers.add(bodyMapper.getParentMapper());
+						if(!mappers.contains(bodyMapper)) {
+							mappers.add(bodyMapper);
+							if(!bodyMapper.isNested()) {
+								if(!parentMappers.contains(bodyMapper.getParentMapper())) {
+									parentMappers.add(bodyMapper.getParentMapper());
+								}
 							}
+							mapperInfo(bodyMapper, actual);
 						}
-						mapperInfo(bodyMapper, actual);
 					}
 				}
 				for(UMLOperationBodyMapper parentMapper : parentMappers) {
@@ -470,6 +474,40 @@ public class TestStatementMappings {
 	}
 
 	@Test
+	public void testNestedExtractMethodStatementMappings4() throws Exception {
+		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+		Repository repo = gitService.cloneIfNotExists(
+		    REPOS + "/buck",
+		    "https://github.com/facebook/buck.git");
+
+		final List<String> actual = new ArrayList<>();
+		miner.detectAtCommit(repo, "7e104c3ed4b80ec8e9b72356396f879d1067cc40", new RefactoringHandler() {
+			@Override
+			public void handle(String commitId, List<Refactoring> refactorings) {
+				List<UMLOperationBodyMapper> parentMappers = new ArrayList<>();
+				for (Refactoring ref : refactorings) {
+					if(ref instanceof ExtractOperationRefactoring) {
+						ExtractOperationRefactoring ex = (ExtractOperationRefactoring)ref;
+						UMLOperationBodyMapper bodyMapper = ex.getBodyMapper();
+						if(!bodyMapper.isNested()) {
+							if(!parentMappers.contains(bodyMapper.getParentMapper())) {
+								parentMappers.add(bodyMapper.getParentMapper());
+							}
+						}
+						mapperInfo(bodyMapper, actual);
+					}
+				}
+				for(UMLOperationBodyMapper parentMapper : parentMappers) {
+					mapperInfo(parentMapper, actual);
+				}
+			}
+		});
+		
+		List<String> expected = IOUtils.readLines(new FileReader(System.getProperty("user.dir") + "/src-test/Data/buck-7e104c3ed4b80ec8e9b72356396f879d1067cc40.txt"));
+		Assert.assertTrue(expected.size() == actual.size() && expected.containsAll(actual) && actual.containsAll(expected));
+	}
+
+	@Test
 	public void testNestedExtractMethodStatementMappingsWithIntermediateDelegate() throws Exception {
 		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 		Repository repo = gitService.cloneIfNotExists(
@@ -696,6 +734,40 @@ public class TestStatementMappings {
 	}
 
 	@Test
+	public void testDuplicatedExtractMethodStatementMappingsWithSingleCallSite() throws Exception {
+		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+		Repository repo = gitService.cloneIfNotExists(
+		    REPOS + "/thymeleaf",
+		    "https://github.com/thymeleaf/thymeleaf.git");
+
+		final List<String> actual = new ArrayList<>();
+		miner.detectAtCommit(repo, "378ba37750a9cb1b19a6db434dfa59308f721ea6", new RefactoringHandler() {
+			@Override
+			public void handle(String commitId, List<Refactoring> refactorings) {
+				List<UMLOperationBodyMapper> parentMappers = new ArrayList<>();
+				for (Refactoring ref : refactorings) {
+					if(ref instanceof ExtractOperationRefactoring) {
+						ExtractOperationRefactoring ex = (ExtractOperationRefactoring)ref;
+						UMLOperationBodyMapper bodyMapper = ex.getBodyMapper();
+						if(!bodyMapper.isNested()) {
+							if(!parentMappers.contains(bodyMapper.getParentMapper())) {
+								parentMappers.add(bodyMapper.getParentMapper());
+							}
+						}
+						mapperInfo(bodyMapper, actual);
+					}
+				}
+				for(UMLOperationBodyMapper parentMapper : parentMappers) {
+					mapperInfo(parentMapper, actual);
+				}
+			}
+		});
+		
+		List<String> expected = IOUtils.readLines(new FileReader(System.getProperty("user.dir") + "/src-test/Data/thymeleaf-378ba37750a9cb1b19a6db434dfa59308f721ea6.txt"));
+		Assert.assertTrue(expected.size() == actual.size() && expected.containsAll(actual) && actual.containsAll(expected));
+	}
+
+	@Test
 	public void testExtractMethodStatementMappings2() throws Exception {
 		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
 		Repository repo = gitService.cloneIfNotExists(
@@ -896,6 +968,40 @@ public class TestStatementMappings {
 		});
 		
 		List<String> expected = IOUtils.readLines(new FileReader(System.getProperty("user.dir") + "/src-test/Data/languagetool-01cddc5afb590b4d36cb784637a8ea8aa31d3561.txt"));
+		Assert.assertTrue(expected.size() == actual.size() && expected.containsAll(actual) && actual.containsAll(expected));
+	}
+
+	@Test
+	public void testExtractMethodStatementMappings8() throws Exception {
+		GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+		Repository repo = gitService.cloneIfNotExists(
+		    REPOS + "/hive",
+		    "https://github.com/apache/hive.git");
+
+		final List<String> actual = new ArrayList<>();
+		miner.detectAtCommit(repo, "4ccc0c37aabbd90ecaa36fcc491e2270e7e9bea6", new RefactoringHandler() {
+			@Override
+			public void handle(String commitId, List<Refactoring> refactorings) {
+				List<UMLOperationBodyMapper> parentMappers = new ArrayList<>();
+				for (Refactoring ref : refactorings) {
+					if(ref instanceof ExtractOperationRefactoring) {
+						ExtractOperationRefactoring ex = (ExtractOperationRefactoring)ref;
+						UMLOperationBodyMapper bodyMapper = ex.getBodyMapper();
+						if(!bodyMapper.isNested()) {
+							if(!parentMappers.contains(bodyMapper.getParentMapper())) {
+								parentMappers.add(bodyMapper.getParentMapper());
+							}
+						}
+						mapperInfo(bodyMapper, actual);
+					}
+				}
+				for(UMLOperationBodyMapper parentMapper : parentMappers) {
+					mapperInfo(parentMapper, actual);
+				}
+			}
+		});
+		
+		List<String> expected = IOUtils.readLines(new FileReader(System.getProperty("user.dir") + "/src-test/Data/hive-4ccc0c37aabbd90ecaa36fcc491e2270e7e9bea6.txt"));
 		Assert.assertTrue(expected.size() == actual.size() && expected.containsAll(actual) && actual.containsAll(expected));
 	}
 

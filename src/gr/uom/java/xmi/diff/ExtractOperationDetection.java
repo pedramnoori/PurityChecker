@@ -23,6 +23,7 @@ import gr.uom.java.xmi.decomposition.OperationInvocation;
 import gr.uom.java.xmi.decomposition.StatementObject;
 import gr.uom.java.xmi.decomposition.UMLOperationBodyMapper;
 import gr.uom.java.xmi.decomposition.VariableDeclaration;
+import gr.uom.java.xmi.decomposition.replacement.Replacement;
 import gr.uom.java.xmi.decomposition.replacement.Replacement.ReplacementType;
 
 public class ExtractOperationDetection {
@@ -128,6 +129,16 @@ public class ExtractOperationDetection {
 					List<AbstractCall> sortedInvocations = sortInvocationsBasedOnArgumentOccurrences(addedOperationInvocations);
 					for(AbstractCall addedOperationInvocation : sortedInvocations) {
 						processAddedOperation(addedOperation, refactorings, sortedInvocations, addedOperationInvocation);
+						if(sortedInvocations.size() == 1 && addedOperationInvocation.arguments().size() == 1) {
+							String argument = addedOperationInvocation.arguments().get(0);
+							Set<VariableDeclaration> declarations = mapper.getContainer2().variableDeclarationMap().get(argument);
+							if(declarations != null && declarations.size() == 1) {
+								VariableDeclaration declaration = declarations.iterator().next();
+								if(declaration.getInitializer() != null && declaration.getInitializer().getTernaryOperatorExpressions().size() == 1) {
+									processAddedOperation(addedOperation, refactorings, sortedInvocations, addedOperationInvocation);
+								}
+							}
+						}
 					}
 				}
 				else {
@@ -441,6 +452,27 @@ public class ExtractOperationDetection {
 						}
 					}
 	 			}
+			}
+		}
+		if(nonMappedElementsT2 == 1) {
+			for(AbstractCodeFragment fragment2 : operationBodyMapper.getNonMappedLeavesT2()) {
+				List<VariableDeclaration> variableDeclarations = fragment2.getVariableDeclarations();
+				if(variableDeclarations.size() > 0) {
+					for(VariableDeclaration variableDeclaration : variableDeclarations) {
+						for(AbstractCodeMapping mapping : operationBodyMapper.getMappings()) {
+							boolean matchingReplacementFound = false;
+							for(Replacement r : mapping.getReplacements()) {
+								if(r.getAfter().equals(variableDeclaration.getVariableName())) {
+									matchingReplacementFound = true;
+								}
+							}
+							if(matchingReplacementFound) {
+								nonMappedElementsT2--;
+								break;
+							}
+						}
+		 			}
+				}
 			}
 		}
 		exactMatchList.addAll(additionalExactMatches);

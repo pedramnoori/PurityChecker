@@ -38,7 +38,8 @@ import gr.uom.java.xmi.diff.UMLParameterDiff;
 
 public class StringBasedHeuristics {
 	protected static final Pattern SPLIT_CONDITIONAL_PATTERN = Pattern.compile("(\\|\\|)|(&&)|(\\?)|(:)");
-	protected static final Pattern SPLIT_CONCAT_STRING_PATTERN = Pattern.compile("(\\s)*(\\+)(\\s)*");
+	protected static final Pattern SPLIT_CONCAT_STRING_PATTERN = Pattern.compile("(\\s)*( \\+ )(\\s)*");
+	protected static final Pattern SPLIT_COMMA_PATTERN = Pattern.compile("(\\s)*(\\,)(\\s)*");
 
 	protected static boolean containsMethodSignatureOfAnonymousClass(String s) {
 		String[] lines = s.split("\\n");
@@ -122,6 +123,12 @@ public class StringBasedHeuristics {
 				return true;
 			}
 			else if(diff2.isEmpty() && diff1.equals("this.")) {
+				return true;
+			}
+			if(diff1.isEmpty() && (diff2.equals("+") || diff2.equals("-")) && commonSuffix.startsWith("=")) {
+				return true;
+			}
+			else if(diff2.isEmpty() && (diff1.equals("+") || diff1.equals("-")) && commonSuffix.startsWith("=")) {
 				return true;
 			}
 			if(cast(diff1, diff2)) {
@@ -995,7 +1002,7 @@ public class StringBasedHeuristics {
 		boolean arrayCreation1 = creationCoveringTheEntireStatement1 != null && creationCoveringTheEntireStatement1.isArray();
 		boolean arrayCreation2 = creationCoveringTheEntireStatement2 != null && creationCoveringTheEntireStatement2.isArray();
 		if(!arrayCreation1 && !arrayCreation2 && !containsMethodSignatureOfAnonymousClass(s1) && !containsMethodSignatureOfAnonymousClass(s2)) {
-			if(s1.contains("+") && s2.contains("+") && !s1.contains("++") && !s2.contains("++")) {
+			if(s1.contains(" + ") && s2.contains(" + ")) {
 				Set<String> tokens1 = new LinkedHashSet<String>(Arrays.asList(SPLIT_CONCAT_STRING_PATTERN.split(s1)));
 				Set<String> tokens2 = new LinkedHashSet<String>(Arrays.asList(SPLIT_CONCAT_STRING_PATTERN.split(s2)));
 				Set<String> intersection = new LinkedHashSet<String>(tokens1);
@@ -1039,6 +1046,34 @@ public class StringBasedHeuristics {
 					return true;
 				}
 			}
+			else if(s1.contains(" + ") && !s2.contains(" + ") && !s1.contains(",") && s2.contains(",")) {
+				List<String> tokens1 = Arrays.asList(SPLIT_CONCAT_STRING_PATTERN.split(s1));
+				List<String> tokens2 = Arrays.asList(SPLIT_COMMA_PATTERN.split(s2));
+				List<String> commonTokens = new ArrayList<>();
+				for(String token1 : tokens1) {
+					if(tokens2.contains(token1)) {
+						commonTokens.add(token1);
+					}
+				}
+				Set<String> filteredIntersection = new LinkedHashSet<>();
+				for(String common : commonTokens) {
+					boolean foundInReplacements = false;
+					for(Replacement r : info.getReplacements()) {
+						if(r.getBefore().contains(common) || r.getAfter().contains(common)) {
+							foundInReplacements = true;
+							break;
+						}
+					}
+					if(!foundInReplacements) {
+						filteredIntersection.add(common);
+					}
+				}
+				if(filteredIntersection.size() > 0) {
+					IntersectionReplacement r = new IntersectionReplacement(s1, s2, filteredIntersection, ReplacementType.CONCATENATION);
+					info.getReplacements().add(r);
+					return true;
+				}
+			}
 			List<String> arguments1 = null;
 			AbstractCall invocation1 = null;
 			if(creationCoveringTheEntireStatement1 != null) {
@@ -1073,7 +1108,7 @@ public class StringBasedHeuristics {
 					if(arg1.equals(arg2)) {
 						equalArguments++;
 					}
-					else if(!arg1.contains("+") && arg2.contains("+") && !arg2.contains("++")) {
+					else if(!arg1.contains(" + ") && arg2.contains(" + ")) {
 						boolean tokenMatchesArgument = false;
 						Set<String> tokens2 = new LinkedHashSet<String>(Arrays.asList(SPLIT_CONCAT_STRING_PATTERN.split(arg2)));
 						StringBuilder sb = new StringBuilder();
@@ -1106,7 +1141,7 @@ public class StringBasedHeuristics {
 							concatenatedArguments++;
 						}
 					}
-					else if(!arg2.contains("+") && arg1.contains("+") && !arg1.contains("++")) {
+					else if(!arg2.contains(" + ") && arg1.contains(" + ")) {
 						boolean tokenMatchesArgument = false;
 						Set<String> tokens1 = new LinkedHashSet<String>(Arrays.asList(SPLIT_CONCAT_STRING_PATTERN.split(arg1)));
 						StringBuilder sb = new StringBuilder();
@@ -1838,6 +1873,26 @@ public class StringBasedHeuristics {
 				else if(c2.equals("!" + c1) || c2.equals("!(" + c1 + ")")) {
 					intersection.add(c1);
 					break;
+				}
+				else if(c1.contains("!=") && c2.contains("==")) {
+					String prefix1 = c1.substring(0, c1.indexOf("!="));
+					String prefix2 = c2.substring(0, c2.indexOf("=="));
+					String suffix1 = c1.substring(c1.indexOf("!=")+2);
+					String suffix2 = c2.substring(c2.indexOf("==")+2);
+					if(prefix1.equals(prefix2) && suffix1.equals(suffix2)) {
+						intersection.add(c1);
+						break;
+					}
+				}
+				else if(c1.contains("==") && c2.contains("!=")) {
+					String prefix1 = c1.substring(0, c1.indexOf("=="));
+					String prefix2 = c2.substring(0, c2.indexOf("!="));
+					String suffix1 = c1.substring(c1.indexOf("==")+2);
+					String suffix2 = c2.substring(c2.indexOf("!=")+2);
+					if(prefix1.equals(prefix2) && suffix1.equals(suffix2)) {
+						intersection.add(c1);
+						break;
+					}
 				}
 			}
 		}
