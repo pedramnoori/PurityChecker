@@ -33,12 +33,12 @@ public class PurityJSONHandler {
 
 //        String outputPath = runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PushDownMethod.json");
 //
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultPushDown.json", RefactoringType.PUSH_DOWN_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultPushDown.json", RefactoringType.PUSH_DOWN_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.EXTRACT_OPERATION);
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
 //        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
-//        extractRefactoringFromOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\Puritydata.json", "Pull Up Method");
+        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json", "Move And Rename Method");
 
     }
 
@@ -52,7 +52,7 @@ public class PurityJSONHandler {
             JsonNode root = objectMapper.readTree(file);
             for (JsonNode jsonNode : root) {
                 for (JsonNode refactoring : jsonNode.get("refactorings")) {
-                    if (refactoring.get("type").textValue().equals(refactoringType) &&
+                    if (refactoring.get("type").textValue().toLowerCase().equals(refactoringType.toLowerCase()) &&
                             (refactoring.get("validation").textValue().equals("TP") ||
                                     refactoring.get("validation").textValue().equals("CTP"))) {
                         System.out.println("HERE");
@@ -64,7 +64,7 @@ public class PurityJSONHandler {
 
 
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\" + refactoringType +".json"), arrayNode);
+            objectMapper.writeValue(new File("/Users/pedram/Desktop/RefactoringMiner/src/purity/" + refactoringType +".json"), arrayNode);
             } catch (IOException e) {
             throw new RuntimeException(e);
         }

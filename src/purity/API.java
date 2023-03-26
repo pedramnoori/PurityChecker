@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/crate/crate/commit/5373a852a7e45715e0a6771b7cd56592994c07dd");
+        isPureAPI("https://github.com/undertow-io/undertow/commit/d5b2bb8cd1393f1c5a5bb623e3d8906cd57e53c4");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

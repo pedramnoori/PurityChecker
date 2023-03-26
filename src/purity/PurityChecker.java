@@ -45,7 +45,7 @@ public class PurityChecker {
         PurityCheckResult result = null;
         switch (refactoring.getRefactoringType()) {
             case EXTRACT_OPERATION:
-                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings);
+//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings);
                 break;
             case RENAME_CLASS:
 //                result = detectRenameClassPurity((RenameClassRefactoring) refactoring, refactorings, modelDiff);
@@ -57,16 +57,19 @@ public class PurityChecker {
 //                result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
                 break;
             case MOVE_OPERATION:
+//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+                break;
+            case MOVE_AND_RENAME_OPERATION:
                 result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PUSH_DOWN_OPERATION:
-                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PULL_UP_OPERATION:
-                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             default:
                 result = null;
@@ -1361,7 +1364,7 @@ Mapping state for Move Method refactoring purity:
 5: When the number of parameters is different between the two targeted methods.
 
  */
-        System.out.println("MOVE METHOD");
+        System.out.println("MOVE (and Rename) METHOD");
 
 //        if (refactoring.getOriginalOperation().getParameterNameList().size() != refactoring.getMovedOperation().getParameterNameList().size()) {
 //
@@ -1386,7 +1389,7 @@ Mapping state for Move Method refactoring purity:
             omitBooleanVariableDeclarationReplacement(refactoring, replacementsToCheck); // For the runTests commit
             omitEqualStringLiteralsReplacement(replacementsToCheck);
             omitPrimitiveTypeReplacements(refactoring.getReplacements(), replacementsToCheck);
-            omitReturnRelatedReplacements(refactoring, replacementsToCheck);
+//            omitReturnRelatedReplacements(refactoring, replacementsToCheck);
 
 //            PurityUtils.makeAll(modelDiff, refactoring.getOriginalOperation().getClassName(), null);
 
@@ -1584,7 +1587,7 @@ Mapping state for Move Method refactoring purity:
         UMLOperation originalOperation = null;
         UMLOperation movedOperation = null;
 
-        if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             originalOperation = ((MoveOperationRefactoring) (refactoring)).getOriginalOperation();
             movedOperation = ((MoveOperationRefactoring) (refactoring)).getMovedOperation();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
@@ -1702,7 +1705,7 @@ Mapping state for Move Method refactoring purity:
                         String classBefore = "";
                         String classAfter = "";
 
-                        if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+                        if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
                             classBefore = ((MoveOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
                             classAfter = ((MoveOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
                         } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
@@ -1835,7 +1838,7 @@ Mapping state for Move Method refactoring purity:
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
-        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
@@ -1988,7 +1991,7 @@ Mapping state for Move Method refactoring purity:
         Map<String, String> patterns = new HashMap<>();
 
 
-        if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             methodName = ((MoveOperationRefactoring) refactoring).getMovedOperation().getName();
             className = ((MoveOperationRefactoring) refactoring).getMovedOperation().getNonQualifiedClassName();
         }
@@ -2708,7 +2711,7 @@ Mapping state for Move Method refactoring purity:
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
-        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION) || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
@@ -2769,7 +2772,7 @@ Mapping state for Move Method refactoring purity:
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
-        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
@@ -3018,7 +3021,7 @@ Mapping state for Move Method refactoring purity:
             parameterToArgumentMap = ((InlineOperationRefactoring) (refactoring)).getParameterToArgumentMap();;
         }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION) ||
                 refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION) ||
-                refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
+                refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
 
             Set<Replacement> replacementsToRemove = new HashSet<>();
 
@@ -3194,7 +3197,7 @@ Mapping state for Move Method refactoring purity:
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
-        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
@@ -3383,7 +3386,7 @@ Mapping state for Move Method refactoring purity:
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
-        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
@@ -3909,7 +3912,7 @@ Mapping state for Move Method refactoring purity:
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
-        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
@@ -3993,7 +3996,7 @@ Mapping state for Move Method refactoring purity:
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
-        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
@@ -4244,7 +4247,7 @@ Mapping state for Move Method refactoring purity:
         UMLOperationBodyMapper bodyMapper = null;
         if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)) {
+        } else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
         } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
             bodyMapper = ((PushDownOperationRefactoring) (refactoring)).getBodyMapper();
