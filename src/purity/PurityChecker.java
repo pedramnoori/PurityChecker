@@ -1564,6 +1564,11 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Localize Parameter on top of the moved method - with non-mapped leaves or nodes", "Severe Changes", 5);
             }
 
+//            checkForThisPatternNonMapped(refactoring, nonMappedLeavesT1, nonMappedLeavesT2);
+//            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+//                return new PurityCheckResult(true, "Extra this pattern has been added", "Severe Changes", 5);
+//            }
+
             int size1 = nonMappedLeavesT1.size();
             int size2 = nonMappedLeavesT2.size();
             int returnStatementCounter1 = 0;
@@ -1588,6 +1593,17 @@ Mapping state for Move Method refactoring purity:
 
 
             return new PurityCheckResult(false, "Contains non-mapped leaves or nodes", "Severe Changes", 5);
+        }
+
+    }
+
+    private static void checkForThisPatternNonMapped(MoveOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedLeavesT1, List<AbstractCodeFragment> nonMappedLeavesT2) {
+
+        List<AbstractCodeFragment> nonMappedLeavesT2ToRemove = new ArrayList<>();
+        List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+
         }
 
     }
