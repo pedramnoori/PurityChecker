@@ -32768,11 +32768,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leave is not reported -file.deleteOnExit();-"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -35283,11 +35283,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leave is not justifiable. It a totally different constructor"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -35297,11 +35297,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leave is not justifiable. It a totally different constructor"
     }
   } ],
   "refDiffExecutionTime" : 0
@@ -35866,11 +35866,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "null check has been added to the moved method, which is a impure change in this case"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -35880,11 +35880,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Incorrent refactoring in my opinion"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -35894,11 +35894,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Incorrent refactoring in my opinion"
     }
   }, {
     "type" : "Move Attribute",
@@ -36687,7 +36687,7 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -36701,11 +36701,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename (and Move) method on top"
     }
   }, {
     "type" : "Move And Rename Class",
@@ -37606,11 +37606,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the removed statement and the replacement in the return statement are not justifiable changes"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -37620,11 +37620,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Change Return Type",
@@ -38049,11 +38049,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "-Arrays.- has been removed, which is a justifiable change"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -38063,11 +38063,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "-Arrays.- has been removed, which is a justifiable change"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -38077,11 +38077,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The assertion has been changed"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -38091,11 +38091,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "-Arrays.- has been removed, which is a justifiable change"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -38105,11 +38105,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The assertion has been changed"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -38119,11 +38119,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "-Arrays.- has been removed, which is a justifiable change"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -38133,11 +38133,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "-Arrays.- has been removed, which is a justifiable change"
     }
   }, {
     "type" : "Change Variable Type",
