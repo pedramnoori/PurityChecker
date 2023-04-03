@@ -2041,9 +2041,18 @@ Mapping state for Move Method refactoring purity:
         }
 
 
-//        if (sizeToCheckAfter != sizeToCheckBefore) {
-//            purityComment += "Tolerable changes in the body" + "\n";
-//        }
+        int size1 = replacementsToCheck.size();
+        int numberOfArgumentReplacedWithReturnReplacements = 0;
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
+                numberOfArgumentReplacedWithReturnReplacements++;
+            }
+        }
+
+        if (numberOfArgumentReplacedWithReturnReplacements == size1) {
+            return true;
+        }
 
 
         return false;

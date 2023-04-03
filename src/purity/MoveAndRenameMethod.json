@@ -38282,11 +38282,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -Constants.MARKDOWN_EXT.contains(ext) -> isMarkdown- is not justifiable based on manual validation, so the if condition has been impurely changed"
     }
   }, {
     "type" : "Change Return Type",
@@ -39159,11 +39159,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "one assert statement has been added to the child version"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -39173,11 +39173,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "one assert statement has been added to the child version"
     }
   }, {
     "type" : "Rename Method",
@@ -39826,11 +39826,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Nikos, Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "-.activationFunction(softmax)- has been added to the child version. Also, the distribution hyperparameter has been changed from Distribution to Xavier."
     }
   }, {
     "type" : "Rename Variable",
@@ -39947,11 +39947,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Nikos, Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "one assersion has been added to the child version"
     }
   }, {
     "type" : "Rename Method",
@@ -40208,7 +40208,7 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -40222,7 +40222,7 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -45789,11 +45789,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "According to the manual validation of the commit, the -URN_PATTERN- attribute remained in the child version (https://jgroupsschema.java) but instead, the parameter -pattern- has been used in the statement. So, this makes the change impure."
     }
   }, {
     "type" : "Add Parameter",
@@ -48500,11 +48500,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Move Class",
@@ -48528,11 +48528,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -48542,11 +48542,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Rename Class",
@@ -48598,11 +48598,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Rename Class",
@@ -49592,11 +49592,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -49606,11 +49606,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -49620,11 +49620,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -49634,11 +49634,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -49648,11 +49648,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -49662,11 +49662,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Change Attribute Access Modifier",
@@ -50138,11 +50138,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -50152,11 +50152,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
   }, {
     "type" : "Change Variable Type",
@@ -50833,11 +50833,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Change Method Access Modifier",
@@ -50945,11 +50945,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Remove Thrown Exception Type",
@@ -53250,11 +53250,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Extract Method on top of the Move and Rename Method"
     }
   }, {
     "type" : "Extract Method",
@@ -53651,11 +53651,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Inline Method",
@@ -54724,11 +54724,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Nikos, Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "changes are not justifiable"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -54738,11 +54738,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Nikos, Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "changes are not justifiable"
     }
   }, {
     "type" : "Move And Rename Method",
