@@ -1,9 +1,6 @@
 package purity;
 
-import gr.uom.java.xmi.LocationInfo;
-import gr.uom.java.xmi.UMLAttribute;
-import gr.uom.java.xmi.UMLClass;
-import gr.uom.java.xmi.UMLOperation;
+import gr.uom.java.xmi.*;
 import gr.uom.java.xmi.decomposition.*;
 import gr.uom.java.xmi.decomposition.replacement.AddVariableReplacement;
 import gr.uom.java.xmi.decomposition.replacement.MethodInvocationReplacement;
@@ -127,7 +124,7 @@ public class PurityChecker {
                 purityComment += "Tolerable changes in the body" + "\n";
             }
 
-            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
+            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck, modelDiff);
 
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Pull Up Method specific changes - all mapped", "Changes are within the Push Down Method refactoring mechanics", mappingState);
@@ -233,7 +230,7 @@ public class PurityChecker {
             return new PurityCheckResult(false, "Replacements cannot be justified", "Severe changes", mappingState);
 
         } else {
-            if (!checkReplacementsPullUpMethod(refactoring, refactorings)) {
+            if (!checkReplacementsPullUpMethod(refactoring, refactorings, modelDiff)) {
                 return new PurityCheckResult(false, "Replacements cannot be justified - with non-mapped leaves or nodes", "Severe changes", 5);
             }
 
@@ -412,7 +409,7 @@ public class PurityChecker {
     replacementsToCheck.removeAll(replacementsToRemove);
     }
 
-    private static boolean checkReplacementsPullUpMethod(PullUpOperationRefactoring refactoring, List<Refactoring> refactorings) {
+    private static boolean checkReplacementsPullUpMethod(PullUpOperationRefactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff) {
         if (refactoring.getReplacements().isEmpty()) {
             return true;
         }
@@ -432,7 +429,7 @@ public class PurityChecker {
         omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
-        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
+        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck, modelDiff);
         omitStringRelatedReplacements(replacementsToCheck);
 
 
@@ -519,7 +516,7 @@ public class PurityChecker {
                 purityComment += "Tolerable changes in the body" + "\n";
             }
 
-            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
+            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck, modelDiff);
 
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Push Down Method specific changes - all mapped", "Changes are within the Push Down Method refactoring mechanics", mappingState);
@@ -625,7 +622,7 @@ public class PurityChecker {
             return new PurityCheckResult(false, "Replacements cannot be justified", "Severe changes", mappingState);
 
         } else {
-            if (!checkReplacementsPushDownMethod(refactoring, refactorings)) {
+            if (!checkReplacementsPushDownMethod(refactoring, refactorings, modelDiff)) {
                 return new PurityCheckResult(false, "Replacements cannot be justified - with non-mapped leaves or nodes", "Severe changes", 5);
             }
 
@@ -688,7 +685,7 @@ public class PurityChecker {
         }
     }
 
-    private static boolean checkReplacementsPushDownMethod(PushDownOperationRefactoring refactoring, List<Refactoring> refactorings) {
+    private static boolean checkReplacementsPushDownMethod(PushDownOperationRefactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff) {
 
         if (refactoring.getReplacements().isEmpty()) {
             return true;
@@ -709,7 +706,7 @@ public class PurityChecker {
         omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
-        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
+        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck, modelDiff);
         omitStringRelatedReplacements(replacementsToCheck);
 
 
@@ -1419,7 +1416,7 @@ Mapping state for Move Method refactoring purity:
                 purityComment += "Tolerable changes in the body" + "\n";
             }
 
-            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
+            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck, modelDiff);
 
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Move Method specific changes - all mapped", "Changes are within the Move Method refactoring mechanics", mappingState);
@@ -1529,7 +1526,7 @@ Mapping state for Move Method refactoring purity:
 
         } else {
 
-            if (!checkReplacementsMoveMethod(refactoring, refactorings)) {
+            if (!checkReplacementsMoveMethod(refactoring, refactorings, modelDiff)) {
                 return new PurityCheckResult(false, "Replacements cannot be justified - with non-mapped leaves or nodes", "Severe changes", 5);
 
             }
@@ -1711,7 +1708,7 @@ Mapping state for Move Method refactoring purity:
         replacementsToCheck.removeAll(replacementsToRemove);
     }
 
-    private static void omitMoveMethodRelatedReplacements(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+    private static void omitMoveMethodRelatedReplacements(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck, UMLModelDiff modelDiff) {
 
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
@@ -1728,23 +1725,41 @@ Mapping state for Move Method refactoring purity:
 
                         int foundInAfter = after.indexOf(before);
                         int foundInBefore = before.indexOf(after);
-                        String classBefore = "";
-                        String classAfter = "";
+                        List<String> classBefore = new ArrayList<>();
+                        List<String> classAfter = new ArrayList<>();
 
                         if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
-                            classBefore = ((MoveOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
-                            classAfter = ((MoveOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
+                            String classBeforeString = ((MoveOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
+                            String classAfterString = ((MoveOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
+                            classBefore.add(classBeforeString);
+                            classAfter.add(classAfterString);
+
+                            if (modelDiff.findClassInChildModel(classAfterString).getSuperclass() != null) {
+                                classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString());
+                            }
+
+                            if (modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces() != null) {
+                                for (UMLType implementedInterface : modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces()) {
+                                    classAfter.add(implementedInterface.toString());
+                                }
+                            }
+
                         } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
-                            classBefore = ((PushDownOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
-                            classAfter = ((PushDownOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
+                            String classBeforeString = ((PushDownOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
+                            String classAfterString = ((PushDownOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
+                            classBefore.add(classBeforeString);
+                            classAfter.add(classAfterString);
+
                         } else if (refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
-                            classBefore = ((PullUpOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
-                            classAfter = ((PullUpOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
+                            String classBeforeString = ((PullUpOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
+                            String classAfterString = ((PullUpOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
+                            classBefore.add(classBeforeString);
+                            classAfter.add(classAfterString);
                         }
 
                         if (foundInBefore != -1) {
                             String instanceOrVariable = before.substring(0, foundInBefore - 1);
-                            if (instanceOrVariable.equals(classAfter)) {
+                            if (classAfter.contains(instanceOrVariable)) {
                                 replacementsToRemove.add(replacement);
                                 break;
                             }
@@ -1753,13 +1768,13 @@ Mapping state for Move Method refactoring purity:
                                 break;
                             }
                             //Search in different method related refactorings to see if the class has been changed or not, specially, in an anonymous way.
-                            if (relaxSearch(((MoveOperationRefactoring) refactoring).getOriginalOperation(), refactorings, instanceOrVariable, classAfter, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName())) {
+                            if (relaxSearch(((MoveOperationRefactoring) refactoring).getOriginalOperation(), refactorings, instanceOrVariable, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName())) {
                                 replacementsToRemove.add(replacement);
                             }
 
                         } else if (foundInAfter != -1) {
                             String instanceOrVariable = after.substring(0, foundInAfter - 1);
-                            if (instanceOrVariable.equals(classBefore)) {
+                            if (classBefore.contains(instanceOrVariable)) {
                                 replacementsToRemove.add(replacement);
                                 break;
                             }
@@ -1768,7 +1783,7 @@ Mapping state for Move Method refactoring purity:
                                 break;
                             }
                             //Search in different method related refactorings to see if the class has been changed or not, specially, in an anonymous way.
-                            if (relaxSearch(((MoveOperationRefactoring) refactoring).getMovedOperation(), refactorings, instanceOrVariable, classBefore, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName())) {
+                            if (relaxSearch(((MoveOperationRefactoring) refactoring).getMovedOperation(), refactorings, instanceOrVariable, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName())) {
                                 replacementsToRemove.add(replacement);
                             }
                         }
@@ -1780,7 +1795,7 @@ Mapping state for Move Method refactoring purity:
         replacementsToCheck.removeAll(replacementsToRemove);
     }
 
-    private static boolean relaxSearch(UMLOperation movedOperation, List<Refactoring> refactorings, String instanceOrVariable, String className, String method) {
+    private static boolean relaxSearch(UMLOperation movedOperation, List<Refactoring> refactorings, String instanceOrVariable, String method) {
 
         for (Refactoring refactoring : refactorings) {
             if (isMethodRelatedRefactoring(refactoring)) {
@@ -1789,9 +1804,11 @@ Mapping state for Move Method refactoring purity:
                         String newClassName = ((AddMethodAnnotationRefactoring) refactoring).getOperationAfter().getNonQualifiedClassName();
                         int newClassNameWithoutNewIndex = newClassName.indexOf("new");
                         if (newClassNameWithoutNewIndex != -1) {
+                            List<String> newClassNameWithoutNewList = new ArrayList<>();
                             String newClassNameWithoutNew = newClassName.substring(newClassNameWithoutNewIndex + "new".length() + 1);
+                            newClassNameWithoutNewList.add(newClassNameWithoutNew);
 
-                            if (searchInVariableDeclarations(movedOperation, instanceOrVariable, newClassNameWithoutNew)) {
+                            if (searchInVariableDeclarations(movedOperation, instanceOrVariable, newClassNameWithoutNewList)) {
                                 return true;
                             }
                         }
@@ -1813,11 +1830,12 @@ Mapping state for Move Method refactoring purity:
         return false;
     }
 
-    private static boolean searchInVariableDeclarations(UMLOperation operation, String instanceOrVariable, String className) {
+    private static boolean searchInVariableDeclarations(UMLOperation operation, String instanceOrVariable, List<String> className) {
 
+        // This iteration also covers the parameters list
         for (VariableDeclaration variableDeclaration : operation.getAllVariableDeclarations()) {
             if (variableDeclaration.getVariableName().equals(instanceOrVariable)) {
-                if (variableDeclaration.getType().getClassType().equals(className)) {
+                if (className.contains(variableDeclaration.getType().getClassType())) {
                     return true;
                 }
             }
@@ -1980,7 +1998,7 @@ Mapping state for Move Method refactoring purity:
 
     }
 
-    private static boolean checkReplacementsMoveMethod(MoveOperationRefactoring refactoring, List<Refactoring> refactorings) {
+    private static boolean checkReplacementsMoveMethod(MoveOperationRefactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff) {
         if (refactoring.getReplacements().isEmpty()) {
             return true;
         }
@@ -2000,7 +2018,7 @@ Mapping state for Move Method refactoring purity:
         omitReplacementRegardingInvertCondition(refactoring, replacementsToCheck);
 
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
-        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck);
+        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck, modelDiff);
         omitStringRelatedReplacements(replacementsToCheck);
 
 

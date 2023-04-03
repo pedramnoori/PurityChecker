@@ -54752,11 +54752,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Attribute and Move Method mechanic changes on top"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -54766,11 +54766,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Attribute and Move Method mechanic changes on top"
     }
   }, {
     "type" : "Move And Inline Method",
@@ -54808,11 +54808,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused changes are on top"
     }
   }, {
     "type" : "Move And Inline Method",
@@ -55144,11 +55144,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused changes are on top"
     }
   }, {
     "type" : "Remove Parameter",
