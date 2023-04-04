@@ -776,6 +776,9 @@ public abstract class UMLAbstractClass {
 				return true;
 			}
 		}
+		if(superclass != null && superclass.getClassType().equals("TestCase")) {
+			return true;
+		}
 		return false;
 	}
 
