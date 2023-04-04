@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/droolsjbpm/drools/commit/1bf2875e9d73e2d1cd3b58200d5300485f890ff5");
+        isPureAPI("https://github.com/FasterXML/jackson-databind/commit/da29a040ebae664274b28117b157044af0f525fa");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
