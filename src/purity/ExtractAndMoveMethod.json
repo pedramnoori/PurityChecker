@@ -2700,7 +2700,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -2742,7 +2742,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -2756,11 +2756,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -2770,11 +2770,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -2784,7 +2784,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -2812,11 +2812,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Matin, Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "parameter to argument change, which is part of Extract Method mechanic and justifiable"
     }
   }, {
     "type" : "Extract Method",
