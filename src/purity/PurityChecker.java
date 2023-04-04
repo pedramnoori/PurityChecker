@@ -2064,16 +2064,13 @@ Mapping state for Move Method refactoring purity:
 
         for (Replacement replacement : replacementsToCheck) {
             if (replacement.getType().equals(Replacement.ReplacementType.ARGUMENT_REPLACED_WITH_RETURN_EXPRESSION)) {
-                numberOfArgumentReplacedWithReturnReplacements++;
+                continue;
             }
-        }
-
-        if (numberOfArgumentReplacedWithReturnReplacements == size1) {
-            return true;
+            return false;
         }
 
 
-        return false;
+        return true;
     }
 
     private static void checkForThisPatternReplacement(HashSet<Replacement> replacementsToCheck) {
