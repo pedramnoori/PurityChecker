@@ -12,6 +12,8 @@ import org.refactoringminer.api.RefactoringMinerTimedOutException;
 import org.refactoringminer.api.RefactoringType;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 
@@ -42,7 +44,7 @@ public class PurityChecker {
         PurityCheckResult result = null;
         switch (refactoring.getRefactoringType()) {
             case EXTRACT_OPERATION:
-                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case RENAME_CLASS:
 //                result = detectRenameClassPurity((RenameClassRefactoring) refactoring, refactorings, modelDiff);
@@ -54,19 +56,19 @@ public class PurityChecker {
 //                result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
                 break;
             case MOVE_OPERATION:
-                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_RENAME_OPERATION:
-                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PUSH_DOWN_OPERATION:
-                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PULL_UP_OPERATION:
-                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case EXTRACT_AND_MOVE_OPERATION:
                 result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -3566,6 +3568,12 @@ Mapping state for Move Method refactoring purity:
                     replacement.getType().equals(Replacement.ReplacementType.CLASS_INSTANCE_CREATION_ARGUMENT)) {
                 checkForRemoveParameterOnTopConstructorVersion(bodyMapper, replacement, refactorings, replacementsToCheck);
             }
+            if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_REPLACED_WITH_METHOD_INVOCATION)) {
+                Replacement replacement1 = specialRelaxSearchForRemoveParameterOnTop(bodyMapper, ((VariableReplacementWithMethodInvocation) (replacement)), refactorings);
+                if (replacement1 != null) {
+                    replacementsToRemove.add(replacement1);
+                }
+            }
             if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT) ||
                     (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) && ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getName().equals(((MethodInvocationReplacement)replacement).getInvokedOperationBefore().getName())) ||
                     (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION_NAME_AND_ARGUMENT) && ((MethodInvocationReplacement)replacement).getInvokedOperationAfter().getName().equals(((MethodInvocationReplacement)replacement).getInvokedOperationBefore().getName()))) {
@@ -3612,6 +3620,64 @@ Mapping state for Move Method refactoring purity:
 
         replacementsToCheck.removeAll(replacementsToRemove);
 
+    }
+
+    private static Replacement specialRelaxSearchForRemoveParameterOnTop(UMLOperationBodyMapper bodyMapper, VariableReplacementWithMethodInvocation replacement, List<Refactoring> refactorings) {
+
+
+            String pattern = "(\\w+)\\((.*)\\)";
+            Pattern r = Pattern.compile(pattern);
+            Matcher m = r.matcher(replacement.getAfter());
+            if (m.find()) {
+                String methodName = m.group(1);
+                if (methodName.equals(replacement.getInvokedOperation().getName())) {
+                    String argsString = m.group(2);
+                    String[] args = argsString.split(",");
+                    for (int i = 0; i < args.length; i++) {
+                        args[i] = args[i].trim();
+                    }
+                    ArrayList<String> temp1 = new ArrayList<>(replacement.getInvokedOperation().arguments());
+                    ArrayList<String> temp2 = new ArrayList<>(temp1);
+                    temp1.removeAll(List.of(args));
+
+
+                    ArrayList<Integer> removedArgumentsLocationInReplacement = new ArrayList<>();
+
+                    for (int i = 0; i < temp1.size(); i++) {
+                        for (int j = 0; j < temp2.size(); j++) {
+                            if (temp1.get(i).equals(temp2.get(j)))
+                                removedArgumentsLocationInReplacement.add(j);
+                        }
+                    }
+
+                    List<Refactoring> removeParameterRefactoringList = new ArrayList<>();
+
+                    for (Refactoring refactoring1 : refactorings) {
+                        if (refactoring1.getRefactoringType().equals(RefactoringType.REMOVE_PARAMETER)) {
+                            removeParameterRefactoringList.add(refactoring1);
+                        }
+                    }
+
+                    ArrayList<Integer> removedArgumentLocationInRefactoring = new ArrayList<>();
+
+                    for (Refactoring ref : removeParameterRefactoringList) {
+                        if (ref.getRefactoringType().equals(RefactoringType.REMOVE_PARAMETER)) {
+                            if (((RemoveParameterRefactoring) ref).getOperationBefore().getName().equals(methodName)) {
+                                int ind = ((RemoveParameterRefactoring) ref).getOperationBefore().getParameterNameList().indexOf(((RemoveParameterRefactoring) ref).getParameter().getName());
+                                removedArgumentLocationInRefactoring.add(ind);
+                            }
+                        }
+                    }
+                    Collections.sort(removedArgumentsLocationInReplacement);
+                    Collections.sort(removedArgumentLocationInRefactoring);
+                    if (removedArgumentsLocationInReplacement.equals(removedArgumentLocationInRefactoring) && !removedArgumentsLocationInReplacement.isEmpty()) {
+                        return replacement;
+                    }
+                }
+            }else{
+                return null;
+            }
+        return null;
     }
 
     private static void checkForRemoveParameterOnTopConstructorVersion(UMLOperationBodyMapper bodyMapper, Replacement replacement, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
