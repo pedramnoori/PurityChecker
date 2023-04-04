@@ -165,6 +165,12 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 				locations.add(expression.getLocationInfo());
 			}
 		}
+		for(LeafExpression expression : getTernaryOperatorExpressions()) {
+			if(expression.getString().equals(s)) {
+				matchingExpressions.add(expression);
+				locations.add(expression.getLocationInfo());
+			}
+		}
 		for(LeafExpression expression : getArguments()) {
 			if(expression.getString().equals(s)) {
 				if(!locations.contains(expression.getLocationInfo()))
@@ -534,6 +540,16 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 				String s = variables.get(0).getString() + "=" + expression + ";\n";
 				if(statement.equals(s)) {
 					return true;
+				}
+				if(statement.startsWith(variables.get(0).getString() + "=")) {
+					String suffix = statement.substring(statement.indexOf("=") + 1);
+					if(suffix.endsWith(expression + ";\n")) {
+						int index = suffix.indexOf(expression + ";\n");
+						String prefix = suffix.substring(0, index);
+						if(prefix.startsWith("(") && prefix.endsWith(")")) {
+							return true;
+						}
+					}
 				}
 			}
 		}

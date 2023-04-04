@@ -2,9 +2,6 @@
   "repo" : "https://github.com/Alluxio/alluxio.git",
   "commit" : "9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825"
 }, {
-  "repo" : "https://github.com/pouryafard75/TestCases.git",
-  "commit" : "0ae8f723a59722694e394300656128f9136ef466"
-}, {
   "repo" : "https://github.com/CellularPrivacy/Android-IMSI-Catcher-Detector.git",
   "commit" : "e235f884f2e0bc258da77b9c80492ad33386fa86"
 }, {
@@ -217,4 +214,46 @@
 }, {
   "repo" : "https://github.com/JetBrains/intellij-community.git",
   "commit" : "619a6012da868d0d42d9628460f2264effe9bdba"
+}, {
+  "repo" : "https://github.com/liferay/liferay-plugins.git",
+  "commit" : "720b0d2064ecc4403809e794075e9fe8cfa857f1"
+}, {
+  "repo" : "https://github.com/CyanogenMod/android_frameworks_base.git",
+  "commit" : "f1b8ae1c44e6ba46118c2f66eae1725259acdccc"
+}, {
+  "repo" : "https://github.com/jayway/rest-assured.git",
+  "commit" : "7cac88b9a28efc05bdc60e585e3291862ffc9da1"
+}, {
+  "repo" : "https://github.com/CyanogenMod/android_frameworks_base.git",
+  "commit" : "153611deab149accd8aeaf03fd102c0b069bd322"
+}, {
+  "repo" : "https://github.com/MovingBlocks/Terasology.git",
+  "commit" : "dbd2d5048ae5e30fec98ddd969b6c1e91183fb65"
+}, {
+  "repo" : "https://github.com/VoltDB/voltdb.git",
+  "commit" : "d47e58f9bbce9a816378e8a7930c1de67a864c29"
+}, {
+  "repo" : "https://github.com/geoserver/geoserver.git",
+  "commit" : "07c26a3a1dd6fcc2494c2d755ee5a2753e0df87c"
+}, {
+  "repo" : "https://github.com/spring-attic/spring-roo.git",
+  "commit" : "0bb4cca1105fc6eb86e7c4b75bfff3dbbd55f0c8"
+}, {
+  "repo" : "https://github.com/jOOQ/jOOQ.git",
+  "commit" : "227254cf769f3e821ed1b2ef2d88c4ec6b20adea"
+}, {
+  "repo" : "https://github.com/hazelcast/hazelcast.git",
+  "commit" : "f1e26fa73074a89680a2e1756d85eb80ad87c3bf"
+}, {
+  "repo" : "https://github.com/JetBrains/intellij-community.git",
+  "commit" : "6905d569a1e39d0d7b1ec5ceee4f0bbe60b85947"
+}, {
+  "repo" : "https://github.com/Atmosphere/atmosphere.git",
+  "commit" : "69c229b7611ff8c6a20ff2d4da917a68c1cde64a"
+}, {
+  "repo" : "https://github.com/dropwizard/metrics.git",
+  "commit" : "4c6ab3d77cc67c7a91155d884077520dcf1509c6"
+}, {
+  "repo" : "https://github.com/JetBrains/intellij-community.git",
+  "commit" : "33b0ac3a029845f9c20f7f5967c03b31b24f3b4b"
 } ]
