@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/ignatov/intellij-erlang/commit/e3b84c8753a21b1b15cfc9aa90b5e0c56d290f41");
+        isPureAPI("https://github.com/droolsjbpm/drools/commit/1bf2875e9d73e2d1cd3b58200d5300485f890ff5");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

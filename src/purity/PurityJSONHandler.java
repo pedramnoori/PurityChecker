@@ -31,14 +31,14 @@ public class PurityJSONHandler {
 //        numberOfRefactorings("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
-        String outputPath = runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\MoveAndRenameMethod.json");
+//        String outputPath = runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\MoveAndRenameMethod.json");
 //
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultMoveAndRename.json", RefactoringType.MOVE_AND_RENAME_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultMoveAndRename.json", RefactoringType.MOVE_AND_RENAME_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.EXTRACT_OPERATION);
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
 //        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
-//        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json", "Move And Rename Method");
+        extractRefactoringFromOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json", "Extract and Move Method");
 
     }
 
