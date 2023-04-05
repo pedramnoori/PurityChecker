@@ -44,7 +44,7 @@ public class PurityChecker {
         PurityCheckResult result = null;
         switch (refactoring.getRefactoringType()) {
             case EXTRACT_OPERATION:
-//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case RENAME_CLASS:
 //                result = detectRenameClassPurity((RenameClassRefactoring) refactoring, refactorings, modelDiff);
@@ -56,19 +56,19 @@ public class PurityChecker {
 //                result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
                 break;
             case MOVE_OPERATION:
-//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_RENAME_OPERATION:
-//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PUSH_DOWN_OPERATION:
-//                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PULL_UP_OPERATION:
-//                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case EXTRACT_AND_MOVE_OPERATION:
                 result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -1208,7 +1208,7 @@ public class PurityChecker {
 
     }
 
-    private static void checkForInlineVariableOnTop(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+    private static void checkForInlineVariableOnTop(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
 
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
@@ -2401,6 +2401,11 @@ Mapping state for Move Method refactoring purity:
 
             purityComment += "Overlapped refactoring - can be identical by undoing the overlapped refactoring" + "\n";
 
+            checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Inline Variable on top of the extracted method - all mapped", purityComment, mappingState);
+            }
+
             checkForPullUpMethodOnTop(refactoring, refactorings, replacementsToCheck, modelDiff);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Pull Up Method on top of the extracted method - all mapped", purityComment, mappingState);
@@ -2646,7 +2651,7 @@ Mapping state for Move Method refactoring purity:
             List<AbstractCodeFragment> nonMappedLeavesT2List = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT2());
             List<AbstractCodeFragment> nonMappedLeavesT1List = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT1());
 
-
+            checkReplacements(refactoring, refactorings, modelDiff);
 
             if (!checkNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT2List, nonMappedLeavesT1List)) {
                 purityComment = "Severe changes";
@@ -3277,11 +3282,11 @@ Mapping state for Move Method refactoring purity:
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
         for (Replacement replacement : replacementsToCheck) {
-            if (replacement.getType().equals(Replacement.ReplacementType.STRING_LITERAL)) {
-                if (replacement.getBefore().replaceAll("\"", "").trim().equals(replacement.getAfter().replaceAll("\"", "").trim())) {
+//            if (replacement.getType().equals(Replacement.ReplacementType.STRING_LITERAL)) {
+                if (replacement.getBefore().replaceAll("\"", "").trim().toLowerCase().equals(replacement.getAfter().replaceAll("\"", "").trim().toLowerCase())) {
                     replacementsToRemove.add(replacement);
                 }
-            }
+//            }
         }
 
         replacementsToCheck.removeAll(replacementsToRemove);
@@ -4012,7 +4017,7 @@ Mapping state for Move Method refactoring purity:
             return true;
         }
 
-
+        checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForPullUpMethodOnTop(refactoring, refactorings, replacementsToCheck, modelDiff);
         checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
 

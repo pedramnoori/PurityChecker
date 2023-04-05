@@ -11482,11 +11482,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Remove Parameter on top"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -11496,11 +11496,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Remove Parameter on top"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -11510,11 +11510,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Inline Variable and Remove Parameter on top"
     }
   }, {
     "type" : "Parameterize Variable",
@@ -11897,11 +11897,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "lots of impure changes on top within the anonymous class declaration"
     }
   } ],
   "refDiffExecutionTime" : 6099
@@ -16992,11 +16992,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Matin, Laleh, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The expression replaced with a ternary, which can be an impure change. So, I would consider this case as impure"
     }
   }, {
     "type" : "Extract Method",
@@ -18219,11 +18219,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "impure changes (logic addition) on top of the refactoring"
     }
   }, {
     "type" : "Parameterize Variable",
@@ -18396,11 +18396,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -18410,11 +18410,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -18424,11 +18424,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -18438,11 +18438,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -18452,11 +18452,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Add Parameter",
@@ -18559,11 +18559,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "added statements in the extracted method are not justifiable and the funtionality has been changed"
     }
   } ],
   "refDiffExecutionTime" : 7362
@@ -18624,11 +18624,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves change the behavior of the program and are not justifiable - if condition has been added to the extracted operation"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -18638,11 +18638,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Add Parameter on top"
     }
   }, {
     "type" : "Rename Parameter",
@@ -19034,7 +19034,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -19085,11 +19085,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Lots of added statements, which change the behavior of the program"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -19099,11 +19099,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "it can be both pure or impure based on the interpretation of the commit. So far, based on the result of RefactoringMiner, I consider this as an impure case."
     }
   }, {
     "type" : "Rename Variable",
@@ -19962,11 +19962,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x, RMiner-1x",
     "validators" : "Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the getReader method invocation has been removed, which is an impure change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -19976,11 +19976,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x, RMiner-1x",
     "validators" : "Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "parameter to argument change, which is part of Extract Method mechanic and justifiable"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -20242,11 +20242,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "parameter to argument change, which is part of Extract Method mechanic and justifiable"
     }
   }, {
     "type" : "Rename Parameter",
@@ -22365,11 +22365,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "kind of a null check has been added - the null check has been changed somehow, which is an impure change"
     }
   }, {
     "type" : "Change Parameter Type",
@@ -22584,11 +22584,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "-assert null- statement has been changed to an if condition checking the null. It's a pure case"
     }
   } ],
   "refDiffExecutionTime" : 917
@@ -22700,7 +22700,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -22714,11 +22714,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "try-catch has been added, which is an impure change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -22728,7 +22728,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -22742,11 +22742,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Parameter ex in the catch statement has been renamed to e, which is definitely a pure change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -22756,11 +22756,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Matin, Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "try-catch has been added, which is an impure change"
     }
   } ],
   "refDiffExecutionTime" : 1994
@@ -24846,11 +24846,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "All the replacements are justifiable except for the change in the argument of the -fail- method invocation. Although it's a string passed, but it might change the behavior at the end"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -24860,11 +24860,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "parameter to argument change, which is part of Extract Method mechanic and justifiable"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -24874,7 +24874,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
