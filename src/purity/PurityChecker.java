@@ -44,7 +44,7 @@ public class PurityChecker {
         PurityCheckResult result = null;
         switch (refactoring.getRefactoringType()) {
             case EXTRACT_OPERATION:
-                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case RENAME_CLASS:
 //                result = detectRenameClassPurity((RenameClassRefactoring) refactoring, refactorings, modelDiff);
@@ -56,19 +56,19 @@ public class PurityChecker {
 //                result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
                 break;
             case MOVE_OPERATION:
-                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_RENAME_OPERATION:
-                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PUSH_DOWN_OPERATION:
-                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PULL_UP_OPERATION:
-                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case EXTRACT_AND_MOVE_OPERATION:
                 result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);

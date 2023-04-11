@@ -38080,11 +38080,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename Variable and parameter to argument change on top"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -40940,7 +40940,7 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -41173,7 +41173,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -42162,11 +42162,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -42176,11 +42176,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -42190,11 +42190,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -42204,11 +42204,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -42218,11 +42218,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -42232,11 +42232,11 @@
     "detectionTools" : "RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method mechanics caused a justifiable change"
     }
   }, {
     "type" : "Move Attribute",
@@ -42484,11 +42484,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "parameter to argument change, which is part of Extract Method mechanic and justifiable"
     }
   }, {
     "type" : "Rename Attribute",
@@ -42787,11 +42787,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Matin, Laleh, Nikos",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Functionality has been changed by adding a new if condition and statement changes"
     }
   }, {
     "type" : "Extract Method",
@@ -51078,11 +51078,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The sub-expression Extract and Move seems pure. The replacement between -protocol -> ModelKeys.PROTOCOL- is justifiable since the ModelKeys.Stack is the same as the string stack."
     }
   }, {
     "type" : "Move Class",
@@ -51274,11 +51274,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "functionality has been changed"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -51288,11 +51288,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The sub-expression Extract and Move seems pure. The replacement between -stack -> ModelKeys.Stack- is justifiable since the ModelKeys.Stack is the same as the string stack."
     }
   }, {
     "type" : "Move Package",
@@ -53620,11 +53620,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "All the mappings and replacements are justifiable except for the Line 202 in the child commit, which is new added and non-justifiable."
     }
   } ],
   "refDiffExecutionTime" : 0
@@ -53685,11 +53685,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Davood, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "type replacements, which are justifiable"
     }
   }, {
     "type" : "Move Method",
