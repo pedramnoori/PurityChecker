@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/apache/giraph/commit/03ade425dd5a65d3a713d5e7d85aa7605956fbd2");
+        isPureAPI("https://github.com/neo4j/neo4j/commit/e0072aac53b3b88de787e7ca653c7e17f9499018");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

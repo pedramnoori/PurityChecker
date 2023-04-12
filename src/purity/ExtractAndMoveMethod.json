@@ -56330,11 +56330,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves change the behavior of the program and are not justifiable"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57109,11 +57109,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Davood, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Merge Variable on top"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57123,11 +57123,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Davood, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Merge Variable on top"
     }
   }, {
     "type" : "Extract Method",
@@ -57151,7 +57151,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RMiner-1x",
     "validators" : "Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -57165,7 +57165,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RMiner-1x",
     "validators" : "Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -57179,11 +57179,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57193,11 +57193,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57207,11 +57207,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57221,11 +57221,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57235,11 +57235,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57249,7 +57249,7 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -57263,11 +57263,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57277,11 +57277,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57291,11 +57291,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57305,11 +57305,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57319,7 +57319,7 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -57333,11 +57333,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57347,11 +57347,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57375,11 +57375,11 @@
     "detectionTools" : "RefactoringMiner, RMiner-1x",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -57389,11 +57389,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "a different constructor for the Block object has been used"
     }
   }, {
     "type" : "Merge Parameter",
@@ -58989,11 +58989,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "parameter to argument change, which is part of Extract Method mechanic and justifiable"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -59003,11 +59003,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "parameter to argument change, which is part of Extract Method mechanic and justifiable"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -59017,11 +59017,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "parameter to argument change, which is part of Extract Method mechanic and justifiable"
     }
   } ],
   "refDiffExecutionTime" : 1441
@@ -59147,11 +59147,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Laleh, Davood, Automatic",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves change the behavior of the program and are not justifiable"
     }
   }, {
     "type" : "Rename Variable",
@@ -59217,11 +59217,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves change the behavior of the program and are not justifiable"
     }
   }, {
     "type" : "Add Parameter",
