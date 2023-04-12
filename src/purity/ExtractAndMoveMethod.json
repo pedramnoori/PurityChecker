@@ -55425,11 +55425,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : "Davood",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "getter method got replaced with direct field access - impossible to catch"
     }
   }, {
     "type" : "Move Class",
@@ -55593,11 +55593,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "getter method got replaced with direct field access - impossible to catch"
     }
   }, {
     "type" : "Rename Attribute",

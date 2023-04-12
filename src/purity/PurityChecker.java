@@ -44,7 +44,7 @@ public class PurityChecker {
         PurityCheckResult result = null;
         switch (refactoring.getRefactoringType()) {
             case EXTRACT_OPERATION:
-//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case RENAME_CLASS:
 //                result = detectRenameClassPurity((RenameClassRefactoring) refactoring, refactorings, modelDiff);
@@ -68,7 +68,7 @@ public class PurityChecker {
 //                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case EXTRACT_AND_MOVE_OPERATION:
                 result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -230,6 +230,11 @@ public class PurityChecker {
 
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the push down method - all mapped", purityComment, mappingState);
+            }
+
+            relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+            if(replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Getter method got replaced with direct access or vice verca - all mapped", purityComment, mappingState);
             }
 
             return new PurityCheckResult(false, "Replacements cannot be justified", "Severe changes", mappingState);
@@ -464,6 +469,7 @@ public class PurityChecker {
         checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
         relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+        relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
 
         if (replacementsToCheck.isEmpty()) {
             return true;
@@ -624,6 +630,11 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the push down method - all mapped", purityComment, mappingState);
             }
 
+            relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+            if(replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Getter method got replaced with direct access or vice verca - all mapped", purityComment, mappingState);
+            }
+
             return new PurityCheckResult(false, "Replacements cannot be justified", "Severe changes", mappingState);
 
         } else {
@@ -741,6 +752,7 @@ public class PurityChecker {
         checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
         relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+        relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
 
         if (replacementsToCheck.isEmpty()) {
             return true;
@@ -872,6 +884,11 @@ public class PurityChecker {
             checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "One of the overlapping cases - all mapped", purityComment, mappingState);
+            }
+
+            relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+            if(replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Getter method got replaced with direct access or vice verca - all mapped", purityComment, mappingState);
             }
 
             int size1 = replacementsToCheck.size();
@@ -1341,6 +1358,7 @@ public class PurityChecker {
         checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
         checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
         checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
+        relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
 
 
         if (replacementsToCheck.isEmpty()) {
@@ -1525,6 +1543,11 @@ Mapping state for Move Method refactoring purity:
             relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the moved method - all mapped", purityComment, mappingState);
+            }
+
+            relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+            if(replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Getter method got replaced with direct access or vice verca - all mapped", purityComment, mappingState);
             }
 
             return new PurityCheckResult(false, "Replacements cannot be justified", "Severe changes", mappingState);
@@ -1744,12 +1767,12 @@ Mapping state for Move Method refactoring purity:
                             refactoredOperation = ((MoveOperationRefactoring) (refactoring)).getMovedOperation();
 
                             if (modelDiff.findClassInChildModel(classAfterString).getSuperclass() != null) {
-                                classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString());
+                                classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString().replaceAll("<[^>]*>", ""));
                             }
 
                             if (modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces() != null) {
                                 for (UMLType implementedInterface : modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces()) {
-                                    classAfter.add(implementedInterface.toString());
+                                    classAfter.add(implementedInterface.toString().replaceAll("<[^>]*>", ""));
                                 }
                             }
 
@@ -1776,6 +1799,16 @@ Mapping state for Move Method refactoring purity:
                             classAfter.add(classAfterString);
                             originalOperation = ((UMLOperation) ((ExtractOperationRefactoring) (refactoring)).getSourceOperationBeforeExtraction());
                             refactoredOperation = ((ExtractOperationRefactoring) (refactoring)).getExtractedOperation();
+
+                            if (modelDiff.findClassInChildModel(classAfterString).getSuperclass() != null) {
+                                classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString().replaceAll("<[^>]*>", ""));
+                            }
+
+                            if (modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces() != null) {
+                                for (UMLType implementedInterface : modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces()) {
+                                    classAfter.add(implementedInterface.toString().replaceAll("<[^>]*>", ""));
+                                }
+                            }
                         }
 
                         if (foundInBefore != -1) {
@@ -2081,6 +2114,8 @@ Mapping state for Move Method refactoring purity:
         checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
         relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+        relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+
 
 
         if (replacementsToCheck.isEmpty()) {
@@ -2525,6 +2560,11 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "One of the overlapping cases - all mapped", purityComment, mappingState);
             }
 
+            relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+            if(replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Getter method got replaced with direct access or vice verca - all mapped", purityComment, mappingState);
+            }
+
             int size1 = replacementsToCheck.size();
             int numberOfArgumentReplacedWithReturnReplacements = 0;
 
@@ -2651,7 +2691,6 @@ Mapping state for Move Method refactoring purity:
             List<AbstractCodeFragment> nonMappedLeavesT2List = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT2());
             List<AbstractCodeFragment> nonMappedLeavesT1List = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT1());
 
-            checkReplacements(refactoring, refactorings, modelDiff);
 
             if (!checkNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT2List, nonMappedLeavesT1List)) {
                 purityComment = "Severe changes";
@@ -2728,6 +2767,60 @@ Mapping state for Move Method refactoring purity:
             purityComment = "Severe changes";
             return new PurityCheckResult(false, "Contains non-mapped inner nodes", purityComment, mappingState);
         }
+    }
+
+    private static void relaxCheckForGetterMethodReplacedWithDirectAccess(Refactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+
+            String before = replacement.getBefore();
+            String after = replacement.getAfter();
+            String probableGetterMethod = "";
+
+            int indexOfRightInLeft = before.toLowerCase().indexOf(after.toLowerCase());
+            int indexOfLeftInRight = after.toLowerCase().indexOf(before.toLowerCase());
+            int theDotBeforeIndex;
+            int theDotAfterIndex;
+
+            if (indexOfRightInLeft != -1) {
+                theDotBeforeIndex = before.substring(0, indexOfRightInLeft).lastIndexOf(".");
+                theDotAfterIndex = before.substring(indexOfRightInLeft).indexOf(".");
+
+                if (theDotBeforeIndex != -1 && theDotAfterIndex != -1) {
+                    probableGetterMethod = before.substring(theDotBeforeIndex + 1, theDotAfterIndex + before.substring(0, indexOfRightInLeft).length());
+                } else if (theDotAfterIndex != -1) { //The DotBeforeIndex is -1
+                    probableGetterMethod = before.substring(0, theDotAfterIndex + before.substring(0, indexOfRightInLeft).length());
+                } else if (theDotBeforeIndex != -1) {
+                    probableGetterMethod = before.substring(theDotBeforeIndex);
+                } else {
+                    probableGetterMethod = before;
+                }
+
+            } else if (indexOfLeftInRight != -1) {
+                theDotBeforeIndex = after.substring(0, indexOfLeftInRight).lastIndexOf(".");
+                theDotAfterIndex = after.substring(indexOfLeftInRight).indexOf(".");
+
+                if (theDotBeforeIndex != -1 && theDotAfterIndex != -1) {
+                    probableGetterMethod = after.substring(theDotBeforeIndex, theDotAfterIndex + after.substring(0, indexOfLeftInRight).length());
+                } else if (theDotAfterIndex != -1) { //The DotBeforeIndex is -1
+                    probableGetterMethod = after.substring(0, theDotAfterIndex + after.substring(0, indexOfLeftInRight).length());
+                } else if (theDotBeforeIndex != -1) {
+                    probableGetterMethod = after.substring(theDotBeforeIndex);
+                } else {
+                    probableGetterMethod = after;
+                }
+            }
+
+            if (probableGetterMethod.contains("get")) { //Relax Search - It has been added because this change happened a lot
+                replacementsToRemove.add(replacement);
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
+
     }
 
     private static void omitAnonymousClassDeclarationReplacements(HashSet<Replacement> replacementsToCheck) {
@@ -4008,6 +4101,7 @@ Mapping state for Move Method refactoring purity:
             omitStringRelatedReplacements(replacementsToCheck);
 
 
+            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck, modelDiff);
 
 
         }
@@ -4096,6 +4190,7 @@ Mapping state for Move Method refactoring purity:
         refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
 
         checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
+        relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
 
 //            for https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938 commit - performLocalRehashAwareOperation
         if (replacementsToCheck.isEmpty()) {
