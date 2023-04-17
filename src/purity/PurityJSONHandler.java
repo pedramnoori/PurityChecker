@@ -38,7 +38,9 @@ public class PurityJSONHandler {
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
 //        getStatistics("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json");
-        extractRefactoringFromOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityData.json", "Extract and Move Method");
+//        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityData.json", "Move and Inline Method");
+        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src-test/Data/data.json", "Move and Inline Method");
+
 
     }
 
@@ -52,10 +54,7 @@ public class PurityJSONHandler {
             JsonNode root = objectMapper.readTree(file);
             for (JsonNode jsonNode : root) {
                 for (JsonNode refactoring : jsonNode.get("refactorings")) {
-                    if (refactoring.get("type").textValue().toLowerCase().equals(refactoringType.toLowerCase()) &&
-                            (refactoring.get("validation").textValue().equals("TP") ||
-                                    refactoring.get("validation").textValue().equals("CTP"))) {
-                        System.out.println("HERE");
+                    if (refactoring.get("type").textValue().toLowerCase().equals(refactoringType.toLowerCase())) {
                         arrayNode.add(jsonNode);
                         break;
                     }

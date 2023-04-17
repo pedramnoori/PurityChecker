@@ -73,6 +73,9 @@ public class PurityChecker {
             case EXTRACT_AND_MOVE_OPERATION:
                 result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
+            case MOVE_AND_INLINE_OPERATION:
+                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+                break;
             default:
                 result = null;
 
@@ -764,7 +767,7 @@ public class PurityChecker {
 
     private static PurityCheckResult detectInlineMethodPurity(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff) {
 
-        System.out.println("Inline purity detection");
+        System.out.println("(Move and) Inline purity detection");
 
         if (refactoring.getBodyMapper().getNonMappedLeavesT1().isEmpty() && refactoring.getBodyMapper().getNonMappedInnerNodesT1().isEmpty()) {
 
@@ -814,7 +817,24 @@ public class PurityChecker {
 
             }
 
+            omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck, modelDiff);
+
+            if (replacementsToCheck.isEmpty()) {
+                purityComment += "Changes are within the Move Method refactoring mechanics" + "\n";
+                return new PurityCheckResult(true, "Move Method specific changes - all mapped", purityComment, mappingState);
+            }
+
             purityComment += "Overlapped refactoring - can be identical by undoing the overlapped refactoring" + "\n";
+
+            checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Inline Variable on top of the inlined method - all mapped", purityComment, mappingState);
+            }
+
+            checkForPullUpMethodOnTop(refactoring, refactorings, replacementsToCheck, modelDiff);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Pull Up Method on top of the inlined method - all mapped", purityComment, mappingState);
+            }
 
 
             checkForRenameMethodRefactoringOnTop_Mapped(refactorings, replacementsToCheck);
@@ -876,9 +896,29 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Rename Attribute on the top of the inlined method - all mapped", purityComment, mappingState);
             }
 
+            checkForMoveAndRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Move and rename class on the top of the extract method - all mapped", purityComment, mappingState);
+            }
+
+            checkForMoveMethodRefactoringOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Move method on the top of the extract method - all mapped", purityComment, mappingState);
+            }
+
             checkForRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Rename class on the top of the inlined method - all mapped", purityComment, mappingState);
+            }
+
+            checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Extract variable on the top of the inlined method - all mapped", purityComment, mappingState);
+            }
+
+            checkForMergeConditionalOnTop(refactorings, replacementsToCheck);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Merge Conditional on the top of the inlined method - all mapped", purityComment, mappingState);
             }
 
             checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
@@ -921,7 +961,7 @@ public class PurityChecker {
                 purityComment += "Severe changes + \n";
             }
 
-            if (!checkReplacementsInlineMethod(refactoring, refactorings)) {
+            if (!checkReplacementsInlineMethod(refactoring, refactorings, modelDiff)) {
                 purityComment = "Severe changes";
                 return new PurityCheckResult(false, "replacements are not justified - non-mapped leaves", purityComment, mappingState);
             }
@@ -974,7 +1014,7 @@ public class PurityChecker {
 
             List<AbstractCodeFragment> nonMappedInnerNodesT1 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedInnerNodesT1());
 
-            if (!checkReplacementsInlineMethod(refactoring, refactorings)) {
+            if (!checkReplacementsInlineMethod(refactoring, refactorings, modelDiff)) {
                 purityComment = "Severe changes";
                 return new PurityCheckResult(false, "replacements are not justified - non-mapped leaves", purityComment, mappingState);
             }
@@ -1323,7 +1363,7 @@ public class PurityChecker {
         replacementsToCheck.removeAll(replacementsToRemove);
     }
 
-    private static boolean checkReplacementsInlineMethod(InlineOperationRefactoring refactoring, List<Refactoring> refactorings) {
+    private static boolean checkReplacementsInlineMethod(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, UMLModelDiff modelDiff) {
 
         HashSet<Replacement> replacementsToCheck = new HashSet<>(refactoring.getReplacements());
 
@@ -1340,6 +1380,8 @@ public class PurityChecker {
         checkForTernaryThenReplacement(refactoring, replacementsToCheck);
         omitAnonymousClassDeclarationReplacements(replacementsToCheck);
         omitStringRelatedReplacements(replacementsToCheck);
+
+        omitMoveMethodRelatedReplacements(refactoring, refactorings, replacementsToCheck, modelDiff);
 
 
         if (replacementsToCheck.isEmpty()) {
@@ -1358,6 +1400,13 @@ public class PurityChecker {
         checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
         checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
         checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
+        checkForMoveAndRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
+        checkForMoveMethodRefactoringOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForPullUpMethodOnTop(refactoring, refactorings, replacementsToCheck, modelDiff);
+        checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForMergeConditionalOnTop(refactorings, replacementsToCheck);
+
         relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
 
 
