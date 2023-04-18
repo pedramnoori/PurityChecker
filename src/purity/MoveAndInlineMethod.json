@@ -2192,7 +2192,7 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -2831,11 +2831,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the method hasn't been inlined completely. Non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Move And Inline Method",
@@ -2845,11 +2845,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the method hasn't been inlined completely. Non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Rename Method",
@@ -3092,11 +3092,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
     "validators" : "Matin, Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the method hasn't been inlined completely. Non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Rename Parameter",
