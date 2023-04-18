@@ -235,7 +235,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the push down method - all mapped", purityComment, mappingState);
             }
 
-            relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+            relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
             if(replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Getter method got replaced with direct access or vice verca - all mapped", purityComment, mappingState);
             }
@@ -472,7 +472,7 @@ public class PurityChecker {
         checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
         relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+        relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
 
         if (replacementsToCheck.isEmpty()) {
             return true;
@@ -633,7 +633,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the push down method - all mapped", purityComment, mappingState);
             }
 
-            relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+            relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
             if(replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Getter method got replaced with direct access or vice verca - all mapped", purityComment, mappingState);
             }
@@ -755,7 +755,7 @@ public class PurityChecker {
         checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
         relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+        relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
 
         if (replacementsToCheck.isEmpty()) {
             return true;
@@ -806,7 +806,7 @@ public class PurityChecker {
 
             checkForTernaryThenReplacement(refactoring, replacementsToCheck);
 
-            checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
+            checkForVariableReplacedWithMethodInvocationSpecialCases(replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
             omitAnonymousClassDeclarationReplacements(replacementsToCheck);
             omitStringRelatedReplacements(replacementsToCheck);
 
@@ -866,7 +866,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the inlined method - all mapped", purityComment, mappingState);
             }
 
-            checkForInlineMethodOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForInlineMethodOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Inline Method on top of the inlined method - all mapped", purityComment, mappingState);
             }
@@ -911,11 +911,6 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Rename class on the top of the inlined method - all mapped", purityComment, mappingState);
             }
 
-            checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
-            if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Extract variable on the top of the inlined method - all mapped", purityComment, mappingState);
-            }
-
             checkForMergeConditionalOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Merge Conditional on the top of the inlined method - all mapped", purityComment, mappingState);
@@ -926,7 +921,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "One of the overlapping cases - all mapped", purityComment, mappingState);
             }
 
-            relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+            relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
             if(replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Getter method got replaced with direct access or vice verca - all mapped", purityComment, mappingState);
             }
@@ -985,7 +980,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Remove Attribute change on top of the Inline Method - non-mapped leaves", purityComment, mappingState);
             }
 
-            checkForInlineVariableNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT1);
+            checkForInlineVariableNonMappedLeaves(refactorings, nonMappedLeavesT1);
 
 
             if (nonMappedLeavesT1.isEmpty()) {
@@ -1094,7 +1089,7 @@ public class PurityChecker {
         Set<Replacement> replacements = null;
         if (refactoring instanceof ExtractOperationRefactoring) {
             replacements = ((ExtractOperationRefactoring) (refactoring)).getReplacements();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+        } else if (refactoring instanceof InlineOperationRefactoring) {
             replacements = ((InlineOperationRefactoring) (refactoring)).getReplacements();
         } else {
             return;
@@ -1119,7 +1114,7 @@ public class PurityChecker {
         replacementsToCheck.removeAll(replacementsToRemove);
     }
 
-    private static void checkForVariableReplacedWithMethodInvocationSpecialCases(InlineOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+    private static void checkForVariableReplacedWithMethodInvocationSpecialCases(HashSet<Replacement> replacementsToCheck) {
 
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
@@ -1221,7 +1216,7 @@ public class PurityChecker {
         checkForInevitableVariableDeclarationInline(refactoring, nonMappedLeavesT1List, refactorings); // This method can also change the state of the refactoring's replacements
         checkForStatementsBeingMappedInTargetOperation(refactoring, refactorings, nonMappedLeavesT1List, modelDiff);
         checkForNestedInlineMethod(refactoring, refactorings, nonMappedLeavesT1List);
-        checkForInlineVariableNonMappedLeaves(refactoring, refactorings, nonMappedLeavesT1List);
+        checkForInlineVariableNonMappedLeaves(refactorings, nonMappedLeavesT1List);
         checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT1List);
         checkForRemoveAttributeOnTop(refactoring, modelDiff, nonMappedLeavesT1List);
 
@@ -1246,7 +1241,7 @@ public class PurityChecker {
         return false;
     }
 
-    private static void checkForInlineVariableNonMappedLeaves(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT1) {
+    private static void checkForInlineVariableNonMappedLeaves(List<Refactoring> refactorings, List<AbstractCodeFragment> nonMappedLeavesT1) {
 
         List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
 
@@ -1339,7 +1334,7 @@ public class PurityChecker {
         nonMappedLeavesT1.removeAll(nonMappedLeavesT1ToRemove);
     }
 
-    private static void checkForInlineMethodOnTop(InlineOperationRefactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+    private static void checkForInlineMethodOnTop(List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
 
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
@@ -1392,12 +1387,12 @@ public class PurityChecker {
         checkForRemoveParameterOnTop(refactoring, refactorings, replacementsToCheck);
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
         relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        checkForInlineMethodOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForInlineMethodOnTop(refactorings, replacementsToCheck);
         checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForRenameVariableOnTop(refactorings, replacementsToCheck);
         checkForRemoveVariableOnTop(refactoring, refactorings, replacementsToCheck);
-        checkForVariableReplacedWithMethodInvocationSpecialCases(refactoring, replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
+        checkForVariableReplacedWithMethodInvocationSpecialCases(replacementsToCheck); // For this special case: https://github.com/netty/netty/commit/d31fa31cdcc5ea2fa96116e3b1265baa180df58a#diff-8976fed22cf939e3b9a8a4eba74620d04992dbce5ffb16769df9fcb1019bec7a
         checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
         checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
         checkForMoveAndRenameClassRefactoringOnTop(refactorings, replacementsToCheck);
@@ -1407,7 +1402,7 @@ public class PurityChecker {
         checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForMergeConditionalOnTop(refactorings, replacementsToCheck);
 
-        relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+        relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
 
 
         if (replacementsToCheck.isEmpty()) {
@@ -1594,7 +1589,7 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the moved method - all mapped", purityComment, mappingState);
             }
 
-            relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+            relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
             if(replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Getter method got replaced with direct access or vice verca - all mapped", purityComment, mappingState);
             }
@@ -1825,6 +1820,24 @@ Mapping state for Move Method refactoring purity:
                                 }
                             }
 
+                        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_INLINE_OPERATION)) {
+                            String classBeforeString = ((UMLOperation) ((InlineOperationRefactoring) (refactoring)).getTargetOperationBeforeInline()).getNonQualifiedClassName();
+                            String classAfterString = ((InlineOperationRefactoring) (refactoring)).getInlinedOperation().getNonQualifiedClassName();
+                            classBefore.add(classBeforeString);
+                            classAfter.add(classAfterString);
+                            originalOperation = ((UMLOperation) ((InlineOperationRefactoring) (refactoring)).getTargetOperationBeforeInline());
+                            refactoredOperation = ((InlineOperationRefactoring) (refactoring)).getInlinedOperation();
+
+                            if (modelDiff.findClassInChildModel(classAfterString).getSuperclass() != null) {
+                                classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString().replaceAll("<[^>]*>", ""));
+                            }
+
+                            if (modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces() != null) {
+                                for (UMLType implementedInterface : modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces()) {
+                                    classAfter.add(implementedInterface.toString().replaceAll("<[^>]*>", ""));
+                                }
+                            }
+
                         } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
                             String classBeforeString = ((PushDownOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
                             String classAfterString = ((PushDownOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
@@ -2003,6 +2016,8 @@ Mapping state for Move Method refactoring purity:
             originalOperation = ((MoveOperationRefactoring) refactoring).getOriginalOperation();
         } else if (refactoring instanceof ExtractOperationRefactoring) {
             originalOperation = (UMLOperation) (((ExtractOperationRefactoring) refactoring).getSourceOperationBeforeExtraction());
+        } else if (refactoring instanceof InlineOperationRefactoring) {
+            originalOperation = (UMLOperation) (((InlineOperationRefactoring) refactoring).getTargetOperationBeforeInline());
         }
 
 
@@ -2028,6 +2043,24 @@ Mapping state for Move Method refactoring purity:
         if (pullUpOperationRefactoring.getMovedOperation().getClassName().equals(instanceOrVariable)) {
             return true;
         }
+
+        if (refactoring instanceof InlineOperationRefactoring) {
+            InlineOperationRefactoring generalInlinedOperation = (InlineOperationRefactoring) refactoring;
+            for (UMLClass umlClass : modelDiff.getChildModel().getClassList()) {
+                if (umlClass.getNonQualifiedName().equals(generalInlinedOperation.getInlinedOperation().getNonQualifiedClassName())) {
+                    for (UMLAttribute attribute : umlClass.getAttributes()) {
+                        if (attribute.getName().equals(instanceOrVariable)) {
+                            if (attribute.getType().getClassType().equals(pullUpOperationRefactoring.getMovedOperation().getNonQualifiedClassName())) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+
+//        Search in the class or method for the attribute or variable
+        }
+
 
         if (refactoring instanceof MoveOperationRefactoring) {
             MoveOperationRefactoring generalMoveOperation = (MoveOperationRefactoring) refactoring;
@@ -2163,7 +2196,7 @@ Mapping state for Move Method refactoring purity:
         checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
         checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
         relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+        relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
 
 
 
@@ -2609,7 +2642,7 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "One of the overlapping cases - all mapped", purityComment, mappingState);
             }
 
-            relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+            relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
             if(replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Getter method got replaced with direct access or vice verca - all mapped", purityComment, mappingState);
             }
@@ -2818,7 +2851,7 @@ Mapping state for Move Method refactoring purity:
         }
     }
 
-    private static void relaxCheckForGetterMethodReplacedWithDirectAccess(Refactoring refactoring, HashSet<Replacement> replacementsToCheck) {
+    private static void relaxCheckForGetterMethodReplacedWithDirectAccess(HashSet<Replacement> replacementsToCheck) {
 
 
         Set<Replacement> replacementsToRemove = new HashSet<>();
@@ -3019,7 +3052,7 @@ Mapping state for Move Method refactoring purity:
         UMLOperationBodyMapper bodyMapper = null;
         if (refactoring instanceof ExtractOperationRefactoring) {
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+        } else if (refactoring instanceof InlineOperationRefactoring) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION) || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
@@ -3080,7 +3113,7 @@ Mapping state for Move Method refactoring purity:
         UMLOperationBodyMapper bodyMapper = null;
         if (refactoring instanceof ExtractOperationRefactoring) {
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+        } else if (refactoring instanceof InlineOperationRefactoring) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
@@ -3327,7 +3360,7 @@ Mapping state for Move Method refactoring purity:
         Map<String, String> parameterToArgumentMap = null;
         if (refactoring instanceof ExtractOperationRefactoring) {
             parameterToArgumentMap = ((ExtractOperationRefactoring) (refactoring)).getParameterToArgumentMap();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+        } else if (refactoring instanceof InlineOperationRefactoring) {
             parameterToArgumentMap = ((InlineOperationRefactoring) (refactoring)).getParameterToArgumentMap();;
         }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION) ||
                 refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION) ||
@@ -3505,7 +3538,7 @@ Mapping state for Move Method refactoring purity:
         UMLOperationBodyMapper bodyMapper = null;
         if (refactoring instanceof ExtractOperationRefactoring) {
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+        } else if (refactoring instanceof InlineOperationRefactoring) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
@@ -3616,9 +3649,9 @@ Mapping state for Move Method refactoring purity:
     private static void checkForRemoveParameterOnTopInline(Refactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
 
         UMLOperationBodyMapper bodyMapper = null;
-        if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+        if (refactoring instanceof ExtractOperationRefactoring) {
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+        } else if (refactoring instanceof InlineOperationRefactoring) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();;
         }else {
             return;
@@ -4239,7 +4272,7 @@ Mapping state for Move Method refactoring purity:
         refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
 
         checkTheReplacementsAlreadyHandled(refactoring, replacementsToCheck);
-        relaxCheckForGetterMethodReplacedWithDirectAccess(refactoring, replacementsToCheck);
+        relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
 
 //            for https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938 commit - performLocalRehashAwareOperation
         if (replacementsToCheck.isEmpty()) {
@@ -4291,7 +4324,7 @@ Mapping state for Move Method refactoring purity:
         UMLOperationBodyMapper bodyMapper = null;
         if (refactoring instanceof ExtractOperationRefactoring) {
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+        } else if (refactoring instanceof InlineOperationRefactoring) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
@@ -4550,7 +4583,7 @@ Mapping state for Move Method refactoring purity:
         UMLOperationBodyMapper bodyMapper = null;
         if (refactoring instanceof ExtractOperationRefactoring) {
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+        } else if (refactoring instanceof InlineOperationRefactoring) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
