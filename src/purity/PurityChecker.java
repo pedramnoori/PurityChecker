@@ -211,7 +211,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Rename Method on top of the pull up method - all mapped", purityComment, mappingState);
             }
 
-            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, Collections.emptySet());
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the pull up method - all mapped", purityComment, mappingState);
             }
@@ -226,10 +226,10 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Encapsulate refactoring on top of the pull up method - all mapped", purityComment, mappingState);
             }
 
-            checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+            Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
 
-            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-            relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+            relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
 
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the push down method - all mapped", purityComment, mappingState);
@@ -468,10 +468,10 @@ public class PurityChecker {
         checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
 
 
-        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
-        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, Collections.emptySet());
+        Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+        relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
         relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
 
         if (replacementsToCheck.isEmpty()) {
@@ -609,7 +609,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Rename Method on top of the push down method - all mapped", purityComment, mappingState);
             }
 
-            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, Collections.emptySet());
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the push down method - all mapped", purityComment, mappingState);
             }
@@ -624,10 +624,10 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Encapsulate refactoring on top of the push down method - all mapped", purityComment, mappingState);
             }
 
-            checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+            Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
 
-            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-            relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+            relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
 
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the push down method - all mapped", purityComment, mappingState);
@@ -751,10 +751,10 @@ public class PurityChecker {
         checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
 
 
-        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
-        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, Collections.emptySet());
+        Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+        relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
         relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
 
         if (replacementsToCheck.isEmpty()) {
@@ -852,15 +852,16 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Remove Parameter refactoring on top the inlined method - all mapped", purityComment, mappingState);
             }
 
-            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, Collections.emptySet());
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the inlined method - all mapped", purityComment, mappingState);
             }
 
             checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
 
-            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-            relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+            relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
 
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the inlined method - all mapped", purityComment, mappingState);
@@ -1001,8 +1002,15 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Extract Variable on the top of the Inline Method - with non-mapped leaves", purityComment, mappingState);
             }
 
+            for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+                if (!abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.RETURN_STATEMENT)) {
+                    return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
+                }
+            }
 
-            return new PurityCheckResult(false, "Violating the mechanics of Inline Method refactoring", purityComment, mappingState);
+            return new PurityCheckResult(true, "Return statements added", purityComment, mappingState);
+
+
         } else {
             int mappingState = 3;
             String purityComment = "";
@@ -1385,8 +1393,10 @@ public class PurityChecker {
 
 
         checkForRemoveParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, Collections.emptySet());
+        Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+        relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
         checkForInlineMethodOnTop(refactorings, replacementsToCheck);
         checkForInlineVariableOnTop(refactoring, refactorings, replacementsToCheck);
         checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
@@ -1566,7 +1576,7 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Rename Method on top of the moved method - all mapped", purityComment, mappingState);
             }
 
-            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, Collections.emptySet());
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the moved method - all mapped", purityComment, mappingState);
             }
@@ -1581,10 +1591,10 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Encapsulate refactoring on top of the moved method - all mapped", purityComment, mappingState);
             }
 
-            checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+            Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
 
-            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-            relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+            relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the moved method - all mapped", purityComment, mappingState);
             }
@@ -2192,10 +2202,10 @@ Mapping state for Move Method refactoring purity:
 
 
 
-        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
-        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, Collections.emptySet());
+        Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+        relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
         relaxCheckForGetterMethodReplacedWithDirectAccess(replacementsToCheck);
 
 
@@ -2544,15 +2554,16 @@ Mapping state for Move Method refactoring purity:
             }
 
 
-            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, Collections.emptySet());
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the extract method - all mapped", purityComment, mappingState);
             }
 
-            checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+            Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
 
-            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-            relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+
+            checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+            relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the extract method - all mapped", purityComment, mappingState);
             }
@@ -2982,7 +2993,7 @@ Mapping state for Move Method refactoring purity:
         }
     }
 
-    private static void checkForAddParameterInSubExpressionOnTop(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
+    private static Set<Replacement> checkForAddParameterInSubExpressionOnTop(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck) {
 
         Set<Replacement> replacementsToAdd = new HashSet<>();
         Set<Replacement> replacementsToRemove = new HashSet<>();
@@ -2999,6 +3010,7 @@ Mapping state for Move Method refactoring purity:
                     String after = null;
                     AbstractCall invokedOperationBefore = null;
                     AbstractCall invokedOperationAfter = null;
+                    boolean methodOrCreationFlag = false;
 
 
                     for (AbstractCall entry: mapping.getFragment1().getMethodInvocations()) {
@@ -3016,6 +3028,8 @@ Mapping state for Move Method refactoring purity:
                     }
 
                     if (before == null || after == null || invokedOperationBefore == null || invokedOperationAfter == null) {
+
+                        methodOrCreationFlag = true;
 
                         for (AbstractCall entry: mapping.getFragment1().getCreations()) {
                             if (entry.getName().equals(subExpressionMethodInvocation)) {
@@ -3037,13 +3051,18 @@ Mapping state for Move Method refactoring purity:
                     }
 
                     replacementsToRemove.add(replacement);
-                    replacementsToAdd.add(new MethodInvocationReplacement(before, after, invokedOperationBefore, invokedOperationAfter, Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT));
+                    if (!methodOrCreationFlag)
+                        replacementsToAdd.add(new MethodInvocationReplacement(before, after, invokedOperationBefore, invokedOperationAfter, Replacement.ReplacementType.METHOD_INVOCATION_ARGUMENT));
+                    else
+                        replacementsToAdd.add(new MethodInvocationReplacement(before, after, invokedOperationBefore, invokedOperationAfter, Replacement.ReplacementType.CLASS_INSTANCE_CREATION_ARGUMENT));
+
                 }
             }
         }
 
         replacementsToCheck.addAll(replacementsToAdd);
         replacementsToCheck.removeAll(replacementsToRemove);
+        return replacementsToRemove;
 
     }
 
@@ -4206,19 +4225,17 @@ Mapping state for Move Method refactoring purity:
         if(replacementsToCheck.isEmpty())
             return true;
 
-        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, Collections.emptySet());
         if(replacementsToCheck.isEmpty())
             return true;
 
-        checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+        Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+        relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck, removedReplacements);
+
         if (replacementsToCheck.isEmpty()) {
             return true;
         }
-
-        relaxCheckForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        checkForParametrizationOrAddParameterOnTop(refactoring, refactorings, replacementsToCheck);
-        if(replacementsToCheck.isEmpty())
-            return true;
 
         checkForRemoveParameterOnTop(refactoring, refactorings, replacementsToCheck);
         if(replacementsToCheck.isEmpty())
@@ -4404,12 +4421,12 @@ Mapping state for Move Method refactoring purity:
     }
 
 
-    private static void relaxCheckForParametrizationOrAddParameterOnTop(Refactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
+    private static void relaxCheckForParametrizationOrAddParameterOnTop(Refactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck, Set<Replacement> removedReplacements) {
 
         UMLOperationBodyMapper bodyMapper = null;
-        if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
+        if (refactoring instanceof ExtractOperationRefactoring) {
             bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
+        } else if (refactoring instanceof InlineOperationRefactoring) {
             bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();
         }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
             bodyMapper = ((MoveOperationRefactoring) (refactoring)).getBodyMapper();
@@ -4456,7 +4473,7 @@ Mapping state for Move Method refactoring purity:
 
             if (replacement.getType().equals(Replacement.ReplacementType.CLASS_INSTANCE_CREATION) ||
                     replacement.getType().equals(Replacement.ReplacementType.CLASS_INSTANCE_CREATION_ARGUMENT)) {
-                relaxCheckForAddParameterOnTopConstructorVersion(bodyMapper, replacement, refactorings, replacementsToCheck);
+                relaxCheckForAddParameterOnTopConstructorVersion(bodyMapper, replacement, refactorings, replacementsToCheck, removedReplacements);
             }
 
 
@@ -4468,7 +4485,7 @@ Mapping state for Move Method refactoring purity:
 //                temp1.removeAll(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments());
                 ArrayList<Integer> addedArgumentsLocation = new ArrayList<>();
 
-                for (int i = temp2.size(); i > (temp2.size() - temp1.size()); i--) {
+                for (int i = temp1.size() - 1; i >= (temp1.size() - temp2.size()); i--) {
                     addedArgumentsLocation.add(i);
                 }
 
@@ -4513,11 +4530,11 @@ Mapping state for Move Method refactoring purity:
 
     }
 
-    private static void relaxCheckForAddParameterOnTopConstructorVersion(UMLOperationBodyMapper bodyMapper, Replacement replacement, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
+    private static void relaxCheckForAddParameterOnTopConstructorVersion(UMLOperationBodyMapper bodyMapper, Replacement replacement, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck, Set<Replacement> removedReplacements) {
 
         for (AbstractCodeMapping mapping : bodyMapper.getMappings()) {
             for (Replacement mappingReplacement : mapping.getReplacements()) {
-                if (mappingReplacement.equals(replacement)) {
+                if (mappingReplacement.equals(replacement) || removedReplacements.contains(mappingReplacement)) {
                     Optional<AbstractCall> actualValue1 = mapping.getFragment2().getCreations()
                             .stream()
                             .findFirst();
@@ -4534,7 +4551,7 @@ Mapping state for Move Method refactoring purity:
 
                         ArrayList<Integer> addedArgumentsLocationInReplacement = new ArrayList<>();
 
-                        for (int i = temp2.size(); i > (temp2.size() - temp1.size()); i--) {
+                        for (int i = temp1.size() - 1; i >= (temp1.size() - temp2.size()); i--) {
                             addedArgumentsLocationInReplacement.add(i);
                         }
 
@@ -4552,7 +4569,7 @@ Mapping state for Move Method refactoring purity:
                         for (Refactoring ref : addParameterRefactoringList) {
                             if (ref.getRefactoringType().equals(RefactoringType.ADD_PARAMETER)) {
                                 if (((AddParameterRefactoring)ref).getOperationBefore().getName().equals(methodName)) {
-                                    int ind = ((AddParameterRefactoring)ref).getOperationBefore().getParameterNameList().indexOf(((AddParameterRefactoring)ref).getParameter().getName());
+                                    int ind = ((AddParameterRefactoring)ref).getOperationAfter().getParameterNameList().indexOf(((AddParameterRefactoring)ref).getParameter().getName());
                                     addedArgumentLocationInRefactoring.add(ind);
                                 }
                             }
@@ -4578,7 +4595,7 @@ Mapping state for Move Method refactoring purity:
         }
     }
 
-    private static void checkForParametrizationOrAddParameterOnTop(Refactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
+    private static void checkForParametrizationOrAddParameterOnTop(Refactoring refactoring, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck, Set<Replacement> removedReplacements) {
 
         UMLOperationBodyMapper bodyMapper = null;
         if (refactoring instanceof ExtractOperationRefactoring) {
@@ -4630,7 +4647,7 @@ Mapping state for Move Method refactoring purity:
 
             if (replacement.getType().equals(Replacement.ReplacementType.CLASS_INSTANCE_CREATION) ||
                     replacement.getType().equals(Replacement.ReplacementType.CLASS_INSTANCE_CREATION_ARGUMENT)) {
-                checkForAddParameterOnTopConstructorVersion(bodyMapper, replacement, refactorings, replacementsToCheck);
+                checkForAddParameterOnTopConstructorVersion(bodyMapper, replacement, refactorings, replacementsToCheck, removedReplacements);
             }
 
 
@@ -4690,11 +4707,11 @@ Mapping state for Move Method refactoring purity:
 
     }
 
-    private static void checkForAddParameterOnTopConstructorVersion(UMLOperationBodyMapper bodyMapper, Replacement replacement, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck) {
+    private static void checkForAddParameterOnTopConstructorVersion(UMLOperationBodyMapper bodyMapper, Replacement replacement, List<Refactoring> refactorings, Set<Replacement> replacementsToCheck, Set<Replacement> removedReplacements) {
 
         for (AbstractCodeMapping mapping : bodyMapper.getMappings()) {
             for (Replacement mappingReplacement : mapping.getReplacements()) {
-                if (mappingReplacement.equals(replacement)) {
+                if (mappingReplacement.equals(replacement) || removedReplacements.contains(mappingReplacement)) {
                     Optional<AbstractCall> actualValue1 = mapping.getFragment2().getCreations()
                             .stream()
                             .findFirst();
@@ -4730,7 +4747,7 @@ Mapping state for Move Method refactoring purity:
                         for (Refactoring ref : addParameterRefactoringList) {
                             if (ref.getRefactoringType().equals(RefactoringType.ADD_PARAMETER)) {
                                 if (((AddParameterRefactoring)ref).getOperationBefore().getName().equals(methodName)) {
-                                    int ind = ((AddParameterRefactoring)ref).getOperationBefore().getParameterNameList().indexOf(((AddParameterRefactoring)ref).getParameter().getName());
+                                    int ind = ((AddParameterRefactoring)ref).getOperationAfter().getParameterNameList().indexOf(((AddParameterRefactoring)ref).getParameter().getName());
                                     addedArgumentLocationInRefactoring.add(ind);
                                 }
                             }

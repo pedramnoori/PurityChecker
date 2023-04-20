@@ -5448,11 +5448,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the method hasn't been inlined completely. The non-mapped leave in T1 is not justifiable"
     }
   }, {
     "type" : "Move And Inline Method",
@@ -5462,11 +5462,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the method hasn't been inlined completely. The non-mapped leave in T1 is not justifiable"
     }
   }, {
     "type" : "Move And Inline Method",
@@ -5490,11 +5490,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the method hasn't been inlined completely. The non-mapped leave in T1 is not justifiable"
     }
   }, {
     "type" : "Move And Inline Method",
@@ -5504,11 +5504,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the method hasn't been inlined completely. The non-mapped leave in T1 is not justifiable"
     }
   }, {
     "type" : "Rename Parameter",
@@ -6064,11 +6064,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the method hasn't been inlined completely. The non-mapped leave in T1 is not justifiable"
     }
   }, {
     "type" : "Move And Inline Method",
@@ -6078,11 +6078,11 @@
     "detectionTools" : "RefactoringMiner, RD-2x",
     "validators" : "Nikos, Ameya",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the method hasn't been inlined completely. The non-mapped leave in T1 is not justifiable"
     }
   }, {
     "type" : "Move And Rename Method",
@@ -6106,11 +6106,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the change in the number of arguments is not justifiable with the provided refactorings and is not a pure change"
     }
   }, {
     "type" : "Move And Inline Method",
@@ -6120,11 +6120,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the change in the number of arguments is not justifiable with the provided refactorings and is not a pure change"
     }
   }, {
     "type" : "Remove Method Annotation",
@@ -7678,11 +7678,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Add Parameter happened in the sub-expression. Good catch by PurityChecker - Return statement added"
     }
   }, {
     "type" : "Rename Parameter",
