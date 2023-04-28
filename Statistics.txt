@@ -747,3 +747,14 @@ Specificity: NaN
 FScore: NaN
 
 
+For Move And Inline Method: TIME: 2023-04-28 14:39:08.039
+TP: 2
+TN: 11
+FP: 0
+FN: 0
+Precision: 100.0
+Recall: 100.0
+Specificity: 100.0
+FScore: 1.0
+
+
