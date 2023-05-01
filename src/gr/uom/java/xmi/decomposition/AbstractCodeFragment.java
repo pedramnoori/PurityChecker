@@ -2,6 +2,7 @@ package gr.uom.java.xmi.decomposition;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -81,9 +82,9 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 				locations.add(expression.getLocationInfo());
 			}
 		}
-		for(LeafExpression expression : getMethodInvocations()) {
+		for(AbstractCall expression : getMethodInvocations()) {
 			if(expression.getString().equals(s)) {
-				matchingExpressions.add(expression);
+				matchingExpressions.add(expression.asLeafExpression());
 				locations.add(expression.getLocationInfo());
 			}
 		}
@@ -117,9 +118,9 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 				locations.add(expression.getLocationInfo());
 			}
 		}
-		for(LeafExpression expression : getCreations()) {
+		for(AbstractCall expression : getCreations()) {
 			if(expression.getString().equals(s)) {
-				matchingExpressions.add(expression);
+				matchingExpressions.add(expression.asLeafExpression());
 				locations.add(expression.getLocationInfo());
 			}
 		}
@@ -205,6 +206,16 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 
 	public void replaceParametersWithArguments(Map<String, String> parameterToArgumentMap) {
 		String afterReplacements = getString();
+		Set<String> anonymousClassMethodDeclarationLines = new LinkedHashSet<>();
+		if(StringBasedHeuristics.containsMethodSignatureOfAnonymousClass(afterReplacements)) {
+			String[] lines = afterReplacements.split("\\n");
+			for(String line : lines) {
+				line = VariableReplacementAnalysis.prepareLine(line);
+				if(Visitor.METHOD_SIGNATURE_PATTERN.matcher(line).matches()) {
+					anonymousClassMethodDeclarationLines.add(line);
+				}
+			}
+		}
 		for(String parameter : parameterToArgumentMap.keySet()) {
 			String argument = parameterToArgumentMap.get(parameter);
 			if(!parameter.equals(argument)) {
@@ -249,7 +260,15 @@ public abstract class AbstractCodeFragment implements LocationInfoProvider {
 							isArgument = true;
 						}
 					}
-					if(isArgument && !isInsideStringLiteral) {
+					boolean isWithinMethodSignature = false;
+					for(String methodSignatureLine : anonymousClassMethodDeclarationLines) {
+						int methodSignatureStart = getString().indexOf(methodSignatureLine);
+						if(methodSignatureStart != -1 && methodSignatureStart < start && methodSignatureStart + methodSignatureLine.length() > start) {
+							isWithinMethodSignature = true;
+							break;
+						}
+					}
+					if(isArgument && !isInsideStringLiteral && !isWithinMethodSignature) {
 						m.appendReplacement(sb, Matcher.quoteReplacement(argument));
 					}
 				}

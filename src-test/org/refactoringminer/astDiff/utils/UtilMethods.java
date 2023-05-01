@@ -1,6 +1,7 @@
 package org.refactoringminer.astDiff.utils;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.params.provider.Arguments;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 
 import java.io.File;
@@ -9,8 +10,9 @@ import java.util.List;
 import java.util.Set;
 
 public class UtilMethods {
-    private static final String COMMITS_MAPPINGS_PATH = "src-test/org/refactoringminer/astDiff/data/commits/";
-    private static final String TREES_PATH = "src-test/org/refactoringminer/astDiff/data/trees";
+    private static final String DIFF_DATA_PATH = "src-test/data/astDiff/";
+    private static final String COMMITS_MAPPINGS_PATH = DIFF_DATA_PATH + "commits/";
+    private static final String TREES_PATH = DIFF_DATA_PATH + "trees";
     private static final String infoFile = "cases.json";
 
     private static final String JSON_SUFFIX = ".json";
@@ -50,20 +52,20 @@ public class UtilMethods {
         return infoFile;
     }
 
-    public static void makeAllCases(List<Object[]> allCases, CaseInfo info, List<String> expectedFilesList, Set<ASTDiff> astDiffs) throws IOException {
+    public static void makeAllCases(List<Arguments> allCases, CaseInfo info, List<String> expectedFilesList, Set<ASTDiff> astDiffs) throws IOException {
         for (ASTDiff astDiff : astDiffs) {
             String finalFilePath = getFinalFilePath(astDiff, getCommitsMappingsPath(), info.getRepo(), info.getCommit());
-            String calculated = MappingExportModel.exportString(astDiff.getMultiMappings());
+            String calculated = MappingExportModel.exportString(astDiff.getAllMappings());
             String expected = FileUtils.readFileToString(new File(finalFilePath), "utf-8");
-            allCases.add(new Object[]{info.getRepo(),info.getCommit(),astDiff.getSrcPath(),expected,calculated});
+            allCases.add(Arguments.of(info.getRepo(),info.getCommit(),astDiff.getSrcPath(),expected,calculated));
             expectedFilesList.remove(getFileNameFromSrcDiff(astDiff.getSrcPath()));
         }
         for (String expectedButNotGeneratedFile : expectedFilesList) {
             String expectedDiffName = getSrcASTDiffFromFile(expectedButNotGeneratedFile);
-            allCases.add(new Object[]
-                    {
+            allCases.add(Arguments.of
+                    (
                     info.getRepo(),info.getCommit(),expectedDiffName,"{JSON}","NOT GENERATED"
-                    }
+                    )
             );
         }
     }

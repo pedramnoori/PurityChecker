@@ -24,11 +24,20 @@ sourceSets {
         java {
             srcDir 'src-test'
         }
+        resources {
+            srcDir 'src-test/data/'
+        }
+
     }
 }
 
 repositories {
     mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }
 
 dependencies {
@@ -42,6 +51,11 @@ dependencies {
 	implementation 'com.github.gumtreediff:core:3.0.0'
 	implementation 'com.github.gumtreediff:gen.jdt:3.0.0'
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
+    testImplementation 'net.joshka:junit-json-params:5.9.2-r0'
+    testImplementation 'org.glassfish:javax.json:1.1.4'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 }
 
 java {

@@ -23,6 +23,11 @@ public class LeafExpression extends AbstractCodeFragment {
     	this.string = stringify(expression);
 	}
 
+	protected LeafExpression(String string, LocationInfo locationInfo) {
+		this.string = string;
+		this.locationInfo = locationInfo;
+	}
+
 	protected LeafExpression() {
 		
 	}
@@ -169,7 +174,7 @@ public class LeafExpression extends AbstractCodeFragment {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(string);
+		return Objects.hash(locationInfo, string);
 	}
 
 	@Override
@@ -181,6 +186,6 @@ public class LeafExpression extends AbstractCodeFragment {
 		if (getClass() != obj.getClass())
 			return false;
 		LeafExpression other = (LeafExpression) obj;
-		return Objects.equals(string, other.string);
+		return Objects.equals(locationInfo, other.locationInfo) && Objects.equals(string, other.string);
 	}
 }

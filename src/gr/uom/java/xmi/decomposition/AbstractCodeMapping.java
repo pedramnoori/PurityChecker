@@ -9,7 +9,6 @@ import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.util.PrefixSuffixUtils;
 
 import gr.uom.java.xmi.LocationInfo.CodeElementType;
-import gr.uom.java.xmi.UMLOperation;
 import gr.uom.java.xmi.VariableDeclarationContainer;
 import gr.uom.java.xmi.decomposition.replacement.*;
 import gr.uom.java.xmi.decomposition.replacement.Replacement.ReplacementType;
@@ -268,12 +267,23 @@ public abstract class AbstractCodeMapping {
 			for(Replacement replacement : getReplacements()) {
 				String after = replacement.getAfter();
 				String before = replacement.getBefore();
-				if(replacement.getType().equals(ReplacementType.PARENTHESIZED_EXPRESSION)) {
+				if(replacement.getType().equals(ReplacementType.PARENTHESIZED_EXPRESSION) ||
+						replacement.getType().equals(ReplacementType.VARIABLE_REPLACED_WITH_PARENTHESIZED_EXPRESSION)) {
 					if(after.startsWith("(") && after.endsWith(")")) {
 						after = after.substring(1, after.length()-1);
 					}
 					if(before.startsWith("(") && before.endsWith(")")) {
 						before = before.substring(1, before.length()-1);
+					}
+				}
+				if(replacement instanceof MethodInvocationReplacement) {
+					MethodInvocationReplacement r = (MethodInvocationReplacement)replacement;
+					AbstractCall callBefore = r.getInvokedOperationBefore();
+					AbstractCall callAfter = r.getInvokedOperationAfter();
+					int indexOfArgument2 = callAfter.arguments().indexOf(variableName);
+					if(indexOfArgument2 != -1 && callBefore.arguments().size() == callAfter.arguments().size()) {
+						after = variableName;
+						before = callBefore.arguments().get(indexOfArgument2);
 					}
 				}
 				if(after.startsWith(variableName + ".")) {
@@ -418,7 +428,8 @@ public abstract class AbstractCodeMapping {
 			for(Replacement replacement : getReplacements()) {
 				String after = replacement.getAfter();
 				String before = replacement.getBefore();
-				if(replacement.getType().equals(ReplacementType.PARENTHESIZED_EXPRESSION)) {
+				if(replacement.getType().equals(ReplacementType.PARENTHESIZED_EXPRESSION) ||
+						replacement.getType().equals(ReplacementType.VARIABLE_REPLACED_WITH_PARENTHESIZED_EXPRESSION)) {
 					if(after.startsWith("(") && after.endsWith(")")) {
 						after = after.substring(1, after.length()-1);
 					}

@@ -40,6 +40,10 @@ public abstract class AbstractCall extends LeafExpression {
 		
 	}
 
+	public LeafExpression asLeafExpression() {
+		return new LeafExpression(getString(), getLocationInfo());
+	}
+
 	public String getExpression() {
 		return expression;
 	}
@@ -514,6 +518,10 @@ public abstract class AbstractCall extends LeafExpression {
 		if(normalizedNameDistance(call) <= distance) {
 			return true;
 		}
+		return compatibleName(call);
+	}
+
+	public boolean compatibleName(AbstractCall call) {
 		String[] tokens1 = LeafType.CAMEL_CASE_SPLIT_PATTERN.split(this.getName());
 		String[] tokens2 = LeafType.CAMEL_CASE_SPLIT_PATTERN.split(call.getName());
 		int commonTokens = 0;
@@ -786,6 +794,20 @@ public abstract class AbstractCall extends LeafExpression {
 		return false;
 	}
 
+	public boolean identicalWithExpressionArgumentSwap(AbstractCall call) {
+		if(getExpression() != null && call.getExpression() != null && (identicalName(call) || this.getName().contains(call.getName()) || call.getName().contains(this.getName()))) {
+			int argumentIndex1 = arguments().indexOf(call.getExpression());
+			int argumentIndex2 = call.arguments().indexOf(getExpression());
+			if(argumentIndex1 != -1 && argumentIndex2 != -1 && argumentIndex1 == argumentIndex2) {
+				Set<String> argumentIntersection = argumentIntersection(call);
+				if(argumentIntersection.size() == arguments().size()-1 && argumentIntersection.size() == call.arguments().size()-1) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 	public boolean identical(AbstractCall call, Set<Replacement> replacements, Map<String, String> parameterToArgumentMap, List<UMLOperationBodyMapper> lambdaMappers) {
 		return identicalExpression(call, replacements, parameterToArgumentMap) &&
 				identicalName(call) &&
@@ -1013,6 +1035,16 @@ public abstract class AbstractCall extends LeafExpression {
 		String parenthesizedS2 = "("+s2+")";
 		if(parenthesizedS2.equals(s1))
 			return true;
+		if(s1.contains(".<") && !s2.contains(".<")) {
+			String s1WithoutGenerics = s1.substring(0, s1.indexOf(".<") + 1) + s1.substring(s1.indexOf(">") + 1, s1.length());
+			if(s1WithoutGenerics.equals(s2))
+				return true;
+		}
+		if(s2.contains(".<") && !s1.contains(".<")) {
+			String s2WithoutGenerics = s2.substring(0, s2.indexOf(".<") + 1) + s2.substring(s2.indexOf(">") + 1, s2.length());
+			if(s2WithoutGenerics.equals(s1))
+				return true;
+		}
 		return false;
 	}
 
