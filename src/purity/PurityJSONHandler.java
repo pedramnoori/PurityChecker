@@ -24,16 +24,16 @@ public class PurityJSONHandler {
 
     public static void main(String[] args) {
 
-//        addPurityFields("C:\\Users\\Pedram\\Desktop\\data.json", "C:\\Users\\Pedram\\Desktop\\Puritydata.json");
+//        addPurityFields("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\ToAdd.json", "C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\SplitMethod.json");
 //        addExtraPurityFields("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
 //        numberOfRefactorings("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
-        String outputPath = runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/MoveAndInlineMethod.json");
+//        String outputPath = runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/MoveAndInlineMethod.json");
 //
-        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResultMoveAndInline.json", RefactoringType.EXTRACT_AND_MOVE_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResultMoveAndInline.json", RefactoringType.EXTRACT_AND_MOVE_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.EXTRACT_OPERATION);
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
@@ -356,6 +356,8 @@ public class PurityJSONHandler {
                     purity.put("purityValue", "-");
                     purity.put("purityValidation", "-");
                     purity.put("purityComment", "");
+                    purity.put("mappingState", "");
+                    purity.put("validationComment", "");
 
                     objectNode.set("purity", purity);
                 }

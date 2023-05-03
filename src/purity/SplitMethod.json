@@ -1,0 +1,1904 @@
+[ {
+  "id" : 1112091,
+  "repository" : "https://github.com/droolsjbpm/drools.git",
+  "sha1" : "1bf2875e9d73e2d1cd3b58200d5300485f890ff5",
+  "url" : "https://github.com/droolsjbpm/drools/commit/1bf2875e9d73e2d1cd3b58200d5300485f890ff5",
+  "author" : "Mario Fusco",
+  "time" : "6/15/15 9:41 AM",
+  "refactorings" : [ {
+    "type" : "Extract Method",
+    "description" : "Extract Method protected initPriorityQueue(kBase InternalKnowledgeBase) : BinaryHeapQueue extracted from public AgendaGroupQueueImpl(name String, kBase InternalKnowledgeBase) in class org.drools.core.common.AgendaGroupQueueImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method private internalAddEntry(entry PropagationEntry) : void extracted from public addEntry(entry PropagationEntry) : void in class org.drools.core.phreak.SynchronizedPropagationList",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Push Down Attribute",
+    "description" : "Push Down Attribute protected evaluatingActionQueue : AtomicBoolean from class org.drools.core.impl.StatefulKnowledgeSessionImpl to private evaluatingActionQueue : AtomicBoolean from class org.drools.reteoo.common.ReteWorkingMemory",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method public notifyHalt() : void from class org.drools.core.common.DefaultAgenda to public notifyHalt() : void from class org.drools.core.phreak.SynchronizedBypassPropagationList",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method public notifyHalt() : void from class org.drools.reteoo.common.ReteAgenda to public notifyHalt() : void from class org.drools.core.phreak.SynchronizedBypassPropagationList",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public requiresImmediateFlushingIfNotFiring() : boolean renamed to public requiresImmediateFlushing() : boolean in class org.drools.core.phreak.PhreakTimerNode.TimerAction",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public requiresImmediateFlushingIfNotFiring() : boolean renamed to public requiresImmediateFlushing() : boolean in class org.drools.core.phreak.PropagationEntry.AbstractPropagationEntry",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public isHighestSalience(nextRule RuleAgendaItem) : boolean renamed to private isHigherSalience(nextRule RuleAgendaItem) : boolean in class org.drools.core.phreak.RuleExecutor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public executeIfNotFiring(task Runnable) : boolean renamed to public executeTask(executable ExecutableEntry) : void in class org.drools.reteoo.common.ReteAgenda",
+    "comment" : "<p>Obvious case</p>",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x",
+    "validators" : "Matin, Davood",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method private internalFlush() : void renamed to public flush(workingMemory InternalWorkingMemory, currentHead PropagationEntry) : void in class org.drools.core.phreak.SynchronizedPropagationList",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "RefDiff, RD-1x, RD-2x",
+    "validators" : "Matin",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public addActivation(item AgendaItem, notify boolean) : void renamed to public fireTimedActivation(activation Activation) : boolean in class org.drools.core.common.DefaultAgenda",
+    "comment" : "<p>Second Opinion. Seems FP</p><p>Davood: The bodies are the same with one throw statement</p>",
+    "validation" : "FP",
+    "detectionTools" : "RefDiff",
+    "validators" : "Matin, Davood",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method private waitAndEnterExecutionState(newState ExecutionState) : void extracted from public fireUntilHalt(agendaFilter AgendaFilter) : void in class org.drools.core.common.DefaultAgenda",
+    "comment" : " Statements in waitAndEnterExecutionState(..) are not part of  fireUntilHalt(..)",
+    "validation" : "FP",
+    "detectionTools" : "RefDiff",
+    "validators" : "Laleh, Davood",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method public takeAll() : PropagationEntry extracted from public flush() : void in class org.drools.core.phreak.SynchronizedPropagationList",
+    "comment" : "<p>Laleh: hard to say if indeed it is an extract method, there&nbsp;are other changes too</p><p>Davood and Matin: internalFlush() was renamed to takeAll()</p>",
+    "validation" : "FP",
+    "detectionTools" : "RefDiff",
+    "validators" : "Matin, Laleh, Davood",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public add(handle EventFactHandle) : void extracted from public assertFact(context Object, fact InternalFactHandle, pctx PropagationContext, workingMemory InternalWorkingMemory) : boolean in class org.drools.core.rule.SlidingTimeWindow & moved to class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : "It is extract and move since the method is moved to the inner class",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public peek() : EventFactHandle extracted from public assertFact(context Object, fact InternalFactHandle, pctx PropagationContext, workingMemory InternalWorkingMemory) : boolean in class org.drools.core.rule.SlidingTimeWindow & moved to class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : "It is extract and move since the method is moved to the inner class",
+    "validation" : "CTP",
+    "detectionTools" : "RefDiff, RD-1x, RD-2x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public peek() : EventFactHandle extracted from public retractFact(context Object, fact InternalFactHandle, pctx PropagationContext, workingMemory InternalWorkingMemory) : void in class org.drools.core.rule.SlidingTimeWindow & moved to class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : "It is extract and move since the method is moved to the inner class",
+    "validation" : "CTP",
+    "detectionTools" : "RefDiff, RD-2x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public peek() : EventFactHandle extracted from public expireFacts(context Object, pctx PropagationContext, workingMemory InternalWorkingMemory) : void in class org.drools.core.rule.SlidingTimeWindow & moved to class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : "<p>Extract and Move to the inner class.</p><p>Since RefDiff does not detect 'Extract and Move refactoring' we accept it as CTP.</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
+    "validators" : "Laleh, Automatic",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public poll() : EventFactHandle extracted from public retractFact(context Object, fact InternalFactHandle, pctx PropagationContext, workingMemory InternalWorkingMemory) : void in class org.drools.core.rule.SlidingTimeWindow & moved to class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : "It is extract and move since the method is moved to the inner class",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public remove() : EventFactHandle extracted from public expireFacts(context Object, pctx PropagationContext, workingMemory InternalWorkingMemory) : void in class org.drools.core.rule.SlidingTimeWindow & moved to class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : "It is extract and move since the method is moved to the inner class",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public remove(handle EventFactHandle) : void extracted from public retractFact(context Object, fact InternalFactHandle, pctx PropagationContext, workingMemory InternalWorkingMemory) : void in class org.drools.core.rule.SlidingTimeWindow & moved to class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : "It is extract and move since the method is moved to the inner class",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-2x",
+    "validators" : "Laleh",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public notifyHalt() : void extracted from public queueWorkingMemoryAction(action WorkingMemoryAction) : void in class org.drools.reteoo.common.ReteWorkingMemory & moved to class org.drools.core.impl.StatefulKnowledgeSessionImpl",
+    "comment" : "<p>added</p><p>The extracted method does not have anything to do with the original method! Should be FP. TO BE CHECKED WITH LALEH</p><p>Laleh:</p><p>in the base version we have this.agenda.notifyHalt(); agenda is of type&nbsp; InternalAgenda. In the refactored version we have notifyHalt().<br />notifyHalt() is defied (in the refactored version) in the parent of class ReteWorkingMemory which is StatefulKnowledgeSessionImpl<br />the body of notifyHalt() in StatefulKnowledgeSessionImpl we have: propagationList.notifyHalt();<br />knowing that InternalAgenda has no type relation with PropagationList =&gt; it is FP</p>",
+    "validation" : "CTP",
+    "detectionTools" : "RefactoringMiner, RMiner-1x",
+    "validators" : "Matin, Davood",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public setExpiringHandle(expiringHandle EventFactHandle) : void extracted from public expireFacts(context Object, pctx PropagationContext, workingMemory InternalWorkingMemory) : void in class org.drools.core.rule.SlidingTimeWindow & moved to class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : "added",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RMiner-1x",
+    "validators" : "Matin, Davood",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter arg0 : Activation to existing : Activation in method public compare(existing Activation, adding Activation) : int from class org.drools.core.util.BinaryHeapQueueTest.ItemConflictResolver",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter arg1 : Activation to adding : Activation in method public compare(existing Activation, adding Activation) : int from class org.drools.core.util.BinaryHeapQueueTest.ItemConflictResolver",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public requiresImmediateFlushingIfNotFiring() : boolean renamed to public requiresImmediateFlushing() : boolean in class org.drools.core.phreak.PropagationEntry",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type a : Object to a : T in method public compare(a T, b T) : int from class org.drools.core.util.NaturalComparator",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type b : Object to b : T in method public compare(a T, b T) : int from class org.drools.core.util.NaturalComparator",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type queries : ConcurrentMap<QueryImpl,RuleAgendaItem> to queries : Map<QueryImpl,RuleAgendaItem> in class org.drools.core.common.DefaultAgenda",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type comparator : Comparator to comparator : Comparator<Activation> in class org.drools.core.util.BinaryHeapQueue",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute halt : AtomicBoolean to currentState : ExecutionState in class org.drools.core.common.DefaultAgenda",
+    "comment" : "<p>The logic based on halt has been replacement with new logic based on <span class='blob-code-inner blob-code-marker' data-code-marker=' '><span class='pl-k'>enum</span> <span class='pl-en'>ExecutionState</span></span></p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter notify : boolean to firing : boolean in method package ExecutionState(firing boolean) in class org.drools.core.common.DefaultAgenda.ExecutionState",
+    "comment" : "null",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter task : Runnable to executable : ExecutableEntry in method public executeTask(executable ExecutableEntry) : void from class org.drools.core.common.InternalAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter task : Runnable to executable : ExecutableEntry in method public executeTask(executable ExecutableEntry) : void from class org.drools.reteoo.common.ReteAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public executeIfNotFiring(task Runnable) : boolean renamed to public executeTask(executable ExecutableEntry) : void in class org.drools.core.common.InternalAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type boolean to void in method public executeTask(executable ExecutableEntry) : void from class org.drools.reteoo.common.ReteAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type boolean to void in method public executeTask(executable ExecutableEntry) : void from class org.drools.core.common.InternalAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type task : Runnable to executable : ExecutableEntry in method public executeTask(executable ExecutableEntry) : void from class org.drools.reteoo.common.ReteAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type task : Runnable to executable : ExecutableEntry in method public executeTask(executable ExecutableEntry) : void from class org.drools.core.common.InternalAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type existing : Item to existing : Activation in method public compare(existing Activation, adding Activation) : int in class org.drools.core.util.BinaryHeapQueueTest.ItemConflictResolver",
+    "comment" : "<p>compare(Activation arg0, Activation arg1) becomes compare(Activation existing, Activation adding)</p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type halt : AtomicBoolean to currentState : ExecutionState in class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public isFiring() : boolean extracted from public fireAllRules(agendaFilter AgendaFilter, fireLimit int) : int in class org.drools.core.common.DefaultAgenda & moved to class org.drools.core.common.DefaultAgenda.ExecutionState",
+    "comment" : "<p>There is a local method isFiring() which returns !<span class='x'>halt</span><span class='pl-k x'>.</span><span class='x x-last'>get</span>() and then it returns currentState.isFiring()</p>",
+    "validation" : "FP",
+    "detectionTools" : "RD-2x",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method public notifyHalt() : void from class org.drools.core.common.InternalAgenda to public notifyHalt() : void from class org.drools.core.common.InternalWorkingMemory",
+    "comment" : "<p>This is a abstract method which is moved.</p>",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RD-2x",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable agenda : InternalAgenda in method public queueRuleAgendaItem(wm InternalWorkingMemory) : void from class org.drools.core.reteoo.PathMemory",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public deactivateIfEmpty() : void renamed to public setFocus() : void in class org.drools.core.common.AgendaGroupQueueImpl",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public fireUntilHalt(agendaFilter AgendaFilter) : void renamed to private waitAndEnterExecutionState(newState ExecutionState) : void in class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public executeIfNotFiring(task Runnable) : boolean renamed to public executeTask(executable ExecutableEntry) : void in class org.drools.core.common.DefaultAgenda",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : "Ameya",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public notifyHalt() : void renamed to public halt() : void in class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public halt() : void renamed to private immediateHalt() : void in class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public halt() : void renamed to public flushPropagations() : void in class org.drools.core.impl.StatefulKnowledgeSessionImpl",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public flushPropagations() : void renamed to public flushPropagationsOnFireUntilHalt(fired boolean) : void in class org.drools.core.impl.StatefulKnowledgeSessionImpl",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public flush() : void renamed to public flushOnFireUntilHalt(fired boolean, currentHead PropagationEntry) : void in class org.drools.core.phreak.SynchronizedPropagationList",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method public getComponentFactory() : KieComponentFactory renamed to private configureReteComponentFactory() : void in class org.drools.core.RuleBaseConfiguration",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation @Ignore in method public testExecuteQueueActions() : void from class org.drools.core.reteoo.ReteooWorkingMemoryTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation @Override in method public notifyHalt() : void from class org.drools.core.phreak.SynchronizedBypassPropagationList",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Modify Method Annotation",
+    "description" : "Modify Method Annotation @Test to @Test(timeout = 10000) in method public testEventExpirationInSlidingWindow() : void from class org.drools.compiler.integrationtests.CepEspTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Class Annotation",
+    "description" : "Add Class Annotation @Ignore in class org.drools.compiler.integrationtests.CepFireUntilHaltTimerTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter outerStack : LinkedList<StackEntry> in method public fire(wm InternalWorkingMemory, outerStack LinkedList<StackEntry>) : void from class org.drools.core.phreak.RuleExecutor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter outerStack : LinkedList<StackEntry> in method private fire(wm InternalWorkingMemory, filter AgendaFilter, fireCount int, fireLimit int, outerStack LinkedList<StackEntry>, agenda InternalAgenda) : int from class org.drools.core.phreak.RuleExecutor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter outerStack : LinkedList<StackEntry> in method public reEvaluateNetwork(wm InternalWorkingMemory, outerStack LinkedList<StackEntry>) : void from class org.drools.core.phreak.RuleExecutor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter outerStack : LinkedList<StackEntry> in method public evaluateNetwork(pmem PathMemory, outerStack LinkedList<StackEntry>, executor RuleExecutor, wm InternalWorkingMemory) : void from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter outerStack : LinkedList<StackEntry> in method public outerEval(liaNode LeftInputAdapterNode, pmem PathMemory, node NetworkNode, bit long, nodeMem Memory, smems SegmentMemory[], smemIndex int, trgTuples LeftTupleSets, wm InternalWorkingMemory, stack LinkedList<StackEntry>, outerStack LinkedList<StackEntry>, visitedRules Set<String>, processRian boolean, executor RuleExecutor) : void from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter visitedRules : Set<String> in method public outerEval(liaNode LeftInputAdapterNode, pmem PathMemory, node NetworkNode, bit long, nodeMem Memory, smems SegmentMemory[], smemIndex int, trgTuples LeftTupleSets, wm InternalWorkingMemory, stack LinkedList<StackEntry>, outerStack LinkedList<StackEntry>, visitedRules Set<String>, processRian boolean, executor RuleExecutor) : void from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter outerStack : LinkedList<StackEntry> in method public evalStackEntry(entry StackEntry, stack LinkedList<StackEntry>, outerStack LinkedList<StackEntry>, executor RuleExecutor, wm InternalWorkingMemory) : void from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter outerStack : LinkedList<StackEntry> in method public innerEval(liaNode LeftInputAdapterNode, pmem PathMemory, node NetworkNode, bit long, nodeMem Memory, smems SegmentMemory[], smemIndex int, trgTuples LeftTupleSets, wm InternalWorkingMemory, stack LinkedList<StackEntry>, outerStack LinkedList<StackEntry>, visitedRules Set<String>, processRian boolean, executor RuleExecutor) : void from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter visitedRules : Set<String> in method public innerEval(liaNode LeftInputAdapterNode, pmem PathMemory, node NetworkNode, bit long, nodeMem Memory, smems SegmentMemory[], smemIndex int, trgTuples LeftTupleSets, wm InternalWorkingMemory, stack LinkedList<StackEntry>, outerStack LinkedList<StackEntry>, visitedRules Set<String>, processRian boolean, executor RuleExecutor) : void from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter visitedRules : Set<String> in method private evalQueryNode(liaNode LeftInputAdapterNode, pmem PathMemory, node NetworkNode, bit long, nodeMem Memory, smems SegmentMemory[], smemIndex int, trgTuples LeftTupleSets, wm InternalWorkingMemory, stack LinkedList<StackEntry>, visitedRules Set<String>, srcTuples LeftTupleSets, sink LeftTupleSinkNode, stagedLeftTuples LeftTupleSets) : boolean from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter outerStack : LinkedList<StackEntry> in method private evalBetaNode(liaNode LeftInputAdapterNode, pmem PathMemory, node NetworkNode, nodeMem Memory, smems SegmentMemory[], smemIndex int, trgTuples LeftTupleSets, wm InternalWorkingMemory, stack LinkedList<StackEntry>, outerStack LinkedList<StackEntry>, visitedRules Set<String>, processRian boolean, executor RuleExecutor, srcTuples LeftTupleSets, stagedLeftTuples LeftTupleSets, sink LeftTupleSinkNode) : boolean from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter visitedRules : Set<String> in method private evalBetaNode(liaNode LeftInputAdapterNode, pmem PathMemory, node NetworkNode, nodeMem Memory, smems SegmentMemory[], smemIndex int, trgTuples LeftTupleSets, wm InternalWorkingMemory, stack LinkedList<StackEntry>, outerStack LinkedList<StackEntry>, visitedRules Set<String>, processRian boolean, executor RuleExecutor, srcTuples LeftTupleSets, stagedLeftTuples LeftTupleSets, sink LeftTupleSinkNode) : boolean from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter outerStack : LinkedList<StackEntry> in method private doRiaNode(wm InternalWorkingMemory, liaNode LeftInputAdapterNode, pmem PathMemory, srcTuples LeftTupleSets, betaNode BetaNode, sink LeftTupleSinkNode, smems SegmentMemory[], smemIndex int, nodeMem Memory, bm BetaMemory, stack LinkedList<StackEntry>, outerStack LinkedList<StackEntry>, visitedRules Set<String>, executor RuleExecutor) : void from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter visitedRules : Set<String> in method private doRiaNode(wm InternalWorkingMemory, liaNode LeftInputAdapterNode, pmem PathMemory, srcTuples LeftTupleSets, betaNode BetaNode, sink LeftTupleSinkNode, smems SegmentMemory[], smemIndex int, nodeMem Memory, bm BetaMemory, stack LinkedList<StackEntry>, outerStack LinkedList<StackEntry>, visitedRules Set<String>, executor RuleExecutor) : void from class org.drools.core.phreak.RuleNetworkEvaluator",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter visitedRules : Set<String> in method public StackEntry(liaNode LeftInputAdapterNode, node NetworkNode, bit long, sink LeftTupleSinkNode, pmem PathMemory, nodeMem Memory, smems SegmentMemory[], smemIndex int, trgTuples LeftTupleSets, visitedRules Set<String>, resumeFromNextNode boolean, processRian boolean) from class org.drools.core.phreak.StackEntry",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter pctx : PropagationContext in method protected updateNextExpiration(fact InternalFactHandle, pctx PropagationContext, workingMemory InternalWorkingMemory, context Object, nodeId int) : void from class org.drools.core.rule.SlidingTimeWindow",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter pctx : PropagationContext in method public BehaviorJobContext(nodeId int, workingMemory InternalWorkingMemory, behavior Behavior, behaviorContext Object, pctx PropagationContext) from class org.drools.core.rule.SlidingTimeWindow.BehaviorJobContext",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter pctx : PropagationContext in method public BehaviorExpireWMAction(nodeId int, behavior Behavior, context Object, pctx PropagationContext) from class org.drools.core.rule.SlidingTimeWindow.BehaviorExpireWMAction",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter saveForLater : boolean in method public fireTimedActivation(activation Activation, saveForLater boolean) : boolean from class org.drools.reteoo.common.ReteAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter pctx : PropagationContext in method protected updateNextExpiration(fact InternalFactHandle, pctx PropagationContext, workingMemory InternalWorkingMemory, context Object, nodeId int) : void from class org.drools.reteoo.nodes.ReteSlidingTimeWindow",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter saveForLater : boolean in method public fireTimedActivation(activation Activation, saveForLater boolean) : boolean from class org.drools.core.common.InternalAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation @Test(timeout = 10000) in method public testEventExpirationInSlidingWindow() : void from class org.drools.compiler.integrationtests.CepEspTest",
+    "comment" : "<p>modified annotation</p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation @Override in method public execute(wm InternalWorkingMemory) : void from class org.drools.core.common.AgendaGroupQueueImpl.ClearAction",
+    "comment" : "<p>execute() is extracted from clear() and moved to inner class ClearAction</p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation @Override in method public execute(wm InternalWorkingMemory) : void from class org.drools.core.common.AgendaGroupQueueImpl.SetFocusAction",
+    "comment" : "<p>setFocus() is renamed to execute() and moved to inner class SetFocusAction</p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation @Override in method public flushOnFireUntilHalt(fired boolean, currentHead PropagationEntry) : void from class org.drools.core.phreak.SynchronizedPropagationList",
+    "comment" : "null",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation @Test in method public testEventExpirationInSlidingWindow() : void from class org.drools.compiler.integrationtests.CepEspTest",
+    "comment" : "<p>modified annotation</p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier public to private in method private isHigherSalience(nextRule RuleAgendaItem) : boolean from class org.drools.core.phreak.RuleExecutor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier private to protected in method protected isExpired(currentTime long, handle EventFactHandle) : boolean from class org.drools.core.rule.SlidingTimeWindow",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier private to protected in attribute protected priorityQueue : BinaryHeapQueue from class org.drools.core.common.AgendaGroupQueueImpl",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier public to private in attribute private queue : PriorityQueue<EventFactHandle> from class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier public to private in attribute private expiringHandle : EventFactHandle from class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier protected to private in attribute private evaluatingActionQueue : AtomicBoolean from class org.drools.reteoo.common.ReteWorkingMemory",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Encapsulate Attribute",
+    "description" : "Encapsulate Attribute private expiringHandle : EventFactHandle from class org.drools.core.rule.SlidingTimeWindow.SlidingTimeWindowContext",
+    "comment" : "<p>The access modifier is changed to private</p>",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier synchronized in method public isEmpty() : boolean from class org.drools.core.phreak.SynchronizedPropagationList",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier final in method public compare(existing Activation, adding Activation) : int from class org.drools.core.util.BinaryHeapQueueTest.ItemConflictResolver",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public fireActivation(activation Activation) : void from class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method private fireActivationEvent(activation Activation, event Consequence) : void from class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public evaluateNetwork(wm InternalWorkingMemory) : void from class org.drools.core.phreak.RuleExecutor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public evaluateNetworkAndFire(wm InternalWorkingMemory, filter AgendaFilter, fireCount int, fireLimit int) : int from class org.drools.core.phreak.RuleExecutor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public fire(wm InternalWorkingMemory, outerStack LinkedList<StackEntry>) : void from class org.drools.core.phreak.RuleExecutor",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public reEvaluateNetwork(wm InternalWorkingMemory, outerStack LinkedList<StackEntry>) : void from class org.drools.core.phreak.RuleExecutor",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public addEntry(propagationEntry PropagationEntry) : void from class org.drools.core.phreak.SynchronizedBypassPropagationList",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public getOrCreateRuleAgendaItem(wm InternalWorkingMemory) : RuleAgendaItem from class org.drools.core.reteoo.PathMemory",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public doLinkRule(wm InternalWorkingMemory) : void from class org.drools.core.reteoo.PathMemory",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public doUnlinkRule(wm InternalWorkingMemory) : void from class org.drools.core.reteoo.PathMemory",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public clear() : void from class org.drools.core.util.BinaryHeapQueue",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public isEmpty() : boolean from class org.drools.core.util.BinaryHeapQueue",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public isFull() : boolean from class org.drools.core.util.BinaryHeapQueue",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public size() : int from class org.drools.core.util.BinaryHeapQueue",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public peek() : Activation from class org.drools.core.util.BinaryHeapQueue",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public enqueue(element Activation) : void from class org.drools.core.util.BinaryHeapQueue",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public dequeue() : Activation from class org.drools.core.util.BinaryHeapQueue",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public dequeue(activation Activation) : Activation from class org.drools.core.util.BinaryHeapQueue",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method package dequeue(index int) : Activation from class org.drools.core.util.BinaryHeapQueue",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public toArray(a Object[]) : Object[] from class org.drools.core.util.BinaryHeapQueue",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type e : NoClassDefFoundError to e : Throwable in method public testDynamicFunction() : void from class org.drools.compiler.integrationtests.DynamicRulesTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type task : Runnable to executable : ExecutableEntry in method public executeTask(executable ExecutableEntry) : void from class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter task : Runnable to executable : ExecutableEntry in method public executeTask(executable ExecutableEntry) : void from class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type boolean to void in method public executeTask(executable ExecutableEntry) : void from class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter saveForLater : boolean in method public fireTimedActivation(activation Activation, saveForLater boolean) : boolean from class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier synchronized in method public fireTimedActivation(activation Activation, saveForLater boolean) : boolean from class org.drools.core.common.DefaultAgenda",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier final in parameter existing : Activation in method public compare(existing Activation, adding Activation) : int from class org.drools.core.util.BinaryHeapQueueTest.ItemConflictResolver",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier final in parameter adding : Activation in method public compare(existing Activation, adding Activation) : int from class org.drools.core.util.BinaryHeapQueueTest.ItemConflictResolver",
+    "comment" : "null",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable fired : boolean in method public fireUntilHalt(agendaFilter AgendaFilter) : void from class org.drools.core.common.DefaultAgenda",
+    "comment" : "<p>boolean fired = fireNextItem( agendaFilter, 0, -1 ) &gt; 0;<br />inlined to<br />workingMemory.flushPropagationsOnFireUntilHalt( fireNextItem( agendaFilter, 0, -1 ) &gt; 0 );<br />and<br />workingMemory.flushPropagationsOnFireUntilHalt( fireNextItem( agendaFilter, 0, -1 ) &gt; 0, head );</p>",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Localize Parameter",
+    "description" : "Localize Parameter nextRule : RuleAgendaItem to nextRule : RuleAgendaItem in method private haltRuleFiring(fireCount int, fireLimit int, localFireCount int, agenda InternalAgenda) : boolean from class org.drools.core.phreak.RuleExecutor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional return !agenda.isFiring() || ((nextRule != null) && (!ruleAgendaItem.getAgendaGroup().equals(nextRule.getAgendaGroup()) || !isHighestSalience(nextRule))) || (fireLimit >= 0 && (localFireCount + fireCount >= fireLimit)); to [return nextRule != null && (!ruleAgendaItem.getAgendaGroup().equals(nextRule.getAgendaGroup()) || !isHigherSalience(nextRule));, if(!agenda.isFiring() || (fireLimit >= 0 && (localFireCount + fireCount >= fireLimit)))] in method private haltRuleFiring(fireCount int, fireLimit int, localFireCount int, agenda InternalAgenda) : boolean from class org.drools.core.phreak.RuleExecutor",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Merge Conditional",
+    "description" : "Merge Conditional [return 1;, if(s1 > s2)] to return s1 != s2 ? (s1 > s2 ? 1 : -1) : adding.getRule().getLoadOrder() - existing.getRule().getLoadOrder(); in method public doCompare(existing Activation, adding Activation) : int from class org.drools.core.conflict.PhreakConflictResolver",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Method",
+    "description" : "Split Method private internalFlush() : void to [public takeAll() : PropagationEntry, public flush(workingMemory InternalWorkingMemory, currentHead PropagationEntry) : void] in class org.drools.core.phreak.SynchronizedPropagationList",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Variable",
+    "description" : "Parameterize Variable currentHead : PropagationEntry to currentHead : PropagationEntry in method public flush(workingMemory InternalWorkingMemory, currentHead PropagationEntry) : void from class org.drools.core.phreak.SynchronizedPropagationList",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method private configureReteComponentFactory() : void extracted from public getComponentFactory() : KieComponentFactory in class org.drools.core.RuleBaseConfiguration",
+    "comment" : "<p>Indirect call in method setPhreakEnabled()</p>",
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : 13908
+}, {
+  "id" : 1159842,
+  "repository" : "https://github.com/eclipse/jgit.git",
+  "sha1" : "065a0a8122be356d1f898321763d3518b504b075",
+  "url" : "https://github.com/eclipse/jgit/commit/065a0a8122be356d1f898321763d3518b504b075",
+  "author" : "Shawn O. Pearce",
+  "time" : "1/28/11 7:20 AM",
+  "refactorings" : [ {
+    "type" : "Rename Method",
+    "description" : "Rename Method private addResultOrBase(object RevObject, pathHashCode int) : void renamed to private addObject(object RevObject, pathHashCode int) : void in class org.eclipse.jgit.storage.pack.PackWriter",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method private addResult(object RevObject, pathHashCode int) : void inlined to private addObject(object RevObject, pathHashCode int) : void in class org.eclipse.jgit.storage.pack.PackWriter",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Method",
+    "description" : "Split Method private findObjectsToPack(countingMonitor ProgressMonitor, interestingObjects Collection<? extends ObjectId>, uninterestingObjects Collection<? extends ObjectId>) : void to [private setUpWalker(interestingObjects Collection<? extends ObjectId>, uninterestingObjects Collection<? extends ObjectId>) : ObjectWalk, private findObjectsToPack(countingMonitor ProgressMonitor, walker ObjectWalk) : void] in class org.eclipse.jgit.storage.pack.PackWriter",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Variable",
+    "description" : "Parameterize Variable walker : ObjectWalk to walker : ObjectWalk in method private findObjectsToPack(countingMonitor ProgressMonitor, walker ObjectWalk) : void from class org.eclipse.jgit.storage.pack.PackWriter",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Merge Variable",
+    "description" : "Merge Variable [interestingObjects : Collection<? extends ObjectId>, uninterestingObjects : Collection<? extends ObjectId>] to walker : ObjectWalk in method public preparePack(countingMonitor ProgressMonitor, interestingObjects Collection<? extends ObjectId>, uninterestingObjects Collection<? extends ObjectId>) : void from class org.eclipse.jgit.storage.pack.PackWriter",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : null
+}, {
+  "id" : 1159846,
+  "repository" : "https://github.com/apache/commons-lang.git",
+  "sha1" : "d9a2c69a9d1db6072e1d7b7ea4fcbd5c15d20b5d",
+  "url" : "https://github.com/apache/commons-lang/commit/d9a2c69a9d1db6072e1d7b7ea4fcbd5c15d20b5d",
+  "author" : "kaiyuanw",
+  "time" : "9/24/16 11:01 AM",
+  "refactorings" : [ {
+    "type" : "Split Method",
+    "description" : "Split Method public testToCalendarWithDate() : void to [public testToCalendarWithDateNotNull() : void, public testToCalendarWithDateNull() : void] in class org.apache.commons.lang3.time.DateUtilsTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "the fail message has been changed, which is considered as a pure change"
+    }
+  }, {
+    "type" : "Split Method",
+    "description" : "Split Method public testToCalendarWithDateAndTimeZone() : void to [public testToCalendarWithDateAndTimeZoneNotNull() : void, public testToCalendarWithDateAndTimeZoneNull() : void] in class org.apache.commons.lang3.time.DateUtilsTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Method",
+    "description" : "Split Method public testToCalendarWithTimeZone() : void to [public testToCalendarWithTimeZoneNotNull() : void, public testToCalendarWithTimeZoneNull() : void] in class org.apache.commons.lang3.time.DateUtilsTest",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : null
+} ]
