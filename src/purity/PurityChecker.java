@@ -71,10 +71,10 @@ public class PurityChecker {
 //                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case EXTRACT_AND_MOVE_OPERATION:
-//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_INLINE_OPERATION:
-                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             default:
                 result = null;
@@ -1799,12 +1799,18 @@ Mapping state for Move Method refactoring purity:
                 if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName().equals(
                         ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName()
                 )) {
+                    String before = "";
+                    String after = "";
                     if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().equals(
                             ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments()
                     )) {
-                        String before = replacement.getBefore();
-                        String after = replacement.getAfter();
-
+                        before = replacement.getBefore();
+                        after = replacement.getAfter();
+                    }else if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().size() ==
+                            ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments().size()) {
+                        before = replacement.getBefore().substring(0,  replacement.getBefore().indexOf("("));
+                        after = replacement.getAfter().substring(0,  replacement.getAfter().indexOf("("));
+                    }
                         int foundInAfter = after.indexOf(before);
                         int foundInBefore = before.indexOf(after);
                         List<String> classBefore = new ArrayList<>();
@@ -1889,12 +1895,12 @@ Mapping state for Move Method refactoring purity:
                                 replacementsToRemove.add(replacement);
                                 break;
                             }
-                            if (searchInVariableDeclarations(originalOperation, instanceOrVariable, classAfter)) {
+                            if (searchInVariableDeclarations(originalOperation, instanceOrVariable, classAfter, modelDiff)) {
                                 replacementsToRemove.add(replacement);
                                 break;
                             }
                             //Search in different method related refactorings to see if the class has been changed or not, specially, in an anonymous way.
-                            if (relaxSearch(originalOperation, refactorings, instanceOrVariable, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName())) {
+                            if (relaxSearch(originalOperation, refactorings, instanceOrVariable, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName(), modelDiff)) {
                                 replacementsToRemove.add(replacement);
                             }
 
@@ -1904,16 +1910,16 @@ Mapping state for Move Method refactoring purity:
                                 replacementsToRemove.add(replacement);
                                 break;
                             }
-                            if (searchInVariableDeclarations(refactoredOperation, instanceOrVariable, classBefore)) {
+                            if (searchInVariableDeclarations(refactoredOperation, instanceOrVariable, classBefore, modelDiff)) {
                                 replacementsToRemove.add(replacement);
                                 break;
                             }
                             //Search in different method related refactorings to see if the class has been changed or not, specially, in an anonymous way.
-                            if (relaxSearch(refactoredOperation, refactorings, instanceOrVariable, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName())) {
+                            if (relaxSearch(refactoredOperation, refactorings, instanceOrVariable, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName(), modelDiff)) {
                                 replacementsToRemove.add(replacement);
                             }
                         }
-                    }
+//                    }
                 }
             }
         }
@@ -1921,7 +1927,7 @@ Mapping state for Move Method refactoring purity:
         replacementsToCheck.removeAll(replacementsToRemove);
     }
 
-    private static boolean relaxSearch(UMLOperation movedOperation, List<Refactoring> refactorings, String instanceOrVariable, String method) {
+    private static boolean relaxSearch(UMLOperation movedOperation, List<Refactoring> refactorings, String instanceOrVariable, String method, UMLModelDiff modelDiff) {
 
         for (Refactoring refactoring : refactorings) {
             if (isMethodRelatedRefactoring(refactoring)) {
@@ -1934,7 +1940,7 @@ Mapping state for Move Method refactoring purity:
                             String newClassNameWithoutNew = newClassName.substring(newClassNameWithoutNewIndex + "new".length() + 1);
                             newClassNameWithoutNewList.add(newClassNameWithoutNew);
 
-                            if (searchInVariableDeclarations(movedOperation, instanceOrVariable, newClassNameWithoutNewList)) {
+                            if (searchInVariableDeclarations(movedOperation, instanceOrVariable, newClassNameWithoutNewList, modelDiff)) {
                                 return true;
                             }
                         }
@@ -1956,7 +1962,7 @@ Mapping state for Move Method refactoring purity:
         return false;
     }
 
-    private static boolean searchInVariableDeclarations(UMLOperation operation, String instanceOrVariable, List<String> className) {
+    private static boolean searchInVariableDeclarations(UMLOperation operation, String instanceOrVariable, List<String> className, UMLModelDiff umlModelDiff) {
 
         // This iteration also covers the parameters list
         for (VariableDeclaration variableDeclaration : operation.getAllVariableDeclarations()) {
@@ -1964,6 +1970,13 @@ Mapping state for Move Method refactoring purity:
                 if (className.contains(variableDeclaration.getType().getClassType())) {
                     return true;
                 }
+            }
+        }
+
+        for (UMLAttribute attribute : umlModelDiff.findClassInChildModel(operation.getClassName()).getAttributes()) {
+            if (attribute.getName().equals(instanceOrVariable)) {
+                if (className.contains(attribute.getType().getClassType()))
+                    return true;
             }
         }
 
