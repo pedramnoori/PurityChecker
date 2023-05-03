@@ -758,3 +758,36 @@ Specificity: 100.0
 FScore: 1.0
 
 
+For Extract And Move Method: TIME: 2023-05-02 15:45:42.131
+TP: 0
+TN: 0
+FP: 0
+FN: 0
+Precision: NaN
+Recall: NaN
+Specificity: NaN
+FScore: NaN
+
+
+For Extract And Move Method: TIME: 2023-05-02 16:40:56.092
+TP: 35
+TN: 36
+FP: 1
+FN: 22
+Precision: 97.22222
+Recall: 61.403507
+Specificity: 97.2973
+FScore: 0.7526882
+
+
+For Move And Rename Method: TIME: 2023-05-02 16:51:35.12
+TP: 25
+TN: 78
+FP: 0
+FN: 11
+Precision: 100.0
+Recall: 69.44444
+Specificity: 100.0
+FScore: 0.8196721
+
+
