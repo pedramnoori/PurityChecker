@@ -10023,7 +10023,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "The change -getServerURL -> getURL- is pure based on manual validation but PurityChecker does not have enough information to justify the change"
     }
@@ -18533,7 +18533,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
+      "purityComment" : "Tolerable changes in the body",
       "mappingState" : 1,
       "validationComment" : ""
     }
