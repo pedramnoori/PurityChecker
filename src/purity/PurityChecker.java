@@ -99,6 +99,13 @@ public class PurityChecker {
         List<CompositeStatementObject> nonMappedNodesT2 = new ArrayList<>();
         List<CompositeStatementObject> nonMappedNodesT1 = new ArrayList<>();
 
+        List<AbstractCodeFragment> nonMappedLeavesT2ToRemove = new ArrayList<>();
+        List<AbstractCodeFragment> nonMappedLeavesT1ToRemove = new ArrayList<>();
+        List<CompositeStatementObject> nonMappedNodesT2ToRemove = new ArrayList<>();
+        List<CompositeStatementObject> nonMappedNodesT1ToRemove = new ArrayList<>();
+
+        ReplacementJustificationResult replacementJustificationResult = null;
+
 
         for (UMLOperationBodyMapper mapper : refactoring.getMappers()) {
             mappings.addAll(mapper.getMappings());
@@ -110,13 +117,60 @@ public class PurityChecker {
         }
 
         for (AbstractCodeMapping mapping : mappings) {
-            if (mapping.getReplacements().isEmpty()) {
-                mappingsMap.put(mapping, true);
-            }else {
+            if (!mapping.getReplacements().isEmpty()) {
+
                 UMLOperationBodyMapper bodyMapper = findTheMapper(refactoring, mapping);
-                Set<Replacement> replacementsToCheck = new HashSet<>(mapping.getReplacements());
-                ReplacementJustificationResult replacementJustificationResult = checkReplacementForSplitMethod(refactoring, replacementsToCheck, bodyMapper);
+                HashSet<Replacement> replacementsToCheck = new HashSet<>(mapping.getReplacements());
+                replacementJustificationResult = checkReplacementForSplitMethod(refactoring, replacementsToCheck, bodyMapper);
+                if (!replacementJustificationResult.isJustificationState()) {
+                    return new PurityCheckResult(false, "Replacements cannot be justified", "Severe Changes", 2);
+                }
             }
+        }
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT2) {
+            for (AbstractCodeMapping mapping : mappings) {
+                if (abstractCodeFragment.equalFragment(mapping.getFragment2())) {
+                    nonMappedLeavesT2ToRemove.add(abstractCodeFragment);
+                    break;
+                }
+            }
+        }
+
+        for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
+            for (AbstractCodeMapping mapping : mappings) {
+                if (abstractCodeFragment.equalFragment(mapping.getFragment1())) {
+                    nonMappedLeavesT1ToRemove.add(abstractCodeFragment);
+                    break;
+                }
+            }
+        }
+
+        for (CompositeStatementObject abstractCodeFragment : nonMappedNodesT2) {
+            for (AbstractCodeMapping mapping : mappings) {
+                if (abstractCodeFragment.equalFragment(mapping.getFragment2())) {
+                    nonMappedNodesT2ToRemove.add(abstractCodeFragment);
+                    break;
+                }
+            }
+        }
+
+        for (CompositeStatementObject abstractCodeFragment : nonMappedNodesT1) {
+            for (AbstractCodeMapping mapping : mappings) {
+                if (abstractCodeFragment.equalFragment(mapping.getFragment1())) {
+                    nonMappedNodesT1ToRemove.add(abstractCodeFragment);
+                    break;
+                }
+            }
+        }
+
+        nonMappedLeavesT2.removeAll(nonMappedLeavesT2ToRemove);
+        nonMappedLeavesT1.removeAll(nonMappedLeavesT1ToRemove);
+        nonMappedNodesT2.removeAll(nonMappedNodesT2ToRemove);
+        nonMappedNodesT1.removeAll(nonMappedNodesT1ToRemove);
+
+        if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+            return new PurityCheckResult(true, "All replacements have been justified - all mapped", replacementJustificationResult.getJustificationComment(), 2);
         }
 
 
@@ -127,7 +181,18 @@ public class PurityChecker {
     private static ReplacementJustificationResult checkReplacementForSplitMethod(SplitOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck, UMLOperationBodyMapper bodyMapper) {
 
         ReplacementJustificationResult replacementJustificationResult = new ReplacementJustificationResult();
-        omitPrintAndLogMessagesRelatedReplacements(replacementsToCheck, refactoring.getBodyMapper());
+
+        omitThisPatternReplacements(replacementsToCheck);
+        omitPrintAndLogMessagesRelatedReplacements(replacementsToCheck, bodyMapper);
+        omitBooleanVariableDeclarationReplacement(replacementsToCheck, bodyMapper); // For the runTests commit
+        omitEqualStringLiteralsReplacement(replacementsToCheck);
+        omitPrimitiveTypeReplacements(replacementsToCheck);
+
+        if (replacementsToCheck.isEmpty()) {
+            replacementJustificationResult.setJustificationState(true);
+            replacementJustificationResult.appendJustificationComment("Tolerable Changes in the body");
+            return replacementJustificationResult;
+        }
 
 
         return null;
@@ -3274,7 +3339,7 @@ Mapping state for Move Method refactoring purity:
                 if (stringStringEntry.getValue().equals(stringEntry.getKey())) {
                     refactoring.getParameterToArgumentMap().put(stringStringEntry.getKey(), stringEntry.getValue());
                     break;
-                }adjustTheParameterArgumentField
+                }
             }
         }
     }
@@ -4995,5 +5060,3 @@ Mapping state for Move Method refactoring purity:
 
 
 }
-
-
