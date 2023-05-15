@@ -1735,11 +1735,11 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "synchronized block has been moved to one of the method signatures. It's a pure change"
     }
   }, {
     "type" : "Parameterize Variable",
@@ -1879,7 +1879,7 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -1893,7 +1893,7 @@
     "detectionTools" : "RefactoringMiner",
     "validators" : null,
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",

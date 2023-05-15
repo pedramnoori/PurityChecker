@@ -56,25 +56,25 @@ public class PurityChecker {
 //                result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
                 break;
             case MOVE_OPERATION:
-//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_RENAME_OPERATION:
-//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PUSH_DOWN_OPERATION:
-//                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PULL_UP_OPERATION:
-//                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case EXTRACT_AND_MOVE_OPERATION:
-//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_INLINE_OPERATION:
-//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case SPLIT_OPERATION:
                 result = detectSplitMethodPurity((SplitOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -173,9 +173,9 @@ public class PurityChecker {
             return new PurityCheckResult(true, "All replacements have been justified - all mapped", replacementJustificationResult.getJustificationComment(), 2);
         }
 
+//        Check to see if all the non-mapped leaves are return statements
 
-
-        return null;
+        return new PurityCheckResult(false, "Replacements cannot be justified", "Severe Changes", 2);
     }
 
     private static ReplacementJustificationResult checkReplacementForSplitMethod(SplitOperationRefactoring refactoring, HashSet<Replacement> replacementsToCheck, UMLOperationBodyMapper bodyMapper) {
@@ -2003,6 +2003,8 @@ Mapping state for Move Method refactoring purity:
                                     classAfter.add(implementedInterface.toString().replaceAll("<[^>]*>", ""));
                                 }
                             }
+                        } else {
+                            return;
                         }
 
                         if (foundInBefore != -1) {

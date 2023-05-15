@@ -18396,11 +18396,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Move Method mechanics caused a justifiable change"
+      "validationComment" : "Move Method mechanics caused two justifiable changes, but the addition of -Certificate.- is not justifiable. So, it's an impure case"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -18410,11 +18410,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Move Method mechanics caused a justifiable change"
+      "validationComment" : "Move Method mechanics caused two justifiable changes, but the addition of -Certificate.- is not justifiable. So, it's an impure case"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -18424,11 +18424,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Move Method mechanics caused a justifiable change"
+      "validationComment" : "Move Method mechanics caused two justifiable changes, but the addition of -Certificate.- is not justifiable. So, it's an impure case"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -18438,11 +18438,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Move Method mechanics caused a justifiable change"
+      "validationComment" : "Move Method mechanics caused two justifiable changes, but the addition of -Certificate.- is not justifiable. So, it's an impure case"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -18452,11 +18452,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff",
     "validators" : "Laleh, Automatic",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Move Method mechanics caused a justifiable change"
+      "validationComment" : "Move Method mechanics caused two justifiable changes, but the addition of -Certificate.- is not justifiable. So, it's an impure case"
     }
   }, {
     "type" : "Add Parameter",
