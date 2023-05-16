@@ -30,8 +30,8 @@ public class PurityChecker {
         return purityCheckResults;
     }
 
-    public static void isPure(UMLModelDiff modelDiff, Map<Refactoring, PurityCheckResult> purityCheckResults) throws RefactoringMinerTimedOutException {
-        List<Refactoring> refactorings = new ArrayList<>(modelDiff.getRefactorings());
+    public static void isPure(UMLModelDiff modelDiff, Map<Refactoring, PurityCheckResult> purityCheckResults, List<Refactoring> refactorings) throws RefactoringMinerTimedOutException {
+//        List<Refactoring> refactorings = new ArrayList<>(modelDiff.getRefactorings());
 
 
         for (Refactoring refactoring : refactorings) {

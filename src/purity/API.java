@@ -33,8 +33,8 @@ public class API {
                 commitSh1, new RefactoringHandler() {
                     @Override
                     public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
-//                        List<Refactoring> refactorings = umlModelDiff.getRefactorings();
-                        PurityChecker.isPure(umlModelDiff,pcr);
+                        List<Refactoring> refactorings = umlModelDiff.getRefactorings();
+                        PurityChecker.isPure(umlModelDiff, pcr, refactorings);
                     }
                 }, 100);
 
