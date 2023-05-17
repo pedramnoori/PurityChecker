@@ -2007,7 +2007,7 @@ Mapping state for Move Method refactoring purity:
                             return;
                         }
 
-                        if (foundInBefore != -1) {
+                        if (foundInBefore != -1 && foundInBefore != 0) {
                             String instanceOrVariable = before.substring(0, foundInBefore - 1);
                             if (classAfter.contains(instanceOrVariable)) {
                                 replacementsToRemove.add(replacement);
@@ -2022,7 +2022,7 @@ Mapping state for Move Method refactoring purity:
                                 replacementsToRemove.add(replacement);
                             }
 
-                        } else if (foundInAfter != -1) {
+                        } else if (foundInAfter != -1 && foundInAfter != 0) {
                             String instanceOrVariable = after.substring(0, foundInAfter - 1);
                             if (classBefore.contains(instanceOrVariable)) {
                                 replacementsToRemove.add(replacement);
@@ -2635,7 +2635,7 @@ Mapping state for Move Method refactoring purity:
             omitPrimitiveTypeReplacements(replacementsToCheck);
             // for https://github.com/infinispan/infinispan/commit/043030723632627b0908dca6b24dae91d3dfd938 commit - performLocalRehashAwareOperation
             refactoring.getBodyMapper().omitReplacementsAccordingSupplierGetPattern(refactoring.getParameterToArgumentMap(), replacementsToCheck);
-            omitReturnRelatedReplacements(replacementsToCheck, refactoring.getBodyMapper());
+//            omitReturnRelatedReplacements(replacementsToCheck, refactoring.getBodyMapper());
 
 
             omitReplacementRegardingInvertCondition(replacementsToCheck, refactoring.getBodyMapper());
@@ -3023,6 +3023,11 @@ Mapping state for Move Method refactoring purity:
                     probableGetterMethod = before;
                 }
 
+                if (probableGetterMethod.contains("get") && !after.contains("get")) { //Relax Search - It has been added because this change happened a lot
+                    replacementsToRemove.add(replacement);
+                }
+
+
             } else if (indexOfLeftInRight != -1) {
                 theDotBeforeIndex = after.substring(0, indexOfLeftInRight).lastIndexOf(".");
                 theDotAfterIndex = after.substring(indexOfLeftInRight).indexOf(".");
@@ -3036,10 +3041,11 @@ Mapping state for Move Method refactoring purity:
                 } else {
                     probableGetterMethod = after;
                 }
-            }
 
-            if (probableGetterMethod.contains("get")) { //Relax Search - It has been added because this change happened a lot
-                replacementsToRemove.add(replacement);
+                if (probableGetterMethod.contains("get") && !before.contains("get")) { //Relax Search - It has been added because this change happened a lot
+                    replacementsToRemove.add(replacement);
+                }
+
             }
         }
 
@@ -4270,7 +4276,7 @@ Mapping state for Move Method refactoring purity:
             omitEqualStringLiteralsReplacement(replacementsToCheck);
 
             omitReplacementRegardingInvertCondition(replacementsToCheck, refactoring.getBodyMapper());
-            omitReturnRelatedReplacements(replacementsToCheck, refactoring.getBodyMapper());
+//            omitReturnRelatedReplacements(replacementsToCheck, refactoring.getBodyMapper());
             omitAnonymousClassDeclarationReplacements(replacementsToCheck);
             omitStringRelatedReplacements(replacementsToCheck);
 

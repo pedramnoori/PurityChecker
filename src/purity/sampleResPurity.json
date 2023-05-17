@@ -2706,31 +2706,31 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate mergeSubSingleStatistics(median SubSingleBenchmarkResult) : void extracted from public accumulateResults(benchmarkReport BenchmarkReport) : void in class org.optaplanner.benchmark.impl.result.SingleBenchmarkResult",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "One if statement has been impurely added"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate determineRepresentativeSubSingleBenchmarkResult() : SubSingleBenchmarkResult extracted from public accumulateResults(benchmarkReport BenchmarkReport) : void in class org.optaplanner.benchmark.impl.result.SingleBenchmarkResult",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Addition of return expression, which is a part of Extract Method refactoring mechanics"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getAverageScore() : Score extracted from public getSucceeded() : Boolean in class org.optaplanner.benchmark.impl.result.SingleBenchmarkResult",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The attribute succeeded has been removed, so there is no connection between the two returned attributes"
     }
   }, {
     "type" : "Change Return Type",
@@ -2771,11 +2771,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate buildSubSingleBenchmarks(parent SingleBenchmarkResult, count int) : void extracted from private buildSingleBenchmark(solverBenchmarkResult SolverBenchmarkResult, problemBenchmarkResult ProblemBenchmarkResult) : void in class org.optaplanner.benchmark.config.ProblemBenchmarksConfig",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Parameterize Variable",
@@ -2866,11 +2866,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate createDatabase(dataSource ManagedDataSource, namespace Namespace) : Database extracted from private openLiquibase(dataSourceFactory PooledDataSourceFactory, namespace Namespace) : CloseableLiquibase in class io.dropwizard.migrations.AbstractLiquibaseCommand",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "One statement has been impurely added, and the replacements are not justifiable"
     }
   }, {
     "type" : "Remove Variable Modifier",
@@ -3041,11 +3041,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate shouldRenderQuery() : boolean extracted from public toString() : String in class org.springframework.data.neo4j.repository.query.StartClause",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "One of the replacements is justifiable since the direct access has been replaced with a getter method, but the addition of an expression in the return statement is not justifiable"
     }
   }, {
     "type" : "Replace Attribute With Variable",
