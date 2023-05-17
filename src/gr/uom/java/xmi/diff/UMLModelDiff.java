@@ -1715,8 +1715,8 @@ public class UMLModelDiff {
 		return parent.equals(addedClassName);
 	}
 
-	private List<ReplaceAnonymousWithClassRefactoring> identifyConvertAnonymousClassToTypeRefactorings() throws RefactoringMinerTimedOutException {
-		List<ReplaceAnonymousWithClassRefactoring> refactorings = new ArrayList<ReplaceAnonymousWithClassRefactoring>();
+	private List<Refactoring> identifyConvertAnonymousClassToTypeRefactorings() throws RefactoringMinerTimedOutException {
+		List<Refactoring> refactorings = new ArrayList<Refactoring>();
 		for(UMLClassDiff classDiff : commonClassDiffList) {
 			for(UMLAnonymousClass anonymousClass : classDiff.getRemovedAnonymousClasses()) {
 				List<UMLAnonymousToClassDiff> matchingDiffs = new ArrayList<>();
@@ -1734,14 +1734,18 @@ public class UMLModelDiff {
 				if(matchingDiffs.size() == 1) {
 					UMLAnonymousToClassDiff diff = matchingDiffs.get(0);
 					if(diff.containsStatementMappings() && constructorCallFound(classDiff, diff)) {
+						List<Refactoring> anonymousClassDiffRefactorings = diff.getRefactorings();
 						ReplaceAnonymousWithClassRefactoring refactoring = new ReplaceAnonymousWithClassRefactoring(anonymousClass, diff.getNextClass(), diff);
+						refactorings.addAll(anonymousClassDiffRefactorings);
 						refactorings.add(refactoring);
 					}
 				}
 				else if(matchingDiffs.size() > 1) {
 					for(UMLAnonymousToClassDiff diff : matchingDiffs) {
 						if(nameCompatibility(diff) && diff.containsStatementMappings() && constructorCallFound(classDiff, diff)) {
+							List<Refactoring> anonymousClassDiffRefactorings = diff.getRefactorings();
 							ReplaceAnonymousWithClassRefactoring refactoring = new ReplaceAnonymousWithClassRefactoring(anonymousClass, diff.getNextClass(), diff);
+							refactorings.addAll(anonymousClassDiffRefactorings);
 							refactorings.add(refactoring);
 						}
 					}
@@ -2446,12 +2450,18 @@ public class UMLModelDiff {
 		}
 	}
 
-	private void inferMethodSignatureRelatedRefactorings(UMLClassBaseDiff classDiff, Set<Refactoring> refactorings) {
+	private void inferMethodSignatureRelatedRefactorings(UMLClassBaseDiff classDiff, Set<Refactoring> refactorings) throws RefactoringMinerTimedOutException {
 		for(UMLOperation removedOperation : classDiff.getRemovedOperations()) {
 			for(UMLOperation addedOperation : classDiff.getAddedOperations()) {
 				if(allowInference(classDiff, removedOperation, addedOperation)) {
 					List<UMLOperationBodyMapper> mappers = findMappersWithMatchingSignatures(removedOperation, addedOperation);
 					if(!mappers.isEmpty()) {
+						UMLOperationBodyMapper bodyMapper = new UMLOperationBodyMapper(removedOperation, addedOperation, classDiff);
+						bodyMapper.computeRefactoringsWithinBody();
+						refactorings.addAll(bodyMapper.getRefactoringsAfterPostProcessing());
+						if(!classDiff.getOperationBodyMapperList().contains(bodyMapper)) {
+							classDiff.addOperationBodyMapper(bodyMapper);
+						}
 						UMLOperationDiff operationSignatureDiff = new UMLOperationDiff(removedOperation, addedOperation, classDiff);
 						if(operationSignatureDiff.isOperationRenamed()) {
 							RenameOperationRefactoring refactoring = new RenameOperationRefactoring(removedOperation, addedOperation);
@@ -3055,7 +3065,7 @@ public class UMLModelDiff {
 		if(operationBodyMapper.getContainer2().isGetter() && mappingList.size() == 1) {
 			List<AbstractCodeMapping> parentMappingList = new ArrayList<AbstractCodeMapping>(parentMapper.getMappings());
 			for(AbstractCodeMapping mapping : parentMappingList) {
-				if(mapping.getFragment1().equals(mappingList.get(0).getFragment1())) {
+				if(mapping.getFragment1().equals(mappingList.get(0).getFragment1()) && mapping.isExact()) {
 					return false;
 				}
 				if(mapping instanceof CompositeStatementObjectMapping) {
