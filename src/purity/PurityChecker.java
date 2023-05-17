@@ -3631,7 +3631,7 @@ Mapping state for Move Method refactoring purity:
                     for (AbstractCodeMapping mapping : ((ExtractOperationRefactoring) (refactoring1)).getBodyMapper().getMappings()) {
                         if (mapping.getFragment2().getString().equals(abstractCodeFragment.getString())) {
                             if (mapping.getOperation1().getName().equals(sourceOperation)) {
-                                nonMappedLeavesT2ToRemove.add(mapping.getFragment2());
+                                nonMappedLeavesT2ToRemove.add(abstractCodeFragment);
                                 break;
                             }
                         }

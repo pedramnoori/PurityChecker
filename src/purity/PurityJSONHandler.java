@@ -24,7 +24,7 @@ public class PurityJSONHandler {
 
     public static void main(String[] args) {
 
-//        addPurityFields("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\ToAdd.json", "C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\SplitMethod.json");
+        addPurityFields("C:\\Users\\Pedram\\Desktop\\sampleRes.json", "C:\\Users\\Pedram\\Desktop\\sampleResPurity.json");
 //        addExtraPurityFields("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 

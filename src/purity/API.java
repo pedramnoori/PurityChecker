@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/soabase/exhibitor/commit/598c33f6c76f8fdcd8f10b77526630603c10bc82");
+        isPureAPI("https://github.com/kiegroup/optaplanner/commit/ec5d139337c8db352cced6f80ac7605a596c4b08");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

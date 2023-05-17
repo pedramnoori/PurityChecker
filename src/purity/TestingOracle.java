@@ -33,7 +33,7 @@ public class TestingOracle {
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         ArrayNode arrayNode = objectMapper.createArrayNode();
 
-        File file = new File("/Users/pedram/Desktop/sample.json");
+        File file = new File("C:\\Users\\Pedram\\Desktop\\sample.json");
 
         JsonNode root = objectMapper.readTree(file);
 
@@ -41,8 +41,9 @@ public class TestingOracle {
             String url = jsonNode.textValue();
             String commitUrl = URLHelper.getRepo(url);
             String commitSh1 = URLHelper.getCommit(url);
+            System.out.println(url);
 
-            Map<Refactoring, PurityCheckResult> pcr = new LinkedHashMap<>();
+//            Map<Refactoring, PurityCheckResult> pcr = new LinkedHashMap<>();
 
             miner.detectModelDiff(commitUrl,
                     commitSh1, new RefactoringHandler() {
@@ -51,14 +52,21 @@ public class TestingOracle {
                         List<Refactoring> refactorings = umlModelDiff.getRefactorings();
                         if (containsMethodRelatedRefactoring(refactorings)) {
                             ObjectNode refactoring = objectMapper.createObjectNode();
-                            refactoring.put("repository", url);
+                            refactoring.put("repository", commitUrl);
                             refactoring.put("sha1", commitSh1);
-                            refactoring.put("url", commitUrl);
+                            refactoring.put("url", url);
+
+                            ArrayNode refactoringListArray = objectMapper.createArrayNode();
 
 
-
+                            for (Refactoring refactoring1 : refactorings) {
+                                ObjectNode refactoringList = objectMapper.createObjectNode();
+                                refactoringList.put("type", refactoring1.getName());
+                                refactoringList.put("description", refactoring1.toString());
+                                refactoringListArray.add(refactoringList);
+                            }
+                            refactoring.set("refactorings", refactoringListArray);
 //                            PurityChecker.isPure(umlModelDiff, pcr, refactorings);
-                            System.out.println("HERE");
                             arrayNode.add(refactoring);
                         }
                         }
@@ -66,7 +74,7 @@ public class TestingOracle {
             }
 
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-        objectMapper.writeValue(new File("/Users/pedram/Desktop/sampres.json"), arrayNode);
+        objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\sampleRes.json"), arrayNode);
         }
 
         public static boolean containsMethodRelatedRefactoring(List<Refactoring> refactorings) {
