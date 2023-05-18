@@ -2696,7 +2696,7 @@ Mapping state for Move Method refactoring purity:
             checkForParametrizationOrAddParameterOnTop(refactorings, replacementsToCheck, removedReplacements, refactoring.getBodyMapper());
             relaxCheckForParametrizationOrAddParameterOnTop(refactorings, replacementsToCheck, removedReplacements, refactoring.getBodyMapper());
             if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the extract method - all mapped", purityComment, mappingState);
+                return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the extract method (relax mode) - all mapped", purityComment, mappingState);
             }
 
             checkForRemoveParameterOnTop(refactorings, replacementsToCheck, refactoring.getBodyMapper());
@@ -2709,10 +2709,10 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Rename Variable on top of the extract method - all mapped", purityComment, mappingState);
             }
 
-            checkForRemoveVariableOnTop(replacementsToCheck, refactoring.getBodyMapper());
-            if (replacementsToCheck.isEmpty()) {
-                return new PurityCheckResult(true, "One or more variables have been removed from the body of the moved method - all mapped", purityComment, mappingState);
-            }
+//            checkForRemoveVariableOnTop(replacementsToCheck, refactoring.getBodyMapper());
+//            if (replacementsToCheck.isEmpty()) {
+//                return new PurityCheckResult(true, "One or more variables have been removed from the body of the moved method - all mapped", purityComment, mappingState);
+//            }
 
             checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
             if(replacementsToCheck.isEmpty()) {
@@ -4338,9 +4338,9 @@ Mapping state for Move Method refactoring purity:
         if(replacementsToCheck.isEmpty())
             return true;
 
-        checkForRemoveVariableOnTop(replacementsToCheck, refactoring.getBodyMapper());
-        if (replacementsToCheck.isEmpty())
-            return true;
+//        checkForRemoveVariableOnTop(replacementsToCheck, refactoring.getBodyMapper());
+//        if (replacementsToCheck.isEmpty())
+//            return true;
 
         checkForMergeVariableOnTop(refactorings, replacementsToCheck, refactoring.getBodyMapper());
         if(replacementsToCheck.isEmpty())
@@ -4536,7 +4536,7 @@ Mapping state for Move Method refactoring purity:
 //                temp1.removeAll(((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments());
                 ArrayList<Integer> addedArgumentsLocation = new ArrayList<>();
 
-                for (int i = temp1.size() - 1; i >= (temp1.size() - temp2.size()); i--) {
+                for (int i = temp1.size() - 1; i >= temp2.size(); i--) {
                     addedArgumentsLocation.add(i);
                 }
 

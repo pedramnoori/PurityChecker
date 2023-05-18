@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/spring-projects/spring-data-neo4j/commit/f85cb537d2abe6bc73ae5b037a3e517a9aa8bcf1");
+        isPureAPI("https://github.com/MegaMek/mekhq/commit/f223e451005dd73c06f4512855cfd2ff681e29bb");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

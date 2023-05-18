@@ -3131,17 +3131,17 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate defaultStartClause(entity Neo4jPersistentEntity<?>) : String extracted from public toString() : String in class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The two methods do completely different things"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate getEntityName(entity Neo4jPersistentEntity<?>) : String extracted from public toString() : String in class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -3576,11 +3576,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate render() : String extracted from public toString() : String in class org.springframework.data.neo4j.repository.query.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "String literal changes are justifiable - Rename Method on top"
     }
   }, {
     "type" : "Add Parameter",
@@ -3631,81 +3631,81 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage unstackableItemProperties() : Item.Properties extracted from package init() : void in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The -.maxStackSize(1)- has been impurely added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage unstackableItemProperties() : Item.Properties extracted from package init() : void in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The -.maxStackSize(1)- has been impurely added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage unstackableItemProperties() : Item.Properties extracted from package init() : void in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The -.maxStackSize(1)- has been impurely added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage unstackableItemProperties() : Item.Properties extracted from package init() : void in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The -.maxStackSize(1)- has been impurely added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage unstackableItemProperties() : Item.Properties extracted from package init() : void in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The -.maxStackSize(1)- has been impurely added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage unstackableItemProperties() : Item.Properties extracted from package init() : void in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The -.maxStackSize(1)- has been impurely added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage unstackableItemProperties() : Item.Properties extracted from package init() : void in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The -.maxStackSize(1)- has been impurely added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage unstackableItemProperties() : Item.Properties extracted from package init() : void in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The -.maxStackSize(1)- has been impurely added to the extracted code"
     }
   }, {
     "type" : "Rename Parameter",
@@ -3726,31 +3726,31 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate addItemBuilder(registryName ResourceLocation, properties Item.Properties, factory Function<Item.Properties,Item>) : void extracted from package init() : void in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage itemPropertiesWithGroup() : Item.Properties extracted from package init() : void in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The two methods do completely different things"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage itemPropertiesWithGroup() : Item.Properties extracted from package unstackableItemProperties() : Item.Properties in class com.direwolf20.buildinggadgets.common.registry.objects.BGItems",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The two methods do completely different things"
     }
   } ]
 }, {
@@ -3946,11 +3946,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic liquidToString(fluid Fluid, amount int, text List<String>) : void extracted from public liquidToString(fluid FluidStack, text List<String>) : void in class slimeknights.tconstruct.library.client.RenderUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "null-check logic has been added to the extracted code"
     }
   } ]
 }, {
@@ -4316,11 +4316,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic renderFluids(tank SmelteryTank, pos BlockPos, tankMinPos BlockPos, tankMaxPos BlockPos, x double, y double, z double, offsetToBlockEdge float, lightingPos BlockPos) : void extracted from public renderFluids(tank SmelteryTank, pos BlockPos, tankMinPos BlockPos, tankMaxPos BlockPos, x double, y double, z double) : void in class slimeknights.tconstruct.smeltery.client.SmelteryTankRenderer",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Extract Method on top - caused Add Parameter refactoring"
     }
   }, {
     "type" : "Extract Method",
@@ -4330,7 +4330,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Parameterize Attribute",
@@ -4351,11 +4351,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate extractFieldName(parquetNameTypeFromUI String) : String extracted from protected getInfo(meta AvroInputMeta, preview boolean) : void in class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The overlapping changes are not justifiable"
     }
   }, {
     "type" : "Rename Attribute",
@@ -4721,21 +4721,21 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate sanitizeStringShort(string String) : String extracted from private getLanguage(locale Locale) : String in class com.adeven.adjustio.Util",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate sanitizeStringShort(string String) : String extracted from private getCountry(locale Locale) : String in class com.adeven.adjustio.Util",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Parameterize Variable",
@@ -5006,11 +5006,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getNamedCluster() : NamedCluster extracted from protected getProcessedUrl(metastore IMetaStore, url String) : String in class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputMeta",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Addition of return expression, which is a part of Extract Method refactoring mechanics - Rename Variable on top"
     }
   }, {
     "type" : "Rename Variable",
@@ -5041,17 +5041,17 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate fillFeatureTest(elementName String, targetSchema URI, values Map<List<QName>,Object>, testName String, srsName String, skipValueTest boolean, expectWriteFail boolean, windingOrderParam String) : IOReport extracted from private fillFeatureTest(elementName String, targetSchema URI, values Map<List<QName>,Object>, testName String, srsName String, skipValueTest boolean, expectWriteFail boolean) : IOReport in class eu.esdihumboldt.hale.io.gml.writer.internal.StreamGmlWriterTest",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "7 assertions have been added to the extracted code + couple of if-else statements"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate getGeometryPair(value Object, allowConvert boolean, report IOReporter) : Pair<Geometry,CRSDefinition> extracted from protected extractGeometry(value Object, allowConvert boolean, report IOReporter) : Pair<Geometry,CRSDefinition> in class eu.esdihumboldt.hale.common.instance.io.impl.AbstractGeoInstanceWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -5081,51 +5081,51 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate isLocalAcessOnly() : boolean extracted from public validate(input Representation) : Representation in class org.restlet.ext.oauth.ValidationServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The if statement got transformed to a return expression"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate validateToken(call JSONObject) : Token extracted from public validate(input Representation) : Representation in class org.restlet.ext.oauth.ValidationServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "statements inside the null-check have been impurely changed"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate createError(error OAuthError) : Representation extracted from public validate(input Representation) : Representation in class org.restlet.ext.oauth.ValidationServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "impure non-mapped leaves have been added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate createError(error OAuthError) : Representation extracted from public validate(input Representation) : Representation in class org.restlet.ext.oauth.ValidationServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "impure non-mapped leaves have been added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate validate(call JSONObject) : Representation extracted from public validate(input Representation) : Representation in class org.restlet.ext.oauth.ValidationServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The if condition expression has been changed"
     }
   }, {
     "type" : "Merge Conditional",
@@ -5396,31 +5396,31 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprotected getResponseType(params Form) : ResponseType extracted from public represent() : Representation in class org.restlet.ext.oauth.AuthorizationServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "try-catch and exception handling logic have been added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprotected getRedirectURI(params Form, client Client) : String extracted from public represent() : Representation in class org.restlet.ext.oauth.AuthorizationServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "try-catch and exception handling logic (throw specific exceptions) have been added to the extracted code"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate getAuthSession(client Client, responseType ResponseType, redirectURI String) : AuthSession extracted from public represent() : Representation in class org.restlet.ext.oauth.AuthorizationServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   }, {
     "type" : "Inline Variable",
@@ -6136,11 +6136,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate getServiceAlertIdsAsObjects(serviceAlertIds Collection<AgencyAndId>, time long) : List<ServiceAlert> extracted from private getServiceAlertIdsAsObjects(serviceAlertIds Collection<AgencyAndId>) : List<ServiceAlert> in class org.onebusaway.transit_data_federation.impl.service_alerts.ServiceAlertsServiceImpl",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The if statement expression has been impurely changed"
     }
   }, {
     "type" : "Extract Variable",
@@ -6281,11 +6281,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate logFaultyCallback(pThrowable Throwable) : void extracted from protected onProgressUpdate(count Integer...) : void in class org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerTask",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Parameterize Variable",
@@ -6301,101 +6301,101 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic CacheManager(pTileProvider MapTileProviderBase, pWriter IFilesystemCache, pMinZoomLevel int, pMaxZoomLevel int) extracted from public CacheManager(mapView MapView, writer IFilesystemCache) in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "One new field has been set within the extracted constructor"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getTilesCoverage(pGeoPoints ArrayList<GeoPoint>, pZoomLevel int) : Collection<MapTile> extracted from public possibleTilesCovered(geoPoints ArrayList<GeoPoint>, zoomMin int, zoomMax int) : int in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getTilesCoverage(pGeoPoints ArrayList<GeoPoint>, pZoomMin int, pZoomMax int) : List<MapTile> extracted from public possibleTilesCovered(geoPoints ArrayList<GeoPoint>, zoomMin int, zoomMax int) : int in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic execute(pTask CacheManagerTask) : CacheManagerTask extracted from public downloadAreaAsync(ctx Context, bb BoundingBox, zoomMin int, zoomMax int) : DownloadingTask in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic execute(pTask CacheManagerTask) : CacheManagerTask extracted from public downloadAreaAsync(ctx Context, geoPoints ArrayList<GeoPoint>, zoomMin int, zoomMax int) : DownloadingTask in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic execute(pTask CacheManagerTask) : CacheManagerTask extracted from public downloadAreaAsync(ctx Context, bb BoundingBox, zoomMin int, zoomMax int, callback CacheManagerCallback) : DownloadingTask in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic execute(pTask CacheManagerTask) : CacheManagerTask extracted from public downloadAreaAsync(ctx Context, geoPoints ArrayList<GeoPoint>, zoomMin int, zoomMax int, callback CacheManagerCallback) : DownloadingTask in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic execute(pTask CacheManagerTask) : CacheManagerTask extracted from public downloadAreaAsyncNoUI(ctx Context, geoPoints ArrayList<GeoPoint>, zoomMin int, zoomMax int, callback CacheManagerCallback) : DownloadingTask in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic execute(pTask CacheManagerTask) : CacheManagerTask extracted from public downloadAreaAsyncNoUI(ctx Context, bb BoundingBox, zoomMin int, zoomMax int, callback CacheManagerCallback) : DownloadingTask in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic execute(pTask CacheManagerTask) : CacheManagerTask extracted from public cleanAreaAsync(ctx Context, bb BoundingBox, zoomMin int, zoomMax int) : CleaningTask in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argumentization"
     }
   }, {
     "type" : "Add Parameter Modifier",
@@ -7326,7 +7326,7 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic forceLoadTile(tileSource OnlineTileSourceBase, tile MapTile) : boolean extracted from public loadTile(tileSource OnlineTileSourceBase, tile MapTile) : boolean in class org.osmdroid.tileprovider.cachemanager.CacheManager",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -7336,71 +7336,71 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getIndex(pX long, pY long, pZ long) : long extracted from public saveFile(pTileSourceInfo ITileSource, pTile MapTile, pStream InputStream) : boolean in class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getIndex(pTile MapTile) : long extracted from public saveFile(pTileSourceInfo ITileSource, pTile MapTile, pStream InputStream) : boolean in class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Extract Method on top"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getIndex(pX long, pY long, pZ long) : long extracted from public exists(pTileSource String, pTile MapTile) : boolean in class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getIndex(pTile MapTile) : long extracted from public exists(pTileSource String, pTile MapTile) : boolean in class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Extract Method on top"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getIndex(pX long, pY long, pZ long) : long extracted from public importFromFileCache(removeFromFileSystem boolean) : int[] in class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getIndex(pX long, pY long, pZ long) : long extracted from public remove(pTileSourceInfo ITileSource, pTile MapTile) : boolean in class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getIndex(pTile MapTile) : long extracted from public remove(pTileSourceInfo ITileSource, pTile MapTile) : boolean in class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Extract Method on top"
     }
   }, {
     "type" : "Parameterize Variable",
@@ -7551,21 +7551,21 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getState(pTile Drawable) : int extracted from public isDrawableExpired(pTile Drawable) : boolean in class org.osmdroid.tileprovider.ExpirableBitmapDrawable",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The logic has been impurely changed"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic setState(pTile Drawable, status int) : void extracted from public setDrawableExpired(pTile Drawable) : void in class org.osmdroid.tileprovider.ExpirableBitmapDrawable",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the -ExpirableBitmapDrawable.EXPIRED- is the same as the EXPIRED. The value has been changed but it doesn't matter"
     }
   }, {
     "type" : "Inline Variable",
@@ -7671,21 +7671,21 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getTileCursor(pPrimaryKeyParameters String[], pColumns String[]) : Cursor extracted from public exists(pTileSource String, pTile MapTile) : boolean in class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The argument replacements are not justifiable - non-pure modifications"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getTileCursor(pPrimaryKeyParameters String[], pColumns String[]) : Cursor extracted from public getExpirationTimestamp(pTileSource ITileSource, pTile MapTile) : Long in class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The argument replacements are not justifiable - non-pure modifications"
     }
   }, {
     "type" : "Extract Attribute",
@@ -7786,11 +7786,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getTileCursor(pPrimaryKeyParameters String[]) : Cursor extracted from public exists(pTileSource ITileSource, pTile MapTile) : boolean in class org.osmdroid.tileprovider.modules.SqliteArchiveTileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The argument replacements are not justifiable - non-pure modifications"
     }
   }, {
     "type" : "Encapsulate Attribute",
@@ -7856,7 +7856,7 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getFile(pTileSource ITileSource, pTile MapTile) : File extracted from public saveFile(pTileSource ITileSource, pTile MapTile, pStream InputStream) : boolean in class org.osmdroid.tileprovider.modules.TileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -7866,7 +7866,7 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getFile(pTileSource ITileSource, pTile MapTile) : File extracted from public remove(pTileSource ITileSource, pTile MapTile) : boolean in class org.osmdroid.tileprovider.modules.TileWriter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -8246,41 +8246,41 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage newTextFormatter() : BaseFormatter extracted from protected createFormatters() : void in class fitnesse.responders.run.TestResponder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argument replaced with return expression, which is a part of Extract Method refactoring mechanics"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage newJavaFormatter() : BaseFormatter extracted from protected createFormatters() : void in class fitnesse.responders.run.TestResponder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argument replaced with return expression, which is a part of Extract Method refactoring mechanics"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage newHtmlFormatter() : BaseFormatter extracted from protected createFormatters() : void in class fitnesse.responders.run.TestResponder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Argument replaced with return expression, which is a part of Extract Method refactoring mechanics"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprotected newMultipleTestsRunner(pages List<WikiPage>) : MultipleTestsRunner extracted from protected performExecution() : void in class fitnesse.responders.run.TestResponder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Boolean field getter method has been replaced with direct access, which is a pure modification"
     }
   }, {
     "type" : "Parameterize Variable",
@@ -8911,17 +8911,17 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate buildEncodingForTag(records List<CramCompressionRecord>, tagID int) : EncodingDetails extracted from public build(records List<CramCompressionRecord>, substitutionMatrix SubstitutionMatrix, sorted boolean) : CompressionHeader in class htsjdk.samtools.cram.build.CompressionHeaderFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Logic has been impurely changed"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage getTagType(tagID int) : byte extracted from public build(records List<CramCompressionRecord>, substitutionMatrix SubstitutionMatrix, sorted boolean) : CompressionHeader in class htsjdk.samtools.cram.build.CompressionHeaderFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -8931,57 +8931,57 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage getDataForTag(records List<CramCompressionRecord>, tagID int) : byte[] extracted from public build(records List<CramCompressionRecord>, substitutionMatrix SubstitutionMatrix, sorted boolean) : CompressionHeader in class htsjdk.samtools.cram.build.CompressionHeaderFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Logic has been impurely changed"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage geByteSizeRangeOfTagValues(records List<CramCompressionRecord>, tagID int) : ByteSizeRange extracted from public build(records List<CramCompressionRecord>, substitutionMatrix SubstitutionMatrix, sorted boolean) : CompressionHeader in class htsjdk.samtools.cram.build.CompressionHeaderFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Logic has been impurely changed"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate buildTagEncodings(records List<CramCompressionRecord>, builder CompressionHeaderBuilder) : void extracted from public build(records List<CramCompressionRecord>, substitutionMatrix SubstitutionMatrix, sorted boolean) : CompressionHeader in class htsjdk.samtools.cram.build.CompressionHeaderFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The if statement expression has been impurely changed - logic has been impurely changed"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage updateSubstitutionCodes(records List<CramCompressionRecord>, substitutionMatrix SubstitutionMatrix) : void extracted from public build(records List<CramCompressionRecord>, substitutionMatrix SubstitutionMatrix, sorted boolean) : CompressionHeader in class htsjdk.samtools.cram.build.CompressionHeaderFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Number literal has been replaced with an attribute (Extract Attribute is available) - The other replacement seems a pure change"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage buildFrequencies(records List<CramCompressionRecord>) : long[][] extracted from public build(records List<CramCompressionRecord>, substitutionMatrix SubstitutionMatrix, sorted boolean) : CompressionHeader in class htsjdk.samtools.cram.build.CompressionHeaderFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Number literal has been replaced with an attribute"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate buildTagIdDictionary(records List<CramCompressionRecord>) : byte[][][] extracted from public build(records List<CramCompressionRecord>, substitutionMatrix SubstitutionMatrix, sorted boolean) : CompressionHeader in class htsjdk.samtools.cram.build.CompressionHeaderFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -9166,11 +9166,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate getAllBranchRefs(originBranches boolean) : List<Ref> extracted from private getAllBranchRefs() : List<Ref> in class org.jenkinsci.plugins.gitclient.JGitAPIImpl",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The if condition expression has been impurely changed"
     }
   }, {
     "type" : "Extract Variable",
@@ -9261,11 +9261,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate fromFile(file File) : Optional<PythonWheelDetails> extracted from public findWheel(library String, version String, pythonVersion PythonVersion) : Optional<File> in class com.linkedin.gradle.python.wheel.WheelCache",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Logic has been impurely changed"
     }
   }, {
     "type" : "Change Variable Type",
@@ -9551,11 +9551,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic findWheel(library String, version String, pythonExecutable File) : Optional<File> extracted from public findWheel(library String, version String, pythonDetails PythonDetails) : Optional<File> in class com.linkedin.gradle.python.wheel.CachedBackedWheelCache",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the logger.debug has been changed to logger.info, which is a pure modification"
     }
   }, {
     "type" : "Inline Variable",
@@ -9906,11 +9906,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic releaseEditor() : void extracted from public releaseEditors() : void in class org.antlr.intellij.plugin.preview.PreviewState",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The fileEditor attribute got removed and replaced with editor attribute, which already exist in the parent commit. "
     }
   }, {
     "type" : "Add Method Modifier",
@@ -9946,7 +9946,7 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic clearParseTree() : void extracted from public closeGrammar(grammarFile VirtualFile) : void in class org.antlr.intellij.plugin.preview.PreviewPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -9956,7 +9956,7 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic clearParseTree() : void extracted from public updateParseTreeFromDoc(grammarFile VirtualFile) : void in class org.antlr.intellij.plugin.preview.PreviewPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -10906,31 +10906,31 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate canInit() : boolean extracted from private initInternal() : void in class com.adeven.adjustio.ActivityHandler",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Three if statements got aggregated into one return expression, which is a pure change in this case"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate canTrackRevenueOrEvent(revenueBuilder PackageBuilder) : boolean extracted from private eventInternal(eventBuilder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Three if statements got aggregated into one return expression, which is a pure change in this case"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate canTrackRevenueOrEvent(revenueBuilder PackageBuilder) : boolean extracted from private revenueInternal(revenueBuilder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Three if statements got aggregated into one return expression, which is a pure change in this case"
     }
   } ]
 }, {
@@ -11031,11 +11031,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic acquireEquipment(acquisition IAcquisitionWork, person Person) : boolean extracted from public goShopping(sList ShoppingList) : ShoppingList in class mekhq.campaign.Campaign",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Parameterize Variabe on top - Add Parameter on top"
     }
   }, {
     "type" : "Parameterize Variable",
