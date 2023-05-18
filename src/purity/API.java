@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/MegaMek/mekhq/commit/f223e451005dd73c06f4512855cfd2ff681e29bb");
+        isPureAPI("https://github.com/soabase/exhibitor/commit/af59738bd7b91771ad95bfc73af2eae1f851bddf");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

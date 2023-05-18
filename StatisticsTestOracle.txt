@@ -1,0 +1,11 @@
+For Extract Method: TIME: 2023-05-17 23:21:41.471
+TP: 43
+TN: 45
+FP: 1
+FN: 12
+Precision: 97.72727
+Recall: 78.18182
+Specificity: 97.82609
+FScore: 0.8686869
+
+

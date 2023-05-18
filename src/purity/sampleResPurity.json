@@ -11086,11 +11086,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic isFactionsSelected() : boolean extracted from public InterstellarMapPanel(c Campaign, view CampaignGUI) in class mekhq.gui.InterstellarMapPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The logic has been impurely changed"
     }
   } ]
 }, {
@@ -11141,7 +11141,7 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpackage MockExhibitorInstance(hostname String, provider ConfigProvider) extracted from package MockExhibitorInstance(hostname String) in class com.netflix.exhibitor.core.config.MockExhibitorInstance",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -11151,11 +11151,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate getConfigProvider() : ConfigProvider extracted from package MockExhibitorInstance(hostname String) in class com.netflix.exhibitor.core.config.MockExhibitorInstance",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The overridden methods has been increased in the extracted code"
     }
   }, {
     "type" : "Replace Attribute With Variable",
@@ -11271,11 +11271,11 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic Arguments(connectionTimeOutMs int, logWindowSizeLines int, thisJVMHostname String, configCheckMs int, extraHeadingText String, allowNodeMutations boolean, jQueryStyle JQueryStyle) extracted from public Arguments(connectionTimeOutMs int, logWindowSizeLines int, thisJVMHostname String, configCheckMs int, extraHeadingText String, allowNodeMutations boolean) in class com.netflix.exhibitor.core.Exhibitor.Arguments",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "One new field has been set within the new extracted constructor"
     }
   }, {
     "type" : "Change Attribute Access Modifier",
@@ -11301,21 +11301,21 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate getFileSystemProvider(commandLine CommandLine, backupProvider BackupProvider) : ConfigProvider extracted from public main(args String[]) : void in class com.netflix.exhibitor.application.ExhibitorMain",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The two non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate getS3Provider(options Options, commandLine CommandLine, awsCredentials PropertyBasedS3Credential) : ConfigProvider extracted from public main(args String[]) : void in class com.netflix.exhibitor.application.ExhibitorMain",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The four non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   }, {
     "type" : "Rename Variable",
@@ -11351,17 +11351,17 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tprotected doWork() : void extracted from public call() : Boolean in class com.netflix.exhibitor.core.state.AutoInstanceManagement",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The two non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   }, {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate adjustConfig(currentConfig InstanceConfig, newSpec String) : void extracted from private addUsIn(usState UsState) : void in class com.netflix.exhibitor.core.state.AutoInstanceManagement",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -11486,7 +11486,7 @@
     "type" : "Extract Method",
     "description" : "Extract Method\tpublic getAdditionalTabHtmlContent(info UriInfo, index int) : Response extracted from public getAdditionalTabContent(info UriInfo, index int) : Response in class com.netflix.exhibitor.core.rest.UIResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
