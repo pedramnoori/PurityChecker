@@ -24,8 +24,8 @@ public class TestingOracle {
     public static void main(String[] args) throws IOException {
 
 //        String outputPath = runPurityOnTestOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurity.json");
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.EXTRACT_OPERATION);
-//        buildOracle();
+//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.EXTRACT_AND_MOVE_OPERATION);
+        buildOracle();
     }
 
     private static void calculatePrecisionAndRecallOnSpecificRefactoring(String sourcePath, RefactoringType refactoringType) {
