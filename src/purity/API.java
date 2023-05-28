@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/DSpace/DSpace/commit/39697a6d5d500f9fced6ca0fa4ffdf0717ba8813");
+        isPureAPI("https://github.com/antlr/intellij-plugin-v4/commit/84a1ffd45fd92fe1498300af78ccac54f8ab00b0");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

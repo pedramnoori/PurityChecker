@@ -1661,11 +1661,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getValue(key String, servletContext ServletContext, initialContext InitialContext) : String from class liquibase.integration.servlet.LiquibaseServletListener to public getValue(prefixAndProperty String) : Object from class liquibase.integration.servlet.LiquibaseServletListener.ServletValueContainer",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename Variable on top"
     }
   } ]
 }, {
@@ -2526,11 +2526,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected addProperty(propertyName String, type Class) : ContextProperty from class liquibase.context.Context.ContextState to public addProperty(propertyName String, type Class) : ConfigurationProperty from class liquibase.configuration.AbstractConfiguration.ConfigurationContainer",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Two Rename Method on top"
     }
   }, {
     "type" : "Change Variable Type",
@@ -2556,11 +2556,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getProperty(propertyName String) : ContextProperty from class liquibase.context.Context.ContextState to public getProperty(propertyName String) : ConfigurationProperty from class liquibase.configuration.AbstractConfiguration.ConfigurationContainer",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename (Extract) Class on top"
     }
   }, {
     "type" : "Change Variable Type",
@@ -2576,11 +2576,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getValue(propertyName String, returnType Class<T>) : T from class liquibase.context.Context.ContextState to public getValue(propertyName String, returnType Class<T>) : T from class liquibase.configuration.AbstractConfiguration.ConfigurationContainer",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename (Extract) Class on top"
     }
   }, {
     "type" : "Change Variable Type",
@@ -2596,11 +2596,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic setValue(propertyName String, value Object) : void from class liquibase.context.Context.ContextState to public setValue(propertyName String, value Object) : void from class liquibase.configuration.AbstractConfiguration.ConfigurationContainer",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename (Extract) Class on top"
     }
   }, {
     "type" : "Change Return Type",
@@ -2616,21 +2616,21 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getProperty(propertyName String) : ContextProperty from class liquibase.context.Context to public getProperty(propertyName String) : ConfigurationProperty from class liquibase.configuration.AbstractConfiguration",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename Method on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic getValue(propertyName String, returnType Class<T>) : T from class liquibase.context.Context to public getValue(propertyName String, returnType Class<T>) : T from class liquibase.configuration.AbstractConfiguration",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename Method on top"
     }
   }, {
     "type" : "Change Variable Type",
@@ -2656,11 +2656,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected init(valueContainers ContextValueContainer...) : void from class liquibase.context.Context to protected init(valueContainers ConfigurationProvider...) : void from class liquibase.configuration.AbstractConfiguration",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Rename Method on top"
     }
   }, {
     "type" : "Change Parameter Type",
@@ -3101,17 +3101,17 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate addedStartClause(partInfo PartInfo) : boolean from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to private addedStartClause(partInfo PartInfo) : boolean from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-pure if statements have been added to the moved operation"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic getPartInfo(parameterIndex int) : PartInfo from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to public getPartInfo(parameterIndex int) : PartInfo from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -3121,11 +3121,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic toString() : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to public toString() : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Extract Method on top - Add Parameter on top"
     }
   }, {
     "type" : "Extract Method",
@@ -3151,7 +3151,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate addSorts(sort Sort) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to private addSorts(sort Sort) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -3161,7 +3161,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate formatSorts(sort Sort) : List<String> from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to private formatSorts(sort Sort) : List<String> from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -3171,7 +3171,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate toString(matchClauses List<MatchClause>) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to private toString(matchClauses List<MatchClause>) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -3181,21 +3181,21 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic toString(sort Sort) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to public toString(sort Sort) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "null-check logic has been added to the moved method"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic toString(pageable Pageable) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to public toString(pageable Pageable) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Addition of return expression, which can be a part of Move Method refactoring mechanics"
     }
   }, {
     "type" : "Move Attribute",
@@ -3271,11 +3271,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate defaultStartClause() : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to private defaultStartClause(entity Neo4jPersistentEntity<?>) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Extract Method on top"
     }
   } ]
 }, {
@@ -4041,7 +4041,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic renderTiledTextureAtlas(x int, y int, width int, height int, depth float, sprite TextureAtlasSprite) : void from class slimeknights.tconstruct.library.client.RenderUtil to public renderTiledTextureAtlas(x int, y int, width int, height int, depth float, sprite TextureAtlasSprite) : void from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4051,7 +4051,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic renderTiledFluid(x int, y int, width int, height int, depth float, fluidStack FluidStack) : void from class slimeknights.tconstruct.library.client.RenderUtil to public renderTiledFluid(x int, y int, width int, height int, depth float, fluidStack FluidStack) : void from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4061,7 +4061,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic putTiledTextureQuads(renderer VertexBuffer, x int, y int, width int, height int, depth float, sprite TextureAtlasSprite) : void from class slimeknights.tconstruct.library.client.RenderUtil to public putTiledTextureQuads(renderer VertexBuffer, x int, y int, width int, height int, depth float, sprite TextureAtlasSprite) : void from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4071,7 +4071,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic liquidToString(fluid FluidStack, text List<String>) : void from class slimeknights.tconstruct.library.client.RenderUtil to public liquidToString(fluid FluidStack, text List<String>) : void from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4081,7 +4081,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic amountToString(amount int, text List<String>) : void from class slimeknights.tconstruct.library.client.RenderUtil to public amountToString(amount int, text List<String>) : void from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4091,7 +4091,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate calcFluidGuiEntries(fluid Fluid) : List<FluidGuiEntry> from class slimeknights.tconstruct.library.client.RenderUtil to private calcFluidGuiEntries(fluid Fluid) : List<FluidGuiEntry> from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4101,7 +4101,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate calcLiquidText(amount int, divider int, unit String, text List<String>) : int from class slimeknights.tconstruct.library.client.RenderUtil to private calcLiquidText(amount int, divider int, unit String, text List<String>) : int from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -4211,11 +4211,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected getFluidHovered(y int) : FluidStack from class slimeknights.tconstruct.smeltery.client.GuiSmeltery to private getFluidHovered(tank SmelteryTank, y int, height int) : FluidStack from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Add Parameter on top - Parameterize Variable on top"
     }
   }, {
     "type" : "Add Parameter",
@@ -4281,31 +4281,31 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected calcLiquidHeights(liquids List<FluidStack>, capacity int) : int[] from class slimeknights.tconstruct.smeltery.client.GuiSmeltery to private calcLiquidHeights(liquids List<FluidStack>, capacity int, height int) : int[] from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "It can be either pure or impure"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprotected getFluidHovered(y int) : FluidStack from class slimeknights.tconstruct.smeltery.client.GuiTinkerTank to private getFluidHovered(tank SmelteryTank, y int, height int) : FluidStack from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Add Parameter on top - Parameterize Variable on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprotected calcLiquidHeights(liquids List<FluidStack>, capacity int) : int[] from class slimeknights.tconstruct.smeltery.client.GuiTinkerTank to private calcLiquidHeights(liquids List<FluidStack>, capacity int, height int) : int[] from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "It can be either pure or impure"
     }
   } ]
 }, {
@@ -4506,21 +4506,21 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getLogString(response HttpResponse) : String from class com.adeven.adjustio.RequestTask to private getLogString(response HttpResponse, trackingInformation TrackingInformation) : String from class com.adeven.adjustio.RequestThread",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Modifications are pure considering the Move Method refactoring mechanics"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate parseResponse(response HttpResponse) : String from class com.adeven.adjustio.RequestTask to private parseResponse(response HttpResponse) : String from class com.adeven.adjustio.RequestThread",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Error handling logic has been changed - e.printStackTrace to log"
     }
   } ]
 }, {
@@ -7271,7 +7271,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected zoomMessage(zoomLevel int, zoomMin int, zoomMax int) : String from class org.osmdroid.tileprovider.cachemanager.CacheManager to protected zoomMessage(zoomLevel int, zoomMin int, zoomMax int) : String from class org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerDialog",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -8121,7 +8121,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic addTitles(page HtmlPage, title String) : void from class fitnesse.html.HtmlUtil to public addTitles(title String) : void from class fitnesse.html.template.HtmlPage",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -8726,7 +8726,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getOrTagFilter(request Request) : String from class fitnesse.responders.run.SuiteFilter to private getOrTagFilter(request Request) : String from class fitnesse.responders.run.SuiteResponder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -8736,7 +8736,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getOrFilterString(request Request) : String from class fitnesse.responders.run.SuiteFilter to private getOrFilterString(request Request) : String from class fitnesse.responders.run.SuiteResponder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -8746,7 +8746,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getNotSuiteFilter(request Request) : String from class fitnesse.responders.run.SuiteFilter to private getNotSuiteFilter(request Request) : String from class fitnesse.responders.run.SuiteResponder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -8756,7 +8756,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getAndTagFilters(request Request) : String from class fitnesse.responders.run.SuiteFilter to private getAndTagFilters(request Request) : String from class fitnesse.responders.run.SuiteResponder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -8766,7 +8766,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getSuiteFirstTest(request Request, suiteName String) : String from class fitnesse.responders.run.SuiteFilter to private getSuiteFirstTest(request Request, suiteName String) : String from class fitnesse.responders.run.SuiteResponder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -9141,7 +9141,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate autobox(array int[]) : Integer[] from class htsjdk.samtools.cram.build.CompressionHeaderFactory to private autobox(array int[]) : Integer[] from class htsjdk.samtools.cram.encoding.huffman.codec.HuffmanParamsCalculator",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -9616,7 +9616,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic setStartRuleName(grammarFile VirtualFile, startRuleName String) : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public setStartRuleName(grammarFile VirtualFile, startRuleName String) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -9626,7 +9626,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic resetStartRuleLabel() : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public resetStartRuleLabel() : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -9636,17 +9636,17 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic displayErrorInParseErrorConsole(e SyntaxError) : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public displayErrorInParseErrorConsole(e SyntaxError) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move and Rename Attribute on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic getErrorDisplayString(e SyntaxError) : String from class org.antlr.intellij.plugin.preview.PreviewPanel to public getErrorDisplayString(e SyntaxError) : String from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -9791,21 +9791,21 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic showTokenInfoUponMeta(editor Editor, previewState PreviewState, offset int) : void from class org.antlr.intellij.plugin.preview.PreviewEditorMouseListener to public showTokenInfoUponMeta(editor Editor, previewState PreviewState, offset int) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic showTooltipsForErrors(editor Editor, previewState PreviewState, offset int) : void from class org.antlr.intellij.plugin.preview.PreviewEditorMouseListener to public showTooltipsForErrors(editor Editor, previewState PreviewState, offset int) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Remove Variable on top"
     }
   }, {
     "type" : "Move Method",
@@ -9851,7 +9851,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic removeTokenInfoHighlighters(editor Editor) : MarkupModel from class org.antlr.intellij.plugin.preview.PreviewPanel to public removeTokenInfoHighlighters(editor Editor) : MarkupModel from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
