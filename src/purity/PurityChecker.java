@@ -56,7 +56,7 @@ public class PurityChecker {
 //                result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
                 break;
             case MOVE_OPERATION:
-//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_RENAME_OPERATION:
 //                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -71,7 +71,7 @@ public class PurityChecker {
 //                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case EXTRACT_AND_MOVE_OPERATION:
-                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_INLINE_OPERATION:
 //                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -1766,8 +1766,12 @@ Mapping state for Move Method refactoring purity:
 
             int size1 = nonMappedLeavesT1.size();
             int size2 = nonMappedLeavesT2.size();
+            int size3 = nonMappedNodesT1.size();
+            int size4 = nonMappedNodesT2.size();
             int returnStatementCounter1 = 0;
             int returnStatementCounter2 = 0;
+            int blockStatementCounter1 = 0;
+            int blockStatementCounter2 = 0;
 
 
             for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
@@ -1782,7 +1786,21 @@ Mapping state for Move Method refactoring purity:
                 }
             }
 
-            if (size1 == returnStatementCounter1 && size2 == returnStatementCounter2 && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+            for (AbstractCodeFragment abstractCodeFragment : nonMappedNodesT1) {
+                if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
+                    blockStatementCounter1++;
+                }
+            }
+
+            for (AbstractCodeFragment abstractCodeFragment : nonMappedNodesT2) {
+                if (abstractCodeFragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.BLOCK)) {
+                    blockStatementCounter2++;
+                }
+            }
+
+
+
+            if (size1 == returnStatementCounter1 && size2 == returnStatementCounter2 && size4 == blockStatementCounter2 && size3 == blockStatementCounter1) {
                 return new PurityCheckResult(true, "Return expression has been added within the Move Method mechanics - with non-mapped leaves", "Severe Changes", 5);
             }
 

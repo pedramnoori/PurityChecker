@@ -326,21 +326,21 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic BulkProcessor(client Client<Response>, maxInFlightRequests int, batchSize int, lingerMs long, maxRetry int, retryBackOffMs long, listener Listener) from class io.confluent.connect.elasticsearch.internals.BulkProcessor to public BulkProcessor(time Time, bulkClient BulkClient<R,B>, maxBufferedRecords int, maxInFlightRequests int, batchSize int, lingerMs long, maxRetries int, retryBackoffMs long) from class io.confluent.connect.elasticsearch.bulk.BulkProcessor",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Constructor (field assignments) has been changed"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic start() : void from class io.confluent.connect.elasticsearch.internals.BulkProcessor to public start() : void from class io.confluent.connect.elasticsearch.bulk.BulkProcessor",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "setting the -runner- field has been impurely removed from the moved operation"
     }
   }, {
     "type" : "Inline Variable",
@@ -626,7 +626,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate createTradingRecordReport(tradingRecord TradingRecord) : void from class ta4jexamples.backtesting.SimpleMovingAverageRangeBacktesting to public createTradingRecordReport() : void from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -691,7 +691,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate createTradeReport(trade Trade) : void from class ta4jexamples.backtesting.SimpleMovingAverageRangeBacktesting to private createTradeReport(trade Trade) : void from class org.ta4j.core.BacktestingResult",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -821,11 +821,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getTotalProfit() : Num from class org.ta4j.core.BaseTradingRecord to private getTotalProfit(tradingRecord TradingRecord) : Num from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Add Parameter",
@@ -861,11 +861,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getTotalLoss() : Num from class org.ta4j.core.BaseTradingRecord to private getTotalLoss(tradingRecord TradingRecord) : Num from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Add Parameter",
@@ -901,11 +901,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getProfitTradeCount() : long from class org.ta4j.core.BaseTradingRecord to private getProfitTradeCount(tradingRecord TradingRecord) : long from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Add Parameter",
@@ -941,11 +941,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getLossTradeCount() : long from class org.ta4j.core.BaseTradingRecord to private getLossTradeCount(tradingRecord TradingRecord) : long from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Add Parameter",
@@ -981,11 +981,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getBreakEvenTradeCount() : long from class org.ta4j.core.BaseTradingRecord to private getBreakEvenTradeCount(tradingRecord TradingRecord) : long from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacing getter with the direct access"
     }
   } ]
 }, {
@@ -1471,7 +1471,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getPgcryptoAvailableVersion(connection Connection) : Double from class org.dspace.storage.rdbms.DatabaseUtils to protected getPgcryptoAvailableVersion(connection Connection) : Double from class org.dspace.storage.rdbms.PostgresUtils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -1491,7 +1491,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getPgcryptoInstalledVersion(connection Connection) : Double from class org.dspace.storage.rdbms.DatabaseUtils to protected getPgcryptoInstalledVersion(connection Connection) : Double from class org.dspace.storage.rdbms.PostgresUtils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -1511,31 +1511,31 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic isPgcryptoUpToDate() : boolean from class org.dspace.storage.rdbms.DatabaseUtils to public isPgcryptoUpToDate() : boolean from class org.dspace.storage.rdbms.PostgresUtils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic isPgcryptoInSchema(schema String) : boolean from class org.dspace.storage.rdbms.DatabaseUtils to public isPgcryptoInSchema(schema String) : boolean from class org.dspace.storage.rdbms.PostgresUtils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move Method on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate checkCleanPermissions(connection Connection) : boolean from class org.dspace.storage.rdbms.DatabaseUtils to protected checkCleanPermissions(connection Connection) : boolean from class org.dspace.storage.rdbms.PostgresUtils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Remove Variable on top"
     }
   }, {
     "type" : "Change Method Access Modifier",

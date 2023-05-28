@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/adjust/android_sdk/commit/f08c29336a28580402e836f4298c89299919903d");
+        isPureAPI("https://github.com/DSpace/DSpace/commit/39697a6d5d500f9fced6ca0fa4ffdf0717ba8813");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
