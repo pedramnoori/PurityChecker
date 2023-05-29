@@ -113,7 +113,7 @@ public class StringBasedHeuristics {
 		updatedS1 = updatedS1.replace(")", "");
 		String updatedS2 = s2.replace("(", "");
 		updatedS2 = updatedS2.replace(")", "");
-		return updatedS1.equals(updatedS2);
+		return updatedS1.equals(updatedS2) || updatedS1.equals("return " + updatedS2) || updatedS2.equals("return " + updatedS1);
 	}
 
 	protected static boolean differOnlyInCastExpressionOrPrefixOperatorOrInfixOperand(String s1, String s2, Map<String, List<AbstractCall>> methodInvocationMap1, Map<String, List<AbstractCall>> methodInvocationMap2,
@@ -244,7 +244,7 @@ public class StringBasedHeuristics {
 			for(String key1 : methodInvocationMap1.keySet()) {
 				for(AbstractCall invocation1 : methodInvocationMap1.get(key1)) {
 					if(invocation1.actualString().equals(diff1) && invocation1.arguments().contains(diff2) &&
-							(invocation1.arguments().size() == 1 || (diff2.contains("?") && diff2.contains(":")))) {
+							(invocation1.arguments().size() == 1 || (diff2.contains(" ? ") && diff2.contains(" : ")))) {
 						Replacement r = new VariableReplacementWithMethodInvocation(diff1, diff2, invocation1, Direction.INVOCATION_TO_VARIABLE);
 						info.addReplacement(r);
 						return true;
@@ -254,7 +254,7 @@ public class StringBasedHeuristics {
 			for(String key2 : methodInvocationMap2.keySet()) {
 				for(AbstractCall invocation2 : methodInvocationMap2.get(key2)) {
 					if(invocation2.actualString().equals(diff2) && invocation2.arguments().contains(diff1) &&
-							(invocation2.arguments().size() == 1 || (diff1.contains("?") && diff1.contains(":")))) {
+							(invocation2.arguments().size() == 1 || (diff1.contains(" ? ") && diff1.contains(" : ")))) {
 						Replacement r = new VariableReplacementWithMethodInvocation(diff1, diff2, invocation2, Direction.VARIABLE_TO_INVOCATION);
 						info.addReplacement(r);
 						return true;
@@ -1221,6 +1221,59 @@ public class StringBasedHeuristics {
 					return true;
 				}
 			}
+			else if((s1.contains(" + ") ^ s2.contains(" + ")) && s1.contains(",") && s2.contains(",")) {
+				List<String> tokens1 = Arrays.asList(SPLIT_COMMA_PATTERN.split(s1));
+				List<String> tokens2 = Arrays.asList(SPLIT_COMMA_PATTERN.split(s2));
+				List<String> commonTokens = new ArrayList<>();
+				for(String token1 : tokens1) {
+					String token1WithoutDoubleQuotes = token1.replaceAll("\"", "");
+					if(tokens2.contains(token1)) {
+						commonTokens.add(token1);
+					}
+					else {
+						for(String token2 : tokens2) {
+							String token2WithoutDoubleQuotes = token2.replaceAll("\"", "");
+							if(token2WithoutDoubleQuotes.contains(token1WithoutDoubleQuotes)) {
+								commonTokens.add(token1);
+								break;
+							}
+							else if(token1WithoutDoubleQuotes.contains(token2WithoutDoubleQuotes)) {
+								commonTokens.add(token2);
+								break;
+							}
+						}
+					}
+				}
+				Set<String> filteredIntersection = new LinkedHashSet<>();
+				for(String common : commonTokens) {
+					boolean foundInReplacements = false;
+					for(Replacement r : info.getReplacements()) {
+						if(r.getBefore().contains(common) || r.getAfter().contains(common) ||
+								common.contains(r.getBefore()) || common.contains(r.getAfter())) {
+							foundInReplacements = true;
+							break;
+						}
+					}
+					if(!foundInReplacements) {
+						filteredIntersection.add(common);
+					}
+				}
+				if(filteredIntersection.size() == Math.min(tokens1.size(), tokens2.size())) {
+					IntersectionReplacement r = new IntersectionReplacement(s1, s2, ReplacementType.CONCATENATION);
+					for(String key : filteredIntersection) {
+						List<LeafExpression> expressions1 = statement1.findExpression(key);
+						List<LeafExpression> expressions2 = statement2.findExpression(key);
+						if(expressions1.size() == expressions2.size()) {
+							for(int i=0; i<expressions1.size(); i++) {
+								LeafMapping leafMapping = new LeafMapping(expressions1.get(i), expressions2.get(i), container1, container2);
+								r.addSubExpressionMapping(leafMapping);
+							}
+						}
+					}
+					info.getReplacements().add(r);
+					return true;
+				}
+			}
 			else if(s1.contains(",") && s1.contains("(") && s1.contains(")") && !s2.contains(",") && !s2.contains("(") && !s2.contains(")")) {
 				List<LeafExpression> variables1 = statement1.getVariables();
 				List<LeafExpression> variables2 = statement2.getVariables();
@@ -1244,7 +1297,7 @@ public class StringBasedHeuristics {
 						}
 					}
 					if(count > 1 && count == tokens1.size()) {
-						IntersectionReplacement r = new IntersectionReplacement(s1, s2/*, new LinkedHashSet<>(tokens1)*/, ReplacementType.CONCATENATION);
+						IntersectionReplacement r = new IntersectionReplacement(s1, s2, ReplacementType.CONCATENATION);
 						for(String key : tokens1) {
 							List<LeafExpression> expressions1 = statement1.findExpression(key);
 							List<LeafExpression> expressions2 = statement2.findExpression(key);
@@ -2219,7 +2272,7 @@ public class StringBasedHeuristics {
 			}
 			boolean containsTernaryOperatorReplacement = false;
 			for(Replacement replacement : info.getReplacements()) {
-				if(replacement.getAfter().contains("?") && replacement.getAfter().contains(":")) {
+				if(replacement.getAfter().contains(" ? ") && replacement.getAfter().contains(" : ")) {
 					containsTernaryOperatorReplacement = true;
 				}
 			}
