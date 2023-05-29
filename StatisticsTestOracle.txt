@@ -20,3 +20,14 @@ Specificity: 100.0
 FScore: 0.96385545
 
 
+For Move Method: TIME: 2023-05-28 19:08:26.538
+TP: 53
+TN: 13
+FP: 0
+FN: 11
+Precision: 100.0
+Recall: 82.8125
+Specificity: 100.0
+FScore: 0.9059829
+
+

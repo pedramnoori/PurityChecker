@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/antlr/intellij-plugin-v4/commit/84a1ffd45fd92fe1498300af78ccac54f8ab00b0");
+        isPureAPI("https://github.com/zendesk/maxwell/commit/c13a4ce36ec7cf57934dfc06eb3a086497e98db4");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

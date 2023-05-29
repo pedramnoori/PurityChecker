@@ -9811,41 +9811,41 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic createEditor(grammarFile VirtualFile, inputText String) : Editor from class org.antlr.intellij.plugin.preview.PreviewPanel to public createEditor(grammarFile VirtualFile, inputText String) : Editor from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Modifications are pure considering the Move Method refactoring mechanics - Good Catch by PurityChecker"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic clearParseErrors(grammarFile VirtualFile) : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public clearParseErrors(grammarFile VirtualFile) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "It's pure considering the definition of the getEditor method. Impossible to catch the purity while static analysis"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic showParseErrors(grammarFile VirtualFile, errors List<SyntaxError>) : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public showParseErrors(grammarFile VirtualFile, errors List<SyntaxError>) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "It's pure considering the definition of the getEditor method. Impossible to catch the purity while static analysis"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic annotateErrorsInPreviewInputEditor(grammarFile VirtualFile, e SyntaxError) : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public annotateErrorsInPreviewInputEditor(grammarFile VirtualFile, e SyntaxError) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "It's pure considering the definition of the getEditor method. Impossible to catch the purity while static analysis"
     }
   }, {
     "type" : "Move Method",
@@ -11696,11 +11696,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getAuthority(schema String, element String, qualifier String) : AuthorityRest from class org.dspace.app.rest.converter.InputFormConverter to public getAuthority(schema String, element String, qualifier String) : AuthorityRest from class org.dspace.app.rest.utils.AuthorityUtils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves which have been added to the moved method are not justifiable"
     }
   }, {
     "type" : "Change Method Access Modifier",
@@ -11716,7 +11716,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getSelectableMetadata() : List<SelectableMetadata> from class org.dspace.app.rest.model.InputFormInputTypeRest to public getSelectableMetadata() : List<SelectableMetadata> from class org.dspace.app.rest.model.InputFormFieldRest",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -11726,7 +11726,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic setSelectableMetadata(selectableMetadata List<SelectableMetadata>) : void from class org.dspace.app.rest.model.InputFormInputTypeRest to public setSelectableMetadata(selectableMetadata List<SelectableMetadata>) : void from class org.dspace.app.rest.model.InputFormFieldRest",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -12761,7 +12761,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getSQLDir() : String from class com.zendesk.maxwell.AbstractMaxwellTest to public getSQLDir() : String from class com.zendesk.maxwell.MaxwellTestSupport",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -12781,7 +12781,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected buildContext(port int, p BinlogPosition) : MaxwellContext from class com.zendesk.maxwell.AbstractMaxwellTest to public buildContext(port int, p BinlogPosition) : MaxwellContext from class com.zendesk.maxwell.MaxwellTestSupport",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -12811,11 +12811,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected getRowsForSQL(mysql MysqlIsolatedServer, filter MaxwellFilter, queries String[], before String[]) : List<RowMap> from class com.zendesk.maxwell.AbstractMaxwellTest to public getRowsForSQL(mysql MysqlIsolatedServer, filter MaxwellFilter, queries String[], before String[]) : List<RowMap> from class com.zendesk.maxwell.MaxwellTestSupport",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "There is no connection between server and mysql"
     }
   }, {
     "type" : "Add Parameter Modifier",
@@ -12871,11 +12871,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected parseJSON(json String) : Map<String,Object> from class com.zendesk.maxwell.AbstractIntegrationTest to public parseJSON(json String) : Map<String,Object> from class com.zendesk.maxwell.MaxwellTestJSON",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "re-defining the mapper does not change the behavior of the moved method"
     }
   }, {
     "type" : "Add Parameter",
@@ -12901,11 +12901,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate runJSONTest(sql List<String>, expectedJSON List<Map<String,Object>>) : void from class com.zendesk.maxwell.AbstractIntegrationTest to private runJSONTest(server MysqlIsolatedServer, sql List<String>, expectedJSON List<Map<String,Object>>) : void from class com.zendesk.maxwell.MaxwellTestJSON",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves which have been added to the moved method are not justifiable - assertJSON invocation"
     }
   }, {
     "type" : "Extract Method",
@@ -12931,7 +12931,7 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic abstract apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.SchemaChange to public abstract apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedSchemaChange",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -12961,21 +12961,21 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.TableDrop to public apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedTableCreate",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacements are not justifiable"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.TableCreate to public apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedTableCreate",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Replacements are not justifiable"
     }
   }, {
     "type" : "Change Thrown Exception Type",
@@ -12991,11 +12991,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.DatabaseAlter to public apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedDatabaseAlter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "null-check logic has been removed from the moved method"
     }
   }, {
     "type" : "Inline Variable",
@@ -13021,11 +13021,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.DatabaseCreate to public apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedDatabaseCreate",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves and nodes which have been added to the moved method are not justifiable"
     }
   }, {
     "type" : "Change Thrown Exception Type",
@@ -13041,11 +13041,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.DatabaseDrop to public apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedDatabaseDrop",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves and nodes which have been added to the moved method are not justifiable"
     }
   }, {
     "type" : "Add Parameter",
@@ -13318,8 +13318,7 @@
       "validationComment" : ""
     }
   } ]
-},
-
+}, 
 {
   "repository" : "https://github.com/forrestguice/SuntimesWidget.git",
   "sha1" : "0a7f53da1736523b14eb25b4301a7a9924eb3244",
@@ -13396,7 +13395,8 @@
       "validationComment" : ""
     }
   } ]
-}, {
+},
+{
   "repository" : "https://github.com/DSpace/DSpace.git",
   "sha1" : "a9bf1d869d40f0ecc6e8b2dc18f0865e563542ad",
   "url" : "https://github.com/DSpace/DSpace/commit/a9bf1d869d40f0ecc6e8b2dc18f0865e563542ad",
@@ -14111,7 +14111,8 @@
       "validationComment" : ""
     }
   } ]
-}, {
+},
+{
   "repository" : "https://github.com/novoda/download-manager.git",
   "sha1" : "ec495f487d164e1f94116a3ca297d01f1028ef74",
   "url" : "https://github.com/novoda/download-manager/commit/ec495f487d164e1f94116a3ca297d01f1028ef74",
@@ -14264,141 +14265,142 @@
       "purityComment" : "",
       "mappingState" : "",
       "validationComment" : ""
+    } 
+  }]
+},
+{
+  "repository" : "https://github.com/forrestguice/SuntimesWidget.git",
+  "sha1" : "1bacdbd25856d36f9ae4624f5d6699b46ac408a5",
+  "url" : "https://github.com/forrestguice/SuntimesWidget/commit/1bacdbd25856d36f9ae4624f5d6699b46ac408a5",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate initGeneral() : void inlined to public onCreate(savedInstanceState Bundle) : void in class com.forrestguice.suntimeswidget.SuntimesSettingsActivity.GeneralPrefsFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
     }
   }, {
-    "repository" : "https://github.com/forrestguice/SuntimesWidget.git",
-    "sha1" : "1bacdbd25856d36f9ae4624f5d6699b46ac408a5",
-    "url" : "https://github.com/forrestguice/SuntimesWidget/commit/1bacdbd25856d36f9ae4624f5d6699b46ac408a5",
-    "refactorings" : [ {
-      "type" : "Inline Method",
-      "description" : "Inline Method\tprivate initGeneral() : void inlined to public onCreate(savedInstanceState Bundle) : void in class com.forrestguice.suntimeswidget.SuntimesSettingsActivity.GeneralPrefsFragment",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Extract Method",
-      "description" : "Extract Method\tprivate initLegacyPrefs() : void extracted from public onCreate(icicle Bundle) : void in class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Split Conditional",
-      "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_WIDGETLIST)) to [if(action.equals(ACTION_PREFS_GENERAL)), if(action != null)] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Split Conditional",
-      "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_PLACES)) to [if(action.equals(ACTION_PREFS_UI)), if(action.equals(ACTION_PREFS_PLACES))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Split Conditional",
-      "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_PLACES)) to [if(action.equals(ACTION_PREFS_LOCALE)), if(action.equals(ACTION_PREFS_PLACES))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Split Conditional",
-      "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_PLACES)) to [if(action != null), if(action.equals(ACTION_PREFS_PLACES))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Split Conditional",
-      "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_UI)) to [if(action != null), if(action.equals(ACTION_PREFS_UI))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Split Conditional",
-      "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_LOCALE)) to [if(action != null), if(action.equals(ACTION_PREFS_LOCALE))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Rename Method",
-      "description" : "Rename Method\tpublic isGPSEnabled() : boolean renamed to public isLocationEnabled() : boolean in class com.forrestguice.suntimeswidget.getfix.GetFixHelper",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Rename Method",
-      "description" : "Rename Method\tpublic isGPSEnabled(context Context) : boolean renamed to public isGPSProviderEnabled(context Context) : boolean in class com.forrestguice.suntimeswidget.getfix.GetFixHelper",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Add Parameter",
-      "description" : "Add Parameter\tuseExternalStorage : boolean in method public ExportPlacesTask(context Context, exportTarget String, useExternalStorage boolean, saveToCache boolean) from class com.forrestguice.suntimeswidget.getfix.ExportPlacesTask",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    }, {
-      "type" : "Replace Attribute With Variable",
-      "description" : "Replace Attribute With Variable\tusedExternalStorage : boolean to tryExternalStorage : boolean in method protected doInBackground(params Object...) : ExportResult from class com.forrestguice.suntimeswidget.getfix.ExportPlacesTask",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    },  {
-      "type" : "Move And Rename Method",
-      "description" : "Move And Rename Method\tprivate loadGeneral(context Context) : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity.GeneralPrefsFragment to private loadPref_general(context Context, calculatorPref ListPreference) : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
-      "purity" : {
-        "purityValue" : "-",
-        "purityValidation" : "-",
-        "purityComment" : "",
-        "mappingState" : "",
-        "validationComment" : ""
-      }
-    } ]
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate initLegacyPrefs() : void extracted from public onCreate(icicle Bundle) : void in class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_WIDGETLIST)) to [if(action.equals(ACTION_PREFS_GENERAL)), if(action != null)] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_PLACES)) to [if(action.equals(ACTION_PREFS_UI)), if(action.equals(ACTION_PREFS_PLACES))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_PLACES)) to [if(action.equals(ACTION_PREFS_LOCALE)), if(action.equals(ACTION_PREFS_PLACES))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_PLACES)) to [if(action != null), if(action.equals(ACTION_PREFS_PLACES))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_UI)) to [if(action != null), if(action.equals(ACTION_PREFS_UI))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_LOCALE)) to [if(action != null), if(action.equals(ACTION_PREFS_LOCALE))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic isGPSEnabled() : boolean renamed to public isLocationEnabled() : boolean in class com.forrestguice.suntimeswidget.getfix.GetFixHelper",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic isGPSEnabled(context Context) : boolean renamed to public isGPSProviderEnabled(context Context) : boolean in class com.forrestguice.suntimeswidget.getfix.GetFixHelper",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tuseExternalStorage : boolean in method public ExportPlacesTask(context Context, exportTarget String, useExternalStorage boolean, saveToCache boolean) from class com.forrestguice.suntimeswidget.getfix.ExportPlacesTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Replace Attribute With Variable",
+    "description" : "Replace Attribute With Variable\tusedExternalStorage : boolean to tryExternalStorage : boolean in method protected doInBackground(params Object...) : ExportResult from class com.forrestguice.suntimeswidget.getfix.ExportPlacesTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  },  {
+    "type" : "Move And Rename Method",
+    "description" : "Move And Rename Method\tprivate loadGeneral(context Context) : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity.GeneralPrefsFragment to private loadPref_general(context Context, calculatorPref ListPreference) : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
   } ]
-} ]
+}]

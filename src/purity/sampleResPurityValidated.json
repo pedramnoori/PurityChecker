@@ -326,21 +326,21 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic BulkProcessor(client Client<Response>, maxInFlightRequests int, batchSize int, lingerMs long, maxRetry int, retryBackOffMs long, listener Listener) from class io.confluent.connect.elasticsearch.internals.BulkProcessor to public BulkProcessor(time Time, bulkClient BulkClient<R,B>, maxBufferedRecords int, maxInFlightRequests int, batchSize int, lingerMs long, maxRetries int, retryBackoffMs long) from class io.confluent.connect.elasticsearch.bulk.BulkProcessor",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "Constructor (field assignments) has been changed"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic start() : void from class io.confluent.connect.elasticsearch.internals.BulkProcessor to public start() : void from class io.confluent.connect.elasticsearch.bulk.BulkProcessor",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "setting the -runner- field has been impurely removed from the moved operation"
     }
   }, {
     "type" : "Inline Variable",
@@ -626,10 +626,10 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate createTradingRecordReport(tradingRecord TradingRecord) : void from class ta4jexamples.backtesting.SimpleMovingAverageRangeBacktesting to public createTradingRecordReport() : void from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   } ]
@@ -691,10 +691,10 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate createTradeReport(trade Trade) : void from class ta4jexamples.backtesting.SimpleMovingAverageRangeBacktesting to private createTradeReport(trade Trade) : void from class org.ta4j.core.BacktestingResult",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -821,11 +821,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getTotalProfit() : Num from class org.ta4j.core.BaseTradingRecord to private getTotalProfit(tradingRecord TradingRecord) : Num from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Add Parameter",
@@ -861,11 +861,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getTotalLoss() : Num from class org.ta4j.core.BaseTradingRecord to private getTotalLoss(tradingRecord TradingRecord) : Num from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Add Parameter",
@@ -901,11 +901,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getProfitTradeCount() : long from class org.ta4j.core.BaseTradingRecord to private getProfitTradeCount(tradingRecord TradingRecord) : long from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Add Parameter",
@@ -941,11 +941,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getLossTradeCount() : long from class org.ta4j.core.BaseTradingRecord to private getLossTradeCount(tradingRecord TradingRecord) : long from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Replacing getter with the direct access"
     }
   }, {
     "type" : "Add Parameter",
@@ -981,11 +981,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getBreakEvenTradeCount() : long from class org.ta4j.core.BaseTradingRecord to private getBreakEvenTradeCount(tradingRecord TradingRecord) : long from class org.ta4j.core.Backtesting",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Replacing getter with the direct access"
     }
   } ]
 }, {
@@ -1471,10 +1471,10 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getPgcryptoAvailableVersion(connection Connection) : Double from class org.dspace.storage.rdbms.DatabaseUtils to protected getPgcryptoAvailableVersion(connection Connection) : Double from class org.dspace.storage.rdbms.PostgresUtils",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1491,10 +1491,10 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getPgcryptoInstalledVersion(connection Connection) : Double from class org.dspace.storage.rdbms.DatabaseUtils to protected getPgcryptoInstalledVersion(connection Connection) : Double from class org.dspace.storage.rdbms.PostgresUtils",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -1511,31 +1511,31 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic isPgcryptoUpToDate() : boolean from class org.dspace.storage.rdbms.DatabaseUtils to public isPgcryptoUpToDate() : boolean from class org.dspace.storage.rdbms.PostgresUtils",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics",
+      "mappingState" : 1,
+      "validationComment" : "Move Method on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic isPgcryptoInSchema(schema String) : boolean from class org.dspace.storage.rdbms.DatabaseUtils to public isPgcryptoInSchema(schema String) : boolean from class org.dspace.storage.rdbms.PostgresUtils",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics",
+      "mappingState" : 1,
+      "validationComment" : "Move Method on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate checkCleanPermissions(connection Connection) : boolean from class org.dspace.storage.rdbms.DatabaseUtils to protected checkCleanPermissions(connection Connection) : boolean from class org.dspace.storage.rdbms.PostgresUtils",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Remove Variable on top"
     }
   }, {
     "type" : "Change Method Access Modifier",
@@ -1661,11 +1661,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getValue(key String, servletContext ServletContext, initialContext InitialContext) : String from class liquibase.integration.servlet.LiquibaseServletListener to public getValue(prefixAndProperty String) : Object from class liquibase.integration.servlet.LiquibaseServletListener.ServletValueContainer",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Rename Variable on top"
     }
   } ]
 }, {
@@ -2526,11 +2526,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected addProperty(propertyName String, type Class) : ContextProperty from class liquibase.context.Context.ContextState to public addProperty(propertyName String, type Class) : ConfigurationProperty from class liquibase.configuration.AbstractConfiguration.ConfigurationContainer",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Two Rename Method on top"
     }
   }, {
     "type" : "Change Variable Type",
@@ -2556,11 +2556,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getProperty(propertyName String) : ContextProperty from class liquibase.context.Context.ContextState to public getProperty(propertyName String) : ConfigurationProperty from class liquibase.configuration.AbstractConfiguration.ConfigurationContainer",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
+      "mappingState" : 1,
+      "validationComment" : "Rename (Extract) Class on top"
     }
   }, {
     "type" : "Change Variable Type",
@@ -2576,11 +2576,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getValue(propertyName String, returnType Class<T>) : T from class liquibase.context.Context.ContextState to public getValue(propertyName String, returnType Class<T>) : T from class liquibase.configuration.AbstractConfiguration.ConfigurationContainer",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
+      "mappingState" : 1,
+      "validationComment" : "Rename (Extract) Class on top"
     }
   }, {
     "type" : "Change Variable Type",
@@ -2596,11 +2596,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic setValue(propertyName String, value Object) : void from class liquibase.context.Context.ContextState to public setValue(propertyName String, value Object) : void from class liquibase.configuration.AbstractConfiguration.ConfigurationContainer",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
+      "mappingState" : 1,
+      "validationComment" : "Rename (Extract) Class on top"
     }
   }, {
     "type" : "Change Return Type",
@@ -2616,21 +2616,21 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getProperty(propertyName String) : ContextProperty from class liquibase.context.Context to public getProperty(propertyName String) : ConfigurationProperty from class liquibase.configuration.AbstractConfiguration",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "Rename Method on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic getValue(propertyName String, returnType Class<T>) : T from class liquibase.context.Context to public getValue(propertyName String, returnType Class<T>) : T from class liquibase.configuration.AbstractConfiguration",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "Rename Method on top"
     }
   }, {
     "type" : "Change Variable Type",
@@ -2656,11 +2656,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected init(valueContainers ContextValueContainer...) : void from class liquibase.context.Context to protected init(valueContainers ConfigurationProvider...) : void from class liquibase.configuration.AbstractConfiguration",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "Rename Method on top"
     }
   }, {
     "type" : "Change Parameter Type",
@@ -3101,31 +3101,31 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate addedStartClause(partInfo PartInfo) : boolean from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to private addedStartClause(partInfo PartInfo) : boolean from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "non-pure if statements have been added to the moved operation"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic getPartInfo(parameterIndex int) : PartInfo from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to public getPartInfo(parameterIndex int) : PartInfo from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic toString() : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to public toString() : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "Extract Method on top - Add Parameter on top"
     }
   }, {
     "type" : "Extract Method",
@@ -3151,51 +3151,51 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate addSorts(sort Sort) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to private addSorts(sort Sort) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate formatSorts(sort Sort) : List<String> from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to private formatSorts(sort Sort) : List<String> from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate toString(matchClauses List<MatchClause>) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to private toString(matchClauses List<MatchClause>) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic toString(sort Sort) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to public toString(sort Sort) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "null-check logic has been added to the moved method"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic toString(pageable Pageable) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to public toString(pageable Pageable) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Addition of return expression, which can be a part of Move Method refactoring mechanics"
     }
   }, {
     "type" : "Move Attribute",
@@ -3271,11 +3271,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate defaultStartClause() : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder to private defaultStartClause(entity Neo4jPersistentEntity<?>) : String from class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Extract Method on top"
     }
   } ]
 }, {
@@ -3597,9 +3597,9 @@
     "description" : "Extract And Move Method\tpublic resolveParameters(parameters Map<Parameter,Object>) : Map<Parameter,Object> extracted from public resolveParameters(parameters Map<Parameter,Object>) : Map<Parameter,Object> in class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery & moved to class org.springframework.data.neo4j.repository.query.MatchClause",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Argument replaced with return expression, which is a part of Extract Method refactoring mechanics"
     }
   }, {
@@ -4041,70 +4041,70 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic renderTiledTextureAtlas(x int, y int, width int, height int, depth float, sprite TextureAtlasSprite) : void from class slimeknights.tconstruct.library.client.RenderUtil to public renderTiledTextureAtlas(x int, y int, width int, height int, depth float, sprite TextureAtlasSprite) : void from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic renderTiledFluid(x int, y int, width int, height int, depth float, fluidStack FluidStack) : void from class slimeknights.tconstruct.library.client.RenderUtil to public renderTiledFluid(x int, y int, width int, height int, depth float, fluidStack FluidStack) : void from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic putTiledTextureQuads(renderer VertexBuffer, x int, y int, width int, height int, depth float, sprite TextureAtlasSprite) : void from class slimeknights.tconstruct.library.client.RenderUtil to public putTiledTextureQuads(renderer VertexBuffer, x int, y int, width int, height int, depth float, sprite TextureAtlasSprite) : void from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic liquidToString(fluid FluidStack, text List<String>) : void from class slimeknights.tconstruct.library.client.RenderUtil to public liquidToString(fluid FluidStack, text List<String>) : void from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic amountToString(amount int, text List<String>) : void from class slimeknights.tconstruct.library.client.RenderUtil to public amountToString(amount int, text List<String>) : void from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate calcFluidGuiEntries(fluid Fluid) : List<FluidGuiEntry> from class slimeknights.tconstruct.library.client.RenderUtil to private calcFluidGuiEntries(fluid Fluid) : List<FluidGuiEntry> from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate calcLiquidText(amount int, divider int, unit String, text List<String>) : int from class slimeknights.tconstruct.library.client.RenderUtil to private calcLiquidText(amount int, divider int, unit String, text List<String>) : int from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -4211,11 +4211,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected getFluidHovered(y int) : FluidStack from class slimeknights.tconstruct.smeltery.client.GuiSmeltery to private getFluidHovered(tank SmelteryTank, y int, height int) : FluidStack from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Add Parameter on top - Parameterize Variable on top"
     }
   }, {
     "type" : "Add Parameter",
@@ -4281,31 +4281,31 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected calcLiquidHeights(liquids List<FluidStack>, capacity int) : int[] from class slimeknights.tconstruct.smeltery.client.GuiSmeltery to private calcLiquidHeights(liquids List<FluidStack>, capacity int, height int) : int[] from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "It can be either pure or impure"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprotected getFluidHovered(y int) : FluidStack from class slimeknights.tconstruct.smeltery.client.GuiTinkerTank to private getFluidHovered(tank SmelteryTank, y int, height int) : FluidStack from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Add Parameter on top - Parameterize Variable on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprotected calcLiquidHeights(liquids List<FluidStack>, capacity int) : int[] from class slimeknights.tconstruct.smeltery.client.GuiTinkerTank to private calcLiquidHeights(liquids List<FluidStack>, capacity int, height int) : int[] from class slimeknights.tconstruct.library.client.GuiUtil",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "It can be either pure or impure"
     }
   } ]
 }, {
@@ -4506,21 +4506,21 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getLogString(response HttpResponse) : String from class com.adeven.adjustio.RequestTask to private getLogString(response HttpResponse, trackingInformation TrackingInformation) : String from class com.adeven.adjustio.RequestThread",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Modifications are pure considering the Move Method refactoring mechanics"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate parseResponse(response HttpResponse) : String from class com.adeven.adjustio.RequestTask to private parseResponse(response HttpResponse) : String from class com.adeven.adjustio.RequestThread",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Error handling logic has been changed - e.printStackTrace to log"
     }
   } ]
 }, {
@@ -5887,9 +5887,9 @@
     "description" : "Extract And Move Method\tprotected getClient(params Form) : Client extracted from public represent() : Representation in class org.restlet.ext.oauth.AuthorizationServerResource & moved to class org.restlet.ext.oauth.OAuthServerResource",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "throw expressions have been added to the extracted code"
     }
   }, {
@@ -5897,9 +5897,9 @@
     "description" : "Extract And Move Method\tprotected getAuthSession() : AuthSession extracted from protected handleAction(action String, scopes String[]) : void in class org.restlet.ext.oauth.AuthPageServerResource & moved to class org.restlet.ext.oauth.OAuthServerResource",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   } ]
@@ -6082,9 +6082,9 @@
     "description" : "Extract And Move Method\tpublic toOAuthException(t Throwable) : OAuthException extracted from protected doCatch(t Throwable) : void in class org.restlet.ext.oauth.AccessTokenServerResource & moved to class org.restlet.ext.oauth.OAuthException",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -6092,9 +6092,9 @@
     "description" : "Extract And Move Method\tpublic toOAuthException(t Throwable) : OAuthException extracted from protected doCatch(t Throwable) : void in class org.restlet.ext.oauth.security.TokenAuthServerResource & moved to class org.restlet.ext.oauth.OAuthException",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -7271,10 +7271,10 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected zoomMessage(zoomLevel int, zoomMin int, zoomMax int) : String from class org.osmdroid.tileprovider.cachemanager.CacheManager to protected zoomMessage(zoomLevel int, zoomMin int, zoomMax int) : String from class org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerDialog",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -7742,9 +7742,9 @@
     "description" : "Extract And Move Method\tprotected getBitmap(pTileSizePx int) : Bitmap extracted from public handleTile(pTileSizePx int, pTile MapTile, pX int, pY int) : void in class org.osmdroid.tileprovider.MapTileProviderBase.ZoomInTileLooper & moved to class org.osmdroid.tileprovider.MapTileProviderBase.ScaleTileLooper",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Addition of return expression, which is a part of Extract Method refactoring mechanics"
     }
   }, {
@@ -7752,9 +7752,9 @@
     "description" : "Extract And Move Method\tprotected getBitmap(pTileSizePx int) : Bitmap extracted from protected handleTile(pTileSizePx int, pTile MapTile, pX int, pY int) : void in class org.osmdroid.tileprovider.MapTileProviderBase.ZoomOutTileLooper & moved to class org.osmdroid.tileprovider.MapTileProviderBase.ScaleTileLooper",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Addition of return expression, which is a part of Extract Method refactoring mechanics"
     }
   }, {
@@ -7762,9 +7762,9 @@
     "description" : "Extract And Move Method\tprotected putScaledTileIntoCache(pTile MapTile, pBitmap Bitmap) : void extracted from public handleTile(pTileSizePx int, pTile MapTile, pX int, pY int) : void in class org.osmdroid.tileprovider.MapTileProviderBase.ZoomInTileLooper & moved to class org.osmdroid.tileprovider.MapTileProviderBase.ScaleTileLooper",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable - putTileIntoCache invocation"
     }
   }, {
@@ -7772,9 +7772,9 @@
     "description" : "Extract And Move Method\tprotected putScaledTileIntoCache(pTile MapTile, pBitmap Bitmap) : void extracted from protected handleTile(pTileSizePx int, pTile MapTile, pX int, pY int) : void in class org.osmdroid.tileprovider.MapTileProviderBase.ZoomOutTileLooper & moved to class org.osmdroid.tileprovider.MapTileProviderBase.ScaleTileLooper",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable - putTileIntoCache invocation"
     }
   } ]
@@ -7947,9 +7947,9 @@
     "description" : "Extract And Move Method\tpublic loadTile(pTileSource ITileSource, pTile MapTile) : Drawable extracted from public loadTile(pState MapTileRequestState) : Drawable in class org.osmdroid.tileprovider.modules.MapTileSqlCacheProvider.TileLoader & moved to class org.osmdroid.tileprovider.modules.SqliteArchiveTileWriter",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Extract Method on top - caused Add Parameter refactoring"
     }
   }, {
@@ -7957,9 +7957,9 @@
     "description" : "Extract And Move Method\tpublic loadTile(pTileSource ITileSource, pTile MapTile) : Drawable extracted from public loadTile(pState MapTileRequestState) : Drawable in class org.osmdroid.tileprovider.modules.MapTileSqlCacheProvider.TileLoader & moved to class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "One if statement has been impurely added - within a finally block"
     }
   }, {
@@ -7967,9 +7967,9 @@
     "description" : "Extract And Move Method\tpublic loadTile(pTileSource ITileSource, pTile MapTile) : Drawable extracted from public loadTile(pState MapTileRequestState) : Drawable in class org.osmdroid.tileprovider.modules.MapTileFilesystemProvider.TileLoader & moved to class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "One if statement has been impurely added - within a finally block"
     }
   }, {
@@ -7977,9 +7977,9 @@
     "description" : "Extract And Move Method\tpublic setMaximumCachedFileAge(mMaximumCachedFileAge long) : void extracted from public MapTileFilesystemProvider(pRegisterReceiver IRegisterReceiver, pTileSource ITileSource, pMaximumCachedFileAge long, pThreadPoolSize int, pPendingQueueSize int) in class org.osmdroid.tileprovider.modules.MapTileFilesystemProvider & moved to class org.osmdroid.tileprovider.modules.TileWriter",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -7987,9 +7987,9 @@
     "description" : "Extract And Move Method\tpublic loadTile(pTileSource ITileSource, pTile MapTile) : Drawable extracted from public loadTile(pState MapTileRequestState) : Drawable in class org.osmdroid.tileprovider.modules.MapTileFilesystemProvider.TileLoader & moved to class org.osmdroid.tileprovider.modules.TileWriter",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   } ]
@@ -8121,10 +8121,10 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic addTitles(page HtmlPage, title String) : void from class fitnesse.html.HtmlUtil to public addTitles(title String) : void from class fitnesse.html.template.HtmlPage",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   } ]
@@ -8327,9 +8327,9 @@
     "description" : "Extract And Move Method\tprotected newMultipleTestsRunner(pages List<WikiPage>) : MultipleTestsRunner extracted from protected performExecution() : void in class fitnesse.responders.run.SuiteResponder & moved to class fitnesse.responders.run.TestResponder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Replacing getter with the direct access"
     }
   }, {
@@ -8726,50 +8726,50 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getOrTagFilter(request Request) : String from class fitnesse.responders.run.SuiteFilter to private getOrTagFilter(request Request) : String from class fitnesse.responders.run.SuiteResponder",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate getOrFilterString(request Request) : String from class fitnesse.responders.run.SuiteFilter to private getOrFilterString(request Request) : String from class fitnesse.responders.run.SuiteResponder",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate getNotSuiteFilter(request Request) : String from class fitnesse.responders.run.SuiteFilter to private getNotSuiteFilter(request Request) : String from class fitnesse.responders.run.SuiteResponder",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate getAndTagFilters(request Request) : String from class fitnesse.responders.run.SuiteFilter to private getAndTagFilters(request Request) : String from class fitnesse.responders.run.SuiteResponder",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tprivate getSuiteFirstTest(request Request, suiteName String) : String from class fitnesse.responders.run.SuiteFilter to private getSuiteFirstTest(request Request, suiteName String) : String from class fitnesse.responders.run.SuiteResponder",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   } ]
@@ -9141,10 +9141,10 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate autobox(array int[]) : Integer[] from class htsjdk.samtools.cram.build.CompressionHeaderFactory to private autobox(array int[]) : Integer[] from class htsjdk.samtools.cram.encoding.huffman.codec.HuffmanParamsCalculator",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
       "validationComment" : ""
     }
   } ]
@@ -9247,9 +9247,9 @@
     "description" : "Extract And Move Method\tpublic getBranchesContaining(revspec String, allBranches boolean) : List<Branch> extracted from public getBranchesContaining(revspec String) : List<Branch> in class org.jenkinsci.plugins.gitclient.JGitAPIImpl & moved to class org.jenkinsci.plugins.gitclient.CliGitAPIImpl",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   } ]
@@ -9616,40 +9616,40 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic setStartRuleName(grammarFile VirtualFile, startRuleName String) : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public setStartRuleName(grammarFile VirtualFile, startRuleName String) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic resetStartRuleLabel() : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public resetStartRuleLabel() : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic displayErrorInParseErrorConsole(e SyntaxError) : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public displayErrorInParseErrorConsole(e SyntaxError) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "Move and Rename Attribute on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic getErrorDisplayString(e SyntaxError) : String from class org.antlr.intellij.plugin.preview.PreviewPanel to public getErrorDisplayString(e SyntaxError) : String from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -9791,75 +9791,65 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic showTokenInfoUponMeta(editor Editor, previewState PreviewState, offset int) : void from class org.antlr.intellij.plugin.preview.PreviewEditorMouseListener to public showTokenInfoUponMeta(editor Editor, previewState PreviewState, offset int) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "mappingState" : 1,
+      "validationComment" : "Move Method on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic showTooltipsForErrors(editor Editor, previewState PreviewState, offset int) : void from class org.antlr.intellij.plugin.preview.PreviewEditorMouseListener to public showTooltipsForErrors(editor Editor, previewState PreviewState, offset int) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Remove Variable on top"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic createEditor(grammarFile VirtualFile, inputText String) : Editor from class org.antlr.intellij.plugin.preview.PreviewPanel to public createEditor(grammarFile VirtualFile, inputText String) : Editor from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics",
+      "mappingState" : 1,
+      "validationComment" : "Modifications are pure considering the Move Method refactoring mechanics - Good Catch by PurityChecker"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic clearParseErrors(grammarFile VirtualFile) : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public clearParseErrors(grammarFile VirtualFile) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "It's pure considering the definition of the getEditor method. Impossible to catch the purity while static analysis"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic showParseErrors(grammarFile VirtualFile, errors List<SyntaxError>) : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public showParseErrors(grammarFile VirtualFile, errors List<SyntaxError>) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "It's pure considering the definition of the getEditor method. Impossible to catch the purity while static analysis"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic annotateErrorsInPreviewInputEditor(grammarFile VirtualFile, e SyntaxError) : void from class org.antlr.intellij.plugin.preview.PreviewPanel to public annotateErrorsInPreviewInputEditor(grammarFile VirtualFile, e SyntaxError) : void from class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "It's pure considering the definition of the getEditor method. Impossible to catch the purity while static analysis"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic removeTokenInfoHighlighters(editor Editor) : MarkupModel from class org.antlr.intellij.plugin.preview.PreviewPanel to public removeTokenInfoHighlighters(editor Editor) : MarkupModel from class org.antlr.intellij.plugin.preview.InputPanel",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method\tpublic getMouseOffset(mouseEvent MouseEvent, editor Editor) : int extracted from public mouseMoved(e EditorMouseEvent) : void in class org.antlr.intellij.plugin.preview.PreviewEditorMouseListener & moved to class org.antlr.intellij.plugin.actions.MyActionUtils",
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
@@ -9869,12 +9859,22 @@
     }
   }, {
     "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic getMouseOffset(mouseEvent MouseEvent, editor Editor) : int extracted from public mouseMoved(e EditorMouseEvent) : void in class org.antlr.intellij.plugin.preview.PreviewEditorMouseListener & moved to class org.antlr.intellij.plugin.actions.MyActionUtils",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
     "description" : "Extract And Move Method\tpublic switchToGrammar(grammarFile VirtualFile) : void extracted from public switchToGrammar(grammarFile VirtualFile) : void in class org.antlr.intellij.plugin.preview.PreviewPanel & moved to class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "non-mapped leaves and nodes which have been added to the extracted code are not justifiable"
     }
   } ]
@@ -10542,9 +10542,9 @@
     "description" : "Extract And Move Method\tpublic setAppToken(appToken String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10552,9 +10552,9 @@
     "description" : "Extract And Move Method\tpublic setMacSha1(macSha1 String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10562,9 +10562,9 @@
     "description" : "Extract And Move Method\tpublic setMacShortMd5(macShortMd5 String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10572,9 +10572,9 @@
     "description" : "Extract And Move Method\tpublic setAndroidId(androidId String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10582,9 +10582,9 @@
     "description" : "Extract And Move Method\tpublic setFbAttributionId(fbAttributionId String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10592,9 +10592,9 @@
     "description" : "Extract And Move Method\tpublic setUserAgent(userAgent String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10602,9 +10602,9 @@
     "description" : "Extract And Move Method\tpublic setClientSdk(clientSdk String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10612,9 +10612,9 @@
     "description" : "Extract And Move Method\tpublic setEnvironment(environment String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10622,9 +10622,9 @@
     "description" : "Extract And Move Method\tpublic setSessionCount(sessionCount int) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10632,9 +10632,9 @@
     "description" : "Extract And Move Method\tpublic setSubsessionCount(subsessionCount int) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10642,9 +10642,9 @@
     "description" : "Extract And Move Method\tpublic setCreatedAt(createdAt long) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10652,9 +10652,9 @@
     "description" : "Extract And Move Method\tpublic setSessionLength(sessionLength long) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10662,9 +10662,9 @@
     "description" : "Extract And Move Method\tpublic setTimeSpent(timeSpent long) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10672,9 +10672,9 @@
     "description" : "Extract And Move Method\tpublic setLastInterval(lastInterval long) : void extracted from protected injectSessionAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10682,9 +10682,9 @@
     "description" : "Extract And Move Method\tpublic setDefaultTracker(defaultTracker String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10692,9 +10692,9 @@
     "description" : "Extract And Move Method\tpublic setEventCount(eventCount int) : void extracted from protected injectEventAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10702,9 +10702,9 @@
     "description" : "Extract And Move Method\tpublic setEventToken(eventToken String) : void extracted from protected trackEvent(eventToken String, parameters Map<String,String>) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10712,9 +10712,9 @@
     "description" : "Extract And Move Method\tpublic setEventToken(eventToken String) : void extracted from protected trackRevenue(amountInCents double, eventToken String, parameters Map<String,String>) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10722,9 +10722,9 @@
     "description" : "Extract And Move Method\tpublic setAmountInCents(amountInCents double) : void extracted from protected trackRevenue(amountInCents double, eventToken String, parameters Map<String,String>) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10732,9 +10732,9 @@
     "description" : "Extract And Move Method\tpublic setCallbackParameters(callbackParameters Map<String,String>) : void extracted from protected trackEvent(eventToken String, parameters Map<String,String>) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10742,9 +10742,9 @@
     "description" : "Extract And Move Method\tpublic setCallbackParameters(callbackParameters Map<String,String>) : void extracted from protected trackRevenue(amountInCents double, eventToken String, parameters Map<String,String>) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10752,9 +10752,9 @@
     "description" : "Extract And Move Method\tpublic setPath(path String) : void extracted from protected buildSessionPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10762,9 +10762,9 @@
     "description" : "Extract And Move Method\tpublic setPath(path String) : void extracted from protected buildEventPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10772,9 +10772,9 @@
     "description" : "Extract And Move Method\tpublic setPath(path String) : void extracted from protected buildRevenuePackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10782,9 +10782,9 @@
     "description" : "Extract And Move Method\tpublic setUserAgent(userAgent String) : void extracted from private getDefaultActivityPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10792,9 +10792,9 @@
     "description" : "Extract And Move Method\tpublic setClientSdk(clientSdk String) : void extracted from private getDefaultActivityPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10802,9 +10802,9 @@
     "description" : "Extract And Move Method\tpublic setParameters(parameters Map<String,String>) : void extracted from protected buildSessionPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10812,9 +10812,9 @@
     "description" : "Extract And Move Method\tpublic setParameters(parameters Map<String,String>) : void extracted from protected buildEventPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10822,9 +10822,9 @@
     "description" : "Extract And Move Method\tpublic setParameters(parameters Map<String,String>) : void extracted from protected buildRevenuePackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -10832,9 +10832,9 @@
     "description" : "Extract And Move Method\tpublic setKind(kind String) : void extracted from protected buildSessionPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10842,9 +10842,9 @@
     "description" : "Extract And Move Method\tpublic setKind(kind String) : void extracted from protected buildEventPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10852,9 +10852,9 @@
     "description" : "Extract And Move Method\tpublic setKind(kind String) : void extracted from protected buildRevenuePackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10862,9 +10862,9 @@
     "description" : "Extract And Move Method\tpublic setSuffix(suffix String) : void extracted from protected buildSessionPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   } ]
@@ -11696,11 +11696,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate getAuthority(schema String, element String, qualifier String) : AuthorityRest from class org.dspace.app.rest.converter.InputFormConverter to public getAuthority(schema String, element String, qualifier String) : AuthorityRest from class org.dspace.app.rest.utils.AuthorityUtils",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "non-mapped leaves which have been added to the moved method are not justifiable"
     }
   }, {
     "type" : "Change Method Access Modifier",
@@ -11716,20 +11716,20 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getSelectableMetadata() : List<SelectableMetadata> from class org.dspace.app.rest.model.InputFormInputTypeRest to public getSelectableMetadata() : List<SelectableMetadata> from class org.dspace.app.rest.model.InputFormFieldRest",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic setSelectableMetadata(selectableMetadata List<SelectableMetadata>) : void from class org.dspace.app.rest.model.InputFormInputTypeRest to public setSelectableMetadata(selectableMetadata List<SelectableMetadata>) : void from class org.dspace.app.rest.model.InputFormFieldRest",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   } ]
@@ -12761,10 +12761,10 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic getSQLDir() : String from class com.zendesk.maxwell.AbstractMaxwellTest to public getSQLDir() : String from class com.zendesk.maxwell.MaxwellTestSupport",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12781,10 +12781,10 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected buildContext(port int, p BinlogPosition) : MaxwellContext from class com.zendesk.maxwell.AbstractMaxwellTest to public buildContext(port int, p BinlogPosition) : MaxwellContext from class com.zendesk.maxwell.MaxwellTestSupport",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12811,11 +12811,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected getRowsForSQL(mysql MysqlIsolatedServer, filter MaxwellFilter, queries String[], before String[]) : List<RowMap> from class com.zendesk.maxwell.AbstractMaxwellTest to public getRowsForSQL(mysql MysqlIsolatedServer, filter MaxwellFilter, queries String[], before String[]) : List<RowMap> from class com.zendesk.maxwell.MaxwellTestSupport",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 1,
+      "validationComment" : "There is no connection between server and mysql"
     }
   }, {
     "type" : "Add Parameter Modifier",
@@ -12871,11 +12871,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprotected parseJSON(json String) : Map<String,Object> from class com.zendesk.maxwell.AbstractIntegrationTest to public parseJSON(json String) : Map<String,Object> from class com.zendesk.maxwell.MaxwellTestJSON",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "re-defining the mapper does not change the behavior of the moved method"
     }
   }, {
     "type" : "Add Parameter",
@@ -12901,11 +12901,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tprivate runJSONTest(sql List<String>, expectedJSON List<Map<String,Object>>) : void from class com.zendesk.maxwell.AbstractIntegrationTest to private runJSONTest(server MysqlIsolatedServer, sql List<String>, expectedJSON List<Map<String,Object>>) : void from class com.zendesk.maxwell.MaxwellTestJSON",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "non-mapped leaves which have been added to the moved method are not justifiable - assertJSON invocation"
     }
   }, {
     "type" : "Extract Method",
@@ -12931,10 +12931,10 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic abstract apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.SchemaChange to public abstract apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedSchemaChange",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValue" : "1",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -12961,21 +12961,21 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.TableDrop to public apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedTableCreate",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "Replacements are not justifiable"
     }
   }, {
     "type" : "Move Method",
     "description" : "Move Method\tpublic apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.TableCreate to public apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedTableCreate",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "Replacements are not justifiable"
     }
   }, {
     "type" : "Change Thrown Exception Type",
@@ -12991,11 +12991,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.DatabaseAlter to public apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedDatabaseAlter",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "null-check logic has been removed from the moved method"
     }
   }, {
     "type" : "Inline Variable",
@@ -13021,11 +13021,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.DatabaseCreate to public apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedDatabaseCreate",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 5,
+      "validationComment" : "non-mapped leaves and nodes which have been added to the moved method are not justifiable"
     }
   }, {
     "type" : "Change Thrown Exception Type",
@@ -13041,11 +13041,11 @@
     "type" : "Move Method",
     "description" : "Move Method\tpublic apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.DatabaseDrop to public apply(originalSchema Schema) : Schema from class com.zendesk.maxwell.schema.ddl.ResolvedDatabaseDrop",
     "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
+      "purityValue" : "0",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe Changes",
+      "mappingState" : 5,
+      "validationComment" : "non-mapped leaves and nodes which have been added to the moved method are not justifiable"
     }
   }, {
     "type" : "Add Parameter",
@@ -13310,6 +13310,1086 @@
   "refactorings" : [ {
     "type" : "Extract Method",
     "description" : "Extract Method\tprivate autoHideEmulatedKeys() : void extracted from private showEmulatedKeys() : void in class org.connectbot.ConsoleActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/forrestguice/SuntimesWidget.git",
+  "sha1" : "0a7f53da1736523b14eb25b4301a7a9924eb3244",
+  "url" : "https://github.com/forrestguice/SuntimesWidget/commit/0a7f53da1736523b14eb25b4301a7a9924eb3244",
+  "refactorings" : [ {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tprivate showSnackWarnings() : void renamed to private showWarnings() : void in class com.forrestguice.suntimeswidget.SuntimesActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\ttimezoneWarning : Snackbar to timezoneWarning : SuntimesWarning in class com.forrestguice.suntimeswidget.SuntimesActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tdateWarning : Snackbar to dateWarning : SuntimesWarning in class com.forrestguice.suntimeswidget.SuntimesActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tdateWarning : ImageSpan to dateWarningIcon : ImageSpan in method protected updateViews(context Context) : void from class com.forrestguice.suntimeswidget.SuntimesActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\ttimezoneWarning : ImageSpan to timezoneWarningIcon : ImageSpan in method protected updateViews(context Context) : void from class com.forrestguice.suntimeswidget.SuntimesActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createSnackDateWarning() : Snackbar inlined to private showWarnings() : void in class com.forrestguice.suntimeswidget.SuntimesActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createSnackTimezoneWarning() : Snackbar inlined to private showWarnings() : void in class com.forrestguice.suntimeswidget.SuntimesActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/DSpace/DSpace.git",
+  "sha1" : "a9bf1d869d40f0ecc6e8b2dc18f0865e563542ad",
+  "url" : "https://github.com/DSpace/DSpace/commit/a9bf1d869d40f0ecc6e8b2dc18f0865e563542ad",
+  "refactorings" : [ {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tvalue : T to value : Object in method public checkOperationValue(value Object) : void from class org.dspace.app.rest.repository.patch.factories.impl.PatchOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : Item to item : ItemRest in method public perform(item ItemRest, operation Operation) : ItemRest from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to ItemRest in method public perform(item ItemRest, operation Operation) : ItemRest from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcontext : Context in method public perform(context Context, item Item, operation Operation) : void from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tSQLException in method public perform(context Context, item Item, operation Operation) : void from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tAuthorizeException in method public perform(context Context, item Item, operation Operation) : void from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : Item to item : ItemRest in method private replace(item ItemRest, operation Operation) : ItemRest from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to ItemRest in method private replace(item ItemRest, operation Operation) : ItemRest from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\toperation : Operation in method private replace(item ItemRest, operation Operation) : ItemRest from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcontext : Context in method private replace(context Context, item Item, value Object) : void from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tvalue : Object in method private replace(context Context, item Item, value Object) : void from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tSQLException in method private replace(context Context, item Item, value Object) : void from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tAuthorizeException in method private replace(context Context, item Item, value Object) : void from class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tprotected remove(dspaceObject DSO, context Context, operation Operation) : void renamed to protected replace(restModel R, operation Operation) : R in class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to RestModel in method public patch(restModel R, operations List<Operation>) : RestModel from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\trestModel : R in method public patch(restModel R, operations List<Operation>) : RestModel from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tdspaceObject : DSO in method public patch(dspaceObject DSO, context Context, operations List<Operation>) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcontext : Context in method public patch(dspaceObject DSO, context Context, operations List<Operation>) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tSQLException in method public patch(dspaceObject DSO, context Context, operations List<Operation>) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tAuthorizeException in method public patch(dspaceObject DSO, context Context, operations List<Operation>) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to R in method protected add(restModel R, operation Operation) : R from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\trestModel : R in method protected add(restModel R, operation Operation) : R from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tdspaceObject : DSO in method protected add(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcontext : Context in method protected add(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tSQLException in method protected add(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tAuthorizeException in method protected add(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to R in method protected replace(restModel R, operation Operation) : R from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\trestModel : R in method protected replace(restModel R, operation Operation) : R from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tdspaceObject : DSO in method protected remove(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcontext : Context in method protected remove(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tSQLException in method protected remove(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tAuthorizeException in method protected remove(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to R in method protected copy(restModel R, operation Operation) : R from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\trestModel : R in method protected copy(restModel R, operation Operation) : R from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tdspaceObject : DSO in method protected copy(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcontext : Context in method protected copy(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tSQLException in method protected copy(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tAuthorizeException in method protected copy(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to R in method protected move(restModel R, operation Operation) : R from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\trestModel : R in method protected move(restModel R, operation Operation) : R from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tdspaceObject : DSO in method protected move(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcontext : Context in method protected move(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tSQLException in method protected move(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tAuthorizeException in method protected move(dspaceObject DSO, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.AbstractResourcePatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate replace(context Context, eperson EPerson, operation Operation) : void inlined to public perform(resource EPersonRest, operation Operation) : EPersonRest in class org.dspace.app.rest.repository.patch.factories.impl.EPersonNetidReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tresource : EPerson to resource : EPersonRest in method public perform(resource EPersonRest, operation Operation) : EPersonRest from class org.dspace.app.rest.repository.patch.factories.impl.EPersonNetidReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to EPersonRest in method public perform(resource EPersonRest, operation Operation) : EPersonRest from class org.dspace.app.rest.repository.patch.factories.impl.EPersonNetidReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcontext : Context in method public perform(context Context, resource EPerson, operation Operation) : void from class org.dspace.app.rest.repository.patch.factories.impl.EPersonNetidReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tSQLException in method public perform(context Context, resource EPerson, operation Operation) : void from class org.dspace.app.rest.repository.patch.factories.impl.EPersonNetidReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tAuthorizeException in method public perform(context Context, resource EPerson, operation Operation) : void from class org.dspace.app.rest.repository.patch.factories.impl.EPersonNetidReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tResourcePatchOperation<Item> to ResourcePatchOperation<ItemRest> in method public getReplaceOperationForPath(path String) : ResourcePatchOperation<ItemRest> from class org.dspace.app.rest.repository.patch.factories.ItemOperationFactory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Thrown Exception Type",
+    "description" : "Add Thrown Exception Type\tPatchBadRequestException in method public getReplaceOperationForPath(path String) : ResourcePatchOperation<ItemRest> from class org.dspace.app.rest.repository.patch.factories.ItemOperationFactory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tResourcePatchOperation<EPerson> to ResourcePatchOperation<EPersonRest> in method public getReplaceOperationForPath(path String) : ResourcePatchOperation<EPersonRest> from class org.dspace.app.rest.repository.patch.factories.EPersonOperationFactory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Thrown Exception Type",
+    "description" : "Add Thrown Exception Type\tPatchBadRequestException in method public getReplaceOperationForPath(path String) : ResourcePatchOperation<EPersonRest> from class org.dspace.app.rest.repository.patch.factories.EPersonOperationFactory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tresource : EPerson to resource : EPersonRest in method public perform(resource EPersonRest, operation Operation) : EPersonRest from class org.dspace.app.rest.repository.patch.factories.impl.EPersonCertificateReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : Item to item : ItemRest in method protected replace(item ItemRest, operation Operation) : ItemRest from class org.dspace.app.rest.repository.patch.ItemPatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to ItemRest in method protected replace(item ItemRest, operation Operation) : ItemRest from class org.dspace.app.rest.repository.patch.ItemPatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcontext : Context in method protected replace(item Item, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.ItemPatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tSQLException in method protected replace(item Item, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.ItemPatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tAuthorizeException in method protected replace(item Item, context Context, operation Operation) : void from class org.dspace.app.rest.repository.patch.ItemPatch",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to EPersonRest in method public perform(resource EPersonRest, operation Operation) : EPersonRest from class org.dspace.app.rest.repository.patch.factories.impl.EPersonPasswordReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tresource : EPerson to resource : EPersonRest in method public perform(resource EPersonRest, operation Operation) : EPersonRest from class org.dspace.app.rest.repository.patch.factories.impl.EPersonPasswordReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcontext : Context in method public perform(context Context, resource EPerson, operation Operation) : void from class org.dspace.app.rest.repository.patch.factories.impl.EPersonPasswordReplaceOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic getBooleanOperationValue(value Object) : Boolean extracted from private replace(context Context, item Item, value Object) : void in class org.dspace.app.rest.repository.patch.factories.impl.ItemDiscoverableReplaceOperation & moved to class org.dspace.app.rest.repository.patch.factories.impl.PatchOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tdiscoverable : Boolean to bool : Boolean in method public getBooleanOperationValue(value Object) : Boolean from class org.dspace.app.rest.repository.patch.factories.impl.PatchOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic getBooleanOperationValue(value Object) : Boolean extracted from private replace(context Context, eperson EPerson, operation Operation) : void in class org.dspace.app.rest.repository.patch.factories.impl.EPersonCertificateReplaceOperation & moved to class org.dspace.app.rest.repository.patch.factories.impl.PatchOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\trequireCert : Boolean to bool : Boolean in method public getBooleanOperationValue(value Object) : Boolean from class org.dspace.app.rest.repository.patch.factories.impl.PatchOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic getBooleanOperationValue(value Object) : Boolean extracted from private replace(context Context, eperson EPerson, operation Operation) : void in class org.dspace.app.rest.repository.patch.factories.impl.EPersonLoginReplaceOperation & moved to class org.dspace.app.rest.repository.patch.factories.impl.PatchOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tcanLogin : Boolean to bool : Boolean in method public getBooleanOperationValue(value Object) : Boolean from class org.dspace.app.rest.repository.patch.factories.impl.PatchOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic getBooleanOperationValue(value Object) : Boolean extracted from private replace(context Context, item Item, value Object) : void in class org.dspace.app.rest.repository.patch.factories.impl.ItemWithdrawReplaceOperation & moved to class org.dspace.app.rest.repository.patch.factories.impl.PatchOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\twithdraw : Boolean to bool : Boolean in method public getBooleanOperationValue(value Object) : Boolean from class org.dspace.app.rest.repository.patch.factories.impl.PatchOperation",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/novoda/download-manager.git",
+  "sha1" : "ec495f487d164e1f94116a3ca297d01f1028ef74",
+  "url" : "https://github.com/novoda/download-manager/commit/ec495f487d164e1f94116a3ca297d01f1028ef74",
+  "refactorings" : [ {
+    "type" : "Remove Parameter Modifier",
+    "description" : "Remove Parameter Modifier\tfinal in parameter selection : String in method public query(uri Uri, projection String[], selection String, selectionArgs String[], sort String) : Cursor from class com.novoda.downloadmanager.lib.DownloadProvider",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate getContentResolver() : ContentResolver extracted from private reportProgress(state State) : void in class com.novoda.downloadmanager.lib.DownloadThread",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate getContentResolver() : ContentResolver extracted from private handleEndOfStream(state State) : void in class com.novoda.downloadmanager.lib.DownloadThread",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate getContentResolver() : ContentResolver extracted from private readFromResponse(state State, data byte[], entityStream InputStream) : int in class com.novoda.downloadmanager.lib.DownloadThread",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate getContentResolver() : ContentResolver extracted from private updateDatabaseFromHeaders(state State) : void in class com.novoda.downloadmanager.lib.DownloadThread",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate getContentResolver() : ContentResolver extracted from private notifyThroughDatabase(state State, finalStatus int, errorMsg String, numFailed int) : void in class com.novoda.downloadmanager.lib.DownloadThread",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable\tdownloadStatus : int in method private runInternal() : void from class com.novoda.downloadmanager.lib.DownloadThread",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Variable Modifier",
+    "description" : "Remove Variable Modifier\tfinal in variable pm : PowerManager in method private runInternal() : void from class com.novoda.downloadmanager.lib.DownloadThread",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tvisibility : int in method public BatchInfo(title String, description String, bigPictureUrl String, visibility int) from class com.novoda.downloadmanager.lib.BatchInfo",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate queryForDownloads() : void extracted from private setupQueryingExample() : void in class com.novoda.downloadmanager.demo.parallel.MainActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Annotation",
+    "description" : "Add Parameter Annotation\t@NonNull in parameter v : View in method public onClick(v View) : void from class com.novoda.downloadmanager.demo.parallel.MainActivity.setupDownloadingExample.setOnClickListener.new View.OnClickListener",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tprivate getDownloadsPerBatch(downloads Collection<DownloadInfo>) : Map<Long,List<DownloadInfo>> renamed to private getClustersByNotificationTag(batches List<DownloadBatch>) : Map<String,List<DownloadBatch>> in class com.novoda.downloadmanager.lib.DownloadNotifier",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tprivate addDownloadToCluster(tag String, cluster Map<String,List<DownloadInfo>>, info DownloadInfo) : void renamed to private addBatchToCluster(tag String, cluster Map<String,List<DownloadBatch>>, batch DownloadBatch) : void in class com.novoda.downloadmanager.lib.DownloadNotifier",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate updateWithLocked(batches Map<Long,BatchInfo>, downloads Collection<DownloadInfo>) : void inlined to public updateWith(batches List<DownloadBatch>) : void in class com.novoda.downloadmanager.lib.DownloadNotifier",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate areAnyFailedAndVisible(downloads List<DownloadInfo>) : boolean inlined to private buildNotificationTag(batch DownloadBatch) : String in class com.novoda.downloadmanager.lib.DownloadNotifier",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/forrestguice/SuntimesWidget.git",
+  "sha1" : "1bacdbd25856d36f9ae4624f5d6699b46ac408a5",
+  "url" : "https://github.com/forrestguice/SuntimesWidget/commit/1bacdbd25856d36f9ae4624f5d6699b46ac408a5",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate initGeneral() : void inlined to public onCreate(savedInstanceState Bundle) : void in class com.forrestguice.suntimeswidget.SuntimesSettingsActivity.GeneralPrefsFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate initLegacyPrefs() : void extracted from public onCreate(icicle Bundle) : void in class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_WIDGETLIST)) to [if(action.equals(ACTION_PREFS_GENERAL)), if(action != null)] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_PLACES)) to [if(action.equals(ACTION_PREFS_UI)), if(action.equals(ACTION_PREFS_PLACES))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_PLACES)) to [if(action.equals(ACTION_PREFS_LOCALE)), if(action.equals(ACTION_PREFS_PLACES))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_PLACES)) to [if(action != null), if(action.equals(ACTION_PREFS_PLACES))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_UI)) to [if(action != null), if(action.equals(ACTION_PREFS_UI))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Split Conditional",
+    "description" : "Split Conditional\tif(action != null && action.equals(ACTION_PREFS_LOCALE)) to [if(action != null), if(action.equals(ACTION_PREFS_LOCALE))] in method private initLegacyPrefs() : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic isGPSEnabled() : boolean renamed to public isLocationEnabled() : boolean in class com.forrestguice.suntimeswidget.getfix.GetFixHelper",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic isGPSEnabled(context Context) : boolean renamed to public isGPSProviderEnabled(context Context) : boolean in class com.forrestguice.suntimeswidget.getfix.GetFixHelper",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tuseExternalStorage : boolean in method public ExportPlacesTask(context Context, exportTarget String, useExternalStorage boolean, saveToCache boolean) from class com.forrestguice.suntimeswidget.getfix.ExportPlacesTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Replace Attribute With Variable",
+    "description" : "Replace Attribute With Variable\tusedExternalStorage : boolean to tryExternalStorage : boolean in method protected doInBackground(params Object...) : ExportResult from class com.forrestguice.suntimeswidget.getfix.ExportPlacesTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Rename Method",
+    "description" : "Move And Rename Method\tprivate loadGeneral(context Context) : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity.GeneralPrefsFragment to private loadPref_general(context Context, calculatorPref ListPreference) : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
     "purity" : {
       "purityValue" : "-",
       "purityValidation" : "-",

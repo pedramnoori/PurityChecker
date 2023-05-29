@@ -1972,137 +1972,149 @@ Mapping state for Move Method refactoring purity:
         Set<Replacement> replacementsToRemove = new HashSet<>();
 
         for (Replacement replacement : replacementsToCheck) {
-            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION) || replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
+
+            String before = "";
+            String after = "";
+
+            if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
+
+                before = replacement.getBefore();
+                after = replacement.getAfter();
+
+            } else if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION)) {
                 if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName().equals(
                         ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName()
                 )) {
-                    String before = "";
-                    String after = "";
                     if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().equals(
                             ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments()
                     )) {
                         before = replacement.getBefore();
                         after = replacement.getAfter();
-                    }else if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().size() ==
+                    } else if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().size() ==
                             ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments().size()) {
-                        before = replacement.getBefore().substring(0,  replacement.getBefore().indexOf("("));
-                        after = replacement.getAfter().substring(0,  replacement.getAfter().indexOf("("));
+                        before = replacement.getBefore().substring(0, replacement.getBefore().indexOf("("));
+                        after = replacement.getAfter().substring(0, replacement.getAfter().indexOf("("));
                     }
-                        int foundInAfter = after.indexOf(before);
-                        int foundInBefore = before.indexOf(after);
-                        List<String> classBefore = new ArrayList<>();
-                        List<String> classAfter = new ArrayList<>();
-                        UMLOperation originalOperation = null;
-                        UMLOperation refactoredOperation = null;
+                }
+            } else {
+                return;
+            }
 
-                        if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION)  || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
-                            String classBeforeString = ((MoveOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
-                            String classAfterString = ((MoveOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
-                            classBefore.add(classBeforeString);
-                            classAfter.add(classAfterString);
-                            originalOperation = ((MoveOperationRefactoring) (refactoring)).getOriginalOperation();
-                            refactoredOperation = ((MoveOperationRefactoring) (refactoring)).getMovedOperation();
+            int foundInAfter = after.indexOf(before);
+            int foundInBefore = before.indexOf(after);
+            List<String> classBefore = new ArrayList<>();
+            List<String> classAfter = new ArrayList<>();
+            UMLOperation originalOperation = null;
+            UMLOperation refactoredOperation = null;
 
-                            if (modelDiff.findClassInChildModel(classAfterString).getSuperclass() != null) {
-                                classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString().replaceAll("<[^>]*>", ""));
-                            }
+            if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_OPERATION) || refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_RENAME_OPERATION)) {
+                String classBeforeString = ((MoveOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
+                String classAfterString = ((MoveOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
+                classBefore.add(classBeforeString);
+                classAfter.add(classAfterString);
+                originalOperation = ((MoveOperationRefactoring) (refactoring)).getOriginalOperation();
+                refactoredOperation = ((MoveOperationRefactoring) (refactoring)).getMovedOperation();
 
-                            if (modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces() != null) {
-                                for (UMLType implementedInterface : modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces()) {
-                                    classAfter.add(implementedInterface.toString().replaceAll("<[^>]*>", ""));
-                                }
-                            }
+                if (modelDiff.findClassInChildModel(classAfterString).getSuperclass() != null) {
+                    classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString().replaceAll("<[^>]*>", ""));
+                }
 
-                        }else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_INLINE_OPERATION)) {
-                            String classBeforeString = ((UMLOperation) ((InlineOperationRefactoring) (refactoring)).getTargetOperationBeforeInline()).getNonQualifiedClassName();
-                            String classAfterString = ((InlineOperationRefactoring) (refactoring)).getInlinedOperation().getNonQualifiedClassName();
-                            classBefore.add(classBeforeString);
-                            classAfter.add(classAfterString);
-                            originalOperation = ((UMLOperation) ((InlineOperationRefactoring) (refactoring)).getTargetOperationBeforeInline());
-                            refactoredOperation = ((InlineOperationRefactoring) (refactoring)).getInlinedOperation();
+                if (modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces() != null) {
+                    for (UMLType implementedInterface : modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces()) {
+                        classAfter.add(implementedInterface.toString().replaceAll("<[^>]*>", ""));
+                    }
+                }
 
-                            if (modelDiff.findClassInChildModel(classAfterString).getSuperclass() != null) {
-                                classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString().replaceAll("<[^>]*>", ""));
-                            }
+            } else if (refactoring.getRefactoringType().equals(RefactoringType.MOVE_AND_INLINE_OPERATION)) {
+                String classBeforeString = ((UMLOperation) ((InlineOperationRefactoring) (refactoring)).getTargetOperationBeforeInline()).getNonQualifiedClassName();
+                String classAfterString = ((InlineOperationRefactoring) (refactoring)).getInlinedOperation().getNonQualifiedClassName();
+                classBefore.add(classBeforeString);
+                classAfter.add(classAfterString);
+                originalOperation = ((UMLOperation) ((InlineOperationRefactoring) (refactoring)).getTargetOperationBeforeInline());
+                refactoredOperation = ((InlineOperationRefactoring) (refactoring)).getInlinedOperation();
 
-                            if (modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces() != null) {
-                                for (UMLType implementedInterface : modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces()) {
-                                    classAfter.add(implementedInterface.toString().replaceAll("<[^>]*>", ""));
-                                }
-                            }
+                if (modelDiff.findClassInChildModel(classAfterString).getSuperclass() != null) {
+                    classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString().replaceAll("<[^>]*>", ""));
+                }
 
-                        } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
-                            String classBeforeString = ((PushDownOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
-                            String classAfterString = ((PushDownOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
-                            classBefore.add(classBeforeString);
-                            classAfter.add(classAfterString);
-                            originalOperation = ((PushDownOperationRefactoring) (refactoring)).getOriginalOperation();
-                            refactoredOperation = ((PushDownOperationRefactoring) (refactoring)).getMovedOperation();
+                if (modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces() != null) {
+                    for (UMLType implementedInterface : modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces()) {
+                        classAfter.add(implementedInterface.toString().replaceAll("<[^>]*>", ""));
+                    }
+                }
 
-                        } else if (refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
-                            String classBeforeString = ((PullUpOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
-                            String classAfterString = ((PullUpOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
-                            classBefore.add(classBeforeString);
-                            classAfter.add(classAfterString);
-                            originalOperation = ((PullUpOperationRefactoring) (refactoring)).getOriginalOperation();
-                            refactoredOperation = ((PullUpOperationRefactoring) (refactoring)).getMovedOperation();
+            } else if (refactoring.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
+                String classBeforeString = ((PushDownOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
+                String classAfterString = ((PushDownOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
+                classBefore.add(classBeforeString);
+                classAfter.add(classAfterString);
+                originalOperation = ((PushDownOperationRefactoring) (refactoring)).getOriginalOperation();
+                refactoredOperation = ((PushDownOperationRefactoring) (refactoring)).getMovedOperation();
 
-                        } else if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_AND_MOVE_OPERATION)) {
-                            String classBeforeString = ((UMLOperation) ((ExtractOperationRefactoring) (refactoring)).getSourceOperationBeforeExtraction()).getNonQualifiedClassName();
-                            String classAfterString = ((ExtractOperationRefactoring) (refactoring)).getExtractedOperation().getNonQualifiedClassName();
-                            classBefore.add(classBeforeString);
-                            classAfter.add(classAfterString);
-                            originalOperation = ((UMLOperation) ((ExtractOperationRefactoring) (refactoring)).getSourceOperationBeforeExtraction());
-                            refactoredOperation = ((ExtractOperationRefactoring) (refactoring)).getExtractedOperation();
+            } else if (refactoring.getRefactoringType().equals(RefactoringType.PULL_UP_OPERATION)) {
+                String classBeforeString = ((PullUpOperationRefactoring) (refactoring)).getOriginalOperation().getNonQualifiedClassName();
+                String classAfterString = ((PullUpOperationRefactoring) (refactoring)).getMovedOperation().getNonQualifiedClassName();
+                classBefore.add(classBeforeString);
+                classAfter.add(classAfterString);
+                originalOperation = ((PullUpOperationRefactoring) (refactoring)).getOriginalOperation();
+                refactoredOperation = ((PullUpOperationRefactoring) (refactoring)).getMovedOperation();
 
-                            if (modelDiff.findClassInChildModel(classAfterString).getSuperclass() != null) {
-                                classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString().replaceAll("<[^>]*>", ""));
-                            }
+            } else if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_AND_MOVE_OPERATION)) {
+                String classBeforeString = ((UMLOperation) ((ExtractOperationRefactoring) (refactoring)).getSourceOperationBeforeExtraction()).getNonQualifiedClassName();
+                String classAfterString = ((ExtractOperationRefactoring) (refactoring)).getExtractedOperation().getNonQualifiedClassName();
+                classBefore.add(classBeforeString);
+                classAfter.add(classAfterString);
+                originalOperation = ((UMLOperation) ((ExtractOperationRefactoring) (refactoring)).getSourceOperationBeforeExtraction());
+                refactoredOperation = ((ExtractOperationRefactoring) (refactoring)).getExtractedOperation();
 
-                            if (modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces() != null) {
-                                for (UMLType implementedInterface : modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces()) {
-                                    classAfter.add(implementedInterface.toString().replaceAll("<[^>]*>", ""));
-                                }
-                            }
-                        } else {
-                            return;
-                        }
+                if (modelDiff.findClassInChildModel(classAfterString).getSuperclass() != null) {
+                    classAfter.add(modelDiff.findClassInChildModel(classAfterString).getSuperclass().toString().replaceAll("<[^>]*>", ""));
+                }
 
-                        if (foundInBefore != -1 && foundInBefore != 0) {
-                            String instanceOrVariable = before.substring(0, foundInBefore - 1);
-                            if (classAfter.contains(instanceOrVariable)) {
-                                replacementsToRemove.add(replacement);
-                                break;
-                            }
-                            if (searchInVariableDeclarations(originalOperation, instanceOrVariable, classAfter, modelDiff)) {
-                                replacementsToRemove.add(replacement);
-                                break;
-                            }
-                            //Search in different method related refactorings to see if the class has been changed or not, specially, in an anonymous way.
-                            if (relaxSearch(originalOperation, refactorings, instanceOrVariable, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName(), modelDiff)) {
-                                replacementsToRemove.add(replacement);
-                            }
+                if (modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces() != null) {
+                    for (UMLType implementedInterface : modelDiff.findClassInChildModel(classAfterString).getImplementedInterfaces()) {
+                        classAfter.add(implementedInterface.toString().replaceAll("<[^>]*>", ""));
+                    }
+                }
+            } else {
+                return;
+            }
 
-                        } else if (foundInAfter != -1 && foundInAfter != 0) {
-                            String instanceOrVariable = after.substring(0, foundInAfter - 1);
-                            if (classBefore.contains(instanceOrVariable)) {
-                                replacementsToRemove.add(replacement);
-                                break;
-                            }
-                            if (searchInVariableDeclarations(refactoredOperation, instanceOrVariable, classBefore, modelDiff)) {
-                                replacementsToRemove.add(replacement);
-                                break;
-                            }
-                            //Search in different method related refactorings to see if the class has been changed or not, specially, in an anonymous way.
-                            if (relaxSearch(refactoredOperation, refactorings, instanceOrVariable, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName(), modelDiff)) {
-                                replacementsToRemove.add(replacement);
-                            }
-                        }
-//                    }
+            if (foundInBefore != -1 && foundInBefore != 0) {
+                String instanceOrVariable = before.substring(0, foundInBefore - 1);
+                if (classAfter.contains(instanceOrVariable)) {
+                    replacementsToRemove.add(replacement);
+                    continue;
+                }
+                if (searchInVariableDeclarations(originalOperation, instanceOrVariable, classAfter, modelDiff)) {
+                    replacementsToRemove.add(replacement);
+                    continue;
+                }
+                //Search in different method related refactorings to see if the class has been changed or not, specially, in an anonymous way.
+                if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION)) {
+                    if (relaxSearch(originalOperation, refactorings, instanceOrVariable, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName(), modelDiff)) {
+                        replacementsToRemove.add(replacement);
+                    }
+                }
+
+            } else if (foundInAfter != -1 && foundInAfter != 0) {
+                String instanceOrVariable = after.substring(0, foundInAfter - 1);
+                if (classBefore.contains(instanceOrVariable)) {
+                    replacementsToRemove.add(replacement);
+                    continue;
+                }
+                if (searchInVariableDeclarations(refactoredOperation, instanceOrVariable, classBefore, modelDiff)) {
+                    replacementsToRemove.add(replacement);
+                    continue;
+                }
+                //Search in different method related refactorings to see if the class has been changed or not, specially, in an anonymous way.
+                if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION)) {
+                    if (relaxSearch(refactoredOperation, refactorings, instanceOrVariable, ((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName(), modelDiff)) {
+                        replacementsToRemove.add(replacement);
+                    }
                 }
             }
         }
-
         replacementsToCheck.removeAll(replacementsToRemove);
     }
 
