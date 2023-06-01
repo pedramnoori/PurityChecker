@@ -56,7 +56,7 @@ public class PurityChecker {
 //                result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
                 break;
             case MOVE_OPERATION:
-                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_RENAME_OPERATION:
 //                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -71,7 +71,7 @@ public class PurityChecker {
 //                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case EXTRACT_AND_MOVE_OPERATION:
-//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_INLINE_OPERATION:
 //                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
