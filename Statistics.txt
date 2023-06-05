@@ -813,3 +813,14 @@ Specificity: 95.3125
 FScore: 0.91856676
 
 
+For Extract And Move Method: TIME: 2023-05-29 09:39:45.966
+TP: 36
+TN: 38
+FP: 3
+FN: 14
+Precision: 92.30769
+Recall: 72.0
+Specificity: 92.68293
+FScore: 0.8089888
+
+
