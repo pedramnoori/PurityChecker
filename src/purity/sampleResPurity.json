@@ -491,11 +491,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate calculateCriterion(criterion AnalysisCriterion, series TimeSeries, tradingRecord3DaySmaUnder TradingRecord, tradingRecord3DaySmaOver TradingRecord) : void inlined to public main(args String[]) : void in class ta4jexamples.backtesting.SimpleMovingAverageBacktesting",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Two Rename Variable on top - print related replacements which are justifiable"
     }
   }, {
     "type" : "Rename Variable",
@@ -5666,41 +5666,41 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createError(error OAuthError) : Representation inlined to public authenticate(input Representation) : Representation in class org.restlet.ext.oauth.security.TokenAuthServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the json object values have been impurely changed - non-mapped leave (variable declaration) is justifiable"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createError(error OAuthError) : Representation inlined to public authenticate(input Representation) : Representation in class org.restlet.ext.oauth.security.TokenAuthServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the json object values have been impurely changed - non-mapped leave (variable declaration) is justifiable"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createError(error OAuthError) : Representation inlined to public authenticate(input Representation) : Representation in class org.restlet.ext.oauth.security.TokenAuthServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the json object values have been impurely changed - non-mapped leave (variable declaration) is justifiable"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createError(error OAuthError) : Representation inlined to public authenticate(input Representation) : Representation in class org.restlet.ext.oauth.security.TokenAuthServerResource",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the json object values have been impurely changed - non-mapped leave (variable declaration) is justifiable"
     }
   }, {
     "type" : "Change Thrown Exception Type",
@@ -6271,11 +6271,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic CacheManagerTask(pCtx Context, pBB BoundingBox, pZoomMin int, pZoomMax int) inlined to public CacheManagerTask(pManager CacheManager, pAction CacheManagerAction, pTiles List<MapTile>, pZoomMin int, pZoomMax int) in class org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerTask",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the constructor parameters (class fields) have been changed. Replacements are not purely justifiable"
     }
   }, {
     "type" : "Extract Method",
@@ -8236,11 +8236,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpackage addHtmlFormatter() : void inlined to protected createFormatters() : void in class fitnesse.responders.run.TestResponder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Wrong reported Inline Operation. If it's an Inline Method, it is definitely impure"
     }
   }, {
     "type" : "Extract Method",
@@ -8333,16 +8333,6 @@
       "validationComment" : "Replacing getter with the direct access"
     }
   }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpackage isRemoteDebug() : boolean inlined to protected performExecution() : void in class fitnesse.responders.run.TestResponder",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
     "type" : "Rename Method",
     "description" : "Rename Method\tprotected addTestHistoryFormatter() : void renamed to protected newTestHistoryFormatter() : BaseFormatter in class fitnesse.responders.run.TestResponder",
     "purity" : {
@@ -8371,11 +8361,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate errorOccurred(cause Throwable) : void inlined to public testSystemStopped(testSystem TestSystem, executionLog ExecutionLog, cause Throwable) : void in class fitnesse.testrunner.MultipleTestsRunner",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "try-catch and exception handling logic have been removed from the inlined code portion"
     }
   }, {
     "type" : "Remove Thrown Exception Type",
@@ -13121,11 +13111,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate getJsonGenerator() : JsonGenerator inlined to public toJSON() : String in class com.zendesk.maxwell.RowMap",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "deletion of return statement, which is a pure change in this case and part of the Inline Method refactoring mechanics"
     }
   }, {
     "type" : "Add Parameter",
@@ -13378,21 +13368,21 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createSnackDateWarning() : Snackbar inlined to private showWarnings() : void in class com.forrestguice.suntimeswidget.SuntimesActivity",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Part of the method has not been inlined, but moved to initWarning method. Based on the manual validation, this moving hasn't been done purely. After all, the refactoring is impure"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createSnackTimezoneWarning() : Snackbar inlined to private showWarnings() : void in class com.forrestguice.suntimeswidget.SuntimesActivity",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Part of the method has not been inlined, but moved to initWarning method. Based on the manual validation, this moving hasn't been done purely. After all, the refactoring is impure"
     }
   } ]
 },
@@ -13844,7 +13834,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate replace(context Context, eperson EPerson, operation Operation) : void inlined to public perform(resource EPersonRest, operation Operation) : EPersonRest in class org.dspace.app.rest.repository.patch.factories.impl.EPersonNetidReplaceOperation",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -14250,21 +14240,21 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate updateWithLocked(batches Map<Long,BatchInfo>, downloads Collection<DownloadInfo>) : void inlined to public updateWith(batches List<DownloadBatch>) : void in class com.novoda.downloadmanager.lib.DownloadNotifier",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The deletion of the -batchDownloads- variable is justifiable, as its logic is kind of moved into type change (argument passed)"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate areAnyFailedAndVisible(downloads List<DownloadInfo>) : boolean inlined to private buildNotificationTag(batch DownloadBatch) : String in class com.novoda.downloadmanager.lib.DownloadNotifier",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the condition has been changed - impure condition addition into the boolean field"
     } 
   }]
 },
@@ -14276,11 +14266,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate initGeneral() : void inlined to public onCreate(savedInstanceState Bundle) : void in class com.forrestguice.suntimeswidget.SuntimesSettingsActivity.GeneralPrefsFragment",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "lots of statements of the method have not been inlined. Clearly an impure case"
     }
   }, {
     "type" : "Extract Method",
@@ -14403,4 +14393,3118 @@
       "validationComment" : ""
     }
   } ]
-}]
+},
+{
+  "repository" : "https://github.com/DSpace/DSpace.git",
+  "sha1" : "b19189634d4d6ca908764880be796513e70aa114",
+  "url" : "https://github.com/DSpace/DSpace/commit/b19189634d4d6ca908764880be796513e70aa114",
+  "refactorings" : [ {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable\tmetadataField : MetadataField in method public addMetadata(context Context, dso T, schema String, element String, qualifier String, lang String, values List<String>) : void from class org.dspace.content.DSpaceObjectServiceImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tcriteria : Criteria to query : Query in method public getHandlesByDSpaceObject(context Context, dso DSpaceObject) : List<Handle> from class org.dspace.handle.dao.impl.HandleDAOImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tcriteria : Criteria to query : Query in method public getHandlesByDSpaceObject(context Context, dso DSpaceObject) : List<Handle> from class org.dspace.handle.dao.impl.HandleDAOImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tcriteria : Criteria to query : Query in method public findByHandle(context Context, handle String) : Handle from class org.dspace.handle.dao.impl.HandleDAOImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tcriteria : Criteria to query : Query in method public findByHandle(context Context, handle String) : Handle from class org.dspace.handle.dao.impl.HandleDAOImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprotected resetCache() : void inlined to public runHarvest() : void in class org.dspace.harvest.OAIHarvester",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "lots of statements of the method have not been inlined. Clearly an impure case"
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprotected clearCache() : void extracted from public runHarvest() : void in class org.dspace.harvest.OAIHarvester",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tharvested : int to currentRecord : long in method public runHarvest() : void from class org.dspace.harvest.OAIHarvester",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tharvested : int to currentRecord : long in method public runHarvest() : void from class org.dspace.harvest.OAIHarvester",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tcurrentRecord : long in method protected processRecord(record Element, OREPrefix String, currentRecord long, totalListSize long) : void from class org.dspace.harvest.OAIHarvester",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\ttotalListSize : long in method protected processRecord(record Element, OREPrefix String, currentRecord long, totalListSize long) : void from class org.dspace.harvest.OAIHarvester",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Modify Attribute Annotation",
+    "description" : "Modify Attribute Annotation\t@OrderBy(\"handle_id ASC\") to @OrderBy(\"id ASC\") in attribute private handles : List<Handle> from class org.dspace.content.DSpaceObject",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tpublic commit() : void extracted from public complete() : void in class org.dspace.core.Context",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+},
+{
+  "repository" : "https://github.com/DSpace/DSpace.git",
+  "sha1" : "a3854f54a8f851a0d2212ae047e2f43553fc69d4",
+  "url" : "https://github.com/DSpace/DSpace/commit/a3854f54a8f851a0d2212ae047e2f43553fc69d4",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate assignPermissions(context Context, dso DSpaceObject, policies List<ResourcePolicy>) : void inlined to public ingest(context Context, dso DSpaceObject, ml List<Element>, createMissingMetadataFields boolean) : void in class org.dspace.content.crosswalk.METSRightsCrosswalk",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "if condition and throwing have been omitted"
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/DSpace/DSpace.git",
+  "sha1" : "93d982dfc86734f35f64604faa547b133f23f409",
+  "url" : "https://github.com/DSpace/DSpace/commit/93d982dfc86734f35f64604faa547b133f23f409",
+  "refactorings" : [ {
+    "type" : "Remove Class Annotation",
+    "description" : "Remove Class Annotation\t@JsonIgnoreProperties(ignoreUnknown = true) in class org.dspace.app.rest.model.MetadataSchemaRest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@JsonProperty(access = JsonProperty.Access.READ_ONLY) in method public getType() : String from class org.dspace.app.rest.model.MetadataSchemaRest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate deleteMetadataSchemaIfExists(metadataSchema MetadataSchema) : void inlined to public createSuccess() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate deleteMetadataSchemaIfExists(metadataSchema MetadataSchema) : void inlined to public createUnauthauthorizedTest() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public deleteSuccess() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public deleteUnauthorized() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public deleteNonExisting() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public update() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public updateUnauthorized() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic createUnauthauthorized() : void renamed to public createUnauthorized() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate deleteMetadataFieldIfExists(metadataField MetadataField) : void inlined to public createSuccess() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public deleteSuccess() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public deleteUnauthorized() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public deleteNonExisting() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public update() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public updateUnauthorized() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate deleteMetadataFieldIfExists(metadataField MetadataField) : void inlined to public createUnauthorized() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Class Annotation",
+    "description" : "Remove Class Annotation\t@JsonIgnoreProperties(ignoreUnknown = true) in class org.dspace.app.rest.model.MetadataFieldRest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@JsonProperty(access = JsonProperty.Access.READ_ONLY) in method public getType() : String from class org.dspace.app.rest.model.MetadataFieldRest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/GwtMaterialDesign/gwt-material.git",
+  "sha1" : "a6a61c6ba94ea2eebde02b82dbcab8e3c99dffd5",
+  "url" : "https://github.com/GwtMaterialDesign/gwt-material/commit/a6a61c6ba94ea2eebde02b82dbcab8e3c99dffd5",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic initParallax() : void inlined to protected onLoad() : void in class gwt.material.design.client.ui.MaterialParallax",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tprotected initScrollspy() : void renamed to protected scrollSpy() : void in class gwt.material.design.client.ui.MaterialScrollspy",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter Modifier",
+    "description" : "Remove Parameter Modifier\tfinal in parameter page : int in method protected createLinkPage(page int) : MaterialLink from class gwt.material.design.client.ui.MaterialPager",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\te : Element in method public observe(e Element, attr String) : void from class gwt.material.design.client.base.AttributeObserver",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable\tparent : Widget in method protected initialize() : void from class gwt.material.design.client.ui.MaterialDropDown",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\te : Element in method public observe(e Element) : void from class gwt.material.design.client.base.StyleAttributeObserver",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/GwtMaterialDesign/gwt-material.git",
+  "sha1" : "abd9cc0e8d0075a8469dce975b083caecfa6b8cd",
+  "url" : "https://github.com/GwtMaterialDesign/gwt-material/commit/abd9cc0e8d0075a8469dce975b083caecfa6b8cd",
+  "refactorings" : [ {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic addItem(item String) : void renamed to public add(value T) : void in class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprotected onChangeInternal() : void inlined to public onLoad() : void in class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprotected createInternalChangeHandler(e Element) : void inlined to public onLoad() : void in class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tpublic addItem(item T) : void extracted from public addItem(item String) : void in class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\te : Element in method protected initializeMaterial(e Element) : void from class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\titem : String to value : T in method public add(value T) : void from class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : String to value : T in method public add(value T) : void from class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : String to item : T in method public insertItem(item T, dir Direction, value String, index int) : void from class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : String to item : T in method public addItem(item T, dir Direction) : void from class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : String to item : T in method public addItem(item T, value String) : void from class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : String to item : T in method public addItem(item T, dir Direction, value String) : void from class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : String to item : T in method public insertItem(item T, index int) : void from class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : String to item : T in method public insertItem(item T, dir Direction, index int) : void from class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : String to item : T in method public insertItem(item T, value String, index int) : void from class gwt.material.design.client.ui.MaterialListValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/GwtMaterialDesign/gwt-material.git",
+  "sha1" : "fafbe0bb502232398d983617442bd682dc7225c1",
+  "url" : "https://github.com/GwtMaterialDesign/gwt-material/commit/fafbe0bb502232398d983617442bd682dc7225c1",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprotected initialize(e Element, width int, closeOnClick boolean, edge String) : void inlined to protected initialize(strict boolean) : void in class gwt.material.design.client.ui.MaterialSideNav",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable\telement : JsMaterialElement in method protected initialize(strict boolean) : void from class gwt.material.design.client.ui.MaterialSideNav",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\telement : Element in method protected applyPushType(element Element, activator Element, width int) : void from class gwt.material.design.client.ui.MaterialSideNav",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tactivator : Element in method protected applyPushType(element Element, activator Element, width int) : void from class gwt.material.design.client.ui.MaterialSideNav",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/TeamAmaze/AmazeFileManager.git",
+  "sha1" : "d5de65121c180297791cca836dfa04c2c4acde13",
+  "url" : "https://github.com/TeamAmaze/AmazeFileManager/commit/d5de65121c180297791cca836dfa04c2c4acde13",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getRequestQueue() : RequestQueue inlined to public getImageLoader() : ImageLoader in class com.amaze.filemanager.utils.application.AppConfig",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/TeamAmaze/AmazeFileManager.git",
+  "sha1" : "185b497c12692a2ff17020b7ab65c01f7afe6b59",
+  "url" : "https://github.com/TeamAmaze/AmazeFileManager/commit/185b497c12692a2ff17020b7ab65c01f7afe6b59",
+  "refactorings" : [ {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public RarAdapter(c Context, utilsProvider UtilitiesProviderInterface, enter ArrayList<FileHeader>, zipViewer ZipViewer) from class com.amaze.filemanager.adapters.RarAdapter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public LoadList(c Context, utilsProvider UtilitiesProviderInterface, back boolean, ma Main, openmode int) from class com.amaze.filemanager.services.asynctasks.LoadList",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Reorder Parameter",
+    "description" : "Reorder Parameter\t[back : boolean, c : Context, ma : Main, openmode : int] to [c : Context, utilsProvider : UtilitiesProviderInterface, back : boolean, ma : Main, openmode : int] in method public LoadList(c Context, utilsProvider UtilitiesProviderInterface, back boolean, ma Main, openmode int) from class com.amaze.filemanager.services.asynctasks.LoadList",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public DrawerAdapter(context Context, utilsProvider UtilitiesProviderInterface, values ArrayList<Item>, m MainActivity, Sp SharedPreferences) from class com.amaze.filemanager.adapters.DrawerAdapter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public showBasicDialog(m Activity, fabskin String, theme1 int, texts String[]) : MaterialDialog from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public setTint(box CheckBox, color int) : void from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public scanFile(path String, c Context) : void from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public readableFileSize(size long) : String from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public getdate(f long, form String, year String) : String from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public calculateInSampleSize(options BitmapFactory.Options, reqWidth int, reqHeight int) : int from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public getSpaces(hFile HFile) : long[] from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public copyToClipboard(context Context, text String) : boolean from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public canListFiles(f File) : boolean from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public showSMBHelpDialog(m Context, acc String) : void from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method public parseName(line String) : BaseFile from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tpublic to private in method private getLinkPosition(array String[]) : int from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method private getLinkPosition(array String[]) : int from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tpublic to private in method private getColonPosition(array String[]) : int from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method private getColonPosition(array String[]) : int from class com.amaze.filemanager.utils.Futils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public ZipExtractTask(utilsProvider UtilitiesProviderInterface, zipFile ZipFile, outputDir String, zipViewer Activity, fileName String, zip boolean, zipEntry ZipEntry) from class com.amaze.filemanager.services.asynctasks.ZipExtractTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public ZipExtractTask(utilsProvider UtilitiesProviderInterface, rar Archive, outputDir String, zipViewer Activity, fileName String, zip boolean, fileHeader FileHeader) from class com.amaze.filemanager.services.asynctasks.ZipExtractTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpublic to private in attribute private utils : Futils from class com.amaze.filemanager.fragments.Main",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private mainActivity : MainActivity from class com.amaze.filemanager.utils.MainActivityHelper",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private utils : Futils from class com.amaze.filemanager.utils.MainActivityHelper",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public Recycleradapter(m Main, utilsProvider UtilitiesProviderInterface, items ArrayList<Layoutelements>, context Context) from class com.amaze.filemanager.adapters.Recycleradapter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public AppsAdapter(context Context, utilsProvider UtilitiesProviderInterface, resourceId int, items List<Layoutelements>, app AppsList, c ArrayList<PackageInfo>) from class com.amaze.filemanager.adapters.AppsAdapter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tutils : Futils in method public HiddenAdapter(c Context, context Main, utils Futils, resourceId int, items ArrayList<HFile>, materialDialog MaterialDialog, hide boolean) from class com.amaze.filemanager.adapters.HiddenAdapter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Superclass",
+    "description" : "Extract Superclass\tcom.amaze.filemanager.activities.BasicActivity from classes [com.amaze.filemanager.activities.AboutActivity, com.amaze.filemanager.activities.ChangelogActivity, com.amaze.filemanager.activities.BaseActivity]",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private utils : Futils from class com.amaze.filemanager.adapters.HiddenAdapter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Attribute",
+    "description" : "Move Attribute\tpackage utils : Futils from class com.amaze.filemanager.services.DeleteTask to private utils : Futils from class com.amaze.filemanager.adapters.HiddenAdapter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Pull Up Attribute",
+    "description" : "Pull Up Attribute\tpackage utils : Futils from class com.amaze.filemanager.activities.BaseActivity to private utils : Futils from class com.amaze.filemanager.activities.BasicActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private utils : Futils from class com.amaze.filemanager.activities.BasicActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method private createEditTextColorStateList(color int) : ColorStateList from class com.amaze.filemanager.ui.dialogs.SmbConnectDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tprivate createEditTextColorStateList(color int) : ColorStateList from class com.amaze.filemanager.utils.Futils to private createEditTextColorStateList(color int) : ColorStateList from class com.amaze.filemanager.ui.dialogs.SmbConnectDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tpublic to private in method private setTint(editText EditText, color int) : void from class com.amaze.filemanager.ui.dialogs.SmbConnectDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method private setTint(editText EditText, color int) : void from class com.amaze.filemanager.ui.dialogs.SmbConnectDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic setTint(editText EditText, color int) : void from class com.amaze.filemanager.utils.Futils to private setTint(editText EditText, color int) : void from class com.amaze.filemanager.ui.dialogs.SmbConnectDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic checkFolder(f String, context Context) : int from class com.amaze.filemanager.utils.Futils to public checkFolder(f String, context Context) : int from class com.amaze.filemanager.services.CopyService.DoInBackground.Copy",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tpublic to private in method private rename(f File, name String, root boolean) : boolean from class com.amaze.filemanager.filesystem.FileUtil",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method private rename(f File, name String, root boolean) : boolean from class com.amaze.filemanager.filesystem.FileUtil",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic rename(f File, name String, root boolean) : boolean from class com.amaze.filemanager.utils.Futils to private rename(f File, name String, root boolean) : boolean from class com.amaze.filemanager.filesystem.FileUtil",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic toFileArray(a ArrayList<BaseFile>) : ArrayList<File> from class com.amaze.filemanager.utils.Futils to public toFileArray(a ArrayList<BaseFile>) : ArrayList<File> from class com.amaze.filemanager.services.ZipTask.Doback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to private updateStatus() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.ZipTask & inlined to private publishResults(id int, fileName String, i int, b boolean, done long, total long) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.ui.notifications.FTPNotification & inlined to private createNotification(context Context) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.ui.dialogs.RenameBookmark & inlined to public onCreateDialog(savedInstanceState Bundle) : Dialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.AppsList & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.CopyService & inlined to private publishResults(a String, p1 int, p2 int, id int, total long, done long, b boolean, move boolean) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.GenerateMD5Task & inlined to protected doInBackground(params String...) : String",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.Main & inlined to public rename(f BaseFile) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.ProcessViewer & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.ProcessViewer & inlined to public processResults(b DataPackage) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.ProcessViewer & inlined to public processExtractResults(dataPackage DataPackage) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.ProcessViewer & inlined to package processCompressResults(dataPackage DataPackage) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/apache/metamodel.git",
+  "sha1" : "5a28d73cdddfc8b11ca2478e390c8c94bcf34310",
+  "url" : "https://github.com/apache/metamodel/commit/5a28d73cdddfc8b11ca2478e390c8c94bcf34310",
+  "refactorings" : [ {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter dataContext : HBaseDataContext in method public HBaseUpdateCallback(dataContext HBaseDataContext) from class org.apache.metamodel.hbase.HBaseUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter schema : Schema in method public createTable(schema Schema, name String) : TableCreationBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter name : String in method public createTable(schema Schema, name String) : TableCreationBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter schema : Schema in method public createTable(schema Schema, name String, columnFamilies Set<String>) : HBaseCreateTableBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter name : String in method public createTable(schema Schema, name String, columnFamilies Set<String>) : HBaseCreateTableBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter columnFamilies : Set<String> in method public createTable(schema Schema, name String, columnFamilies Set<String>) : HBaseCreateTableBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter table : Table in method public dropTable(table Table) : TableDropBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter table : Table in method public deleteFrom(table Table) : RowDeletionBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\temptyList : List<Column> to emptyList : List<HBaseColumn> in method public testColumnsEmptyAtBuilder() : void from class org.apache.metamodel.hbase.InsertRowTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\t_indexOfIdColumn : Integer to _indexOfIdColumn : int in class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tcolumns : List<Column> to columns : List<HBaseColumn> in method public HBaseRowInsertionBuilder(updateCallback HBaseUpdateCallback, table HBaseTable, columns List<HBaseColumn>) from class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter dataContext : HBaseDataContext in method public HBaseTable(dataContext HBaseDataContext, tableDef SimpleTableDef, schema MutableSchema, defaultRowKeyColumnType ColumnType) from class org.apache.metamodel.hbase.HBaseTable",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter tableDef : SimpleTableDef in method public HBaseTable(dataContext HBaseDataContext, tableDef SimpleTableDef, schema MutableSchema, defaultRowKeyColumnType ColumnType) from class org.apache.metamodel.hbase.HBaseTable",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter schema : MutableSchema in method public HBaseTable(dataContext HBaseDataContext, tableDef SimpleTableDef, schema MutableSchema, defaultRowKeyColumnType ColumnType) from class org.apache.metamodel.hbase.HBaseTable",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter defaultRowKeyColumnType : ColumnType in method public HBaseTable(dataContext HBaseDataContext, tableDef SimpleTableDef, schema MutableSchema, defaultRowKeyColumnType ColumnType) from class org.apache.metamodel.hbase.HBaseTable",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tindexOfIDColumn : Integer to indexOfIDColumn : int in method private addColumns(tableDef SimpleTableDef, defaultRowKeyColumnType ColumnType) : void from class org.apache.metamodel.hbase.HBaseTable",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter tableDef : SimpleTableDef in method private addColumns(tableDef SimpleTableDef, defaultRowKeyColumnType ColumnType) : void from class org.apache.metamodel.hbase.HBaseTable",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter defaultRowKeyColumnType : ColumnType in method private addColumns(tableDef SimpleTableDef, defaultRowKeyColumnType ColumnType) : void from class org.apache.metamodel.hbase.HBaseTable",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\ttable : HBaseTable in method public checkForNotMatchingColumnFamilies(table HBaseTable, columnNamesOfCheckedTable Set<String>) : void from class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic checkForNotMatchingColumnFamilies(columnNamesOfCheckedTable Set<String>) : void from class org.apache.metamodel.hbase.HBaseTable to public checkForNotMatchingColumnFamilies(table HBaseTable, columnNamesOfCheckedTable Set<String>) : void from class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic convertToHBaseColumnsList(columns List<Column>) : List<HBaseColumn> moved from class org.apache.metamodel.hbase.HBaseColumn to class org.apache.metamodel.hbase.HBaseRowInsertionBuilder & inlined to public HBaseRowInsertionBuilder(updateCallback HBaseUpdateCallback, table HBaseTable, columns List<HBaseColumn>)",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic convertToHBaseColumnsList(columns List<Column>) : List<HBaseColumn> moved from class org.apache.metamodel.hbase.HBaseColumn to class org.apache.metamodel.hbase.HBaseRowInsertionBuilder & inlined to public HBaseRowInsertionBuilder(updateCallback HBaseUpdateCallback, table HBaseTable, columns List<HBaseColumn>)",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic convertToHBaseColumnsArray(columns List<HBaseColumn>) : HBaseColumn[] moved from class org.apache.metamodel.hbase.HBaseColumn to class org.apache.metamodel.hbase.HBaseRowInsertionBuilder & inlined to public getColumns() : HBaseColumn[]",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic convertToHBaseColumnsArray(columns Column[]) : HBaseColumn[] moved from class org.apache.metamodel.hbase.HBaseColumn to class org.apache.metamodel.hbase.HBaseRowInsertionBuilder & inlined to public getColumns() : HBaseColumn[]",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+} ,{
+  "repository" : "https://github.com/commercetools/commercetools-sunrise-java.git",
+  "sha1" : "0e09b34ecf217c71b073001fd733ed3e3c785f0d",
+  "url" : "https://github.com/commercetools/commercetools-sunrise-java/commit/0e09b34ecf217c71b073001fd733ed3e3c785f0d",
+  "refactorings" : [ {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable\tmessages : Messages in method public get(locale Locale, pageKey String) : F.Promise<CmsPage> from class common.cms.PlayCmsService",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tkey : String to pageKey : String in method public get(locale Locale, pageKey String) : F.Promise<CmsPage> from class common.cms.PlayCmsService",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tkey : String to messageKey : String in method public get(messageKey String, args Object...) : Optional<String> from class common.cms.CmsPage",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tkey : String to messageKey : String in method public getOrEmpty(messageKey String, args Object...) : String from class common.cms.CmsPage",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate cms(locale Locale, pageKey String) : CmsPage extracted from private cms(locale Locale) : CmsPage in class common.cms.PlayCmsPageTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Localize Parameter",
+    "description" : "Localize Parameter\tkey : String to key : String in method public get(messageKey String, args Object...) : Optional<String> from class common.cms.PlayCmsPage",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tmessageKey : String in method public get(messageKey String, args Object...) : Optional<String> from class common.cms.PlayCmsPage",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tpageKey : String in method package PlayCmsPage(messages Messages, pageKey String) from class common.cms.PlayCmsPage",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tprivate to package in method package PlayCmsPage(messages Messages, pageKey String) from class common.cms.PlayCmsPage",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tkey : String to pageKey : String in method public get(locale Locale, pageKey String) : F.Promise<CmsPage> from class common.cms.CmsService",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic of(messages Messages) : PlayCmsPage moved from class common.cms.PlayCmsPage to class common.cms.PlayCmsService & inlined to public get(locale Locale, pageKey String) : F.Promise<CmsPage>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/datacleaner/DataCleaner.git",
+  "sha1" : "bd9a7568aef1953e52b4bec4eb8a9de37f421624",
+  "url" : "https://github.com/datacleaner/DataCleaner/commit/bd9a7568aef1953e52b4bec4eb8a9de37f421624",
+  "refactorings" : [ {
+    "type" : "Replace Attribute With Variable",
+    "description" : "Replace Attribute With Variable\toriginalPassword : String to originalPassword : String in method public testUpdate() : void from class org.datacleaner.configuration.DataCleanerConfigurationUpdaterTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Replace Attribute With Variable",
+    "description" : "Replace Attribute With Variable\tnewPassword : String to newPassword : String in method public testUpdate() : void from class org.datacleaner.configuration.DataCleanerConfigurationUpdaterTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic update(nodePathElements String[], newValue String) : void inlined to public update(xPath String, newValue String) : void in class org.datacleaner.configuration.DataCleanerConfigurationUpdater",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tnode : Node to elementToUpdate : NodeList in method public update(xPath String, newValue String) : void from class org.datacleaner.configuration.DataCleanerConfigurationUpdater",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tnode : Node to elementToUpdate : NodeList in method public update(xPath String, newValue String) : void from class org.datacleaner.configuration.DataCleanerConfigurationUpdater",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tnodePath : String to xPath : String in method public update(xPath String, newValue String) : void from class org.datacleaner.configuration.DataCleanerConfigurationUpdater",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tprivate to package in method package getDataCleanerConfigurationFileResource() : Resource from class org.datacleaner.util.RemoteServersConfigRW",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tfinal in attribute private username : String from class org.datacleaner.configuration.RemoteServerDataImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tfinal in attribute private password : String from class org.datacleaner.configuration.RemoteServerDataImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tisDataCloudInConfig : boolean to datacloudConfig : RemoteServerData in method public mayIShowIt() : boolean from class org.datacleaner.windows.DataCloudLogInWindow",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Variable Modifier",
+    "description" : "Add Variable Modifier\tfinal in variable datacloudConfig : RemoteServerData in method public mayIShowIt() : boolean from class org.datacleaner.windows.DataCloudLogInWindow",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tisDataCloudInConfig : boolean to datacloudConfig : RemoteServerData in method public mayIShowIt() : boolean from class org.datacleaner.windows.DataCloudLogInWindow",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tboolean to RemoteServerData in method public getServerConfig(serverName String) : RemoteServerData from class org.datacleaner.util.RemoteServersUtils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Rename Method",
+    "description" : "Move And Rename Method\tpublic isServerInConfig(serverName String) : boolean from class org.datacleaner.util.RemoteServersConfigRW to public getServerConfig(serverName String) : RemoteServerData from class org.datacleaner.util.RemoteServersUtils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic createRemoteServer(serverName String, serverUrl String, userName String, password String) : void from class org.datacleaner.util.RemoteServersConfigRW to public createRemoteServer(serverName String, serverUrl String, userName String, password String) : void from class org.datacleaner.util.RemoteServersUtils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+},{
+  "repository" : "https://github.com/mixpanel/mixpanel-android.git",
+  "sha1" : "ea7583935e9bfaeaa9edcf1ca27ce64b5c8e3eae",
+  "url" : "https://github.com/mixpanel/mixpanel-android/commit/ea7583935e9bfaeaa9edcf1ca27ce64b5c8e3eae",
+  "refactorings" : [ {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic removePushRegistrationId() : void renamed to public clearPushRegistrationId() : void in class com.mixpanel.android.mpmetrics.MPMetrics.PeopleImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic registerForPush(senderID String) : void renamed to public initPushHandling(senderID String) : void in class com.mixpanel.android.mpmetrics.MPMetrics.PeopleImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic flushAll() : void renamed to public flush() : void in class com.mixpanel.android.mpmetrics.MPMetrics",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpublic to private in attribute private mInstanceMap : HashMap<String,MPMetrics> from class com.mixpanel.android.mpmetrics.MPMetrics",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic flushEvents() : void inlined to public flush() : void in class com.mixpanel.android.mpmetrics.MPMetrics",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic flush() : void moved from class com.mixpanel.android.mpmetrics.MPMetrics.PeopleImpl to class com.mixpanel.android.mpmetrics.MPMetrics & inlined to public flush() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic registerForPush(senderID String) : void renamed to public initPushHandling(senderID String) : void in class com.mixpanel.android.mpmetrics.MPMetrics.People",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic removePushRegistrationId() : void renamed to public clearPushRegistrationId() : void in class com.mixpanel.android.mpmetrics.MPMetrics.People",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/novoda/download-manager.git",
+  "sha1" : "98f49b34e0527c1e8995048d7fa3031f1bfb9ec0",
+  "url" : "https://github.com/novoda/download-manager/commit/98f49b34e0527c1e8995048d7fa3031f1bfb9ec0",
+  "refactorings" : [ {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tprivate notifyBatchesStatusChanged() : void renamed to private notifyBatchesChanged() : void in class com.novoda.downloadmanager.lib.DownloadProvider",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate notifyStatusIfBatchesStatusChanged(values ContentValues) : void inlined to public update(uri Uri, values ContentValues, where String, whereArgs String[]) : int in class com.novoda.downloadmanager.lib.DownloadProvider",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/novoda/download-manager.git",
+  "sha1" : "cfe0376f991a60f7c555ec204d9680405ad4c2ea",
+  "url" : "https://github.com/novoda/download-manager/commit/cfe0376f991a60f7c555ec204d9680405ad4c2ea",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate create(absoluteFilePath FilePath) : FilePersistenceResult inlined to public create(absoluteFilePath FilePath, fileSize FileSize) : FilePersistenceResult in class com.novoda.downloadmanager.PathBasedFilePersistence",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\texternalFileDir : File to file : File in method public create(absoluteFilePath FilePath, fileSize FileSize) : FilePersistenceResult from class com.novoda.downloadmanager.PathBasedFilePersistence",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/pentaho/big-data-plugin.git",
+  "sha1" : "09efe7925f67bbbbd6fe9bf840aa0019d381394a",
+  "url" : "https://github.com/pentaho/big-data-plugin/commit/09efe7925f67bbbbd6fe9bf840aa0019d381394a",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpackage initSplits() : void inlined to public processRow(smi StepMetaInterface, sdi StepDataInterface) : boolean in class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInput",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpackage openReader(data AvroInputData) : void inlined to public processRow(smi StepMetaInterface, sdi StepDataInterface) : boolean in class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInput",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Class Annotation",
+    "description" : "Add Class Annotation\t@Step(id = \"AvroInputNew\", image = \"AI.svg\", name = \"AvroInput.Name\", description = \"AvroInput.Description\", categoryDescription = \"i18n:org.pentaho.di.trans.step:BaseStep.Category.BigData\", documentationUrl = \"http://wiki.pentaho.com/display/EAI/Avro+input\", i18nPackageName = \"org.pentaho.di.trans.steps.avro\") in class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputMeta",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Encapsulate Attribute",
+    "description" : "Encapsulate Attribute\tprivate namedClusterServiceLocator : NamedClusterServiceLocator from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputMeta",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate readData(stepnode Node, metastore IMetaStore) : void extracted from public loadXML(stepnode Node, databases List<DatabaseMeta>, metaStore IMetaStore) : void in class org.pentaho.big.data.kettle.plugins.formats.avro.input.AvroInputMetaBase",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tfield : FormatInputOutputField to inputField : FormatInputOutputField in method private readData(stepnode Node, metastore IMetaStore) : void from class org.pentaho.big.data.kettle.plugins.formats.avro.input.AvroInputMetaBase",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tretval : StringBuilder to retval : StringBuffer in method public getXML() : String from class org.pentaho.big.data.kettle.plugins.formats.avro.input.AvroInputMetaBase",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tfield : FormatInputOutputField to inputField : FormatInputOutputField in method public readRep(rep Repository, metaStore IMetaStore, id_step ObjectId, databases List<DatabaseMeta>) : void from class org.pentaho.big.data.kettle.plugins.formats.avro.input.AvroInputMetaBase",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprivate addFieldsTab(wTabFolder CTabFolder) : void extracted from protected createAfterFile(shell Composite) : Control in class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tshell : Composite to afterFile : Composite in method protected createAfterFile(afterFile Composite) : Control from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation\t@Override in method protected createAfterFile(shell Composite) : Control from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\ti : int to itemIndex : int in method protected getData(meta AvroInputMeta) : void from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tmeta : AvroInputMetaBase to meta : AvroInputMeta in method protected getData(meta AvroInputMeta) : void from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tmeta : AvroInputMetaBase to meta : AvroInputMeta in method protected getInfo(meta AvroInputMeta, preview boolean) : void from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+},{
+  "repository" : "https://github.com/pentaho/big-data-plugin.git",
+  "sha1" : "c98535420e324e6f5471adec4d31bbec68c9e7ef",
+  "url" : "https://github.com/pentaho/big-data-plugin/commit/c98535420e324e6f5471adec4d31bbec68c9e7ef",
+  "refactorings" : [ {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprotected getProcessedUrl(metastore IMetaStore, url String) : String extracted from protected loadSource(stepnode Node, metastore IMetaStore) : String in class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputMeta",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tprotected getProcessedUrl(metastore IMetaStore, url String) : String extracted from protected loadSourceRep(rep Repository, id_step ObjectId, metastore IMetaStore) : String in class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputMeta",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tmetastore : IMetaStore to metaStore : IMetaStore in method protected loadSourceRep(rep Repository, id_step ObjectId, metaStore IMetaStore) : String from class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputMeta",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic testGetNoVariableURLRoot() : void renamed to public testGetUrlPathHdfsPrefix() : void in class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputDialogTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tnoVariablesHostname : String to expected : String in method public testGetUrlPathHdfsPrefix() : void from class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputDialogTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getRootURL(namedCluster NamedCluster, metaStore IMetaStore, noVariableUrl boolean) : String inlined to public getUrlPath(incomingURL String) : String in class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable\tnoVariablesURL : String in method public getUrlPath(incomingURL String) : String from class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\te : Exception to e : FileSystemException in method public getUrlPath(incomingURL String) : String from class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tcluster : NamedCluster in method public getUrlPath(incomingURL String, cluster NamedCluster, metaStore IMetaStore, noVariableURL boolean) : String from class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tmetaStore : IMetaStore in method public getUrlPath(incomingURL String, cluster NamedCluster, metaStore IMetaStore, noVariableURL boolean) : String from class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tnoVariableURL : boolean in method public getUrlPath(incomingURL String, cluster NamedCluster, metaStore IMetaStore, noVariableURL boolean) : String from class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/samtools/htsjdk.git",
+  "sha1" : "b5d0959c6bfe9b7a83805c07fd4e034bcab61eb9",
+  "url" : "https://github.com/samtools/htsjdk/commit/b5d0959c6bfe9b7a83805c07fd4e034bcab61eb9",
+  "refactorings" : [ {
+    "type" : "Add Attribute Modifier",
+    "description" : "Add Attribute Modifier\tfinal in attribute private md5 : String from class htsjdk.samtools.cram.ref.GaveUpException",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic setMd5(md5 String) : void inlined to package GaveUpException(md5 String) in class htsjdk.samtools.cram.ref.GaveUpException",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tpublic to package in method package GaveUpException(md5 String) from class htsjdk.samtools.cram.ref.GaveUpException",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/samtools/htsjdk.git",
+  "sha1" : "d6e7523463e672af40b3047c48fc84e7fb0c00cb",
+  "url" : "https://github.com/samtools/htsjdk/commit/d6e7523463e672af40b3047c48fc84e7fb0c00cb",
+  "refactorings" : [ {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getReferences(container Container, validationStringency ValidationStringency) : Map<ReferenceContext,AlignmentSpan> renamed to public getSpans(container Container, validationStringency ValidationStringency) : Map<ReferenceContext,AlignmentSpan> in class htsjdk.samtools.cram.build.ContainerParser",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate getReferences(slice Slice, header CompressionHeader, validationStringency ValidationStringency) : Map<ReferenceContext,AlignmentSpan> inlined to public getSpans(container Container, validationStringency ValidationStringency) : Map<ReferenceContext,AlignmentSpan> in class htsjdk.samtools.cram.build.ContainerParser",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tsliceContext : ReferenceContext in method private getReferences(slice Slice, header CompressionHeader, validationStringency ValidationStringency) : Map<ReferenceContext,AlignmentSpan> from class htsjdk.samtools.cram.build.ContainerParser",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tspanMap : Map<ReferenceContext,AlignmentSpan> to containerSpanMap : Map<ReferenceContext,AlignmentSpan> in method public getSpans(container Container, validationStringency ValidationStringency) : Map<ReferenceContext,AlignmentSpan> from class htsjdk.samtools.cram.build.ContainerParser",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/spotify/docker-client.git",
+  "sha1" : "13056d5b30614dcb6634dca7255130ff0db2d631",
+  "url" : "https://github.com/spotify/docker-client/commit/13056d5b30614dcb6634dca7255130ff0db2d631",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic startContainer(containerId String, hostConfig HostConfig) : void inlined to public startContainer(containerId String) : void in class com.spotify.docker.client.DefaultDockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/spring-io/sagan.git",
+  "sha1" : "01f45bc4f525a2f66fe143e6691ecfeb133c27e4",
+  "url" : "https://github.com/spring-io/sagan/commit/01f45bc4f525a2f66fe143e6691ecfeb133c27e4",
+  "refactorings" : [ {
+    "type" : "Add Class Annotation",
+    "description" : "Add Class Annotation\t@Component in class sagan.blog.support.PostViewFactory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Class Annotation",
+    "description" : "Remove Class Annotation\t@Service in class sagan.blog.support.PostViewFactory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic createPostViewList(posts List<Post>) : List<PostView> inlined to public createPostViewPage(posts Page<Post>) : Page<PostView> in class sagan.blog.support.PostViewFactory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/unclebob/fitnesse.git",
+  "sha1" : "ba4ab81f48a2f14eb75216e902e2ee4d2cce41a1",
+  "url" : "https://github.com/unclebob/fitnesse/commit/ba4ab81f48a2f14eb75216e902e2ee4d2cce41a1",
+  "refactorings" : [ {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tprotected makeReturnedValueExpectation(instructionTag String, col int, row int) : ReturnedValueExpectation moved from class fitnesse.slimTables.SlimTable to class fitnesse.slimTables.ReturnedValueExpectationTest & inlined to private assertExpectationMessage(expected String, value String, message String) : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/unclebob/fitnesse.git",
+  "sha1" : "eb96034c43c82d994441a794b16fb50c90821291",
+  "url" : "https://github.com/unclebob/fitnesse/commit/eb96034c43c82d994441a794b16fb50c90821291",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate errorOccurred(cause Throwable) : void inlined to public testSystemStopped(testSystem TestSystem, executionLog ExecutionLog, cause Throwable) : void in class fitnesse.testrunner.MultipleTestsRunner",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tIOException in method public stop() : void from class fitnesse.testrunner.MultipleTestsRunner",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Attribute Annotation",
+    "description" : "Add Attribute Annotation\t@Deprecated in attribute public finalErrorCount : int from class fitnesse.reporting.BaseFormatter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation\t@Override in method public errorOccurred(cause Throwable) : void from class fitnesse.reporting.BaseFormatter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}
+
+]

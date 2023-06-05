@@ -23,9 +23,9 @@ public class TestingOracle {
 
     public static void main(String[] args) throws IOException {
 
-        String outputPath = runPurityOnTestOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurity.json");
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.MOVE_OPERATION);
-//        buildOracle();
+//        String outputPath = runPurityOnTestOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurity.json");
+//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.MOVE_OPERATION);
+        buildOracle();
     }
 
     private static void calculatePrecisionAndRecallOnSpecificRefactoring(String sourcePath, RefactoringType refactoringType) {
@@ -181,7 +181,7 @@ public class TestingOracle {
                         @Override
                         public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         List<Refactoring> refactorings = umlModelDiff.getRefactorings();
-                        if (containsMethodRelatedRefactoring(refactorings)) {
+                        if (containsInlineMethodRefactoring(refactorings)) {
                             ObjectNode refactoring = objectMapper.createObjectNode();
                             refactoring.put("repository", commitUrl);
                             refactoring.put("sha1", commitSh1);
@@ -220,6 +220,14 @@ public class TestingOracle {
 
         return !res.isEmpty();
         }
+
+    public static boolean containsInlineMethodRefactoring(List<Refactoring> refactorings) {
+
+        List<Refactoring> res = refactorings.stream().filter(refactoring ->
+                refactoring instanceof InlineOperationRefactoring).collect(Collectors.toList());
+
+        return !res.isEmpty();
+    }
 
     private static float specificityCalculator(int tpCounter, int tnCounter, int fpCounter, int fnCounter) {
 
