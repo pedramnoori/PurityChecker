@@ -19,8 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/DSpace/DSpace/commit/a3854f54a8f851a0d2212ae047e2f43553fc69d4");
-        isPureAPI("https://github.com/spring-projects/spring-data-neo4j/commit/f85cb537d2abe6bc73ae5b037a3e517a9aa8bcf1");
+        isPureAPI("https://github.com/TeamAmaze/AmazeFileManager/commit/185b497c12692a2ff17020b7ab65c01f7afe6b59");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

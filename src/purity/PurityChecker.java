@@ -4038,7 +4038,7 @@ Mapping state for Move Method refactoring purity:
                     }
                 }
 
-                if (counter == (numberOfParametersBefore - numberOfParametersAfter)) {
+                if (counter == (numberOfParametersBefore - numberOfParametersAfter) && counter != 0) {
                     replacementsToRemove.add(replacement);
                 }
             }

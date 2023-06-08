@@ -14542,7 +14542,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "if condition and throwing have been omitted"
+      "validationComment" : "if condition and throwing have been omitted from the inlined method"
     }
   } ]
 }, {
@@ -14573,71 +14573,71 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate deleteMetadataSchemaIfExists(metadataSchema MetadataSchema) : void inlined to public createSuccess() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate deleteMetadataSchemaIfExists(metadataSchema MetadataSchema) : void inlined to public createUnauthauthorizedTest() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public deleteSuccess() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public deleteUnauthorized() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public deleteNonExisting() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public update() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public updateUnauthorized() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Rename Method",
@@ -14653,71 +14653,71 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate deleteMetadataFieldIfExists(metadataField MetadataField) : void inlined to public createSuccess() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public deleteSuccess() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public deleteUnauthorized() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public deleteNonExisting() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public update() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public updateUnauthorized() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate deleteMetadataFieldIfExists(metadataField MetadataField) : void inlined to public createUnauthorized() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Remove Class Annotation",
@@ -14748,7 +14748,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic initParallax() : void inlined to protected onLoad() : void in class gwt.material.design.client.ui.MaterialParallax",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -14823,21 +14823,21 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprotected onChangeInternal() : void inlined to public onLoad() : void in class gwt.material.design.client.ui.MaterialListValueBox",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Inside the -createInternalChangeHandler- method invocation, the inlined method -onChangeInternal- has been called. It seems a pure case - Nested Inline Method refactoring"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tprotected createInternalChangeHandler(e Element) : void inlined to public onLoad() : void in class gwt.material.design.client.ui.MaterialListValueBox",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Considering the previous Inline Method refactoring, this one is also pure"
     }
   }, {
     "type" : "Extract Method",
@@ -14958,11 +14958,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprotected initialize(e Element, width int, closeOnClick boolean, edge String) : void inlined to protected initialize(strict boolean) : void in class gwt.material.design.client.ui.MaterialSideNav",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "null-check logic has been added to the inlined method"
     }
   }, {
     "type" : "Extract Variable",
@@ -15003,11 +15003,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getRequestQueue() : RequestQueue inlined to public getImageLoader() : ImageLoader in class com.amaze.filemanager.utils.application.AppConfig",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Deletion of a return expression, which can be a part of Inline Method refactoring mechanics"
     }
   } ]
 }, {
@@ -15058,7 +15058,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15068,7 +15068,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15078,7 +15078,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15088,7 +15088,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15098,7 +15098,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15108,7 +15108,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15118,7 +15118,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15128,7 +15128,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15138,7 +15138,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15148,7 +15148,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15158,7 +15158,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
