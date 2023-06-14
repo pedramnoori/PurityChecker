@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/TeamAmaze/AmazeFileManager/commit/185b497c12692a2ff17020b7ab65c01f7afe6b59");
+        isPureAPI("https://github.com/wocommunity/wonder/commit/24eb9b8d0eb17c30ad2151af1d44b8c8104bf177");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

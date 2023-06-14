@@ -15010,1647 +15010,7 @@
       "validationComment" : "Deletion of a return expression, which can be a part of Inline Method refactoring mechanics"
     }
   } ]
-}, {
-  "repository" : "https://github.com/TeamAmaze/AmazeFileManager.git",
-  "sha1" : "185b497c12692a2ff17020b7ab65c01f7afe6b59",
-  "url" : "https://github.com/TeamAmaze/AmazeFileManager/commit/185b497c12692a2ff17020b7ab65c01f7afe6b59",
-  "refactorings" : [ {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public RarAdapter(c Context, utilsProvider UtilitiesProviderInterface, enter ArrayList<FileHeader>, zipViewer ZipViewer) from class com.amaze.filemanager.adapters.RarAdapter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public LoadList(c Context, utilsProvider UtilitiesProviderInterface, back boolean, ma Main, openmode int) from class com.amaze.filemanager.services.asynctasks.LoadList",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Reorder Parameter",
-    "description" : "Reorder Parameter\t[back : boolean, c : Context, ma : Main, openmode : int] to [c : Context, utilsProvider : UtilitiesProviderInterface, back : boolean, ma : Main, openmode : int] in method public LoadList(c Context, utilsProvider UtilitiesProviderInterface, back boolean, ma Main, openmode int) from class com.amaze.filemanager.services.asynctasks.LoadList",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public DrawerAdapter(context Context, utilsProvider UtilitiesProviderInterface, values ArrayList<Item>, m MainActivity, Sp SharedPreferences) from class com.amaze.filemanager.adapters.DrawerAdapter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public openWith(f File, c Context) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method\tpublic getString(c Context, a int) : String inlined to public showProps(hFile BaseFile, perm String, c Main, root boolean) : void in class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public showBasicDialog(m Activity, fabskin String, theme1 int, texts String[]) : MaterialDialog from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public setTint(box CheckBox, color int) : void from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public scanFile(path String, c Context) : void from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public readableFileSize(size long) : String from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public getdate(f long, form String, year String) : String from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public calculateInSampleSize(options BitmapFactory.Options, reqWidth int, reqHeight int) : int from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public getSpaces(hFile HFile) : long[] from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public copyToClipboard(context Context, text String) : boolean from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public canListFiles(f File) : boolean from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public showSMBHelpDialog(m Context, acc String) : void from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method public parseName(line String) : BaseFile from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier\tpublic to private in method private getLinkPosition(array String[]) : int from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method private getLinkPosition(array String[]) : int from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier\tpublic to private in method private getColonPosition(array String[]) : int from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method private getColonPosition(array String[]) : int from class com.amaze.filemanager.utils.Futils",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public ZipExtractTask(utilsProvider UtilitiesProviderInterface, zipFile ZipFile, outputDir String, zipViewer Activity, fileName String, zip boolean, zipEntry ZipEntry) from class com.amaze.filemanager.services.asynctasks.ZipExtractTask",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public ZipExtractTask(utilsProvider UtilitiesProviderInterface, rar Archive, outputDir String, zipViewer Activity, fileName String, zip boolean, fileHeader FileHeader) from class com.amaze.filemanager.services.asynctasks.ZipExtractTask",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier\tpublic to private in attribute private utils : Futils from class com.amaze.filemanager.fragments.Main",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private mainActivity : MainActivity from class com.amaze.filemanager.utils.MainActivityHelper",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private utils : Futils from class com.amaze.filemanager.utils.MainActivityHelper",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public Recycleradapter(m Main, utilsProvider UtilitiesProviderInterface, items ArrayList<Layoutelements>, context Context) from class com.amaze.filemanager.adapters.Recycleradapter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tutilsProvider : UtilitiesProviderInterface in method public AppsAdapter(context Context, utilsProvider UtilitiesProviderInterface, resourceId int, items List<Layoutelements>, app AppsList, c ArrayList<PackageInfo>) from class com.amaze.filemanager.adapters.AppsAdapter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tutils : Futils in method public HiddenAdapter(c Context, context Main, utils Futils, resourceId int, items ArrayList<HFile>, materialDialog MaterialDialog, hide boolean) from class com.amaze.filemanager.adapters.HiddenAdapter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Superclass",
-    "description" : "Extract Superclass\tcom.amaze.filemanager.activities.BasicActivity from classes [com.amaze.filemanager.activities.AboutActivity, com.amaze.filemanager.activities.ChangelogActivity, com.amaze.filemanager.activities.BaseActivity]",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private utils : Futils from class com.amaze.filemanager.adapters.HiddenAdapter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Attribute",
-    "description" : "Move Attribute\tpackage utils : Futils from class com.amaze.filemanager.services.DeleteTask to private utils : Futils from class com.amaze.filemanager.adapters.HiddenAdapter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Attribute",
-    "description" : "Pull Up Attribute\tpackage utils : Futils from class com.amaze.filemanager.activities.BaseActivity to private utils : Futils from class com.amaze.filemanager.activities.BasicActivity",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private utils : Futils from class com.amaze.filemanager.activities.BasicActivity",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method private createEditTextColorStateList(color int) : ColorStateList from class com.amaze.filemanager.ui.dialogs.SmbConnectDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method\tprivate createEditTextColorStateList(color int) : ColorStateList from class com.amaze.filemanager.utils.Futils to private createEditTextColorStateList(color int) : ColorStateList from class com.amaze.filemanager.ui.dialogs.SmbConnectDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier\tpublic to private in method private setTint(editText EditText, color int) : void from class com.amaze.filemanager.ui.dialogs.SmbConnectDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method private setTint(editText EditText, color int) : void from class com.amaze.filemanager.ui.dialogs.SmbConnectDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method\tpublic setTint(editText EditText, color int) : void from class com.amaze.filemanager.utils.Futils to private setTint(editText EditText, color int) : void from class com.amaze.filemanager.ui.dialogs.SmbConnectDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method\tpublic checkFolder(f String, context Context) : int from class com.amaze.filemanager.utils.Futils to public checkFolder(f String, context Context) : int from class com.amaze.filemanager.services.CopyService.DoInBackground.Copy",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier\tpublic to private in method private rename(f File, name String, root boolean) : boolean from class com.amaze.filemanager.filesystem.FileUtil",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier\tstatic in method private rename(f File, name String, root boolean) : boolean from class com.amaze.filemanager.filesystem.FileUtil",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method\tpublic rename(f File, name String, root boolean) : boolean from class com.amaze.filemanager.utils.Futils to private rename(f File, name String, root boolean) : boolean from class com.amaze.filemanager.filesystem.FileUtil",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method\tpublic toFileArray(a ArrayList<BaseFile>) : ArrayList<File> from class com.amaze.filemanager.utils.Futils to public toFileArray(a ArrayList<BaseFile>) : ArrayList<File> from class com.amaze.filemanager.services.ZipTask.Doback",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to protected doInBackground(params ArrayList<BaseFile>...) : ArrayList<BaseFile>",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.CopyFileCheck & inlined to public showDialog() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.activities.MainActivity & inlined to public exit() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.FTPServerFragment & inlined to private updateStatus() : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.ZipTask & inlined to private publishResults(id int, fileName String, i int, b boolean, done long, total long) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.ui.notifications.FTPNotification & inlined to private createNotification(context Context) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.ui.dialogs.RenameBookmark & inlined to public onCreateDialog(savedInstanceState Bundle) : Dialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.AppsList & inlined to public onActivityCreated(savedInstanceState Bundle) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.CopyService & inlined to private publishResults(a String, p1 int, p2 int, id int, total long, done long, b boolean, move boolean) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.services.asynctasks.GenerateMD5Task & inlined to protected doInBackground(params String...) : String",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.Main & inlined to public rename(f BaseFile) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.ProcessViewer & inlined to public onCreateView(inflater LayoutInflater, container ViewGroup, savedInstanceState Bundle) : View",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.ProcessViewer & inlined to public processResults(b DataPackage) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.ProcessViewer & inlined to public processExtractResults(dataPackage DataPackage) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic getString(c Context, a int) : String moved from class com.amaze.filemanager.utils.Futils to class com.amaze.filemanager.fragments.ProcessViewer & inlined to package processCompressResults(dataPackage DataPackage) : void",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/apache/metamodel.git",
-  "sha1" : "5a28d73cdddfc8b11ca2478e390c8c94bcf34310",
-  "url" : "https://github.com/apache/metamodel/commit/5a28d73cdddfc8b11ca2478e390c8c94bcf34310",
-  "refactorings" : [ {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter dataContext : HBaseDataContext in method public HBaseUpdateCallback(dataContext HBaseDataContext) from class org.apache.metamodel.hbase.HBaseUpdateCallback",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter schema : Schema in method public createTable(schema Schema, name String) : TableCreationBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter name : String in method public createTable(schema Schema, name String) : TableCreationBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter schema : Schema in method public createTable(schema Schema, name String, columnFamilies Set<String>) : HBaseCreateTableBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter name : String in method public createTable(schema Schema, name String, columnFamilies Set<String>) : HBaseCreateTableBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter columnFamilies : Set<String> in method public createTable(schema Schema, name String, columnFamilies Set<String>) : HBaseCreateTableBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter table : Table in method public dropTable(table Table) : TableDropBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter table : Table in method public deleteFrom(table Table) : RowDeletionBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type\temptyList : List<Column> to emptyList : List<HBaseColumn> in method public testColumnsEmptyAtBuilder() : void from class org.apache.metamodel.hbase.InsertRowTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Type",
-    "description" : "Change Attribute Type\t_indexOfIdColumn : Integer to _indexOfIdColumn : int in class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tcolumns : List<Column> to columns : List<HBaseColumn> in method public HBaseRowInsertionBuilder(updateCallback HBaseUpdateCallback, table HBaseTable, columns List<HBaseColumn>) from class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter dataContext : HBaseDataContext in method public HBaseTable(dataContext HBaseDataContext, tableDef SimpleTableDef, schema MutableSchema, defaultRowKeyColumnType ColumnType) from class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter tableDef : SimpleTableDef in method public HBaseTable(dataContext HBaseDataContext, tableDef SimpleTableDef, schema MutableSchema, defaultRowKeyColumnType ColumnType) from class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter schema : MutableSchema in method public HBaseTable(dataContext HBaseDataContext, tableDef SimpleTableDef, schema MutableSchema, defaultRowKeyColumnType ColumnType) from class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter defaultRowKeyColumnType : ColumnType in method public HBaseTable(dataContext HBaseDataContext, tableDef SimpleTableDef, schema MutableSchema, defaultRowKeyColumnType ColumnType) from class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type\tindexOfIDColumn : Integer to indexOfIDColumn : int in method private addColumns(tableDef SimpleTableDef, defaultRowKeyColumnType ColumnType) : void from class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter tableDef : SimpleTableDef in method private addColumns(tableDef SimpleTableDef, defaultRowKeyColumnType ColumnType) : void from class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier\tfinal in parameter defaultRowKeyColumnType : ColumnType in method private addColumns(tableDef SimpleTableDef, defaultRowKeyColumnType ColumnType) : void from class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\ttable : HBaseTable in method public checkForNotMatchingColumnFamilies(table HBaseTable, columnNamesOfCheckedTable Set<String>) : void from class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method\tpublic checkForNotMatchingColumnFamilies(columnNamesOfCheckedTable Set<String>) : void from class org.apache.metamodel.hbase.HBaseTable to public checkForNotMatchingColumnFamilies(table HBaseTable, columnNamesOfCheckedTable Set<String>) : void from class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic convertToHBaseColumnsList(columns List<Column>) : List<HBaseColumn> moved from class org.apache.metamodel.hbase.HBaseColumn to class org.apache.metamodel.hbase.HBaseRowInsertionBuilder & inlined to public HBaseRowInsertionBuilder(updateCallback HBaseUpdateCallback, table HBaseTable, columns List<HBaseColumn>)",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic convertToHBaseColumnsList(columns List<Column>) : List<HBaseColumn> moved from class org.apache.metamodel.hbase.HBaseColumn to class org.apache.metamodel.hbase.HBaseRowInsertionBuilder & inlined to public HBaseRowInsertionBuilder(updateCallback HBaseUpdateCallback, table HBaseTable, columns List<HBaseColumn>)",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic convertToHBaseColumnsArray(columns List<HBaseColumn>) : HBaseColumn[] moved from class org.apache.metamodel.hbase.HBaseColumn to class org.apache.metamodel.hbase.HBaseRowInsertionBuilder & inlined to public getColumns() : HBaseColumn[]",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Inline Method",
-    "description" : "Move And Inline Method\tpublic convertToHBaseColumnsArray(columns Column[]) : HBaseColumn[] moved from class org.apache.metamodel.hbase.HBaseColumn to class org.apache.metamodel.hbase.HBaseRowInsertionBuilder & inlined to public getColumns() : HBaseColumn[]",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ]
-} ,{
+},{
   "repository" : "https://github.com/commercetools/commercetools-sunrise-java.git",
   "sha1" : "0e09b34ecf217c71b073001fd733ed3e3c785f0d",
   "url" : "https://github.com/commercetools/commercetools-sunrise-java/commit/0e09b34ecf217c71b073001fd733ed3e3c785f0d",
@@ -16793,11 +15153,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic update(nodePathElements String[], newValue String) : void inlined to public update(xPath String, newValue String) : void in class org.datacleaner.configuration.DataCleanerConfigurationUpdater",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "null-check logic has been removed from the inlined method, which is an impure modification"
     }
   }, {
     "type" : "Change Variable Type",
@@ -16968,7 +15328,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic flushEvents() : void inlined to public flush() : void in class com.mixpanel.android.mpmetrics.MPMetrics",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -16978,11 +15338,11 @@
     "type" : "Move And Inline Method",
     "description" : "Move And Inline Method\tpublic flush() : void moved from class com.mixpanel.android.mpmetrics.MPMetrics.PeopleImpl to class com.mixpanel.android.mpmetrics.MPMetrics & inlined to public flush() : void",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "String literal has been changed, which is an impure modification in this case"
     }
   }, {
     "type" : "Rename Method",
@@ -17023,11 +15383,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate notifyStatusIfBatchesStatusChanged(values ContentValues) : void inlined to public update(uri Uri, values ContentValues, where String, whereArgs String[]) : int in class com.novoda.downloadmanager.lib.DownloadProvider",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The if condition expression has been changed, which is an impure modification"
     }
   } ]
 }, {
@@ -17038,7 +15398,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate create(absoluteFilePath FilePath) : FilePersistenceResult inlined to public create(absoluteFilePath FilePath, fileSize FileSize) : FilePersistenceResult in class com.novoda.downloadmanager.PathBasedFilePersistence",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -17063,21 +15423,21 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpackage initSplits() : void inlined to public processRow(smi StepMetaInterface, sdi StepDataInterface) : boolean in class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInput",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "non-mapped leaves and nodes which have been removed from the inlined method are not justifiable"
     }
   }, {
     "type" : "Inline Method",
     "description" : "Inline Method\tpackage openReader(data AvroInputData) : void inlined to public processRow(smi StepMetaInterface, sdi StepDataInterface) : boolean in class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInput",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the argument change and the non-mapped leaves are not justifiable"
     }
   }, {
     "type" : "Add Class Annotation",
@@ -17258,11 +15618,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic getRootURL(namedCluster NamedCluster, metaStore IMetaStore, noVariableUrl boolean) : String inlined to public getUrlPath(incomingURL String) : String in class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputDialog",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "there are lots of non-pure overlapping changes. Unjustifiable replacements and non-mapped leaves"
     }
   }, {
     "type" : "Extract Variable",
@@ -17333,7 +15693,7 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic setMd5(md5 String) : void inlined to package GaveUpException(md5 String) in class htsjdk.samtools.cram.ref.GaveUpException",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -17368,11 +15728,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate getReferences(slice Slice, header CompressionHeader, validationStringency ValidationStringency) : Map<ReferenceContext,AlignmentSpan> inlined to public getSpans(container Container, validationStringency ValidationStringency) : Map<ReferenceContext,AlignmentSpan> in class htsjdk.samtools.cram.build.ContainerParser",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "there are lots of non-pure overlapping changes. Unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Inline Variable",
@@ -17403,11 +15763,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic startContainer(containerId String, hostConfig HostConfig) : void inlined to public startContainer(containerId String) : void in class com.spotify.docker.client.DefaultDockerClient",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacements within the -request- method call is not justifiable"
     }
   } ]
 }, {
@@ -17438,11 +15798,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tpublic createPostViewList(posts List<Post>) : List<PostView> inlined to public createPostViewPage(posts Page<Post>) : Page<PostView> in class sagan.blog.support.PostViewFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "deletion of return statement, which is a pure change in this case and part of the Inline Method refactoring mechanics"
     }
   } ]
 }, {
@@ -17453,11 +15813,11 @@
     "type" : "Move And Inline Method",
     "description" : "Move And Inline Method\tprotected makeReturnedValueExpectation(instructionTag String, col int, row int) : ReturnedValueExpectation moved from class fitnesse.slimTables.SlimTable to class fitnesse.slimTables.ReturnedValueExpectationTest & inlined to private assertExpectationMessage(expected String, value String, message String) : void",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Parameter-argument map"
     }
   } ]
 }, {
@@ -17468,11 +15828,11 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate errorOccurred(cause Throwable) : void inlined to public testSystemStopped(testSystem TestSystem, executionLog ExecutionLog, cause Throwable) : void in class fitnesse.testrunner.MultipleTestsRunner",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
     "type" : "Remove Thrown Exception Type",
@@ -17497,6 +15857,31 @@
   }, {
     "type" : "Remove Method Annotation",
     "description" : "Remove Method Annotation\t@Override in method public errorOccurred(cause Throwable) : void from class fitnesse.reporting.BaseFormatter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/wocommunity/wonder.git",
+  "sha1" : "24eb9b8d0eb17c30ad2151af1d44b8c8104bf177",
+  "url" : "https://github.com/wocommunity/wonder/commit/24eb9b8d0eb17c30ad2151af1d44b8c8104bf177",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate stringFromTraces() : String inlined to protected endTimer(aContext WOContext, aString String) : void in class er.extensions.statistics.ERXStatisticsStore.StopWatchTimer",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "Deletion of a return expression, which can be a part of Inline Method refactoring mechanics - Rename Variable on top - Justification of non-mapped variable declaration"
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tresult : String to trace : String in method protected endTimer(aContext WOContext, aString String) : void from class er.extensions.statistics.ERXStatisticsStore.StopWatchTimer",
     "purity" : {
       "purityValue" : "-",
       "purityValidation" : "-",
