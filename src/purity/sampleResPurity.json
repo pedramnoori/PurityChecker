@@ -15873,15 +15873,2165 @@
     "type" : "Inline Method",
     "description" : "Inline Method\tprivate stringFromTraces() : String inlined to protected endTimer(aContext WOContext, aString String) : void in class er.extensions.statistics.ERXStatisticsStore.StopWatchTimer",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Deletion of a return expression, which can be a part of Inline Method refactoring mechanics - Rename Variable on top - Justification of non-mapped variable declaration"
+      "validationComment" : ""
     }
   }, {
     "type" : "Rename Variable",
     "description" : "Rename Variable\tresult : String to trace : String in method protected endTimer(aContext WOContext, aString String) : void from class er.extensions.statistics.ERXStatisticsStore.StopWatchTimer",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/DSpace/DSpace.git",
+  "sha1" : "8db0faed33f145488aea23efbb30ab5a732a8572",
+  "url" : "https://github.com/DSpace/DSpace/commit/8db0faed33f145488aea23efbb30ab5a732a8572",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic removeAllPolicies(c Context, o DSpaceObject, updateLastModified boolean) : void inlined to public removeAllPolicies(c Context, o DSpaceObject) : void in class org.dspace.authorize.AuthorizeServiceImpl",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "Inline Method on top"
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : int renamed to public getID() : Integer in class org.dspace.harvest.HarvestedItem",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.harvest.HarvestedItem",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.harvest.HarvestedItem",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.content.InProgressSubmission",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.xmlworkflow.storedcomponents.CollectionRole",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Encapsulate Attribute",
+    "description" : "Encapsulate Attribute\tprivate id : Integer from class org.dspace.xmlworkflow.storedcomponents.CollectionRole",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tpublic update(context Context, registrationDataRecords List<RegistrationData>) : void extracted from public update(context Context, registrationData RegistrationData) : void in class org.dspace.eperson.RegistrationDataServiceImpl",
+    "purity" : {
+      "purityValue" : "",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.xmlworkflow.storedcomponents.WorkflowItemRole",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Encapsulate Attribute",
+    "description" : "Encapsulate Attribute\tprivate id : Integer from class org.dspace.xmlworkflow.storedcomponents.WorkflowItemRole",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.xmlworkflow.storedcomponents.PoolTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Encapsulate Attribute",
+    "description" : "Encapsulate Attribute\tprivate id : Integer from class org.dspace.xmlworkflow.storedcomponents.PoolTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getSchemaID() : int renamed to public getID() : Integer in class org.dspace.content.MetadataSchema",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.content.MetadataSchema",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.content.MetadataSchema",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : int renamed to public getID() : Integer in class org.dspace.eperson.Subscription",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.eperson.Subscription",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.eperson.Subscription",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Modify Attribute Annotation",
+    "description" : "Modify Attribute Annotation\t@OneToMany(fetch = FetchType.LAZY, mappedBy = \"dSpaceObject\", cascade = {CascadeType.PERSIST}, orphanRemoval = true) to @OneToMany(fetch = FetchType.LAZY, mappedBy = \"dSpaceObject\", cascade = CascadeType.ALL) in attribute private metadata : List<MetadataValue> from class org.dspace.content.DSpaceObject",
+    "purity" : {
+      "purityValue" : "",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Modify Attribute Annotation",
+    "description" : "Modify Attribute Annotation\t@OneToMany(fetch = FetchType.LAZY, mappedBy = \"dSpaceObject\", cascade = {CascadeType.PERSIST}, orphanRemoval = false) to @OneToMany(fetch = FetchType.LAZY, mappedBy = \"dSpaceObject\", cascade = CascadeType.ALL) in attribute private resourcePolicies : List<ResourcePolicy> from class org.dspace.content.DSpaceObject",
+    "purity" : {
+      "purityValue" : "",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tpublic update(context Context, bitstreamFormats List<BitstreamFormat>) : void extracted from public update(context Context, bitstreamFormat BitstreamFormat) : void in class org.dspace.content.BitstreamFormatServiceImpl",
+    "purity" : {
+      "purityValue" : "",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : long renamed to public getID() : Long in class org.dspace.checker.ChecksumHistory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : long to id : Long in class org.dspace.checker.ChecksumHistory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tlong to Long in method public getID() : Long from class org.dspace.checker.ChecksumHistory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : Integer renamed to public getID() : Integer in class org.dspace.app.util.WebApp",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tpublic update(context Context, claimedTasks List<ClaimedTask>) : void extracted from public update(context Context, claimedTask ClaimedTask) : void in class org.dspace.xmlworkflow.storedcomponents.ClaimedTaskServiceImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tpublic update(context Context, versionHistories List<VersionHistory>) : void extracted from public update(context Context, versionHistory VersionHistory) : void in class org.dspace.versioning.VersionHistoryServiceImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic removeAllPolicies(c Context, o DSpaceObject, updateLastModified boolean) : void inlined to public removeAllPolicies(c Context, o DSpaceObject) : void in class org.dspace.authorize.ResourcePolicyServiceImpl",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "the non-mapped node is justifiable since it's an if(true) in the parent version. Well done by PurityChecker"
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tpublic update(context Context, resourcePolicies List<ResourcePolicy>) : void extracted from public update(context Context, resourcePolicy ResourcePolicy) : void in class org.dspace.authorize.ResourcePolicyServiceImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : int renamed to public getID() : Integer in class org.dspace.xmlworkflow.storedcomponents.ClaimedTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.xmlworkflow.storedcomponents.ClaimedTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.xmlworkflow.storedcomponents.ClaimedTask",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : int renamed to public getID() : Integer in class org.dspace.versioning.Version",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.versioning.Version",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.versioning.Version",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic delete(context Context, dso DSpaceObject) : void inlined to public delete(context Context, metadataValue MetadataValue) : void in class org.dspace.content.MetadataValueServiceImpl",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "As far as I understand, this is not an Inline Method. If we consider this case as an Inline Method case, this would be pure."
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : int renamed to public getID() : Integer in class org.dspace.versioning.VersionHistory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.versioning.VersionHistory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.versioning.VersionHistory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.app.requestitem.RequestItem",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getValueId() : int renamed to public getID() : Integer in class org.dspace.content.MetadataValue",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.content.MetadataValue",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\tvalueId : int to id : Integer in class org.dspace.content.MetadataValue",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tvalueId : int to id : Integer in class org.dspace.content.MetadataValue",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tworkflowitemId : int to workflowitemId : Integer in class org.dspace.workflowbasic.BasicWorkflowItem",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.workflowbasic.BasicWorkflowItem",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : int renamed to public getID() : Integer in class org.dspace.xmlworkflow.storedcomponents.InProgressUser",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.xmlworkflow.storedcomponents.InProgressUser",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.xmlworkflow.storedcomponents.InProgressUser",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : int renamed to public getID() : Integer in class org.dspace.eperson.RegistrationData",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.eperson.RegistrationData",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.eperson.RegistrationData",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tpublic update(context Context, inProgressUsers List<InProgressUser>) : void extracted from public update(context Context, inProgressUser InProgressUser) : void in class org.dspace.xmlworkflow.storedcomponents.InProgressUserServiceImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic findByNameAndEPerson(context Context, groupName String, ePerson EPerson) : Group renamed to public findByNameAndMembership(context Context, groupName String, ePerson EPerson) : Group in class org.dspace.eperson.dao.impl.GroupDAOImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.xmlworkflow.storedcomponents.XmlWorkflowItem",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.xmlworkflow.storedcomponents.XmlWorkflowItem",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : Integer renamed to public getID() : Integer in class org.dspace.identifier.DOI",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Encapsulate Attribute",
+    "description" : "Encapsulate Attribute\tprivate id : Integer from class org.dspace.harvest.HarvestedCollection",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : Integer renamed to public getID() : Integer in class org.dspace.handle.Handle",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tpublic update(context Context, poolTasks List<PoolTask>) : void extracted from public update(context Context, poolTask PoolTask) : void in class org.dspace.xmlworkflow.storedcomponents.PoolTaskServiceImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getFieldID() : int renamed to public getID() : Integer in class org.dspace.content.MetadataField",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.content.MetadataField",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.content.MetadataField",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Method",
+    "description" : "Extract Method\tpublic update(context Context, workflowItemRoles List<WorkflowItemRole>) : void extracted from public update(context Context, workflowItemRole WorkflowItemRole) : void in class org.dspace.xmlworkflow.storedcomponents.WorkflowItemRoleServiceImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tworkspaceItemId : int to workspaceItemId : Integer in class org.dspace.content.WorkspaceItem",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.content.WorkspaceItem",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tid : int to id : Integer in class org.dspace.content.BitstreamFormat",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tint to Integer in method public getID() : Integer from class org.dspace.content.BitstreamFormat",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Interface",
+    "description" : "Extract Interface\torg.dspace.core.ReloadableEntity from classes [org.dspace.content.DSpaceObject, org.dspace.app.requestitem.RequestItem, org.dspace.workflowbasic.BasicWorkflowItem, org.dspace.xmlworkflow.storedcomponents.XmlWorkflowItem, org.dspace.content.WorkspaceItem, org.dspace.authorize.ResourcePolicy, org.dspace.content.BitstreamFormat]",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic findByNameAndEPerson(context Context, groupName String, ePerson EPerson) : Group renamed to public findByNameAndMembership(context Context, groupName String, ePerson EPerson) : Group in class org.dspace.eperson.dao.GroupDAO",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/GwtMaterialDesign/gwt-material.git",
+  "sha1" : "430fa65bf2ba5098fc02e563cfe84533268def2d",
+  "url" : "https://github.com/GwtMaterialDesign/gwt-material/commit/430fa65bf2ba5098fc02e563cfe84533268def2d",
+  "refactorings" : [ {
+    "type" : "Rename Class",
+    "description" : "Rename Class\tgwt.material.design.client.base.ValueBoxBase renamed to gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprotected initialize(e Element) : void inlined to protected initialize() : void in class gwt.material.design.client.ui.MaterialSlider",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\terrorMixin : ErrorMixin<MaterialDatePicker,MaterialLabel> to errorMixin : ErrorMixin<AbstractValueWidget,MaterialLabel> in class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tfinal in attribute private errorMixin : ErrorMixin<MaterialDatePicker,MaterialLabel> from class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tid : JsArrayString in method public getPickerId() : String from class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tinputSrc : Element to input : Element in method public initDatePicker(input Element, typeName String, format String) : Element from class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic MaterialInput(renderer Renderer<String>, parser Parser<String>) inlined to public MaterialInput() in class gwt.material.design.client.ui.MaterialInput",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "A different parent constructor has been used"
+    }
+  }, {
+    "type" : "Add Attribute Annotation",
+    "description" : "Add Attribute Annotation\t@Editor.Ignore in attribute protected valueBoxBase : ValueBoxBase<T> from class gwt.material.design.client.ui.MaterialValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Annotation",
+    "description" : "Remove Attribute Annotation\t@Ignore in attribute protected valueBoxBase : ValueBoxBase<T> from class gwt.material.design.client.ui.MaterialValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\terrorMixin : ErrorMixin<MaterialValueBox<T>,MaterialLabel> to errorMixin : ErrorMixin<AbstractValueWidget,MaterialLabel> in class gwt.material.design.client.ui.MaterialValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@Editor.Ignore in method public asValueBoxBase() : ValueBoxBase<T> from class gwt.material.design.client.ui.MaterialValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation\t@Ignore in method public asValueBoxBase() : ValueBoxBase<T> from class gwt.material.design.client.ui.MaterialValueBox",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getTextColor() : String renamed to public getValue() : String in class gwt.material.design.client.base.AbstractTextWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic setTextColor(textColor String) : void renamed to public setValue(value String, fireEvents boolean) : void in class gwt.material.design.client.base.AbstractTextWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter Modifier",
+    "description" : "Remove Parameter Modifier\tfinal in parameter element : Element in method protected AbstractTextWidget(element Element) from class gwt.material.design.client.base.AbstractTextWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\ttextColor : String to value : String in method public setValue(value String, fireEvents boolean) : void from class gwt.material.design.client.base.AbstractTextWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tfireEvents : boolean in method public setValue(value String, fireEvents boolean) : void from class gwt.material.design.client.base.AbstractTextWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Class Modifier",
+    "description" : "Add Class Modifier\tabstract in class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\terrorHandlerMixin : ErrorHandlerMixin<T> to errorHandlerMixin : ErrorHandlerMixin<V> in class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tvalidatorMixin : BlankValidatorMixin<ValueBoxBase<T>,T> to validatorMixin : ValidatorMixin<AbstractValueWidget<V>,V> in class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tfinal in attribute private validatorMixin : BlankValidatorMixin<ValueBoxBase<T>,T> from class gwt.material.design.client.base.ValueBoxBase",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation\t@Override in method public isAllowBlank() : boolean from class gwt.material.design.client.base.ValueBoxBase",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation\t@Override in method public setAllowBlank(allowBlank boolean) : void from class gwt.material.design.client.base.ValueBoxBase",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tvalidator : Validator<T> to validator : Validator<V> in method public addValidator(validator Validator<V>) : void from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tvalidator : Validator<T> to validator : Validator<V> in method public removeValidator(validator Validator<V>) : boolean from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tvalidators : Validator<T>... to validators : Validator<V>... in method public setValidators(validators Validator<V>...) : void from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\thandler : ValidationChangedHandler to handler : ValidationChangedEvent.ValidationChangedHandler in method public addValidationChangedHandler(handler ValidationChangedEvent.ValidationChangedHandler) : HandlerRegistration from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\telem : Element to element : Element in method public AbstractValueWidget(element Element) from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\trenderer : Renderer<T> in method public ValueBoxBase(elem Element, renderer Renderer<T>, parser Parser<T>) from class gwt.material.design.client.base.ValueBoxBase",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tparser : Parser<T> in method public ValueBoxBase(elem Element, renderer Renderer<T>, parser Parser<T>) from class gwt.material.design.client.base.ValueBoxBase",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tvalue : Date to value : V in method public setValue(value V) : void from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic setValue(value Date) : void from class gwt.material.design.client.ui.MaterialDatePicker to public setValue(value V) : void from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tvalue : T to value : V in method public setValue(value V) : void from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic setValue(value T) : void from class gwt.material.design.client.ui.MaterialValueBox to public setValue(value V) : void from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\thandler : ValueChangeHandler<Date> to handler : ValueChangeHandler<V> in method public addValueChangeHandler(handler ValueChangeHandler<V>) : HandlerRegistration from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter Modifier",
+    "description" : "Remove Parameter Modifier\tfinal in parameter handler : ValueChangeHandler<Date> in method public addValueChangeHandler(handler ValueChangeHandler<Date>) : HandlerRegistration from class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic addValueChangeHandler(handler ValueChangeHandler<Date>) : HandlerRegistration from class gwt.material.design.client.ui.MaterialDatePicker to public addValueChangeHandler(handler ValueChangeHandler<V>) : HandlerRegistration from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic setHelperText(helperText String) : void from class gwt.material.design.client.ui.MaterialValueBox to public setHelperText(helperText String) : void from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tprotected createBlankValidator() : BlankValidator<V> from class gwt.material.design.client.base.mixin.BlankValidatorMixin to protected createBlankValidator() : BlankValidator<V> from class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic setError(error String) : void extracted from public setError(error String) : void in class gwt.material.design.client.ui.MaterialDatePicker & moved to class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic setError(error String) : void extracted from public setError(error String) : void in class gwt.material.design.client.ui.MaterialValueBox & moved to class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic setSuccess(success String) : void extracted from public setSuccess(success String) : void in class gwt.material.design.client.ui.MaterialDatePicker & moved to class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic setSuccess(success String) : void extracted from public setSuccess(success String) : void in class gwt.material.design.client.ui.MaterialValueBox & moved to class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic clearErrorOrSuccess() : void extracted from public clearErrorOrSuccess() : void in class gwt.material.design.client.ui.MaterialDatePicker & moved to class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic clearErrorOrSuccess() : void extracted from public clearErrorOrSuccess() : void in class gwt.material.design.client.ui.MaterialValueBox & moved to class gwt.material.design.client.base.AbstractValueWidget",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/GwtMaterialDesign/gwt-material.git",
+  "sha1" : "30a71740df867eb77052568def99b7b7acad54cf",
+  "url" : "https://github.com/GwtMaterialDesign/gwt-material/commit/30a71740df867eb77052568def99b7b7acad54cf",
+  "refactorings" : [ {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tprotected onAttach() : void renamed to public onLoad() : void in class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tprotected initClickHandler(picker Element, parent MaterialDatePicker) : void renamed to protected initHandlers(picker Element) : void in class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprotected setPickerDateMin(date JsDate, picker Element) : void inlined to public setDateMin(dateMin Date) : void in class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic setPickerDateMax(date JsDate, picker Element) : void inlined to public setDateMax(dateMax Date) : void in class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic getDatePickerValue(picker Element) : JsDate inlined to protected getPickerDate() : Date in class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprotected stop(picker Element) : void inlined to public stop() : void in class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tprotected to public in method public onLoad() : void from class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tparent : MaterialDatePicker in method protected initClickHandler(picker Element, parent MaterialDatePicker) : void from class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tElement to void in method protected initialize() : void from class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\ttypeName : String in method protected initialize(typeName String, format String) : Element from class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tformat : String in method protected initialize(typeName String, format String) : Element from class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\tinitialized : boolean to initialize : boolean in class gwt.material.design.client.ui.MaterialDatePicker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tJavaScriptObject to JsMaterialElement in method public get(key String) : JsMaterialElement from class gwt.material.design.client.js.JsMaterialElement",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tJsDate to Date in method public get(key String, format String) : Date from class gwt.material.design.client.js.JsMaterialElement",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/SonarSource/sonar-php.git",
+  "sha1" : "a03659eead56b82d4e3f34a7da75080ea3869afe",
+  "url" : "https://github.com/SonarSource/sonar-php/commit/a03659eead56b82d4e3f34a7da75080ea3869afe",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate addFiles(fs DefaultFileSystem) : void inlined to public setUp() : void in class org.sonar.plugins.php.phpunit.PhpUnitCoverageResultParserTest",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tmonkeyFile : InputFile to monkeyFile : DefaultInputFile in method public setUp() : void from class org.sonar.plugins.php.phpunit.PhpUnitCoverageResultParserTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic shouldParserReport() : void renamed to public shouldParseReport() : void in class org.sonar.plugins.php.phpunit.PhpUnitSensorTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tfinal in attribute private fs : DefaultFileSystem from class org.sonar.plugins.php.phpunit.PhpUnitSensorTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Replace Variable With Attribute",
+    "description" : "Replace Variable With Attribute\tlocalFS : DefaultFileSystem to fs : DefaultFileSystem in method public testAnalyseEmptySourceFiles() : void from class org.sonar.plugins.php.core.NoSonarAndCommentedOutLocSensorTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tmonkeyFile : InputFile to monkeyFile : DefaultInputFile in method public shouldGenerateTestsMeasures() : void from class org.sonar.plugins.php.phpunit.PhpUnitResultParserTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tbananaFile : InputFile to bananaFile : DefaultInputFile in method public shouldGenerateTestsMeasures() : void from class org.sonar.plugins.php.phpunit.PhpUnitResultParserTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@Override in method public getDetectors() : Set<Detector> from class org.sonar.plugins.php.core.NoSonarAndCommentedOutLocSensor.PhpLanguageFootprint",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@Override in method public analyse(project Project, context SensorContext) : void from class org.sonar.plugins.php.core.NoSonarAndCommentedOutLocSensor",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Modify Class Annotation",
+    "description" : "Modify Class Annotation\t@Rule(key = RULE_KEY, name = RULE_NAME, description = \"desc\", tags = {\"bug\"}) to @Rule(key = RULE_KEY, name = RULE_NAME, description = \"desc\", tags = {\"mybug\"}) in class org.sonar.plugins.php.api.PHPCustomRulesDefinitionTest.MyCustomRule",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tfinal in attribute private fileSystem : DefaultFileSystem from class org.sonar.plugins.php.PHPSensorTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tInputFile to DefaultInputFile in method private inputFile(fileName String) : DefaultInputFile from class org.sonar.plugins.php.PHPSensorTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Replace Variable With Attribute",
+    "description" : "Replace Variable With Attribute\tlocalFS : DefaultFileSystem to fileSystem : DefaultFileSystem in method public shouldExecuteOnProject() : void from class org.sonar.plugins.php.PHPSensorTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method\tpublic getDefaultFileSystem() : DefaultFileSystem extracted from public setUp() : void in class org.sonar.plugins.php.core.NoSonarAndCommentedOutLocSensorTest & moved to class org.sonar.plugins.php.MockUtils",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/aaberg/sql2o.git",
+  "sha1" : "b14f3849b6e821597515bf4cd1939f124b7cc752",
+  "url" : "https://github.com/aaberg/sql2o/commit/b14f3849b6e821597515bf4cd1939f124b7cc752",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate shouldTryExecuteScalar() : boolean inlined to public PojoResultSetIterator(rs ResultSet, isCaseSensitive boolean, quirksMode QuirksMode, metadata PojoMetadata) in class org.sql2o.PojoResultSetIterator",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "The method has been inlined into a for loop. So, it has some overlapping changes due to its movement. "
+    }
+  }, {
+    "type" : "Extract Variable",
+    "description" : "Extract Variable\tcolCount : int in method public PojoResultSetIterator(rs ResultSet, isCaseSensitive boolean, quirksMode QuirksMode, metadata PojoMetadata) from class org.sql2o.PojoResultSetIterator",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tvalue : Object in method protected readNext() : T from class org.sql2o.PojoResultSetIterator",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tpojo : Pojo to setter : Setter in method protected readNext() : T from class org.sql2o.PojoResultSetIterator",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tcolName : String to pojo : Object in method protected readNext() : T from class org.sql2o.PojoResultSetIterator",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tpojo : Pojo to setter : Setter in method protected readNext() : T from class org.sql2o.PojoResultSetIterator",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tcolName : String to pojo : Object in method protected readNext() : T from class org.sql2o.PojoResultSetIterator",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/adjust/android_sdk.git",
+  "sha1" : "32db96b3278eae8d8f0f162571adaf3ae5886b8d",
+  "url" : "https://github.com/adjust/android_sdk/commit/32db96b3278eae8d8f0f162571adaf3ae5886b8d",
+  "refactorings" : [ {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tprotected to public in method public buildSessionPackage() : ActivityPackage from class com.adeven.adjustio.PackageBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tprotected to public in method public buildEventPackage() : ActivityPackage from class com.adeven.adjustio.PackageBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tprotected to public in method public buildRevenuePackage() : ActivityPackage from class com.adeven.adjustio.PackageBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Thrown Exception Type",
+    "description" : "Add Thrown Exception Type\tException in method protected setUp() : void from class com.adeven.adjustio.test.TestPackageHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Thrown Exception Type",
+    "description" : "Add Thrown Exception Type\tException in method protected tearDown() : void from class com.adeven.adjustio.test.TestPackageHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic setUpFirstRun(activity Activity, testLogger MockLogger) : ActivityHandler inlined to public testActivityHandlerFirstSession() : void in class com.adeven.adjustio.test.TestActivityHandler",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "lots of -test- method invocations have been removed"
+    }
+  }, {
+    "type" : "Add Thrown Exception Type",
+    "description" : "Add Thrown Exception Type\tException in method protected setUp() : void from class com.adeven.adjustio.test.TestActivityHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Thrown Exception Type",
+    "description" : "Add Thrown Exception Type\tException in method protected tearDown() : void from class com.adeven.adjustio.test.TestActivityHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Inline Method",
+    "description" : "Move And Inline Method\tpublic setUpFirstRun(activity Activity, testLogger MockLogger) : ActivityHandler moved from class com.adeven.adjustio.test.TestActivityHandler to class com.adeven.adjustio.test.TestPackageHandler & inlined to public testFirstPackage() : void",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/adjust/android_sdk.git",
+  "sha1" : "8e8c8ca7a270b46ddd9f0bb18fe96a2571fdb665",
+  "url" : "https://github.com/adjust/android_sdk/commit/8e8c8ca7a270b46ddd9f0bb18fe96a2571fdb665",
+  "refactorings" : [ {
+    "type" : "Move Code",
+    "description" : "Move Code\tfrom public testSendFirstPackage() : void to protected setUp() : void in class com.adeven.adjustio.test.TestRequestHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Replace Variable With Attribute",
+    "description" : "Replace Variable With Attribute\trequestHandler : RequestHandler to requestHandler : RequestHandler in method public testSendFirstPackage() : void from class com.adeven.adjustio.test.TestRequestHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Replace Variable With Attribute",
+    "description" : "Replace Variable With Attribute\tsessionPackage : ActivityPackage to sessionPackage : ActivityPackage in method public testSendFirstPackage() : void from class com.adeven.adjustio.test.TestRequestHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Replace Variable With Attribute",
+    "description" : "Replace Variable With Attribute\tcontext : Context to context : Context in method public testFirstPackage() : void from class com.adeven.adjustio.test.TestPackageHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\ttestLogger : MockLogger to mockLogger : MockLogger in class com.adeven.adjustio.test.TestPackageHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\ttestRequestHandler : MockRequestHandler to mockRequestHandler : MockRequestHandler in class com.adeven.adjustio.test.TestPackageHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\tactivity : UnitTestActivity to context : Context in class com.adeven.adjustio.test.TestPackageHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tactivity : UnitTestActivity to context : Context in class com.adeven.adjustio.test.TestPackageHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tfinal in attribute private TIMER_INTERVAL : long from class com.adeven.adjustio.ActivityHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tfinal in attribute private SESSION_INTERVAL : long from class com.adeven.adjustio.ActivityHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tfinal in attribute private SUBSESSION_INTERVAL : long from class com.adeven.adjustio.ActivityHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tprivate listContainsMessage(list List<String>, beginsWith String) : Boolean renamed to private mapContainsMessage(level int, beginsWith String) : Boolean in class com.adeven.adjustio.test.MockLogger",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tlogMap : Map<Integer,List<String>> to logMap : SparseArray<ArrayList<String>> in class com.adeven.adjustio.test.MockLogger",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tmessageList : List<String> in method public containsMessage(level LogLevel, beginsWith String) : Boolean from class com.adeven.adjustio.test.MockLogger",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Localize Parameter",
+    "description" : "Localize Parameter\tlist : List<String> to list : ArrayList<String> in method private mapContainsMessage(level int, beginsWith String) : Boolean from class com.adeven.adjustio.test.MockLogger",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tlist : List<String> to list : ArrayList<String> in method private mapContainsMessage(level int, beginsWith String) : Boolean from class com.adeven.adjustio.test.MockLogger",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tlevel : int in method private mapContainsMessage(level int, beginsWith String) : Boolean from class com.adeven.adjustio.test.MockLogger",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic testActivityHandlerFirstSession() : void renamed to public testFirstSession() : void in class com.adeven.adjustio.test.TestActivityHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate checkPackageHandler() : void inlined to public testFirstSession() : void in class com.adeven.adjustio.test.TestActivityHandler",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "two Rename Attribute on top"
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\ttestLogger : MockLogger to mockLogger : MockLogger in class com.adeven.adjustio.test.TestActivityHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\ttestPackageHandler : MockPackageHandler to mockPackageHandler : MockPackageHandler in class com.adeven.adjustio.test.TestActivityHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/apache/metamodel.git",
+  "sha1" : "f4d2c97ad3a7fa41934251e6fd727639ed1bd300",
+  "url" : "https://github.com/apache/metamodel/commit/f4d2c97ad3a7fa41934251e6fd727639ed1bd300",
+  "refactorings" : [ {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic testDropTableSupported() : void renamed to public testCreateTableSupported() : void in class org.apache.metamodel.hbase.CreateTableTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\te : MetaModelException to e : Exception in method public testCreateTableWithoutIDColumn() : void from class org.apache.metamodel.hbase.CreateTableTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Thrown Exception Type",
+    "description" : "Add Thrown Exception Type\tIOException in method public testCreateTableWithoutIDColumn() : void from class org.apache.metamodel.hbase.CreateTableTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate checkColumnFamilies(columnFamilies Set<String>) : void inlined to public execute() : Table in class org.apache.metamodel.hbase.HBaseCreateTableBuilder",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/apache/metamodel.git",
+  "sha1" : "909cb48ff31be6476b71e9565826f6579446acce",
+  "url" : "https://github.com/apache/metamodel/commit/909cb48ff31be6476b71e9565826f6579446acce",
+  "refactorings" : [ {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\trowInsertionBuilder : HBaseRowInsertionBuilder to rowInsertionBuilder : RowInsertionBuilder in method public testDeleteRowSuccesfully() : void from class org.apache.metamodel.hbase.DeleteRowTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Replace Loop With Pipeline",
+    "description" : "Replace Loop With Pipeline\tfor(value: row.values()) with row.entrySet().forEach(entry -> rowInsertionBuilder.value(entry.getKey(),entry.getValue())); in method protected setValuesInInsertionBuilder(row Map<HBaseColumn,Object>, rowInsertionBuilder RowInsertionBuilder) : void from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\trowInsertionBuilder : HBaseRowInsertionBuilder to rowInsertionBuilder : RowInsertionBuilder in method protected setValuesInInsertionBuilder(row Map<HBaseColumn,Object>, rowInsertionBuilder RowInsertionBuilder) : void from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Merge Variable",
+    "description" : "Merge Variable\t[i : int, value : Object] to entry : null in method protected setValuesInInsertionBuilder(row Map<HBaseColumn,Object>, rowInsertionBuilder RowInsertionBuilder) : void from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic HBaseColumn(columnFamily String, qualifier String, table Table, columnNumber int) inlined to public HBaseColumn(columnFamily String, table Table) in class org.apache.metamodel.hbase.HBaseColumn",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic HBaseColumn(columnFamily String, qualifier String, table Table, columnNumber int) inlined to public HBaseColumn(columnFamily String, qualifier String, table Table) in class org.apache.metamodel.hbase.HBaseColumn",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tcolumnFamily : String in method private getName(columnFamily String, qualifier String) : String from class org.apache.metamodel.hbase.HBaseColumn",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tqualifier : String in method private getName(columnFamily String, qualifier String) : String from class org.apache.metamodel.hbase.HBaseColumn",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation\t@Override in method public getName() : String from class org.apache.metamodel.hbase.HBaseColumn",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tpublic to private in method private getName(columnFamily String, qualifier String) : String from class org.apache.metamodel.hbase.HBaseColumn",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Modifier",
+    "description" : "Add Method Modifier\tstatic in method private getName(columnFamily String, qualifier String) : String from class org.apache.metamodel.hbase.HBaseColumn",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Class Access Modifier",
+    "description" : "Change Class Access Modifier\tpublic to package in class org.apache.metamodel.hbase.HBaseUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Class Modifier",
+    "description" : "Add Class Modifier\tfinal in class org.apache.metamodel.hbase.HBaseUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic testQaulifierNull() : void renamed to public testQualifierNull() : void in class org.apache.metamodel.hbase.InsertRowTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\trowInsertionBuilder : HBaseRowInsertionBuilder to rowInsertionBuilder : RowInsertionBuilder in method public testInsertingSuccesfully() : void from class org.apache.metamodel.hbase.InsertRowTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\trowInsertionBuilder : HBaseRowInsertionBuilder to rowInsertionBuilder : RowInsertionBuilder in method public testQualifierNull() : void from class org.apache.metamodel.hbase.InsertRowTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tfinal in attribute private _indexOfIdColumn : int from class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tpublic to protected in method protected getColumns() : HBaseColumn[] from class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tcolumns : List<HBaseColumn> to columns : HBaseColumn[] in method private getColumnFamilies(columns HBaseColumn[]) : Set<String> from class org.apache.metamodel.hbase.HBaseRowInsertionBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/caelum/vraptor4.git",
+  "sha1" : "69f3ca49a846f4de572f9eb73a4924ddff525dd3",
+  "url" : "https://github.com/caelum/vraptor4/commit/69f3ca49a846f4de572f9eb73a4924ddff525dd3",
+  "refactorings" : [ {
+    "type" : "Move Class",
+    "description" : "Move Class\tbr.com.caelum.vraptor.core.MethodExecutor moved to br.com.caelum.vraptor.reflection.MethodExecutor",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Attribute Modifier",
+    "description" : "Add Attribute Modifier\tstatic in attribute private stepInvoker : StepInvoker from class br.com.caelum.vraptor.interceptor.AspectStyleInterceptorHandlerTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate isImplementingInterceptor(type Class<?>) : boolean inlined to public handle(beanClass BeanClass) : void in class br.com.caelum.vraptor.ioc.InterceptorStereotypeHandler",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "the condition has been changed - impure condition addition into the boolean field"
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tmethodsCache : InterceptorMethodsCache in method public InterceptorStereotypeHandler(registry InterceptorRegistry, methodsCache InterceptorMethodsCache) from class br.com.caelum.vraptor.ioc.InterceptorStereotypeHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\te : MirrorException to e : MethodExecutorException in method private invokeMethod(interceptor Object, stepMethod Method, params Object...) : Object from class br.com.caelum.vraptor.interceptor.StepInvoker",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tprivate to public in method public create(type Class<?>, method Method) : MethodHandle from class br.com.caelum.vraptor.reflection.MethodHandleFactory",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move And Rename Method",
+    "description" : "Move And Rename Method\tprivate buildMethodHandle(type Class<?>, method Method) : MethodHandle from class br.com.caelum.vraptor.interceptor.InterceptorMethodsCache to public create(type Class<?>, method Method) : MethodHandle from class br.com.caelum.vraptor.reflection.MethodHandleFactory",
     "purity" : {
       "purityValue" : "-",
       "purityValidation" : "-",

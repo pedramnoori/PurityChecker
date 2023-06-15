@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/wocommunity/wonder/commit/24eb9b8d0eb17c30ad2151af1d44b8c8104bf177");
+        isPureAPI("https://github.com/ccrama/Slide/commit/82c5017541d5dd86619e9d5d2dce57b70b65296e");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
