@@ -141,6 +141,12 @@ public class StringBasedHeuristics {
 			else if(diff2.isEmpty() && (diff1.equals("+") || diff1.equals("-")) && commonSuffix.startsWith("=")) {
 				return true;
 			}
+			if(!diff1.isEmpty() && !diff2.isEmpty() && diff1.equals("/") && diff2.equals("*")) {
+				return true;
+			}
+			else if(!diff1.isEmpty() && !diff2.isEmpty() && diff1.equals("*") && diff2.equals("/")) {
+				return true;
+			}
 			if(cast(diff1, diff2)) {
 				for(Replacement r : info.getReplacements()) {
 					if(r.getType().equals(ReplacementType.VARIABLE_REPLACED_WITH_ARRAY_ACCESS) && s2.startsWith(r.getAfter() + "=")) {
@@ -245,9 +251,11 @@ public class StringBasedHeuristics {
 				for(AbstractCall invocation1 : methodInvocationMap1.get(key1)) {
 					if(invocation1.actualString().equals(diff1) && invocation1.arguments().contains(diff2) &&
 							(invocation1.arguments().size() == 1 || (diff2.contains(" ? ") && diff2.contains(" : ")))) {
-						Replacement r = new VariableReplacementWithMethodInvocation(diff1, diff2, invocation1, Direction.INVOCATION_TO_VARIABLE);
-						info.addReplacement(r);
-						return true;
+						if(!variableDeclarationNameReplaced(variableDeclarations1, variableDeclarations2, info.getReplacements()) && !returnExpressionReplaced(s1, s2, info.getReplacements())) {
+							Replacement r = new VariableReplacementWithMethodInvocation(diff1, diff2, invocation1, Direction.INVOCATION_TO_VARIABLE);
+							info.addReplacement(r);
+							return true;
+						}
 					}
 				}
 			}
@@ -255,9 +263,11 @@ public class StringBasedHeuristics {
 				for(AbstractCall invocation2 : methodInvocationMap2.get(key2)) {
 					if(invocation2.actualString().equals(diff2) && invocation2.arguments().contains(diff1) &&
 							(invocation2.arguments().size() == 1 || (diff1.contains(" ? ") && diff1.contains(" : ")))) {
-						Replacement r = new VariableReplacementWithMethodInvocation(diff1, diff2, invocation2, Direction.VARIABLE_TO_INVOCATION);
-						info.addReplacement(r);
-						return true;
+						if(!variableDeclarationNameReplaced(variableDeclarations1, variableDeclarations2, info.getReplacements()) && !returnExpressionReplaced(s1, s2, info.getReplacements())) {
+							Replacement r = new VariableReplacementWithMethodInvocation(diff1, diff2, invocation2, Direction.VARIABLE_TO_INVOCATION);
+							info.addReplacement(r);
+							return true;
+						}
 					}
 				}
 			}
@@ -376,6 +386,18 @@ public class StringBasedHeuristics {
 			else if(diff2.isEmpty() && diff1.equals("this.")) {
 				return true;
 			}
+			else if(diff1.isEmpty() && diff2.equals("!= null")) {
+				return true;
+			}
+			else if(diff2.isEmpty() && diff1.equals("!= null")) {
+				return true;
+			}
+			else if(diff1.isEmpty() && diff2.equals("== null")) {
+				return true;
+			}
+			else if(diff2.isEmpty() && diff1.equals("== null")) {
+				return true;
+			}
 		}
 		return false;
 	}
@@ -397,13 +419,15 @@ public class StringBasedHeuristics {
 				if(variableDeclaration1.getInitializer() == null && variableDeclaration2.getInitializer() != null &&
 						(variableDeclaration2.getInitializer().getExpression().equals("null") ||
 						variableDeclaration2.getInitializer().getExpression().equals("0") ||
-						variableDeclaration2.getInitializer().getExpression().equals("false"))) {
+						variableDeclaration2.getInitializer().getExpression().equals("false") ||
+						numberLiteralInitializer(variableDeclaration2))) {
 					defaultInitializers++;
 				}
 				else if(variableDeclaration2.getInitializer() == null && variableDeclaration1.getInitializer() != null &&
 						(variableDeclaration1.getInitializer().getExpression().equals("null") ||
 						variableDeclaration1.getInitializer().getExpression().equals("0") ||
-						variableDeclaration1.getInitializer().getExpression().equals("false"))) {
+						variableDeclaration1.getInitializer().getExpression().equals("false") ||
+						numberLiteralInitializer(variableDeclaration1))) {
 					defaultInitializers++;
 				}
 			}
@@ -414,6 +438,10 @@ public class StringBasedHeuristics {
 			}
 		}
 		return false;
+	}
+
+	private static boolean numberLiteralInitializer(VariableDeclaration variableDeclaration) {
+		return variableDeclaration.getInitializer().getNumberLiterals().size() > 0 && variableDeclaration.getInitializer().getExpression().equals(variableDeclaration.getInitializer().getNumberLiterals().get(0).getString());
 	}
 
 	private static String variableDeclarationAsString(VariableDeclaration variableDeclaration) {

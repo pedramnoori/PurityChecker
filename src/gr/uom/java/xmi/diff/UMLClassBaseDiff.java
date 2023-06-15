@@ -3,6 +3,9 @@ package gr.uom.java.xmi.diff;
 import static gr.uom.java.xmi.decomposition.Visitor.stringify;
 import static gr.uom.java.xmi.decomposition.Visitor.METHOD_SIGNATURE_PATTERN;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -20,6 +23,9 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringMinerTimedOutException;
 
+import gr.uom.java.xmi.LocationInfo.CodeElementType;
+import gr.uom.java.xmi.SourceAnnotation;
+import gr.uom.java.xmi.LocationInfo;
 import gr.uom.java.xmi.UMLAnnotation;
 import gr.uom.java.xmi.UMLAnonymousClass;
 import gr.uom.java.xmi.UMLAttribute;
@@ -29,6 +35,7 @@ import gr.uom.java.xmi.UMLEnumConstant;
 import gr.uom.java.xmi.UMLInitializer;
 import gr.uom.java.xmi.UMLModelASTReader;
 import gr.uom.java.xmi.UMLOperation;
+import gr.uom.java.xmi.UMLParameter;
 import gr.uom.java.xmi.UMLType;
 import gr.uom.java.xmi.VariableDeclarationContainer;
 import gr.uom.java.xmi.Visibility;
@@ -41,8 +48,11 @@ import gr.uom.java.xmi.decomposition.CompositeStatementObject;
 import gr.uom.java.xmi.decomposition.CompositeStatementObjectMapping;
 import gr.uom.java.xmi.decomposition.LeafExpression;
 import gr.uom.java.xmi.decomposition.LeafMapping;
+import gr.uom.java.xmi.decomposition.VariableDeclaration;
+import gr.uom.java.xmi.decomposition.StatementObject;
 import gr.uom.java.xmi.decomposition.OperationBody;
 import gr.uom.java.xmi.decomposition.UMLOperationBodyMapper;
+import gr.uom.java.xmi.decomposition.VariableDeclaration;
 import gr.uom.java.xmi.decomposition.replacement.MethodInvocationReplacement;
 import gr.uom.java.xmi.decomposition.replacement.Replacement;
 import gr.uom.java.xmi.decomposition.replacement.CompositeReplacement;
@@ -1016,64 +1026,16 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 					}
 					if(!matchingMergeCandidateFound && !matchingSplitCandidateFound) {
 						if(addedOperation.hasParameterizedTestAnnotation()) {
-							List<List<String>> testParameters = new ArrayList<>();
-							for(UMLAnnotation annotation : addedOperation.getAnnotations()) {
-								if(annotation.getTypeName().equals("CsvSource")) {
-									if(annotation.getValue() != null) {
-										List<LeafExpression> stringLiterals = annotation.getValue().getStringLiterals();
-										for(LeafExpression stringLiteral : stringLiterals) {
-											List<String> parameters = new ArrayList<>();
-											String s = stringLiteral.getString();
-											String[] tokens = s.split(",");
-											for(String token : tokens) {
-												String trimmed = token.trim();
-												if(trimmed.startsWith("\"")) {
-													trimmed = trimmed.substring(1, trimmed.length());
-												}
-												if(trimmed.endsWith("\"")) {
-													trimmed = trimmed.substring(0, trimmed.length()-1);
-												}
-												parameters.add(trimmed);
-											}
-											testParameters.add(parameters);
-										}
-									}
-								}
-							}
+							List<List<String>> parameterValues = getParameterValues(addedOperation);
 							List<String> parameterNames = addedOperation.getParameterNameList();
 							int overallMaxMatchingTestParameters = -1;
 							for(UMLOperationBodyMapper mapper : mapperSet) {
-								Set<Replacement> replacements = mapper.getReplacements();
-								Map<Integer, Integer> matchingTestParameters = new LinkedHashMap<>();
-								for(Replacement r : replacements) {
-									if(parameterNames.contains(r.getAfter())) {
-										int parameterRow = 0;
-										for(List<String> testParams : testParameters) {
-											if(r.getBefore().startsWith("\"") && r.getBefore().endsWith("\"")) {
-												String removedDoubleQuotes = r.getBefore().substring(1, r.getBefore().length()-1);
-												if(testParams.contains(removedDoubleQuotes)) {
-													if(matchingTestParameters.containsKey(parameterRow)) {
-														matchingTestParameters.put(parameterRow, matchingTestParameters.get(parameterRow) + 1);
-													}
-													else {
-														matchingTestParameters.put(parameterRow, 1);
-													}
-												}
-											}
-											else if(testParams.contains(r.getBefore())) {
-												if(matchingTestParameters.containsKey(parameterRow)) {
-													matchingTestParameters.put(parameterRow, matchingTestParameters.get(parameterRow) + 1);
-												}
-												else {
-													matchingTestParameters.put(parameterRow, 1);
-												}
-											}
-											parameterRow++;
-										}
-									}
+								Map<Integer, Integer> matchingTestParameters = matchParamsWithReplacements(parameterValues, parameterNames, mapper.getReplacements());
+								if (matchingTestParameters.isEmpty()) {
+									matchingTestParameters = matchParamsWithRemovedStatements(parameterValues, parameterNames, mapper.getNonMappedLeavesT1());
 								}
 								int max = matchingTestParameters.isEmpty() ? 0 : Collections.max(matchingTestParameters.values());
-								if(max > 1 && (overallMaxMatchingTestParameters == -1 || max == overallMaxMatchingTestParameters)) {
+								if(max >= 1 && (overallMaxMatchingTestParameters == -1 || max == overallMaxMatchingTestParameters)) {
 									if(max > overallMaxMatchingTestParameters) {
 										overallMaxMatchingTestParameters = max;
 									}
@@ -1112,7 +1074,7 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 										}
 									}
 									break;
-								}	
+								}
 							}
 							if(mapperSet.size() > mapperSetSize) {
 								bestMapper = findBestMapper(mapperSet);
@@ -1199,6 +1161,105 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 				}
 			}
 		}
+	}
+
+	private List<List<String>> getParameterValues(UMLOperation addedOperation) {
+		List<List<String>> parameterValues = new ArrayList<>();
+		for(UMLAnnotation annotation : addedOperation.getAnnotations()) {
+			try {
+				List<List<String>> testParameters = SourceAnnotation.create(annotation, addedOperation, modelDiff.getChildModel()).getTestParameters();
+				parameterValues.addAll(testParameters);
+			} catch (IllegalArgumentException ignored) {/* Do nothing */}
+		}
+		return parameterValues;
+	}
+
+	private Map<Integer, Integer> matchParamsWithRemovedStatements(List<List<String>> parameterValues, List<String> parameterNames, List<AbstractCodeFragment> nonMappedLeavesT1) {
+		Map<Integer, Integer> matchingTestParameters = new LinkedHashMap<>();
+		for(AbstractCodeFragment fragment : nonMappedLeavesT1) {
+			if(fragment instanceof StatementObject && fragment.getLocationInfo().getCodeElementType().equals(LocationInfo.CodeElementType.VARIABLE_DECLARATION_STATEMENT)) {
+				StatementObject statement = (StatementObject)fragment;
+				List<VariableDeclaration> declarations = statement.getVariableDeclarations();
+				assert declarations.size() == 1;
+				String variableInitialValue = declarations.get(0).getInitializer().getString();
+				for(int parameterIndex=0; parameterIndex<parameterValues.size(); parameterIndex++) {
+					for(String value : parameterValues.get(parameterIndex)) {
+						if(variableInitialValue.contains(sanitizeStringLiteral(value))) {
+							int previousValue = matchingTestParameters.getOrDefault(parameterIndex, 0);
+							matchingTestParameters.put(parameterIndex, previousValue + 1);
+						}
+					}
+				}
+			}
+		}
+		return matchingTestParameters;
+	}
+
+	private static Map<Integer, Integer> matchParamsWithReplacements(List<List<String>> testParameters, List<String> parameterNames, Set<Replacement> replacements) {
+		Map<Integer, Integer> matchingTestParameters = new LinkedHashMap<>();
+		for(Replacement r : replacements) {
+			if(parameterNames.contains(r.getAfter())) {
+				String paramsWithoutDoubleQuotes = sanitizeStringLiteral(r.getBefore());
+				for (int parameterRow = 0; parameterRow < testParameters.size(); parameterRow++) {
+					if (testParameters.get(parameterRow).contains(paramsWithoutDoubleQuotes)) {
+						Integer previousValue = matchingTestParameters.getOrDefault(parameterRow, 0);
+						matchingTestParameters.put(parameterRow, previousValue + 1);
+					}
+				}
+			}
+		}
+		return matchingTestParameters;
+	}
+
+	private static String sanitizeStringLiteral(String expression) {
+		if (expression.startsWith("\"") && expression.endsWith("\"")) {
+			return expression.substring(1, expression.length() - 1);
+		} else if (expression.endsWith(".class")) {
+			return expression.substring(0, expression.lastIndexOf(".class"));
+		} else if (expression.contains(".")) {
+			return expression.substring(expression.lastIndexOf('.') + 1);
+		}
+		return expression;
+	}
+
+	private void extractParametersFromCsvFile(List<List<String>> testParameters, String csvFile) {
+		try {
+			List<String> tests = readCsvFile(csvFile);
+			for (String test : tests) {
+				List<String> parameters = extractParametersFromCsv(test);
+				testParameters.add(parameters);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private List<String> readCsvFile(String csvFile) throws IOException {
+		List<String> parameters = new ArrayList<>();
+		BufferedReader br = new BufferedReader(new FileReader(csvFile));
+		String line = br.readLine();
+		while(line != null) {
+			parameters.add(line);
+			line = br.readLine();
+		}
+		br.close();
+		return parameters;
+	}
+
+	private static List<String> extractParametersFromCsv(String s) {
+		List<String> parameters = new ArrayList<>();
+		String[] tokens = s.split(",");
+		for(String token : tokens) {
+			String trimmed = token.trim();
+			if(trimmed.startsWith("\"")) {
+				trimmed = trimmed.substring(1, trimmed.length());
+			}
+			if(trimmed.endsWith("\"")) {
+				trimmed = trimmed.substring(0, trimmed.length()-1);
+			}
+			parameters.add(trimmed);
+		}
+		return parameters;
 	}
 
 	private boolean isCommentedOut(UMLOperation removedOperation) {
@@ -1673,6 +1734,33 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 		int nonMappedElementsT1 = operationBodyMapper.nonMappedElementsT1() - additionallyMatchedStatements1;
 		int nonMappedElementsT2 = operationBodyMapper.nonMappedElementsT2() - additionallyMatchedStatements2;
 		int exactMappings = operationBodyMapper.exactMatches();
+		if(operationBodyMapper.getContainer1() instanceof UMLOperation && operationBodyMapper.getContainer2() instanceof UMLOperation) {
+			UMLParameter returnParameter1 = ((UMLOperation)operationBodyMapper.getContainer1()).getReturnParameter();
+			UMLParameter returnParameter2 = ((UMLOperation)operationBodyMapper.getContainer2()).getReturnParameter();
+			if(returnParameter1 != null && returnParameter2 != null) {
+				UMLType returnType1 = returnParameter1.getType();
+				UMLType returnType2 = returnParameter2.getType();
+				boolean returnFound = false;
+				if(returnType1.getClassType().equals("void") && !returnType2.getClassType().equals("void")) {
+					for(AbstractCodeFragment fragment1 : operationBodyMapper.getNonMappedLeavesT1()) {
+						if(fragment1.getString().equals("return;\n")) {
+							returnFound = true;
+							break;
+						}
+					}
+				}
+				if(!returnFound) {
+					for(AbstractCodeFragment statement2 : operationBodyMapper.getNonMappedLeavesT2()) {
+						if(statement2.getVariables().size() > 0 && statement2.getString().equals("return " + statement2.getVariables().get(0).getString() + ";\n")) {
+							VariableDeclaration variableDeclaration2 = operationBodyMapper.getContainer2().getVariableDeclaration(statement2.getVariables().get(0).getString());
+							if(variableDeclaration2 != null && variableDeclaration2.getType().equals(returnType2)) {
+								nonMappedElementsT2--;
+							}
+						}
+					}
+				}
+			}
+		}
 		return (mappings > nonMappedElementsT1 && mappings > nonMappedElementsT2) ||
 				(nonMappedElementsT1 == 0 && mappings > Math.floor(nonMappedElementsT2/2.0) && !operationBodyMapper.involvesTestMethods()) ||
 				(nonMappedElementsT2 == 0 && mappings > Math.floor(nonMappedElementsT1/2.0) && !operationBodyMapper.involvesTestMethods() && !(this instanceof UMLClassMoveDiff)) ||
@@ -2518,6 +2606,7 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 			}
 			else if(parentMappingFound.contains(true)) {
 				boolean anonymousClassDeclarationMatch = false;
+				boolean splitConditional = false;
 				for(int i=0; i<parentMappingFound.size(); i++) {
 					if(parentMappingFound.get(i) == false) {
 						//check if composite mapping in index i has more identical statements
@@ -2526,6 +2615,14 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 							int indexOfTrueParentMapping = parentMappingFound.indexOf(true);
 							if(identicalStatementsForCompositeMappings.get(i) > identicalStatementsForCompositeMappings.get(indexOfTrueParentMapping)) {
 								skip = true;
+							}
+							if(mappings.get(i).getFragment1().getLocationInfo().getCodeElementType().equals(CodeElementType.IF_STATEMENT) &&
+									mappings.get(i).getFragment2().getLocationInfo().getCodeElementType().equals(CodeElementType.IF_STATEMENT)) {
+								String condition = mappings.get(i).getFragment2().getString().substring(3, mappings.get(i).getFragment2().getString().length()-1);
+								String conditionOfTrueParentMapping = mappings.get(indexOfTrueParentMapping).getFragment2().getString().substring(3, mappings.get(indexOfTrueParentMapping).getFragment2().getString().length()-1);
+								if(mappings.get(i).getFragment1().getString().contains(condition) && mappings.get(indexOfTrueParentMapping).getFragment1().getString().contains(conditionOfTrueParentMapping)) {
+									splitConditional = true;
+								}
 							}
 						}
 						if(parentIsContainerBody.get(i) == true && editDistances.get(i).equals(editDistances.get(parentMappingFound.indexOf(true))) &&
@@ -2541,16 +2638,36 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 						}
 					}
 				}
-				if(!anonymousClassDeclarationMatch)
+				if(!anonymousClassDeclarationMatch && !splitConditional)
 					determineIndicesToBeRemoved(nestedMapper, identical, exactMappingsNestedUnderCompositeExcludingBlocks, replacementTypeCount, replacementCoversEntireStatement, indicesToBeRemoved, editDistances);
 			}
 			else if(parentIsContainerBody.contains(true)) {
+				boolean splitConditional = false;
 				for(int i=0; i<parentIsContainerBody.size(); i++) {
 					if(parentIsContainerBody.get(i) == false && !nestedMapper.get(parentIsContainerBody.indexOf(true))) {
-						indicesToBeRemoved.add(i);
+						//check if composite mapping in index i has more identical statements
+						boolean skip = false;
+						if(!identicalStatementsForCompositeMappings.isEmpty()) {
+							int indexOfTrueParentIsContainerBody = parentIsContainerBody.indexOf(true);
+							if(identicalStatementsForCompositeMappings.get(i) > identicalStatementsForCompositeMappings.get(indexOfTrueParentIsContainerBody)) {
+								skip = true;
+							}
+							if(mappings.get(i).getFragment1().getLocationInfo().getCodeElementType().equals(CodeElementType.IF_STATEMENT) &&
+									mappings.get(i).getFragment2().getLocationInfo().getCodeElementType().equals(CodeElementType.IF_STATEMENT)) {
+								String condition = mappings.get(i).getFragment2().getString().substring(3, mappings.get(i).getFragment2().getString().length()-1);
+								String conditionOfTrueParentIsContainerBody = mappings.get(indexOfTrueParentIsContainerBody).getFragment2().getString().substring(3, mappings.get(indexOfTrueParentIsContainerBody).getFragment2().getString().length()-1);
+								if(mappings.get(i).getFragment1().getString().contains(condition) && mappings.get(indexOfTrueParentIsContainerBody).getFragment1().getString().contains(conditionOfTrueParentIsContainerBody)) {
+									splitConditional = true;
+								}
+							}
+						}
+						if(!skip) {
+							indicesToBeRemoved.add(i);
+						}
 					}
 				}
-				determineIndicesToBeRemoved(nestedMapper, identical, exactMappingsNestedUnderCompositeExcludingBlocks, replacementTypeCount, replacementCoversEntireStatement, indicesToBeRemoved, editDistances);
+				if(!splitConditional)
+					determineIndicesToBeRemoved(nestedMapper, identical, exactMappingsNestedUnderCompositeExcludingBlocks, replacementTypeCount, replacementCoversEntireStatement, indicesToBeRemoved, editDistances);
 			}
 			if(indicesToBeRemoved.isEmpty() && matchingParentMappers(parentMappers) == parentMappers.size()) {
 				int minimum = nonMappedNodes.get(0);
@@ -2576,6 +2693,9 @@ public abstract class UMLClassBaseDiff extends UMLAbstractClassDiff implements C
 				if(indicesToBeRemoved.contains(index)) {
 					if(!atLeastOneMappingCallsExtractedOrInlinedMethodWithVariableDeclarationOrThrow) {
 						mapper.removeMapping(mapping);
+						for(LeafMapping leafMapping : mapping.getSubExpressionMappings()) {
+							mapper.removeMapping(leafMapping);
+						}
 						if(mapping instanceof LeafMapping) {
 							if(!mapper.getNonMappedLeavesT1().contains(mapping.getFragment1())) {
 								mapper.getNonMappedLeavesT1().add(mapping.getFragment1());

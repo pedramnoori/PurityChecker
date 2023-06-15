@@ -9,6 +9,8 @@ import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.util.PrefixSuffixUtils;
 
 import gr.uom.java.xmi.LocationInfo.CodeElementType;
+import gr.uom.java.xmi.UMLAttribute;
+import gr.uom.java.xmi.UMLClass;
 import gr.uom.java.xmi.VariableDeclarationContainer;
 import gr.uom.java.xmi.decomposition.replacement.ClassInstanceCreationWithMethodInvocationReplacement;
 import gr.uom.java.xmi.decomposition.replacement.CompositeReplacement;
@@ -38,11 +40,12 @@ public abstract class AbstractCodeMapping {
 	private VariableDeclarationContainer operation1;
 	private VariableDeclarationContainer operation2;
 	private Set<Replacement> replacements;
+	private Set<LeafMapping> subExpressionMappings;
 	private boolean identicalWithExtractedVariable;
 	private boolean identicalWithInlinedVariable;
 	private Set<Refactoring> refactorings = new LinkedHashSet<Refactoring>();
 	private int matchingArgumentsWithOperationInvocation;
-
+	
 	public AbstractCodeMapping(AbstractCodeFragment fragment1, AbstractCodeFragment fragment2,
 			VariableDeclarationContainer operation1, VariableDeclarationContainer operation2) {
 		this.fragment1 = fragment1;
@@ -50,6 +53,7 @@ public abstract class AbstractCodeMapping {
 		this.operation1 = operation1;
 		this.operation2 = operation2;
 		this.replacements = new LinkedHashSet<Replacement>();
+		this.subExpressionMappings = new LinkedHashSet<LeafMapping>();
 	}
 
 	public abstract double editDistance();
@@ -186,6 +190,18 @@ public abstract class AbstractCodeMapping {
 		return false;
 	}
 
+	public void addSubExpressionMapping(LeafMapping leafMapping) {
+		subExpressionMappings.add(leafMapping);
+	}
+
+	public void addSubExpressionMappings(Set<LeafMapping> leafMappings) {
+		subExpressionMappings.addAll(leafMappings);
+	}
+
+	public Set<LeafMapping> getSubExpressionMappings() {
+		return subExpressionMappings;
+	}
+
 	private boolean containsIdenticalOrCompositeReplacement() {
 		for(Replacement r : replacements) {
 			if(r.getType().equals(ReplacementType.ARRAY_INITIALIZER_REPLACED_WITH_METHOD_INVOCATION_ARGUMENTS) &&
@@ -252,7 +268,7 @@ public abstract class AbstractCodeMapping {
 		return fragment1.toString() + fragment2.toString();
 	}
 
-	public void temporaryVariableAssignment(Set<Refactoring> refactorings, boolean insideExtractedOrInlinedMethod) {
+	public void temporaryVariableAssignment(Set<Refactoring> refactorings, List<? extends AbstractCodeFragment> nonMappedLeavesT2, boolean insideExtractedOrInlinedMethod) {
 		if(this instanceof LeafMapping && getFragment1() instanceof AbstractExpression
 				&& getFragment2() instanceof StatementObject) {
 			StatementObject statement = (StatementObject) getFragment2();
@@ -270,7 +286,162 @@ public abstract class AbstractCodeMapping {
 				LeafMapping leafMapping = new LeafMapping(getFragment1(), variableDeclaration.getInitializer(), operation1, operation2);
 				ref.addSubExpressionMapping(leafMapping);
 				processExtractVariableRefactoring(ref, refactorings);
+				checkForNestedExtractVariable(ref, refactorings, nonMappedLeavesT2, insideExtractedOrInlinedMethod);
 				identicalWithExtractedVariable = true;
+			}
+		}
+	}
+
+	private void checkForNestedExtractVariable(ExtractVariableRefactoring parentRefactoring, Set<Refactoring> refactorings, List<? extends AbstractCodeFragment> nonMappedLeavesT2, boolean insideExtractedOrInlinedMethod) {
+		for(AbstractCodeFragment leaf2 : nonMappedLeavesT2) {
+			List<VariableDeclaration> variableDeclarations = leaf2.getVariableDeclarations();
+			if(variableDeclarations.size() == 1) {
+				VariableDeclaration variableDeclaration = variableDeclarations.get(0);
+				if(variableDeclaration.getInitializer() != null) {
+					List<LeafExpression> leafExpressions1 = getFragment1().findExpression(variableDeclaration.getInitializer().getString());
+					if(leafExpressions1.isEmpty() && !leaf2.equals(getFragment2())) {
+						for(AbstractCall invocation : getFragment1().getMethodInvocations()) {
+							if(variableDeclaration.getInitializer().getString().startsWith(invocation.actualString()) || variableDeclaration.getInitializer().getString().endsWith(invocation.actualString())) {
+								leafExpressions1 = getFragment1().findExpression(invocation.actualString());
+							}
+						}
+					}
+					if(leafExpressions1.size() > 0 && isVariableReferenced(parentRefactoring, variableDeclaration)) {
+						ExtractVariableRefactoring ref2 = new ExtractVariableRefactoring(variableDeclaration, operation1, operation2, insideExtractedOrInlinedMethod);
+						if(!ref2.equals(parentRefactoring)) {
+							for(LeafExpression subExpression : leafExpressions1) {
+								LeafMapping leafMapping2 = new LeafMapping(subExpression, variableDeclaration.getInitializer(), operation1, operation2);
+								ref2.addSubExpressionMapping(leafMapping2);
+							}
+							processExtractVariableRefactoring(ref2, refactorings);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	private boolean isVariableReferenced(ExtractVariableRefactoring parentRefactoring, VariableDeclaration variableDeclaration) {
+		if(parentRefactoring.getVariableDeclaration().getInitializer().findExpression(variableDeclaration.getVariableName()).size() > 0) {
+			return true;
+		}
+		if(parentRefactoring.getVariableDeclaration().isAttribute()) {
+			for(LeafMapping mapping : parentRefactoring.getSubExpressionMappings()) {
+				if(ReplacementUtil.contains(mapping.getFragment2().getString(), variableDeclaration.getVariableName())) {
+					return true;
+				}
+			}
+		}
+		for(AbstractCodeMapping mapping : parentRefactoring.getReferences()) {
+			if(mapping.getFragment2().findExpression(variableDeclaration.getVariableName()).size() > 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private void checkForAliasedVariable(AbstractExpression initializer, Replacement replacement,
+			List<? extends AbstractCodeFragment> nonMappedLeavesT2, UMLAbstractClassDiff classDiff, boolean insideExtractedOrInlinedMethod) {
+		VariableDeclaration aliasedWithVariable = operation2.getVariableDeclaration(initializer.getString());
+		if(aliasedWithVariable != null && aliasedWithVariable.getInitializer() != null) {
+			String rightHandSide = aliasedWithVariable.getInitializer().getString();
+			if(replacement instanceof VariableReplacementWithMethodInvocation) {
+				VariableReplacementWithMethodInvocation r = (VariableReplacementWithMethodInvocation)replacement;
+				for(AbstractCall call : aliasedWithVariable.getInitializer().getMethodInvocations()) {
+					if(call.equals(r.getInvokedOperation())) {
+						ExtractVariableRefactoring ref = new ExtractVariableRefactoring(aliasedWithVariable, operation1, operation2, insideExtractedOrInlinedMethod);
+						LeafMapping leafMapping = new LeafMapping(r.getInvokedOperation(), call, operation1, operation2);
+						ref.addSubExpressionMapping(leafMapping);
+						processExtractVariableRefactoring(ref, refactorings);
+						checkForNestedExtractVariable(ref, refactorings, nonMappedLeavesT2, insideExtractedOrInlinedMethod);
+						if(identical()) {
+							identicalWithExtractedVariable = true;
+						}
+						break;
+					}
+				}
+			}
+			else if(replacement.getBefore().equals(rightHandSide)) {
+				ExtractVariableRefactoring ref = new ExtractVariableRefactoring(aliasedWithVariable.getVariableDeclaration(), operation1, operation2, insideExtractedOrInlinedMethod);
+				List<LeafExpression> leafExpressions1 = getFragment1().findExpression(rightHandSide);
+				List<LeafExpression> leafExpressions2 = aliasedWithVariable.getInitializer().findExpression(rightHandSide);
+				if(leafExpressions1.size() == leafExpressions2.size()) {
+					for(int i=0; i<leafExpressions1.size(); i++) {
+						LeafMapping leafMapping = new LeafMapping(leafExpressions1.get(i), leafExpressions2.get(i), operation1, operation2);
+						ref.addSubExpressionMapping(leafMapping);
+					}
+				}
+				processExtractVariableRefactoring(ref, refactorings);
+				checkForNestedExtractVariable(ref, refactorings, nonMappedLeavesT2, insideExtractedOrInlinedMethod);
+				if(identical()) {
+					identicalWithExtractedVariable = true;
+				}
+			}
+		}
+		else if(classDiff != null) {
+			UMLAttribute aliasedWithAttribute = null;
+			if(classDiff.getNextClass().containsAttributeWithName(initializer.getString())) {
+				for(UMLAttribute attribute : classDiff.getNextClass().getAttributes()) {
+					if(attribute.getName().equals(initializer.getString())) {
+						aliasedWithAttribute = attribute;
+						break;
+					}
+				}
+			}
+			UMLClass addedClass = classDiff.getModelDiff().getAddedClass(operation2.getClassName());
+			if(addedClass != null && addedClass.containsAttributeWithName(initializer.getString())) {
+				for(UMLAttribute attribute : addedClass.getAttributes()) {
+					if(attribute.getName().equals(initializer.getString())) {
+						aliasedWithAttribute = attribute;
+						break;
+					}
+				}
+			}
+			if(aliasedWithAttribute != null) {
+				for(AbstractCodeFragment leaf2 : nonMappedLeavesT2) {
+					if(leaf2.getString().startsWith(initializer.getString() + "=")) {
+						String rightHandSide = null;
+						if(leaf2.getString().endsWith(";\n")) {
+							rightHandSide = leaf2.getString().substring(leaf2.getString().indexOf("=")+1, leaf2.getString().length()-2);
+						}
+						else {
+							rightHandSide = leaf2.getString().substring(leaf2.getString().indexOf("=")+1, leaf2.getString().length());
+						}
+						if(replacement instanceof VariableReplacementWithMethodInvocation) {
+							VariableReplacementWithMethodInvocation r = (VariableReplacementWithMethodInvocation)replacement;
+							for(AbstractCall call : leaf2.getMethodInvocations()) {
+								if(call.equals(r.getInvokedOperation())) {
+									ExtractVariableRefactoring ref = new ExtractVariableRefactoring(aliasedWithAttribute.getVariableDeclaration(), operation1, operation2, insideExtractedOrInlinedMethod);
+									LeafMapping leafMapping = new LeafMapping(r.getInvokedOperation(), call, operation1, operation2);
+									ref.addSubExpressionMapping(leafMapping);
+									processExtractVariableRefactoring(ref, refactorings);
+									checkForNestedExtractVariable(ref, refactorings, nonMappedLeavesT2, insideExtractedOrInlinedMethod);
+									if(identical()) {
+										identicalWithExtractedVariable = true;
+									}
+									break;
+								}
+							}
+						}
+						else if(replacement.getBefore().equals(rightHandSide)) {
+							ExtractVariableRefactoring ref = new ExtractVariableRefactoring(aliasedWithAttribute.getVariableDeclaration(), operation1, operation2, insideExtractedOrInlinedMethod);
+							List<LeafExpression> leafExpressions1 = getFragment1().findExpression(rightHandSide);
+							List<LeafExpression> leafExpressions2 = leaf2.findExpression(rightHandSide);
+							if(leafExpressions1.size() == leafExpressions2.size()) {
+								for(int i=0; i<leafExpressions1.size(); i++) {
+									LeafMapping leafMapping = new LeafMapping(leafExpressions1.get(i), leafExpressions2.get(i), operation1, operation2);
+									ref.addSubExpressionMapping(leafMapping);
+								}
+							}
+							processExtractVariableRefactoring(ref, refactorings);
+							checkForNestedExtractVariable(ref, refactorings, nonMappedLeavesT2, insideExtractedOrInlinedMethod);
+							if(identical()) {
+								identicalWithExtractedVariable = true;
+							}
+						}
+						break;
+					}
+				}
 			}
 		}
 	}
@@ -290,6 +461,20 @@ public abstract class AbstractCodeMapping {
 					}
 					if(before.startsWith("(") && before.endsWith(")")) {
 						before = before.substring(1, before.length()-1);
+					}
+				}
+				if(replacement.getType().equals(ReplacementType.CAST_EXPRESSION)) {
+					String cast1 = null;
+					String cast2 = null;
+					if(after.startsWith("(") && after.contains(")")) {
+						cast1 = after.substring(0, after.indexOf(")")+1);
+					}
+					if(before.startsWith("(") && before.contains(")")) {
+						cast2 = before.substring(0, before.indexOf(")")+1);
+					}
+					if(cast1 != null && cast2 != null && cast1.equals(cast2)) {
+						after = after.substring(after.indexOf(")")+1, after.length());
+						before = before.substring(before.indexOf(")")+1, before.length());
 					}
 				}
 				if(replacement instanceof MethodInvocationReplacement) {
@@ -316,6 +501,7 @@ public abstract class AbstractCodeMapping {
 									ref.addSubExpressionMapping(leafMapping);
 								}
 								processExtractVariableRefactoring(ref, refactorings);
+								checkForNestedExtractVariable(ref, refactorings, nonMappedLeavesT2, insideExtractedOrInlinedMethod);
 								if(identical()) {
 									identicalWithExtractedVariable = true;
 								}
@@ -325,7 +511,9 @@ public abstract class AbstractCodeMapping {
 					}
 				}
 				if(variableName.equals(after) && initializer != null) {
+					checkForAliasedVariable(initializer, replacement, nonMappedLeavesT2, classDiff, insideExtractedOrInlinedMethod);
 					if(initializer.toString().equals(before) ||
+							initializer.toString().equals("this." + before) ||
 							overlappingExtractVariable(initializer, before, nonMappedLeavesT2, insideExtractedOrInlinedMethod, refactorings) ||
 							(initializer.toString().equals("(" + declaration.getType() + ")" + before) && !containsVariableNameReplacement(variableName)) ||
 							ternaryMatch(initializer, before) ||
@@ -339,6 +527,7 @@ public abstract class AbstractCodeMapping {
 							ref.addSubExpressionMapping(leafMapping);
 						}
 						processExtractVariableRefactoring(ref, refactorings);
+						checkForNestedExtractVariable(ref, refactorings, nonMappedLeavesT2, insideExtractedOrInlinedMethod);
 						if(identical()) {
 							identicalWithExtractedVariable = true;
 						}
@@ -362,6 +551,7 @@ public abstract class AbstractCodeMapping {
 										ref.addSubExpressionMapping(leafMapping);
 									}
 									processExtractVariableRefactoring(ref, refactorings);
+									checkForNestedExtractVariable(ref, refactorings, nonMappedLeavesT2, insideExtractedOrInlinedMethod);
 									return;
 								}
 							}
@@ -392,10 +582,14 @@ public abstract class AbstractCodeMapping {
 							ref.addSubExpressionMapping(leafMapping);
 						}
 						processExtractVariableRefactoring(ref, refactorings);
+						checkForNestedExtractVariable(ref, refactorings, nonMappedLeavesT2, insideExtractedOrInlinedMethod);
 						return;
 					}
 				}
 			}
+		}
+		if(getFragment2().getVariableDeclarations().size() > 0 && getFragment2().getVariableDeclarations().get(0).getInitializer() != null && replacements.size() == 1) {
+			checkForAliasedVariable(getFragment2().getVariableDeclarations().get(0).getInitializer(), replacements.iterator().next(), nonMappedLeavesT2, classDiff, insideExtractedOrInlinedMethod);
 		}
 		String argumentizedString = statement.getArgumentizedString();
 		if(argumentizedString.contains("=")) {
@@ -425,6 +619,7 @@ public abstract class AbstractCodeMapping {
 								}
 							}
 							processExtractVariableRefactoring(ref, refactorings);
+							checkForNestedExtractVariable(ref, refactorings, nonMappedLeavesT2, insideExtractedOrInlinedMethod);
 							if(identical()) {
 								identicalWithExtractedVariable = true;
 							}
@@ -453,6 +648,20 @@ public abstract class AbstractCodeMapping {
 						before = before.substring(1, before.length()-1);
 					}
 				}
+				if(replacement.getType().equals(ReplacementType.CAST_EXPRESSION)) {
+					String cast1 = null;
+					String cast2 = null;
+					if(after.startsWith("(") && after.contains(")")) {
+						cast1 = after.substring(0, after.indexOf(")")+1);
+					}
+					if(before.startsWith("(") && before.contains(")")) {
+						cast2 = before.substring(0, before.indexOf(")")+1);
+					}
+					if(cast1 != null && cast2 != null && cast1.equals(cast2)) {
+						after = after.substring(after.indexOf(")")+1, after.length());
+						before = before.substring(before.indexOf(")")+1, before.length());
+					}
+				}
 				if(before.startsWith(variableName + ".")) {
 					String suffixBefore = before.substring(variableName.length(), before.length());
 					if(after.endsWith(suffixBefore)) {
@@ -477,6 +686,7 @@ public abstract class AbstractCodeMapping {
 				}
 				if(variableName.equals(before) && initializer != null) {
 					if(initializer.toString().equals(after) ||
+							initializer.toString().equals("this." + after) ||
 							overlappingExtractVariable(initializer, after, nonMappedLeavesT2, insideExtractedOrInlinedMethod, refactorings) ||
 							(initializer.toString().equals("(" + declaration.getType() + ")" + after) && !containsVariableNameReplacement(variableName)) ||
 							ternaryMatch(initializer, after) ||
@@ -773,6 +983,24 @@ public abstract class AbstractCodeMapping {
 							processExtractVariableRefactoring(ref, refactorings);
 							return true;
 						}
+					}
+				}
+			}
+		}
+		for(AbstractCodeFragment leaf2 : nonMappedLeavesT2) {
+			List<VariableDeclaration> variableDeclarations = leaf2.getVariableDeclarations();
+			if(variableDeclarations.size() == 1) {
+				VariableDeclaration variableDeclaration = variableDeclarations.get(0);
+				if(variableDeclaration.getInitializer() != null && initializer.findExpression(variableDeclaration.getVariableName()).size() > 0) {
+					List<LeafExpression> leafExpressions1 = getFragment1().findExpression(input);
+					if(leafExpressions1.size() > 0 && variableDeclaration.getInitializer().findExpression(input).size() > 0) {
+						ExtractVariableRefactoring ref = new ExtractVariableRefactoring(variableDeclaration, operation1, operation2, insideExtractedOrInlinedMethod);
+						for(LeafExpression subExpression : leafExpressions1) {
+							LeafMapping leafMapping = new LeafMapping(subExpression, variableDeclaration.getInitializer(), operation1, operation2);
+							ref.addSubExpressionMapping(leafMapping);
+						}
+						processExtractVariableRefactoring(ref, refactorings);
+						return true;
 					}
 				}
 			}
