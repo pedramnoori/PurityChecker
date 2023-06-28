@@ -1117,7 +1117,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Nested Inline Method or statements being mapped in other refactorings - non-mapped leaves", purityComment, mappingState);
             }
 
-            checkForRemoveAttributeOnTop(refactoring, modelDiff, nonMappedLeavesT1);
+//            checkForRemoveAttributeOnTop(refactoring, modelDiff, nonMappedLeavesT1);
 
             if (nonMappedLeavesT1.isEmpty()) {
                 purityComment += "Severe changes";
@@ -1174,7 +1174,7 @@ public class PurityChecker {
                 return new PurityCheckResult(false, "non-mapped are not justified - non-mapped leaves", purityComment, mappingState);
             }
 
-            checkForRemoveAttributeOnTop(refactoring, modelDiff, nonMappedInnerNodesT1);
+//            checkForRemoveAttributeOnTop(refactoring, modelDiff, nonMappedInnerNodesT1);
 
             if (nonMappedInnerNodesT1.isEmpty()) {
                 purityComment = "Severe changes";
@@ -1460,7 +1460,7 @@ public class PurityChecker {
 
 
         for (UMLOperationBodyMapper umlOperationBodyMapper : umlClassDiff.getOperationBodyMapperList()) {
-            if (umlOperationBodyMapper != null) {
+            if (umlOperationBodyMapper != null && umlOperationBodyMapper.getOperation2() != null) {
                 if (umlOperationBodyMapper.getOperation2().getName().equals(refactoring.getTargetOperationAfterInline().getName())) {
                     for (AbstractCodeFragment abstractCodeFragment : nonMappedLeavesT1) {
                         for (AbstractCodeMapping mapping : umlOperationBodyMapper.getMappings()) {
