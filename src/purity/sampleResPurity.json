@@ -25300,6 +25300,2701 @@
       "validationComment" : ""
     }
   } ]
+}, {
+  "repository" : "https://github.com/datacleaner/DataCleaner.git",
+  "sha1" : "83d7af6d2f966c7baebaad5970db83bb6db02fb5",
+  "url" : "https://github.com/datacleaner/DataCleaner/commit/83d7af6d2f966c7baebaad5970db83bb6db02fb5",
+  "refactorings" : [ {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tquery : String to updateData : UpdateData in method public execute() : void from class org.datacleaner.metamodel.datahub.DataHubUpdateBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tquery : String to updateData : UpdateData in method public execute() : void from class org.datacleaner.metamodel.datahub.DataHubUpdateBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic executeUpdate(pendingUpdates PendingUpdates) : void renamed to public executeUpdates(pendingUpdates List<UpdateData>) : void in class org.datacleaner.metamodel.datahub.DataHubDataContext",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Variable",
+    "description" : "Parameterize Variable\thttpClient : MonitorHttpClient to httpClient : MonitorHttpClient in method private executeRequest(request HttpUriRequest, httpClient MonitorHttpClient) : HttpResponse from class org.datacleaner.metamodel.datahub.DataHubDataContext",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\trequest : HttpPut to request : HttpPost in method public executeUpdates(pendingUpdates List<UpdateData>) : void from class org.datacleaner.metamodel.datahub.DataHubDataContext",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tpendingUpdates : PendingUpdates to pendingUpdates : List<UpdateData> in method public executeUpdates(pendingUpdates List<UpdateData>) : void from class org.datacleaner.metamodel.datahub.DataHubDataContext",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\t_connection : DataHubConnection to _repoConnection : DataHubRepoConnection in class org.datacleaner.metamodel.datahub.DataHubDataContext",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\t_connection : DataHubConnection to _repoConnection : DataHubRepoConnection in class org.datacleaner.metamodel.datahub.DataHubDataContext",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tconnection : DataHubConnection to connection : DataHubRepoConnection in method private updateUrlLabel() : void from class org.datacleaner.windows.DataHubDatastoreDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tconnection : DataHubConnection to connection : DataHubRepoConnection in method public actionPerformed(event ActionEvent) : void from class org.datacleaner.windows.DataHubDatastoreDialog.DataHubDatastoreDialog.addActionListener.new ActionListener",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tDataHubConnection to DataHubRepoConnection in method public createConnection() : DataHubRepoConnection from class org.datacleaner.windows.DataHubDatastoreDialog",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Class Annotation",
+    "description" : "Add Class Annotation\t@Deprecated in class org.datacleaner.metamodel.datahub.utils.JsonUpdateQueryBuilder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate getDataContext(datastore Datastore) : DataContext inlined to public getSchemas(response HttpServletResponse, tenant String, datastoreName String) : Map<String,Object> in class org.datacleaner.monitor.server.controllers.DatastoreSchemaController",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Merge Attribute",
+    "description" : "Merge Attribute\t[table : Table, query : String] to updateData : UpdateData in class org.datacleaner.metamodel.datahub.DataHubUpdateCallbackTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\t_connection : DataHubConnection to _connection : DataHubRepoConnection in class org.datacleaner.metamodel.datahub.DataHubDataSet",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tconnection : DataHubConnection to connection : DataHubRepoConnection in method public DataHubDataSet(query Query, connection DataHubRepoConnection) from class org.datacleaner.metamodel.datahub.DataHubDataSet",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\t_pendingUpdates : PendingUpdates to _pendingUpdates : List<UpdateData> in class org.datacleaner.metamodel.datahub.DataHubUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tupdateData : UpdateData in method public executeUpdate(updateData UpdateData) : void from class org.datacleaner.metamodel.datahub.DataHubUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\ttable : Table in method public executeUpdate(table Table, query String) : void from class org.datacleaner.metamodel.datahub.DataHubUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tquery : String in method public executeUpdate(table Table, query String) : void from class org.datacleaner.metamodel.datahub.DataHubUpdateCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Encapsulate Attribute",
+    "description" : "Encapsulate Attribute\tprivate _tenantId : String from class org.datacleaner.metamodel.datahub.DataHubConnection",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier\tprivate to protected in method protected getBaseUrlBuilder() : URIBuilder from class org.datacleaner.metamodel.datahub.DataHubConnection",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tcontextUrl : String in method public getHttpClient(contextUrl String) : MonitorHttpClient from class org.datacleaner.metamodel.datahub.DataHubConnection",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/docker-java/docker-java.git",
+  "sha1" : "9b93299257fffb5cda262132d46a97c256adb375",
+  "url" : "https://github.com/docker-java/docker-java/commit/9b93299257fffb5cda262132d46a97c256adb375",
+  "refactorings" : [ {
+    "type" : "Rename Class",
+    "description" : "Rename Class\tcom.github.dockerjava.api.command.DockerCmdExec renamed to com.github.dockerjava.api.command.DockerCmdSyncExec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tcallback : PullResponseCallback in method public testListContainers() : void from class com.github.dockerjava.core.command.ListContainersCmdImplTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tcallback : PullResponseCallback in method public testListContainersWithLabelsFilter() : void from class com.github.dockerjava.core.command.ListContainersCmdImplTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<Frame> in method public LogContainerCmdImpl(exec LogContainerCmd.Exec, containerId String, resultCallback ResultCallback<Frame>) from class com.github.dockerjava.core.command.LogContainerCmdImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<Event> in method public EventsCmdImpl(exec EventsCmd.Exec, resultCallback ResultCallback<Event>) from class com.github.dockerjava.core.command.EventsCmdImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<PullResponseItem> in method public PullImageCmdImpl(exec PullImageCmd.Exec, authConfig AuthConfig, repository String, resultCallback ResultCallback<PullResponseItem>) from class com.github.dockerjava.core.command.PullImageCmdImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tresultCallback : ResultCallback<BuildResponseItem> in method public exec(command BuildImageCmd, resultCallback ResultCallback<BuildResponseItem>) : Void from class com.github.dockerjava.core.TestDockerCmdExecFactory.createBuildImageCmdExec.new BuildImageCmd.Exec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tcallback : PushResponseCallback in method public pushLatest() : void from class com.github.dockerjava.core.command.PushImageCmdImplTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\texecution : DockerCmdExec<T,RES_T> to execution : DockerCmdSyncExec<T,RES_T> in method public AbstrAuthCfgDockerCmd(execution DockerCmdSyncExec<T,RES_T>, authConfig AuthConfig) from class com.github.dockerjava.core.command.AbstrAuthCfgDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\texecution : DockerCmdExec<T,RES_T> to execution : DockerCmdSyncExec<T,RES_T> in method public AbstrAuthCfgDockerCmd(execution DockerCmdSyncExec<T,RES_T>) from class com.github.dockerjava.core.command.AbstrAuthCfgDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<BuildResponseItem> in method public BuildImageCmdImpl(exec BuildImageCmd.Exec, resultCallback ResultCallback<BuildResponseItem>) from class com.github.dockerjava.core.command.BuildImageCmdImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<BuildResponseItem> in method public BuildImageCmdImpl(exec BuildImageCmd.Exec, dockerFileOrFolder File, resultCallback ResultCallback<BuildResponseItem>) from class com.github.dockerjava.core.command.BuildImageCmdImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<BuildResponseItem> in method public BuildImageCmdImpl(exec BuildImageCmd.Exec, tarInputStream InputStream, resultCallback ResultCallback<BuildResponseItem>) from class com.github.dockerjava.core.command.BuildImageCmdImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<PushResponseItem> in method public PushImageCmdImpl(exec PushImageCmd.Exec, name String, resultCallback ResultCallback<PushResponseItem>) from class com.github.dockerjava.core.command.PushImageCmdImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Variable",
+    "description" : "Parameterize Variable\tresultCallback : ResultCallback<A_RES_T> to resultCallback : ResultCallback<A_RES_T> in method protected execute(command CMD_T, resultCallback ResultCallback<A_RES_T>) : Void from class com.github.dockerjava.jaxrs.AbstrAsyncDockerCmdExec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tRES_T to Void in method protected execute(command CMD_T, resultCallback ResultCallback<A_RES_T>) : Void from class com.github.dockerjava.jaxrs.AbstrAsyncDockerCmdExec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation\t@Override in method protected execute(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrAsyncDockerCmdExec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic withResultCallback(resultCallback ResultCallback<A_RES_T>) : CMD_T inlined to public AbstrAsyncDockerCmd(execution DockerCmdAsyncExec<CMD_T,A_RES_T>) in class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "Rename Variable on top"
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tresultCallback : ResultCallback<A_RES_T> to execution : DockerCmdAsyncExec<CMD_T,A_RES_T> in method public AbstrAsyncDockerCmd(execution DockerCmdAsyncExec<CMD_T,A_RES_T>) from class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tresultCallback : ResultCallback<A_RES_T> to execution : DockerCmdAsyncExec<CMD_T,A_RES_T> in method public AbstrAsyncDockerCmd(execution DockerCmdAsyncExec<CMD_T,A_RES_T>) from class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tresultCallback : ResultCallback<A_RES_T> to execution : DockerCmdAsyncExec<CMD_T,A_RES_T> in method public AbstrAsyncDockerCmd(execution DockerCmdAsyncExec<CMD_T,A_RES_T>) from class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tresultCallback : ResultCallback<A_RES_T> to execution : DockerCmdAsyncExec<CMD_T,A_RES_T> in method public AbstrAsyncDockerCmd(execution DockerCmdAsyncExec<CMD_T,A_RES_T>) from class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\texecution : DockerCmdExec<CMD_T,RES_T> to execution : DockerCmdAsyncExec<CMD_T,A_RES_T> in method public AbstrAsyncDockerCmd(execution DockerCmdAsyncExec<CMD_T,A_RES_T>) from class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<A_RES_T> in method public AbstrAsyncDockerCmd(execution DockerCmdExec<CMD_T,RES_T>, resultCallback ResultCallback<A_RES_T>) from class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\tresultCallback : ResultCallback<A_RES_T> to execution : DockerCmdAsyncExec<CMD_T,A_RES_T> in class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tresultCallback : ResultCallback<A_RES_T> to execution : DockerCmdAsyncExec<CMD_T,A_RES_T> in class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tprivate to protected in attribute protected execution : DockerCmdAsyncExec<CMD_T,A_RES_T> from class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<Statistics> in method public StatsCmdImpl(exec StatsCmd.Exec, resultCallback ResultCallback<Statistics>) from class com.github.dockerjava.core.command.StatsCmdImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<Frame> in method public AttachContainerCmdImpl(exec AttachContainerCmd.Exec, containerId String, resultCallback ResultCallback<Frame>) from class com.github.dockerjava.core.command.AttachContainerCmdImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\texecution : DockerCmdExec<CMD_T,RES_T> to execution : DockerCmdSyncExec<CMD_T,RES_T> in class com.github.dockerjava.core.command.AbstrDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\texecution : DockerCmdExec<CMD_T,RES_T> to execution : DockerCmdSyncExec<CMD_T,RES_T> in method public AbstrDockerCmd(execution DockerCmdSyncExec<CMD_T,RES_T>) from class com.github.dockerjava.core.command.AbstrDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tcallback : PullResponseCallback in method private generateEvents() : int from class com.github.dockerjava.core.command.EventsCmdImplTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\titems : List<T> to items : List<A_RES_T> in class com.github.dockerjava.client.AbstractDockerClientTest.CollectStreamItemCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\titem : T to item : A_RES_T in method public onNext(item A_RES_T) : void from class com.github.dockerjava.client.AbstractDockerClientTest.CollectStreamItemCallback",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tcallback : PullResponseCallback in method public beforeTest() : void from class com.github.dockerjava.client.AbstractDockerClientTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tresultCallback : ResultCallback<PullResponseItem> in method public exec(command PullImageCmd, resultCallback ResultCallback<PullResponseItem>) : Void from class com.github.dockerjava.core.command.PullImageCmdImplTest.NOP_EXEC.new PullImageCmd.Exec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation\t@Override in method public exec(command PullImageCmd) : Void from class com.github.dockerjava.core.command.PullImageCmdImplTest.NOP_EXEC.new PullImageCmd.Exec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tcallback : PullResponseCallback in method public testPullNonExistingImage() : void from class com.github.dockerjava.core.command.PullImageCmdImplTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic awaitFinish() : void renamed to public awaitCompletion() : RC_T in class com.github.dockerjava.core.async.ResultCallbackTemplate",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic awaitFinish(timeout long, timeUnit TimeUnit) : void renamed to public awaitCompletion(timeout long, timeUnit TimeUnit) : RC_T in class com.github.dockerjava.core.async.ResultCallbackTemplate",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tobject : T to object : A_RES_T in method public onNext(object A_RES_T) : void from class com.github.dockerjava.core.async.ResultCallbackTemplate",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to RC_T in method public awaitCompletion() : RC_T from class com.github.dockerjava.core.async.ResultCallbackTemplate",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@SuppressWarnings(\"unchecked\") in method public awaitCompletion() : RC_T from class com.github.dockerjava.core.async.ResultCallbackTemplate",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tvoid to RC_T in method public awaitCompletion(timeout long, timeUnit TimeUnit) : RC_T from class com.github.dockerjava.core.async.ResultCallbackTemplate",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@SuppressWarnings(\"unchecked\") in method public awaitCompletion(timeout long, timeUnit TimeUnit) : RC_T from class com.github.dockerjava.core.async.ResultCallbackTemplate",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<PullResponseItem> in method public pullImageCmd(repository String, resultCallback ResultCallback<PullResponseItem>) : PullImageCmd from class com.github.dockerjava.core.DockerClientImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<PushResponseItem> in method public pushImageCmd(name String, resultCallback ResultCallback<PushResponseItem>) : PushImageCmd from class com.github.dockerjava.core.DockerClientImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<PushResponseItem> in method public pushImageCmd(identifier Identifier, resultCallback ResultCallback<PushResponseItem>) : PushImageCmd from class com.github.dockerjava.core.DockerClientImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<Frame> in method public attachContainerCmd(containerId String, resultCallback ResultCallback<Frame>) : AttachContainerCmd from class com.github.dockerjava.core.DockerClientImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<Frame> in method public logContainerCmd(containerId String, resultCallback ResultCallback<Frame>) : LogContainerCmd from class com.github.dockerjava.core.DockerClientImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<BuildResponseItem> in method public buildImageCmd(resultCallback ResultCallback<BuildResponseItem>) : BuildImageCmd from class com.github.dockerjava.core.DockerClientImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<BuildResponseItem> in method public buildImageCmd(dockerFileOrFolder File, resultCallback ResultCallback<BuildResponseItem>) : BuildImageCmd from class com.github.dockerjava.core.DockerClientImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<BuildResponseItem> in method public buildImageCmd(tarInputStream InputStream, resultCallback ResultCallback<BuildResponseItem>) : BuildImageCmd from class com.github.dockerjava.core.DockerClientImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\teventCallback : ResultCallback<Event> in method public eventsCmd(eventCallback ResultCallback<Event>) : EventsCmd from class com.github.dockerjava.core.DockerClientImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tstatisticsCallback : ResultCallback<Statistics> in method public statsCmd(statisticsCallback ResultCallback<Statistics>) : StatsCmd from class com.github.dockerjava.core.DockerClientImpl",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Superclass",
+    "description" : "Extract Superclass\tcom.github.dockerjava.jaxrs.AbstrSyncDockerCmdExec from classes [com.github.dockerjava.jaxrs.PingCmdExec, com.github.dockerjava.jaxrs.CopyFileFromContainerCmdExec, com.github.dockerjava.jaxrs.StartContainerCmdExec, com.github.dockerjava.jaxrs.CommitCmdExec, com.github.dockerjava.jaxrs.StopContainerCmdExec, com.github.dockerjava.jaxrs.VersionCmdExec, com.github.dockerjava.jaxrs.ContainerDiffCmdExec, com.github.dockerjava.jaxrs.AuthCmdExec, com.github.dockerjava.jaxrs.InspectImageCmdExec, com.github.dockerjava.jaxrs.WaitContainerCmdExec, com.github.dockerjava.jaxrs.KillContainerCmdExec, com.github.dockerjava.jaxrs.InfoCmdExec, com.github.dockerjava.jaxrs.ExecCreateCmdExec, com.github.dockerjava.jaxrs.RemoveImageCmdExec, com.github.dockerjava.jaxrs.InspectExecCmdExec, com.github.dockerjava.jaxrs.UnpauseContainerCmdExec, com.github.dockerjava.jaxrs.PauseContainerCmdExec, com.github.dockerjava.jaxrs.ListContainersCmdExec, com.github.dockerjava.jaxrs.ListImagesCmdExec, com.github.dockerjava.jaxrs.TagImageCmdExec, com.github.dockerjava.jaxrs.SaveImageCmdExec, com.github.dockerjava.jaxrs.SearchImagesCmdExec, com.github.dockerjava.jaxrs.ExecStartCmdExec, com.github.dockerjava.jaxrs.CreateContainerCmdExec, com.github.dockerjava.jaxrs.InspectContainerCmdExec, com.github.dockerjava.jaxrs.RestartContainerCmdExec, com.github.dockerjava.jaxrs.RemoveContainerCmdExec, com.github.dockerjava.jaxrs.CreateImageCmdExec, com.github.dockerjava.jaxrs.TopContainerCmdExec]",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Interface",
+    "description" : "Extract Interface\tcom.github.dockerjava.api.command.SyncDockerCmd from classes [com.github.dockerjava.api.command.SaveImageCmd, com.github.dockerjava.api.command.CommitCmd, com.github.dockerjava.api.command.ContainerDiffCmd, com.github.dockerjava.api.command.RestartContainerCmd, com.github.dockerjava.api.command.RemoveImageCmd, com.github.dockerjava.api.command.InspectContainerCmd, com.github.dockerjava.api.command.WaitContainerCmd, com.github.dockerjava.api.command.PauseContainerCmd, com.github.dockerjava.api.command.CreateContainerCmd, com.github.dockerjava.api.command.StopContainerCmd, com.github.dockerjava.api.command.InspectImageCmd, com.github.dockerjava.api.command.StartContainerCmd, com.github.dockerjava.api.command.InspectExecCmd, com.github.dockerjava.api.command.UnpauseContainerCmd, com.github.dockerjava.api.command.KillContainerCmd, com.github.dockerjava.api.command.AuthCmd, com.github.dockerjava.api.command.CopyFileFromContainerCmd, com.github.dockerjava.core.command.AbstrDockerCmd, com.github.dockerjava.api.command.ExecStartCmd, com.github.dockerjava.api.command.TopContainerCmd, com.github.dockerjava.api.command.RemoveContainerCmd]",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Subclass",
+    "description" : "Extract Subclass\tcom.github.dockerjava.jaxrs.AbstrSyncDockerCmdExec from class com.github.dockerjava.jaxrs.AbstrDockerCmdExec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Push Down Method",
+    "description" : "Push Down Method\tpublic exec(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrDockerCmdExec to public exec(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrSyncDockerCmdExec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Push Down Method",
+    "description" : "Push Down Method\tprotected abstract execute(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrDockerCmdExec to protected abstract execute(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrSyncDockerCmdExec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Modifier",
+    "description" : "Remove Method Modifier\tfinal in method public exec(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrAsyncDockerCmdExec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic exec(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrAsyncDockerCmdExec to public exec(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrSyncDockerCmdExec",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Push Down Method",
+    "description" : "Push Down Method\tpublic exec() : RES_T from class com.github.dockerjava.api.command.DockerCmd to public exec() : RES_T from class com.github.dockerjava.api.command.SyncDockerCmd",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<PullResponseItem> in method public pullImageCmd(repository String, resultCallback ResultCallback<PullResponseItem>) : PullImageCmd from class com.github.dockerjava.api.DockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<PushResponseItem> in method public pushImageCmd(name String, resultCallback ResultCallback<PushResponseItem>) : PushImageCmd from class com.github.dockerjava.api.DockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<PushResponseItem> in method public pushImageCmd(identifier Identifier, resultCallback ResultCallback<PushResponseItem>) : PushImageCmd from class com.github.dockerjava.api.DockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<Frame> in method public attachContainerCmd(containerId String, resultCallback ResultCallback<Frame>) : AttachContainerCmd from class com.github.dockerjava.api.DockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<Frame> in method public logContainerCmd(containerId String, resultCallback ResultCallback<Frame>) : LogContainerCmd from class com.github.dockerjava.api.DockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<BuildResponseItem> in method public buildImageCmd(resultCallback ResultCallback<BuildResponseItem>) : BuildImageCmd from class com.github.dockerjava.api.DockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<BuildResponseItem> in method public buildImageCmd(dockerFileOrFolder File, resultCallback ResultCallback<BuildResponseItem>) : BuildImageCmd from class com.github.dockerjava.api.DockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<BuildResponseItem> in method public buildImageCmd(tarInputStream InputStream, resultCallback ResultCallback<BuildResponseItem>) : BuildImageCmd from class com.github.dockerjava.api.DockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<Event> in method public eventsCmd(resultCallback ResultCallback<Event>) : EventsCmd from class com.github.dockerjava.api.DockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tresultCallback : ResultCallback<Statistics> in method public statsCmd(resultCallback ResultCallback<Statistics>) : StatsCmd from class com.github.dockerjava.api.DockerClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/google/error-prone.git",
+  "sha1" : "94f0acc51bffdad46b40450d098ce09643b3c000",
+  "url" : "https://github.com/google/error-prone/commit/94f0acc51bffdad46b40450d098ce09643b3c000",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic allOf(matchers Iterable<? extends Matcher<? super T>>) : Matcher<T> inlined to public allOf(matchers Matcher<? super T>...) : Matcher<T> in class com.google.errorprone.matchers.Matchers",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/google/sagetv.git",
+  "sha1" : "39fa0237c79bd912de50cbd404a4af71bf5e2eb3",
+  "url" : "https://github.com/google/sagetv/commit/39fa0237c79bd912de50cbd404a4af71bf5e2eb3",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic exportSTV(file File, cryptoKeyObj Object) : void inlined to public exportSTV(file File) : void in class tv.sage.ModuleGroup",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves and nodes"
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/loklak/loklak_server.git",
+  "sha1" : "64b8b4d6ddb240526ec1e9b41385e381ba53fec6",
+  "url" : "https://github.com/loklak/loklak_server/commit/64b8b4d6ddb240526ec1e9b41385e381ba53fec6",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprotected getSessionIdentity() : Identity inlined to private getIdentity(request HttpServletRequest) : Identity in class org.loklak.server.AbstractAPIHandler",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "Rename Variable on top"
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate setSessionIdentity(identity Identity) : void inlined to private getIdentity(request HttpServletRequest) : Identity in class org.loklak.server.AbstractAPIHandler",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "Rename Variable on top"
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\trequest : HttpServletRequest in method private getIdentity(request HttpServletRequest) : Identity from class org.loklak.server.AbstractAPIHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\trequest : HttpServletRequest in method private getAnonymousIdentity(request HttpServletRequest) : Identity from class org.loklak.server.AbstractAPIHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Attribute",
+    "description" : "Parameterize Attribute\tcurrentRequest : HttpServletRequest to request : HttpServletRequest in method private getIdentity(request HttpServletRequest) : Identity from class org.loklak.server.AbstractAPIHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Attribute",
+    "description" : "Parameterize Attribute\tcurrentRequest : HttpServletRequest to request : HttpServletRequest in method private getIdentity(request HttpServletRequest) : Identity from class org.loklak.server.AbstractAPIHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Attribute",
+    "description" : "Parameterize Attribute\tcurrentRequest : HttpServletRequest to request : HttpServletRequest in method private getIdentity(request HttpServletRequest) : Identity from class org.loklak.server.AbstractAPIHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Attribute",
+    "description" : "Parameterize Attribute\tcurrentRequest : HttpServletRequest to request : HttpServletRequest in method private getAnonymousIdentity(request HttpServletRequest) : Identity from class org.loklak.server.AbstractAPIHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tidentity : Identity in method public Authorization(json JSONObject, parent JsonFile, identity Identity) from class org.loklak.server.Authorization",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tprotected to private in attribute private identity : Identity from class org.loklak.server.Authorization",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Attribute",
+    "description" : "Move Attribute\tprotected identity : Identity from class org.loklak.server.AbstractAPIHandler to private identity : Identity from class org.loklak.server.Authorization",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/minio/minio-java.git",
+  "sha1" : "2ed2cdff17d476a4cefda7e3af6f6c412f485698",
+  "url" : "https://github.com/minio/minio-java/commit/2ed2cdff17d476a4cefda7e3af6f6c412f485698",
+  "refactorings" : [ {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getId() : String renamed to public id() : String in class io.minio.messages.Grantee",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getDisplayName() : String renamed to public displayName() : String in class io.minio.messages.Grantee",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getEmailAddress() : String renamed to public emailAddress() : String in class io.minio.messages.Grantee",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getType() : String renamed to public type() : String in class io.minio.messages.Grantee",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getUri() : String renamed to public uri() : String in class io.minio.messages.Grantee",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getGrantee() : Grantee renamed to public grantee() : Grantee in class io.minio.messages.Grant",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getPermission() : String renamed to public permission() : String in class io.minio.messages.Grant",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getOwner() : Owner renamed to public owner() : Owner in class io.minio.messages.AccessControlPolicy",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getAccessControlList() : List<Grant> renamed to public grants() : List<Grant> in class io.minio.messages.AccessControlPolicy",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\tgrants : AccessControlList to accessControlList : AccessControlList in class io.minio.messages.AccessControlPolicy",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate getAccessPolicy(bucketName String) : AccessControlPolicy inlined to public getBucketAcl(bucketName String) : Acl in class io.minio.MinioClient",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\taccessControlList : List<Grant> to grants : List<Grant> in method public getBucketAcl(bucketName String) : Acl from class io.minio.MinioClient",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getGrant() : List<Grant> renamed to public grantList() : List<Grant> in class io.minio.messages.AccessControlList",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/mixpanel/mixpanel-android.git",
+  "sha1" : "636a1adbae4849b4b86905f9429b3ada43c7642e",
+  "url" : "https://github.com/mixpanel/mixpanel-android/commit/636a1adbae4849b4b86905f9429b3ada43c7642e",
+  "refactorings" : [ {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate setLayout(target View) : void inlined to public accumulate(found View) : void in class com.mixpanel.android.viewcrawler.ViewVisitor.LayoutUpdateVisitor",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "Altough the logic is the same, but removing the throw statement is considered as an impure modification"
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\ttarget : View to found : View in method public accumulate(found View) : void from class com.mixpanel.android.viewcrawler.ViewVisitor.LayoutUpdateVisitor",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\texception : ViewVisitor.CantVisitException to exception : ViewVisitor.LayoutErrorMessage in method private sendLayoutError(exception ViewVisitor.LayoutErrorMessage) : void from class com.mixpanel.android.viewcrawler.ViewCrawler.ViewCrawlerHandler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\te : ViewVisitor.CantVisitException to e : ViewVisitor.LayoutErrorMessage in method public onLayoutError(e ViewVisitor.LayoutErrorMessage) : void from class com.mixpanel.android.viewcrawler.ViewCrawler",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\terrorList : List<ViewVisitor.CantVisitException> to errorList : List<ViewVisitor.LayoutErrorMessage> in class com.mixpanel.android.viewcrawler.EditProtocolTest.MockOnLayoutErrorListener",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\te : ViewVisitor.CantVisitException to e : ViewVisitor.LayoutErrorMessage in method public onLayoutError(e ViewVisitor.LayoutErrorMessage) : void from class com.mixpanel.android.viewcrawler.EditProtocolTest.MockOnLayoutErrorListener",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\te : ViewVisitor.CantVisitException to e : ViewVisitor.LayoutErrorMessage in method public testLayoutEdit() : void from class com.mixpanel.android.viewcrawler.EditProtocolTest",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic getExceptionType() : String renamed to public getErrorType() : String in class com.mixpanel.android.viewcrawler.ViewVisitor.LayoutErrorMessage",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tmessage : String to errorType : String in method public LayoutErrorMessage(errorType String, name String) from class com.mixpanel.android.viewcrawler.ViewVisitor.LayoutErrorMessage",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\texceptionType : String in method public CantVisitException(message String, exceptionType String, name String) from class com.mixpanel.android.viewcrawler.ViewVisitor.CantVisitException",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Attribute",
+    "description" : "Rename Attribute\tmExceptionType : String to mErrorType : String in class com.mixpanel.android.viewcrawler.ViewVisitor.LayoutErrorMessage",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Class",
+    "description" : "Rename Class\tcom.mixpanel.android.viewcrawler.ViewVisitor.CantVisitException renamed to com.mixpanel.android.viewcrawler.ViewVisitor.LayoutErrorMessage",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\te : ViewVisitor.CantVisitException to e : LayoutErrorMessage in method public onLayoutError(e LayoutErrorMessage) : void from class com.mixpanel.android.viewcrawler.ViewVisitor.OnLayoutErrorListener",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/openMF/android-client.git",
+  "sha1" : "4a66dec4cab77fcb68593b31dc8416d87ee85c21",
+  "url" : "https://github.com/openMF/android-client/commit/4a66dec4cab77fcb68593b31dc8416d87ee85c21",
+  "refactorings" : [ {
+    "type" : "Rename Class",
+    "description" : "Rename Class\tcom.mifos.mifosxdroid.core.BaseActivity renamed to com.mifos.mifosxdroid.core.MifosBaseActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.LoanRepaymentFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.LoanRepaymentFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private clientName : String from class com.mifos.mifosxdroid.online.LoanRepaymentFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private loanAccountNumber : String from class com.mifos.mifosxdroid.online.LoanRepaymentFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private loanProductName : String from class com.mifos.mifosxdroid.online.LoanRepaymentFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private amountInArrears : Double from class com.mifos.mifosxdroid.online.LoanRepaymentFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tLIST_OPEN_ICON : Iconify.IconValue to LIST_OPEN_ICON : MaterialIcons in class com.mifos.mifosxdroid.online.ClientDetailsFragment.AccountAccordion.Section",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tLIST_CLOSED_ICON : Iconify.IconValue to LIST_CLOSED_ICON : MaterialIcons in class com.mifos.mifosxdroid.online.ClientDetailsFragment.AccountAccordion.Section",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\ticonView : TextView to iconView : IconTextView in method public open(context Activity) : void from class com.mifos.mifosxdroid.online.ClientDetailsFragment.AccountAccordion.Section",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\ticonView : TextView to iconView : IconTextView in method public close(context Activity) : void from class com.mifos.mifosxdroid.online.ClientDetailsFragment.AccountAccordion.Section",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\ticonView : TextView to iconView : IconTextView in method private configureSection(context Activity, accordion AccountAccordion) : void from class com.mifos.mifosxdroid.online.ClientDetailsFragment.AccountAccordion.Section",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tonClickListener : View.OnClickListener to onClickListener : OnClickListener in method private configureSection(context Activity, accordion AccountAccordion) : void from class com.mifos.mifosxdroid.online.ClientDetailsFragment.AccountAccordion.Section",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tTextView to IconTextView in method public getIconView(context Activity) : IconTextView from class com.mifos.mifosxdroid.online.ClientDetailsFragment.AccountAccordion.Section",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Modifier",
+    "description" : "Remove Attribute Modifier\tstatic in attribute private TAG : String from class com.mifos.mifosxdroid.online.ClientDetailsFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tiv_clientImage : ImageView to iv_clientImage : CircularImageView in class com.mifos.mifosxdroid.online.ClientDetailsFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.ClientDetailsFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.ClientDetailsFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tpublic onClientImageCapture(resultCode int, data Intent) : void inlined to public onActivityResult(requestCode int, resultCode int, data Intent) : void in class com.mifos.mifosxdroid.online.ClientDetailsFragment",
+    "purity" : {
+      "purityValue" : "0",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : "The if condition expression has been impurely changed"
+    }
+  }, {
+    "type" : "Merge Conditional",
+    "description" : "Merge Conditional\t[if(!imageLoadingAsyncTask.getStatus().equals(AsyncTask.Status.FINISHED)), if(imageLoadingAsyncTask != null)] to if(imageLoadingAsyncTask != null && !imageLoadingAsyncTask.getStatus().equals(AsyncTask.Status.FINISHED)) in method public onDetach() : void from class com.mifos.mifosxdroid.online.ClientDetailsFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tdataTable : DataTable in method public success(dataTables List<DataTable>, response Response) : void from class com.mifos.mifosxdroid.online.ClientDetailsFragment.inflateDataTablesList.getDatatablesOfClient.new Callback<List<DataTable>>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.SavingsAccountSummaryFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.SavingsAccountSummaryFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private savingsAccountWithAssociations : SavingsAccountWithAssociations from class com.mifos.mifosxdroid.online.SavingsAccountSummaryFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tclientDetailsFragment : ClientDetailsFragment in method protected onCreate(savedInstanceState Bundle) : void from class com.mifos.mifosxdroid.online.ClientActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tloanAccountSummaryFragment : LoanAccountSummaryFragment in method public loadLoanAccountSummary(loanAccountNumber int) : void from class com.mifos.mifosxdroid.online.ClientActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tsavingsAccountSummaryFragment : SavingsAccountSummaryFragment in method public loadSavingsAccountSummary(savingsAccountNumber int, accountType DepositType) : void from class com.mifos.mifosxdroid.online.ClientActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tloanRepaymentFragment : LoanRepaymentFragment in method public makeRepayment(loan LoanWithAssociations) : void from class com.mifos.mifosxdroid.online.ClientActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tloanRepaymentScheduleFragment : LoanRepaymentScheduleFragment in method public loadRepaymentSchedule(loanId int) : void from class com.mifos.mifosxdroid.online.ClientActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tloanTransactionsFragment : LoanTransactionsFragment in method public loadLoanTransactions(loanId int) : void from class com.mifos.mifosxdroid.online.ClientActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Variable",
+    "description" : "Inline Variable\tsavingsAccountTransactionFragment : SavingsAccountTransactionFragment in method public doTransaction(savingsAccountWithAssociations SavingsAccountWithAssociations, transactionType String, accountType DepositType) : void from class com.mifos.mifosxdroid.online.ClientActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.GenerateCollectionSheetFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.GenerateCollectionSheetFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.SavingsAccountTransactionFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.SavingsAccountTransactionFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private savingsAccountNumber : String from class com.mifos.mifosxdroid.online.SavingsAccountTransactionFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.dialogfragments.DataTableRowDialogFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.dialogfragments.DataTableRowDialogFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private linearLayout : LinearLayout from class com.mifos.mifosxdroid.dialogfragments.DataTableRowDialogFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private safeUIBlockingUtility : SafeUIBlockingUtility from class com.mifos.mifosxdroid.dialogfragments.DataTableRowDialogFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private formWidgets : List<FormWidget> from class com.mifos.mifosxdroid.dialogfragments.DataTableRowDialogFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Encapsulate Attribute",
+    "description" : "Encapsulate Attribute\tpublic api : API from class com.mifos.utils.MifosApplication",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Attribute Modifier",
+    "description" : "Add Attribute Modifier\tstatic in attribute public api : API from class com.mifos.utils.MifosApplication",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tcontractedIconValue : Iconify.IconValue to contractedIconValue : MaterialIcons in method public getGroupView(i int, isExpanded boolean, view View, viewGroup ViewGroup) : View from class com.mifos.mifosxdroid.adapters.LoanTransactionAdapter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\texpandedIconValue : Iconify.IconValue to expandedIconValue : MaterialIcons in method public getGroupView(i int, isExpanded boolean, view View, viewGroup ViewGroup) : View from class com.mifos.mifosxdroid.adapters.LoanTransactionAdapter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.ClientIdentifiersFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.ClientIdentifiersFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private clientId : int from class com.mifos.mifosxdroid.online.ClientIdentifiersFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.LoanTransactionsFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.LoanTransactionsFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.GroupListFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.GroupListFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private centerId : int from class com.mifos.mifosxdroid.online.GroupListFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.DataTableDataFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.DataTableDataFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private linearLayout : LinearLayout from class com.mifos.mifosxdroid.online.DataTableDataFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\talertDialogBuilder : AlertDialog.Builder to dialog : AlertDialog.Builder in method public success(res List<SearchedEntity>, response Response) : void from class com.mifos.mifosxdroid.online.ClientSearchFragment.findClients.searchClientsByName.new Callback<List<SearchedEntity>>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\tsearchedEntities : List<SearchedEntity> to res : List<SearchedEntity> in method public success(res List<SearchedEntity>, response Response) : void from class com.mifos.mifosxdroid.online.ClientSearchFragment.findClients.searchClientsByName.new Callback<List<SearchedEntity>>",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Replace Attribute With Variable",
+    "description" : "Replace Attribute With Variable\tsearchQuery : String to q : String in method public performSearch() : void from class com.mifos.mifosxdroid.online.ClientSearchFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.ClientListFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\tcloudIcon : Iconify.IconValue to cloudIcon : MaterialIcons in method public getView(i int, view View, viewGroup ViewGroup) : View from class com.mifos.mifosxdroid.adapters.DocumentListAdapter",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.DocumentListFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.DocumentListFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.LoanRepaymentScheduleFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.LoanRepaymentScheduleFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.LoanAccountSummaryFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private sharedPreferences : SharedPreferences from class com.mifos.mifosxdroid.online.LoanAccountSummaryFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Access Modifier",
+    "description" : "Change Attribute Access Modifier\tpackage to private in attribute private rootView : View from class com.mifos.mifosxdroid.online.CollectionSheetFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@Override in method public showProgress(message String) : void from class com.mifos.mifosxdroid.core.MifosBaseActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@Override in method public hideProgress() : void from class com.mifos.mifosxdroid.core.MifosBaseActivity",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Interface",
+    "description" : "Extract Interface\tcom.mifos.mifosxdroid.core.BaseActivityCallback from classes [com.mifos.mifosxdroid.core.BaseActivity]",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract Superclass",
+    "description" : "Extract Superclass\tcom.mifos.mifosxdroid.core.MifosBaseFragment from classes [com.mifos.mifosxdroid.online.LoanRepaymentFragment, com.mifos.mifosxdroid.online.ClientDetailsFragment, com.mifos.mifosxdroid.online.SavingsAccountSummaryFragment, com.mifos.mifosxdroid.online.GenerateCollectionSheetFragment, com.mifos.mifosxdroid.online.SavingsAccountTransactionFragment, com.mifos.mifosxdroid.online.ClientIdentifiersFragment, com.mifos.mifosxdroid.fragments.CenterListFragment, com.mifos.mifosxdroid.online.CenterListFragment, com.mifos.mifosxdroid.fragments.GroupFragment, com.mifos.mifosxdroid.online.LoanTransactionsFragment, com.mifos.mifosxdroid.online.GroupListFragment, com.mifos.mifosxdroid.online.DataTableDataFragment, com.mifos.mifosxdroid.fragments.LoanFragment, com.mifos.mifosxdroid.online.ClientSearchFragment, com.mifos.mifosxdroid.online.ClientListFragment, com.mifos.mifosxdroid.fragments.ClientFragment, com.mifos.mifosxdroid.online.DocumentListFragment, com.mifos.mifosxdroid.online.LoanRepaymentScheduleFragment, com.mifos.mifosxdroid.online.LoanAccountSummaryFragment, com.mifos.mifosxdroid.online.CollectionSheetFragment]",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Pull Up Method",
+    "description" : "Pull Up Method\tpublic onAttach(activity Activity) : void from class com.mifos.mifosxdroid.online.LoanRepaymentFragment to public onAttach(activity Activity) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Pull Up Method",
+    "description" : "Pull Up Method\tpublic onAttach(activity Activity) : void from class com.mifos.mifosxdroid.online.ClientIdentifiersFragment to public onAttach(activity Activity) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Pull Up Method",
+    "description" : "Pull Up Method\tpublic onAttach(activity Activity) : void from class com.mifos.mifosxdroid.online.DataTableDataFragment to public onAttach(activity Activity) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Pull Up Method",
+    "description" : "Pull Up Method\tpublic onCreate(savedInstanceState Bundle) : void from class com.mifos.mifosxdroid.online.ClientSearchFragment to public onCreate(savedInstanceState Bundle) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Pull Up Method",
+    "description" : "Pull Up Method\tpublic hideKeyboard() : void from class com.mifos.mifosxdroid.online.ClientSearchFragment to public hideKeyboard(view View) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tview : View in method public hideKeyboard(view View) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Pull Up Method",
+    "description" : "Pull Up Method\tpublic onAttach(activity Activity) : void from class com.mifos.mifosxdroid.online.DocumentListFragment to public onAttach(activity Activity) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Pull Up Method",
+    "description" : "Pull Up Method\tpublic onAttach(activity Activity) : void from class com.mifos.mifosxdroid.online.LoanRepaymentScheduleFragment to public onAttach(activity Activity) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
+}, {
+  "repository" : "https://github.com/zalando/nakadi.git",
+  "sha1" : "25d26f5fdfed1ab4c7bfa0b8de764572050d9940",
+  "url" : "https://github.com/zalando/nakadi/commit/25d26f5fdfed1ab4c7bfa0b8de764572050d9940",
+  "refactorings" : [ {
+    "type" : "Change Variable Type",
+    "description" : "Change Variable Type\te : NakadiException to e : Exception in method public listPartitions(topicId String) : ResponseEntity<?> from class de.zalando.aruha.nakadi.controller.TopicsController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic whenGetSingleBatchFromSinglePartitionThenOk() : void renamed to public whenGetSeveralEventsWhenReadingFromLatestOffsetsThenOk() : void in class de.zalando.aruha.nakadi.webservice.EventStreamReadingAT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter\ttopic : String to eventType : String in method private createStreamEndpointUrl(eventType String) : String from class de.zalando.aruha.nakadi.webservice.EventStreamReadingAT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tpartition : String in method private createStreamEndpointUrl(topic String, partition String) : String from class de.zalando.aruha.nakadi.webservice.EventStreamReadingAT",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Method",
+    "description" : "Rename Method\tpublic topicRepositorySettings() : KafkaRepositorySettings renamed to public kafkaRepositorySettings() : KafkaRepositorySettings in class de.zalando.aruha.nakadi.config.NakadiConfig",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@Profile(\"kafka\") in method public getKafkaLocationManager() : KafkaLocationManager from class de.zalando.aruha.nakadi.config.NakadiConfig",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@Profile(\"kafka\") in method public kafkaFactory() : KafkaFactory from class de.zalando.aruha.nakadi.config.NakadiConfig",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Method Annotation",
+    "description" : "Add Method Annotation\t@Profile(\"kafka\") in method public kafkaRepositorySettings() : KafkaRepositorySettings from class de.zalando.aruha.nakadi.config.NakadiConfig",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tbatchTimeout : Optional<Integer> to batchTimeout : Integer in class de.zalando.aruha.nakadi.service.EventStreamConfig.Builder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tstreamLimit : Optional<Integer> to streamLimit : Integer in method public withStreamLimit(streamLimit Integer) : Builder from class de.zalando.aruha.nakadi.service.EventStreamConfig.Builder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Annotation",
+    "description" : "Add Parameter Annotation\t@Nullable in parameter streamLimit : Integer in method public withStreamLimit(streamLimit Integer) : Builder from class de.zalando.aruha.nakadi.service.EventStreamConfig.Builder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tbatchTimeout : Optional<Integer> to batchTimeout : Integer in method public withBatchTimeout(batchTimeout Integer) : Builder from class de.zalando.aruha.nakadi.service.EventStreamConfig.Builder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tstreamTimeout : Optional<Integer> to streamTimeout : Integer in method public withStreamTimeout(streamTimeout Integer) : Builder from class de.zalando.aruha.nakadi.service.EventStreamConfig.Builder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Annotation",
+    "description" : "Add Parameter Annotation\t@Nullable in parameter streamTimeout : Integer in method public withStreamTimeout(streamTimeout Integer) : Builder from class de.zalando.aruha.nakadi.service.EventStreamConfig.Builder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tbatchKeepAliveLimit : Optional<Integer> to batchKeepAliveLimit : Integer in method public withBatchKeepAliveLimit(batchKeepAliveLimit Integer) : Builder from class de.zalando.aruha.nakadi.service.EventStreamConfig.Builder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Annotation",
+    "description" : "Add Parameter Annotation\t@Nullable in parameter batchKeepAliveLimit : Integer in method public withBatchKeepAliveLimit(batchKeepAliveLimit Integer) : Builder from class de.zalando.aruha.nakadi.service.EventStreamConfig.Builder",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type\tbatchTimeout : Optional<Integer> to batchTimeout : Integer in class de.zalando.aruha.nakadi.service.EventStreamConfig",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Return Type",
+    "description" : "Change Return Type\tOptional<Integer> to Integer in method public getBatchTimeout() : Integer from class de.zalando.aruha.nakadi.service.EventStreamConfig",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tbatchTimeout : Optional<Integer> to batchTimeout : Integer in method public EventStreamConfig(topic String, cursors Map<String,String>, batchLimit Integer, streamLimit Optional<Integer>, batchTimeout Integer, streamTimeout Optional<Integer>, batchKeepAliveLimit Optional<Integer>) from class de.zalando.aruha.nakadi.service.EventStreamConfig",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Inline Method",
+    "description" : "Inline Method\tprivate emptyBatch() : Map<String,List<String>> inlined to public streamEvents() : void in class de.zalando.aruha.nakadi.service.EventStream",
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Rename Variable",
+    "description" : "Rename Variable\tcurrentBatch : Map<String,List<String>> to currentBatches : Map<String,List<String>> in method public streamEvents() : void from class de.zalando.aruha.nakadi.service.EventStream",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Parameterize Variable",
+    "description" : "Parameterize Variable\tpartition : String to partition : String in method private sendBatch(partition String, offset String, currentBatch List<String>) : void from class de.zalando.aruha.nakadi.service.EventStream",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Modifier",
+    "description" : "Add Parameter Modifier\tfinal in parameter partition : String in method private sendBatch(partition String, offset String, currentBatch List<String>) : void from class de.zalando.aruha.nakadi.service.EventStream",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type\tcurrentBatch : Map<String,List<String>> to currentBatch : List<String> in method private sendBatch(partition String, offset String, currentBatch List<String>) : void from class de.zalando.aruha.nakadi.service.EventStream",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\toffset : String in method private sendBatch(partition String, offset String, currentBatch List<String>) : void from class de.zalando.aruha.nakadi.service.EventStream",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tlatestOffsets : Map<String,String> in method private sendBatch(latestOffsets Map<String,String>, currentBatch Map<String,List<String>>) : void from class de.zalando.aruha.nakadi.service.EventStream",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Attribute Modifier",
+    "description" : "Add Attribute Modifier\tstatic in attribute private _BROKERS_IDS_PATH : String from class de.zalando.aruha.nakadi.repository.kafka.KafkaLocationManager",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Class Annotation",
+    "description" : "Remove Class Annotation\t@Component in class de.zalando.aruha.nakadi.repository.kafka.KafkaRepository",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Method Annotation",
+    "description" : "Remove Method Annotation\t@Autowired in method public KafkaRepository(zkFactory ZooKeeperHolder, kafkaFactory KafkaFactory, settings KafkaRepositorySettings) from class de.zalando.aruha.nakadi.repository.kafka.KafkaRepository",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tNakadiException in method public listPartitions(topicId String) : List<TopicPartition> from class de.zalando.aruha.nakadi.repository.kafka.KafkaRepository",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Thrown Exception Type",
+    "description" : "Remove Thrown Exception Type\tNakadiException in method public listPartitions(topicId String) : List<TopicPartition> from class de.zalando.aruha.nakadi.repository.TopicRepository",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Attribute Annotation",
+    "description" : "Remove Attribute Annotation\t@Autowired in attribute private jsonMapper : ObjectMapper from class de.zalando.aruha.nakadi.controller.TopicsController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Attribute",
+    "description" : "Move Attribute\tprivate jsonMapper : ObjectMapper from class de.zalando.aruha.nakadi.controller.TopicsController to private jsonMapper : ObjectMapper from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Variable Modifier",
+    "description" : "Add Variable Modifier\tfinal in variable e : NakadiException in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Localize Parameter",
+    "description" : "Localize Parameter\ttopic : String to topic : String in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Variable Annotation",
+    "description" : "Add Variable Annotation\t@SuppressWarnings(\"UnnecessaryLocalVariable\") in variable topic : String in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter Annotation",
+    "description" : "Remove Parameter Annotation\t@PathVariable(\"topic\") in parameter topic : String in method public streamEventsFromPartition(topic String, partition String, startFrom String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.TopicsController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Annotation",
+    "description" : "Add Parameter Annotation\t@Nullable in parameter streamLimit : Integer in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Modify Parameter Annotation",
+    "description" : "Modify Parameter Annotation\t@RequestParam(value = \"batch_flush_timeout\", required = false) to @RequestParam(value = \"batch_flush_timeout\", required = false, defaultValue = \"30\") in parameter batchTimeout : Integer in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Annotation",
+    "description" : "Add Parameter Annotation\t@Nullable in parameter streamTimeout : Integer in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter Annotation",
+    "description" : "Add Parameter Annotation\t@Nullable in parameter batchKeepAliveLimit : Integer in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\teventTypeName : String in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tflowId : String in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter\tcursorsStr : String in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tpartition : String in method public streamEventsFromPartition(topic String, partition String, startFrom String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.TopicsController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Remove Parameter",
+    "description" : "Remove Parameter\tstartFrom : String in method public streamEventsFromPartition(topic String, partition String, startFrom String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.TopicsController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Modify Method Annotation",
+    "description" : "Modify Method Annotation\t@Timed(name = \"stream_events_from_partition\", absolute = true) to @Timed(name = \"stream_events_for_event_type\", absolute = true) in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Modify Method Annotation",
+    "description" : "Modify Method Annotation\t@RequestMapping(value = \"/{topic}/partitions/{partition}/events\", method = RequestMethod.GET) to @RequestMapping(value = \"/event-types/{name}/events\", method = RequestMethod.GET) in method public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tpublic streamEventsFromPartition(topic String, partition String, startFrom String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.TopicsController to public streamEventsFromPartition(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, batchKeepAliveLimit Integer, flowId String, cursorsStr String, request HttpServletRequest, response HttpServletResponse) : StreamingResponseBody from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Move Method",
+    "description" : "Move Method\tprivate writeProblemResponse(response HttpServletResponse, outputStream OutputStream, statusCode int, problem Problem) : void from class de.zalando.aruha.nakadi.controller.TopicsController to private writeProblemResponse(response HttpServletResponse, outputStream OutputStream, statusCode int, problem Problem) : void from class de.zalando.aruha.nakadi.controller.EventStreamController",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ]
 }
 
 ]

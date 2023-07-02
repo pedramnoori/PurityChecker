@@ -4609,21 +4609,51 @@ Mapping state for Move Method refactoring purity:
 
         Set<Replacement> handledReplacements = new HashSet<>();
 
-        for (Replacement replacement: replacementsToCheck) {
+        for (Replacement replacement : replacementsToCheck) {
             if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
-                for (Refactoring refactoring1: refactorings) {
+                for (Refactoring refactoring1 : refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.RENAME_VARIABLE) || refactoring1.getRefactoringType().equals(RefactoringType.RENAME_PARAMETER) ||
                             refactoring1.getRefactoringType().equals(RefactoringType.PARAMETERIZE_ATTRIBUTE) || refactoring1.getRefactoringType().equals(RefactoringType.REPLACE_ATTRIBUTE_WITH_VARIABLE) ||
                             refactoring1.getRefactoringType().equals(RefactoringType.LOCALIZE_PARAMETER)) {
-                        if (replacement.getBefore().equals(((RenameVariableRefactoring)refactoring1).getOriginalVariable().getVariableName()) &&
-                                replacement.getAfter().equals(((RenameVariableRefactoring)refactoring1).getRenamedVariable().getVariableName())) {
+                        if (replacement.getBefore().equals(((RenameVariableRefactoring) refactoring1).getOriginalVariable().getVariableName()) &&
+                                replacement.getAfter().equals(((RenameVariableRefactoring) refactoring1).getRenamedVariable().getVariableName())) {
                             handledReplacements.add(replacement);
                             break;
+                        }
+                        if (replacement.getBefore().startsWith("this.") && replacement.getAfter().startsWith("this.")) {
+                            try {
+                                if (replacement.getBefore().substring(5).equals(((RenameVariableRefactoring) refactoring1).getOriginalVariable().getVariableName()) &&
+                                        replacement.getAfter().substring(5).equals(((RenameVariableRefactoring) refactoring1).getRenamedVariable().getVariableName())) {
+                                    handledReplacements.add(replacement);
+                                    break;
+                                }
+                            } catch (StringIndexOutOfBoundsException e) {
+                                System.out.println(e);
+                            }
+                        } else if (replacement.getBefore().startsWith("this.")) {
+                            try {
+                                if (replacement.getBefore().substring(5).equals(((RenameVariableRefactoring) refactoring1).getOriginalVariable().getVariableName()) &&
+                                        replacement.getAfter().equals(((RenameVariableRefactoring) refactoring1).getRenamedVariable().getVariableName())) {
+                                    handledReplacements.add(replacement);
+                                    break;
+                                }
+                            } catch (StringIndexOutOfBoundsException e) {
+                                System.out.println(e);
+                            }
+                        } else if (replacement.getAfter().startsWith("this.")) {
+                            try {
+                                if (replacement.getBefore().equals(((RenameVariableRefactoring) refactoring1).getOriginalVariable().getVariableName()) &&
+                                        replacement.getAfter().substring(5).equals(((RenameVariableRefactoring) refactoring1).getRenamedVariable().getVariableName())) {
+                                    handledReplacements.add(replacement);
+                                    break;
+                                }
+                            } catch (StringIndexOutOfBoundsException e) {
+                                System.out.println(e);
+                            }
                         }
                     }
                 }
             }
-        }
 
 //        For handling: https://github.com/crashub/crash/commit/2801269c7e47bd6e243612654a74cee809d20959. When we have extracted some part of an expression.
 //        for (Replacement replacement: replacementsToCheck) {
@@ -4634,6 +4664,7 @@ Mapping state for Move Method refactoring purity:
 //            }
 //        }
 
+        }
         replacementsToCheck.removeAll(handledReplacements);
     }
 

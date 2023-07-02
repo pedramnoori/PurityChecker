@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/datacleaner/DataCleaner/commit/d947a330babf5d8031795a41f56859f7e6af0890");
+        isPureAPI("https://github.com/zalando/nakadi/commit/25d26f5fdfed1ab4c7bfa0b8de764572050d9940");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
