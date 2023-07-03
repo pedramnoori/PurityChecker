@@ -467,9 +467,9 @@
     "description" : "Move And Inline Method\tprivate onBatchFailure(batchSize int, e Exception) : void moved from class io.confluent.connect.elasticsearch.bulk.BulkProcessor to class io.confluent.connect.elasticsearch.bulk.BulkProcessor.BulkTask & inlined to public call() : BulkResponse",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 2,
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   } ]
@@ -492,9 +492,9 @@
     "description" : "Inline Method\tprivate calculateCriterion(criterion AnalysisCriterion, series TimeSeries, tradingRecord3DaySmaUnder TradingRecord, tradingRecord3DaySmaOver TradingRecord) : void inlined to public main(args String[]) : void in class ta4jexamples.backtesting.SimpleMovingAverageBacktesting",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Two Rename Variable on top - print related replacements which are justifiable"
     }
   }, {
@@ -3597,9 +3597,9 @@
     "description" : "Extract And Move Method\tpublic resolveParameters(parameters Map<Parameter,Object>) : Map<Parameter,Object> extracted from public resolveParameters(parameters Map<Parameter,Object>) : Map<Parameter,Object> in class org.springframework.data.neo4j.repository.query.CypherQueryBuilder.CypherQuery & moved to class org.springframework.data.neo4j.repository.query.MatchClause",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Argument replaced with return expression, which is a part of Extract Method refactoring mechanics"
     }
   }, {
@@ -5667,9 +5667,9 @@
     "description" : "Inline Method\tprivate createError(error OAuthError) : Representation inlined to public authenticate(input Representation) : Representation in class org.restlet.ext.oauth.security.TokenAuthServerResource",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "the json object values have been impurely changed - non-mapped leave (variable declaration) is justifiable"
     }
   }, {
@@ -5677,9 +5677,9 @@
     "description" : "Inline Method\tprivate createError(error OAuthError) : Representation inlined to public authenticate(input Representation) : Representation in class org.restlet.ext.oauth.security.TokenAuthServerResource",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "the json object values have been impurely changed - non-mapped leave (variable declaration) is justifiable"
     }
   }, {
@@ -5687,9 +5687,9 @@
     "description" : "Inline Method\tprivate createError(error OAuthError) : Representation inlined to public authenticate(input Representation) : Representation in class org.restlet.ext.oauth.security.TokenAuthServerResource",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "the json object values have been impurely changed - non-mapped leave (variable declaration) is justifiable"
     }
   }, {
@@ -5697,9 +5697,9 @@
     "description" : "Inline Method\tprivate createError(error OAuthError) : Representation inlined to public authenticate(input Representation) : Representation in class org.restlet.ext.oauth.security.TokenAuthServerResource",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "the json object values have been impurely changed - non-mapped leave (variable declaration) is justifiable"
     }
   }, {
@@ -5887,9 +5887,9 @@
     "description" : "Extract And Move Method\tprotected getClient(params Form) : Client extracted from public represent() : Representation in class org.restlet.ext.oauth.AuthorizationServerResource & moved to class org.restlet.ext.oauth.OAuthServerResource",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 2,
       "validationComment" : "throw expressions have been added to the extracted code"
     }
   }, {
@@ -5897,9 +5897,9 @@
     "description" : "Extract And Move Method\tprotected getAuthSession() : AuthSession extracted from protected handleAction(action String, scopes String[]) : void in class org.restlet.ext.oauth.AuthPageServerResource & moved to class org.restlet.ext.oauth.OAuthServerResource",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 2,
       "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   } ]
@@ -6082,9 +6082,9 @@
     "description" : "Extract And Move Method\tpublic toOAuthException(t Throwable) : OAuthException extracted from protected doCatch(t Throwable) : void in class org.restlet.ext.oauth.AccessTokenServerResource & moved to class org.restlet.ext.oauth.OAuthException",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -6092,9 +6092,9 @@
     "description" : "Extract And Move Method\tpublic toOAuthException(t Throwable) : OAuthException extracted from protected doCatch(t Throwable) : void in class org.restlet.ext.oauth.security.TokenAuthServerResource & moved to class org.restlet.ext.oauth.OAuthException",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -6102,9 +6102,9 @@
     "description" : "Move And Inline Method\tprotected generateAgentToken(userId String, client Client, redirURL String) : String moved from class org.restlet.ext.oauth.OAuthServerResource to class org.restlet.ext.oauth.AuthPageServerResource & inlined to protected handleAction(action String, scopes String[]) : void",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "lots of statements of the method have not been inlined"
     }
   } ]
@@ -6272,9 +6272,9 @@
     "description" : "Inline Method\tpublic CacheManagerTask(pCtx Context, pBB BoundingBox, pZoomMin int, pZoomMax int) inlined to public CacheManagerTask(pManager CacheManager, pAction CacheManagerAction, pTiles List<MapTile>, pZoomMin int, pZoomMax int) in class org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerTask",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "the constructor parameters (class fields) have been changed. Replacements are not purely justifiable"
     }
   }, {
@@ -7742,9 +7742,9 @@
     "description" : "Extract And Move Method\tprotected getBitmap(pTileSizePx int) : Bitmap extracted from public handleTile(pTileSizePx int, pTile MapTile, pX int, pY int) : void in class org.osmdroid.tileprovider.MapTileProviderBase.ZoomInTileLooper & moved to class org.osmdroid.tileprovider.MapTileProviderBase.ScaleTileLooper",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe changes",
+      "mappingState" : 2,
       "validationComment" : "Addition of return expression, which is a part of Extract Method refactoring mechanics"
     }
   }, {
@@ -7752,9 +7752,9 @@
     "description" : "Extract And Move Method\tprotected getBitmap(pTileSizePx int) : Bitmap extracted from protected handleTile(pTileSizePx int, pTile MapTile, pX int, pY int) : void in class org.osmdroid.tileprovider.MapTileProviderBase.ZoomOutTileLooper & moved to class org.osmdroid.tileprovider.MapTileProviderBase.ScaleTileLooper",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Severe changes",
+      "mappingState" : 2,
       "validationComment" : "Addition of return expression, which is a part of Extract Method refactoring mechanics"
     }
   }, {
@@ -7762,9 +7762,9 @@
     "description" : "Extract And Move Method\tprotected putScaledTileIntoCache(pTile MapTile, pBitmap Bitmap) : void extracted from public handleTile(pTileSizePx int, pTile MapTile, pX int, pY int) : void in class org.osmdroid.tileprovider.MapTileProviderBase.ZoomInTileLooper & moved to class org.osmdroid.tileprovider.MapTileProviderBase.ScaleTileLooper",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 2,
       "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable - putTileIntoCache invocation"
     }
   }, {
@@ -7772,9 +7772,9 @@
     "description" : "Extract And Move Method\tprotected putScaledTileIntoCache(pTile MapTile, pBitmap Bitmap) : void extracted from protected handleTile(pTileSizePx int, pTile MapTile, pX int, pY int) : void in class org.osmdroid.tileprovider.MapTileProviderBase.ZoomOutTileLooper & moved to class org.osmdroid.tileprovider.MapTileProviderBase.ScaleTileLooper",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 2,
       "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable - putTileIntoCache invocation"
     }
   } ]
@@ -7947,9 +7947,9 @@
     "description" : "Extract And Move Method\tpublic loadTile(pTileSource ITileSource, pTile MapTile) : Drawable extracted from public loadTile(pState MapTileRequestState) : Drawable in class org.osmdroid.tileprovider.modules.MapTileSqlCacheProvider.TileLoader & moved to class org.osmdroid.tileprovider.modules.SqliteArchiveTileWriter",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 2,
       "validationComment" : "Extract Method on top - caused Add Parameter refactoring"
     }
   }, {
@@ -7957,9 +7957,9 @@
     "description" : "Extract And Move Method\tpublic loadTile(pTileSource ITileSource, pTile MapTile) : Drawable extracted from public loadTile(pState MapTileRequestState) : Drawable in class org.osmdroid.tileprovider.modules.MapTileSqlCacheProvider.TileLoader & moved to class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 3,
       "validationComment" : "One if statement has been impurely added - within a finally block"
     }
   }, {
@@ -7967,9 +7967,9 @@
     "description" : "Extract And Move Method\tpublic loadTile(pTileSource ITileSource, pTile MapTile) : Drawable extracted from public loadTile(pState MapTileRequestState) : Drawable in class org.osmdroid.tileprovider.modules.MapTileFilesystemProvider.TileLoader & moved to class org.osmdroid.tileprovider.modules.SqlTileWriter",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 3,
       "validationComment" : "One if statement has been impurely added - within a finally block"
     }
   }, {
@@ -7977,9 +7977,9 @@
     "description" : "Extract And Move Method\tpublic setMaximumCachedFileAge(mMaximumCachedFileAge long) : void extracted from public MapTileFilesystemProvider(pRegisterReceiver IRegisterReceiver, pTileSource ITileSource, pMaximumCachedFileAge long, pThreadPoolSize int, pPendingQueueSize int) in class org.osmdroid.tileprovider.modules.MapTileFilesystemProvider & moved to class org.osmdroid.tileprovider.modules.TileWriter",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -7987,9 +7987,9 @@
     "description" : "Extract And Move Method\tpublic loadTile(pTileSource ITileSource, pTile MapTile) : Drawable extracted from public loadTile(pState MapTileRequestState) : Drawable in class org.osmdroid.tileprovider.modules.MapTileFilesystemProvider.TileLoader & moved to class org.osmdroid.tileprovider.modules.TileWriter",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 3,
       "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   } ]
@@ -8327,9 +8327,9 @@
     "description" : "Extract And Move Method\tprotected newMultipleTestsRunner(pages List<WikiPage>) : MultipleTestsRunner extracted from protected performExecution() : void in class fitnesse.responders.run.SuiteResponder & moved to class fitnesse.responders.run.TestResponder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 2,
       "validationComment" : "Replacing getter with the direct access"
     }
   }, {
@@ -8362,9 +8362,9 @@
     "description" : "Inline Method\tprivate errorOccurred(cause Throwable) : void inlined to public testSystemStopped(testSystem TestSystem, executionLog ExecutionLog, cause Throwable) : void in class fitnesse.testrunner.MultipleTestsRunner",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "try-catch and exception handling logic have been removed from the inlined code portion"
     }
   }, {
@@ -8915,7 +8915,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Parameterize Variabe on top"
     }
   }, {
     "type" : "Extract Method",
@@ -9237,9 +9237,9 @@
     "description" : "Extract And Move Method\tpublic getBranchesContaining(revspec String, allBranches boolean) : List<Branch> extracted from public getBranchesContaining(revspec String) : List<Branch> in class org.jenkinsci.plugins.gitclient.JGitAPIImpl & moved to class org.jenkinsci.plugins.gitclient.CliGitAPIImpl",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "FN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 3,
       "validationComment" : "non-mapped leaves which have been added to the extracted code are not justifiable"
     }
   } ]
@@ -9852,9 +9852,9 @@
     "description" : "Extract And Move Method\tpublic getMouseOffset(mouseEvent MouseEvent, editor Editor) : int extracted from public mouseMoved(e EditorMouseEvent) : void in class org.antlr.intellij.plugin.preview.PreviewEditorMouseListener & moved to class org.antlr.intellij.plugin.actions.MyActionUtils",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -9862,9 +9862,9 @@
     "description" : "Extract And Move Method\tpublic switchToGrammar(grammarFile VirtualFile) : void extracted from public switchToGrammar(grammarFile VirtualFile) : void in class org.antlr.intellij.plugin.preview.PreviewPanel & moved to class org.antlr.intellij.plugin.preview.InputPanel",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TN",
+      "purityComment" : "Severe changes",
+      "mappingState" : 3,
       "validationComment" : "non-mapped leaves and nodes which have been added to the extracted code are not justifiable"
     }
   } ]
@@ -10532,9 +10532,9 @@
     "description" : "Extract And Move Method\tpublic setAppToken(appToken String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10542,9 +10542,9 @@
     "description" : "Extract And Move Method\tpublic setMacSha1(macSha1 String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10552,9 +10552,9 @@
     "description" : "Extract And Move Method\tpublic setMacShortMd5(macShortMd5 String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10562,9 +10562,9 @@
     "description" : "Extract And Move Method\tpublic setAndroidId(androidId String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10572,9 +10572,9 @@
     "description" : "Extract And Move Method\tpublic setFbAttributionId(fbAttributionId String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10582,9 +10582,9 @@
     "description" : "Extract And Move Method\tpublic setUserAgent(userAgent String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10592,9 +10592,9 @@
     "description" : "Extract And Move Method\tpublic setClientSdk(clientSdk String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10602,9 +10602,9 @@
     "description" : "Extract And Move Method\tpublic setEnvironment(environment String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10612,9 +10612,9 @@
     "description" : "Extract And Move Method\tpublic setSessionCount(sessionCount int) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10622,9 +10622,9 @@
     "description" : "Extract And Move Method\tpublic setSubsessionCount(subsessionCount int) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10632,9 +10632,9 @@
     "description" : "Extract And Move Method\tpublic setCreatedAt(createdAt long) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10642,9 +10642,9 @@
     "description" : "Extract And Move Method\tpublic setSessionLength(sessionLength long) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10652,9 +10652,9 @@
     "description" : "Extract And Move Method\tpublic setTimeSpent(timeSpent long) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10662,9 +10662,9 @@
     "description" : "Extract And Move Method\tpublic setLastInterval(lastInterval long) : void extracted from protected injectSessionAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10672,9 +10672,9 @@
     "description" : "Extract And Move Method\tpublic setDefaultTracker(defaultTracker String) : void extracted from private injectGeneralAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10682,9 +10682,9 @@
     "description" : "Extract And Move Method\tpublic setEventCount(eventCount int) : void extracted from protected injectEventAttributes(builder PackageBuilder) : void in class com.adeven.adjustio.ActivityState & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10692,9 +10692,9 @@
     "description" : "Extract And Move Method\tpublic setEventToken(eventToken String) : void extracted from protected trackEvent(eventToken String, parameters Map<String,String>) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10702,9 +10702,9 @@
     "description" : "Extract And Move Method\tpublic setEventToken(eventToken String) : void extracted from protected trackRevenue(amountInCents double, eventToken String, parameters Map<String,String>) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10712,9 +10712,9 @@
     "description" : "Extract And Move Method\tpublic setAmountInCents(amountInCents double) : void extracted from protected trackRevenue(amountInCents double, eventToken String, parameters Map<String,String>) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10722,9 +10722,9 @@
     "description" : "Extract And Move Method\tpublic setCallbackParameters(callbackParameters Map<String,String>) : void extracted from protected trackEvent(eventToken String, parameters Map<String,String>) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10732,9 +10732,9 @@
     "description" : "Extract And Move Method\tpublic setCallbackParameters(callbackParameters Map<String,String>) : void extracted from protected trackRevenue(amountInCents double, eventToken String, parameters Map<String,String>) : void in class com.adeven.adjustio.ActivityHandler & moved to class com.adeven.adjustio.PackageBuilder",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10742,9 +10742,9 @@
     "description" : "Extract And Move Method\tpublic setPath(path String) : void extracted from protected buildSessionPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10752,9 +10752,9 @@
     "description" : "Extract And Move Method\tpublic setPath(path String) : void extracted from protected buildEventPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10762,9 +10762,9 @@
     "description" : "Extract And Move Method\tpublic setPath(path String) : void extracted from protected buildRevenuePackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10772,9 +10772,9 @@
     "description" : "Extract And Move Method\tpublic setUserAgent(userAgent String) : void extracted from private getDefaultActivityPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10782,9 +10782,9 @@
     "description" : "Extract And Move Method\tpublic setClientSdk(clientSdk String) : void extracted from private getDefaultActivityPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10792,9 +10792,9 @@
     "description" : "Extract And Move Method\tpublic setParameters(parameters Map<String,String>) : void extracted from protected buildSessionPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10802,9 +10802,9 @@
     "description" : "Extract And Move Method\tpublic setParameters(parameters Map<String,String>) : void extracted from protected buildEventPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10812,9 +10812,9 @@
     "description" : "Extract And Move Method\tpublic setParameters(parameters Map<String,String>) : void extracted from protected buildRevenuePackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Identical statements",
+      "mappingState" : 1,
       "validationComment" : ""
     }
   }, {
@@ -10822,9 +10822,9 @@
     "description" : "Extract And Move Method\tpublic setKind(kind String) : void extracted from protected buildSessionPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10832,9 +10832,9 @@
     "description" : "Extract And Move Method\tpublic setKind(kind String) : void extracted from protected buildEventPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10842,9 +10842,9 @@
     "description" : "Extract And Move Method\tpublic setKind(kind String) : void extracted from protected buildRevenuePackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Parameter-argument map"
     }
   }, {
@@ -10852,9 +10852,9 @@
     "description" : "Extract And Move Method\tpublic setSuffix(suffix String) : void extracted from protected buildSessionPackage() : ActivityPackage in class com.adeven.adjustio.PackageBuilder & moved to class com.adeven.adjustio.ActivityPackage",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
+      "purityValidation" : "TP",
+      "purityComment" : "Changes are within the Extract Method refactoring mechanics",
+      "mappingState" : 1,
       "validationComment" : "Parameter-argument map"
     }
   } ]
@@ -13112,9 +13112,9 @@
     "description" : "Inline Method\tprivate getJsonGenerator() : JsonGenerator inlined to public toJSON() : String in class com.zendesk.maxwell.RowMap",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 2,
+      "mappingState" : "",
       "validationComment" : "deletion of return statement, which is a pure change in this case and part of the Inline Method refactoring mechanics"
     }
   }, {
@@ -13367,9 +13367,9 @@
     "description" : "Inline Method\tprivate createSnackDateWarning() : Snackbar inlined to private showWarnings() : void in class com.forrestguice.suntimeswidget.SuntimesActivity",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Part of the method has not been inlined, but moved to initWarning method. Based on the manual validation, this moving hasn't been done purely. After all, the refactoring is impure"
     }
   }, {
@@ -13377,9 +13377,9 @@
     "description" : "Inline Method\tprivate createSnackTimezoneWarning() : Snackbar inlined to private showWarnings() : void in class com.forrestguice.suntimeswidget.SuntimesActivity",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Part of the method has not been inlined, but moved to initWarning method. Based on the manual validation, this moving hasn't been done purely. After all, the refactoring is impure"
     }
   } ]
@@ -13832,9 +13832,9 @@
     "description" : "Inline Method\tprivate replace(context Context, eperson EPerson, operation Operation) : void inlined to public perform(resource EPersonRest, operation Operation) : EPersonRest in class org.dspace.app.rest.repository.patch.factories.impl.EPersonNetidReplaceOperation",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -14237,9 +14237,9 @@
     "description" : "Inline Method\tprivate updateWithLocked(batches Map<Long,BatchInfo>, downloads Collection<DownloadInfo>) : void inlined to public updateWith(batches List<DownloadBatch>) : void in class com.novoda.downloadmanager.lib.DownloadNotifier",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The deletion of the -batchDownloads- variable is justifiable, as its logic is kind of moved into type change (argument passed)"
     }
   }, {
@@ -14247,9 +14247,9 @@
     "description" : "Inline Method\tprivate areAnyFailedAndVisible(downloads List<DownloadInfo>) : boolean inlined to private buildNotificationTag(batch DownloadBatch) : String in class com.novoda.downloadmanager.lib.DownloadNotifier",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "the condition has been changed - impure condition addition into the boolean field"
     }
   } ]
@@ -14262,9 +14262,9 @@
     "description" : "Inline Method\tprivate initGeneral() : void inlined to public onCreate(savedInstanceState Bundle) : void in class com.forrestguice.suntimeswidget.SuntimesSettingsActivity.GeneralPrefsFragment",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "lots of statements of the method have not been inlined. Clearly an impure case"
     }
   }, {
@@ -14447,9 +14447,9 @@
     "description" : "Inline Method\tprotected resetCache() : void inlined to public runHarvest() : void in class org.dspace.harvest.OAIHarvester",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "lots of statements of the method have not been inlined. Clearly an impure case"
     }
   }, {
@@ -14532,9 +14532,9 @@
     "description" : "Inline Method\tprivate assignPermissions(context Context, dso DSpaceObject, policies List<ResourcePolicy>) : void inlined to public ingest(context Context, dso DSpaceObject, ml List<Element>, createMissingMetadataFields boolean) : void in class org.dspace.content.crosswalk.METSRightsCrosswalk",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "if condition and throwing have been omitted from the inlined method"
     }
   } ]
@@ -14567,9 +14567,9 @@
     "description" : "Inline Method\tprivate deleteMetadataSchemaIfExists(metadataSchema MetadataSchema) : void inlined to public createSuccess() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14577,9 +14577,9 @@
     "description" : "Inline Method\tprivate deleteMetadataSchemaIfExists(metadataSchema MetadataSchema) : void inlined to public createUnauthauthorizedTest() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14587,9 +14587,9 @@
     "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public deleteSuccess() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14597,9 +14597,9 @@
     "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public deleteUnauthorized() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14607,9 +14607,9 @@
     "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public deleteNonExisting() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14617,9 +14617,9 @@
     "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public update() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14627,9 +14627,9 @@
     "description" : "Inline Method\tprivate createMetadataSchema() : MetadataSchema inlined to public updateUnauthorized() : void in class org.dspace.app.rest.MetadataSchemaRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14647,9 +14647,9 @@
     "description" : "Inline Method\tprivate deleteMetadataFieldIfExists(metadataField MetadataField) : void inlined to public createSuccess() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14657,9 +14657,9 @@
     "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public deleteSuccess() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14667,9 +14667,9 @@
     "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public deleteUnauthorized() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14677,9 +14677,9 @@
     "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public deleteNonExisting() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14687,9 +14687,9 @@
     "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public update() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14697,9 +14697,9 @@
     "description" : "Inline Method\tprivate createMetadataField() : MetadataField inlined to public updateUnauthorized() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14707,9 +14707,9 @@
     "description" : "Inline Method\tprivate deleteMetadataFieldIfExists(metadataField MetadataField) : void inlined to public createUnauthorized() : void in class org.dspace.app.rest.MetadatafieldRestRepositoryIT",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -14742,9 +14742,9 @@
     "description" : "Inline Method\tpublic initParallax() : void inlined to protected onLoad() : void in class gwt.material.design.client.ui.MaterialParallax",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -14817,9 +14817,9 @@
     "description" : "Inline Method\tprotected onChangeInternal() : void inlined to public onLoad() : void in class gwt.material.design.client.ui.MaterialListValueBox",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Inside the -createInternalChangeHandler- method invocation, the inlined method -onChangeInternal- has been called. It seems a pure case - Nested Inline Method refactoring"
     }
   }, {
@@ -14827,9 +14827,9 @@
     "description" : "Inline Method\tprotected createInternalChangeHandler(e Element) : void inlined to public onLoad() : void in class gwt.material.design.client.ui.MaterialListValueBox",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Considering the previous Inline Method refactoring, this one is also pure"
     }
   }, {
@@ -14952,9 +14952,9 @@
     "description" : "Inline Method\tprotected initialize(e Element, width int, closeOnClick boolean, edge String) : void inlined to protected initialize(strict boolean) : void in class gwt.material.design.client.ui.MaterialSideNav",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "null-check logic has been added to the inlined method"
     }
   }, {
@@ -14997,9 +14997,9 @@
     "description" : "Inline Method\tpublic getRequestQueue() : RequestQueue inlined to public getImageLoader() : ImageLoader in class com.amaze.filemanager.utils.application.AppConfig",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 2,
+      "mappingState" : "",
       "validationComment" : "Deletion of a return expression, which can be a part of Inline Method refactoring mechanics"
     }
   } ]
@@ -15112,9 +15112,9 @@
     "description" : "Move And Inline Method\tpublic of(messages Messages) : PlayCmsPage moved from class common.cms.PlayCmsPage to class common.cms.PlayCmsService & inlined to public get(locale Locale, pageKey String) : F.Promise<CmsPage>",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Add Parameter on top - Good Job by PurityChecker"
     }
   } ]
@@ -15147,9 +15147,9 @@
     "description" : "Inline Method\tpublic update(nodePathElements String[], newValue String) : void inlined to public update(xPath String, newValue String) : void in class org.datacleaner.configuration.DataCleanerConfigurationUpdater",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "null-check logic has been removed from the inlined method, which is an impure modification"
     }
   }, {
@@ -15322,9 +15322,9 @@
     "description" : "Inline Method\tpublic flushEvents() : void inlined to public flush() : void in class com.mixpanel.android.mpmetrics.MPMetrics",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -15332,9 +15332,9 @@
     "description" : "Move And Inline Method\tpublic flush() : void moved from class com.mixpanel.android.mpmetrics.MPMetrics.PeopleImpl to class com.mixpanel.android.mpmetrics.MPMetrics & inlined to public flush() : void",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "String literal has been changed, which is an impure modification in this case"
     }
   }, {
@@ -15377,9 +15377,9 @@
     "description" : "Inline Method\tprivate notifyStatusIfBatchesStatusChanged(values ContentValues) : void inlined to public update(uri Uri, values ContentValues, where String, whereArgs String[]) : int in class com.novoda.downloadmanager.lib.DownloadProvider",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The if condition expression has been changed, which is an impure modification"
     }
   } ]
@@ -15392,9 +15392,9 @@
     "description" : "Inline Method\tprivate create(absoluteFilePath FilePath) : FilePersistenceResult inlined to public create(absoluteFilePath FilePath, fileSize FileSize) : FilePersistenceResult in class com.novoda.downloadmanager.PathBasedFilePersistence",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -15417,9 +15417,9 @@
     "description" : "Inline Method\tpackage initSplits() : void inlined to public processRow(smi StepMetaInterface, sdi StepDataInterface) : boolean in class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInput",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "non-mapped leaves and nodes which have been removed from the inlined method are not justifiable"
     }
   }, {
@@ -15427,9 +15427,9 @@
     "description" : "Inline Method\tpackage openReader(data AvroInputData) : void inlined to public processRow(smi StepMetaInterface, sdi StepDataInterface) : boolean in class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInput",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "the argument change and the non-mapped leaves are not justifiable"
     }
   }, {
@@ -15612,9 +15612,9 @@
     "description" : "Inline Method\tpublic getRootURL(namedCluster NamedCluster, metaStore IMetaStore, noVariableUrl boolean) : String inlined to public getUrlPath(incomingURL String) : String in class org.pentaho.big.data.kettle.plugins.hdfs.trans.HadoopFileOutputDialog",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "there are lots of non-pure overlapping changes. Unjustifiable replacements and non-mapped leaves"
     }
   }, {
@@ -15687,9 +15687,9 @@
     "description" : "Inline Method\tpublic setMd5(md5 String) : void inlined to package GaveUpException(md5 String) in class htsjdk.samtools.cram.ref.GaveUpException",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -15722,9 +15722,9 @@
     "description" : "Inline Method\tprivate getReferences(slice Slice, header CompressionHeader, validationStringency ValidationStringency) : Map<ReferenceContext,AlignmentSpan> inlined to public getSpans(container Container, validationStringency ValidationStringency) : Map<ReferenceContext,AlignmentSpan> in class htsjdk.samtools.cram.build.ContainerParser",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes + \n",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "there are lots of non-pure overlapping changes. Unjustifiable non-mapped leaves"
     }
   }, {
@@ -15757,9 +15757,9 @@
     "description" : "Inline Method\tpublic startContainer(containerId String, hostConfig HostConfig) : void inlined to public startContainer(containerId String) : void in class com.spotify.docker.client.DefaultDockerClient",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "the replacements within the -request- method call is not justifiable"
     }
   } ]
@@ -15792,9 +15792,9 @@
     "description" : "Inline Method\tpublic createPostViewList(posts List<Post>) : List<PostView> inlined to public createPostViewPage(posts Page<Post>) : Page<PostView> in class sagan.blog.support.PostViewFactory",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 2,
+      "mappingState" : "",
       "validationComment" : "deletion of return statement, which is a pure change in this case and part of the Inline Method refactoring mechanics"
     }
   } ]
@@ -15807,9 +15807,9 @@
     "description" : "Move And Inline Method\tprotected makeReturnedValueExpectation(instructionTag String, col int, row int) : ReturnedValueExpectation moved from class fitnesse.slimTables.SlimTable to class fitnesse.slimTables.ReturnedValueExpectationTest & inlined to private assertExpectationMessage(expected String, value String, message String) : void",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Parameter-argument map"
     }
   } ]
@@ -15822,9 +15822,9 @@
     "description" : "Inline Method\tprivate errorOccurred(cause Throwable) : void inlined to public testSystemStopped(testSystem TestSystem, executionLog ExecutionLog, cause Throwable) : void in class fitnesse.testrunner.MultipleTestsRunner",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -15867,9 +15867,9 @@
     "description" : "Inline Method\tprivate stringFromTraces() : String inlined to protected endTimer(aContext WOContext, aString String) : void in class er.extensions.statistics.ERXStatisticsStore.StopWatchTimer",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Severe changes + \n",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -15892,9 +15892,9 @@
     "description" : "Inline Method\tpublic removeAllPolicies(c Context, o DSpaceObject, updateLastModified boolean) : void inlined to public removeAllPolicies(c Context, o DSpaceObject) : void in class org.dspace.authorize.AuthorizeServiceImpl",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Inline Method on top"
     }
   }, {
@@ -16162,9 +16162,9 @@
     "description" : "Inline Method\tpublic removeAllPolicies(c Context, o DSpaceObject, updateLastModified boolean) : void inlined to public removeAllPolicies(c Context, o DSpaceObject) : void in class org.dspace.authorize.ResourcePolicyServiceImpl",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "the non-mapped node is justifiable since it's an if(true) in the parent version. Well done by PurityChecker"
     }
   }, {
@@ -16242,9 +16242,9 @@
     "description" : "Inline Method\tpublic delete(context Context, dso DSpaceObject) : void inlined to public delete(context Context, metadataValue MetadataValue) : void in class org.dspace.content.MetadataValueServiceImpl",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 2,
+      "mappingState" : "",
       "validationComment" : "As far as I understand, this is not an Inline Method. If we consider this case as an Inline Method case, this would be pure."
     }
   }, {
@@ -16607,9 +16607,9 @@
     "description" : "Inline Method\tprotected initialize(e Element) : void inlined to protected initialize() : void in class gwt.material.design.client.ui.MaterialSlider",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -16657,9 +16657,9 @@
     "description" : "Inline Method\tpublic MaterialInput(renderer Renderer<String>, parser Parser<String>) inlined to public MaterialInput() in class gwt.material.design.client.ui.MaterialInput",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "A different parent constructor has been used"
     }
   }, {
@@ -17072,9 +17072,9 @@
     "description" : "Inline Method\tprotected setPickerDateMin(date JsDate, picker Element) : void inlined to public setDateMin(dateMin Date) : void in class gwt.material.design.client.ui.MaterialDatePicker",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -17082,9 +17082,9 @@
     "description" : "Inline Method\tpublic setPickerDateMax(date JsDate, picker Element) : void inlined to public setDateMax(dateMax Date) : void in class gwt.material.design.client.ui.MaterialDatePicker",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -17092,9 +17092,9 @@
     "description" : "Inline Method\tpublic getDatePickerValue(picker Element) : JsDate inlined to protected getPickerDate() : Date in class gwt.material.design.client.ui.MaterialDatePicker",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -17102,9 +17102,9 @@
     "description" : "Inline Method\tprotected stop(picker Element) : void inlined to public stop() : void in class gwt.material.design.client.ui.MaterialDatePicker",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -17197,9 +17197,9 @@
     "description" : "Inline Method\tprivate addFiles(fs DefaultFileSystem) : void inlined to public setUp() : void in class org.sonar.plugins.php.phpunit.PhpUnitCoverageResultParserTest",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes + \n",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -17342,9 +17342,9 @@
     "description" : "Inline Method\tprivate shouldTryExecuteScalar() : boolean inlined to public PojoResultSetIterator(rs ResultSet, isCaseSensitive boolean, quirksMode QuirksMode, metadata PojoMetadata) in class org.sql2o.PojoResultSetIterator",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has been inlined into a for loop. So, it has some overlapping changes due to its movement. "
     }
   }, {
@@ -17467,9 +17467,9 @@
     "description" : "Inline Method\tpublic setUpFirstRun(activity Activity, testLogger MockLogger) : ActivityHandler inlined to public testActivityHandlerFirstSession() : void in class com.adeven.adjustio.test.TestActivityHandler",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "lots of -test- method invocations have been removed"
     }
   }, {
@@ -17497,9 +17497,9 @@
     "description" : "Move And Inline Method\tpublic setUpFirstRun(activity Activity, testLogger MockLogger) : ActivityHandler moved from class com.adeven.adjustio.test.TestActivityHandler to class com.adeven.adjustio.test.TestPackageHandler & inlined to public testFirstPackage() : void",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "lots of -test- method invocations have been removed"
     }
   } ]
@@ -17692,9 +17692,9 @@
     "description" : "Inline Method\tprivate checkPackageHandler() : void inlined to public testFirstSession() : void in class com.adeven.adjustio.test.TestActivityHandler",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "two Rename Attribute on top"
     }
   }, {
@@ -17757,9 +17757,9 @@
     "description" : "Inline Method\tprivate checkColumnFamilies(columnFamilies Set<String>) : void inlined to public execute() : Table in class org.apache.metamodel.hbase.HBaseCreateTableBuilder",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   } ]
@@ -17812,9 +17812,9 @@
     "description" : "Inline Method\tpublic HBaseColumn(columnFamily String, qualifier String, table Table, columnNumber int) inlined to public HBaseColumn(columnFamily String, table Table) in class org.apache.metamodel.hbase.HBaseColumn",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -17822,9 +17822,9 @@
     "description" : "Inline Method\tpublic HBaseColumn(columnFamily String, qualifier String, table Table, columnNumber int) inlined to public HBaseColumn(columnFamily String, qualifier String, table Table) in class org.apache.metamodel.hbase.HBaseColumn",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -17987,9 +17987,9 @@
     "description" : "Inline Method\tprivate isImplementingInterceptor(type Class<?>) : boolean inlined to public handle(beanClass BeanClass) : void in class br.com.caelum.vraptor.ioc.InterceptorStereotypeHandler",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "the condition has been changed - impure condition addition into the boolean field"
     }
   }, {
@@ -18802,9 +18802,9 @@
     "description" : "Move And Inline Method\tpublic getTestSummary() : TestSummary moved from class fitnesse.testsystems.slim.SlimTestSystem to class fitnesse.responders.run.slimResponder.SlimResponder & inlined to public getTestSummary() : TestSummary",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -18887,9 +18887,9 @@
     "description" : "Inline Method\tpublic getLocation() : BlockCoord inlined to protected updateNetwork(world World) : void in class crazypants.enderio.conduit.AbstractConduit",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 3,
+      "mappingState" : "",
       "validationComment" : "The if condition has been impurely removed"
     }
   }, {
@@ -21522,9 +21522,9 @@
     "description" : "Inline Method\tpublic HBaseCreateTableBuilder(updateCallback HBaseUpdateCallback, schema Schema, name String, columnFamilies Set<String>) inlined to public HBaseCreateTableBuilder(updateCallback HBaseUpdateCallback, schema Schema, name String) in class org.apache.metamodel.hbase.HBaseCreateTableBuilder",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 2,
+      "mappingState" : "",
       "validationComment" : "the constructor parameters (class fields) have been changed - -_columnFamilies- has been removed"
     }
   }, {
@@ -21687,9 +21687,9 @@
     "description" : "Inline Method\tpackage flushListener(flushEvent FlushEvent, flushResults List<FlushResult>, listener FlushEventListener) : void inlined to package flushListeners(flushEvent FlushEvent, flushEventListenerResults List<FlushEventListenerResult>) : void in class org.bonitasoft.engine.tracking.TimeTracker",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Extract Variable on top - Rename Variable on top - Good job by PurityChecker"
     }
   }, {
@@ -22012,9 +22012,9 @@
     "description" : "Inline Method\tprivate setIdOnProcessDefinition(sProcessDefinition SProcessDefinition) : long inlined to public store(designProcessDefinition DesignProcessDefinition) : SProcessDefinition in class org.bonitasoft.engine.core.process.definition.ProcessDefinitionServiceImpl",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 2,
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -22227,9 +22227,9 @@
     "description" : "Inline Method\tpublic isDomain(url String, domain String) : Boolean inlined to public isImgurLink(url String) : boolean in class me.ccrama.redditslide.ContentType",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Replacements are not justifiable"
     }
   }, {
@@ -22237,9 +22237,9 @@
     "description" : "Inline Method\tpublic isDomain(url String, domain String) : Boolean inlined to public getImageType(url String) : ImageType in class me.ccrama.redditslide.ContentType",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Replacements are not justifiable"
     }
   }, {
@@ -22247,9 +22247,9 @@
     "description" : "Inline Method\tpublic isDomain(url String, domain String) : Boolean inlined to public getImageType(url String) : ImageType in class me.ccrama.redditslide.ContentType",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Replacements are not justifiable"
     }
   }, {
@@ -22462,9 +22462,9 @@
     "description" : "Inline Method\tprivate pick(elements List<T>, picked List<T>, index int) : void inlined to private pickNRandom(elements List<T>, n int) : List<T> in class productcatalog.services.ProductProjectionService",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -22647,9 +22647,9 @@
     "description" : "Inline Method\tprivate fill(selectedCategories List<Category>, content ProductOverviewPageContent, searchResult PagedSearchResult<ProductProjection>, searchCriteria SearchCriteriaImpl) : void inlined to public create(category Category, searchResult PagedSearchResult<ProductProjection>) : ProductOverviewPageContent in class productcatalog.productoverview.ProductOverviewPageContentFactory",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -22767,9 +22767,9 @@
     "description" : "Inline Method\tprivate handleFoundCategory(category Category) : CompletionStage<Result> inlined to public searchProductsByCategorySlug(languageTag String, categorySlug String) : CompletionStage<Result> in class productcatalog.productoverview.SunriseProductOverviewPageController",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "FP",
-      "purityComment" : "Severe changes + \n",
-      "mappingState" : 2,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   } ]
@@ -22992,9 +22992,9 @@
     "description" : "Inline Method\tprivate getClientConfig() : SphereClientConfig inlined to public get() : SphereClientConfig in class com.commercetools.sunrise.common.ctp.SphereClientConfigProvider",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -23257,9 +23257,9 @@
     "description" : "Inline Method\tprivate handleValidForm(removeLineItemForm Form<DefaultRemoveLineItemFormData>) : CompletionStage<Result> inlined to public removeLineItem(languageTag String) : CompletionStage<Result> in class com.commercetools.sunrise.shoppingcart.cart.removelineitem.SunriseRemoveLineItemController",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Replacements are not justifiable"
     }
   }, {
@@ -23627,9 +23627,9 @@
     "description" : "Inline Method\tprivate handleValidForm(form Form<? extends ChangeLineItemQuantityFormData>) : CompletionStage<Result> inlined to public changeLineItemQuantity(languageTag String) : CompletionStage<Result> in class com.commercetools.sunrise.shoppingcart.cart.changelineitemquantity.SunriseChangeLineItemQuantityController",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Replacements are not justifiable"
     }
   }, {
@@ -24292,9 +24292,9 @@
     "description" : "Inline Method\tprivate getLocal(locale Locale, key String, args Object...) : Optional<String> inlined to public get(locale Locale, key String) : F.Promise<CmsPage> in class common.cms.PlayCmsService",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 3,
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped nodes and leaves"
     }
   }, {
@@ -24647,9 +24647,9 @@
     "description" : "Inline Method\tprivate lookup(originalValue String) : String inlined to public transform(inputRow InputRow) : Object[] in class org.datacleaner.beans.transform.SynonymLookupTransformer",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -24677,9 +24677,9 @@
     "description" : "Inline Method\tprivate getFinalComponentDescriptors(allComponentDescriptors Collection<? extends ComponentDescriptor<?>>, showAllRemoteComponents boolean) : Collection<? extends ComponentDescriptor<?>> inlined to public createMenuStructure(callback MenuCallback, componentDescriptors Collection<? extends ComponentDescriptor<?>>) : void in class org.datacleaner.widgets.DescriptorMenuBuilder",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves"
     }
   }, {
@@ -24727,9 +24727,9 @@
     "description" : "Inline Method\tprivate matchesSearchString(value String) : boolean inlined to public transform(row InputRow) : String[] in class org.datacleaner.beans.transform.PlainSearchReplaceTransformer",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -24737,9 +24737,9 @@
     "description" : "Inline Method\tprivate matchesSearchString(value String) : boolean inlined to public transform(row InputRow) : String[] in class org.datacleaner.beans.transform.PlainSearchReplaceTransformer",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -25422,9 +25422,9 @@
     "description" : "Inline Method\tprivate getDataContext(datastore Datastore) : DataContext inlined to public getSchemas(response HttpServletResponse, tenant String, datastoreName String) : Map<String,Object> in class org.datacleaner.monitor.server.controllers.DatastoreSchemaController",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -25707,9 +25707,9 @@
     "description" : "Inline Method\tpublic withResultCallback(resultCallback ResultCallback<A_RES_T>) : CMD_T inlined to public AbstrAsyncDockerCmd(execution DockerCmdAsyncExec<CMD_T,A_RES_T>) in class com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 2,
+      "mappingState" : "",
       "validationComment" : "Rename Variable on top"
     }
   }, {
@@ -26272,9 +26272,9 @@
     "description" : "Inline Method\tpublic allOf(matchers Iterable<? extends Matcher<? super T>>) : Matcher<T> inlined to public allOf(matchers Matcher<? super T>...) : Matcher<T> in class com.google.errorprone.matchers.Matchers",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   } ]
@@ -26287,9 +26287,9 @@
     "description" : "Inline Method\tpublic exportSTV(file File, cryptoKeyObj Object) : void inlined to public exportSTV(file File) : void in class tv.sage.ModuleGroup",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The method has not been completely inlined - unjustifiable non-mapped leaves and nodes"
     }
   } ]
@@ -26302,9 +26302,9 @@
     "description" : "Inline Method\tprotected getSessionIdentity() : Identity inlined to private getIdentity(request HttpServletRequest) : Identity in class org.loklak.server.AbstractAPIHandler",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Rename Variable on top"
     }
   }, {
@@ -26312,9 +26312,9 @@
     "description" : "Inline Method\tprivate setSessionIdentity(identity Identity) : void inlined to private getIdentity(request HttpServletRequest) : Identity in class org.loklak.server.AbstractAPIHandler",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Rename Variable on top"
     }
   }, {
@@ -26517,9 +26517,9 @@
     "description" : "Inline Method\tprivate getAccessPolicy(bucketName String) : AccessControlPolicy inlined to public getBucketAcl(bucketName String) : Acl in class io.minio.MinioClient",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 2,
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -26552,9 +26552,9 @@
     "description" : "Inline Method\tprivate setLayout(target View) : void inlined to public accumulate(found View) : void in class com.mixpanel.android.viewcrawler.ViewVisitor.LayoutUpdateVisitor",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
+      "purityValidation" : "-",
       "purityComment" : "",
-      "mappingState" : 2,
+      "mappingState" : "",
       "validationComment" : "Altough the logic is the same, but removing the throw statement is considered as an impure modification"
     }
   }, {
@@ -26867,9 +26867,9 @@
     "description" : "Inline Method\tpublic onClientImageCapture(resultCode int, data Intent) : void inlined to public onActivityResult(requestCode int, resultCode int, data Intent) : void in class com.mifos.mifosxdroid.online.ClientDetailsFragment",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 3,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "The if condition expression has been impurely changed"
     }
   }, {
@@ -27682,9 +27682,9 @@
     "description" : "Inline Method\tprivate emptyBatch() : Map<String,List<String>> inlined to public streamEvents() : void in class de.zalando.aruha.nakadi.service.EventStream",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {

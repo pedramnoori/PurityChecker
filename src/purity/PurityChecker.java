@@ -46,15 +46,6 @@ public class PurityChecker {
             case EXTRACT_OPERATION:
 //                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
-            case RENAME_CLASS:
-//                result = detectRenameClassPurity((RenameClassRefactoring) refactoring, refactorings, modelDiff);
-                break;
-            case RENAME_VARIABLE:
-//                result = detectRenameVariablePurity((RenameVariableRefactoring) refactoring);
-                break;
-            case RENAME_PARAMETER:
-//                result = detectRenameParameterPurity((RenameVariableRefactoring) refactoring);
-                break;
             case MOVE_OPERATION:
 //                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
@@ -68,13 +59,13 @@ public class PurityChecker {
 //                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
-                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case EXTRACT_AND_MOVE_OPERATION:
-//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_INLINE_OPERATION:
-                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case SPLIT_OPERATION:
 //                result = detectSplitMethodPurity((SplitOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -1000,7 +991,7 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Parametrization or Add Parameter on top of the inlined method - all mapped", purityComment, mappingState);
             }
 
-            checkForAddParameterInSubExpressionOnTop(replacementsToCheck, refactoring.getBodyMapper());
+//            checkForAddParameterInSubExpressionOnTop(replacementsToCheck, refactoring.getBodyMapper());
 
             Set<Replacement> removedReplacements = checkForAddParameterInSubExpressionOnTop(replacementsToCheck, refactoring.getBodyMapper());
             checkForParametrizationOrAddParameterOnTop(refactorings, replacementsToCheck, removedReplacements, refactoring.getBodyMapper());
@@ -4614,7 +4605,7 @@ Mapping state for Move Method refactoring purity:
                 for (Refactoring refactoring1 : refactorings) {
                     if (refactoring1.getRefactoringType().equals(RefactoringType.RENAME_VARIABLE) || refactoring1.getRefactoringType().equals(RefactoringType.RENAME_PARAMETER) ||
                             refactoring1.getRefactoringType().equals(RefactoringType.PARAMETERIZE_ATTRIBUTE) || refactoring1.getRefactoringType().equals(RefactoringType.REPLACE_ATTRIBUTE_WITH_VARIABLE) ||
-                            refactoring1.getRefactoringType().equals(RefactoringType.LOCALIZE_PARAMETER)) {
+                            refactoring1.getRefactoringType().equals(RefactoringType.LOCALIZE_PARAMETER) || refactoring1.getRefactoringType().equals(RefactoringType.PARAMETERIZE_VARIABLE)) {
                         if (replacement.getBefore().equals(((RenameVariableRefactoring) refactoring1).getOriginalVariable().getVariableName()) &&
                                 replacement.getAfter().equals(((RenameVariableRefactoring) refactoring1).getRenamedVariable().getVariableName())) {
                             handledReplacements.add(replacement);

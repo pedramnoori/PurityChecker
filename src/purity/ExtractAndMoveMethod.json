@@ -11482,11 +11482,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Remove Parameter on top"
+      "validationComment" : "Remove Parameter on top, which caused an impure modification"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -11496,11 +11496,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Remove Parameter on top"
+      "validationComment" : "Remove Parameter on top, which caused an impure modification"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -11510,11 +11510,11 @@
     "detectionTools" : "RefactoringMiner, RefDiff, RD-2x, RMiner-1x",
     "validators" : "Laleh",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Inline Variable and Remove Parameter on top"
+      "validationComment" : "Inline Variable and Remove Parameter on top, which caused an impure modification"
     }
   }, {
     "type" : "Parameterize Variable",

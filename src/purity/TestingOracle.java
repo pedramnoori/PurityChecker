@@ -24,7 +24,7 @@ public class TestingOracle {
     public static void main(String[] args) throws IOException {
 
         String outputPath = runPurityOnTestOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurity.json");
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.INLINE_OPERATION);
+        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.EXTRACT_AND_MOVE_OPERATION);
 //        buildOracle();
     }
 
@@ -181,7 +181,7 @@ public class TestingOracle {
                         @Override
                         public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         List<Refactoring> refactorings = umlModelDiff.getRefactorings();
-                        if (containsInlineMethodRefactoring(refactorings)) {
+                        if (containsPushDownMethodRefactoring(refactorings)) {
                             ObjectNode refactoring = objectMapper.createObjectNode();
                             refactoring.put("repository", commitUrl);
                             refactoring.put("sha1", commitSh1);
@@ -225,6 +225,14 @@ public class TestingOracle {
 
         List<Refactoring> res = refactorings.stream().filter(refactoring ->
                 refactoring instanceof InlineOperationRefactoring).collect(Collectors.toList());
+
+        return !res.isEmpty();
+    }
+
+    public static boolean containsPushDownMethodRefactoring(List<Refactoring> refactorings) {
+
+        List<Refactoring> res = refactorings.stream().filter(refactoring ->
+                refactoring instanceof PushDownOperationRefactoring).collect(Collectors.toList());
 
         return !res.isEmpty();
     }
