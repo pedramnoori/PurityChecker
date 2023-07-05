@@ -23,9 +23,9 @@ public class TestingOracle {
 
     public static void main(String[] args) throws IOException {
 
-        String outputPath = runPurityOnTestOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurity.json");
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.EXTRACT_AND_MOVE_OPERATION);
-//        buildOracle();
+//        String outputPath = runPurityOnTestOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurity.json");
+//        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.EXTRACT_AND_MOVE_OPERATION);
+        buildOracle(RefactoringType.PUSH_DOWN_OPERATION);
     }
 
     private static void calculatePrecisionAndRecallOnSpecificRefactoring(String sourcePath, RefactoringType refactoringType) {
@@ -158,13 +158,13 @@ public class TestingOracle {
     }
 
 
-    public static void buildOracle() throws IOException {
+    public static void buildOracle(RefactoringType refactoringType) throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         ArrayNode arrayNode = objectMapper.createArrayNode();
 
-        File file = new File("C:\\Users\\Pedram\\Desktop\\sample.json");
+        File file = new File("/Users/pedram/Desktop/sample.json");
 
         JsonNode root = objectMapper.readTree(file);
 
@@ -181,7 +181,7 @@ public class TestingOracle {
                         @Override
                         public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
                         List<Refactoring> refactorings = umlModelDiff.getRefactorings();
-                        if (containsPushDownMethodRefactoring(refactorings)) {
+                        if (containsSpecificRefactoringType(refactorings, refactoringType)) {
                             ObjectNode refactoring = objectMapper.createObjectNode();
                             refactoring.put("repository", commitUrl);
                             refactoring.put("sha1", commitSh1);
@@ -205,7 +205,7 @@ public class TestingOracle {
             }
 
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-        objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\sampleRes.json"), arrayNode);
+        objectMapper.writeValue(new File("/Users/pedram/Desktop/sampleRes.json"), arrayNode);
         }
 
         public static boolean containsMethodRelatedRefactoring(List<Refactoring> refactorings) {
@@ -221,21 +221,17 @@ public class TestingOracle {
         return !res.isEmpty();
         }
 
-    public static boolean containsInlineMethodRefactoring(List<Refactoring> refactorings) {
+    public static boolean containsSpecificRefactoringType(List<Refactoring> refactorings, RefactoringType refactoringType) {
 
-        List<Refactoring> res = refactorings.stream().filter(refactoring ->
-                refactoring instanceof InlineOperationRefactoring).collect(Collectors.toList());
+        for (Refactoring refactoring : refactorings) {
+            if (refactoring.getRefactoringType().equals(refactoringType)) {
+                return true;
+            }
+        }
 
-        return !res.isEmpty();
+        return false;
     }
 
-    public static boolean containsPushDownMethodRefactoring(List<Refactoring> refactorings) {
-
-        List<Refactoring> res = refactorings.stream().filter(refactoring ->
-                refactoring instanceof PushDownOperationRefactoring).collect(Collectors.toList());
-
-        return !res.isEmpty();
-    }
 
     private static float specificityCalculator(int tpCounter, int tnCounter, int fpCounter, int fnCounter) {
 

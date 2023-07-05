@@ -56,13 +56,13 @@ public class PurityChecker {
 //                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PULL_UP_OPERATION:
-//                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case INLINE_OPERATION:
 //                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case EXTRACT_AND_MOVE_OPERATION:
-                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_INLINE_OPERATION:
 //                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -298,6 +298,11 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Extract variable on the top of the pull up method - all mapped", purityComment, mappingState);
             }
 
+            checkForInlineVariableOnTop(refactorings, replacementsToCheck, refactoring.getBodyMapper());
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Inline Variable on top of the pull up method - all mapped", purityComment, mappingState);
+            }
+
             checkForExtractMethodOnTop(refactorings, replacementsToCheck);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Extract Method on top of the pull up method - all mapped", purityComment, mappingState);
@@ -390,14 +395,19 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Rename Method on top of the pull up method - with non-mapped leaves or nodes", "Severe Changes", 5);
             }
 
-            checkForRemoveVariableOnTop_nonMapped(refactoring, refactorings, nonMappedLeavesT2, nonMappedLeavesT1, nonMappedNodesT2, nonMappedNodesT1);
-            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
-                return new PurityCheckResult(true, "One or more variables have been removed from the body of the pull up method - with non-mapped leaves or nodes", "Severe Changes", 5);
-            }
+//            checkForRemoveVariableOnTop_nonMapped(refactoring, refactorings, nonMappedLeavesT2, nonMappedLeavesT1, nonMappedNodesT2, nonMappedNodesT1);
+//            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+//                return new PurityCheckResult(true, "One or more variables have been removed from the body of the pull up method - with non-mapped leaves or nodes", "Severe Changes", 5);
+//            }
 
             checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT2);
             if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
                 return new PurityCheckResult(true, "Extract Variable on top of the pull up method - with non-mapped leaves or nodes", "Severe Changes", 5);
+            }
+
+            checkForInlineVariableNonMappedLeaves(refactorings, nonMappedLeavesT1);
+            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+                return new PurityCheckResult(true, "Inline Variable on top of the pull up method - with non-mapped leaves or nodes", "Severe Changes", 5);
             }
 
             checkForExtraBreakStatementsWithinSwitch(nonMappedLeavesT1, nonMappedLeavesT2);
@@ -577,6 +587,7 @@ public class PurityChecker {
         checkForReplaceAttributeOnTop(refactorings, replacementsToCheck);
         checkForRenameVariableOnTop(refactorings, replacementsToCheck);
         checkForExtractVariableOnTop(refactoring, refactorings, replacementsToCheck);
+        checkForInlineVariableOnTop(refactorings, replacementsToCheck, refactoring.getBodyMapper());
         checkForRenameAttributeOnTop(refactorings, replacementsToCheck);
         checkForMoveAttributeOnTop(refactorings, replacementsToCheck);
         checkForExtractClassOnTop(refactorings, replacementsToCheck);
@@ -587,7 +598,7 @@ public class PurityChecker {
         checkForMoveMethodRefactoringOnTop(refactoring, refactorings, replacementsToCheck);
         checkForThisPatternReplacement(replacementsToCheck);
         checkForRenameMethodRefactoringOnTop_Mapped(refactorings, replacementsToCheck);
-        checkForRemoveVariableOnTop(replacementsToCheck, refactoring.getBodyMapper());
+//        checkForRemoveVariableOnTop(replacementsToCheck, refactoring.getBodyMapper());
         checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
 
 
@@ -783,10 +794,10 @@ public class PurityChecker {
                 return new PurityCheckResult(true, "Rename Method on top of the push down method - with non-mapped leaves or nodes", "Severe Changes", 5);
             }
 
-            checkForRemoveVariableOnTop_nonMapped(refactoring, refactorings, nonMappedLeavesT2, nonMappedLeavesT1, nonMappedNodesT2, nonMappedNodesT1);
-            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
-                return new PurityCheckResult(true, "One or more variables have been removed from the body of the push down method - with non-mapped leaves or nodes", "Severe Changes", 5);
-            }
+//            checkForRemoveVariableOnTop_nonMapped(refactoring, refactorings, nonMappedLeavesT2, nonMappedLeavesT1, nonMappedNodesT2, nonMappedNodesT1);
+//            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+//                return new PurityCheckResult(true, "One or more variables have been removed from the body of the push down method - with non-mapped leaves or nodes", "Severe Changes", 5);
+//            }
 
             checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT2);
             if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
@@ -876,7 +887,7 @@ public class PurityChecker {
         checkForMoveMethodRefactoringOnTop(refactoring, refactorings, replacementsToCheck);
         checkForThisPatternReplacement(replacementsToCheck);
         checkForRenameMethodRefactoringOnTop_Mapped(refactorings, replacementsToCheck);
-        checkForRemoveVariableOnTop(replacementsToCheck, refactoring.getBodyMapper());
+//        checkForRemoveVariableOnTop(replacementsToCheck, refactoring.getBodyMapper());
         checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
 
 

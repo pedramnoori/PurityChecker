@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/bitcoinj/bitcoinj/commit/12602650ce99f34cb530fc24266c23e39733b0bb");
+        isPureAPI("https://github.com/openMF/android-client/commit/4a66dec4cab77fcb68593b31dc8416d87ee85c21");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
