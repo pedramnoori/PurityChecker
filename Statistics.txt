@@ -857,3 +857,14 @@ Specificity: 92.85714
 FScore: 0.79120886
 
 
+For Pull Up Method: TIME: 2023-07-05 18:07:00.567
+TP: 243
+TN: 26
+FP: 0
+FN: 13
+Precision: 100.0
+Recall: 94.921875
+Specificity: 100.0
+FScore: 0.9739479
+
+

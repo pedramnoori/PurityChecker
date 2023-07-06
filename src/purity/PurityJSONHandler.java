@@ -24,16 +24,16 @@ public class PurityJSONHandler {
 
     public static void main(String[] args) {
 
-        addPurityFields("/Users/pedram/Desktop/sampleRes.json", "/Users/pedram/Desktop/sampleResPurity.json");
+//        addPurityFields("/Users/pedram/Desktop/sampleRes.json", "/Users/pedram/Desktop/sampleResPurity.json");
 //        addExtraPurityFields("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
 //        numberOfRefactorings("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
-//        String outputPath = runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/ExtractAndMoveMethod.json");
+        String outputPath = runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PullUpMethod.json");
 //
-//        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResultExtractAndMove.json", RefactoringType.EXTRACT_AND_MOVE_OPERATION);
+        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultPullUp.json", RefactoringType.PULL_UP_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.EXTRACT_OPERATION);
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
@@ -297,7 +297,7 @@ public class PurityJSONHandler {
                         }, 100);
             }
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String outputPath = "/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResultExtractAndMove.json";
+            String outputPath = "C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultPullUp.json";
             objectMapper.writeValue(new File(outputPath), arrayNode);
             return outputPath;
         } catch (IOException e) {

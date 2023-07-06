@@ -27413,51 +27413,51 @@
     "type" : "Pull Up Method",
     "description" : "Pull Up Method\tpublic onAttach(activity Activity) : void from class com.mifos.mifosxdroid.online.LoanRepaymentFragment to public onAttach(activity Activity) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Althought the casting has been changed, the refactoring seeems pure"
     }
   }, {
     "type" : "Pull Up Method",
     "description" : "Pull Up Method\tpublic onAttach(activity Activity) : void from class com.mifos.mifosxdroid.online.ClientIdentifiersFragment to public onAttach(activity Activity) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The non-mapped leave is not justifiable, so the logic has been changed"
     }
   }, {
     "type" : "Pull Up Method",
     "description" : "Pull Up Method\tpublic onAttach(activity Activity) : void from class com.mifos.mifosxdroid.online.DataTableDataFragment to public onAttach(activity Activity) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The non-mapped leave is not justifiable, so the logic has been changed"
     }
   }, {
     "type" : "Pull Up Method",
     "description" : "Pull Up Method\tpublic onCreate(savedInstanceState Bundle) : void from class com.mifos.mifosxdroid.online.ClientSearchFragment to public onCreate(savedInstanceState Bundle) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Move and Rename Attribute in top"
     }
   }, {
     "type" : "Pull Up Method",
     "description" : "Pull Up Method\tpublic hideKeyboard() : void from class com.mifos.mifosxdroid.online.ClientSearchFragment to public hideKeyboard(view View) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "There should be a relation between the -view- parameter and -et_searchById- attribute considering the similarity between two methods. Impossible to catch."
     }
   }, {
     "type" : "Add Parameter",
@@ -27473,21 +27473,21 @@
     "type" : "Pull Up Method",
     "description" : "Pull Up Method\tpublic onAttach(activity Activity) : void from class com.mifos.mifosxdroid.online.DocumentListFragment to public onAttach(activity Activity) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The non-mapped leave is not justifiable, so the logic has been changed"
     }
   }, {
     "type" : "Pull Up Method",
     "description" : "Pull Up Method\tpublic onAttach(activity Activity) : void from class com.mifos.mifosxdroid.online.LoanRepaymentScheduleFragment to public onAttach(activity Activity) : void from class com.mifos.mifosxdroid.core.MifosBaseFragment",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The non-mapped leave is not justifiable, so the logic has been changed"
     }
   } ]
 }, {
