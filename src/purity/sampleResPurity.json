@@ -426,11 +426,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate constructBulk(batch RecordBatch, callback Callback<Response>) : Bulk from class io.confluent.connect.elasticsearch.internals.HttpClient to public bulkRequest(batch List<IndexingRequest>) : Bulk from class io.confluent.connect.elasticsearch.BulkIndexingClient",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "try-catch has not been moved - Other non-mapped leaves in the original method are not justifiable"
     }
   } ]
 }, {
@@ -701,11 +701,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic createTradingRecordReport() : void from class org.ta4j.core.Backtesting to public printBacktestingResult() : void from class org.ta4j.core.BacktestingResult",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "printing statements have been added to the moved method. Technically, the logic hasn't been changed but we consider these cases as non-pure. It's an overlapping change"
     }
   } ]
 }, {
@@ -1176,11 +1176,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate getProfitTradeCount(tradingRecord TradingRecord) : long from class org.ta4j.core.Backtesting to public calculate(series TimeSeries, tradingRecord TradingRecord) : Num from class org.ta4j.core.analysis.criteria.NumberOfWinningTradesCriterion",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the filter condition in the stream statement has been changed"
     }
   }, {
     "type" : "Change Return Type",
@@ -1226,11 +1226,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate getLossTradeCount(tradingRecord TradingRecord) : long from class org.ta4j.core.Backtesting to public calculate(series TimeSeries, tradingRecord TradingRecord) : Num from class org.ta4j.core.analysis.criteria.NumberOfLosingTradesCriterion",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the filter condition in the stream statement has been changed"
     }
   }, {
     "type" : "Change Return Type",
@@ -1276,11 +1276,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate getBreakEvenTradeCount(tradingRecord TradingRecord) : long from class org.ta4j.core.Backtesting to public calculate(series TimeSeries, tradingRecord TradingRecord) : Num from class org.ta4j.core.analysis.criteria.NumberOfBreakEvenTradesCriterion",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the filter condition in the stream statement has been changed"
     }
   } ]
 }, {
@@ -5876,11 +5876,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpackage getErrorMessage(error OAuthError, description String, errorUri String) : JSONObject from class org.restlet.ext.oauth.OAuthError to public createErrorDocument() : JSONObject from class org.restlet.ext.oauth.OAuthException",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the string literals has been replaced with attributes. As the attributes were present before, there were not refactorings and PurityChecker couldn't report these as pure cases"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -7311,11 +7311,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprotected onPostExecute(deleted Integer) : void from class org.osmdroid.tileprovider.cachemanager.CacheManager.CleaningTask to private dismiss() : void from class org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerDialog",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The if expression condition has been changed, which is an impure change"
     }
   } ]
 }, {
@@ -7936,11 +7936,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprotected getBitmap(pTileSizePx int) : Bitmap from class org.osmdroid.tileprovider.MapTileProviderBase.ScaleTileLooper to public getTileBitmap(pTileSizePx int) : Bitmap from class org.osmdroid.tileprovider.modules.MapTileApproximater",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The condition has been inverted, but the statements have been also moved according to the invertion. Impossible to catch"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -10976,11 +10976,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate checkEventTokenNotNull(eventToken String) : boolean from class com.adeven.adjustio.ActivityHandler to public isValidForEvent() : boolean from class com.adeven.adjustio.PackageBuilder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "return true has been changed to return isEventTokenValid(), which is an obvious impure modification"
     }
   }, {
     "type" : "Remove Parameter",
@@ -11006,11 +11006,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate checkEventTokenLength(eventToken String) : boolean from class com.adeven.adjustio.ActivityHandler to private isEventTokenValid() : boolean from class com.adeven.adjustio.PackageBuilder",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "The if condition has not been moved."
     }
   } ]
 }, {
@@ -11966,7 +11966,7 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate getPanel(step SubmissionStepConfig) : SubmissionPanelRest from class org.dspace.app.rest.converter.SubmissionDefinitionConverter to public fromModel(step SubmissionStepConfig) : SubmissionPanelRest from class org.dspace.app.rest.converter.SubmissionPanelConverter",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -13081,7 +13081,7 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate resetMaster() : void from class com.zendesk.maxwell.AbstractMaxwellTest to public setupSchema(server MysqlIsolatedServer) : void from class com.zendesk.maxwell.MaxwellTestSupport",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -14386,7 +14386,7 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate loadGeneral(context Context) : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity.GeneralPrefsFragment to private loadPref_general(context Context, calculatorPref ListPreference) : void from class com.forrestguice.suntimeswidget.SuntimesSettingsActivity",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -15263,11 +15263,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic isServerInConfig(serverName String) : boolean from class org.datacleaner.util.RemoteServersConfigRW to public getServerConfig(serverName String) : RemoteServerData from class org.datacleaner.util.RemoteServersUtils",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the return type has been changed and the corresponding return expressions have been changed, which is pure in this case"
     }
   }, {
     "type" : "Move Method",
@@ -18033,7 +18033,7 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate buildMethodHandle(type Class<?>, method Method) : MethodHandle from class br.com.caelum.vraptor.interceptor.InterceptorMethodsCache to public create(type Class<?>, method Method) : MethodHandle from class br.com.caelum.vraptor.reflection.MethodHandleFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -21923,11 +21923,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic getFileTimestamp(time long) : String from class org.bonitasoft.engine.tracking.csv.CSVUtil to private getDayFile(time long, folder String, filePrefix String, fileSuffix String) : File from class org.bonitasoft.engine.tracking.csv.CSVFlushEventListener",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "hour, minute, and second information have not been moved to the destination file."
     }
   }, {
     "type" : "Change Method Access Modifier",
@@ -21963,7 +21963,7 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic FlushResult(flushEvent FlushEvent) from class org.bonitasoft.engine.tracking.FlushResult to public FlushEventListenerResult(flushEvent FlushEvent) from class org.bonitasoft.engine.tracking.FlushEventListenerResult",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -22763,7 +22763,7 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprotected findProducts(searchCriteria SearchCriteria, filter UnaryOperator<ProductProjectionSearch>) : CompletionStage<PagedSearchResult<ProductProjection>> from class productcatalog.productoverview.ProductSearchByCategorySlugAndSearchCriteria to public searchProducts(criteria Void, filter UnaryOperator<ProductProjectionSearch>) : CompletionStage<PagedSearchResult<ProductProjection>> from class productcatalog.productoverview.ProductListFetchSimple",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -24023,11 +24023,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic handleInvalidForm(form Form<? extends MyPersonalDetailsFormData>, customer Customer) : CompletionStage<Result> from class com.commercetools.sunrise.myaccount.mydetails.SunriseMyPersonalDetailsController to public handleClientErrorFailedAction(form Form<? extends AddProductToCartFormData>, cart Cart, clientErrorException ClientErrorException) : CompletionStage<Result> from class com.commercetools.sunrise.shoppingcart.cart.addtocart.SunriseAddProductToCartController",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
     }
   }, {
     "type" : "Change Parameter Type",
@@ -24043,11 +24043,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic handleInvalidForm(form Form<? extends AddressBookAddressFormData>, customer Customer) : CompletionStage<Result> from class com.commercetools.sunrise.myaccount.addressbook.addaddress.SunriseAddAddressController to public handleClientErrorFailedAction(form Form<? extends AddProductToCartFormData>, cart Cart, clientErrorException ClientErrorException) : CompletionStage<Result> from class com.commercetools.sunrise.shoppingcart.cart.addtocart.SunriseAddProductToCartController",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
     }
   }, {
     "type" : "Remove Parameter",
@@ -24143,11 +24143,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic handleInvalidForm(form Form<? extends CheckoutShippingFormData>, cart Cart) : CompletionStage<Result> from class com.commercetools.sunrise.shoppingcart.checkout.shipping.SunriseCheckoutShippingController to public handleClientErrorFailedAction(form Form<? extends CheckoutConfirmationFormData>, cart Cart, clientErrorException ClientErrorException) : CompletionStage<Result> from class com.commercetools.sunrise.shoppingcart.checkout.confirmation.SunriseCheckoutConfirmationController",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
     }
   }, {
     "type" : "Extract Variable",
@@ -24193,11 +24193,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprotected handleSuccessfulCartChange(cart Cart) : CompletionStage<Result> from class com.commercetools.sunrise.shoppingcart.cart.removelineitem.SunriseRemoveLineItemController to protected redirectToCartDetail() : CompletionStage<Result> from class com.commercetools.sunrise.shoppingcart.cart.SunriseCartManagementController",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
     }
   }, {
     "type" : "Add Parameter",
@@ -24233,11 +24233,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprotected createPageContent() : CheckoutConfirmationPageContent from class com.commercetools.sunrise.shoppingcart.checkout.confirmation.SunriseCheckoutConfirmationController to public create(form Form<?>, cart Cart) : CheckoutConfirmationPageContent from class com.commercetools.sunrise.shoppingcart.checkout.confirmation.CheckoutConfirmationPageContentFactory",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
     }
   }, {
     "type" : "Extract Method",
@@ -24263,11 +24263,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprotected handleSuccessfulCartChange(cart Cart) : CompletionStage<Result> from class com.commercetools.sunrise.shoppingcart.cart.changelineitemquantity.SunriseChangeLineItemQuantityController to protected redirectToCartDetail() : CompletionStage<Result> from class com.commercetools.sunrise.shoppingcart.cart.SunriseCartManagementController",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
     }
   } ]
 }, {
@@ -25263,11 +25263,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic compareTo(o ComponentDescriptor<?>) : int from class org.datacleaner.util.ComponentDescriptorComparatorTest.TestLocalComponentDescriptor to protected getDialogWidth() : int from class org.datacleaner.windows.Neo4jDatastoreDialog",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "There is no connection between the two methods. So, the difference in number literal is definitely an impure change"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -28638,11 +28638,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic testFilterJsonGenerator() : void from class com.fasterxml.jackson.core.util.TestFilterJsonGenerator to public testNotDelegateCopyMethods() : void from class com.fasterxml.jackson.core.util.TestDelegates",
     "purity" : {
-      "purityValue" : "-",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : ""
+      "validationComment" : "Although the name of the anonymous class has been changed, the logic remained the same. Not sure about the case's purity"
     }
   } ]
 }, {

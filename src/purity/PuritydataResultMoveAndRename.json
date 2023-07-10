@@ -12593,7 +12593,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -37607,8 +37607,8 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityValidation" : "FP",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "the removed statement and the replacement in the return statement are not justifiable changes"
     }
@@ -54726,7 +54726,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "changes are not justifiable"
     }
@@ -54740,7 +54740,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "changes are not justifiable"
     }
@@ -59083,7 +59083,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }

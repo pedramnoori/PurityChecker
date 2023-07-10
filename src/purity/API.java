@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/zendesk/maxwell/commit/c13a4ce36ec7cf57934dfc06eb3a086497e98db4");
+        isPureAPI("https://github.com/FasterXML/jackson-core/commit/594a75dd353c78e4b394eca9d157f722bec2b040");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

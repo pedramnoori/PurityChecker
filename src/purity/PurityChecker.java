@@ -50,7 +50,7 @@ public class PurityChecker {
 //                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_RENAME_OPERATION:
-//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PUSH_DOWN_OPERATION:
 //                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -65,7 +65,7 @@ public class PurityChecker {
 //                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_INLINE_OPERATION:
-                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case SPLIT_OPERATION:
 //                result = detectSplitMethodPurity((SplitOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -1769,10 +1769,10 @@ Mapping state for Move Method refactoring purity:
                 return new PurityCheckResult(true, "Rename Method on top of the moved method - with non-mapped leaves or nodes", "Severe Changes", 5);
             }
 
-            checkForRemoveVariableOnTop_nonMapped(refactoring, refactorings, nonMappedLeavesT2, nonMappedLeavesT1, nonMappedNodesT2, nonMappedNodesT1);
-            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
-                return new PurityCheckResult(true, "One or more variables have been removed from the body of the moved method - with non-mapped leaves or nodes", "Severe Changes", 5);
-            }
+//            checkForRemoveVariableOnTop_nonMapped(refactoring, refactorings, nonMappedLeavesT2, nonMappedLeavesT1, nonMappedNodesT2, nonMappedNodesT1);
+//            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
+//                return new PurityCheckResult(true, "One or more variables have been removed from the body of the moved method - with non-mapped leaves or nodes", "Severe Changes", 5);
+//            }
 
             checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT2);
             if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
@@ -2197,12 +2197,14 @@ Mapping state for Move Method refactoring purity:
             }
         }
 
-        for (UMLAttribute attribute : umlModelDiff.findClassInChildModel(operation.getClassName()).getAttributes()) {
-            if (attribute.getName().equals(instanceOrVariable)) {
-                if (className.contains(attribute.getType().getClassType()))
-                    return true;
+        if (umlModelDiff.findClassInChildModel(operation.getClassName()) != null) {
+            for (UMLAttribute attribute : umlModelDiff.findClassInChildModel(operation.getClassName()).getAttributes()) {
+                if (attribute.getName().equals(instanceOrVariable)) {
+                    if (className.contains(attribute.getType().getClassType()))
+                        return true;
+                }
             }
-        }
+    }
 
         return false;
     }

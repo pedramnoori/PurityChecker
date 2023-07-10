@@ -23,8 +23,8 @@ public class TestingOracle {
 
     public static void main(String[] args) throws IOException {
 
-        String outputPath = runPurityOnTestOracle("/Users/pedram/Desktop/RefactoringMiner/src/purity/sampleResPurity.json");
-        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/sampleResPurityValidated.json", RefactoringType.MOVE_OPERATION);
+        String outputPath = runPurityOnTestOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurity.json");
+        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.MOVE_AND_RENAME_OPERATION);
 //        buildOracle(RefactoringType.PUSH_DOWN_OPERATION);
     }
 
@@ -149,7 +149,7 @@ public class TestingOracle {
                         }, 100);
             }
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String outputPath = "/Users/pedram/Desktop/RefactoringMiner/src/purity/sampleResPurityValidated.json";
+            String outputPath = "C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json";
             objectMapper.writeValue(new File(outputPath), arrayNode);
             return outputPath;
         } catch (IOException e) {

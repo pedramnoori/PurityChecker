@@ -141,3 +141,14 @@ Specificity: 100.0
 FScore: 0.9059829
 
 
+For Move And Rename Method: TIME: 2023-07-10 16:53:46.444
+TP: 6
+TN: 15
+FP: 1
+FN: 4
+Precision: 85.71429
+Recall: 60.000004
+Specificity: 93.75
+FScore: 0.70588243
+
+

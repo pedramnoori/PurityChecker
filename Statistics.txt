@@ -879,3 +879,36 @@ Specificity: 100.0
 FScore: 1.0
 
 
+For Move And Rename Method: TIME: 2023-07-10 12:51:10.17
+TP: 0
+TN: 0
+FP: 0
+FN: 0
+Precision: NaN
+Recall: NaN
+Specificity: NaN
+FScore: NaN
+
+
+For Move And Rename Method: TIME: 2023-07-10 13:04:52.271
+TP: 25
+TN: 75
+FP: 1
+FN: 6
+Precision: 96.15385
+Recall: 80.645164
+Specificity: 98.68421
+FScore: 0.877193
+
+
+For Move And Rename Method: TIME: 2023-07-10 13:23:45.088
+TP: 25
+TN: 77
+FP: 1
+FN: 11
+Precision: 96.15385
+Recall: 69.44444
+Specificity: 98.71795
+FScore: 0.80645156
+
+
