@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/openMF/android-client/commit/4a66dec4cab77fcb68593b31dc8416d87ee85c21");
+        isPureAPI("https://github.com/zendesk/maxwell/commit/c13a4ce36ec7cf57934dfc06eb3a086497e98db4");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

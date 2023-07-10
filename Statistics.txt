@@ -868,3 +868,14 @@ Specificity: 100.0
 FScore: 0.9739479
 
 
+For Move And Inline Method: TIME: 2023-07-07 19:39:22.563
+TP: 2
+TN: 11
+FP: 0
+FN: 0
+Precision: 100.0
+Recall: 100.0
+Specificity: 100.0
+FScore: 1.0
+
+

@@ -47,7 +47,7 @@ public class PurityChecker {
 //                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_OPERATION:
-                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_RENAME_OPERATION:
 //                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -65,7 +65,7 @@ public class PurityChecker {
 //                result = detectExtractOperationPurity((ExtractOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_INLINE_OPERATION:
-//                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectInlineMethodPurity((InlineOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case SPLIT_OPERATION:
 //                result = detectSplitMethodPurity((SplitOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -1749,15 +1749,20 @@ Mapping state for Move Method refactoring purity:
 
         } else {
 
+            List<AbstractCodeFragment> nonMappedLeavesT2 = refactoring.getBodyMapper().getNonMappedLeavesT2();
+            List<AbstractCodeFragment> nonMappedLeavesT1 = refactoring.getBodyMapper().getNonMappedLeavesT1();
+            List<CompositeStatementObject> nonMappedNodesT2 = refactoring.getBodyMapper().getNonMappedInnerNodesT2();
+            List<CompositeStatementObject> nonMappedNodesT1 = refactoring.getBodyMapper().getNonMappedInnerNodesT1();
+
+
+            checkForInevitableVariableDeclaration(refactoring.getBodyMapper(), nonMappedLeavesT2, refactorings); // This method can also change the state of the refactoring's replacements
+
+
             if (!checkReplacementsMoveMethod(refactoring, refactorings, modelDiff)) {
                 return new PurityCheckResult(false, "Replacements cannot be justified - with non-mapped leaves or nodes", "Severe changes", 5);
 
             }
 
-            List<AbstractCodeFragment> nonMappedLeavesT2 = refactoring.getBodyMapper().getNonMappedLeavesT2();
-            List<AbstractCodeFragment> nonMappedLeavesT1 = refactoring.getBodyMapper().getNonMappedLeavesT1();
-            List<CompositeStatementObject> nonMappedNodesT2 = refactoring.getBodyMapper().getNonMappedInnerNodesT2();
-            List<CompositeStatementObject> nonMappedNodesT1 = refactoring.getBodyMapper().getNonMappedInnerNodesT1();
 
             checkForRenameRefactoringOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2, nonMappedLeavesT1);
             if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
@@ -1788,6 +1793,9 @@ Mapping state for Move Method refactoring purity:
             if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
                 return new PurityCheckResult(true, "Parameterize Variable on top of the moved method - with non-mapped leaves or nodes", "Severe Changes", 5);
             }
+
+            checkForInevitableVariableDeclaration(refactoring.getBodyMapper(), nonMappedLeavesT2, refactorings); // This method can also change the state of the refactoring's replacements
+
 
 //            checkForThisPatternNonMapped(refactoring, nonMappedLeavesT1, nonMappedLeavesT2);
 //            if (nonMappedLeavesT2.isEmpty() && nonMappedLeavesT1.isEmpty() && nonMappedNodesT2.isEmpty() && nonMappedNodesT1.isEmpty()) {
@@ -2914,7 +2922,7 @@ Mapping state for Move Method refactoring purity:
             List<AbstractCodeFragment> nonMappedLeavesT2 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT2());
             List<AbstractCodeFragment> nonMappedLeavesT1 = new ArrayList<>(refactoring.getBodyMapper().getNonMappedLeavesT1());
             int size = nonMappedLeavesT2.size();
-            checkForInevitableVariableDeclaration(refactoring, nonMappedLeavesT2, refactorings); // This method can also change the state of the refactoring's replacements
+            checkForInevitableVariableDeclaration(refactoring.getBodyMapper(), nonMappedLeavesT2, refactorings); // This method can also change the state of the refactoring's replacements
             int size2 = nonMappedLeavesT2.size();
 
             if (size != size2) {
@@ -3442,7 +3450,7 @@ Mapping state for Move Method refactoring purity:
         }
     }
 
-    private static void checkForInevitableVariableDeclaration(ExtractOperationRefactoring refactoring, List<AbstractCodeFragment> nonMappedLeavesT2, List<Refactoring> refactorings) {
+    private static void checkForInevitableVariableDeclaration(UMLOperationBodyMapper bodyMapper, List<AbstractCodeFragment> nonMappedLeavesT2, List<Refactoring> refactorings) {
 
         List<AbstractCodeFragment> nonMappedLeavesT2ToRemove = new ArrayList<>();
 
@@ -3451,12 +3459,12 @@ Mapping state for Move Method refactoring purity:
             if (!nonMappedLeaf.getVariableDeclarations().isEmpty()) {
                 List<VariableDeclaration> variableDeclarations = nonMappedLeaf.getVariableDeclarations();
                 for (VariableDeclaration variableDeclaration : variableDeclarations) {
-                    if (checkUsageOfTheNewVariableDeclaration(variableDeclaration, refactoring, refactorings)) {
+                    if (checkUsageOfTheNewVariableDeclaration(variableDeclaration, bodyMapper, refactorings)) {
                         nonMappedLeavesT2ToRemove.add(nonMappedLeaf);
-                        for (Replacement replacement : refactoring.getBodyMapper().getReplacements()) {
+                        for (Replacement replacement : bodyMapper.getReplacements()) {
                             if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME) &&
                             replacement.getAfter().equals(variableDeclaration.getVariableName())) {
-                                refactoring.getReplacements().remove(replacement);
+                                bodyMapper.getReplacements().remove(replacement);
                                 break;
                             }
                         }
@@ -3483,7 +3491,7 @@ Mapping state for Move Method refactoring purity:
                         nonMappedLeavesT1ToRemove.add(nonMappedLeaf);
                         continue;
                     }
-                    if (checkUsageOfTheNewVariableDeclaration(variableDeclaration, refactoring, refactorings)) {
+                    if (checkUsageOfTheNewVariableDeclaration(variableDeclaration, refactoring.getBodyMapper(), refactorings)) {
                         nonMappedLeavesT1ToRemove.add(nonMappedLeaf);
                         for (Replacement replacement : refactoring.getBodyMapper().getReplacements()) {
                             if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME) &&
@@ -3513,16 +3521,8 @@ Mapping state for Move Method refactoring purity:
     }
 
 
-    private static boolean checkUsageOfTheNewVariableDeclaration(VariableDeclaration variableDeclaration, Refactoring refactoring, List<Refactoring> refactorings) {
+    private static boolean checkUsageOfTheNewVariableDeclaration(VariableDeclaration variableDeclaration, UMLOperationBodyMapper bodyMapper, List<Refactoring> refactorings) {
 
-        UMLOperationBodyMapper bodyMapper = null;
-        if (refactoring.getRefactoringType().equals(RefactoringType.EXTRACT_OPERATION)) {
-            bodyMapper = ((ExtractOperationRefactoring) (refactoring)).getBodyMapper();
-        } else if (refactoring.getRefactoringType().equals(RefactoringType.INLINE_OPERATION)) {
-            bodyMapper = ((InlineOperationRefactoring) (refactoring)).getBodyMapper();;
-        }else {
-            return false;
-        }
 
         boolean existFlag = false;
         boolean checkFlag = false;
@@ -4218,7 +4218,7 @@ Mapping state for Move Method refactoring purity:
         checkForRenameRefactoringOnTop_NonMapped(refactoring, refactorings, nonMappedLeavesT2, nonMappedLeavesT1);
         checkForExtractVariableOnTop_NonMapped(refactorings, nonMappedLeavesT2);
 
-        checkForInevitableVariableDeclaration(refactoring, nonMappedLeavesT2, refactorings); // This method can also change the state of the refactoring's replacements
+        checkForInevitableVariableDeclaration(refactoring.getBodyMapper(), nonMappedLeavesT2, refactorings); // This method can also change the state of the refactoring's replacements
 
 
 

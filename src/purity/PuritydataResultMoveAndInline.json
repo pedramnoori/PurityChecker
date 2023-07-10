@@ -3094,7 +3094,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "",
+      "purityComment" : "Severe changes + \n",
       "mappingState" : 2,
       "validationComment" : "the method hasn't been inlined completely. Non-mapped leaves are not justifiable"
     }
