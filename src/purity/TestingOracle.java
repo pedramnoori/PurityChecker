@@ -24,7 +24,7 @@ public class TestingOracle {
     public static void main(String[] args) throws IOException {
 
         String outputPath = runPurityOnTestOracle("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurity.json");
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.MOVE_AND_RENAME_OPERATION);
+        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\sampleResPurityValidated.json", RefactoringType.PUSH_DOWN_OPERATION);
 //        buildOracle(RefactoringType.PUSH_DOWN_OPERATION);
     }
 
@@ -164,7 +164,7 @@ public class TestingOracle {
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         ArrayNode arrayNode = objectMapper.createArrayNode();
 
-        File file = new File("/Users/pedram/Desktop/sample.json");
+        File file = new File("C:\\Users\\Pedram\\Desktop\\sample.json");
 
         JsonNode root = objectMapper.readTree(file);
 
@@ -205,7 +205,7 @@ public class TestingOracle {
             }
 
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-        objectMapper.writeValue(new File("/Users/pedram/Desktop/sampleRes.json"), arrayNode);
+        objectMapper.writeValue(new File("C:\\Users\\Pedram\\Desktop\\sampleRes.json"), arrayNode);
         }
 
         public static boolean containsMethodRelatedRefactoring(List<Refactoring> refactorings) {

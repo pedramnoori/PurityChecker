@@ -50,10 +50,10 @@ public class PurityChecker {
 //                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case MOVE_AND_RENAME_OPERATION:
-                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
+//                result = detectMoveMethodPurity((MoveOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PUSH_DOWN_OPERATION:
-//                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
+                result = detectPushDownMethodPurity((PushDownOperationRefactoring) refactoring, refactorings, modelDiff);
                 break;
             case PULL_UP_OPERATION:
 //                result = detectPullUpMethodPurity((PullUpOperationRefactoring) refactoring, refactorings, modelDiff);
@@ -756,6 +756,11 @@ public class PurityChecker {
             checkForPullUpMethodOnTop(refactoring, refactorings, replacementsToCheck, modelDiff);
             if (replacementsToCheck.isEmpty()) {
                 return new PurityCheckResult(true, "Pull Up Method on top of the push down method - all mapped", purityComment, mappingState);
+            }
+
+            checkForPushDownMethodOnTop(refactoring, refactorings, replacementsToCheck, modelDiff);
+            if (replacementsToCheck.isEmpty()) {
+                return new PurityCheckResult(true, "Push Down Method on top of the push down method - all mapped", purityComment, mappingState);
             }
 
             checkForEncapsulateAttributeOnTop(refactorings, replacementsToCheck);
@@ -2206,6 +2211,104 @@ Mapping state for Move Method refactoring purity:
             }
     }
 
+        return false;
+    }
+
+//    private static void checkForPushDownAttributeOnTop(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck, UMLModelDiff modelDiff) {
+//
+//        Set<Replacement> replacementsToRemove = new HashSet<>();
+//
+//        List<PushDownAttributeRefactoring> pushDownAttributeRefactoringList = new ArrayList<>();
+//
+//        for (Refactoring refactoring1 : refactorings) {
+//            if (refactoring1 instanceof PushDownAttributeRefactoring) {
+//                pushDownAttributeRefactoringList.add((PushDownAttributeRefactoring) refactoring1);
+//            }
+//        }
+//
+//        if (pushDownAttributeRefactoringList.isEmpty()) {
+//            return;
+//        }
+//
+//        for (Replacement replacement : replacementsToCheck) {
+//            if (replacement.getType().equals(Replacement.ReplacementType.VARIABLE_NAME)) {
+//
+//                String before = replacement.getBefore();
+//                String after = replacement.getAfter();
+//
+//                int foundInAfter = after.indexOf(before);
+//                int foundInBefore = before.indexOf(after);
+//
+//                if (foundInBefore != -1) {
+//                    String instanceOrVariable = before.substring(0, foundInBefore - 1);
+//                    for (PushDownAttributeRefactoring pushDownAttributeRefactoring : pushDownAttributeRefactoringList) {
+//                            if
+//                        }
+//                    }
+//                }
+//
+//            }
+//    }
+
+    private static void checkForPushDownMethodOnTop(Refactoring refactoring, List<Refactoring> refactorings, HashSet<Replacement> replacementsToCheck, UMLModelDiff modelDiff) {
+
+        Set<Replacement> replacementsToRemove = new HashSet<>();
+
+        for (Replacement replacement : replacementsToCheck) {
+            if (replacement.getType().equals(Replacement.ReplacementType.METHOD_INVOCATION)) {
+                if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().getName().equals(
+                        ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName()
+                )) {
+                    if (((MethodInvocationReplacement) replacement).getInvokedOperationAfter().arguments().equals(
+                            ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().arguments()
+                    )) { //Taking into account that two lists will be equal in Java when the order of insertion was the same along with the values themselves
+
+                        String before = replacement.getBefore();
+                        String after = replacement.getAfter();
+                        String methodInvocationName = ((MethodInvocationReplacement) replacement).getInvokedOperationBefore().getName();
+
+                        for (Refactoring refactoring1 : refactorings) {
+                            if (refactoring1.getRefactoringType().equals(RefactoringType.PUSH_DOWN_OPERATION)) {
+                                if (((PushDownOperationRefactoring) refactoring1).getOriginalOperation().getName().equals(methodInvocationName)) {
+                                    int foundInAfter = after.indexOf(before);
+                                    int foundInBefore = before.indexOf(after);
+
+                                    if (foundInBefore != -1) {
+                                        String instanceOrVariable = before.substring(0, foundInBefore - 1);
+                                        if (specificCheckForPushDownMethodOnTopFoundInBefore(refactoring, ((PushDownOperationRefactoring) refactoring1), instanceOrVariable, (MethodInvocationReplacement) replacement, modelDiff)) {
+                                            replacementsToRemove.add(replacement);
+                                        }
+                                    } else if (foundInAfter != -1) {
+                                        String instanceOrVariable = after.substring(0, foundInAfter - 1);
+                                        if (specificCheckForPushDownMethodOnTopFoundInAfter(refactoring, ((PushDownOperationRefactoring) refactoring1), instanceOrVariable, (MethodInvocationReplacement) replacement, modelDiff)) {
+                                            replacementsToRemove.add(replacement);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        replacementsToCheck.removeAll(replacementsToRemove);
+    }
+
+    private static boolean specificCheckForPushDownMethodOnTopFoundInAfter(Refactoring refactoring, PushDownOperationRefactoring pushDownOperationRefactoring, String instanceOrVariable, MethodInvocationReplacement replacement, UMLModelDiff modelDiff) {
+
+        if (pushDownOperationRefactoring.getMovedOperation().getNonQualifiedClassName().equals(instanceOrVariable)) {
+            return true;
+        }
+        return false;
+    }
+
+
+    private static boolean specificCheckForPushDownMethodOnTopFoundInBefore(Refactoring refactoring, PushDownOperationRefactoring pushDownOperationRefactoring, String instanceOrVariable, MethodInvocationReplacement replacement, UMLModelDiff modelDiff) {
+
+        if (pushDownOperationRefactoring.getOriginalOperation().getNonQualifiedClassName().equals(instanceOrVariable)) {
+            return true;
+        }
         return false;
     }
 

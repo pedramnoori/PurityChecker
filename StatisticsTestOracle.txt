@@ -152,3 +152,14 @@ Specificity: 93.75
 FScore: 0.70588243
 
 
+For Push Down Method: TIME: 2023-07-10 21:43:07.842
+TP: 48
+TN: 5
+FP: 0
+FN: 0
+Precision: 100.0
+Recall: 100.0
+Specificity: 100.0
+FScore: 1.0
+
+
