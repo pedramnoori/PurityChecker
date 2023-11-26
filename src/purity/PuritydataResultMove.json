@@ -15,7 +15,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "One setter has been added and used, which changes the behavior of the moved operation"
     }
@@ -303,8 +303,8 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
       "mappingState" : 1,
       "validationComment" : "Types has been changed, which do not change the behavior"
     }
@@ -555,8 +555,8 @@
     "validators" : "Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body",
       "mappingState" : 1,
       "validationComment" : "All replacements are variable types"
     }
@@ -901,7 +901,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "Tolerable changes in the body\n",
       "mappingState" : 5,
       "validationComment" : "transitive parameter has been added and put to the dependencyNotation variable"
     }
@@ -938,7 +938,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "one method call has been added"
     }
@@ -1250,7 +1250,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Class-",
       "mappingState" : 1,
       "validationComment" : "Changes caused my move class refactoring"
     }
@@ -1665,7 +1665,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The condition has been changed - ARROW has been added"
     }
@@ -1693,7 +1693,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The condition has been changed"
     }
@@ -1707,7 +1707,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Move Method-",
       "mappingState" : 1,
       "validationComment" : "Move Method refactoring on top of the moved method"
     }
@@ -1721,7 +1721,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Move Method-",
       "mappingState" : 5,
       "validationComment" : "There are lots of changes. One new case (-) has been added to the moved function"
     }
@@ -1735,7 +1735,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "two cases have been removed"
     }
@@ -1749,7 +1749,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Move Method-",
       "mappingState" : 1,
       "validationComment" : "Change has been caused because of the nested move method refactoring. In this case, within this commit, the -error- method has been moved from -PredicateTokeniser- class to -PredicatedHandlersParser- class. So, the change is a pure change!"
     }
@@ -1763,7 +1763,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\n",
       "mappingState" : 5,
       "validationComment" : "one condition has been added - if (operator.equals(ARROW))"
     }
@@ -1777,7 +1777,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\n",
       "mappingState" : 5,
       "validationComment" : "one condition has been added - if (operator.equals(ARROW))"
     }
@@ -1791,7 +1791,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "two cases have been removed"
     }
@@ -1959,7 +1959,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "Logic has been changed a lot"
     }
@@ -1972,8 +1972,8 @@
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityValidation" : "FP",
+      "purityComment" : "- Rename Variable-- Move Method-",
       "mappingState" : 5,
       "validationComment" : "Logic has been changed completely"
     }
@@ -1986,9 +1986,9 @@
     "validators" : "Matin, Laleh, Davood",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
-      "mappingState" : 5,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : "Logic has been changed completely"
     }
   }, {
@@ -2948,7 +2948,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The object which has been passed has been changed - before it was -halt- with the type of -tomicBoolean-, and the new version is -SynchronizedBypassPropagationList-"
     }
@@ -2962,7 +2962,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The object which has been passed has been changed - before it was -halt- with the type of -tomicBoolean-, and the new version is -SynchronizedBypassPropagationList-"
     }
@@ -6825,7 +6825,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Tolerable changes in the body",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Add Parameter-",
       "mappingState" : 1,
       "validationComment" : "Add Parameter on top of the moved method"
     }
@@ -6951,7 +6951,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "Tolerable changes in the body\n",
       "mappingState" : 5,
       "validationComment" : "One statement has been added to the moved method - listener.initStorage();-"
     }
@@ -7021,7 +7021,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "One statement has been added to the moved method - listener.ensureEdgeIndex(edgeIndex);-"
     }
@@ -7133,7 +7133,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Method-",
       "mappingState" : 1,
       "validationComment" : "Move and Rename Method on top of the moved method"
     }
@@ -7567,7 +7567,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "One statement has been added to the moved method - -listener.ensureNodeIndex(nodeIndex);-"
     }
@@ -13796,9 +13796,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Tolerable changes in the body",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -13810,9 +13810,9 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
       "validationComment" : ""
     }
   }, {
@@ -23772,7 +23772,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "Tolerable changes in the body\n",
       "mappingState" : 5,
       "validationComment" : "Remove Variable change on top of the moved method"
     }
@@ -23785,7 +23785,7 @@
     "validators" : "Matin",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "TP",
+      "purityValidation" : "FN",
       "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "Remove Variable change on top of the moved method"
@@ -24560,7 +24560,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "-modifierItems- is a linkedList and -items- is an arrayList. Also, there is no connection between those."
     }
@@ -25199,7 +25199,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "the if condition has been changed. Also, there is one nonMappedLeavesT2, which is unjustifiable"
     }
@@ -25353,7 +25353,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "Tolerable changes in the body\n",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -25912,7 +25912,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the change between -transactionIdStore- to -neoStoreModule.neoStore()- is not justifiable"
     }
@@ -28688,7 +28688,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : ""
     }
@@ -29444,7 +29444,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-assertFalse- has been changed to -Assert.assertFalse- which is a pure change obviously"
     }
@@ -29976,7 +29976,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "The test methods are totally different. Test logic has been changed a lot"
     }
@@ -32957,7 +32957,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "There is an Extract Method refactoring on top of the moved method. The string construction part has been extracted to -constructInstanceInfo()- method. So, this move method refactoring is pure"
     }
@@ -45356,7 +45356,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "the initial value of -retryCount- variable has been changed from 5 to 3. It was a field in the parent version and modified to int value in the child version"
     }
@@ -47096,7 +47096,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Pull Up Method-",
       "mappingState" : 1,
       "validationComment" : "Pull up method on top of the moved method"
     }
@@ -47250,7 +47250,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Pull Up Method-",
       "mappingState" : 1,
       "validationComment" : "Pull up method on top of the moved method"
     }
@@ -48393,7 +48393,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "There are around 10 non-mapped statements, which are unjustifiable"
     }
@@ -48406,8 +48406,8 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityValidation" : "FP",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics\n",
       "mappingState" : 5,
       "validationComment" : "the if condition has been changed, and reported as a non-mapped node, which makes sense."
     }
@@ -48808,7 +48808,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "It's a suspicious case although it seems more of a like an impure case."
     }
@@ -49890,7 +49890,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The change from -searches -> indexRangeService- is not justifiable given the fact that even the type of the two variables are different"
     }
@@ -49904,7 +49904,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The change from -searches -> indexRangeService- is not justifiable given the fact that even the type of the two variables are different"
     }
@@ -49918,7 +49918,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "throw has been added to the child version. Also, two statements have been removed from the parent version."
     }
@@ -49932,7 +49932,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : ""
     }
@@ -50216,7 +50216,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The change between -options -> optionElements- is not justifiable although it seems pure."
     }
@@ -51079,7 +51079,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
     }
@@ -51093,7 +51093,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
     }
@@ -51107,7 +51107,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
     }
@@ -51121,7 +51121,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-Arrays- has been omitted and the logic is same. So, it's pure"
     }
@@ -51545,7 +51545,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "Couple of unjustifiable added statements in child version"
     }
@@ -52366,7 +52366,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Extract Variable--Extract Variable - ",
       "mappingState" : 5,
       "validationComment" : "Extract Variable on top of the Move Method refactoring"
     }
@@ -53663,9 +53663,9 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Method-",
       "mappingState" : 1,
-      "validationComment" : "Move and Rename Method on top of the moved method"
+      "validationComment" : "Rename Method on top of the moved method"
     }
   }, {
     "type" : "Extract Method",
@@ -53989,7 +53989,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "Tolerable changes in the body\n",
       "mappingState" : 5,
       "validationComment" : "A statement has been added to the child version - Could change the state of the graphPath parameter"
     }
@@ -54003,7 +54003,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "A statement has been added to the child version - Could change the state of the graphPath parameter"
     }
@@ -54017,7 +54017,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "A statement has been added to the child version - Could change the state of the graphPath parameter"
     }
@@ -54399,7 +54399,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "Although in one of the constructor's of the class, the -homeDir- field is the same as before, but in the another one, it can be different from the parent version, which is -user.home-. So, it can change the functionality and it's impure."
     }
@@ -55728,7 +55728,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Move Method refactoring mechanics",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics\n",
       "mappingState" : 1,
       "validationComment" : "Since the function has been moved, the -getJunit4JarPath()- call needs the name of it's class. So, this is a pure change within the Move Method mechanics"
     }
@@ -56026,7 +56026,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Add Parameter-",
       "mappingState" : 1,
       "validationComment" : "Add Parameter on top of the moved method"
     }
@@ -56040,7 +56040,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Add Parameter-",
       "mappingState" : 1,
       "validationComment" : "Add Parameter on top of the moved method"
     }
@@ -56068,7 +56068,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : ""
     }
@@ -56096,7 +56096,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Add Parameter-",
       "mappingState" : 1,
       "validationComment" : ""
     }
@@ -56124,7 +56124,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Move Method-",
       "mappingState" : 1,
       "validationComment" : "The replacement between -this -> t- is justifiable. The -this- refers to RuleContext class and -t- refers to Tree class. I inspected manually and these two refer to same root. But catching this information from RMiner is impossible. "
     }
@@ -56138,7 +56138,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Move Method-",
       "mappingState" : 1,
       "validationComment" : "The replacement between -this -> t- is justifiable. The -this- refers to RuleContext class and -t- refers to Tree class. I inspected manually and these two refer to same root. But catching this information from RMiner is impossible. "
     }
@@ -57281,7 +57281,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "try-catch has been added"
     }
@@ -60767,7 +60767,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "functionality has been changed"
     }
@@ -62838,7 +62838,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "There are lots of leaves and nodes added to the child version"
     }
@@ -63505,7 +63505,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Tolerable changes in the body",
       "mappingState" : 1,
       "validationComment" : "Extract Class on top of the moved method - type change (not primitive type BTW) - functionality remained as before"
     }
@@ -64074,7 +64074,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The replacement between -getGauge -> newLongGauge- method invocations is not justifiable. The latter has been added in the child version within this commit."
     }
@@ -64088,7 +64088,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "Changes are not justifiable. -logPerformanceMonitorHint();- has been added to the child version"
     }
@@ -64410,7 +64410,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "Lots of changes within the Move Method refactoring, which are not justifiable."
     }
@@ -67555,7 +67555,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "the behavior of the test case has been changed. Try-finally has been added and number literal has been changed."
     }
@@ -67578,7 +67578,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "Add Parameter and Rename Parameter on top of the moved method"
     }
@@ -68623,7 +68623,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "Rename Variable on top of the moved method"
     }
@@ -71422,8 +71422,8 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
-      "mappingState" : 5,
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-- Encapsulate Opposite-",
+      "mappingState" : 1,
       "validationComment" : "The replacement between -mData.getDataSetByIndex(dataSet) -> set- is not justifiable and it's more likely to have some non-pure changes on top. Also, the method invocation has been changed from -getClosestIndexAbove- to -getClosestStackIndex-, which is definitely an impure change"
     }
   }, {
@@ -72210,7 +72210,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-Double.class- is the same as -java.lang.Class.forName(java.lang.Double)- but it's impossbile for PurityChecker to justify this change"
     }
@@ -72704,7 +72704,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Add Parameter-",
       "mappingState" : 1,
       "validationComment" : "Add Parameter on top of the moved method"
     }
@@ -76507,7 +76507,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Remove Parameter-",
       "mappingState" : 1,
       "validationComment" : "Remove Parameter on top of the moved method"
     }
@@ -76633,7 +76633,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Encapsulate Opposite-",
       "mappingState" : 1,
       "validationComment" : "Getter pattern"
     }
@@ -85446,7 +85446,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "prefixID variable has been changed"
     }
@@ -86784,8 +86784,8 @@
     "validators" : "Nikos",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe Changes",
+      "purityValidation" : "TP",
+      "purityComment" : "- Rename Variable-",
       "mappingState" : 5,
       "validationComment" : "Extra break statements have been removed from the parent version. It's a pure change and this refactoring is pure"
     }
@@ -86799,7 +86799,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "lots of non-mapped statements, which are definitely changed the behavior of the function"
     }
@@ -87632,2465 +87632,6 @@
   } ],
   "refDiffExecutionTime" : 2532
 }, {
-  "id" : 1155451,
-  "repository" : "https://github.com/droolsjbpm/jbpm.git",
-  "sha1" : "3815f293ba9338f423315d93a373608c95002b15",
-  "url" : "https://github.com/droolsjbpm/jbpm/commit/3815f293ba9338f423315d93a373608c95002b15",
-  "author" : "Marco Rietveld",
-  "time" : "8/1/15 7:38 PM",
-  "refactorings" : [ {
-    "type" : "Extract Superclass",
-    "description" : "Extract Superclass org.jbpm.process.audit.JPAService from class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method protected convertListToInterfaceList(internalResult List<C>, interfaceType Class<I>) : List<I> from class org.jbpm.process.audit.JPAAuditLogService to public convertListToInterfaceList(internalResult List<C>, interfaceType Class<I>) : List<I> from class org.jbpm.query.jpa.impl.QueryCriteriaUtil",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : "Matin",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "TP",
-      "purityComment" : "Identical statements",
-      "mappingState" : 1,
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Class",
-    "description" : "Rename Class org.jbpm.services.task.commands.TaskQueryDataCommand renamed to org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public initiator(createdById String...) : TaskQueryBuilder renamed to public createdBy(createdById String...) : TaskQueryBuilder in class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : "<p><a href='3780'>http://refactoring.encs.concordia.ca/oracle/refactoring-details/1155451/3780</a></p>",
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public taskOwner(taskOwnerId String...) : TaskQueryBuilder renamed to public actualOwner(taskOwnerId String...) : TaskQueryBuilder in class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public buildQuery() : ParametrizedQuery<TaskSummary> renamed to public build() : ParametrizedQuery<TaskSummary> in class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public addAppropriateParam(listId String, param T...) : QueryCriteria renamed to public addParameter(listId String, param T...) : QueryCriteria in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "<p><a href='3783'>http://refactoring.encs.concordia.ca/oracle/refactoring-details/1155451/3783</a>&nbsp;TP&nbsp;</p>",
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RMiner-1x",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public getQueryData() : QueryData renamed to public getQueryWhere() : QueryWhere in class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method private getAppropriateQueryCriteria(listId String, valueListSize int) : QueryCriteria inlined to public addParameter(listId String, param T...) : QueryCriteria in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "resetGroup() statement hasn't been inlined"
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method private getAppropriateQueryCriteria(listId String, valueListSize int) : QueryCriteria inlined to public addRangeParameter(listId String, param T, start boolean) : void in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "resetGroup() statement hasn't been inlined"
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method private resetGroup() : void inlined to public clear() : void in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "Rename Attribute on top of Inline Method"
-    }
-  }, {
-    "type" : "Rename Class",
-    "description" : "Rename Class org.jbpm.query.jpa.data.QueryWhere.ParameterType renamed to org.jbpm.query.jpa.data.QueryWhere.QueryCriteriaType",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
-    "validators" : "Davood",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public orderBy(orderBy OrderBy) : TaskQueryBuilder renamed to private getOrderByListId(field OrderBy) : String in class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : "<p>The two methods are doing the same thing AFAICS</p>",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
-    "validators" : "Davood",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public queryProcessInstanceLogs(queryData QueryData) : List<org.kie.api.runtime.manager.audit.ProcessInstanceLog> renamed to public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : "<p>The method is renamed in the interface and in the implementors and the call sites</p>",
-    "validation" : "TP",
-    "detectionTools" : "RefDiff",
-    "validators" : "Davood",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public startGroup() : void renamed to public newGroup() : void in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "<p>There is some overlap in the methods. The original method is not called. The new method seems to be called once in the added code.</p>",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff",
-    "validators" : "Laleh, Davood",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method public setAscending(listId String) : void extracted from public clear() : TaskQueryBuilder in class org.jbpm.services.task.impl.TaskQueryBuilderImpl & moved to class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "<p>Extract and Move to other class</p>",
-    "validation" : "FP",
-    "detectionTools" : "RefDiff",
-    "validators" : "Laleh, Automatic",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method public setAscending(listId String) : void extracted from public TaskQueryBuilderImpl(userId String, taskCmdService CommandService) in class org.jbpm.services.task.impl.TaskQueryBuilderImpl & moved to class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "<p>Extract and Move to other class</p><p>When I consider only the moved statements, I conclude that it is FP. However, it might be TP if we semantically evaluate the statements before and after the move.</p><p>Unfortunately, Q<span class='blob-code-inner'><span class='x x-first x-last'>ueryData and QueryContex are external resources and I am not able to do such semantic analysis.</span></span></p><p>&nbsp;</p>",
-    "validation" : "FP",
-    "detectionTools" : "RefDiff",
-    "validators" : "Laleh, Automatic",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method public setAscending(listId String) : void extracted from public getTasksByVariousFields(userId String, parameters Map<String,List<?>>, union boolean) : List<TaskSummary> in class org.jbpm.services.task.impl.TaskQueryServiceImpl & moved to class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "<p>Extract and Move to other class</p>",
-    "validation" : "FP",
-    "detectionTools" : "RefDiff",
-    "validators" : "Laleh, Automatic",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public getQueryData() : QueryData renamed to public getQueryWhere() : QueryWhere in class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public setQueryData(queryData QueryData) : void renamed to public setQueryWhere(queryWhere QueryWhere) : void in class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter queryData : QueryData to queryWhere : QueryWhere in method public AuditNodeInstanceLogQueryCommand(queryWhere QueryWhere) from class org.jbpm.process.audit.command.AuditNodeInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter queryData : QueryData to queryWhere : QueryWhere in method public AuditProcessInstanceLogQueryCommand(queryWhere QueryWhere) from class org.jbpm.process.audit.command.AuditProcessInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter queryData : QueryData to queryWhere : QueryWhere in method public AuditVariableInstanceLogQueryCommand(queryWhere QueryWhere) from class org.jbpm.process.audit.command.AuditVariableInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter orderBy : OrderBy to field : OrderBy in method private getOrderByListId(field OrderBy) : String from class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter queryData : QueryData to queryWhere : QueryWhere in method public setQueryWhere(queryWhere QueryWhere) : void from class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter queryParameters : QueryWhere to queryWhere : QueryWhere in method public QueryWhere(queryWhere QueryWhere) from class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter deadlineSummaryImpl : DeadlineSummaryImpl to deadlineSummary : DeadlineSummary in method private executedeadLine(ctx TaskContext, persistenceContext TaskPersistenceContext, task Task, deadlineSummary DeadlineSummary, taskData TaskData) : Void from class org.jbpm.services.task.commands.ExecuteReminderCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter data : QueryData to queryWhere : QueryWhere in method public TaskQueryWhereCommand(queryWhere QueryWhere) from class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable deadlineSummaryImpl : DeadlineSummaryImpl to deadlineSummary : DeadlineSummary in method public execute(context Context) : Void from class org.jbpm.services.task.commands.ExecuteReminderCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable newCriteriaGroupParent : Object to grandparent : Object in method public endGroup() : void from class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Attribute",
-    "description" : "Rename Attribute currentGroupParents : Stack<Object> to ancestry : Stack<Object> in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Attribute",
-    "description" : "Rename Attribute currentGroupCriteria : List<QueryCriteria> to currentCriteria : List<QueryCriteria> in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Attribute",
-    "description" : "Rename Attribute queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Attribute",
-    "description" : "Rename Attribute queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Attribute",
-    "description" : "Rename Attribute queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.process.audit.command.AuditNodeInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method public ascending() : T from class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl to public ascending(field OrderBy) : T from class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method public descending() : T from class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl to public ascending(field OrderBy) : T from class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method private getEntityManager() : EntityManager from class org.jbpm.process.audit.JPAAuditLogService to protected getEntityManager() : EntityManager from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method private closeEntityManager(em EntityManager, transaction Object) : void from class org.jbpm.process.audit.JPAAuditLogService to protected closeEntityManager(em EntityManager, transaction Object) : void from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method private executeQuery(query Query, em EntityManager, type Class<T>) : List<T> from class org.jbpm.process.audit.JPAAuditLogService to public executeQuery(query Query, em EntityManager, type Class<T>) : List<T> from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method public dispose() : void from class org.jbpm.process.audit.JPAAuditLogService to public dispose() : void from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method public setPersistenceUnitName(persistenceUnitName String) : void from class org.jbpm.process.audit.JPAAuditLogService to public setPersistenceUnitName(persistenceUnitName String) : void from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method private joinTransaction(em EntityManager) : Object from class org.jbpm.process.audit.JPAAuditLogService to protected joinTransaction(em EntityManager) : Object from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method public getPersistenceUnitName() : String from class org.jbpm.process.audit.JPAAuditLogService to public getPersistenceUnitName() : String from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Attribute",
-    "description" : "Pull Up Attribute private persistenceUnitName : String from class org.jbpm.process.audit.JPAAuditLogService to protected persistenceUnitName : String from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Attribute",
-    "description" : "Pull Up Attribute protected persistenceStrategy : PersistenceStrategy from class org.jbpm.process.audit.JPAAuditLogService to protected persistenceStrategy : PersistenceStrategy from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Attribute",
-    "description" : "Rename Attribute queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.process.audit.command.AuditProcessInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Attribute",
-    "description" : "Rename Attribute queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.process.audit.command.AuditVariableInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type queryData : QueryData to queryWhere : QueryWhere in method public AuditNodeInstanceLogQueryCommand(queryWhere QueryWhere) from class org.jbpm.process.audit.command.AuditNodeInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type queryData : QueryData to queryWhere : QueryWhere in method public AuditProcessInstanceLogQueryCommand(queryWhere QueryWhere) from class org.jbpm.process.audit.command.AuditProcessInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type queryData : QueryData to queryWhere : QueryWhere in method public AuditVariableInstanceLogQueryCommand(queryWhere QueryWhere) from class org.jbpm.process.audit.command.AuditVariableInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type deadlineSummaryImpl : DeadlineSummaryImpl to deadlineSummary : DeadlineSummary in method private executedeadLine(ctx TaskContext, persistenceContext TaskPersistenceContext, task Task, deadlineSummary DeadlineSummary, taskData TaskData) : Void from class org.jbpm.services.task.commands.ExecuteReminderCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type type : ParameterType to type : QueryCriteriaType in method private QueryCriteria(listId String, type QueryCriteriaType) from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type type : ParameterType to type : QueryCriteriaType in method public QueryCriteria(listId String, union boolean, type QueryCriteriaType, valueListSize int) from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type union : Boolean to union : boolean in method public setUnion(union boolean) : void from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type type : ParameterType to type : QueryCriteriaType in method public setType(type QueryCriteriaType) : void from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type data : QueryData to queryWhere : QueryWhere in method public TaskQueryWhereCommand(queryWhere QueryWhere) from class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type queryData : QueryData to queryWhere : QueryWhere in method public setQueryWhere(queryWhere QueryWhere) : void from class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type List<DeadlineSummaryImpl> to List<DeadlineSummary> in method private getAlldeadlines(persistenceContext TaskPersistenceContext, taskData TaskData) : List<DeadlineSummary> from class org.jbpm.services.task.commands.ExecuteReminderCommand",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type TaskQueryBuilder to String in method private getOrderByListId(field OrderBy) : String from class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type QueryData to QueryWhere in method public getQueryWhere() : QueryWhere from class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type Boolean to boolean in method public isUnion() : boolean from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type ParameterType to QueryCriteriaType in method public getType() : QueryCriteriaType from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type ErrorInfoLogDeleteBuilder to ErrorInfoDeleteBuilder in method public errorInfoLogDeleteBuilder() : ErrorInfoDeleteBuilder from class org.jbpm.executor.impl.jpa.ExecutorJPAAuditService",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type QueryData to QueryWhere in method public getQueryWhere() : QueryWhere from class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Type",
-    "description" : "Change Attribute Type queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.process.audit.command.AuditNodeInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Type",
-    "description" : "Change Attribute Type queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.process.audit.command.AuditProcessInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Type",
-    "description" : "Change Attribute Type queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.process.audit.command.AuditVariableInstanceLogQueryCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type deadlineSummaryImpl : DeadlineSummaryImpl to deadlineSummary : DeadlineSummary in method public execute(context Context) : Void from class org.jbpm.services.task.commands.ExecuteReminderCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Type",
-    "description" : "Change Attribute Type queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Type",
-    "description" : "Change Attribute Type queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type resultList : List<DeadlineSummaryImpl> to resultList : List<DeadlineSummary> in method public execute(context Context) : Void from class org.jbpm.services.task.commands.ExecuteReminderCommand",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type resultList : List<DeadlineSummaryImpl> to resultList : List<DeadlineSummary> in method private getAlldeadlines(persistenceContext TaskPersistenceContext, taskData TaskData) : List<DeadlineSummary> from class org.jbpm.services.task.commands.ExecuteReminderCommand",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type resultList : List<DeadlineSummaryImpl> to resultList : List<DeadlineSummary> in method public execute(context Context) : Void from class org.jbpm.services.task.commands.InitDeadlinesCommand",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type resultList : List<DeadlineSummaryImpl> to resultList : List<DeadlineSummary> in method public unschedule(taskId long, type DeadlineType) : void from class org.jbpm.services.task.impl.TaskDeadlinesServiceImpl",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Type",
-    "description" : "Change Attribute Type union : Boolean to union : boolean in class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Type",
-    "description" : "Change Attribute Type type : ParameterType to type : QueryCriteriaType in class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Type",
-    "description" : "Change Attribute Type type : ParameterType to type : QueryCriteriaType in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type origType : ParameterType to origType : QueryCriteriaType in method public addRangeParameter(listId String, param T, start boolean) : void from class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter queryData : QueryData to queryWhere : QueryWhere in method public queryLogs(queryWhere QueryWhere, queryType Class<T>, resultType Class<R>) : List<R> in class org.jbpm.process.audit.AuditLogService",
-    "comment" : "<p>queryNodeInstanceLogs()&nbsp;queryVariableInstanceLogs()&nbsp;queryProcessInstanceLogs() replaced with&nbsp;queryLogs()</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter queryData : QueryData to queryWhere : QueryWhere in method public queryLogs(queryWhere QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> in class org.jbpm.process.audit.CommandBasedAuditLogService",
-    "comment" : "<p>queryNodeInstanceLogs()&nbsp;queryVariableInstanceLogs()&nbsp;queryProcessInstanceLogs() replaced with&nbsp;queryLogs()</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Attribute",
-    "description" : "Rename Attribute persistenceUnitName : String to AUDIT_LOG_PERSISTENCE_UNIT_NAME : String in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : "<p>persistenceUnitName has been pulled up to JPAService</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter query : Query to queryData : QueryWhere in method public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter queryData : QueryData to resultClass : Class<R> in method public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : "<p>queryNodeInstanceLogs()&nbsp;queryVariableInstanceLogs()&nbsp;queryProcessInstanceLogs() replaced with&nbsp;queryLogs()</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter queryData : QueryData to queryType : Class in method protected getQueryCriteriaUtil(queryType Class) : QueryCriteriaUtil in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter interfaceType : Class<I> to queryWhere : QueryWhere in method public doQuery(queryWhere QueryWhere, queryType Class<T>) : List<T> in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter type : Class<T> to queryType : Class<T> in method public doQuery(queryWhere QueryWhere, queryType Class<T>) : List<T> in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : "<p>unrelated methods</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter language : String to description : String in method public description(description String) : TaskQueryBuilder in class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : "<p>unrelated methods</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter orderBy : OrderBy to field : OrderBy in method public ascending(field OrderBy) : TaskQueryBuilder in class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : "<p>orderBy(<span class='pl-smi'>OrderBy</span> <span class='pl-v'>orderBy</span>) has been renamed to getOrderByListId(<span class='pl-smi'>OrderBy</span> <span class='pl-v'>field</span>)</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Attribute",
-    "description" : "Rename Attribute queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.services.task.impl.TaskQueryBuilderImpl.build.new ParametrizedQuery<TaskSummary>",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter queryData : QueryData to queryObj : Object in method public query(userId String, queryObj Object) : List<TaskSummary> in class org.jbpm.services.task.impl.TaskQueryServiceImpl",
-    "comment" : "<p><span class='blob-code-inner blob-code-marker' data-code-marker='-'><span class='pl-k'>public</span> <span class='pl-k'>List&lt;<span class='pl-smi'>TaskSummary</span>&gt;</span> <span class='pl-en'>query</span>( <span class='pl-smi'>String</span> <span class='pl-v'>userId</span>, <span class='pl-smi'>QueryData</span> <span class='pl-v'>queryData</span> )</span> and <span class='blob-code-inner blob-code-marker' data-code-marker=' '><span class='pl-k'>public</span> <span class='pl-k'>List&lt;<span class='pl-smi'>TaskSummary</span>&gt;</span> <span class='pl-en'>query</span>( <span class='pl-smi'>String</span> <span class='pl-v'>userId</span>, <span class='pl-smi'>Object</span> <span class='pl-v'>queryObj</span> )</span> have very different method bodies.</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable queryData : QueryData to queryWhere : QueryWhere in method public getTasksByVariousFields(userId String, parameters Map<String,List<?>>, union boolean) : List<TaskSummary> in class org.jbpm.services.task.impl.TaskQueryServiceImpl",
-    "comment" : "<p>queryData and queryContext are merged into queryWhere (both variables are replaced with queryWhere, but there are more replacements for queryData -&gt; queryWhere)</p>",
-    "validation" : "CTP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type queryData : QueryData to queryWhere : QueryWhere in method public queryLogs(queryWhere QueryWhere, queryType Class<T>, resultType Class<R>) : List<R> in class org.jbpm.process.audit.AuditLogService",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type queryData : QueryData to queryWhere : QueryWhere in method public queryLogs(queryWhere QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> in class org.jbpm.process.audit.CommandBasedAuditLogService",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type query : Query to queryData : QueryWhere in method public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type summary : DeadlineSummaryImpl to summary : DeadlineSummary in method public execute(context Context) : Void from class org.jbpm.services.task.commands.InitDeadlinesCommand",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type summary : DeadlineSummaryImpl to summary : DeadlineSummary in method public unschedule(taskId long, type DeadlineType) : void from class org.jbpm.services.task.impl.TaskDeadlinesServiceImpl",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type List<org.kie.api.runtime.manager.audit.VariableInstanceLog> to List<R> in method public queryLogs(queryWhere QueryWhere, queryType Class<T>, resultType Class<R>) : List<R> in class org.jbpm.process.audit.AuditLogService",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type ParametrizedQuery<VariableInstanceLog> to Class<VariableInstanceLog> in method protected getResultType() : Class<VariableInstanceLog> in class org.jbpm.process.audit.query.VarInstLogQueryBuilderImpl",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type params : List<? extends Object> to criteriaList : List<QueryCriteria> in method public last() : VariableInstanceLogQueryBuilder in class org.jbpm.process.audit.query.VarInstLogQueryBuilderImpl",
-    "comment" : "<p>The implementation changed significantly</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Type",
-    "description" : "Change Attribute Type queryData : QueryData to queryWhere : QueryWhere in class org.jbpm.services.task.impl.TaskQueryBuilderImpl.build.new ParametrizedQuery<TaskSummary>",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type cmd : TaskQueryDataCommand to cmd : TaskQueryWhereCommand in method public getResultList() : List<TaskSummary> from class org.jbpm.services.task.impl.TaskQueryBuilderImpl.build.new ParametrizedQuery<TaskSummary>",
-    "comment" : "<p>Alternative description for<br />Change Variable Type cmd : TaskQueryDataCommand to cmd : TaskQueryWhereCommand in method public build() : ParametrizedQuery&lt;TaskSummary&gt; in class org.jbpm.services.task.impl.TaskQueryBuilderImpl</p>",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type queryData : QueryData to queryWhere : QueryWhere in method public getTasksByVariousFields(userId String, parameters Map<String,List<?>>, union boolean) : List<TaskSummary> from class org.jbpm.services.task.impl.TaskQueryServiceImpl",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type queryAppender : QueryAndParameterAppender to queryWhere : QueryWhere in method public query(userId String, queryObj Object) : List<TaskSummary> in class org.jbpm.services.task.impl.TaskQueryServiceImpl",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type xmlValue : Object to addValues : List in method package setParameter(index int, value Object, listSize int) : void in class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "<p><span class='blob-code-inner blob-code-marker' data-code-marker='-'><span class='pl-k'>List&lt;<span class='pl-smi'>Object</span>&gt;</span> values <span class='pl-k'>=</span> getValues();</span> -&gt; <span class='blob-code-inner blob-code-marker' data-code-marker=' '><span class='pl-smi'>List</span> addValues;</span></p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type criteria : QueryCriteria to origType : QueryCriteriaType in method public addRangeParameters(listId String, paramMin T, paramMax T) : void in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public queryNodeInstanceLogs(queryData QueryData) : List<org.kie.api.runtime.manager.audit.NodeInstanceLog> renamed to public queryLogs(queryWhere QueryWhere, queryType Class<T>, resultType Class<R>) : List<R> in class org.jbpm.process.audit.AuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public queryNodeInstanceLogs(queryData QueryData) : List<org.kie.api.runtime.manager.audit.NodeInstanceLog> renamed to public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type List<org.kie.api.runtime.manager.audit.NodeInstanceLog> to List<R> in method public queryLogs(queryWhere QueryWhere, queryType Class<T>, resultType Class<R>) : List<R> from class org.jbpm.process.audit.AuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type List<org.kie.api.runtime.manager.audit.NodeInstanceLog> to List<R> in method public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> from class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type results : List<NodeInstanceLog> to results : List<T> in method public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> from class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type queryData : QueryData to queryData : QueryWhere in method public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> from class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method public execute(cntxt Context) : List<TaskSummary> from class org.jbpm.services.task.commands.TaskQueryDataCommand to public execute(cntxt Context) : List<TaskSummary> from class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : "<p>Rename Class org.jbpm.services.task.commands.TaskQueryDataCommand renamed to org.jbpm.services.task.commands.TaskQueryWhereCommand</p>",
-    "validation" : "FP",
-    "detectionTools" : "RD-1x",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method public setCount(maxResults Integer) : void extracted from public getTasksByVariousFields(userId String, parameters Map<String,List<?>>, union boolean) : List<TaskSummary> in class org.jbpm.services.task.impl.TaskQueryServiceImpl & moved to class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "RD-2x",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Source Folder",
-    "description" : "Move Source Folder jbpm-human-task/jbpm-human-task-core to jbpm-human-task/jbpm-human-task-jpa",
-    "comment" : null,
-    "validation" : "UKN",
-    "detectionTools" : "RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public orderBy(field OrderBy) : NodeInstanceLogQueryBuilder renamed to protected getResultType() : Class<NodeInstanceLog> in class org.jbpm.process.audit.query.NodeInstLogQueryBuilderImpl",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public queryVariableInstanceLogs(queryData QueryData) : List<org.kie.api.runtime.manager.audit.VariableInstanceLog> renamed to public queryLogs(queryWhere QueryWhere, queryType Class<T>, resultType Class<R>) : List<R> in class org.jbpm.process.audit.AuditLogService",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public like() : T renamed to public newGroup() : T in class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public equals() : T renamed to public endGroup() : T in class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public clear() : T renamed to public like() : T in class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public ascending() : T renamed to public equals() : T in class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public descending() : T renamed to public clear() : T in class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public orderBy(field OrderBy) : ProcessInstanceLogQueryBuilder renamed to protected getResultType() : Class<ProcessInstanceLog> in class org.jbpm.process.audit.query.ProcInstLogQueryBuilderImpl",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public buildQuery() : ParametrizedQuery<ProcessInstanceLog> renamed to protected getQueryType() : Class in class org.jbpm.process.audit.query.ProcInstLogQueryBuilderImpl",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public queryNodeInstanceLogs(queryData QueryData) : List<org.kie.api.runtime.manager.audit.NodeInstanceLog> renamed to public queryLogs(queryWhere QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> in class org.jbpm.process.audit.CommandBasedAuditLogService",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method private addCriteria(criteria QueryCriteria) : void renamed to public addRangeParameters(listId String, paramMin T, paramMax T) : void in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public startGroup() : void renamed to private addCriteria(criteria QueryCriteria) : void in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public endGroup() : void renamed to public newGroup() : void in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method private resetGroup() : void renamed to public setCriteria(criteria List<QueryCriteria>) : void in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public setToRange() : void renamed to public setToNormal() : void in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public setToNormal() : void renamed to public setToRange() : void in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public setUnion(union Boolean) : void renamed to public setFirst(first boolean) : void in class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public language(language String) : TaskQueryBuilder renamed to public createdOnRange(createdOnMin Date, createdOnMax Date) : TaskQueryBuilder in class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method private executeQuery(query Query, em EntityManager, type Class<T>) : List<T> renamed to public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public queryProcessInstanceLogs(queryData QueryData) : List<org.kie.api.runtime.manager.audit.ProcessInstanceLog> renamed to protected getQueryCriteriaUtil(queryType Class) : QueryCriteriaUtil in class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation @Override in method public ascending(field OrderBy) : T from class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : "null",
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Annotation",
-    "description" : "Remove Method Annotation @SuppressWarnings(\"unchecked\") in method public processInstanceId(processInstanceId long...) : T from class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Annotation",
-    "description" : "Remove Method Annotation @SuppressWarnings(\"unchecked\") in method public processId(processId String...) : T from class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Annotation",
-    "description" : "Remove Method Annotation @SuppressWarnings(\"unchecked\") in method public date(date Date...) : T from class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Annotation",
-    "description" : "Remove Method Annotation @SuppressWarnings(\"unchecked\") in method public dateRangeStart(rangeStart Date) : T from class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Annotation",
-    "description" : "Remove Method Annotation @SuppressWarnings(\"unchecked\") in method public dateRangeEnd(rangeStart Date) : T from class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Annotation",
-    "description" : "Remove Method Annotation @Override in method public orderBy(orderBy OrderBy) : TaskQueryBuilder from class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Annotation",
-    "description" : "Remove Method Annotation @Override in method public dispose() : void from class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Modify Attribute Annotation",
-    "description" : "Modify Attribute Annotation @XmlElements(value = {@XmlElement(name=\"activate-task\",type=ActivateTaskCommand.class),@XmlElement(name=\"add-attachment\",type=AddAttachmentCommand.class),@XmlElement(name=\"add-comment\",type=AddCommentCommand.class),@XmlElement(name=\"add-content\",type=AddContentCommand.class),@XmlElement(name=\"add-group\",type=AddGroupCommand.class),@XmlElement(name=\"add-task\",type=AddTaskCommand.class),@XmlElement(name=\"add-user\",type=AddUserCommand.class),@XmlElement(name=\"add-users-groups\",type=AddUsersGroupsCommand.class),@XmlElement(name=\"archive-tasks\",type=ArchiveTasksCommand.class),@XmlElement(name=\"cancel-deadline\",type=CancelDeadlineCommand.class),@XmlElement(name=\"claim-next-available-task\",type=ClaimNextAvailableTaskCommand.class),@XmlElement(name=\"claim-task\",type=ClaimTaskCommand.class),@XmlElement(name=\"complete-task\",type=CompleteTaskCommand.class),@XmlElement(name=\"delegate-task\",type=DelegateTaskCommand.class),@XmlElement(name=\"delete-attachment\",type=DeleteAttachmentCommand.class),@XmlElement(name=\"delete-comment\",type=DeleteCommentCommand.class),@XmlElement(name=\"delete-content\",type=DeleteContentCommand.class),@XmlElement(name=\"delete-fault\",type=DeleteFaultCommand.class),@XmlElement(name=\"delete-output\",type=DeleteOutputCommand.class),@XmlElement(name=\"deploy-task-def\",type=DeployTaskDefCommand.class),@XmlElement(name=\"execute-deadlines\",type=ExecuteDeadlinesCommand.class),@XmlElement(name=\"execute-task-rules\",type=ExecuteTaskRulesCommand.class),@XmlElement(name=\"exit-task\",type=ExitTaskCommand.class),@XmlElement(name=\"fail-task\",type=FailTaskCommand.class),@XmlElement(name=\"forward-task\",type=ForwardTaskCommand.class),@XmlElement(name=\"get-active-tasks\",type=GetActiveTasksCommand.class),@XmlElement(name=\"get-all-attachments\",type=GetAllAttachmentsCommand.class),@XmlElement(name=\"get-all-comments\",type=GetAllCommentsCommand.class),@XmlElement(name=\"get-all-content\",type=GetAllContentCommand.class),@XmlElement(name=\"get-all-task-definitions\",type=GetAllTaskDefinitionsCommand.class),@XmlElement(name=\"get-archived-tasks\",type=GetArchivedTasksCommand.class),@XmlElement(name=\"get-attachment\",type=GetAttachmentCommand.class),@XmlElement(name=\"get-comment\",type=GetCommentCommand.class),@XmlElement(name=\"get-completed-tasks-by-user\",type=GetCompletedTasksByUserCommand.class),@XmlElement(name=\"get-completed-tasks\",type=GetCompletedTasksCommand.class),@XmlElement(name=\"get-content\",type=GetContentCommand.class),@XmlElement(name=\"get-group\",type=GetGroupCommand.class),@XmlElement(name=\"get-groups\",type=GetGroupsCommand.class),@XmlElement(name=\"get-org-entity\",type=GetOrgEntityCommand.class),@XmlElement(name=\"get-pending-sub-tasks\",type=GetPendingSubTasksCommand.class),@XmlElement(name=\"get-pending-tasks-by-user\",type=GetPendingTasksByUserCommand.class),@XmlElement(name=\"get-potential-ownders-for-task\",type=GetPotentialOwnersForTaskCommand.class),@XmlElement(name=\"get-sub-tasks\",type=GetSubTasksCommand.class),@XmlElement(name=\"get-task-assigned-as-business-admin\",type=GetTaskAssignedAsBusinessAdminCommand.class),@XmlElement(name=\"get-task-assigned-as-excluded-owner\",type=GetTaskAssignedAsExcludedOwnerCommand.class),@XmlElement(name=\"get-task-assigned-as-initiator\",type=GetTaskAssignedAsInitiatorCommand.class),@XmlElement(name=\"get-task-assigned-as-potential-owner-by-exp-date\",type=GetTaskAssignedAsPotentialOwnerByExpDateCommand.class),@XmlElement(name=\"get-task-assigned-as-potential-owner\",type=GetTaskAssignedAsPotentialOwnerCommand.class),@XmlElement(name=\"get-task-assigned-as-potential-owner-paging\",type=GetTaskAssignedAsPotentialOwnerPagingCommand.class),@XmlElement(name=\"get-task-assigned-as-recipient\",type=GetTaskAssignedAsRecipientCommand.class),@XmlElement(name=\"get-task-assigned-as-stakeholeder\",type=GetTaskAssignedAsStakeholderCommand.class),@XmlElement(name=\"get-task-assigned-by-groups\",type=GetTaskAssignedByGroupsCommand.class),@XmlElement(name=\"get-task-by-work-item-id\",type=GetTaskByWorkItemIdCommand.class),@XmlElement(name=\"get-task\",type=GetTaskCommand.class),@XmlElement(name=\"get-task-content\",type=GetTaskContentCommand.class),@XmlElement(name=\"get-task-definition\",type=GetTaskDefinitionCommand.class),@XmlElement(name=\"get-task-owned-by-exp-date-before-date\",type=GetTaskOwnedByExpDateBeforeDateCommand.class),@XmlElement(name=\"get-task-owned-by-exp-date\",type=GetTaskOwnedByExpDateCommand.class),@XmlElement(name=\"get-task-property\",type=GetTaskPropertyCommand.class),@XmlElement(name=\"get-tasks-by-process-instance-id\",type=GetTasksByProcessInstanceIdCommand.class),@XmlElement(name=\"get-tasks-by-status-by-process-instance-id\",type=GetTasksByStatusByProcessInstanceIdCommand.class),@XmlElement(name=\"get-tasks-by-various-fields\",type=GetTasksByVariousFieldsCommand.class),@XmlElement(name=\"get-tasks-for-process\",type=GetTasksForProcessCommand.class),@XmlElement(name=\"get-tasks-owned\",type=GetTasksOwnedCommand.class),@XmlElement(name=\"get-user\",type=GetUserCommand.class),@XmlElement(name=\"get-user-info\",type=GetUserInfoCommand.class),@XmlElement(name=\"get-user\",type=GetUsersCommand.class),@XmlElement(name=\"init-deadlines\",type=InitDeadlinesCommand.class),@XmlElement(name=\"nominate-task\",type=NominateTaskCommand.class),@XmlElement(name=\"process-sub-task\",type=ProcessSubTaskCommand.class),@XmlElement(name=\"release-task\",type=ReleaseTaskCommand.class),@XmlElement(name=\"remove-all-tasks\",type=RemoveAllTasksCommand.class),@XmlElement(name=\"remove-group\",type=RemoveGroupCommand.class),@XmlElement(name=\"remove-task\",type=RemoveTaskCommand.class),@XmlElement(name=\"remove-tasks\",type=RemoveTasksCommand.class),@XmlElement(name=\"remove-user\",type=RemoveUserCommand.class),@XmlElement(name=\"resume-task\",type=ResumeTaskCommand.class),@XmlElement(name=\"set-task-property\",type=SetTaskPropertyCommand.class),@XmlElement(name=\"skip-task\",type=SkipTaskCommand.class),@XmlElement(name=\"start-task\",type=StartTaskCommand.class),@XmlElement(name=\"stop-task\",type=StopTaskCommand.class),@XmlElement(name=\"suspend-task\",type=SuspendTaskCommand.class),@XmlElement(name=\"undeploy-task-def\",type=UndeployTaskDefCommand.class),@XmlElement(name=\"task-query\",type=TaskQueryDataCommand.class),@XmlElement(name=\"execute-reminder-command\",type=ExecuteReminderCommand.class),@XmlElement(name=\"get-comment-by-id-command\",type=GetCommentByIdCommand.class)}) to @XmlElements(value = {@XmlElement(name=\"activate-task\",type=ActivateTaskCommand.class),@XmlElement(name=\"add-attachment\",type=AddAttachmentCommand.class),@XmlElement(name=\"add-comment\",type=AddCommentCommand.class),@XmlElement(name=\"add-content\",type=AddContentCommand.class),@XmlElement(name=\"add-group\",type=AddGroupCommand.class),@XmlElement(name=\"add-task\",type=AddTaskCommand.class),@XmlElement(name=\"add-user\",type=AddUserCommand.class),@XmlElement(name=\"add-users-groups\",type=AddUsersGroupsCommand.class),@XmlElement(name=\"archive-tasks\",type=ArchiveTasksCommand.class),@XmlElement(name=\"cancel-deadline\",type=CancelDeadlineCommand.class),@XmlElement(name=\"claim-next-available-task\",type=ClaimNextAvailableTaskCommand.class),@XmlElement(name=\"claim-task\",type=ClaimTaskCommand.class),@XmlElement(name=\"complete-task\",type=CompleteTaskCommand.class),@XmlElement(name=\"delegate-task\",type=DelegateTaskCommand.class),@XmlElement(name=\"delete-attachment\",type=DeleteAttachmentCommand.class),@XmlElement(name=\"delete-comment\",type=DeleteCommentCommand.class),@XmlElement(name=\"delete-content\",type=DeleteContentCommand.class),@XmlElement(name=\"delete-fault\",type=DeleteFaultCommand.class),@XmlElement(name=\"delete-output\",type=DeleteOutputCommand.class),@XmlElement(name=\"deploy-task-def\",type=DeployTaskDefCommand.class),@XmlElement(name=\"execute-deadlines\",type=ExecuteDeadlinesCommand.class),@XmlElement(name=\"execute-task-rules\",type=ExecuteTaskRulesCommand.class),@XmlElement(name=\"exit-task\",type=ExitTaskCommand.class),@XmlElement(name=\"fail-task\",type=FailTaskCommand.class),@XmlElement(name=\"forward-task\",type=ForwardTaskCommand.class),@XmlElement(name=\"get-active-tasks\",type=GetActiveTasksCommand.class),@XmlElement(name=\"get-all-attachments\",type=GetAllAttachmentsCommand.class),@XmlElement(name=\"get-all-comments\",type=GetAllCommentsCommand.class),@XmlElement(name=\"get-all-content\",type=GetAllContentCommand.class),@XmlElement(name=\"get-all-task-definitions\",type=GetAllTaskDefinitionsCommand.class),@XmlElement(name=\"get-archived-tasks\",type=GetArchivedTasksCommand.class),@XmlElement(name=\"get-attachment\",type=GetAttachmentCommand.class),@XmlElement(name=\"get-comment\",type=GetCommentCommand.class),@XmlElement(name=\"get-completed-tasks-by-user\",type=GetCompletedTasksByUserCommand.class),@XmlElement(name=\"get-completed-tasks\",type=GetCompletedTasksCommand.class),@XmlElement(name=\"get-content\",type=GetContentCommand.class),@XmlElement(name=\"get-group\",type=GetGroupCommand.class),@XmlElement(name=\"get-groups\",type=GetGroupsCommand.class),@XmlElement(name=\"get-org-entity\",type=GetOrgEntityCommand.class),@XmlElement(name=\"get-pending-sub-tasks\",type=GetPendingSubTasksCommand.class),@XmlElement(name=\"get-pending-tasks-by-user\",type=GetPendingTasksByUserCommand.class),@XmlElement(name=\"get-potential-ownders-for-task\",type=GetPotentialOwnersForTaskCommand.class),@XmlElement(name=\"get-sub-tasks\",type=GetSubTasksCommand.class),@XmlElement(name=\"get-task-assigned-as-business-admin\",type=GetTaskAssignedAsBusinessAdminCommand.class),@XmlElement(name=\"get-task-assigned-as-excluded-owner\",type=GetTaskAssignedAsExcludedOwnerCommand.class),@XmlElement(name=\"get-task-assigned-as-initiator\",type=GetTaskAssignedAsInitiatorCommand.class),@XmlElement(name=\"get-task-assigned-as-potential-owner-by-exp-date\",type=GetTaskAssignedAsPotentialOwnerByExpDateCommand.class),@XmlElement(name=\"get-task-assigned-as-potential-owner\",type=GetTaskAssignedAsPotentialOwnerCommand.class),@XmlElement(name=\"get-task-assigned-as-potential-owner-paging\",type=GetTaskAssignedAsPotentialOwnerPagingCommand.class),@XmlElement(name=\"get-task-assigned-as-recipient\",type=GetTaskAssignedAsRecipientCommand.class),@XmlElement(name=\"get-task-assigned-as-stakeholeder\",type=GetTaskAssignedAsStakeholderCommand.class),@XmlElement(name=\"get-task-assigned-by-groups\",type=GetTaskAssignedByGroupsCommand.class),@XmlElement(name=\"get-task-by-work-item-id\",type=GetTaskByWorkItemIdCommand.class),@XmlElement(name=\"get-task\",type=GetTaskCommand.class),@XmlElement(name=\"get-task-content\",type=GetTaskContentCommand.class),@XmlElement(name=\"get-task-definition\",type=GetTaskDefinitionCommand.class),@XmlElement(name=\"get-task-owned-by-exp-date-before-date\",type=GetTaskOwnedByExpDateBeforeDateCommand.class),@XmlElement(name=\"get-task-owned-by-exp-date\",type=GetTaskOwnedByExpDateCommand.class),@XmlElement(name=\"get-task-property\",type=GetTaskPropertyCommand.class),@XmlElement(name=\"get-tasks-by-process-instance-id\",type=GetTasksByProcessInstanceIdCommand.class),@XmlElement(name=\"get-tasks-by-status-by-process-instance-id\",type=GetTasksByStatusByProcessInstanceIdCommand.class),@XmlElement(name=\"get-tasks-by-various-fields\",type=GetTasksByVariousFieldsCommand.class),@XmlElement(name=\"get-tasks-for-process\",type=GetTasksForProcessCommand.class),@XmlElement(name=\"get-tasks-owned\",type=GetTasksOwnedCommand.class),@XmlElement(name=\"get-user\",type=GetUserCommand.class),@XmlElement(name=\"get-user-info\",type=GetUserInfoCommand.class),@XmlElement(name=\"get-user\",type=GetUsersCommand.class),@XmlElement(name=\"init-deadlines\",type=InitDeadlinesCommand.class),@XmlElement(name=\"nominate-task\",type=NominateTaskCommand.class),@XmlElement(name=\"process-sub-task\",type=ProcessSubTaskCommand.class),@XmlElement(name=\"release-task\",type=ReleaseTaskCommand.class),@XmlElement(name=\"remove-all-tasks\",type=RemoveAllTasksCommand.class),@XmlElement(name=\"remove-group\",type=RemoveGroupCommand.class),@XmlElement(name=\"remove-task\",type=RemoveTaskCommand.class),@XmlElement(name=\"remove-tasks\",type=RemoveTasksCommand.class),@XmlElement(name=\"remove-user\",type=RemoveUserCommand.class),@XmlElement(name=\"resume-task\",type=ResumeTaskCommand.class),@XmlElement(name=\"set-task-property\",type=SetTaskPropertyCommand.class),@XmlElement(name=\"skip-task\",type=SkipTaskCommand.class),@XmlElement(name=\"start-task\",type=StartTaskCommand.class),@XmlElement(name=\"stop-task\",type=StopTaskCommand.class),@XmlElement(name=\"suspend-task\",type=SuspendTaskCommand.class),@XmlElement(name=\"undeploy-task-def\",type=UndeployTaskDefCommand.class),@XmlElement(name=\"task-query\",type=TaskQueryWhereCommand.class),@XmlElement(name=\"execute-reminder-command\",type=ExecuteReminderCommand.class),@XmlElement(name=\"get-comment-by-id-command\",type=GetCommentByIdCommand.class)}) in attribute private mainCommand : TaskCommand<T> from class org.jbpm.services.task.commands.CompositeCommand",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Annotation",
-    "description" : "Add Class Annotation @SuppressWarnings(\"unchecked\") in class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Annotation",
-    "description" : "Add Class Annotation @JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility = Visibility.NONE, isGetterVisibility = Visibility.NONE) in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Modify Class Annotation",
-    "description" : "Modify Class Annotation @JsonIgnoreProperties({\"union\",\"type\",\"currentGroupCriteria\",\"currentGroupParents\",\"like\",\"range\"}) to @JsonIgnoreProperties({\"union\",\"type\",\"currentGroupCriteria\",\"ancestry\",\"currentParent\",\"addedJoins\"}) in class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Modify Class Annotation",
-    "description" : "Modify Class Annotation @XmlRootElement(name = \"task-query-data-command\") to @XmlRootElement(name = \"task-query-where-command\") in class org.jbpm.services.task.commands.TaskQueryWhereCommand",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter queryClass : Class<T> in method public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> from class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter resultClass : Class<R> in method public queryLogs(queryData QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> from class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter valueListSize : int in method public QueryCriteria(listId String, union boolean, type QueryCriteriaType, valueListSize int) from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter field : OrderBy in method public ascending(field OrderBy) : T from class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation @SuppressWarnings(\"unchecked\") in method package setParameter(index int, value Object, listSize int) : void from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : "null",
-    "validation" : "CTP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Annotation",
-    "description" : "Remove Method Annotation @Override in method public queryProcessInstanceLogs(queryData QueryData) : List<org.kie.api.runtime.manager.audit.ProcessInstanceLog> from class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : "<p>deleted method</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Annotation",
-    "description" : "Remove Method Annotation @SuppressWarnings(\"unchecked\") in method protected convertListToInterfaceList(internalResult List<C>, interfaceType Class<I>) : List<I> from class org.jbpm.process.audit.JPAAuditLogService",
-    "comment" : "<p>deleted method</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier public to private in method private getOrderByListId(field OrderBy) : String from class org.jbpm.services.task.impl.TaskQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier package to public in method public addCriteria(criteria QueryCriteria) : void from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier public to private in method private QueryCriteria(listId String, type QueryCriteriaType) from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier private to protected in method protected getEntityManager() : EntityManager from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier private to protected in method protected joinTransaction(em EntityManager) : Object from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier private to protected in method protected closeEntityManager(em EntityManager, transaction Object) : void from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier private to public in method public executeQuery(query Query, em EntityManager, type Class<T>) : List<T> from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier protected to public in method public convertListToInterfaceList(internalResult List<C>, interfaceType Class<I>) : List<I> from class org.jbpm.query.jpa.impl.QueryCriteriaUtil",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Encapsulate Attribute",
-    "description" : "Encapsulate Attribute protected em : EntityManager from class org.jbpm.services.task.persistence.JPATaskPersistenceContext",
-    "comment" : "<p>EntityManager getEntityManager()<br />called in method protected EntityManager getEntityManager()<br />jbpm-human-task/jbpm-human-task-jpa/src/main/java/org/jbpm/services/task/persistence/TaskQueryCriteriaUtil.java<br />return this.taskQueryService.getEntityManager();</p>",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Encapsulate Attribute",
-    "description" : "Encapsulate Attribute private criteria : List<QueryCriteria> from class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "<p>public void setCriteria(List&lt;QueryCriteria&gt; criteria)<br />called in file<br />jbpm-human-task/jbpm-human-task-jpa/src/main/java/org/jbpm/services/task/persistence/TaskQueryCriteriaUtil.java</p>",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Encapsulate Attribute",
-    "description" : "Encapsulate Attribute private type : QueryCriteriaType from class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "<p>public QueryCriteriaType getCriteriaType()<br />called in file<br />jbpm-services/jbpm-executor/src/main/java/org/jbpm/executor/impl/jpa/ErrorInfoQueryBuilderImpl.java</p>",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Encapsulate Attribute",
-    "description" : "Encapsulate Attribute private currentCriteria : List<QueryCriteria> from class org.jbpm.query.jpa.data.QueryWhere",
-    "comment" : "<p>public List&lt;QueryCriteria&gt; getCurrentCriteria()<br />is not called in commit</p>",
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier static in method public convertListToInterfaceList(internalResult List<C>, interfaceType Class<I>) : List<I> from class org.jbpm.query.jpa.impl.QueryCriteriaUtil",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Modifier",
-    "description" : "Remove Method Modifier final in method public ascending() : T from class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Method Modifier",
-    "description" : "Remove Method Modifier final in method public descending() : T from class org.jbpm.query.jpa.builder.impl.AbstractQueryBuilderImpl",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation @SuppressWarnings(\"unchecked\") in method public queryLogs(queryWhere QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> from class org.jbpm.process.audit.CommandBasedAuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type List<org.kie.api.runtime.manager.audit.NodeInstanceLog> to List<R> in method public queryLogs(queryWhere QueryWhere, queryClass Class<T>, resultClass Class<R>) : List<R> from class org.jbpm.process.audit.CommandBasedAuditLogService",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Modifier",
-    "description" : "Add Class Modifier abstract in class org.jbpm.process.audit.query.AbstractAuditQueryBuilderImpl",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Variable",
-    "description" : "Inline Variable xmlValue : Object in method package addParameter(value Object) : void from class org.jbpm.query.jpa.data.QueryCriteria",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier private to protected in attribute protected persistenceUnitName : String from class org.jbpm.process.audit.JPAService",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ],
-  "refDiffExecutionTime" : 3454
-}, {
   "id" : 1156165,
   "repository" : "https://github.com/square/mortar.git",
   "sha1" : "72dda3404820a82d53f1a16bb2ed9ad95f745d3c",
@@ -90107,7 +87648,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
@@ -90121,7 +87662,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
@@ -90135,7 +87676,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
@@ -90149,7 +87690,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
@@ -90163,7 +87704,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
@@ -90177,7 +87718,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "the behavior of the test case has been changed. I am not sure about it though!"
     }
@@ -90298,7 +87839,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Encapsulate Attribute-",
       "mappingState" : 1,
       "validationComment" : "Encapsulate Attribute on top of the moved method. But the replacement between ->= -> >- is not justifiable"
     }
@@ -90312,7 +87853,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : "The variable declaration has been removed, but it doesn't change the state of the function as far as I understand. So, it's a pure refactoring"
     }
@@ -91189,7 +88730,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "-Localize Parameter - ",
       "mappingState" : 5,
       "validationComment" : "Localize Parameter on top of the moved method"
     }
@@ -91627,7 +89168,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the argument inside the -get- method has been changed"
     }
@@ -91734,7 +89275,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -91748,7 +89289,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -91762,7 +89303,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : ""
     }

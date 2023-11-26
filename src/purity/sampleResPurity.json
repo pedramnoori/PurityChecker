@@ -430,7 +430,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "try-catch has not been moved - Other non-mapped leaves in the original method are not justifiable"
+      "validationComment" : "non-mapped leaves and nodes which have been removed from the moved method are not justifiable"
     }
   } ]
 }, {
@@ -701,11 +701,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic createTradingRecordReport() : void from class org.ta4j.core.Backtesting to public printBacktestingResult() : void from class org.ta4j.core.BacktestingResult",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "printing statements have been added to the moved method. Technically, the logic hasn't been changed but we consider these cases as non-pure. It's an overlapping change"
+      "validationComment" : "non-mapped leaves for addition or print statements, which is a pure code addition"
     }
   } ]
 }, {
@@ -1180,7 +1180,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the filter condition in the stream statement has been changed"
+      "validationComment" : "the stream filter condition has been changed"
     }
   }, {
     "type" : "Change Return Type",
@@ -1230,7 +1230,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the filter condition in the stream statement has been changed"
+      "validationComment" : "the stream filter condition has been changed"
     }
   }, {
     "type" : "Change Return Type",
@@ -1280,7 +1280,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the filter condition in the stream statement has been changed"
+      "validationComment" : "the stream filter condition has been changed"
     }
   } ]
 }, {
@@ -5736,7 +5736,7 @@
     "type" : "Push Down Method",
     "description" : "Push Down Method\tpublic persist() : boolean from class org.restlet.ext.oauth.AuthenticatedUser to public persist() : boolean from class org.restlet.ext.oauth.internal.memory.AuthenticatedUserImpl",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -5880,7 +5880,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the string literals has been replaced with attributes. As the attributes were present before, there were not refactorings and PurityChecker couldn't report these as pure cases"
+      "validationComment" : "Rename Varible and Move Variable on top"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -6031,7 +6031,7 @@
     "type" : "Push Down Method",
     "description" : "Push Down Method\tprotected getAuthSession() : AuthSession from class org.restlet.ext.oauth.OAuthServerResource to protected getAuthSession() : AuthSession from class org.restlet.ext.oauth.AuthorizationBaseServerResource",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -6041,7 +6041,7 @@
     "type" : "Push Down Method",
     "description" : "Push Down Method\tprotected getErrorPage(errPage String, ex OAuthException) : Representation from class org.restlet.ext.oauth.OAuthServerResource to protected getErrorPage(errPage String, ex OAuthException) : Representation from class org.restlet.ext.oauth.AuthorizationBaseServerResource",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -6071,11 +6071,11 @@
     "type" : "Push Down Method",
     "description" : "Push Down Method\tprotected sendError(redirectUri String, ex OAuthException, state String) : void from class org.restlet.ext.oauth.OAuthServerResource to protected sendError(redirectURI String, ex OAuthException, state String, fragment boolean) : void from class org.restlet.ext.oauth.AuthorizationBaseServerResource",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "two added statements in the pushed down method are not justifiable"
+      "validationComment" : ""
     }
   }, {
     "type" : "Extract And Move Method",
@@ -7315,7 +7315,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "The if expression condition has been changed, which is an impure change"
+      "validationComment" : "the if condition has been changed - non-mapped leaves are not justifiable"
     }
   } ]
 }, {
@@ -7940,7 +7940,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "The condition has been inverted, but the statements have been also moved according to the invertion. Impossible to catch"
+      "validationComment" : "it's pure because of overlapping invert condition and switch the line numbers - cannot be catched"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -9426,11 +9426,11 @@
     "type" : "Push Down Method",
     "description" : "Push Down Method\tpublic WheelCache(cacheDir File, pythonTag PythonTag, platformTag PlatformTag) from class com.linkedin.gradle.python.wheel.WheelCache to public CachedBackedWheelCache(cacheDir File, supportedWheelFormats SupportedWheelFormats) from class com.linkedin.gradle.python.wheel.CachedBackedWheelCache",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "class fields have been changed"
+      "validationComment" : ""
     }
   }, {
     "type" : "Rename Parameter",
@@ -9466,17 +9466,17 @@
     "type" : "Push Down Method",
     "description" : "Push Down Method\tpublic findWheel(library String, version String, pythonVersion PythonVersion) : Optional<File> from class com.linkedin.gradle.python.wheel.WheelCache to public findWheel(library String, version String, pythonDetails PythonDetails) : Optional<File> from class com.linkedin.gradle.python.wheel.CachedBackedWheelCache",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "non-mapped statements and replacements are not justifiable"
+      "validationComment" : ""
     }
   }, {
     "type" : "Push Down Method",
     "description" : "Push Down Method\tpublic getCacheDir() : File from class com.linkedin.gradle.python.wheel.WheelCache to public getCacheDir() : File from class com.linkedin.gradle.python.wheel.CachedBackedWheelCache",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -9486,7 +9486,7 @@
     "type" : "Push Down Method",
     "description" : "Push Down Method\tprivate fromFile(file File) : Optional<PythonWheelDetails> from class com.linkedin.gradle.python.wheel.WheelCache to private fromFile(file File) : Optional<PythonWheelDetails> from class com.linkedin.gradle.python.wheel.CachedBackedWheelCache",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -10976,11 +10976,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate checkEventTokenNotNull(eventToken String) : boolean from class com.adeven.adjustio.ActivityHandler to public isValidForEvent() : boolean from class com.adeven.adjustio.PackageBuilder",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "return true has been changed to return isEventTokenValid(), which is an obvious impure modification"
+      "validationComment" : ""
     }
   }, {
     "type" : "Remove Parameter",
@@ -11006,11 +11006,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tprivate checkEventTokenLength(eventToken String) : boolean from class com.adeven.adjustio.ActivityHandler to private isEventTokenValid() : boolean from class com.adeven.adjustio.PackageBuilder",
     "purity" : {
-      "purityValue" : "0",
+      "purityValue" : "1",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "The if condition has not been moved."
+      "validationComment" : ""
     }
   } ]
 }, {
@@ -15263,11 +15263,11 @@
     "type" : "Move And Rename Method",
     "description" : "Move And Rename Method\tpublic isServerInConfig(serverName String) : boolean from class org.datacleaner.util.RemoteServersConfigRW to public getServerConfig(serverName String) : RemoteServerData from class org.datacleaner.util.RemoteServersUtils",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "0",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the return type has been changed and the corresponding return expressions have been changed, which is pure in this case"
+      "validationComment" : "This look like a bug fix within the move method. The replacement from true to -remoteServerData- is not justifiable"
     }
   }, {
     "type" : "Move Method",
@@ -21927,7 +21927,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "hour, minute, and second information have not been moved to the destination file."
+      "validationComment" : "non-mapped statements are not justifiable"
     }
   }, {
     "type" : "Change Method Access Modifier",
@@ -24027,7 +24027,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
+      "validationComment" : "non-mapped statements are not justifiable"
     }
   }, {
     "type" : "Change Parameter Type",
@@ -24047,7 +24047,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
+      "validationComment" : "non-mapped statements are not justifiable"
     }
   }, {
     "type" : "Remove Parameter",
@@ -24147,7 +24147,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
+      "validationComment" : "non-mapped statements are not justifiable"
     }
   }, {
     "type" : "Extract Variable",
@@ -24197,7 +24197,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
+      "validationComment" : "non-mapped statements are not justifiable"
     }
   }, {
     "type" : "Add Parameter",
@@ -24237,7 +24237,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
+      "validationComment" : "non-mapped statements are not justifiable"
     }
   }, {
     "type" : "Extract Method",
@@ -24267,7 +24267,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "the replacement is justifiable according to the Remove Parameter on top of the moved method, but the added statement in the moved method is not justfiable"
+      "validationComment" : "non-mapped statements are not justifiable"
     }
   } ]
 }, {
@@ -25267,7 +25267,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "There is no connection between the two methods. So, the difference in number literal is definitely an impure change"
+      "validationComment" : "wrong reported move and rename method by RefactoringMiner"
     }
   }, {
     "type" : "Extract And Move Method",
@@ -26123,7 +26123,7 @@
     "type" : "Push Down Method",
     "description" : "Push Down Method\tpublic exec(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrDockerCmdExec to public exec(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrSyncDockerCmdExec",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -26133,7 +26133,7 @@
     "type" : "Push Down Method",
     "description" : "Push Down Method\tprotected abstract execute(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrDockerCmdExec to protected abstract execute(command CMD_T) : RES_T from class com.github.dockerjava.jaxrs.AbstrSyncDockerCmdExec",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -26163,7 +26163,7 @@
     "type" : "Push Down Method",
     "description" : "Push Down Method\tpublic exec() : RES_T from class com.github.dockerjava.api.command.DockerCmd to public exec() : RES_T from class com.github.dockerjava.api.command.SyncDockerCmd",
     "purity" : {
-      "purityValue" : "1",
+      "purityValue" : "-",
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
@@ -28642,7 +28642,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Although the name of the anonymous class has been changed, the logic remained the same. Not sure about the case's purity"
+      "validationComment" : ""
     }
   } ]
 }, {
@@ -29468,1726 +29468,6 @@
       "purityComment" : "",
       "mappingState" : "",
       "validationComment" : "Rename Variable on top"
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/GwtMaterialDesign/gwt-material.git",
-  "sha1" : "d1e5b96af91371013f48a188ecfb90b598be7015",
-  "url" : "https://github.com/GwtMaterialDesign/gwt-material/commit/d1e5b96af91371013f48a188ecfb90b598be7015",
-  "refactorings" : [ {
-    "type" : "Extract Method",
-    "description" : "Extract Method\tprotected fireSearchNoResultHandler(widget T) : void extracted from public checkSearchEvents(widget T) : void in class gwt.material.design.client.ui.base.BaseEventTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method\tprotected fireSearchFinishHandler(widget T) : void extracted from public checkSearchEvents(widget T) : void in class gwt.material.design.client.ui.base.BaseEventTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method\tprotected fireCloseHandler(widget T) : void extracted from public checkCloseHandler(widget T) : void in class gwt.material.design.client.ui.base.BaseEventTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method\tprotected fireOpenHandler(widget T) : void extracted from public checkOpenHandler(widget T) : void in class gwt.material.design.client.ui.base.BaseEventTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method\tpublic tsetLink() : void renamed to public testLink() : void in class gwt.material.design.client.ui.MaterialLinkTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic testBaseWidget() : void from class gwt.material.design.client.ui.base.MaterialWidgetTest to public testMaterialWidget() : void from class gwt.material.design.client.ui.base.MaterialBasicTest",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation\t@Before in method public testJQuery() : void from class gwt.material.design.client.ui.base.MaterialBasicTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic checkJQuery() : void from class gwt.material.design.client.ui.base.MaterialWidgetTest to public testJQuery() : void from class gwt.material.design.client.ui.base.MaterialBasicTest",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/ReactiveX/RxNetty.git",
-  "sha1" : "f36551f956b9bb3ae26ba95c65300896bf98812b",
-  "url" : "https://github.com/ReactiveX/RxNetty/commit/f36551f956b9bb3ae26ba95c65300896bf98812b",
-  "refactorings" : [ {
-    "type" : "Extract Class",
-    "description" : "Extract Class\tio.reactivex.netty.protocol.http.server.ServerRequestResponseConverter.RequestState from class io.reactivex.netty.protocol.http.server.ServerRequestResponseConverter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method\tprivate createRxRequest(ctx ChannelHandlerContext, httpRequest HttpRequest) : void extracted from public channelRead(ctx ChannelHandlerContext, msg Object) : void in class io.reactivex.netty.protocol.http.server.ServerRequestResponseConverter & moved to class io.reactivex.netty.protocol.http.server.ServerRequestResponseConverter.RequestState",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Attribute",
-    "description" : "Move Attribute\tprivate rxRequest : HttpServerRequest from class io.reactivex.netty.protocol.http.server.ServerRequestResponseConverter to private rxRequest : HttpServerRequest from class io.reactivex.netty.protocol.http.server.ServerRequestResponseConverter.RequestState",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic writeChunkedInput(httpChunkedInput HttpChunkedInput) : void from class io.reactivex.netty.channel.DefaultChannelWriter to public writeChunkedInput(httpChunkedInput HttpChunkedInput) : void from class io.reactivex.netty.protocol.http.server.HttpServerResponse",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/apache/metamodel.git",
-  "sha1" : "9ab30040e3311f5c9947615470ad1d366de92c0f",
-  "url" : "https://github.com/apache/metamodel/commit/9ab30040e3311f5c9947615470ad1d366de92c0f",
-  "refactorings" : [ {
-    "type" : "Inline Variable",
-    "description" : "Inline Variable\thBaseClient : HBaseClient in method public execute() : void from class org.apache.metamodel.hbase.HBaseTableDropBuilder",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Modifier",
-    "description" : "Add Class Modifier\tabstract in class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method\tprivate insertTable() : void renamed to protected createAndInsertTable(tableName String, idColumn String, columnFamily1 String, columnFamily2 String) : HBaseTable in class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Encapsulate Attribute",
-    "description" : "Encapsulate Attribute\tprivate updateCallback : HBaseUpdateCallback from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Encapsulate Attribute",
-    "description" : "Encapsulate Attribute\tprivate schema : MutableSchema from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier\tfinal in variable table : Table in method protected dropTableIfItExists() : void from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier\tfinal in variable admin : Admin in method protected dropTableIfItExists() : void from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier\tprivate to protected in method protected dropTableIfItExists() : void from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier\tfinal in variable admin : Admin in method protected checkSuccesfullyInsertedTable() : void from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier\tprivate to protected in method protected checkSuccesfullyInsertedTable() : void from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type\tcolumnFamilies : Set<String> to columnFamilies : LinkedHashSet<String> in method protected createAndInsertTable(tableName String, idColumn String, columnFamily1 String, columnFamily2 String) : HBaseTable from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier\tfinal in variable columnFamilies : LinkedHashSet<String> in method protected createAndInsertTable(tableName String, idColumn String, columnFamily1 String, columnFamily2 String) : HBaseTable from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type\tvoid to HBaseTable in method protected createAndInsertTable(tableName String, idColumn String, columnFamily1 String, columnFamily2 String) : HBaseTable from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\ttableName : String in method protected createAndInsertTable(tableName String, idColumn String, columnFamily1 String, columnFamily2 String) : HBaseTable from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tidColumn : String in method protected createAndInsertTable(tableName String, idColumn String, columnFamily1 String, columnFamily2 String) : HBaseTable from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tcolumnFamily1 : String in method protected createAndInsertTable(tableName String, idColumn String, columnFamily1 String, columnFamily2 String) : HBaseTable from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\tcolumnFamily2 : String in method protected createAndInsertTable(tableName String, idColumn String, columnFamily1 String, columnFamily2 String) : HBaseTable from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier\tprivate to protected in method protected createAndInsertTable(tableName String, idColumn String, columnFamily1 String, columnFamily2 String) : HBaseTable from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method\tpublic writeRow(hBaseTable HBaseTable, columns HBaseColumn[], values Object[]) : void renamed to public insertRow(tableName String, columns HBaseColumn[], values Object[], indexOfIdColumn int) : void in class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter\tkey : Object to rowKey : Object in method private rowExists(table Table, rowKey Object) : boolean from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Thrown Exception Type",
-    "description" : "Remove Thrown Exception Type\tIOException in method public createTable(tableName String, columnFamilies Set<String>) : void from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Thrown Exception Type",
-    "description" : "Remove Thrown Exception Type\tIOException in method public dropTable(tableName String) : void from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Parameterize Variable",
-    "description" : "Parameterize Variable\tindexOfIdColumn : int to indexOfIdColumn : int in method public insertRow(tableName String, columns HBaseColumn[], values Object[], indexOfIdColumn int) : void from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\ttableName : String in method public insertRow(tableName String, columns HBaseColumn[], values Object[], indexOfIdColumn int) : void from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Parameter",
-    "description" : "Remove Parameter\thBaseTable : HBaseTable in method public writeRow(hBaseTable HBaseTable, columns HBaseColumn[], values Object[]) : void from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Thrown Exception Type",
-    "description" : "Remove Thrown Exception Type\tIOException in method public writeRow(hBaseTable HBaseTable, columns HBaseColumn[], values Object[]) : void from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter\tkey : Object to rowKey : Object in method public deleteRow(tableName String, rowKey Object) : void from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter\ttableName : String in method public deleteRow(tableName String, rowKey Object) : void from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Parameter",
-    "description" : "Remove Parameter\thBaseTable : HBaseTable in method public deleteRow(hBaseTable HBaseTable, key Object) : void from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Thrown Exception Type",
-    "description" : "Remove Thrown Exception Type\tIOException in method public deleteRow(hBaseTable HBaseTable, key Object) : void from class org.apache.metamodel.hbase.HBaseClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier\tstatic in attribute private _dataContext : HBaseDataContext from class org.apache.metamodel.hbase.HBaseTestCase",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Code",
-    "description" : "Move Code\tfrom protected tearDown() : void to public oneTimeTeardown() : void in class org.apache.metamodel.hbase.HBaseTestCase",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method\tpublic HBaseColumn(columnFamily String, qualifier String, table Table, columnNumber int, columnType ColumnType) extracted from public HBaseColumn(columnFamily String, qualifier String, table Table, columnNumber int) in class org.apache.metamodel.hbase.HBaseColumn",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter\thbaseColumns : HBaseColumn[] to columns : List<HBaseColumn> in method public getColumnFamilies(columns List<HBaseColumn>) : Set<String> from class org.apache.metamodel.hbase.HBaseColumn",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\thbaseColumns : HBaseColumn[] to columns : List<HBaseColumn> in method public getColumnFamilies(columns List<HBaseColumn>) : Set<String> from class org.apache.metamodel.hbase.HBaseColumn",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type\tRowInsertionBuilder to HBaseRowInsertionBuilder in method public insertInto(table Table, columns List<HBaseColumn>) : HBaseRowInsertionBuilder from class org.apache.metamodel.hbase.HBaseUpdateCallback",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Variable",
-    "description" : "Inline Variable\thBaseClient : HBaseClient in method public execute() : Table from class org.apache.metamodel.hbase.HBaseCreateTableBuilder",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method\tpublic checkForNotMatchingColumns(columnNamesOfCheckedTable List<String>) : void renamed to public checkForNotMatchingColumnFamilies(columnNamesOfCheckedTable Set<String>) : void in class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method\tprivate addColumns(tableDef SimpleTableDef, defaultRowKeyColumnType ColumnType) : void extracted from public HBaseTable(dataContext HBaseDataContext, tableDef SimpleTableDef, schema MutableSchema, defaultRowKeyColumnType ColumnType) in class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method\tprivate addColumn(columnName String, columnType ColumnType, columnNumber int) : void extracted from protected getColumnsInternal() : List<Column> in class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Method",
-    "description" : "Extract Method\tprivate addColumn(columnName String, columnType ColumnType, columnNumber int) : void extracted from protected getColumnsInternal() : List<Column> in class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Variable",
-    "description" : "Inline Variable\tidColumn : MutableColumn in method public HBaseTable(dataContext HBaseDataContext, tableDef SimpleTableDef, schema MutableSchema, defaultRowKeyColumnType ColumnType) from class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Variable",
-    "description" : "Inline Variable\tidColumn : MutableColumn in method protected getColumnsInternal() : List<Column> from class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tcolumnNamesOfCheckedTable : List<String> to columnNamesOfCheckedTable : Set<String> in method public checkForNotMatchingColumnFamilies(columnNamesOfCheckedTable Set<String>) : void from class org.apache.metamodel.hbase.HBaseTable",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier\tfinal in variable table : HBaseTable in method public testDropTableThatDoesntExist() : void from class org.apache.metamodel.hbase.DropTableTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Thrown Exception Type",
-    "description" : "Remove Thrown Exception Type\tIOException in method public testDropTable() : void from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic testDropTable() : void from class org.apache.metamodel.hbase.HBaseUpdateCallbackTest to public testDropTableThatDoesntExist() : void from class org.apache.metamodel.hbase.DropTableTest",
-    "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "non-mapped leaves and one of the replacement for createHBaseTable are not justifiable"
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method\tpublic convertToColumnsList(columns List<HBaseColumn>) : List<Column> extracted from public insertInto(table Table, columns List<HBaseColumn>) : RowInsertionBuilder in class org.apache.metamodel.hbase.HBaseUpdateCallback & moved to class org.apache.metamodel.hbase.HBaseColumn",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable\tobj : null to column : null in method public convertToColumnsList(columns List<HBaseColumn>) : List<Column> from class org.apache.metamodel.hbase.HBaseColumn",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method\tpublic convertToHBaseColumnsArray(columns List<HBaseColumn>) : HBaseColumn[] extracted from public getColumns() : HBaseColumn[] in class org.apache.metamodel.hbase.HBaseRowInsertionBuilder & moved to class org.apache.metamodel.hbase.HBaseColumn",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method\tpublic convertToHBaseColumnsArray(columns Column[]) : HBaseColumn[] extracted from public getColumns() : HBaseColumn[] in class org.apache.metamodel.hbase.HBaseRowInsertionBuilder & moved to class org.apache.metamodel.hbase.HBaseColumn",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/commercetools/commercetools-sunrise-java.git",
-  "sha1" : "23e56e4afb7a6defc1e740f2f7274d8cdb63e0ef",
-  "url" : "https://github.com/commercetools/commercetools-sunrise-java/commit/23e56e4afb7a6defc1e740f2f7274d8cdb63e0ef",
-  "refactorings" : [ {
-    "type" : "Rename Class",
-    "description" : "Rename Class\tproductcatalog.services.CategoryServiceTest renamed to productcatalog.services.CategoryServiceImplTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Type Declaration Kind",
-    "description" : "Change Type Declaration Kind\tclass to interface in type productcatalog.services.CategoryService",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Subclass",
-    "description" : "Extract Subclass\tproductcatalog.services.CategoryServiceImpl from class productcatalog.services.CategoryService",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getSiblingCategories(product ProductProjection) : List<Category> from class productcatalog.services.CategoryService to public getSiblingCategories(product ProductProjection) : List<Category> from class productcatalog.services.CategoryServiceImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getBreadCrumbCategories(product ProductProjection) : List<Category> from class productcatalog.services.CategoryService to public getBreadCrumbCategories(product ProductProjection) : List<Category> from class productcatalog.services.CategoryServiceImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tprivate getCategoryWithAncestors(category Category) : List<Category> from class productcatalog.services.CategoryService to private getCategoryWithAncestors(category Category) : List<Category> from class productcatalog.services.CategoryServiceImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tprivate expandCategory(categoryRef Reference<Category>) : Optional<Category> from class productcatalog.services.CategoryService to private expandCategory(categoryRef Reference<Category>) : Optional<Category> from class productcatalog.services.CategoryServiceImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate categories : CategoryTree from class productcatalog.services.CategoryService to private categories : CategoryTree from class productcatalog.services.CategoryServiceImpl",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic CategoryService(categories CategoryTree) from class productcatalog.services.CategoryService to public CategoryServiceImpl(categories CategoryTree) from class productcatalog.services.CategoryServiceImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/datacleaner/DataCleaner.git",
-  "sha1" : "d68340bb135ded1d421a6fd4e0978246e1e88912",
-  "url" : "https://github.com/datacleaner/DataCleaner/commit/d68340bb135ded1d421a6fd4e0978246e1e88912",
-  "refactorings" : [ {
-    "type" : "Move Class",
-    "description" : "Move Class\torg.datacleaner.monitor.configuration.ComponentCache.TimeoutChecker moved to org.datacleaner.monitor.configuration.ComponentCacheMapImpl.TimeoutChecker",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Class",
-    "description" : "Rename Class\torg.datacleaner.monitor.configuration.ComponentCacheTest renamed to org.datacleaner.monitor.configuration.ComponentCacheMapImplTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Type Declaration Kind",
-    "description" : "Change Type Declaration Kind\tclass to interface in type org.datacleaner.monitor.configuration.ComponentCache",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method\tpublic getComponentsStore() : ComponentStore renamed to public getComponentStore() : ComponentStore in class org.datacleaner.monitor.configuration.TenantContextImpl",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Subclass",
-    "description" : "Extract Subclass\torg.datacleaner.monitor.configuration.ComponentCacheMapImpl from class org.datacleaner.monitor.configuration.ComponentCache",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tprivate removeConfigurationOnlyFromCache(id String) : boolean from class org.datacleaner.monitor.configuration.ComponentCache to private removeConfigurationOnlyFromCache(id String) : boolean from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tprivate removeConfigurationOnlyFromStore(id String, tenantContext TenantContext) : boolean from class org.datacleaner.monitor.configuration.ComponentCache to private removeConfigurationOnlyFromStore(id String, tenantContext TenantContext) : boolean from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "Rename Method on top"
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic close() : void from class org.datacleaner.monitor.configuration.ComponentCache to public close() : void from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate logger : Logger from class org.datacleaner.monitor.configuration.ComponentCache to private logger : Logger from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate CHECK_INTERVAL : long from class org.datacleaner.monitor.configuration.ComponentCache to private CHECK_INTERVAL : long from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate CLOSE_TIMEOUT : long from class org.datacleaner.monitor.configuration.ComponentCache to private CLOSE_TIMEOUT : long from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate _tenantContextFactory : TenantContextFactory from class org.datacleaner.monitor.configuration.ComponentCache to private _tenantContextFactory : TenantContextFactory from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate data : ConcurrentHashMap<String,ComponentCacheConfigWrapper> from class org.datacleaner.monitor.configuration.ComponentCache to private data : ConcurrentHashMap<String,ComponentCacheConfigWrapper> from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate checkerThread : Thread from class org.datacleaner.monitor.configuration.ComponentCache to private checkerThread : Thread from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate checker : TimeoutChecker from class org.datacleaner.monitor.configuration.ComponentCache to private checker : TimeoutChecker from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic ComponentCache(_tenantContextFactory TenantContextFactory) from class org.datacleaner.monitor.configuration.ComponentCache to public ComponentCacheMapImpl(_tenantContextFactory TenantContextFactory) from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic putComponent(tenant String, tenantContext TenantContext, componentsHolder ComponentStoreHolder) : void from class org.datacleaner.monitor.configuration.ComponentCache to public put(tenant String, tenantContext TenantContext, componentsHolder ComponentStoreHolder) : void from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "Rename Method on top - Good job by PurityChecker"
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getConfigHolder(id String, tenant String, tenantContext TenantContext) : ComponentCacheConfigWrapper from class org.datacleaner.monitor.configuration.ComponentCache to public get(id String, tenant String, tenantContext TenantContext) : ComponentCacheConfigWrapper from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "Rename Method on top"
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic removeConfiguration(id String, tenantContext TenantContext) : boolean from class org.datacleaner.monitor.configuration.ComponentCache to public remove(id String, tenantContext TenantContext) : boolean from class org.datacleaner.monitor.configuration.ComponentCacheMapImpl",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method\tpublic getComponentsStore() : ComponentStore renamed to public getComponentStore() : ComponentStore in class org.datacleaner.monitor.configuration.TenantContext",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/hopshadoop/hopsworks.git",
-  "sha1" : "0dd9d026302e9822d406555fc20c48516d218ada",
-  "url" : "https://github.com/hopshadoop/hopsworks/commit/0dd9d026302e9822d406555fc20c48516d218ada",
-  "refactorings" : [ {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type\ttable : MTable to itc : InodeTableComposite in method public parseSchema() : List<EntityIntf> from class se.kth.meta.wscomm.message.MetadataMessage",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable\ttableId : int to tableid : int in method public parseSchema() : List<EntityIntf> from class se.kth.meta.wscomm.message.MetadataMessage",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable\ttable : MTable to itc : InodeTableComposite in method public parseSchema() : List<EntityIntf> from class se.kth.meta.wscomm.message.MetadataMessage",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter\tentities : List<EntityIntf> to entity : List<EntityIntf> in method public buildSchema(entity List<EntityIntf>) : String from class se.kth.meta.wscomm.message.MetadataMessage",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic MetadataMessage(sender String, message String) from class se.kth.meta.wscomm.message.MetadataMessage to public FetchMetadataMessage(sender String, message String) from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Rename Method",
-    "description" : "Move And Rename Method\tpublic TableMetadataMessage(sender String, message String) from class se.kth.meta.wscomm.message.TableMetadataMessage to public FetchMetadataMessage(sender String, message String) from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic init(obj JsonObject) : void from class se.kth.meta.wscomm.message.MetadataMessage to public init(obj JsonObject) : void from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic encode() : String from class se.kth.meta.wscomm.message.MetadataMessage to public encode() : String from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic setAction(action String) : void from class se.kth.meta.wscomm.message.MetadataMessage to public setAction(action String) : void from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getAction() : String from class se.kth.meta.wscomm.message.MetadataMessage to public getAction() : String from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic buildSchema(entities List<EntityIntf>) : String from class se.kth.meta.wscomm.message.MetadataMessage to public buildSchema(entities List<EntityIntf>) : String from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "the non-mapped statement in the original operation is not justifiable"
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getMessage() : String from class se.kth.meta.wscomm.message.MetadataMessage to public getMessage() : String from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic setMessage(msg String) : void from class se.kth.meta.wscomm.message.MetadataMessage to public setMessage(msg String) : void from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getSender() : String from class se.kth.meta.wscomm.message.MetadataMessage to public getSender() : String from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic setSender(sender String) : void from class se.kth.meta.wscomm.message.MetadataMessage to public setSender(sender String) : void from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getStatus() : String from class se.kth.meta.wscomm.message.MetadataMessage to public getStatus() : String from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic setStatus(status String) : void from class se.kth.meta.wscomm.message.MetadataMessage to public setStatus(status String) : void from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic toString() : String from class se.kth.meta.wscomm.message.MetadataMessage to public toString() : String from class se.kth.meta.wscomm.message.FetchMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic MetadataMessage(sender String, message String) from class se.kth.meta.wscomm.message.MetadataMessage to public FetchTableMetadataMessage(sender String, message String) from class se.kth.meta.wscomm.message.FetchTableMetadataMessage",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method\tpublic parseSchema() : List<EntityIntf> from class se.kth.meta.wscomm.message.TableMetadataMessage to public parseSchema() : List<EntityIntf> from class se.kth.meta.wscomm.message.FetchTableMetadataMessage",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method\tpublic toString() : String from class se.kth.meta.wscomm.message.TableMetadataMessage to public toString() : String from class se.kth.meta.wscomm.message.FetchTableMetadataMessage",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/jdbi/jdbi.git",
-  "sha1" : "1a71136d6376b7d447fb815ab4b276c0a0e376ac",
-  "url" : "https://github.com/jdbi/jdbi/commit/1a71136d6376b7d447fb815ab4b276c0a0e376ac",
-  "refactorings" : [ {
-    "type" : "Rename Class",
-    "description" : "Rename Class\torg.jdbi.v3.core.statement.TestSqlLoggerToString.StringXBean renamed to org.jdbi.v3.core.statement.TestSqlLoggerToString.StringBean",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method\tpublic testFoo() : void renamed to public testNeitherHasToString() : void in class org.jdbi.v3.core.statement.TestSqlLoggerToString",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic toString() : String from class org.jdbi.v3.core.statement.TestSqlLoggerToString.Foo to public toString() : String from class org.jdbi.v3.core.statement.TestSqlLoggerToString.ToStringFoo",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : "String literals are the same!"
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/mitreid-connect/OpenID-Connect-Java-Spring-Server.git",
-  "sha1" : "99a574d3033808885812d883a5c49580ce77e0ff",
-  "url" : "https://github.com/mitreid-connect/OpenID-Connect-Java-Spring-Server/commit/99a574d3033808885812d883a5c49580ce77e0ff",
-  "refactorings" : [ {
-    "type" : "Replace Variable With Attribute",
-    "description" : "Replace Variable With Attribute\tpublicKey : RSAPublicKey to publicKey : RSAPublicKey in method public encryptKey(jwe Jwe) : byte[] from class org.mitre.jwt.encryption.AbstractJweEncrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Replace Variable With Attribute",
-    "description" : "Replace Variable With Attribute\tprivateKey : RSAPrivateKey to privateKey : RSAPrivateKey in method public encryptKey(jwe Jwe) : byte[] from class org.mitre.jwt.encryption.AbstractJweEncrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Replace Variable With Attribute",
-    "description" : "Replace Variable With Attribute\tpublicKey : RSAPublicKey to publicKey : RSAPublicKey in method public encryptClaims(jwe Jwe) : byte[] from class org.mitre.jwt.encryption.AbstractJweEncrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate jwe : Jwe from class org.mitre.jwt.encryption.AbstractJweEncrypter to private jwe : Jwe from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate header : JweHeader from class org.mitre.jwt.encryption.AbstractJweEncrypter to private header : JweHeader from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate claims : JwtClaims from class org.mitre.jwt.encryption.AbstractJweEncrypter to private claims : JwtClaims from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate signature : String from class org.mitre.jwt.encryption.AbstractJweEncrypter to private signature : String from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Attribute",
-    "description" : "Pull Up Attribute\tprivate jwe : Jwe from class org.mitre.jwt.encryption.impl.RsaDecrypter to private jwe : Jwe from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Attribute",
-    "description" : "Pull Up Attribute\tprivate privateKey : PrivateKey from class org.mitre.jwt.encryption.impl.RsaDecrypter to private privateKey : PrivateKey from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Attribute",
-    "description" : "Pull Up Attribute\tprivate publicKey : PublicKey from class org.mitre.jwt.encryption.impl.RsaDecrypter to private publicKey : PublicKey from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getJwe() : Jwe from class org.mitre.jwt.encryption.AbstractJweEncrypter to public getJwe() : Jwe from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic setJwe(jwe Jwe) : void from class org.mitre.jwt.encryption.AbstractJweEncrypter to public setJwe(jwe Jwe) : void from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getHeader() : JweHeader from class org.mitre.jwt.encryption.AbstractJweEncrypter to public getHeader() : JweHeader from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic setHeader(header JweHeader) : void from class org.mitre.jwt.encryption.AbstractJweEncrypter to public setHeader(header JweHeader) : void from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getClaims() : JwtClaims from class org.mitre.jwt.encryption.AbstractJweEncrypter to public getClaims() : JwtClaims from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic setClaims(claims JwtClaims) : void from class org.mitre.jwt.encryption.AbstractJweEncrypter to public setClaims(claims JwtClaims) : void from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic getSignature() : String from class org.mitre.jwt.encryption.AbstractJweEncrypter to public getSignature() : String from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic setSignature(signature String) : void from class org.mitre.jwt.encryption.AbstractJweEncrypter to public setSignature(signature String) : void from class org.mitre.jwt.encryption.impl.RsaEncrypter",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method\tpublic getJwe() : Jwe from class org.mitre.jwt.encryption.impl.RsaDecrypter to public getJwe() : Jwe from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method\tpublic setJwe(jwe Jwe) : void from class org.mitre.jwt.encryption.impl.RsaDecrypter to public setJwe(jwe Jwe) : void from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method\tpublic getPrivateKey() : PrivateKey from class org.mitre.jwt.encryption.impl.RsaDecrypter to public getPrivateKey() : PrivateKey from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method\tpublic setPrivateKey(privateKey PrivateKey) : void from class org.mitre.jwt.encryption.impl.RsaDecrypter to public setPrivateKey(privateKey PrivateKey) : void from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method\tpublic getPublicKey() : PublicKey from class org.mitre.jwt.encryption.impl.RsaDecrypter to public getPublicKey() : PublicKey from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method\tpublic setPublicKey(publicKey PublicKey) : void from class org.mitre.jwt.encryption.impl.RsaDecrypter to public setPublicKey(publicKey PublicKey) : void from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method\tpublic decryptCipherText(jwe Jwe) : String from class org.mitre.jwt.encryption.impl.RsaDecrypter to public decryptCipherText(jwe Jwe) : String from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Pull Up Method",
-    "description" : "Pull Up Method\tpublic decryptEncryptionKey(jwe Jwe) : byte[] from class org.mitre.jwt.encryption.impl.RsaDecrypter to public decryptEncryptionKey(jwe Jwe) : byte[] from class org.mitre.jwt.encryption.AbstractJweDecrypter",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/pentaho/big-data-plugin.git",
-  "sha1" : "2d8e11e1e464456443444f7fa65a9215bad8f882",
-  "url" : "https://github.com/pentaho/big-data-plugin/commit/2d8e11e1e464456443444f7fa65a9215bad8f882",
-  "refactorings" : [ {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier\tprivate to protected in attribute protected HDFS_SCHEME : String from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.BaseAvroStepDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier\tprivate to protected in method protected updateLocation() : void from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.BaseAvroStepDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier\tprotected to private in attribute private selectedSchemaVFSScheme : VFSScheme from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier\tprotected to private in attribute private wSchemaPath : TextVar from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier\tprotected to private in attribute private wSchemaLocation : CCombo from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprotected selectedSchemaVFSScheme : VFSScheme from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.BaseAvroStepDialog to private selectedSchemaVFSScheme : VFSScheme from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprotected wSchemaPath : TextVar from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.BaseAvroStepDialog to private wSchemaPath : TextVar from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprotected wSchemaLocation : CCombo from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.BaseAvroStepDialog to private wSchemaLocation : CCombo from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tprotected updateSchemaLocation() : void from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.BaseAvroStepDialog to protected updateSchemaLocation() : void from class org.pentaho.big.data.kettle.plugins.formats.impl.avro.input.AvroInputDialog",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ]
-}, {
-  "repository" : "https://github.com/zalando/nakadi.git",
-  "sha1" : "3fb6125d9317e6f508a09ba3bcd142bc8d8a0bde",
-  "url" : "https://github.com/zalando/nakadi/commit/3fb6125d9317e6f508a09ba3bcd142bc8d8a0bde",
-  "refactorings" : [ {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tclient : IClient to client : Client in method private createStreamingResponseBody(client Client) : StreamingResponseBody from class org.zalando.nakadi.controller.EventStreamControllerTest",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tclient : IClient to client : Client in method public delete(eventTypeName String, request NativeWebRequest, client Client) : ResponseEntity<?> from class org.zalando.nakadi.controller.EventTypeController",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tclient : IClient to client : Client in method public update(name String, eventType EventType, errors Errors, request NativeWebRequest, client Client) : ResponseEntity<?> from class org.zalando.nakadi.controller.EventTypeController",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tclient : IClient to client : Client in method public postEvent(eventTypeName String, eventsAsString String, nativeWebRequest NativeWebRequest, client Client) : ResponseEntity from class org.zalando.nakadi.controller.EventPublishingController",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tclient : IClient to client : Client in method private postEventInternal(eventTypeName String, eventsAsString String, nativeWebRequest NativeWebRequest, eventTypeMetrics EventTypeMetrics, client Client) : ResponseEntity from class org.zalando.nakadi.controller.EventPublishingController",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type\tIClient to Client in method public resolveArgument(parameter MethodParameter, mavContainer ModelAndViewContainer, request NativeWebRequest, binderFactory WebDataBinderFactory) : Client from class org.zalando.nakadi.security.ClientResolver",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tclient : IClient to client : Client in method public streamEvents(eventTypeName String, batchLimit Integer, streamLimit Integer, batchTimeout Integer, streamTimeout Integer, streamKeepAliveLimit Integer, cursorsStr String, request HttpServletRequest, response HttpServletResponse, client Client) : StreamingResponseBody from class org.zalando.nakadi.controller.EventStreamController",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Type Declaration Kind",
-    "description" : "Change Type Declaration Kind\tclass to interface in type org.zalando.nakadi.security.Client",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tclient : IClient to client : Client in method public publish(events JSONArray, eventTypeName String, client Client) : EventPublishResult from class org.zalando.nakadi.service.EventPublisher",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tclient : IClient to client : Client in method public delete(eventTypeName String, client Client) : Result<Void> from class org.zalando.nakadi.service.EventTypeService",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type\tclient : IClient to client : Client in method public update(eventTypeName String, eventType EventType, client Client) : Result<Void> from class org.zalando.nakadi.service.EventTypeService",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract Subclass",
-    "description" : "Extract Subclass\torg.zalando.nakadi.security.NakadiClient from class org.zalando.nakadi.security.Client",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate clientId : String from class org.zalando.nakadi.security.Client to private clientId : String from class org.zalando.nakadi.security.NakadiClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Attribute",
-    "description" : "Push Down Attribute\tprivate scopes : Set<String> from class org.zalando.nakadi.security.Client to private scopes : Set<String> from class org.zalando.nakadi.security.NakadiClient",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic Client(clientId String, scopes Set<String>) from class org.zalando.nakadi.security.Client to public NakadiClient(clientId String, scopes Set<String>) from class org.zalando.nakadi.security.NakadiClient",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Push Down Method",
-    "description" : "Push Down Method\tpublic authorize(allowedScopes Set<String>) : void from class org.zalando.nakadi.security.Client to public checkScopes(allowedScopes Set<String>) : void from class org.zalando.nakadi.security.NakadiClient",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
     }
   } ]
 }

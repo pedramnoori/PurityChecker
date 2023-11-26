@@ -2663,7 +2663,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "It's pure but there is no variable-related refactoring to justify the change. FN impossible to avoid"
     }
@@ -2826,7 +2826,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "Rename Variable on top of the Pull Up Method"
     }
@@ -2840,7 +2840,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "Rename Variable on top of the Pull Up Method"
     }
@@ -3050,7 +3050,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "Rename Variable on top of the Pull Up Method"
     }
@@ -4123,7 +4123,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Class-",
       "mappingState" : 1,
       "validationComment" : "Rename Class on top of the Pull Up Method"
     }
@@ -4137,7 +4137,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Class-",
       "mappingState" : 1,
       "validationComment" : "Rename Class on top of the Pull Up Method"
     }
@@ -5732,7 +5732,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "Lots of changes involved"
     }
@@ -7458,7 +7458,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
@@ -7542,7 +7542,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
@@ -7584,7 +7584,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Class-",
       "mappingState" : 1,
       "validationComment" : "Extract Class on top of the pull up method"
     }
@@ -7817,7 +7817,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Replace Attribute-",
       "mappingState" : 1,
       "validationComment" : "Replace Attribute on top"
     }
@@ -7831,7 +7831,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Replace Attribute-",
       "mappingState" : 1,
       "validationComment" : "Replace Attribute on top"
     }
@@ -8232,7 +8232,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
@@ -8246,7 +8246,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
@@ -8260,7 +8260,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
@@ -9622,7 +9622,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The only changed part is the addition to the if condition, which does change the behavior of the program. Although in this case, the flow would be the same."
     }
@@ -12766,7 +12766,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Class-- Add Parameter-",
       "mappingState" : 1,
       "validationComment" : "Add Parameter and Extract Super Class on top"
     }
@@ -12808,7 +12808,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The MethodInvocationReplacement is not justifiable. The string has been changed. The first replacement is justifiable with argumentization"
     }
@@ -12906,7 +12906,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "return boolean condition has been changed"
     }
@@ -12948,7 +12948,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The MethodInvocationReplacement is not justifiable. The string has been changed. The first replacement is justifiable with argumentization"
     }
@@ -16326,7 +16326,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable. Functionality has been changed"
     }
@@ -18136,7 +18136,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The change seems a pure modification."
     }
@@ -18150,7 +18150,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed two times, which seems a pure change."
     }
@@ -18164,7 +18164,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed, which seems a pure change."
     }
@@ -18178,7 +18178,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed, which seems a pure change."
     }
@@ -18276,7 +18276,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed, which seems a pure change."
     }
@@ -18304,7 +18304,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed two times, which seems a pure change."
     }
@@ -18318,7 +18318,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed, which seems a pure change."
     }
@@ -18332,7 +18332,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Class-",
       "mappingState" : 1,
       "validationComment" : "Extract Class on top of the pull up method"
     }
@@ -18360,7 +18360,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "-compilation.- has been removed, which seems a pure change."
     }
@@ -18537,7 +18537,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
@@ -18551,7 +18551,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
@@ -18565,7 +18565,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
@@ -18929,7 +18929,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
@@ -19442,7 +19442,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
@@ -19456,7 +19456,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
@@ -19470,7 +19470,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
@@ -19848,7 +19848,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "The method invocation has been changed from -doSaveContext()- to -doOnResponseCommitted()-. Within this refactoring, this change is not justifiable and not a pure change."
     }
@@ -20617,7 +20617,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "direct attribute access has been changed to getter. It's a pure change"
     }
@@ -20631,7 +20631,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "direct attribute access has been changed to getter. It's a pure change"
     }
@@ -20808,7 +20808,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "Tolerable Changes in the body\n",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable. Note that the replacement is justifiable, which is double -> Double"
     }
@@ -20836,7 +20836,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
@@ -20878,7 +20878,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "The addition of the variable declaration does not change the program behavior. The statement just got splitted"
     }
@@ -20934,7 +20934,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Rename Method-",
       "mappingState" : 5,
       "validationComment" : "the replacement is -runInternalArnoldi(3) -> runInternalIteration()-, which is unjustifiable."
     }
@@ -20976,7 +20976,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "the replacements and non-mapped leaves are not justifiable"
     }
@@ -21018,7 +21018,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
@@ -21060,7 +21060,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "The addition of the variable declaration does not change the program behavior. The statement just got splitted"
     }
@@ -21587,7 +21587,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Tolerable changes in the body",
+      "purityComment" : "Tolerable changes in the body\n",
       "mappingState" : 1,
       "validationComment" : "this. has been omitted, which is a pure change in case of a pull up method"
     }
@@ -21615,7 +21615,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "Rename Variable on top of the pull up method"
     }
@@ -21899,7 +21899,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "Rename Parameter on top of the Pull Up method"
     }
@@ -24698,7 +24698,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves and replacements are not justifiable"
     }
@@ -24782,7 +24782,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "put has been changed to putAll. And Rename Parameter on top."
     }
@@ -24796,7 +24796,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves and replacements are not justifiable"
     }

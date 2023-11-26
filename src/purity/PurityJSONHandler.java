@@ -22,18 +22,18 @@ import java.util.*;
 
 public class PurityJSONHandler {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-//        addPurityFields("C:\\Users\\Pedram\\Desktop\\sampleRes.json", "C:\\Users\\Pedram\\Desktop\\sampleResPurity.json");
+//        addPurityFields("/Users/pedram/Desktop/sampleRes.json", "/Users/pedram/Desktop/sampleResPurity.json");
 //        addExtraPurityFields("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
 //        numberOfRefactorings("/Users/pedram/Desktop/RefactoringMiner/src/purity/Puritydata.json");
 
 
-        String outputPath = runPurity("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PushDownMethod.json");
+        String outputPath = runPurity("/Users/pedram/Desktop/RefactoringMiner/src/purity/PushDownMethod.json");
 //
-        calculatePrecisionAndRecallOnSpecificRefactoring("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultPushDown.json", RefactoringType.PUSH_DOWN_OPERATION);
+//        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResultPullUp.json", RefactoringType.PULL_UP_OPERATION);
 //        calculatePrecisionAndRecallOnSpecificRefactoring("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResFeb3.json", RefactoringType.EXTRACT_OPERATION);
 //        testMethod("C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PurityResultTest.json");
 //
@@ -41,7 +41,23 @@ public class PurityJSONHandler {
 //        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src/purity/PurityData.json", "Move and Inline Method");
 //        extractRefactoringFromOracle("/Users/pedram/Desktop/RefactoringMiner/src-test/Data/data.json", "Move and Inline Method");
 
+//        testt(RefactoringType.EXTRACT_OPERATION);
 
+
+    }
+
+    private static void testt(RefactoringType refactoringType) throws IOException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        File file = new File("/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResultMove.json");
+
+        List<RepositoryJson> repositoryJsonList = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, RepositoryJson.class));
+        int TPCounter = (int) repositoryJsonList.stream().flatMap(r -> r.getRefactorings().stream()).
+                filter(r -> r.getType().equals(refactoringType.getDisplayName())).
+                filter(r -> r.getPurity().getPurityValidation().equals("TP")).
+                filter(r -> r.getPurity().getPurityComment().equals("Identical statements")).count();
+
+        System.out.println(TPCounter);
     }
 
     private static void extractRefactoringFromOracle(String sourcePath, String refactoringType) {
@@ -161,7 +177,8 @@ public class PurityJSONHandler {
             System.out.println("Specificity for " + refactoringType.getDisplayName() + " refactoring is: " + specificity * 100);
             System.out.println("F-score for " + refactoringType.getDisplayName() + " refactoring is: " + fScore);
 
-
+            if (true)
+                return;
             try
             {
                 String filename= "Statistics.txt";
@@ -297,7 +314,7 @@ public class PurityJSONHandler {
                         }, 100);
             }
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String outputPath = "C:\\Users\\Pedram\\Desktop\\RefactoringMiner\\src\\purity\\PuritydataResultPushDown.json";
+            String outputPath = "/Users/pedram/Desktop/RefactoringMiner/src/purity/PuritydataResultPushDown.json";
             objectMapper.writeValue(new File(outputPath), arrayNode);
             return outputPath;
         } catch (IOException e) {

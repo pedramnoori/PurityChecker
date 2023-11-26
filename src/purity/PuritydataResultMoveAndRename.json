@@ -715,7 +715,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "Rename Variable on top"
     }
@@ -1032,7 +1032,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "change happened inside the ternary operation. PurityChecker cannot evaluate the expression based on the argument passed"
     }
@@ -1046,7 +1046,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "change happened inside the ternary operation. PurityChecker cannot evaluate the expression based on the argument passed"
     }
@@ -1274,7 +1274,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The paramenter -userId- has been replaced with the new field -mUserId-. This change seems pure but there is no information available for justifying this change."
     }
@@ -1927,7 +1927,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "null check has been removed along with other non-justifiable changes"
     }
@@ -1941,7 +1941,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "Lots of unjustifiable changes happened on top of the refactoring"
     }
@@ -8110,7 +8110,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Rename Variable-",
       "mappingState" : 5,
       "validationComment" : "Rename Variable and Move Method on top"
     }
@@ -8124,7 +8124,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Move Method refactoring mechanics",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics\n",
       "mappingState" : 1,
       "validationComment" : "Move Method mechanics caused a justifiable change"
     }
@@ -10022,8 +10022,8 @@
     "validators" : "Ameya",
     "purity" : {
       "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe Changes",
+      "purityValidation" : "TP",
+      "purityComment" : "Tolerable changes in the body\n",
       "mappingState" : 5,
       "validationComment" : "The change -getServerURL -> getURL- is pure based on manual validation but PurityChecker does not have enough information to justify the change"
     }
@@ -11240,7 +11240,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
@@ -12411,7 +12411,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12425,7 +12425,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12439,7 +12439,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12453,7 +12453,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12467,7 +12467,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12481,7 +12481,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12495,7 +12495,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12509,7 +12509,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12523,7 +12523,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12537,7 +12537,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12551,7 +12551,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12565,7 +12565,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12579,7 +12579,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12607,7 +12607,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12621,7 +12621,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12635,7 +12635,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12649,7 +12649,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12663,7 +12663,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12677,7 +12677,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12691,7 +12691,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12705,7 +12705,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12719,7 +12719,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12733,7 +12733,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12747,7 +12747,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12761,7 +12761,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12775,7 +12775,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12789,7 +12789,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12803,7 +12803,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12817,7 +12817,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12831,7 +12831,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12845,7 +12845,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -12859,7 +12859,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Add Parameter-",
       "mappingState" : 5,
       "validationComment" : ""
     }
@@ -17152,7 +17152,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Method-",
       "mappingState" : 1,
       "validationComment" : "Rename Method on top"
     }
@@ -19438,7 +19438,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "The returned string has been changed"
     }
@@ -19452,7 +19452,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "The returned string has been changed"
     }
@@ -19466,7 +19466,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "The returned string has been changed"
     }
@@ -32770,7 +32770,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leave is not reported -file.deleteOnExit();-"
     }
@@ -35285,7 +35285,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "non-mapped leave is not justifiable. It a totally different constructor"
     }
@@ -35299,7 +35299,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "non-mapped leave is not justifiable. It a totally different constructor"
     }
@@ -35867,8 +35867,8 @@
     "validators" : "Ameya",
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityValidation" : "FP",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "null check has been added to the moved method, which is a impure change in this case"
     }
@@ -35882,7 +35882,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "Incorrent refactoring in my opinion"
     }
@@ -35896,7 +35896,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "Incorrent refactoring in my opinion"
     }
@@ -36703,7 +36703,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Method-",
       "mappingState" : 1,
       "validationComment" : "Rename (and Move) method on top"
     }
@@ -37607,7 +37607,7 @@
     "validators" : null,
     "purity" : {
       "purityValue" : "0",
-      "purityValidation" : "FP",
+      "purityValidation" : "TN",
       "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "the removed statement and the replacement in the return statement are not justifiable changes"
@@ -37622,7 +37622,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
@@ -37909,253 +37909,6 @@
   } ],
   "refDiffExecutionTime" : 0
 }, {
-  "id" : 1133238,
-  "repository" : "https://github.com/google/truth.git",
-  "sha1" : "1768840bf1e69892fd2a23776817f620edfed536",
-  "url" : "https://github.com/google/truth/commit/1768840bf1e69892fd2a23776817f620edfed536",
-  "author" : "kak",
-  "time" : "7/6/15 1:54 PM",
-  "refactorings" : [ {
-    "type" : "Move Class",
-    "description" : "Move Class com.google.common.truth.ListTest.Bar moved to com.google.common.truth.IterableTest.Bar",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Class",
-    "description" : "Move Class com.google.common.truth.ListTest.Foo moved to com.google.common.truth.IterableTest.Foo",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public listContainsExactlyArray() : void renamed to public iterableContainsExactlyArray() : void in class com.google.common.truth.IterableTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, GumTreeDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method public isOrderedFailure() : void from class com.google.common.truth.ListTest to public isOrderedFailure() : void from class com.google.common.truth.IterableTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : "Matin",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method public isStrictlyOrderedFailure() : void from class com.google.common.truth.ListTest to public isStrictlyOrderedFailure() : void from class com.google.common.truth.IterableTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : "Matin",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method public isOrderedWithNonComparableElementsFailure() : void from class com.google.common.truth.ListTest to public isOrderedWithNonComparableElementsFailure() : void from class com.google.common.truth.IterableTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : "Matin",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method public isStrictlyOrderedWithNonComparableElementsFailure() : void from class com.google.common.truth.ListTest to public isStrictlyOrderedWithNonComparableElementsFailure() : void from class com.google.common.truth.IterableTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x, RMiner-1x",
-    "validators" : "Matin",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Attribute",
-    "description" : "Move Attribute private FOO_COMPARATOR : Comparator<Foo> from class com.google.common.truth.ListTest to private FOO_COMPARATOR : Comparator<Foo> from class com.google.common.truth.IterableTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
-    "validators" : "Matin",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Attribute",
-    "description" : "Move Attribute private COMPARE_AS_DECIMAL : Comparator<String> from class com.google.common.truth.ListTest to private COMPARE_AS_DECIMAL : Comparator<String> from class com.google.common.truth.IterableTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RMiner-1x",
-    "validators" : "Matin",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Rename Method",
-    "description" : "Move And Rename Method public listIsStrictlyOrdered() : void from class com.google.common.truth.ListTest to public iterableIsStrictlyOrdered() : void from class com.google.common.truth.IterableTest",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
-      "validationComment" : "-Arrays.- has been removed, which is a justifiable change"
-    }
-  }, {
-    "type" : "Move And Rename Method",
-    "description" : "Move And Rename Method public listIsOrdered() : void from class com.google.common.truth.ListTest to public iterableIsOrdered() : void from class com.google.common.truth.IterableTest",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
-      "validationComment" : "-Arrays.- has been removed, which is a justifiable change"
-    }
-  }, {
-    "type" : "Move And Rename Method",
-    "description" : "Move And Rename Method public listIsStrictlyOrderedWithComparator() : void from class com.google.common.truth.ListTest to public iterableIsStrictlyOrderedWithComparator() : void from class com.google.common.truth.IterableTest",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RD-2x",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 5,
-      "validationComment" : "The assertion has been changed"
-    }
-  }, {
-    "type" : "Move And Rename Method",
-    "description" : "Move And Rename Method public listIsStrictlyOrderedWithComparatorFailure() : void from class com.google.common.truth.ListTest to public iterableIsStrictlyOrderedWithComparatorFailure() : void from class com.google.common.truth.IterableTest",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RD-2x",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
-      "validationComment" : "-Arrays.- has been removed, which is a justifiable change"
-    }
-  }, {
-    "type" : "Move And Rename Method",
-    "description" : "Move And Rename Method public listIsOrderedWithComparator() : void from class com.google.common.truth.ListTest to public iterableIsOrderedWithComparator() : void from class com.google.common.truth.IterableTest",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RD-2x",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 5,
-      "validationComment" : "The assertion has been changed"
-    }
-  }, {
-    "type" : "Move And Rename Method",
-    "description" : "Move And Rename Method public listIsOrderedWithComparatorFailure() : void from class com.google.common.truth.ListTest to public iterableIsOrderedWithComparatorFailure() : void from class com.google.common.truth.IterableTest",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RD-2x",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
-      "validationComment" : "-Arrays.- has been removed, which is a justifiable change"
-    }
-  }, {
-    "type" : "Move And Rename Method",
-    "description" : "Move And Rename Method public listOrderedByBaseClassComparator() : void from class com.google.common.truth.ListTest to public iterableOrderedByBaseClassComparator() : void from class com.google.common.truth.IterableTest",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RD-2x",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "1",
-      "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 1,
-      "validationComment" : "-Arrays.- has been removed, which is a justifiable change"
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type targetList : List<Bar> to targetList : Iterable<Bar> in method public iterableOrderedByBaseClassComparator() : void from class com.google.common.truth.IterableTest",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ],
-  "refDiffExecutionTime" : 301
-}, {
   "id" : 1133259,
   "repository" : "https://github.com/slapperwan/gh4a.git",
   "sha1" : "b8fffb706258db4c4d2f608d8e8dad9312e2230d",
@@ -38284,7 +38037,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "the replacement -Constants.MARKDOWN_EXT.contains(ext) -> isMarkdown- is not justifiable based on manual validation, so the if condition has been impurely changed"
     }
@@ -39161,7 +38914,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "one assert statement has been added to the child version"
     }
@@ -39175,7 +38928,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "one assert statement has been added to the child version"
     }
@@ -39828,7 +39581,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "-.activationFunction(softmax)- has been added to the child version. Also, the distribution hyperparameter has been changed from Distribution to Xavier."
     }
@@ -39949,7 +39702,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Extract Method-",
       "mappingState" : 5,
       "validationComment" : "one assersion has been added to the child version"
     }
@@ -45791,7 +45544,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "According to the manual validation of the commit, the -URN_PATTERN- attribute remained in the child version (https://jgroupsschema.java) but instead, the parameter -pattern- has been used in the statement. So, this makes the change impure."
     }
@@ -48502,7 +48255,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -48530,7 +48283,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -48544,7 +48297,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -48600,7 +48353,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -49594,7 +49347,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -49608,7 +49361,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -49622,7 +49375,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -49636,7 +49389,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -49650,7 +49403,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -49664,7 +49417,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newLongGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -50140,7 +49893,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -50154,7 +49907,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the replacement -getGauge -> newDoubleGauge- is not justifiable as there is no connection between the getGauge and newLongGauge methods"
     }
@@ -50384,2213 +50137,6 @@
     }
   } ],
   "refDiffExecutionTime" : 5604
-}, {
-  "id" : 1144936,
-  "repository" : "https://github.com/NLPchina/ansj_seg.git",
-  "sha1" : "913704e835169255530c7408cad11ce9a714d4ec",
-  "url" : "https://github.com/NLPchina/ansj_seg/commit/913704e835169255530c7408cad11ce9a714d4ec",
-  "author" : "zhl",
-  "time" : "7/16/15 2:33 PM",
-  "refactorings" : [ {
-    "type" : "Move Class",
-    "description" : "Move Class org.ansj.app.crf.pojo.TempFeature moved to org.ansj.app.crf.CrfppModelParser.TempFeature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, RD-1x, RMiner-1x",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method public addStatus(sta String) : void inlined to public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model in class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : "<p>addStatus() is still called with 3 arguments instead of 1 addStatus(statusMap, split[1], tagNum)</p>",
-    "validation" : "FP",
-    "detectionTools" : "RefDiff",
-    "validators" : "Laleh",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method private parseFile(path String, templatePath String) : void renamed to public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model in class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : "<p>added</p><p>I don't see moved classes here, the rename method is reported in the new class. should DOUBLE CHECK WITH MATIN</p><p>Nikos: org.ansj.app.crf.WapitiCRFModelParser is a new class.</p>",
-    "validation" : "FP",
-    "detectionTools" : "RefDiff, RD-1x",
-    "validators" : "Davood, Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method public withStatusMap(statusMap Map<String,Integer>) : Template extracted from private parseFile(path String, templatePath String) : void in class org.ansj.app.crf.model.WapitiCRFModel & moved to class org.ansj.app.crf.pojo.Template",
-    "comment" : "<p>added</p><p>The original file is deleted, so should be FP. DOUBLE CHECK WITH MATIN</p>",
-    "validation" : "FP",
-    "detectionTools" : "RefDiff",
-    "validators" : "Davood, Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Method",
-    "description" : "Inline Method public parse(templateStr String) : Template inlined to public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model in class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : "<p>Class WapitiCRFModelParser is an added class. How can we have an inline method in a newly added class!</p>",
-    "validation" : "FP",
-    "detectionTools" : "RefDiff",
-    "validators" : "Laleh, Davood",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Extract And Move Method",
-    "description" : "Extract And Move Method public withTagNum(tagNum int) : Template extracted from private parseFile(path String, templatePath String) : void in class org.ansj.app.crf.model.WapitiCRFModel & moved to class org.ansj.app.crf.pojo.Template",
-    "comment" : "<p>added</p><p>The source file has been removed, DOUBLE CHECK WITH MATIN</p><p>&nbsp;</p>",
-    "validation" : "FP",
-    "detectionTools" : "RefDiff",
-    "validators" : "Davood, Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable e : Element to element : Element in method public cut(line String) : List<String> from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable split : String[] to fragments : String[] in method public TempFeature(input String, tagNum int) from class org.ansj.app.crf.CrfppModelParser.TempFeature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable i : int to fIdx : int in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable t : Template to tmpl : Template in method private computeTagScore(elements List<Element>, index int) : void from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter str : String to input : String in method public TempFeature(input String, tagNum int) from class org.ansj.app.crf.CrfppModelParser.TempFeature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter modelStream : InputStream to inputStream : InputStream in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter path : String to template : Template in method protected Model(template Template, smartForest SmartForest<double[][]>, status double[][]) in class org.ansj.app.crf.Model",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter path : String to outputStream : OutputStream in method public writeModel(model Model, outputStream OutputStream) : void in class org.ansj.app.crf.Model",
-    "comment" : "<p>path is wrapped into and OutputStream: <span class='blob-code-inner blob-code-marker' data-code-marker='-'><span class='pl-k'>new</span> <span class='pl-smi'>BufferedOutputStream</span>(<span class='pl-k'>new</span> <span class='pl-smi'>GZIPOutputStream</span>(<span class='pl-k'>new</span> <span class='pl-smi'>FileOutputStream</span>(path))), and after refactoring the outputStream is passed directly as a parameter<br /></span></p>",
-    "validation" : "CTP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type path : String to template : Template in method protected Model(template Template, smartForest SmartForest<double[][]>, status double[][]) in class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Parameter Type",
-    "description" : "Change Parameter Type path : String to outputStream : OutputStream in method public writeModel(model Model, outputStream OutputStream) : void in class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "CTP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type boolean to int in method public hashCode() : int in class org.ansj.app.keyword.Keyword",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type void to boolean in method public equals(obj Object) : boolean in class org.ansj.app.keyword.Keyword",
-    "comment" : "null",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Ameya",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Rename Class",
-    "description" : "Move And Rename Class org.ansj.app.crf.model.WapitiCRFModel moved and renamed to org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : "<p>The code of the two classes looks quite similar, but <small>org.ansj.app.crf.WapitiCRFModelParser</small> is a new class.</p>",
-    "validation" : "FP",
-    "detectionTools" : "RefDiff, RD-1x",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public equals(obj Object) : boolean renamed to public hashCode() : int in class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Method",
-    "description" : "Rename Method public setName(name String) : void renamed to public equals(obj Object) : boolean in class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation @SneakyThrows in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Annotation",
-    "description" : "Add Attribute Annotation @Getter in attribute private tag : int from class org.ansj.app.crf.pojo.Element",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Annotation",
-    "description" : "Add Attribute Annotation @Setter in attribute private name : String from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Annotation",
-    "description" : "Add Attribute Annotation @Getter in attribute private name : String from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Annotation",
-    "description" : "Add Attribute Annotation @Getter in attribute private score : double from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Annotation",
-    "description" : "Add Attribute Annotation @Getter in attribute private freq : int from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner, GumTreeDiff",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation @Deprecated in method public writeModel(model Model, outputStream OutputStream) : void from class org.ansj.app.crf.Model",
-    "comment" : "null",
-    "validation" : "CTP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation @SneakyThrows in method public writeModel(model Model, outputStream OutputStream) : void from class org.ansj.app.crf.Model",
-    "comment" : "null",
-    "validation" : "CTP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation @Override in method public hashCode() : int from class org.ansj.app.keyword.Keyword",
-    "comment" : "<p>hashCode() is a new method</p>",
-    "validation" : "FP",
-    "detectionTools" : "GumTreeDiff",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Thrown Exception Type",
-    "description" : "Remove Thrown Exception Type Exception in method public loadModel(modelStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Rename Method",
-    "description" : "Move And Rename Method private parseFile(path String, templatePath String) : void from class org.ansj.app.crf.model.WapitiCRFModel to public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 5,
-      "validationComment" : "non-mapped leaves are not justifiable"
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier private to public in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type void to Model in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation @SneakyThrows in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move Method",
-    "description" : "Move Method private parseGrad(temp String, featureNum int) : void from class org.ansj.app.crf.model.WapitiCRFModel to private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter statusMap : Map<String,Integer> in method private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter tagNum : int in method private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter myGrad : Map<String,Feature> in method private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Move And Rename Method",
-    "description" : "Move And Rename Method private parseFile(path String) : void from class org.ansj.app.crf.model.CRFModel to public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "0",
-      "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
-      "mappingState" : 5,
-      "validationComment" : "non-mapped leaves are not justifiable"
-    }
-  }, {
-    "type" : "Remove Thrown Exception Type",
-    "description" : "Remove Thrown Exception Type Exception in method private parseFile(path String) : void from class org.ansj.app.crf.model.CRFModel",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Thrown Exception Type",
-    "description" : "Remove Thrown Exception Type Exception in method private parseFile(path String, templatePath String) : void from class org.ansj.app.crf.model.WapitiCRFModel",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Method Access Modifier",
-    "description" : "Change Method Access Modifier private to public in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Annotation",
-    "description" : "Add Method Annotation @SneakyThrows in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Return Type",
-    "description" : "Change Return Type void to Model in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier protected to public in attribute public template : Template from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier protected to private in attribute private status : double[][] from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier protected to private in attribute private myGrad : Map<String,Feature> from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Attribute Access Modifier",
-    "description" : "Change Attribute Access Modifier protected to private in attribute private smartForest : SmartForest<double[][]> from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier static in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier static in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Method Modifier",
-    "description" : "Add Method Modifier static in method private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute public template : Template from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute private status : double[][] from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute private myGrad : Map<String,Feature> from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute private smartForest : SmartForest<double[][]> from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute private model : Model from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute private tagConver : int[] from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute private revTagConver : int[] from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute public name : char from class org.ansj.app.crf.pojo.Element",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute public left : int from class org.ansj.app.crf.pojo.Template",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute public right : int from class org.ansj.app.crf.pojo.Template",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute public ft : int[][] from class org.ansj.app.crf.pojo.Template",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute public tagNum : int from class org.ansj.app.crf.pojo.Template",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute public statusMap : Map<String,Integer> from class org.ansj.app.crf.pojo.Template",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Attribute Modifier",
-    "description" : "Add Attribute Modifier final in attribute private idf : double from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter left : int in method private makeSide(left int, right int) : void from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter right : int in method private makeSide(left int, right int) : void from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter inputStream : InputStream in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter featureIndex : int in method public getFeature(featureIndex int, chars char...) : double[] from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter chars : char... in method public getFeature(featureIndex int, chars char...) : double[] from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter s1 : int in method public tagRate(s1 int, s2 int) : double from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter s2 : int in method public tagRate(s1 int, s2 int) : double from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter model : Model in method public SplitWord(model Model) from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter chars : char[] in method public cut(chars char[]) : List<String> from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter line : String in method public cut(line String) : List<String> from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter elements : List<Element> in method private computeTagScore(elements List<Element>, index int) : void from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter index : int in method private computeTagScore(elements List<Element>, index int) : void from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter elements : List<Element> in method private getElement(elements List<Element>, i int) : Element from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter i : int in method private getElement(elements List<Element>, i int) : Element from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter tag : int in method public fixTag(tag int) : int from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter word : String in method public cohesion(word String) : double from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable elements : List<Element> in method public cut(line String) : List<String> from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable tmpl : Template in method private computeTagScore(elements List<Element>, index int) : void from class org.ansj.app.crf.SplitWord",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable elements : List<Element> in method public cohesion(word String) : double from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable len : int in method public cohesion(word String) : double from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter name : char in method public Element(name char) from class org.ansj.app.crf.pojo.Element",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter tag : int in method public updateTag(tag int) : Element from class org.ansj.app.crf.pojo.Element",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter model : Model in method public maxFrom(model Model, element Element) : void from class org.ansj.app.crf.pojo.Element",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter element : Element in method public maxFrom(model Model, element Element) : void from class org.ansj.app.crf.pojo.Element",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable pTagScore : double[] in method public maxFrom(model Model, element Element) : void from class org.ansj.app.crf.pojo.Element",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable value : double in method public maxFrom(model Model, element Element) : void from class org.ansj.app.crf.pojo.Element",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter featureNum : int in method public Feature(featureNum int, tagNum int) from class org.ansj.app.crf.pojo.Feature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter tagNum : int in method public Feature(featureNum int, tagNum int) from class org.ansj.app.crf.pojo.Feature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter w : double[][] in method public Feature(w double[][]) from class org.ansj.app.crf.pojo.Feature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter fIndex : int in method public update(fIndex int, sta int, step double) : void from class org.ansj.app.crf.pojo.Feature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter sta : int in method public update(fIndex int, sta int, step double) : void from class org.ansj.app.crf.pojo.Feature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter step : double in method public update(fIndex int, sta int, step double) : void from class org.ansj.app.crf.pojo.Feature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable sb : StringBuilder in method public toString() : String from class org.ansj.app.crf.pojo.Feature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable ints : double[] in method public toString() : String from class org.ansj.app.crf.pojo.Feature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable ints : int[] in method public toString() : String from class org.ansj.app.crf.pojo.Template",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter name : String in method public Keyword(name String, docFreq int, weight double) from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter docFreq : int in method public Keyword(name String, docFreq int, weight double) from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter weight : double in method public Keyword(name String, docFreq int, weight double) from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter name : String in method public Keyword(name String, score double) from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter score : double in method public Keyword(name String, score double) from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter o : Keyword in method public compareTo(o Keyword) : int from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter obj : Object in method public equals(obj Object) : boolean from class org.ansj.app.keyword.Keyword",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter tagNum : int in method public TempFeature(input String, tagNum int) from class org.ansj.app.crf.CrfppModelParser.TempFeature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter input : String in method public TempFeature(input String, tagNum int) from class org.ansj.app.crf.CrfppModelParser.TempFeature",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable fragments : String[] in method public TempFeature(input String, tagNum int) from class org.ansj.app.crf.CrfppModelParser.TempFeature",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter path : String in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter temp : String in method private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter featureNum : int in method private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter modelFile : String in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter",
-    "description" : "Add Parameter maxSize : int in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Parameter",
-    "description" : "Remove Parameter path : String in method private parseFile(path String, templatePath String) : void from class org.ansj.app.crf.model.WapitiCRFModel",
-    "comment" : "null",
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : "Nikos",
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Remove Class Modifier",
-    "description" : "Remove Class Modifier abstract in class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Class Modifier",
-    "description" : "Add Class Modifier static in class org.ansj.app.crf.CrfppModelParser.TempFeature",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable w : double[][] in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable ois : ObjectInputStream in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable featureNum : int in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable model : Model in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable tagNum : int in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable tagScore : double[] in method private computeTagScore(elements List<Element>, index int) : void from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable chars : char[] in method private computeTagScore(elements List<Element>, index int) : void from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable result : List<String> in method public cut(line String) : List<String> from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Change Variable Type",
-    "description" : "Change Variable Type result : LinkedList<String> to result : List<String> in method public cut(line String) : List<String> from class org.ansj.app.crf.SplitWord",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable sf : SmartForest<double[][]> in method public getFeature(featureIndex int, chars char...) : double[] from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable sb : StringBuilder in method public toString() : String from class org.ansj.app.crf.pojo.Template",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable featureCount : int in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable maxId : int in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable bIndex : int in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable tmpFeature : TempFeature in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable templateStringBuilder : StringBuilder in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable reader : BufferedReader in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable featureNum : int in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable statusMap : Map<String,Integer> in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable tmpFeatures : TempFeature[] in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable tf : TempFeature to tmpFeature : TempFeature in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable tempFeatureArr : TempFeature[] to tmpFeatures : TempFeature[] in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable sb : StringBuilder to templateStringBuilder : StringBuilder in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Parameter",
-    "description" : "Rename Parameter templatePath : String to templateFile : String in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Inline Variable",
-    "description" : "Inline Variable split : String[] in method private parseFile(path String) : void from class org.ansj.app.crf.model.CRFModel",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Parameter Modifier",
-    "description" : "Add Parameter Modifier final in parameter templateFile : String in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable statusLines : List<String> in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable str : String in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable modelReader : BufferedReader in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable templateString : String in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable content : String to templateString : String in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable reader : BufferedReader to modelReader : BufferedReader in method public parseWapitiCRFModel(modelFile String, templateFile String, maxSize int) : Model from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable mIndex : int in method private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable name : String in method private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable fragments : String[] in method private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Rename Variable",
-    "description" : "Rename Variable split : String[] to fragments : String[] in method private parseGrad(statusMap Map<String,Integer>, myGrad Map<String,Feature>, temp String, featureNum int, tagNum int) : void from class org.ansj.app.crf.WapitiCRFModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable feature : Feature in method public parseCrfpp(path String) : Model from class org.ansj.app.crf.CrfppModelParser",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  }, {
-    "type" : "Add Variable Modifier",
-    "description" : "Add Variable Modifier final in variable key : String in method public loadModel(inputStream InputStream) : Model from class org.ansj.app.crf.Model",
-    "comment" : null,
-    "validation" : "TP",
-    "detectionTools" : "RefactoringMiner",
-    "validators" : null,
-    "purity" : {
-      "purityValue" : "-",
-      "purityValidation" : "-",
-      "purityComment" : "",
-      "mappingState" : "",
-      "validationComment" : ""
-    }
-  } ],
-  "refDiffExecutionTime" : 0
 }, {
   "id" : 1145105,
   "repository" : "https://github.com/MovingBlocks/Terasology.git",
@@ -53252,7 +50798,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "Extract Method on top of the Move and Rename Method"
     }
@@ -53653,7 +51199,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "non-mapped leaves are not justifiable"
     }
@@ -54754,7 +52300,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n- Move Attribute-",
       "mappingState" : 1,
       "validationComment" : "Move Attribute and Move Method mechanic changes on top"
     }
@@ -54768,7 +52314,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Move Method refactoring mechanics",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics\n",
       "mappingState" : 1,
       "validationComment" : "Move Attribute and Move Method mechanic changes on top"
     }
@@ -54810,7 +52356,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Move Method refactoring mechanics",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics\n",
       "mappingState" : 1,
       "validationComment" : "Move Method mechanics caused changes are on top"
     }
@@ -55146,7 +52692,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "Changes are within the Move Method refactoring mechanics",
+      "purityComment" : "Changes are within the Move Method refactoring mechanics\n",
       "mappingState" : 1,
       "validationComment" : "Move Method mechanics caused changes are on top"
     }
@@ -55491,7 +53037,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "try-finally has been added to the moved method"
     }
@@ -56867,7 +54413,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "- Rename Variable-",
       "mappingState" : 5,
       "validationComment" : "the if condition with the throw body has been added to the moved method, which is an impure change"
     }
@@ -57161,7 +54707,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "return statement and the variable it returns has been added to the moved method"
     }
@@ -58444,7 +55990,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "Although most of the replacements are justifiable, the non-mapped leaves are not justifiable based on the manual validation. There is no Extract Method relating to the unpack function"
     }
@@ -59573,7 +57119,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n- Rename Variable-",
       "mappingState" : 1,
       "validationComment" : "The first one returns a node and the second one returns a string. That's why the replacement among -myNamesToNodesMap -> myNamesToPathsMap- is not justifiable. Note that there is no refactoring related to this replacement. "
     }

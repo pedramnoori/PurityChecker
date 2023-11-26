@@ -19,7 +19,7 @@ public class API {
 */
 
     public static void main(String[] args) {
-        isPureAPI("https://github.com/restlet/restlet-framework-java/commit/182da4a46db52a99a2f8951b0a25aeaa1a1a6c35");
+        isPureAPI("https://github.com/SonarSource/sonarqube/commit/7668c875dfa7240b1ec08eb60b42107bae1b4cd3");
     }
 
     public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {

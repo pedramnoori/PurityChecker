@@ -53665,7 +53665,7 @@
       "purityValidation" : "-",
       "purityComment" : "",
       "mappingState" : "",
-      "validationComment" : "Move and Rename Method on top of the moved method"
+      "validationComment" : "Rename Method on top of the moved method"
     }
   }, {
     "type" : "Extract Method",

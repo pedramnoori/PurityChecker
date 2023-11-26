@@ -2833,7 +2833,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "",
       "mappingState" : 3,
       "validationComment" : "the method hasn't been inlined completely. Non-mapped leaves are not justifiable"
     }
@@ -2847,7 +2847,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "",
       "mappingState" : 3,
       "validationComment" : "the method hasn't been inlined completely. Non-mapped leaves are not justifiable"
     }
@@ -3094,7 +3094,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes + \n",
+      "purityComment" : "",
       "mappingState" : 2,
       "validationComment" : "the method hasn't been inlined completely. Non-mapped leaves are not justifiable"
     }
@@ -6108,7 +6108,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the change in the number of arguments is not justifiable with the provided refactorings and is not a pure change"
     }
@@ -6122,7 +6122,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the change in the number of arguments is not justifiable with the provided refactorings and is not a pure change"
     }
@@ -7680,7 +7680,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "TP",
-      "purityComment" : "",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Add Parameter-",
       "mappingState" : 2,
       "validationComment" : "Add Parameter happened in the sub-expression. Good catch by PurityChecker - Return statement added"
     }

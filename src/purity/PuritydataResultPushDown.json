@@ -1815,7 +1815,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Add Parameter-",
       "mappingState" : 1,
       "validationComment" : "Add Parameter and Rename Variable on top, which PurityChecker is able to catch this change - also, -PrintFormat- has been omitted since the actual method has been imported (the import has been changed)"
     }
@@ -3879,6 +3879,561 @@
     }
   } ],
   "refDiffExecutionTime" : 11758
+}, {
+  "id" : 1122454,
+  "repository" : "https://github.com/crate/crate.git",
+  "sha1" : "5373a852a7e45715e0a6771b7cd56592994c07dd",
+  "url" : "https://github.com/crate/crate/commit/5373a852a7e45715e0a6771b7cd56592994c07dd",
+  "author" : "Philipp Bogensberger",
+  "time" : "6/23/15 10:52 AM",
+  "refactorings" : [ {
+    "type" : "Push Down Method",
+    "description" : "Push Down Method public plan() : Plan from class io.crate.planner.node.dql.ESDQLPlanNode to public plan() : Plan from class io.crate.planner.node.dql.ESGetNode",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner, RefDiff, RD-1x, RD-2x",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "1",
+      "purityValidation" : "FN",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n- Add Parameter-",
+      "mappingState" : 1,
+      "validationComment" : "Add parameter (constructor version) on top of the pushed down method"
+    }
+  }, {
+    "type" : "Rename Parameter",
+    "description" : "Rename Parameter plannerContext : Planner.Context to jobId : UUID in method public collect(jobId UUID, tableInfo TableInfo, plannerContext Planner.Context, whereClause WhereClause, toCollect List<Symbol>, projections ImmutableList<Projection>) : CollectNode in class io.crate.planner.PlanNodeBuilder",
+    "comment" : "null",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Parameter Type",
+    "description" : "Change Parameter Type plannerContext : Planner.Context to jobId : UUID in method public collect(jobId UUID, tableInfo TableInfo, plannerContext Planner.Context, whereClause WhereClause, toCollect List<Symbol>, projections ImmutableList<Projection>) : CollectNode in class io.crate.planner.PlanNodeBuilder",
+    "comment" : null,
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type INSTANCE : NoopPlan to id : UUID in class io.crate.planner.NoopPlan",
+    "comment" : "<p>singleton to property</p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Attribute Type",
+    "description" : "Change Attribute Type INSTANCE : KillPlan to id : UUID in class io.crate.planner.node.management.KillPlan",
+    "comment" : "<p>singleton to property</p>",
+    "validation" : "FP",
+    "detectionTools" : "GumTreeDiff",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Extract And Move Method",
+    "description" : "Extract And Move Method public jobId() : UUID extracted from public testStreaming() : void in class io.crate.planner.node.dql.CountNodeTest & moved to class io.crate.planner.node.dql.ESGetNode",
+    "comment" : "null",
+    "validation" : "FP",
+    "detectionTools" : "RMiner-1x",
+    "validators" : "Nikos",
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public IterablePlan(id UUID, nodes PlanNode...) from class io.crate.planner.IterablePlan",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public distributingCollect(jobId UUID, tableInfo TableInfo, plannerContext Planner.Context, whereClause WhereClause, toCollect List<Symbol>, downstreamNodes List<String>, projections ImmutableList<Projection>) : CollectNode from class io.crate.planner.PlanNodeBuilder",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public distributedMerge(jobId UUID, collectNode CollectNode, plannerContext Planner.Context, projections List<Projection>) : MergeNode from class io.crate.planner.PlanNodeBuilder",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public localMerge(jobId UUID, projections List<Projection>, previousNode DQLPlanNode, plannerContext Planner.Context) : MergeNode from class io.crate.planner.PlanNodeBuilder",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public sortedLocalMerge(jobId UUID, projections List<Projection>, orderBy OrderBy, sourceSymbols List<Symbol>, orderBySymbols List<Symbol>, previousNode DQLPlanNode, plannerContext Planner.Context) : MergeNode from class io.crate.planner.PlanNodeBuilder",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public collect(jobId UUID, tableInfo TableInfo, plannerContext Planner.Context, whereClause WhereClause, toCollect List<Symbol>, projections ImmutableList<Projection>, partitionIdent String, routingPreference String, orderBy OrderBy, limit Integer) : CollectNode from class io.crate.planner.PlanNodeBuilder",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public collect(jobId UUID, tableInfo TableInfo, plannerContext Planner.Context, whereClause WhereClause, toCollect List<Symbol>, projections ImmutableList<Projection>) : CollectNode from class io.crate.planner.PlanNodeBuilder",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public collect(jobId UUID, tableInfo TableInfo, plannerContext Planner.Context, whereClause WhereClause, toCollect List<Symbol>, projections ImmutableList<Projection>, partitionIdent String, routingPreference String) : CollectNode from class io.crate.planner.PlanNodeBuilder",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public collect(jobId UUID, tableInfo TableInfo, plannerContext Planner.Context, whereClause WhereClause, toCollect List<Symbol>, projections ImmutableList<Projection>, partitionIdent String) : CollectNode from class io.crate.planner.PlanNodeBuilder",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public collect(jobId UUID, tableInfo TableInfo, plannerContext Planner.Context, whereClause WhereClause, toCollect List<Symbol>, projections ImmutableList<Projection>, orderBy OrderBy, limit Integer) : CollectNode from class io.crate.planner.PlanNodeBuilder",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public NoopPlannedAnalyzedRelation(relation AnalyzedRelation, id UUID) from class io.crate.planner.node.NoopPlannedAnalyzedRelation",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public InsertFromSubQuery(innerPlan Plan, handlerMergeNode MergeNode, id UUID) from class io.crate.planner.node.dml.InsertFromSubQuery",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public Upsert(nodes List<Plan>, id UUID) from class io.crate.planner.node.dml.Upsert",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method protected AbstractDQLPlanNode(jobId UUID, executionNodeId int, name String) from class io.crate.planner.node.dql.AbstractDQLPlanNode",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public CollectAndMerge(collectNode CollectNode, localMergeNode MergeNode, id UUID) from class io.crate.planner.node.dql.CollectAndMerge",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public CollectNode(jobId UUID, executionNodeId int, name String) from class io.crate.planner.node.dql.CollectNode",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public CollectNode(jobId UUID, executionNodeId int, name String, routing Routing) from class io.crate.planner.node.dql.CollectNode",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public CollectNode(jobId UUID, executionNodeId int, name String, routing Routing, toCollect List<Symbol>, projections List<Projection>) from class io.crate.planner.node.dql.CollectNode",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public CountNode(jobId UUID, executionNodeId int, routing Routing, whereClause WhereClause) from class io.crate.planner.node.dql.CountNode",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public CountPlan(countNode CountNode, mergeNode MergeNode, id UUID) from class io.crate.planner.node.dql.CountPlan",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public DistributedGroupBy(collectNode CollectNode, reducerMergeNode MergeNode, localMergeNode MergeNode, id UUID) from class io.crate.planner.node.dql.DistributedGroupBy",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public ESGetNode(executionNodeId int, tableInfo TableInfo, querySpec QuerySpec, jobId UUID) from class io.crate.planner.node.dql.ESGetNode",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public FileUriCollectNode(jobId UUID, executionNodeId int, name String, routing Routing, targetUri Symbol, toCollect List<Symbol>, projections List<Projection>, compression String, sharedStorage Boolean) from class io.crate.planner.node.dql.FileUriCollectNode",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public GlobalAggregate(collectNode CollectNode, mergeNode MergeNode, id UUID) from class io.crate.planner.node.dql.GlobalAggregate",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public MergeNode(jobId UUID, executionNodeId int, name String, numUpstreams int) from class io.crate.planner.node.dql.MergeNode",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter jobId : UUID in method public sortedMergeNode(jobId UUID, executionNodeId int, name String, numUpstreams int, orderByIndices int[], reverseFlags boolean[], nullsFirst Boolean[]) : MergeNode from class io.crate.planner.node.dql.MergeNode",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public NonDistributedGroupBy(collectNode CollectNode, localMergeNode MergeNode, id UUID) from class io.crate.planner.node.dql.NonDistributedGroupBy",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public QueryAndFetch(collectNode CollectNode, localMergeNode MergeNode, id UUID) from class io.crate.planner.node.dql.QueryAndFetch",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public QueryThenFetch(collectNode CollectNode, mergeNode MergeNode, id UUID) from class io.crate.planner.node.dql.QueryThenFetch",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public KillPlan(id UUID) from class io.crate.planner.node.management.KillPlan",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Add Parameter",
+    "description" : "Add Parameter id : UUID in method public NoopPlan(id UUID) from class io.crate.planner.NoopPlan",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier private to public in method public KillPlan(id UUID) from class io.crate.planner.node.management.KillPlan",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  }, {
+    "type" : "Change Method Access Modifier",
+    "description" : "Change Method Access Modifier private to public in method public NoopPlan(id UUID) from class io.crate.planner.NoopPlan",
+    "comment" : null,
+    "validation" : "TP",
+    "detectionTools" : "RefactoringMiner",
+    "validators" : null,
+    "purity" : {
+      "purityValue" : "-",
+      "purityValidation" : "-",
+      "purityComment" : "",
+      "mappingState" : "",
+      "validationComment" : ""
+    }
+  } ],
+  "refDiffExecutionTime" : 0
 }, {
   "id" : 1132974,
   "repository" : "https://github.com/hazelcast/hazelcast.git",
@@ -6583,7 +7138,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "Push Down and Rename Attribute on top of the Push Down Method - _entities -> _collectionResponse"
     }
@@ -6597,7 +7152,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Overlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "Push Down and Rename Attribute on top of the Push Down Method - _paging -> _collectionResponsePaging"
     }
@@ -7054,7 +7609,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the if condition has been changed - One if element has been omitted"
     }
@@ -7068,7 +7623,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Tolerable changes in the body\nOverlapped refactoring - can be identical by undoing the overlapped refactoring\n",
       "mappingState" : 1,
       "validationComment" : "the if condition has been changed - there is no connection between -slot- and -localId--"
     }
@@ -7236,7 +7791,7 @@
     "purity" : {
       "purityValue" : "0",
       "purityValidation" : "TN",
-      "purityComment" : "Severe Changes",
+      "purityComment" : "",
       "mappingState" : 5,
       "validationComment" : "setting the localId attribute has been removed within the push down method refactoring - It can be pure if I consider this change as a pure change since the localId attribute has been removed"
     }
@@ -8085,7 +8640,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "There are lots of pure changes overlapped with the refactoring. First, queryData attribute has been renamed to queryWhere. Then, the getQueryContext() method invocation has been removed for some reason. Finally, there is an argumentization, which is impossible to catch the purity of the change in static analysis."
     }
@@ -8099,7 +8654,7 @@
     "purity" : {
       "purityValue" : "1",
       "purityValidation" : "FN",
-      "purityComment" : "Severe changes",
+      "purityComment" : "Severe Changes",
       "mappingState" : 5,
       "validationComment" : "There are lots of pure changes overlapped with the refactoring. First, queryData attribute has been renamed to queryWhere. Then, the getQueryContext() method invocation has been removed for some reason. Finally, there is an argumentization, which is impossible to catch the purity of the change in static analysis."
     }

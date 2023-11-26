@@ -118,9 +118,8 @@ public abstract class AbstractCodeMapping {
 
 	public boolean checkForSupplierPattern(Replacement replacement, Map<String, String> parameterToArgumentMap) {
 		fragment2.argumentizationAfterRefactorings(parameterToArgumentMap);
-		fragment1.argumentizationAfterRefactorings(parameterToArgumentMap);
 
-		String s1 = fragment1.getArgumentizedAfterRefactorings();
+		String s1 = fragment1.getString();
 		String s2 = fragment2.getArgumentizedAfterRefactorings();
 
 		s1 = s1.replaceAll(";", "");

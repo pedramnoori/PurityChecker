@@ -141,25 +141,58 @@ Specificity: 100.0
 FScore: 0.9059829
 
 
-For Move And Rename Method: TIME: 2023-07-10 16:53:46.444
-TP: 6
-TN: 15
-FP: 1
-FN: 4
-Precision: 85.71429
-Recall: 60.000004
-Specificity: 93.75
-FScore: 0.70588243
+For Move And Rename Method: TIME: 2023-10-23 14:51:30.151
+TP: 0
+TN: 0
+FP: 0
+FN: 0
+Precision: NaN
+Recall: NaN
+Specificity: NaN
+FScore: NaN
 
 
-For Push Down Method: TIME: 2023-07-10 21:43:07.842
-TP: 48
-TN: 5
+For Move And Rename Method: TIME: 2023-10-23 15:47:57.815
+TP: 9
+TN: 14
+FP: 0
+FN: 3
+Precision: 100.0
+Recall: 75.0
+Specificity: 100.0
+FScore: 0.85714287
+
+
+For Move And Inline Method: TIME: 2023-10-23 15:54:48.127
+TP: 3
+TN: 3
 FP: 0
 FN: 0
 Precision: 100.0
 Recall: 100.0
 Specificity: 100.0
 FScore: 1.0
+
+
+For Move And Inline Method: TIME: 2023-10-23 15:59:45.052
+TP: 3
+TN: 3
+FP: 0
+FN: 0
+Precision: 100.0
+Recall: 100.0
+Specificity: 100.0
+FScore: 1.0
+
+
+For Move And Rename Method: TIME: 2023-10-23 16:00:04.46
+TP: 9
+TN: 14
+FP: 0
+FN: 3
+Precision: 100.0
+Recall: 75.0
+Specificity: 100.0
+FScore: 0.85714287
 
 
