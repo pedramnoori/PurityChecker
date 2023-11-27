@@ -31,7 +31,10 @@ For example, in the following figure, the `setFrameCentered` method, which is la
 
 <img width="695" alt="image" src="https://github.com/pedramnoori/RefactoringMiner/assets/37044356/f7b42519-5985-45ac-ad5b-e90c258f430f">
 
-PurityChecker utilizes RefactoringMiner's resources by initially executing the RefactoringMiner tool on a commit. Therefore, when applied to a commit, PurityChecker offers a list of refactorings undertaken within a code change provided by RefactoringMiner, accompanied by purity details specific to method-level refactorings.
+<br>
+<br>
+
+PurityChecker utilizes RefactoringMiner's resources by initially executing the RefactoringMiner tool on a commit. Therefore, when applied to a commit, PurityChecker offers a **list of refactorings** undertaken within a code change provided by RefactoringMiner, accompanied by **purity details specific to method-level refactorings**.
 
 # RefactoringMiner
 RefactoringMiner is a library/API written in Java that can detect refactorings applied in the history of a Java project.
@@ -73,7 +76,26 @@ As of **November 8, 2023** the precision and recall of the tool on **two** train
 
 # How to use PurityChecker
 
+`pedram`
+
+
+PurityChecker features a crucial method called `isPure`. This method takes two main arguments: `umlModelDiff`, which contains information about the parent and child classes along with all the changes in a commit, and `refactorings`, which includes a list of refactorings performed in the given commit. These arguments are obtained by invoking RefactoringMiner on a specific commit (commit URL).
+<br>
+<div align="justify">
+PurityChecker integrates with all RefactoringMiner APIs. RefactoringMiner offers multiple APIs for detecting refactorings, allowing users to work with locally cloned git repositories, directories containing Java source code, file contents as strings, and directly through the GitHub API. PurityChecker’s compatibility lies in its ability to utilize the same arguments as specified earlier, ensuring that it functions in tandem with all RefactoringMiner API options.
+<br>
+<br>
+To enhance the usability of PurityChecker, we have developed an API method within the “API.java” file. This API method simplifies the process by only requiring the commit URL as input and providing the purity output as a result.
+<br>
+<br>
+The output of PurityChecker indicates whether the refactorings are pure or not, along with an automatically generated comment that explains why the changes are behavior-preserving or not. For example, in the case of an Extract Method refactoring detected as pure due to the application of an overlapping Inline Variable refactoring, PurityChecker generates a comment like this: “Overlapped refactoring - can be identical by undoing the overlapped refactoring - Inline Variable,” and assigns a purity value of true.
+</div>
+
 # PurityChecker Applications
+
+## Code Review
+Code reviewer point of view, having the knowledge about purity of refactorings gives the reviewer a deeper insight into the code modifications. For instance, the reviewer can simply skip the changes happening within pure refactorings, as she can be sure that there is no functionality change involved within those cases.
+
 
 
 # API usage guidelines
