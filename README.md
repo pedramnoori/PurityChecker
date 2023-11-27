@@ -9,12 +9,13 @@ Table of Contents
    * [Current precision and recall](#current-precision-and-recall)
    * [How to use PurityChecker](#how-to-use-puritychecker)
    * [PurityChecker Applications](#puritychecker-applications)
-   * [RefactoringMiner API usage guidelines](#api-usage-guidelines)
-      * [With a locally cloned git repository](#with-a-locally-cloned-git-repository)
-      * [With two directories containing Java source code](#with-two-directories-containing-java-source-code)
-      * [With file contents as strings](#with-file-contents-as-strings)
-      * [With all information fetched directly from GitHub](#with-all-information-fetched-directly-from-github)
-      * [With a GitHub pull request](#with-a-github-pull-request)
+   * [PurityChecker and RefactoringMiner API usage guidelines](#api-usage-guidelines)
+      * [PurityChecker main API](#puritychecker-main-api)
+      * [RefactoringMiner - With a locally cloned git repository](#refactoringminer-with-a-locally-cloned-git-repository)
+      * [RefactoringMiner - With two directories containing Java source code](#refactoringminer-with-two-directories-containing-java-source-code)
+      * [RefactoringMiner - With file contents as strings](#refactoringminer-with-file-contents-as-strings)
+      * [RefactoringMiner - With all information fetched directly from GitHub](#refactoringminer-with-all-information-fetched-directly-from-github)
+      * [RefactoringMiner - With a GitHub pull request](#refactoringminer-with-a-github-pull-request)
 
 # PurityChecker 
 <div align="justify">PurityChecker is a tool for detecting purity of method-level refactorings in Java. The tool is build on top of RefactoringMiner, which is a refactoring detection tool.
@@ -129,7 +130,33 @@ In a study by <a href="https://ieeexplore.ieee.org/document/8453082" target="_bl
 
 
 # API usage guidelines
-## With a locally cloned git repository
+
+## PurityChecker main API
+
+Passing a commit URL in the code snippet provided below, PurityChecker returns a `Map` object (`pcr`) containing the refactorings undertaken in the commit along with the purity information regarding the method-level refactorings.
+
+```java
+public static Map<Refactoring, PurityCheckResult> isPureAPI(String url) {
+        String commitUrl = URLHelper.getRepo(url);
+        String commitSh1 = URLHelper.getCommit(url);
+        Map<Refactoring, PurityCheckResult> pcr = new LinkedHashMap<>();
+
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+
+        miner.detectModelDiff(commitUrl,
+                commitSh1, new RefactoringHandler() {
+                    @Override
+                    public void processModelDiff(String commitId, UMLModelDiff umlModelDiff) throws RefactoringMinerTimedOutException {
+                        List<Refactoring> refactorings = umlModelDiff.getRefactorings();
+                        PurityChecker.isPure(umlModelDiff, pcr, refactorings);
+                    }
+                }, 100);
+
+        return pcr;
+    }
+```
+
+## RefactoringMiner With a locally cloned git repository
 RefactoringMiner can automatically detect refactorings in the entire history of 
 git repositories, between specified commits or tags, or at specified commits.
 
@@ -202,7 +229,7 @@ miner.detectAtCommit(repo, "05c1e773878bbacae64112f70964f4f2f7944398", new Refac
 });
 ```
 
-## With two directories containing Java source code
+## RefactoringMiner With two directories containing Java source code
 
 It is possible to detect refactorings between the Java files in two directories
 containing the code before and after some changes.
@@ -241,7 +268,7 @@ miner.detectAtDirectories(dir1, dir2, new RefactoringHandler() {
 });
 ```
 
-## With file contents as strings
+## RefactoringMiner With file contents as strings
 
 You can provide two maps (before and after the changes) where the keys are file paths, and the values are the corresponding file contents.
 Each key should correspond to a file path starting from the root of the repository. For example, `src/org/refactoringminer/api/GitHistoryRefactoringMiner.java`.
@@ -265,7 +292,7 @@ miner.detectAtFileContents(fileContentsBefore, fileContentsAfter, new Refactorin
 });
 ```
 
-## With all information fetched directly from GitHub
+## RefactoringMiner With all information fetched directly from GitHub
 
 To use this API, please provide a valid OAuth token in the `github-oauth.properties` file.
 You can generate an OAuth token in GitHub `Settings` -> `Developer settings` -> `Personal access tokens`.
@@ -286,7 +313,7 @@ miner.detectAtCommit("https://github.com/danilofes/refactoring-toy-example.git",
 }, 10);
 ```
 
-## With a GitHub pull request
+## RefactoringMiner With a GitHub pull request
 
 To use this API, please provide a valid OAuth token in the `github-oauth.properties` file.
 You can generate an OAuth token in GitHub `Settings` -> `Developer settings` -> `Personal access tokens`.
